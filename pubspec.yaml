@@ -1,7 +1,7 @@
 name: nareru
 description: A new Flutter project.
 
-publish_to: 'none'
+publish_to: "none"
 version: 1.0.0+1
 
 environment:
@@ -10,7 +10,7 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
-
+  # To generate, run: flutter gen-l10n
   flutter_localizations:
     sdk: flutter
   intl: ^0.17.0
