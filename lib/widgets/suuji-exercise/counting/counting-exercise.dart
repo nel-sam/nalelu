@@ -41,7 +41,7 @@ class _CountingExerciseState extends State<CountingExercise> {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Container(
-                width: 50,
+                width: 350,
                 child: TextField(
                   decoration: InputDecoration(
                     isDense: true,

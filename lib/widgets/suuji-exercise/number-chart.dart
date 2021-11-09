@@ -6,48 +6,49 @@ import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 class NumberChart extends StatelessWidget {
   const NumberChart({Key? key}) : super(key: key);
 
+  Widget cards(String number, String hiragana) {
+    return Container(
+      padding: const EdgeInsets.all(15),
+      child: Column(
+        children: [
+          Text(number),
+          Text(hiragana),
+        ],
+      ),
+    );
+  }
+
   getNativeNumberChart(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
       child: Column(
         children: [
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(AppLocalizations.of(context)!.nativeNumbers),
             ],
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Column(
-                children: [
-                  Text('1'),
-                  Text('2'),
-                  Text('3'),
-                  Text('4'),
-                  Text('5'),
-                  Text('6'),
-                  Text('7'),
-                  Text('8'),
-                  Text('9'),
-                  Text('10')
-                ],
-              ),
-              Column(
-                children: [
-                  Text('ひとつ'),
-                  Text('ふたつ'),
-                  Text('みっつ'),
-                  Text('よっつ'),
-                  Text('いつつ'),
-                  Text('むっつ'),
-                  Text('ななつ'),
-                  Text('やっつ'),
-                  Text('ここのつ'),
-                  Text('とう')
-                ],
-              ),
+              cards('1', 'ひとつ'),
+              cards('2', 'ふたつ'),
+              cards('3', 'みっつ'),
+              cards('4', 'よっつ'),
+              cards('5', 'いつつ'),
             ],
-          )
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              cards('6', 'むっつ'),
+              cards('7', 'ななつ'),
+              cards('8', 'やっつ'),
+              cards('9', 'ここのつ'),
+              cards('10', 'とう'),
+            ],
+          ),
         ],
       ),
     );
@@ -59,44 +60,37 @@ class NumberChart extends StatelessWidget {
       child: Column(
         children: [
           Row(
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(AppLocalizations.of(context)!.sinoNumbers),
             ],
           ),
           Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Column(
-                children: [
-                  Text('0'),
-                  Text('1'),
-                  Text('2'),
-                  Text('3'),
-                  Text('4'),
-                  Text('5'),
-                  Text('6'),
-                  Text('7'),
-                  Text('8'),
-                  Text('9'),
-                  Text('10')
-                ],
-              ),
-              Column(
-                children: [
-                  Text('れい、ゼロ、マル'),
-                  Text('いち'),
-                  Text('に'),
-                  Text('さん'),
-                  Text('よん, し'),
-                  Text('ご'),
-                  Text('ろく'),
-                  Text('なな, しち'),
-                  Text('はち'),
-                  Text('きゅう, く'),
-                  Text('じゅう')
-                ],
-              ),
+              cards('0', 'れい、ゼロ、マル'),
             ],
-          )
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              cards('1', 'いち'),
+              cards('2', 'に'),
+              cards('3', 'さん'),
+              cards('4', 'よん, し'),
+              cards('5', 'ご'),
+            ],
+          ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              cards('6', 'ろく'),
+              cards('7', 'なな, しち'),
+              cards('8', 'はち'),
+              cards('9', 'きゅう, く'),
+              cards('10', 'じゅう'),
+            ],
+          ),
         ],
       ),
     );
@@ -118,8 +112,11 @@ class NumberChart extends StatelessWidget {
           padding: EdgeInsets.all(18),
           child: SingleChildScrollView(
             child: Column(
-              children: [
+              children: <Widget>[
                 getNativeNumberChart(context),
+                SizedBox(
+                  height: 40,
+                ),
                 getSinoNumberChart(context)
               ],
             ),
