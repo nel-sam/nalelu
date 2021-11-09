@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nareru/state/models/count-exercise-state.dart';
+import 'package:nareru/state/models/age-exercise-state.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:provider/provider.dart';
 import 'package:nareru/constants.dart';
@@ -7,7 +8,7 @@ import 'package:nareru/hd-helpers.dart';
 import 'package:nareru/state/suuji.exercise-notifier.dart';
 import 'package:nareru/widgets/suuji-exercise/counting/counting-exercise.dart';
 import 'package:nareru/widgets/suuji-exercise/number-chart-button.dart';
-
+import 'package:nareru/widgets/suuji-exercise/age/age-exercise.dart';
 
 class SuujiExercise extends StatefulWidget {
   const SuujiExercise({Key? key}) : super(key: key);
@@ -80,6 +81,12 @@ class _SuujiExerciseState extends State<SuujiExercise> {
       return CountingExercise(
         state: itemfromList,
         onUserCountSet: suujiModel.onUserCountSet,
+      );
+
+    if (itemfromList is AgeExerciseState)
+      return AgeExercise(
+        state: itemfromList,
+        onAgeSet: suujiModel.onAgeSet,
       );
   }
 }
