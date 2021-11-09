@@ -20,20 +20,79 @@ class NumberChart extends StatelessWidget {
             children: [
               Column(
                 children: [
+                  Text('1'),
+                  Text('2'),
+                  Text('3'),
+                  Text('4'),
+                  Text('5'),
+                  Text('6'),
+                  Text('7'),
+                  Text('8'),
+                  Text('9'),
+                  Text('10')
+                ],
+              ),
+              Column(
+                children: [
+                  Text('ひとつ'),
+                  Text('ふたつ'),
+                  Text('みっつ'),
+                  Text('よっつ'),
+                  Text('いつつ'),
+                  Text('むっつ'),
+                  Text('ななつ'),
+                  Text('やっつ'),
+                  Text('ここのつ'),
+                  Text('とう')
+                ],
+              ),
+            ],
+          )
+        ],
+      ),
+    );
+  }
+
+  getSinoNumberChart(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(8.0),
+      child: Column(
+        children: [
+          Row(
+            children: [
+              Text(AppLocalizations.of(context)!.sinoNumbers),
+            ],
+          ),
+          Row(
+            children: [
+              Column(
+                children: [
                   Text('0'),
                   Text('1'),
                   Text('2'),
                   Text('3'),
                   Text('4'),
+                  Text('5'),
+                  Text('6'),
+                  Text('7'),
+                  Text('8'),
+                  Text('9'),
+                  Text('10')
                 ],
               ),
               Column(
                 children: [
-                  Text('れい'),
+                  Text('れい、ゼロ、マル'),
                   Text('いち'),
                   Text('に'),
                   Text('さん'),
-                  Text('よん'),
+                  Text('よん, し'),
+                  Text('ご'),
+                  Text('ろく'),
+                  Text('なな, しち'),
+                  Text('はち'),
+                  Text('きゅう, く'),
+                  Text('じゅう')
                 ],
               ),
             ],
@@ -61,6 +120,7 @@ class NumberChart extends StatelessWidget {
             child: Column(
               children: [
                 getNativeNumberChart(context),
+                getSinoNumberChart(context)
               ],
             ),
           ),
