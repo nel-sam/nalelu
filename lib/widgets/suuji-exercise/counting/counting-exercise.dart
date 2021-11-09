@@ -30,7 +30,7 @@ class _CountingExerciseState extends State<CountingExercise> {
                 size: 90,
               ),
               Text(
-                '× ${widget.state.count}',
+                '${widget.state.count}${widget.state.counter}',
                 style: TextStyle(
                   fontSize: 70,
                 ),
@@ -59,11 +59,6 @@ class _CountingExerciseState extends State<CountingExercise> {
                     }
                   },
                 ),
-              ),
-              Padding(
-                padding: const EdgeInsets.all(8.0),
-                child:
-                    Text(widget.state.counter, style: TextStyle(fontSize: 28)),
               ),
             ],
           )

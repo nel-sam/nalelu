@@ -8,7 +8,7 @@ class SuujiExerciseNotifier with ChangeNotifier {
   SuujiExerciseNotifier() {
     List<CountExerciseState> countExerciseState = [
       CountExerciseState(
-          icon: Icons.person, count: 3, correctAnswer: 'さん', counter: '人'),
+          icon: Icons.person, count: 3, correctAnswer: 'さんにん', counter: '人'),
     ];
 
     suujiExerciseState = SuujiExerciseState(countExercises: countExerciseState);
