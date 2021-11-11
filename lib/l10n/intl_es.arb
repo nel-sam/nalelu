@@ -2,5 +2,7 @@
   "numbers": "Números",
   "nativeNumbers": "Números Nativos",
   "sinoNumbers": "Números Sino",
-  "numberChart": "Tabla de números"
-}
+  "numberChart": "Tabla de números",
+  "typeTheTime": "Escribe la hora usando hiragana",
+  "timeDesc": "Para las horas, minutos y segundos usa números Sino (いち, に, さん)"
+  }

@@ -8,6 +8,5 @@ class AgeExerciseState {
     required this.age,
     required this.correctAnswer,
     required this.counter,
-
   });
 }
