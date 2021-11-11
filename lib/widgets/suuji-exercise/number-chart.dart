@@ -3,17 +3,33 @@ import 'package:nareru/constants.dart';
 import 'package:nareru/hd-helpers.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
-class NumberChart extends StatelessWidget {
+class NumberChart extends StatefulWidget {
   const NumberChart({Key? key}) : super(key: key);
 
-  Widget cards(String number, String hiragana) {
-    return Container(
-      padding: const EdgeInsets.all(15),
-      child: Column(
-        children: [
-          Text(number),
-          Text(hiragana),
-        ],
+  @override
+  State<NumberChart> createState() => _NumberChartState();
+}
+
+class _NumberChartState extends State<NumberChart> {
+  bool selected = true;
+
+  Widget numberCard(String number, String hiragana, String kanji) {
+    return InkWell(
+      onTap: () {
+        setState(() {
+          selected = false;
+        });
+      },
+      child: Ink(
+        child: Container(
+          padding: const EdgeInsets.all(12),
+          child: Column(
+            children: [
+              Text(number),
+              selected ? Text(hiragana) : Text(kanji),
+            ],
+          ),
+        ),
       ),
     );
   }
@@ -32,21 +48,21 @@ class NumberChart extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              cards('1', 'ひとつ'),
-              cards('2', 'ふたつ'),
-              cards('3', 'みっつ'),
-              cards('4', 'よっつ'),
-              cards('5', 'いつつ'),
+              numberCard('1', 'ひとつ', '一つ'),
+              numberCard('2', 'ふたつ', '二つ'),
+              numberCard('3', 'みっつ', '三つ'),
+              numberCard('4', 'よっつ', '四つ'),
+              numberCard('5', 'いつつ', '五つ'),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              cards('6', 'むっつ'),
-              cards('7', 'ななつ'),
-              cards('8', 'やっつ'),
-              cards('9', 'ここのつ'),
-              cards('10', 'とう'),
+              numberCard('6', 'むっつ', '六つ'),
+              numberCard('7', 'ななつ', '七つ'),
+              numberCard('8', 'やっつ', '八つ'),
+              numberCard('9', 'ここのつ', '九つ'),
+              numberCard('10', 'とう', '十'),
             ],
           ),
         ],
@@ -68,27 +84,27 @@ class NumberChart extends StatelessWidget {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              cards('0', 'れい、ゼロ、マル'),
+              numberCard('0', 'れい、ゼロ、マル', '零'),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              cards('1', 'いち'),
-              cards('2', 'に'),
-              cards('3', 'さん'),
-              cards('4', 'よん, し'),
-              cards('5', 'ご'),
+              numberCard('1', 'いち', '一'),
+              numberCard('2', 'に', '二'),
+              numberCard('3', 'さん', '三'),
+              numberCard('4', 'よん, し', '四'),
+              numberCard('5', 'ご', '五'),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              cards('6', 'ろく'),
-              cards('7', 'なな, しち'),
-              cards('8', 'はち'),
-              cards('9', 'きゅう, く'),
-              cards('10', 'じゅう'),
+              numberCard('6', 'ろく', '六'),
+              numberCard('7', 'なな, しち', '七'),
+              numberCard('8', 'はち', '八'),
+              numberCard('9', 'きゅう, く', '九'),
+              numberCard('10', 'じゅう', '十'),
             ],
           ),
         ],
