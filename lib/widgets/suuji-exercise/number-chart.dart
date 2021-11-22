@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nareru/constants.dart';
 import 'package:nareru/hd-helpers.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:nareru/widgets/suuji-exercise/number-card.dart';
 
 class NumberChart extends StatefulWidget {
   const NumberChart({Key? key}) : super(key: key);
@@ -12,28 +13,6 @@ class NumberChart extends StatefulWidget {
 
 class _NumberChartState extends State<NumberChart> {
   bool selected = true;
-
-  Widget numberCard(String number, String hiragana, String kanji) {
-    return InkWell(
-      onTap: () {
-        setState(() {
-          selected = false;
-        });
-      },
-      child: Ink(
-        child: Container(
-          padding: const EdgeInsets.all(12),
-          child: Column(
-            children: [
-              Text(number),
-              selected ? Text(hiragana) : Text(kanji),
-            ],
-          ),
-        ),
-      ),
-    );
-  }
-
   getNativeNumberChart(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
@@ -48,21 +27,22 @@ class _NumberChartState extends State<NumberChart> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              numberCard('1', 'ひとつ', '一つ'),
-              numberCard('2', 'ふたつ', '二つ'),
-              numberCard('3', 'みっつ', '三つ'),
-              numberCard('4', 'よっつ', '四つ'),
-              numberCard('5', 'いつつ', '五つ'),
+              NumberCard(number: '1', hiragana: 'ひとつ', kanji: '一つ'),
+              NumberCard(number: '2', hiragana: 'ふたつ', kanji: '二つ'),
+              NumberCard(number: '2', hiragana: 'ふたつ', kanji: '二つ'),
+              NumberCard(number: '3', hiragana: 'みっつ', kanji: '三つ'),
+              NumberCard(number: '4', hiragana: 'よっつ', kanji: '四つ'),
+              NumberCard(number: '5', hiragana: 'いつつ', kanji: '五つ'),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              numberCard('6', 'むっつ', '六つ'),
-              numberCard('7', 'ななつ', '七つ'),
-              numberCard('8', 'やっつ', '八つ'),
-              numberCard('9', 'ここのつ', '九つ'),
-              numberCard('10', 'とう', '十'),
+              NumberCard(number: '6', hiragana: 'むっつ', kanji: '六つ'),
+              NumberCard(number: '7', hiragana: 'ななつ', kanji: '七つ'),
+              NumberCard(number: '8', hiragana: 'やっつ', kanji: '八つ'),
+              NumberCard(number: '9', hiragana: 'ここのつ', kanji: '九つ'),
+              NumberCard(number: '10', hiragana: 'とう', kanji: '十'),
             ],
           ),
         ],
@@ -84,27 +64,27 @@ class _NumberChartState extends State<NumberChart> {
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              numberCard('0', 'れい、ゼロ、マル', '零'),
+              NumberCard(number: '0', hiragana: 'れい、ゼロ、マル', kanji: '零'),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              numberCard('1', 'いち', '一'),
-              numberCard('2', 'に', '二'),
-              numberCard('3', 'さん', '三'),
-              numberCard('4', 'よん, し', '四'),
-              numberCard('5', 'ご', '五'),
+              NumberCard(number: '1', hiragana: 'いち', kanji: '一'),
+              NumberCard(number: '2', hiragana: 'に', kanji: '二'),
+              NumberCard(number: '3', hiragana: 'さん', kanji: '三'),
+              NumberCard(number: '4', hiragana: 'よん, し', kanji: '四'),
+              NumberCard(number: '5', hiragana: 'ご', kanji: '五'),
             ],
           ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              numberCard('6', 'ろく', '六'),
-              numberCard('7', 'なな, しち', '七'),
-              numberCard('8', 'はち', '八'),
-              numberCard('9', 'きゅう, く', '九'),
-              numberCard('10', 'じゅう', '十'),
+              NumberCard(number: '6', hiragana: 'ろく', kanji: '六'),
+              NumberCard(number: '7', hiragana: 'なな, しち', kanji: '七'),
+              NumberCard(number: '8', hiragana: 'はち', kanji: '八'),
+              NumberCard(number: '9', hiragana: 'きゅう, く', kanji: '九'),
+              NumberCard(number: '10', hiragana: 'じゅう', kanji: '十'),
             ],
           ),
         ],
