@@ -94,7 +94,7 @@ class _SuujiExerciseState extends State<SuujiExercise> {
 
     if (itemfromList is JikanExerciseState)
       return JikanExercise(
-        siganExerciseState: itemfromList,
+        jikanExerciseState: itemfromList,
         onUserHourSet: suujiModel.setUserHour,
         onUserMinSet: suujiModel.setUserMin,
         onUserSecSet: suujiModel.setUserSec,

@@ -2,8 +2,22 @@ import 'package:flutter/material.dart';
 import 'package:nareru/constants.dart';
 
 class Clock extends StatelessWidget {
-  final String time;
-  const Clock({Key? key, required this.time}) : super(key: key);
+  final String hour;
+  final String minute;
+  final String second;
+  final bool hourState;
+  final bool minuteState;
+  final bool secondState;
+
+  const Clock({
+    Key? key,
+    required this.hour,
+    required this.minute,
+    required this.second,
+    required this.hourState,
+    required this.minuteState,
+    required this.secondState,
+  }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -14,16 +28,29 @@ class Clock extends StatelessWidget {
           borderRadius: BorderRadius.all(
             Radius.circular(12),
           )),
-      child: Column(
+      child: Row(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(
-              time,
-              style: TextStyle(fontSize: 65, color: ACCENT_COLOR),
-            ),
+          Text(hour,
+              style: hourState
+                  ? TextStyle(fontSize: 65, color: ACCENT_COLOR)
+                  : TextStyle(fontSize: 70, color: Colors.purple)),
+          Text(
+            ':',
+            style: TextStyle(fontSize: 65, color: ACCENT_COLOR),
           ),
+          Text(minute,
+              style: minuteState
+                  ? TextStyle(fontSize: 65, color: ACCENT_COLOR)
+                  : TextStyle(fontSize: 70, color: Colors.purple)),
+          Text(
+            ':',
+            style: TextStyle(fontSize: 64, color: ACCENT_COLOR),
+          ),
+          Text(second,
+              style: secondState
+                  ? TextStyle(fontSize: 65, color: ACCENT_COLOR)
+                  : TextStyle(fontSize: 70, color: Colors.purple)),
         ],
       ),
     );

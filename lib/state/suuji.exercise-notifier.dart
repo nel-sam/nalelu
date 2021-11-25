@@ -3,6 +3,7 @@ import 'package:nareru/state/models/count-exercise-state.dart';
 import 'package:nareru/state/models/suuji-exercise-state.dart';
 import 'package:nareru/state/models/age-exercise-state.dart';
 import 'package:nareru/state/models/jikan-exercise-state.dart';
+import 'package:nareru/constants.dart';
 
 class SuujiExerciseNotifier with ChangeNotifier {
   late SuujiExerciseState suujiExerciseState;
@@ -19,21 +20,25 @@ class SuujiExerciseNotifier with ChangeNotifier {
 
     List<JikanExerciseState> jikanExerciseState = [
       JikanExerciseState(
-        hour: '05',
-        min: '43',
-        sec: '12',
-        correctHour: 'ごじ',
-        correctMin: 'よんじゅっさんぷん',
-        correctSec: 'じゅうにびょう',
-      ),
+          hour: '05',
+          min: '43',
+          sec: '12',
+          correctHour: 'ごじ',
+          correctMin: 'よんじゅっさんぷん',
+          correctSec: 'じゅうにびょう',
+          hourState: true,
+          minuteState: true,
+          secondState: true),
       JikanExerciseState(
-        hour: '02',
-        min: '09',
-        sec: '08',
-        correctHour: 'にじ',
-        correctMin: 'きゅうふん',
-        correctSec: 'はちびょう',
-      )
+          hour: '02',
+          min: '09',
+          sec: '08',
+          correctHour: 'にじ',
+          correctMin: 'きゅうふん',
+          correctSec: 'はちびょう',
+          hourState: true,
+          minuteState: true,
+          secondState: true)
     ];
 
     suujiExerciseState = SuujiExerciseState(
