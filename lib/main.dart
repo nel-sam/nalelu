@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:provider/provider.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:nareru/constants.dart';
 import 'package:nareru/state/suuji.exercise-notifier.dart';
 import 'package:nareru/widgets/suuji-exercise/suuji-exercise.dart';
+import 'package:provider/provider.dart';
 
 void main() {
   runApp(MyApp());
@@ -34,8 +34,6 @@ class MyApp extends StatelessWidget {
           primaryColor: Colors.black,
           brightness: Brightness.dark,
           backgroundColor: const Color(0xFF212121),
-          accentColor: Colors.white,
-          accentIconTheme: IconThemeData(color: Colors.black),
           dividerColor: Colors.black12,
         ),
         home: MultiProvider(providers: [
@@ -45,8 +43,8 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key, required this.title}) : super(key: key);
   final String title;
+  MyHomePage({Key? key, required this.title}) : super(key: key);
 
   @override
   _MyHomePageState createState() => _MyHomePageState();

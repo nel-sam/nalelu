@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:nareru/constants.dart';
 import 'package:nareru/hd-helpers.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:nareru/widgets/suuji-exercise/number-card.dart';
 
 class NumberChart extends StatefulWidget {
@@ -13,6 +13,33 @@ class NumberChart extends StatefulWidget {
 
 class _NumberChartState extends State<NumberChart> {
   bool selected = true;
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          leading: Builder(builder: (BuildContext context) => BackButton()),
+          elevation: APPBAR_ELEVATION,
+          backgroundColor: HD.getAppBarColor(context),
+          iconTheme: HD.getAppBarIconTheme(context),
+          title: Text(AppLocalizations.of(context)!.numberChart,
+              style: HEADER_TEXT_STYLE),
+        ),
+        body: Padding(
+          padding: EdgeInsets.all(18),
+          child: SingleChildScrollView(
+            child: Column(
+              children: <Widget>[
+                getNativeNumberChart(context),
+                SizedBox(
+                  height: 40,
+                ),
+                getSinoNumberChart(context)
+              ],
+            ),
+          ),
+        ));
+  }
+
   getNativeNumberChart(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.all(8.0),
@@ -90,33 +117,5 @@ class _NumberChartState extends State<NumberChart> {
         ],
       ),
     );
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          leading: Builder(builder: (BuildContext context) => BackButton()),
-          elevation: APPBAR_ELEVATION,
-          backgroundColor: HD.getAppBarColor(context),
-          textTheme: HD.getAppBarTextTheme(context),
-          iconTheme: HD.getAppBarIconTheme(context),
-          title: Text(AppLocalizations.of(context)!.numberChart,
-              style: HEADER_TEXT_STYLE),
-        ),
-        body: Padding(
-          padding: EdgeInsets.all(18),
-          child: SingleChildScrollView(
-            child: Column(
-              children: <Widget>[
-                getNativeNumberChart(context),
-                SizedBox(
-                  height: 40,
-                ),
-                getSinoNumberChart(context)
-              ],
-            ),
-          ),
-        ));
   }
 }

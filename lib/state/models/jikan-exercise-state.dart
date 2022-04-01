@@ -1,5 +1,3 @@
-import 'package:flutter/material.dart';
-
 class JikanExerciseState {
   String correctHour;
   String userHour = '';
@@ -14,15 +12,15 @@ class JikanExerciseState {
   bool minuteState;
   bool secondState;
 
-  JikanExerciseState(
-      {required this.hour,
-      required this.min,
-      required this.sec,
-      required this.correctHour,
-      required this.correctMin,
-      required this.correctSec,
-      required this.hourState,
-      required this.minuteState,
-      required this.secondState,
-      });
+  JikanExerciseState({
+    required this.hour,
+    required this.min,
+    required this.sec,
+    required this.correctHour,
+    required this.correctMin,
+    required this.correctSec,
+    required this.hourState,
+    required this.minuteState,
+    required this.secondState,
+  });
 }

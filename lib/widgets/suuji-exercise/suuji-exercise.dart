@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:nareru/state/models/count-exercise-state.dart';
-import 'package:nareru/state/models/age-exercise-state.dart';
 import 'package:flutter_gen/gen_l10n/app_localizations.dart';
-import 'package:nareru/state/models/jikan-exercise-state.dart';
-import 'package:provider/provider.dart';
 import 'package:nareru/constants.dart';
 import 'package:nareru/hd-helpers.dart';
+import 'package:nareru/state/models/age-exercise-state.dart';
+import 'package:nareru/state/models/count-exercise-state.dart';
+import 'package:nareru/state/models/jikan-exercise-state.dart';
 import 'package:nareru/state/suuji.exercise-notifier.dart';
-import 'package:nareru/widgets/suuji-exercise/counting/counting-exercise.dart';
-import 'package:nareru/widgets/suuji-exercise/number-chart-button.dart';
 import 'package:nareru/widgets/suuji-exercise/age/age-exercise.dart';
+import 'package:nareru/widgets/suuji-exercise/counting/counting-exercise.dart';
 import 'package:nareru/widgets/suuji-exercise/jikan/jikan-exercise.dart';
-
+import 'package:nareru/widgets/suuji-exercise/number-chart-button.dart';
+import 'package:provider/provider.dart';
 
 class SuujiExercise extends StatefulWidget {
   const SuujiExercise({Key? key}) : super(key: key);
@@ -57,7 +56,6 @@ class _SuujiExerciseState extends State<SuujiExercise> {
           leading: Builder(builder: (BuildContext context) => BackButton()),
           elevation: APPBAR_ELEVATION,
           backgroundColor: HD.getAppBarColor(context),
-          textTheme: HD.getAppBarTextTheme(context),
           iconTheme: HD.getAppBarIconTheme(context),
           title: Text(AppLocalizations.of(context)!.numbers,
               style: HEADER_TEXT_STYLE),
@@ -77,24 +75,24 @@ class _SuujiExerciseState extends State<SuujiExercise> {
         ));
   }
 
-  dynamic getExerciseWidget(SuujiExerciseNotifier suujiModel, int indx) {
-    final itemfromList = suujiModel.suujiExerciseState.getAll()[indx];
+  dynamic getExerciseWidget(SuujiExerciseNotifier suujiModel, int index) {
+    final itemFromList = suujiModel.suujiExerciseState.getAll()[index];
 
-    if (itemfromList is CountExerciseState)
+    if (itemFromList is CountExerciseState)
       return CountingExercise(
-        state: itemfromList,
+        state: itemFromList,
         onUserCountSet: suujiModel.onUserCountSet,
       );
 
-    if (itemfromList is AgeExerciseState)
+    if (itemFromList is AgeExerciseState)
       return AgeExercise(
-        state: itemfromList,
+        state: itemFromList,
         onAgeSet: suujiModel.onAgeSet,
       );
 
-    if (itemfromList is JikanExerciseState)
+    if (itemFromList is JikanExerciseState)
       return JikanExercise(
-        jikanExerciseState: itemfromList,
+        jikanExerciseState: itemFromList,
         onUserHourSet: suujiModel.setUserHour,
         onUserMinSet: suujiModel.setUserMin,
         onUserSecSet: suujiModel.setUserSec,

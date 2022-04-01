@@ -1,0 +1,18 @@
+{
+  "cSpell.words": [
+    "Cupertino",
+    "handrills",
+    "Jikan",
+    "nareru",
+    "sigan",
+    "suuji",
+    "LTRB",
+    "Sino"
+  ],
+  "editor.tabSize": 2,
+  "editor.bracketPairColorization.enabled": true,
+  "editor.guides.bracketPairs": "active",
+  "eslint.alwaysShowStatus": true,
+  "editor.formatOnSave": true,
+  "cSpell.language": "en,kr"
+}
