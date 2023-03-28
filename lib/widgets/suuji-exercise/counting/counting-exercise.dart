@@ -43,6 +43,7 @@ class _CountingExerciseState extends State<CountingExercise> {
               Container(
                 width: 350,
                 child: TextField(
+                  autofocus: true,
                   decoration: InputDecoration(
                     isDense: true,
                     contentPadding: EdgeInsets.fromLTRB(4, 18, 0, 1),

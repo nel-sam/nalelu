@@ -69,6 +69,7 @@ class _JikanExerciseState extends State<JikanExercise> {
                     Container(
                         width: textFieldWidth,
                         child: TextField(
+                          autofocus: true,
                           decoration: InputDecoration(
                             isDense: true,
                             contentPadding: EdgeInsets.fromLTRB(4, 18, 0, 1),
@@ -105,6 +106,7 @@ class _JikanExerciseState extends State<JikanExercise> {
                     Container(
                         width: textFieldWidth,
                         child: TextField(
+                          autofocus: true,
                           decoration: InputDecoration(
                             isDense: true,
                             contentPadding: EdgeInsets.fromLTRB(4, 18, 0, 1),
@@ -141,6 +143,7 @@ class _JikanExerciseState extends State<JikanExercise> {
                     Container(
                         width: textFieldWidth,
                         child: TextField(
+                          autofocus: true,
                           decoration: InputDecoration(
                             isDense: true,
                             contentPadding: EdgeInsets.fromLTRB(4, 18, 0, 1),
