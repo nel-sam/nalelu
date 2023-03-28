@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:nareru/constants.dart';
 import 'package:nareru/hd-helpers.dart';
 import 'package:nareru/state/models/age-exercise-state.dart';
@@ -57,8 +56,7 @@ class _SuujiExerciseState extends State<SuujiExercise> {
           elevation: APPBAR_ELEVATION,
           backgroundColor: HD.getAppBarColor(context),
           iconTheme: HD.getAppBarIconTheme(context),
-          title: Text(AppLocalizations.of(context)!.numbers,
-              style: HEADER_TEXT_STYLE),
+          title: Text(HD.t('numbers')),
         ),
         body: ChangeNotifierProvider<SuujiExerciseNotifier>(
           create: (context) => SuujiExerciseNotifier(),

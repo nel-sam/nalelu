@@ -1,34 +1,36 @@
 name: nareru
 description: A new Flutter project.
 
-publish_to: "none"
+publish_to: 'none'
 version: 1.0.0+1
 
 environment:
-  sdk: ">=2.12.0 <3.0.0"
+  sdk: '>=2.12.0 <3.0.0'
 
 dependencies:
   flutter:
     sdk: flutter
-  # To generate, run: flutter gen-l10n
+
   flutter_localizations:
     sdk: flutter
-  intl: ^0.17.0
+  localization: ^2.1.0
 
-  cupertino_icons: ^1.0.2
-  provider: ^5.0.0
+  cupertino_icons: ^1.0.5
+  provider: ^6.0.5
 
 dev_dependencies:
   flutter_test:
     sdk: flutter
 
   # flutter pub run flutter_launcher_icons:main
-  flutter_launcher_icons: "^0.8.0"
-  flutter_native_splash: ^0.2.8
+  flutter_launcher_icons: ^0.12.0
+  flutter_native_splash: ^2.2.19
 
 flutter:
   generate: true
   uses-material-design: true
+  assets:
+    - lib/i18n/
 
 flutter_intl:
   enabled: true
@@ -44,9 +46,9 @@ flutter_icons:
 
 # flutter clean && flutter pub get && flutter pub run flutter_native_splash:create
 flutter_native_splash:
-  color: "#1f96f3"
+  color: '#1f96f3'
   image: assets/splash.png
-  color_dark: "#2b2b2f"
+  color_dark: '#2b2b2f'
   android: true
   ios: true
 

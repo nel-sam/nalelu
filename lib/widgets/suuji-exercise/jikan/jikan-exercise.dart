@@ -3,7 +3,6 @@ import 'package:nareru/hd-helpers.dart';
 import 'package:nareru/state/models/jikan-exercise-state.dart';
 import 'package:nareru/widgets/shared/info-button.dart';
 import 'package:nareru/widgets/suuji-exercise/jikan/clock.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 
 class JikanExercise extends StatefulWidget {
   final JikanExerciseState jikanExerciseState;
@@ -48,7 +47,7 @@ class _JikanExerciseState extends State<JikanExercise> {
             children: [
               Padding(
                 padding: const EdgeInsets.only(top: 18.0),
-                child: Text(AppLocalizations.of(context)!.typeTheTime),
+                child: Text(HD.t('typeTheTime')),
               ),
               InfoButton(
                 onPressed: () {
@@ -59,7 +58,7 @@ class _JikanExerciseState extends State<JikanExercise> {
               ),
             ],
           ),
-          if (showInfo) Text(AppLocalizations.of(context)!.timeDesc),
+          if (showInfo) Text(HD.t('timeDesc')),
           Padding(
             padding: const EdgeInsets.all(18.0),
             child: Row(

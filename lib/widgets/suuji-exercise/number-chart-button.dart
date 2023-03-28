@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nareru/widgets/suuji-exercise/number-chart.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import '../../hd-helpers.dart';
 
 class NumberChartButton extends StatelessWidget {
   const NumberChartButton({Key? key}) : super(key: key);
@@ -16,7 +16,9 @@ class NumberChartButton extends StatelessWidget {
               MaterialPageRoute(builder: (context) => NumberChart()),
             );
           },
-          child: Text(AppLocalizations.of(context)!.numberChart)),
+          child: Text(
+            HD.t('numberChart'),
+          )),
     );
   }
 }

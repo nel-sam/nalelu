@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
+import 'package:localization/localization.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:nareru/constants.dart';
 import 'package:nareru/state/suuji.exercise-notifier.dart';
@@ -19,12 +19,15 @@ class MyApp extends StatelessWidget {
         debugShowCheckedModeBanner: false,
         title: title,
         localizationsDelegates: [
-          AppLocalizations.delegate,
+          LocalJsonLocalization.delegate,
           GlobalMaterialLocalizations.delegate,
           GlobalWidgetsLocalizations.delegate,
-          GlobalCupertinoLocalizations.delegate
+          GlobalCupertinoLocalizations.delegate,
         ],
-        supportedLocales: [const Locale('en', ''), const Locale('es', '')],
+        supportedLocales: [
+          const Locale('en', ''),
+          const Locale('es', ''),
+        ],
         theme: ThemeData(
           brightness: Brightness.light,
           primarySwatch: ACCENT_COLOR,
