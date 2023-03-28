@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_gen/gen_l10n/app_localizations.dart';
 import 'package:nareru/constants.dart';
 import 'package:nareru/hd-helpers.dart';
 import 'package:nareru/widgets/suuji-exercise/number-card.dart';
@@ -21,8 +20,7 @@ class _NumberChartState extends State<NumberChart> {
           elevation: APPBAR_ELEVATION,
           backgroundColor: HD.getAppBarColor(context),
           iconTheme: HD.getAppBarIconTheme(context),
-          title: Text(AppLocalizations.of(context)!.numberChart,
-              style: HEADER_TEXT_STYLE),
+          title: Text('numberChart'),
         ),
         body: Padding(
           padding: EdgeInsets.all(18),
@@ -48,7 +46,7 @@ class _NumberChartState extends State<NumberChart> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(AppLocalizations.of(context)!.nativeNumbers),
+              Text(HD.t('nativeNumbers')),
             ],
           ),
           Row(
@@ -85,7 +83,7 @@ class _NumberChartState extends State<NumberChart> {
           Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(AppLocalizations.of(context)!.sinoNumbers),
+              Text(HD.t('numbers')),
             ],
           ),
           Row(

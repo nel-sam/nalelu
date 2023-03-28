@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nareru/constants.dart';
+import 'package:localization/localization.dart';
+
 
 class HD {
   static Color getAppBarColor(BuildContext context) {
@@ -23,5 +25,9 @@ class HD {
 
   static bool isDarkTheme(BuildContext context) {
     return MediaQuery.of(context).platformBrightness == Brightness.dark;
+  }
+
+  static String t(String key, {List<String> inserts = const []}) {
+    return key.i18n(inserts);
   }
 }
