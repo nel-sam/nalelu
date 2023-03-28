@@ -20,7 +20,7 @@ class _NumberChartState extends State<NumberChart> {
           elevation: APPBAR_ELEVATION,
           backgroundColor: HD.getAppBarColor(context),
           iconTheme: HD.getAppBarIconTheme(context),
-          title: Text('numberChart'),
+          title: Text(HD.t('numberChart')),
         ),
         body: Padding(
           padding: EdgeInsets.all(18),
