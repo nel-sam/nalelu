@@ -33,7 +33,7 @@ class HD {
       max: max,
     ));
   }
-
+  
   static HanNumber getSinoNumber(int digit) {
     if (digit <= 9) {
       return sinoNumberBank[digit];
@@ -110,14 +110,3 @@ class HD {
     return key.i18n(inserts);
   }
 }
-
-
-// if (tensPlace > 1) {
-//       if (tensPlace >= 2) {
-//         written += '${sinoNumberBank[tensPlace].written}じゅう';
-//         if (onesPlace == 0) written += 'さい';
-//       } else if (tensPlace == 2 && onesPlace == 0) written += 'はたち';
-//     } else if (onesPlace == 0)
-//       written += 'じゅっさい';
-//     else
-//       written += 'じゅう';

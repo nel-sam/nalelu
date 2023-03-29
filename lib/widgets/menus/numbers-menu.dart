@@ -36,12 +36,12 @@ class NumbersMenu extends StatelessWidget {
                   NMenuButton(
                     destination: AgeExercise(),
                     label: HD.t('age'),
-                    transLabel: '歳',
+                    transLabel: '年齢',
                   ),
                   NMenuButton(
                     destination: CountingExercise(),
                     label: HD.t('counting'),
-                    transLabel: '数える',
+                    transLabel: '数えること',
                   ),
                 ],
               ),
