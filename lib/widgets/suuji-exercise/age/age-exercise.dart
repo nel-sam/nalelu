@@ -31,7 +31,7 @@ class AgeExercise extends StatelessWidget {
               child: Column(
                 children: [
                   NavHeaderWrapper(navNotifier: navNotifier),
-                  Text('몇 살이에요?', style: TextStyle(fontSize: 20)),
+                  Text('なんさいですか?', style: TextStyle(fontSize: 20)),
                   Text(s.age.toString(), style: TextStyle(fontSize: 24)),
                   ChangeNotifierProvider<AgeNotifier>(
                     create: (context) => AgeNotifier(navNotifier.getActive),
@@ -71,7 +71,6 @@ class AgeExercise extends StatelessWidget {
                             : Text(s.correctAnswer, style: TextStyle(fontSize: 28)),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
-                              child: Text('살', style: TextStyle(fontSize: 28)),
                             ),
                           ],
                         );

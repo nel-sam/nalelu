@@ -5,11 +5,11 @@ import 'package:nareru/state/suuji/age/age-exercise-state.dart';
 
 class AgeGenerator {
   static createExercise(int index) {
-    HanNumber number = HD.getRandomNativeNumber();
+    HanNumber number = HD.getRandomSaiNumber();
 
     return AgeExerciseState(
       age: number.digit,
-      correctAnswer: number.alternate,
+      correctAnswer: number.written,
     );
   }
 

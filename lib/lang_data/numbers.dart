@@ -11,12 +11,11 @@ class HanNumber {
 }
 
 final List<HanNumber> nativeNumberBank = [
-  HanNumber(digit: 0, written: '영'),
-  HanNumber(digit: 1, written: '하나', alternate: '한'),
-  HanNumber(digit: 2, written: '둘', alternate: '두'),
-  HanNumber(digit: 3, written: '셋', alternate: '세'),
-  HanNumber(digit: 4, written: '넷', alternate: '네'),
-  HanNumber(digit: 5, written: '다섯'),
+  HanNumber(digit: 1, written: 'ひとつ', alternate: '一つ'),
+  HanNumber(digit: 2, written: 'ふたつ', alternate: '二つ'),
+  HanNumber(digit: 3, written: 'みっつ', alternate: '三つ'),
+  HanNumber(digit: 4, written: 'よっつ', alternate: '四つ'),
+  HanNumber(digit: 5, written: 'いつつ', alternate: '五つ'),
   HanNumber(digit: 6, written: '여섯'),
   HanNumber(digit: 7, written: '일곱'),
   HanNumber(digit: 8, written: '여덟'),
@@ -114,17 +113,30 @@ final List<HanNumber> nativeNumberBank = [
 ];
 
 final List<HanNumber> sinoNumberBank = [
-  HanNumber(digit: 0, written: '영'),
-  HanNumber(digit: 1, written: '일'),
-  HanNumber(digit: 2, written: '이'),
-  HanNumber(digit: 3, written: '삼'),
-  HanNumber(digit: 4, written: '사'),
-  HanNumber(digit: 5, written: '오'),
-  HanNumber(digit: 6, written: '육'),
-  HanNumber(digit: 7, written: '칠'),
-  HanNumber(digit: 8, written: '팔'),
-  HanNumber(digit: 9, written: '구'),
-  HanNumber(digit: 10, written: '십'),
-  HanNumber(digit: 100, written: '백'),
-  HanNumber(digit: 1000, written: '천'),
+  HanNumber(digit: 1, written: 'れい', alternate: '零'),
+  HanNumber(digit: 1, written: 'いち', alternate: '一'),
+  HanNumber(digit: 2, written: 'に', alternate: '二'),
+  HanNumber(digit: 3, written: 'さん', alternate: '三'),
+  HanNumber(digit: 4, written: 'よん', alternate: '四'),
+  HanNumber(digit: 5, written: 'ご', alternate: '五'),
+  HanNumber(digit: 6, written: 'ろく', alternate: '六'),
+  HanNumber(digit: 7, written: 'なな', alternate: '七'),
+  HanNumber(digit: 8, written: 'はち', alternate: '八'),
+  HanNumber(digit: 9, written: 'きゅう', alternate: '九'),
+  HanNumber(digit: 10, written: 'じゅう', alternate: '十'),
+  HanNumber(digit: 100, written: 'ひゃく', alternate: '百'),
+  HanNumber(digit: 1000, written: 'せん', alternate: '千'),
+];
+
+final List<HanNumber> saiNumberBank = [
+  HanNumber(digit: 0, written: '', alternate: ''),
+  HanNumber(digit: 1, written: 'いっさい', alternate: '一歳'),
+  HanNumber(digit: 2, written: 'にさい', alternate: '二歳'),
+  HanNumber(digit: 3, written: 'さんさい', alternate: '三歳'),
+  HanNumber(digit: 4, written: 'よんさい', alternate: '四歳'),
+  HanNumber(digit: 5, written: 'ごさい', alternate: '五歳'),
+  HanNumber(digit: 6, written: 'ろくさい', alternate: '六歳'),
+  HanNumber(digit: 7, written: 'ななさい', alternate: '七歳'),
+  HanNumber(digit: 8, written: 'はっさい', alternate: '八歳'),
+  HanNumber(digit: 9, written: 'きゅうさい', alternate: '九歳'),
 ];
