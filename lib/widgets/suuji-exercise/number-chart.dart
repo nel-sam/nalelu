@@ -64,7 +64,7 @@ class NumberChart extends StatelessWidget {
   }
 
   getSinoNumberChart(BuildContext context) {
-    List<HanNumber> numbers = [];
+    List<NareNumber> numbers = [];
     var maxNum = 100;
 
     for (int i = 0; i <= maxNum; i++) {
@@ -72,7 +72,7 @@ class NumberChart extends StatelessWidget {
       var written = hn.alternate == hn.written
           ? hn.written
           : '${hn.written}/${hn.alternate}';
-      numbers.add(HanNumber(digit: hn.digit, written: written));
+      numbers.add(NareNumber(digit: hn.digit, written: written));
     }
 
     return Padding(

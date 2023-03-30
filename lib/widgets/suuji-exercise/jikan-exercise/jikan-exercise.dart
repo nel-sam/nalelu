@@ -8,6 +8,7 @@ import 'package:nareru/widgets/shared/home-button-wrapper.dart';
 import 'package:nareru/widgets/shared/nav-header-wrapper.dart';
 import 'package:nareru/widgets/shared/question-free-form.dart';
 import 'package:nareru/widgets/suuji-exercise/number-chart.dart';
+import 'package:nareru/widgets/shared/hint-button.dart';
 import 'package:nareru/widgets/suuji-exercise/jikan-exercise/clock.dart';
 import 'package:nrs_flutter_lib/enums.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
@@ -61,7 +62,7 @@ class JikanExercise extends StatelessWidget {
       child: Consumer<ExerciseNavNotifier>(
         builder: (context, navNotifier, child) {
           var s = navNotifier.getActive();
-
+          bool isHintActive = false;
           return Padding(
             padding: const EdgeInsets.only(left: 24, right: 24),
             child: Column(
@@ -99,22 +100,30 @@ class JikanExercise extends StatelessWidget {
                           Column(
                             children: [
                               NAnswerStatusIcon(status: isHourCorrect),
-                              Container(
-                                width: textFieldWidth,
-                                child: QuestionFreeForm(
-                                  isActive: false,
-                                  maxLength: s.correctHour.length,
-                                  activeValue: s.userHour,
-                                  hintValue: '',
-                                  correctValues: [s.correctHour],
-                                  onChanged: (String newVal) =>
-                                      jikanNotifier.updateHour(newVal),
-                                ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text('시'),
-                              ),
+                              s.correctHour != s.userHour
+                                  ? HintButton(
+                                      onHintActive: (bool onHintActive) =>
+                                          isHintActive = onHintActive,
+                                      userInput: s.userHour,
+                                      correctAnswer: s.correctHour,
+                                      onHintUpdate: (String hint) => {
+                                            jikanNotifier.updateHour(hint),
+                                          })
+                                  : Container(),
+                              s.correctHour != s.userHour
+                                  ? Container(
+                                      width: textFieldWidth,
+                                      child: QuestionFreeForm(
+                                        isActive: isHintActive,
+                                        maxLength: s.correctHour.length,
+                                        activeValue: s.userHour,
+                                        hintValue: '',
+                                        correctValues: [s.correctHour],
+                                        onChanged: (String newVal) =>
+                                            jikanNotifier.updateHour(newVal),
+                                      ),
+                                    )
+                                  : Text(s.userHour, style: TextStyle(fontSize: 20)),
                             ],
                           ),
                           Column(
@@ -132,10 +141,6 @@ class JikanExercise extends StatelessWidget {
                                       jikanNotifier.updateMin(newVal),
                                 ),
                               ),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text('분'),
-                              ),
                             ],
                           ),
                           Column(
@@ -152,10 +157,6 @@ class JikanExercise extends StatelessWidget {
                                   onChanged: (String newVal) =>
                                       jikanNotifier.updateSec(newVal),
                                 ),
-                              ),
-                              Padding(
-                                padding: const EdgeInsets.all(8.0),
-                                child: Text('초'),
                               ),
                             ],
                           ),

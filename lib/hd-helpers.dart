@@ -20,21 +20,21 @@ class HD {
     return Nrs.getTextStyle(context: context, fontSize: fontSize);
   }
 
-  static HanNumber getRandomNativeNumber({int min = 0, int max = 99}) {
+  static NareNumber getRandomNativeNumber({int min = 0, int max = 99}) {
     return nativeNumberBank[Nrs.getRandomNumber(
       min: min,
       max: max,
     )];
   }
 
-  static HanNumber getRandomSinoNumber({int min = 0, int max = 99}) {
+  static NareNumber getRandomSinoNumber({int min = 0, int max = 99}) {
     return HD.getSinoNumber(Nrs.getRandomNumber(
       min: min,
       max: max,
     ));
   }
-  
-  static HanNumber getSinoNumber(int digit) {
+
+  static NareNumber getSinoNumber(int digit) {
     if (digit <= 9) {
       return sinoNumberBank[digit];
     }
@@ -64,17 +64,17 @@ class HD {
       written += sinoNumberBank[onesPlace - 1].written;
     }
 
-    return HanNumber(digit: digit, written: written);
+    return NareNumber(digit: digit, written: written);
   }
 
-  static HanNumber getRandomSaiNumber({int min = 1, int max = 99}) {
+  static NareNumber getRandomSaiNumber({int min = 1, int max = 99}) {
     return HD.getSaiNumber(Nrs.getRandomNumber(
       min: min,
       max: max,
     ));
   }
 
-  static HanNumber getSaiNumber(int digit) {
+  static NareNumber getSaiNumber(int digit) {
     if (digit <= 9) {
       return saiNumberBank[digit];
     }
@@ -103,7 +103,39 @@ class HD {
     } else
       written += '${saiNumberBank[onesPlace].written}';
 
-    return HanNumber(digit: digit, written: written);
+    return NareNumber(digit: digit, written: written);
+  }
+
+  static NareNumber getRandomHourNumber({int min = 1, int max = 99}) {
+    return HD.getHourNumber(Nrs.getRandomNumber(
+      min: min,
+      max: max,
+    ));
+  }
+
+  static NareNumber getHourNumber(int digit) {
+    var written = '';
+    var hundredsPlace = (digit / 100).floor();
+    var hundredsValue = hundredsPlace * 100;
+    var tensPlace = ((digit - hundredsValue) / 10).floor();
+    var tensValue = tensPlace * 10;
+    var onesPlace = digit - hundredsValue - tensValue;
+
+    if (tensPlace > 0) {
+      written += 'じゅう';
+    }
+
+    if (onesPlace > 0) {
+      if (onesPlace == 4)
+        written += 'よじ';
+      else if (onesPlace == 7)
+        written += 'しちじ';
+      else
+        written += '${sinoNumberBank[onesPlace].written}じ';
+    } else if (tensPlace == 0 && tensPlace == 0)
+      written += '${sinoNumberBank[onesPlace].written}じ';
+
+    return NareNumber(digit: digit, written: written);
   }
 
   static String t(String key, {List<String> inserts = const []}) {

@@ -5,7 +5,7 @@ import 'package:nareru/state/suuji/age/age-exercise-state.dart';
 
 class AgeGenerator {
   static createExercise(int index) {
-    HanNumber number = HD.getRandomSaiNumber();
+    NareNumber number = HD.getRandomSaiNumber();
 
     return AgeExerciseState(
       age: number.digit,
