@@ -142,3 +142,16 @@ final List<NareNumber> saiNumberBank = [
   NareNumber(digit: 8, written: 'はっさい', alternate: '八歳'),
   NareNumber(digit: 9, written: 'きゅうさい', alternate: '九歳'),
 ];
+
+final List<NareNumber> minuteNumberBank = [
+  NareNumber(digit: 0, written: '', alternate: ''),
+  NareNumber(digit: 1, written: 'いっぷん', alternate: '一分'),
+  NareNumber(digit: 2, written: 'にふん', alternate: '二分'),
+  NareNumber(digit: 3, written: 'さんぷん', alternate: '三分'),
+  NareNumber(digit: 4, written: 'よんぷん', alternate: '四分'),
+  NareNumber(digit: 5, written: 'ごふん', alternate: '五分'),
+  NareNumber(digit: 6, written: 'ろっぷん', alternate: '六分'),
+  NareNumber(digit: 7, written: 'ななふん', alternate: '七分'),
+  NareNumber(digit: 8, written: 'はっぷん', alternate: '八分'),
+  NareNumber(digit: 9, written: 'きゅうふん', alternate: '九分'),
+];

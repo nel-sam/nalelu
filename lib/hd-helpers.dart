@@ -122,7 +122,7 @@ class HD {
     var onesPlace = digit - hundredsValue - tensValue;
 
     if (tensPlace > 0) {
-      written += 'じゅう';
+      written += 'じゅうじ';
     }
 
     if (onesPlace > 0) {
@@ -134,6 +134,70 @@ class HD {
         written += '${sinoNumberBank[onesPlace].written}じ';
     } else if (tensPlace == 0 && tensPlace == 0)
       written += '${sinoNumberBank[onesPlace].written}じ';
+
+    return NareNumber(digit: digit, written: written);
+  }
+
+  static NareNumber getRandomMinuteNumber({int min = 0, int max = 99}) {
+    return HD.getMinuteNumber(Nrs.getRandomNumber(
+      min: min,
+      max: max,
+    ));
+  }
+
+  static NareNumber getMinuteNumber(int digit) {
+    var written = '';
+    var hundredsPlace = (digit / 100).floor();
+    var hundredsValue = hundredsPlace * 100;
+    var tensPlace = ((digit - hundredsValue) / 10).floor();
+    var tensValue = tensPlace * 10;
+    var onesPlace = digit - hundredsValue - tensValue;
+
+    if (tensPlace > 1) {
+      if (onesPlace == 0)
+        written += '${sinoNumberBank[tensPlace].written}じゅうぷん';
+      else
+        written += '${sinoNumberBank[tensPlace].written}じゅう';
+    } else if (tensPlace != 0 && onesPlace != 0)
+      written += 'じゅう';
+    else if (onesPlace == 0) written += 'じゅうぷん';
+
+    if (onesPlace > 0) {
+      written += '${minuteNumberBank[onesPlace].written}';
+    } else if (tensPlace == 0 && tensPlace == 0)
+      written += '${minuteNumberBank[onesPlace].written}';
+
+    return NareNumber(digit: digit, written: written);
+  }
+
+  static NareNumber getRandomSecondNumber({int min = 0, int max = 99}) {
+    return HD.getSecondNumber(Nrs.getRandomNumber(
+      min: min,
+      max: max,
+    ));
+  }
+
+  static NareNumber getSecondNumber(int digit) {
+    var written = '';
+    var hundredsPlace = (digit / 100).floor();
+    var hundredsValue = hundredsPlace * 100;
+    var tensPlace = ((digit - hundredsValue) / 10).floor();
+    var tensValue = tensPlace * 10;
+    var onesPlace = digit - hundredsValue - tensValue;
+
+    if (tensPlace > 1) {
+      if (onesPlace == 0)
+        written += '${sinoNumberBank[tensPlace].written}じゅうびょう';
+      else
+        written += '${sinoNumberBank[tensPlace].written}じゅう';
+    } else if (tensPlace != 0 && onesPlace != 0)
+      written += 'じゅう';
+    else if (onesPlace == 0) written += 'じゅうびょう';
+
+    if (onesPlace > 0) {
+      written += '${sinoNumberBank[onesPlace].written}びょう';
+    } else if (tensPlace == 0 && tensPlace == 0)
+      written += '${sinoNumberBank[onesPlace].written}びょう';
 
     return NareNumber(digit: digit, written: written);
   }

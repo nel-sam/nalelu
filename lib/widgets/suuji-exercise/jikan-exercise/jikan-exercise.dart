@@ -123,41 +123,68 @@ class JikanExercise extends StatelessWidget {
                                             jikanNotifier.updateHour(newVal),
                                       ),
                                     )
-                                  : Text(s.userHour, style: TextStyle(fontSize: 20)),
+                                  : Text(s.correctHour,
+                                      style: TextStyle(fontSize: 20)),
                             ],
                           ),
                           Column(
                             children: [
                               NAnswerStatusIcon(status: isMinCorrect),
-                              Container(
-                                width: textFieldWidth,
-                                child: QuestionFreeForm(
-                                  isActive: false,
-                                  maxLength: s.correctMin.length,
-                                  activeValue: s.userMin,
-                                  hintValue: '',
-                                  correctValues: [s.correctMin],
-                                  onChanged: (String newVal) =>
-                                      jikanNotifier.updateMin(newVal),
-                                ),
-                              ),
+                              s.correctMin != s.userMin
+                                  ? HintButton(
+                                      onHintActive: (bool onHintActive) =>
+                                          isHintActive = onHintActive,
+                                      userInput: s.userMin,
+                                      correctAnswer: s.correctMin,
+                                      onHintUpdate: (String hint) => {
+                                            jikanNotifier.updateMin(hint),
+                                          })
+                                  : Container(),
+                              s.correctMin != s.userMin
+                                  ? Container(
+                                      width: textFieldWidth,
+                                      child: QuestionFreeForm(
+                                        isActive: isHintActive,
+                                        maxLength: s.correctMin.length,
+                                        activeValue: s.userMin,
+                                        hintValue: '',
+                                        correctValues: [s.correctMin],
+                                        onChanged: (String newVal) =>
+                                            jikanNotifier.updateMin(newVal),
+                                      ),
+                                    )
+                                  : Text(s.correctMin,
+                                      style: TextStyle(fontSize: 20)),
                             ],
                           ),
                           Column(
                             children: [
                               NAnswerStatusIcon(status: isSecCorrect),
-                              Container(
-                                width: textFieldWidth,
-                                child: QuestionFreeForm(
-                                  isActive: false,
-                                  maxLength: s.correctSec.length,
-                                  activeValue: s.userSec,
-                                  hintValue: '',
-                                  correctValues: [s.correctSec],
-                                  onChanged: (String newVal) =>
-                                      jikanNotifier.updateSec(newVal),
-                                ),
-                              ),
+                              s.correctSec != s.userSec
+                                  ? HintButton(
+                                      onHintActive: (bool onHintActive) =>
+                                          isHintActive = onHintActive,
+                                      userInput: s.userSec,
+                                      correctAnswer: s.correctSec,
+                                      onHintUpdate: (String hint) => {
+                                            jikanNotifier.updateSec(hint),
+                                          })
+                                  : Container(),
+                              s.correctSec != s.userSec
+                                  ? Container(
+                                      width: textFieldWidth,
+                                      child: QuestionFreeForm(
+                                        isActive: isHintActive,
+                                        maxLength: s.correctSec.length,
+                                        activeValue: s.userSec,
+                                        hintValue: '',
+                                        correctValues: [s.correctSec],
+                                        onChanged: (String newVal) =>
+                                            jikanNotifier.updateSec(newVal),
+                                      ),
+                                    )
+                                  : Text(s.correctSec,
+                                      style: TextStyle(fontSize: 20)),
                             ],
                           ),
                         ],
