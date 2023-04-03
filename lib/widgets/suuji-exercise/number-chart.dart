@@ -32,26 +32,15 @@ class NumberChart extends StatelessWidget {
         children: [
           Row(
             children: [
-              NSubHeader(HD.t('nativeNumbers)')),
+              NSubHeader(HD.t('nativeNumbers')),
             ],
           ),
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            mainAxisAlignment: MainAxisAlignment.start,
             children: [
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                ...nativeNumberBank.getRange(1, 34).map((e) => Text(
-                      '${e.digit} ${e.written}',
-                      style: boldStyle,
-                    ))
-              ]),
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                ...nativeNumberBank
-                    .getRange(34, 67)
-                    .map((e) => Text('${e.digit} ${e.written}'))
-              ]),
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                ...nativeNumberBank.getRange(67, 100).map((e) => Text(
+                ...nativeNumberBank.getRange(1, 11).map((e) => Text(
                       '${e.digit} ${e.written}',
                       style: boldStyle,
                     ))
@@ -71,7 +60,7 @@ class NumberChart extends StatelessWidget {
       var hn = HD.getSinoNumber(i);
       var written = hn.alternate == hn.written
           ? hn.written
-          : '${hn.written}/${hn.alternate}';
+          : '${hn.written}';
       numbers.add(NareNumber(digit: hn.digit, written: written));
     }
 
@@ -81,7 +70,7 @@ class NumberChart extends StatelessWidget {
         children: [
           Row(
             children: [
-              NSubHeader(HD.t('sinoNumbers)')),
+              NSubHeader(HD.t('sinoNumbers')),
             ],
           ),
           Row(

@@ -48,20 +48,20 @@ class HD {
 
     if (hundredsPlace > 0) {
       if (hundredsPlace > 1)
-        written += 'ひゃく${sinoNumberBank[hundredsPlace - 1].written}';
+        written += '${sinoNumberBank[hundredsPlace].written}ひゃく';
       else
         written += 'ひゃく';
     }
 
     if (tensPlace > 0) {
       if (tensPlace > 1)
-        written += 'じゅう${sinoNumberBank[tensPlace - 1].written}';
+        written += '${sinoNumberBank[tensPlace].written}じゅう';
       else
         written += 'じゅう';
     }
 
     if (onesPlace > 0) {
-      written += sinoNumberBank[onesPlace - 1].written;
+      written += sinoNumberBank[onesPlace].written;
     }
 
     return NareNumber(digit: digit, written: written);
@@ -122,7 +122,8 @@ class HD {
     var onesPlace = digit - hundredsValue - tensValue;
 
     if (tensPlace > 0) {
-      written += 'じゅうじ';
+      written += 'じゅう';
+      if (onesPlace == 0) written += 'じ';
     }
 
     if (onesPlace > 0) {
@@ -132,7 +133,7 @@ class HD {
         written += 'しちじ';
       else
         written += '${sinoNumberBank[onesPlace].written}じ';
-    } else if (tensPlace == 0 && tensPlace == 0)
+    } else if (onesPlace == 0 && tensPlace == 0)
       written += '${sinoNumberBank[onesPlace].written}じ';
 
     return NareNumber(digit: digit, written: written);
