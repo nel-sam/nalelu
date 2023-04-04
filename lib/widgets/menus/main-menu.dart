@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nareru/constants.dart';
-import 'package:nareru/hd-helpers.dart';
+import 'package:nareru/na-helpers.dart';
 import 'package:nareru/widgets/doushi-exercise/doushi-exercise-1.dart';
 import 'package:nareru/widgets/menus/numbers-menu.dart';
 import 'package:nrs_flutter_lib/constants.dart';
@@ -44,13 +44,13 @@ class MainMenu extends StatelessWidget {
             children: [
               NMenuButton(
                 destination: NumbersMenu(),
-                label: HD.t('numbersExercise'),
+                label: NA.t('numbersExercise'),
                 transLabel: '数字',
 
               ),
               NMenuButton(
                 destination: DoushiExerciseLevel1(),
-                label: HD.t('verbs'),
+                label: NA.t('verbs'),
                 transLabel: '動詞',
               ),
             ],

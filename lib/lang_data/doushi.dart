@@ -1,4 +1,4 @@
-import 'package:nareru/hd-helpers.dart';
+import 'package:nareru/na-helpers.dart';
 
 var doushiBank = [
   Doushi(
@@ -6,7 +6,7 @@ var doushiBank = [
     infinitive: '持つ',
     infinitiveFurigana: 'も',
     root: '持ち',
-    translation: HD.t('Motsu'),
+    translation: NA.t('Motsu'),
     banmar: DoushiConj(
       present: '持つ',
       past: '持った',
@@ -17,7 +17,7 @@ var doushiBank = [
     infinitive: '持つ',
     infinitiveFurigana: 'も',
     root: '持ち',
-    translation: HD.t('Motsu'),
+    translation: NA.t('Motsu'),
     banmar: DoushiConj(
       present: '持つ',
       past: '持った',
@@ -28,7 +28,7 @@ var doushiBank = [
     infinitive: '聞く',
     infinitiveFurigana: 'き',
     root: '聞き',
-    translation: HD.t('kiku'),
+    translation: NA.t('kiku'),
     banmar: DoushiConj(
       present: '聞く',
       past: '聞いた',
@@ -39,7 +39,7 @@ var doushiBank = [
     infinitive: '見る',
     infinitiveFurigana: 'み',
     root: '見',
-    translation: HD.t('miru'),
+    translation: NA.t('miru'),
     banmar: DoushiConj(
       present: '見る',
       past: '見た',
@@ -50,7 +50,7 @@ var doushiBank = [
     infinitive: '入る',
     infinitiveFurigana: 'はい',
     root: '入り',
-    translation: HD.t('hairu'),
+    translation: NA.t('hairu'),
     banmar: DoushiConj(
       present: '入る',
       past: '入った',
@@ -61,7 +61,7 @@ var doushiBank = [
     infinitive: '来る',
     infinitiveFurigana: 'く',
     root: 'き',
-    translation: HD.t('kuru'),
+    translation: NA.t('kuru'),
     banmar: DoushiConj(
       present: '来る',
       past: '来た',
@@ -72,7 +72,7 @@ var doushiBank = [
     infinitive: 'なる',
     infinitiveFurigana: 'なる',
     root: 'なり',
-    translation: HD.t('naru'),
+    translation: NA.t('naru'),
     banmar: DoushiConj(
       present: 'なる',
       past: 'なった',
@@ -83,7 +83,7 @@ var doushiBank = [
     infinitive: '走る',
     infinitiveFurigana: 'はし',
     root: '走り',
-    translation: HD.t('hashiru'),
+    translation: NA.t('hashiru'),
     banmar: DoushiConj(
       present: '走る',
       past: '走った',
@@ -94,7 +94,7 @@ var doushiBank = [
     infinitive: 'する',
     infinitiveFurigana: 'する',
     root: '',
-    translation: HD.t('suru'),
+    translation: NA.t('suru'),
     banmar: DoushiConj(
       present: 'する',
       past: 'した',
@@ -105,7 +105,7 @@ var doushiBank = [
     infinitive: '歩く',
     infinitiveFurigana: 'ある',
     root: '歩き',
-    translation: HD.t('aruku'),
+    translation: NA.t('aruku'),
     banmar: DoushiConj(
       present: '歩く',
       past: '歩いた',

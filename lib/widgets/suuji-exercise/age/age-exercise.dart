@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nareru/hd-helpers.dart';
+import 'package:nareru/na-helpers.dart';
 import 'package:nareru/state/enums.dart';
 import 'package:nareru/state/exercise-nav-notifier.dart';
 import 'package:nareru/state/suuji/age/age-notifier.dart';
@@ -89,7 +89,7 @@ class AgeExercise extends StatelessWidget {
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: Scaffold(
         resizeToAvoidBottomInset: false,
-        appBar: Nrs.NrsAppBar(title: HD.t('numbers'), context: context),
+        appBar: Nrs.NrsAppBar(title: NA.t('numbers'), context: context),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -103,7 +103,7 @@ class AgeExercise extends StatelessWidget {
           NFooterMenu(buttons: [
             HomeButtonWrapper(),
             NFooterButton(
-              text: HD.t('numberChart'),
+              text: NA.t('numberChart'),
               icon: Icons.list,
               onPressed: () {
                 Navigator.push(

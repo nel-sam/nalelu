@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nareru/hd-helpers.dart';
+import 'package:nareru/na-helpers.dart';
 import 'package:nrs_flutter_lib/widgets/n_home_button.dart';
 
 class HomeButtonWrapper extends StatelessWidget {
@@ -12,7 +12,7 @@ class HomeButtonWrapper extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final text = HD.t('home');
+    final text = NA.t('home');
     return NHomeButton(
       homeLabel: text,
       isActive: isActive,

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nareru/hd-helpers.dart';
+import 'package:nareru/na-helpers.dart';
 import 'package:nareru/state/enums.dart';
 import 'package:nareru/state/exercise-nav-notifier.dart';
 import 'package:nareru/state/suuji/count/count-notifier.dart';
@@ -29,7 +29,7 @@ class CountingExercise extends StatelessWidget {
             var label = activeItem.label(context);
 
             var infoText =
-                activeItem.isSino ? HD.t('use_sino') : HD.t('use_native');
+                activeItem.isSino ? NA.t('use_sino') : NA.t('use_native');
 
             infoText +=
                 ' ${label.toLowerCase()}: ${activeItem.correctAnswer}${activeItem.isSino ? '' : ' '}${activeItem.counter}';
@@ -46,7 +46,7 @@ class CountingExercise extends StatelessWidget {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           NTextSpan(label,
-                              textStyle: HD.fontStyleBold(context)),
+                              textStyle: NA.fontStyleBold(context)),
                           NInfoButton(text: infoText),
                         ],
                       ),
@@ -107,7 +107,7 @@ class CountingExercise extends StatelessWidget {
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: Scaffold(
         resizeToAvoidBottomInset: false,
-        appBar: Nrs.NrsAppBar(title: HD.t('numbers'), context: context),
+        appBar: Nrs.NrsAppBar(title: NA.t('numbers'), context: context),
         body: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -121,7 +121,7 @@ class CountingExercise extends StatelessWidget {
           NFooterMenu(buttons: [
             HomeButtonWrapper(),
             NFooterButton(
-              text: HD.t('numberChart'),
+              text: NA.t('numberChart'),
               icon: Icons.list,
               onPressed: () {
                 Navigator.push(

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nareru/hd-helpers.dart';
+import 'package:nareru/na-helpers.dart';
 import 'package:nareru/lang_data/numbers.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 import 'package:nrs_flutter_lib/widgets/n_sub_header.dart';
@@ -11,7 +11,7 @@ class NumberChart extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: Nrs.NrsAppBar(
-            title: HD.t('numberChart'), context: context),
+            title: NA.t('numberChart'), context: context),
         body: Padding(
           padding: EdgeInsets.all(18),
           child: SingleChildScrollView(
@@ -32,7 +32,7 @@ class NumberChart extends StatelessWidget {
         children: [
           Row(
             children: [
-              NSubHeader(HD.t('nativeNumbers')),
+              NSubHeader(NA.t('nativeNumbers')),
             ],
           ),
           Row(
@@ -57,7 +57,7 @@ class NumberChart extends StatelessWidget {
     var maxNum = 100;
 
     for (int i = 0; i <= maxNum; i++) {
-      var hn = HD.getSinoNumber(i);
+      var hn = NA.getSinoNumber(i);
       var written = hn.alternate == hn.written
           ? hn.written
           : '${hn.written}';
@@ -70,7 +70,7 @@ class NumberChart extends StatelessWidget {
         children: [
           Row(
             children: [
-              NSubHeader(HD.t('sinoNumbers')),
+              NSubHeader(NA.t('sinoNumbers')),
             ],
           ),
           Row(

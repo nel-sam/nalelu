@@ -36,8 +36,6 @@ final List<NareNumber> sinoNumberBank = [
   NareNumber(digit: 8, written: 'はち', alternate: '八'),
   NareNumber(digit: 9, written: 'きゅう', alternate: '九'),
   NareNumber(digit: 10, written: 'じゅう', alternate: '十'),
-  // NareNumber(digit: 11, written: 'じゅういち', alternate: '十一'),
-  // NareNumber(digit: 12, written: 'じゅう', alternate: '十二'),
   NareNumber(digit: 100, written: 'ひゃくに', alternate: '百'),
   NareNumber(digit: 1000, written: 'せん', alternate: '千'),
 ];

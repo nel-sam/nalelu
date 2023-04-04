@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nareru/hd-helpers.dart';
+import 'package:nareru/na-helpers.dart';
 import 'package:nareru/lang_data/doushi.dart';
 import 'package:nareru/widgets/shared/ad-card.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
@@ -27,7 +27,7 @@ class ChartRow extends StatelessWidget {
             )),
         NTextSpan(
           conj,
-          textStyle: HD.fontStyleBold(context),
+          textStyle: NA.fontStyleBold(context),
         ),
       ],
     );
@@ -57,11 +57,11 @@ class VerbChart extends StatelessWidget {
                 child: Column(
                   children: [
                     ChartRow(
-                      label: HD.t('present'),
+                      label: NA.t('present'),
                       conj: doushi.banmar.present,
                     ),
                     ChartRow(
-                      label: HD.t('past'),
+                      label: NA.t('past'),
                       conj: doushi.banmar.past,
                     ),
                   ],

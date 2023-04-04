@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nareru/hd-helpers.dart';
+import 'package:nareru/na-helpers.dart';
 import 'package:nareru/state/doushi/doushi-notifier.dart';
 import 'package:nareru/state/enums.dart';
 import 'package:nareru/state/exercise-nav-notifier.dart';
@@ -27,7 +27,7 @@ class DoushiExerciseLevel1 extends StatelessWidget {
           builder: (context, navNotifier, child) => Scaffold(
             resizeToAvoidBottomInset: false,
             appBar: Nrs.NrsAppBar(
-                title: '${HD.t('verbs')} 1 (반말)', context: context),
+                title: '${NA.t('verbs')} 1 (반말)', context: context),
             body: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -42,7 +42,7 @@ class DoushiExerciseLevel1 extends StatelessWidget {
               NFooterMenu(
                 buttons: [
                   NFooterButton(
-                    text: HD.t('verbChart'),
+                    text: NA.t('verbChart'),
                     icon: Icons.list,
                     onPressed: () {
                       Navigator.push(
@@ -81,7 +81,7 @@ class DoushiExerciseLevel1 extends StatelessWidget {
                   children: [
                     NTextSpan(
                       doushi.infinitive,
-                      textStyle: HD.fontStyleBold(context),
+                      textStyle: NA.fontStyleBold(context),
                       textAlign: TextAlign.end,
                     ),
                     SizedBox(width: FONT_SIZE),
@@ -91,7 +91,7 @@ class DoushiExerciseLevel1 extends StatelessWidget {
                 VerbInput(
                   doushi: doushi,
                   activeValue: doushiNotifier.getUserInput(0),
-                  label: HD.t('present'),
+                  label: NA.t('present'),
                   correctValue: doushi.banmar.present,
                   onChanged: (String newValue) =>
                       doushiNotifier.updateUserInput(0, newValue),
@@ -99,7 +99,7 @@ class DoushiExerciseLevel1 extends StatelessWidget {
                 VerbInput(
                   doushi: doushi,
                   activeValue: doushiNotifier.getUserInput(1),
-                  label: HD.t('past'),
+                  label: NA.t('past'),
                   correctValue: doushi.banmar.past,
                   onChanged: (String newValue) =>
                       doushiNotifier.updateUserInput(1, newValue),

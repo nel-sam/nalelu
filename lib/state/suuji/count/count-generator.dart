@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nareru/constants.dart';
-import 'package:nareru/hd-helpers.dart';
+import 'package:nareru/na-helpers.dart';
 import 'package:nareru/state/suuji/count/count-exercise-state.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 
@@ -9,7 +9,7 @@ class CountGenerator {
     var countType = Nrs.getRandomNumber(max: 2);
 
     if (countType == 0) {
-      var sinoNumb = HD.getRandomSinoNumber(min: 1);
+      var sinoNumb = NA.getRandomSinoNumber(min: 1);
       var random = Nrs.getRandomNumber(min: 0, max: 3);
 
       switch (random) {
@@ -17,35 +17,35 @@ class CountGenerator {
           return CountExerciseState(
             isSino: true,
             icon: Icons.calendar_month_outlined,
-            label: HD.t('months'),
+            label: NA.t('months'),
             count: sinoNumb.digit,
             correctAnswer: sinoNumb.alternate,
-            counter: '월',
+            counter: 'っヶ月',
           );
 
         case 1:
           return CountExerciseState(
             isSino: true,
             icon: Icons.calendar_today_outlined,
-            label: HD.t('days'),
+            label: NA.t('days'),
             count: sinoNumb.digit,
             correctAnswer: sinoNumb.alternate,
-            counter: '일',
+            counter: '',
           );
 
         case 2:
           return CountExerciseState(
             isSino: true,
             icon: Icons.wb_twighlight,
-            label: HD.t('years'),
+            label: NA.t('years'),
             count: sinoNumb.digit,
             correctAnswer: sinoNumb.alternate,
-            counter: '년',
+            counter: '年',
           );
       }
     }
 
-    var hanNumb = HD.getRandomNativeNumber(min: 1);
+    var hanNumb = NA.getRandomNativeNumber(min: 1);
     var random = Nrs.getRandomNumber(min: 0, max: 7);
 
     switch (random) {
@@ -53,17 +53,17 @@ class CountGenerator {
         return CountExerciseState(
           isSino: false,
           icon: Icons.person,
-          label: HD.t('people'),
+          label: NA.t('people'),
           count: hanNumb.digit,
           correctAnswer: hanNumb.alternate,
-          counter: '명',
+          counter: '人',
         );
 
       case 1:
         return CountExerciseState(
           isSino: false,
           icon: Icons.pets,
-          label: HD.t('animals'),
+          label: NA.t('animals'),
           count: hanNumb.digit,
           correctAnswer: hanNumb.alternate,
           counter: '마리',
@@ -73,50 +73,50 @@ class CountGenerator {
         return CountExerciseState(
           isSino: false,
           icon: Icons.wine_bar,
-          label: HD.t('bottles'),
+          label: NA.t('bottles'),
           count: hanNumb.digit,
           correctAnswer: hanNumb.alternate,
-          counter: '병',
+          counter: '',
         );
 
       case 3:
         return CountExerciseState(
           isSino: false,
           icon: Icons.bike_scooter,
-          label: HD.t('things'),
+          label: NA.t('things'),
           count: hanNumb.digit,
           correctAnswer: hanNumb.alternate,
-          counter: '개',
+          counter: '',
         );
 
       case 4:
         return CountExerciseState(
           isSino: false,
           icon: Icons.book_outlined,
-          label: HD.t('books'),
+          label: NA.t('books'),
           count: hanNumb.digit,
           correctAnswer: hanNumb.alternate,
-          counter: '권',
+          counter: '',
         );
 
       case 5:
         return CountExerciseState(
           isSino: false,
           icon: Icons.local_pizza_outlined,
-          label: HD.t('slices'),
+          label: NA.t('slices'),
           count: hanNumb.digit,
           correctAnswer: hanNumb.alternate,
-          counter: '조각',
+          counter: '',
         );
 
       case 6:
         return CountExerciseState(
           isSino: false,
           icon: Icons.car_rental_outlined,
-          label: HD.t('cars_machines'),
+          label: NA.t('cars_machines'),
           count: hanNumb.digit,
           correctAnswer: hanNumb.alternate,
-          counter: '대',
+          counter: '',
         );
     }
   }

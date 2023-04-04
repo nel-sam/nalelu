@@ -4,7 +4,7 @@ import 'package:localization/localization.dart';
 import 'package:nrs_flutter_lib/constants.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 
-class HD {
+class NA {
   static TextStyle fontStyleBold(BuildContext context,
       {double fontSize = FONT_SIZE}) {
     return Nrs.getTextStyle(context: context, fontSize: fontSize, isBold: true);
@@ -28,7 +28,7 @@ class HD {
   }
 
   static NareNumber getRandomSinoNumber({int min = 0, int max = 99}) {
-    return HD.getSinoNumber(Nrs.getRandomNumber(
+    return NA.getSinoNumber(Nrs.getRandomNumber(
       min: min,
       max: max,
     ));
@@ -47,9 +47,16 @@ class HD {
     var onesPlace = digit - hundredsValue - tensValue;
 
     if (hundredsPlace > 0) {
-      if (hundredsPlace > 1)
-        written += '${sinoNumberBank[hundredsPlace].written}ひゃく';
-      else
+      if (hundredsPlace > 1) {
+        if (hundredsPlace == 3)
+          written += '${sinoNumberBank[hundredsPlace].written}びゃく';
+        else if (hundredsPlace == 6)
+          written += 'ろっぴゃく';
+        else if (hundredsPlace == 8)
+          written += 'はっぴゃく';
+        else
+          written += '${sinoNumberBank[hundredsPlace].written}ひゃく';
+      } else
         written += 'ひゃく';
     }
 
@@ -68,7 +75,7 @@ class HD {
   }
 
   static NareNumber getRandomSaiNumber({int min = 1, int max = 99}) {
-    return HD.getSaiNumber(Nrs.getRandomNumber(
+    return NA.getSaiNumber(Nrs.getRandomNumber(
       min: min,
       max: max,
     ));
@@ -107,7 +114,7 @@ class HD {
   }
 
   static NareNumber getRandomHourNumber({int min = 1, int max = 99}) {
-    return HD.getHourNumber(Nrs.getRandomNumber(
+    return NA.getHourNumber(Nrs.getRandomNumber(
       min: min,
       max: max,
     ));
@@ -140,7 +147,7 @@ class HD {
   }
 
   static NareNumber getRandomMinuteNumber({int min = 0, int max = 99}) {
-    return HD.getMinuteNumber(Nrs.getRandomNumber(
+    return NA.getMinuteNumber(Nrs.getRandomNumber(
       min: min,
       max: max,
     ));
@@ -172,7 +179,7 @@ class HD {
   }
 
   static NareNumber getRandomSecondNumber({int min = 0, int max = 99}) {
-    return HD.getSecondNumber(Nrs.getRandomNumber(
+    return NA.getSecondNumber(Nrs.getRandomNumber(
       min: min,
       max: max,
     ));
