@@ -1,10 +1,10 @@
-import 'package:nareru/lang_data/dongsa.dart';
+import 'package:nareru/lang_data/doushi.dart';
 
-class DongsaExerciseState {
+class DoushiExerciseState {
   List<String> userInput = [];
-  Dongsa dongsa;
+  Doushi doushi;
 
-  DongsaExerciseState({required this.dongsa});
+  DoushiExerciseState({required this.doushi});
 
   getUserInput(int index) {
     fillArray(index);

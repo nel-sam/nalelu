@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nareru/constants.dart';
 import 'package:nareru/hd-helpers.dart';
-import 'package:nareru/widgets/dongsa-exercise/dongsa-exercise-1.dart';
+import 'package:nareru/widgets/doushi-exercise/doushi-exercise-1.dart';
 import 'package:nareru/widgets/menus/numbers-menu.dart';
 import 'package:nareru/widgets/shared/home-button-wrapper.dart';
 import 'package:nrs_flutter_lib/widgets/n_footer_button.dart';
@@ -39,7 +39,7 @@ class HDMenuFooter extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => DongsaExerciseLevel1(),
+                builder: (context) => DoushiExerciseLevel1(),
               ),
             );
           },

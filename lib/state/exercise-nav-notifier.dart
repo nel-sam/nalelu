@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:nareru/state/dongsa/dongs-generator.dart';
+import 'package:nareru/state/doushi/doushi-generator.dart';
 import 'package:nareru/state/enums.dart';
 import 'package:nareru/state/suuji/age/age-generator.dart';
 import 'package:nareru/state/suuji/count/count-generator.dart';
@@ -17,9 +17,9 @@ class ExerciseNavNotifier extends ChangeNotifier {
 
   ExerciseNavNotifier(ExerciseType exerciseType) {
     switch (exerciseType) {
-      case ExerciseType.Dongsa:
-        this._maxIndex = DongsaGenerator.getMaxIndex();
-        this.createExercise = DongsaGenerator.createExercise;
+      case ExerciseType.Doushi:
+        this._maxIndex = DoushiGenerator.getMaxIndex();
+        this.createExercise = DoushiGenerator.createExercise;
         break;
       case ExerciseType.Count:
         this._maxIndex = CountGenerator.getMaxIndex();

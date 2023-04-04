@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:nareru/lang_data/dongsa.dart';
+import 'package:nareru/lang_data/doushi.dart';
 import 'package:nareru/widgets/shared/question-free-form.dart';
 import 'package:nrs_flutter_lib/constants.dart';
 import 'package:nrs_flutter_lib/widgets/n_text_span.dart';
 
 class VerbInput extends StatelessWidget {
-  final Dongsa dongsa;
+  final Doushi doushi;
 
   final String label;
   final String correctValue;
@@ -13,7 +13,7 @@ class VerbInput extends StatelessWidget {
   final Function(String) onChanged;
   const VerbInput({
     Key? key,
-    required this.dongsa,
+    required this.doushi,
     required this.label,
     required this.correctValue,
     required this.activeValue,
@@ -41,7 +41,7 @@ class VerbInput extends StatelessWidget {
                 isActive: false,
                 maxLength: correctValue.length,
                 activeValue: activeValue,
-                hintValue: dongsa.infinitive,
+                hintValue: doushi.infinitive,
                 correctValues: [correctValue],
                 onChanged: (String newValue) {
                   onChanged(newValue);

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nareru/constants.dart';
 import 'package:nareru/hd-helpers.dart';
-import 'package:nareru/widgets/dongsa-exercise/dongsa-exercise-1.dart';
+import 'package:nareru/widgets/doushi-exercise/doushi-exercise-1.dart';
 import 'package:nareru/widgets/menus/numbers-menu.dart';
 import 'package:nrs_flutter_lib/constants.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
@@ -49,7 +49,7 @@ class MainMenu extends StatelessWidget {
 
               ),
               NMenuButton(
-                destination: DongsaExerciseLevel1(),
+                destination: DoushiExerciseLevel1(),
                 label: HD.t('verbs'),
                 transLabel: '動詞',
               ),

@@ -1,5 +1,5 @@
 enum ExerciseType {
-  Dongsa,
+  Doushi,
   Count,
   Age,
   Jikan,

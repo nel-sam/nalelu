@@ -3,11 +3,11 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:nrs_flutter_lib/constants.dart';
 
-class DongsaNotifier with ChangeNotifier {
+class DoushiNotifier with ChangeNotifier {
   late Function() _getStateItem;
   Timer _debounce = Timer(const Duration(milliseconds: 0), () {});
 
-  DongsaNotifier(Function() getStateItem) {
+  DoushiNotifier(Function() getStateItem) {
     _getStateItem = getStateItem;
   }
 
