@@ -30,7 +30,7 @@
 		<string>Main</string>
 		<key>UISupportedInterfaceOrientations</key>
 		<array>
-		<string>UIInterfaceOrientationPortrait</string>
+			<string>UIInterfaceOrientationPortrait</string>
 			<string>UIInterfaceOrientationPortraitUpsideDown</string>
 		</array>
 		<key>UISupportedInterfaceOrientations~ipad</key>
@@ -45,6 +45,6 @@
 		<key>UIStatusBarHidden</key>
 		<false/>
 		<key>CADisableMinimumFrameDurationOnPhone</key>
-	<true/>
-</dict>
+		<true/>
+	</dict>
 </plist>

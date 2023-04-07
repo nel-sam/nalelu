@@ -21,7 +21,7 @@ class MainMenu extends StatelessWidget {
           decoration: BoxDecoration(
             image: DecorationImage(
               opacity: Nrs.isDarkTheme(context) ? 0.7 : 0.9,
-              image: AssetImage('assets/banners/stairs.jpg'),
+              image: AssetImage('assets/banners/gates.jpeg'),
               fit: BoxFit.cover,
             ),
           ),
