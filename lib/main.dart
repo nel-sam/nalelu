@@ -11,7 +11,7 @@ void main() {
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final primaryColor = Colors.pink;
+    final primaryColor = Colors.deepOrange;
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: APP_NAME,

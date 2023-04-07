@@ -27,7 +27,7 @@ class DoushiExerciseLevel1 extends StatelessWidget {
           builder: (context, navNotifier, child) => Scaffold(
             resizeToAvoidBottomInset: false,
             appBar: Nrs.NrsAppBar(
-                title: '${NA.t('verbs')} 1 (반말)', context: context),
+                title: '${NA.t('verbs')} 1 (ため口)', context: context),
             body: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,

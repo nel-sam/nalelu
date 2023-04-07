@@ -8,6 +8,8 @@ import 'package:nareru/widgets/suuji-exercise/jikan-exercise/jikan-exercise.dart
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 import 'package:nrs_flutter_lib/widgets/n_menu_button.dart';
 import 'package:nrs_flutter_lib/widgets/n_menu_header.dart';
+import 'package:nareru/widgets/shared/Na-menu-button.dart';
+import 'package:nareru/furi-text.dart';
 
 class NumbersMenu extends StatelessWidget {
   const NumbersMenu({Key? key}) : super(key: key);
@@ -28,21 +30,18 @@ class NumbersMenu extends StatelessWidget {
                   label: '数字'),
               Column(
                 children: [
-                  NMenuButton(
-                    destination: JikanExercise(),
-                    label: NA.t('time'),
-                    transLabel: '時間',
-                  ),
-                  NMenuButton(
-                    destination: AgeExercise(),
-                    label: NA.t('age'),
-                    transLabel: '年齢',
-                  ),
-                  NMenuButton(
-                    destination: CountingExercise(),
-                    label: NA.t('counting'),
-                    transLabel: '数えること',
-                  ),
+                  NAMenuButton(
+                      destination: JikanExercise(),
+                      label: NA.t('time'),
+                      translabel: [FuriText('時間', 'じかん')]),
+                  NAMenuButton(
+                      destination: AgeExercise(),
+                      label: NA.t('age'),
+                      translabel: [FuriText('年齢', 'ねんれい')]),
+                  NAMenuButton(
+                      destination: CountingExercise(),
+                      label: NA.t('counting'),
+                      translabel: [FuriText('数', 'かぞ'), FuriText('えること', '')]),
                 ],
               ),
             ],
