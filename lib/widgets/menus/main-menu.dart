@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:nareru/constants.dart';
+import 'package:nareru/furi-text.dart';
 import 'package:nareru/na-helpers.dart';
 import 'package:nareru/widgets/doushi-exercise/doushi-exercise-1.dart';
 import 'package:nareru/widgets/menus/numbers-menu.dart';
+import 'package:nareru/widgets/shared/furigana-text.dart';
 import 'package:nrs_flutter_lib/constants.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 import 'package:nrs_flutter_lib/widgets/n_menu_button.dart';
+import 'package:nareru/widgets/shared/na-menu-button.dart';
 
 class MainMenu extends StatelessWidget {
   const MainMenu({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -42,16 +44,15 @@ class MainMenu extends StatelessWidget {
         Expanded(
           child: Column(
             children: [
-              NMenuButton(
+              NAMenuButton(
                 destination: NumbersMenu(),
                 label: NA.t('numbersExercise'),
-                transLabel: '数字',
-
+                translabel: [FuriText('数字', 'すうじ')],
               ),
-              NMenuButton(
+              NAMenuButton(
                 destination: DoushiExerciseLevel1(),
                 label: NA.t('verbs'),
-                transLabel: '動詞',
+                translabel: [FuriText('動詞', 'どうし')],
               ),
             ],
           ),
