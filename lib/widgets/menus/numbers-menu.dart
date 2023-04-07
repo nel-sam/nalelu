@@ -30,7 +30,6 @@ class NumbersMenu extends StatelessWidget {
                   label: '数字'),
               Column(
                 children: [
-                    transLabel: '数えること',
                   NAMenuButton(
                       destination: JikanExercise(),
                       label: NA.t('time'),
