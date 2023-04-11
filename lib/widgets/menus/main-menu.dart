@@ -4,10 +4,8 @@ import 'package:nareru/furi-text.dart';
 import 'package:nareru/na-helpers.dart';
 import 'package:nareru/widgets/doushi-exercise/doushi-exercise-1.dart';
 import 'package:nareru/widgets/menus/numbers-menu.dart';
-import 'package:nareru/widgets/shared/furigana-text.dart';
 import 'package:nrs_flutter_lib/constants.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
-import 'package:nrs_flutter_lib/widgets/n_menu_button.dart';
 import 'package:nareru/widgets/shared/na-menu-button.dart';
 
 class MainMenu extends StatelessWidget {

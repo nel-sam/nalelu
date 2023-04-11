@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:nareru/furi-text.dart';
 
-
 class FuriganaText extends StatelessWidget {
   final double fontSize;
-  final Color labelColor;
+  final Color? labelColor;
   final List<FuriText> furigana;
   final FontWeight fontWeight;
 
@@ -12,7 +11,7 @@ class FuriganaText extends StatelessWidget {
     Key? key,
     required this.furigana,
     required this.fontSize,
-    required this.labelColor,
+    this.labelColor,
     required this.fontWeight,
   }) : super(key: key);
 
