@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:localization/localization.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:nareru/constants.dart';
-import 'package:nareru/widgets/menus/main-menu.dart';
+import 'package:nareru/widgets/menus/main_menu.dart';
 
 void main() {
   runApp(MyApp());

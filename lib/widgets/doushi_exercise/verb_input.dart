@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nareru/lang_data/doushi.dart';
-import 'package:nareru/widgets/shared/question-free-form.dart';
+import 'package:nareru/widgets/shared/question_free_form.dart';
 import 'package:nrs_flutter_lib/constants.dart';
 import 'package:nrs_flutter_lib/widgets/n_text_span.dart';
 

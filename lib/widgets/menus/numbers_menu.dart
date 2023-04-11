@@ -1,14 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:nareru/na-helpers.dart';
-import 'package:nareru/widgets/shared/ad-card.dart';
-import 'package:nareru/widgets/shared/na-footer-menu.dart';
-import 'package:nareru/widgets/shared/na-menu-header.dart';
-import 'package:nareru/widgets/suuji-exercise/age/age-exercise.dart';
-import 'package:nareru/widgets/suuji-exercise/counting.dart/counting-exercise.dart';
-import 'package:nareru/widgets/suuji-exercise/jikan-exercise/jikan-exercise.dart';
+import 'package:nareru/na_helpers.dart';
+import 'package:nareru/widgets/shared/ad_card.dart';
+import 'package:nareru/widgets/shared/na_footer_menu.dart';
+import 'package:nareru/widgets/shared/na_menu_header.dart';
+import 'package:nareru/widgets/suuji_exercise/age/age_exercise.dart';
+import 'package:nareru/widgets/suuji_exercise/counting.dart/counting_exercise.dart';
+import 'package:nareru/widgets/suuji_exercise/jikan_exercise/jikan_exercise.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
-import 'package:nareru/widgets/shared/Na-menu-button.dart';
-import 'package:nareru/furi-text.dart';
+import 'package:nareru/widgets/shared/na_menu_button.dart';
+import 'package:nareru/furi_text.dart';
 
 class NumbersMenu extends StatelessWidget {
   const NumbersMenu({Key? key}) : super(key: key);

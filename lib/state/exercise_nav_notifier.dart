@@ -1,11 +1,11 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:nareru/state/doushi/doushi-generator.dart';
+import 'package:nareru/state/doushi/doushi_generator.dart';
 import 'package:nareru/state/enums.dart';
-import 'package:nareru/state/suuji/age/age-generator.dart';
-import 'package:nareru/state/suuji/count/count-generator.dart';
-import 'package:nareru/state/suuji/jikan/jikan-generator.dart';
+import 'package:nareru/state/suuji/age/age_generator.dart';
+import 'package:nareru/state/suuji/count/count_generator.dart';
+import 'package:nareru/state/suuji/jikan/jikan_generator.dart';
 import 'package:nrs_flutter_lib/constants.dart';
 
 class ExerciseNavNotifier extends ChangeNotifier {
