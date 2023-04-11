@@ -1,6 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nareru/constants.dart';
-import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 
 class HintButton extends StatelessWidget {
   final String userInput;

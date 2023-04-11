@@ -1,8 +1,6 @@
 import 'package:nareru/constants.dart';
 import 'package:nareru/na-helpers.dart';
-import 'package:nareru/lang_data/numbers.dart';
 import 'package:nareru/state/suuji/jikan/jikan-exercise-state.dart';
-import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 
 class JikanGenerator {
   static createExercise(int index) {
