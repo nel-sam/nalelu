@@ -1,4 +1,4 @@
-import 'package:nareru/na-helpers.dart';
+import 'package:nareru/na_helpers.dart';
 
 var doushiBank = [
   Doushi(

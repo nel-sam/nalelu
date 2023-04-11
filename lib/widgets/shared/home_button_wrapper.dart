@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nareru/na-helpers.dart';
+import 'package:nareru/na_helpers.dart';
 import 'package:nrs_flutter_lib/widgets/n_home_button.dart';
 
 class HomeButtonWrapper extends StatelessWidget {

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nareru/na-helpers.dart';
+import 'package:nareru/na_helpers.dart';
 import 'package:nareru/lang_data/numbers.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 import 'package:nrs_flutter_lib/widgets/n_sub_header.dart';

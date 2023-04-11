@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:nareru/constants.dart';
-import 'package:nareru/furi-text.dart';
-import 'package:nareru/na-helpers.dart';
-import 'package:nareru/widgets/doushi-exercise/doushi-exercise-1.dart';
-import 'package:nareru/widgets/menus/numbers-menu.dart';
+import 'package:nareru/furi_text.dart';
+import 'package:nareru/na_helpers.dart';
+import 'package:nareru/widgets/doushi_exercise/doushi_exercise_1.dart';
+import 'package:nareru/widgets/menus/numbers_menu.dart';
 import 'package:nrs_flutter_lib/constants.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
-import 'package:nareru/widgets/shared/na-menu-button.dart';
+import 'package:nareru/widgets/shared/na_menu_button.dart';
 
 class MainMenu extends StatelessWidget {
   const MainMenu({Key? key}) : super(key: key);

@@ -1,6 +1,6 @@
 import 'package:nareru/constants.dart';
-import 'package:nareru/na-helpers.dart';
-import 'package:nareru/state/suuji/jikan/jikan-exercise-state.dart';
+import 'package:nareru/na_helpers.dart';
+import 'package:nareru/state/suuji/jikan/jikan_exercise_state.dart';
 
 class JikanGenerator {
   static createExercise(int index) {
