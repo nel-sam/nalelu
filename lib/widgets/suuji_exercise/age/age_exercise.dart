@@ -46,29 +46,33 @@ class AgeExercise extends StatelessWidget {
                                 status: s.getIsCorrect()
                                     ? CorrectStatus.correct
                                     : CorrectStatus.unstarted),
-                            s.correctAnswer != s.userInput
+                            (s.correctAnswer[0] != s.userInput) &&
+                                    (s.correctAnswer[1] != s.userInput)
                                 ? HintButton(
-                                    onHintActive: (bool onHintActive) => isHintActive = onHintActive,
+                                    onHintActive: (bool onHintActive) =>
+                                        isHintActive = onHintActive,
                                     userInput: s.userInput,
-                                    correctAnswer: s.correctAnswer,
+                                    correctAnswer: s.correctAnswer[0],
                                     onHintUpdate: (String hint) => {
                                           ageNotifier.updateAge(hint),
                                         })
                                 : Container(),
-                                s.correctAnswer != s.userInput
-                            ? Container(
-                              width: 150,
-                              child: QuestionFreeForm(
-                                isActive: isHintActive,
-                                maxLength: s.correctAnswer.length,
-                                activeValue: s.userInput,
-                                correctValues: [s.correctAnswer],
-                                hintValue: '',
-                                onChanged: (String newVal) =>
-                                    ageNotifier.updateAge(newVal),
-                              ),
-                            )
-                            : Text(s.correctAnswer, style: TextStyle(fontSize: 28)),
+                            (s.correctAnswer[0] != s.userInput) &&
+                                    (s.correctAnswer[1] != s.userInput)
+                                ? Container(
+                                    width: 150,
+                                    child: QuestionFreeForm(
+                                      isActive: isHintActive,
+                                      maxLength: s.correctAnswer[0].length,
+                                      activeValue: s.userInput,
+                                      correctValues: [s.correctAnswer[0]],
+                                      hintValue: '',
+                                      onChanged: (String newVal) =>
+                                          ageNotifier.updateAge(newVal),
+                                    ),
+                                  )
+                                : Text(s.userInput,
+                                    style: TextStyle(fontSize: 28)),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
                             ),
@@ -95,7 +99,7 @@ class AgeExercise extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               getContent(context),
-              AdCard(),
+              //AdCard(),
             ],
           ),
         ),

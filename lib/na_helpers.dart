@@ -87,6 +87,7 @@ class NA {
     }
 
     var written = '';
+    var alternate = '';
     var hundredsPlace = (digit / 100).floor();
     var hundredsValue = hundredsPlace * 100;
     var tensPlace = ((digit - hundredsValue) / 10).floor();
@@ -94,23 +95,33 @@ class NA {
     var onesPlace = digit - hundredsValue - tensValue;
 
     if (tensPlace > 1) {
-      if (tensPlace == 2 && onesPlace == 0)
+      if (tensPlace == 2 && onesPlace == 0) {
         written += 'はたち';
-      else if (onesPlace == 0)
+        alternate += '二十歳';
+      } else if (onesPlace == 0) {
         written += '${sinoNumberBank[tensPlace].written}じゅっさい';
-      else
+        alternate += '${sinoNumberBank[tensPlace].alternate}十歳';
+      } else {
         written += '${sinoNumberBank[tensPlace].written}じゅう';
-    } else if (onesPlace == 0)
+        alternate += '${sinoNumberBank[tensPlace].alternate}十';
+      }
+    } else if (onesPlace == 0) {
       written += 'じゅっさい';
-    else
+      alternate += '十歳';
+    } else {
       written += 'じゅう';
+      alternate += '十';
+    }
 
     if (onesPlace > 0) {
       written += '${saiNumberBank[onesPlace].written}';
-    } else
+      alternate += '${saiNumberBank[onesPlace].alternate}';
+    } else {
       written += '${saiNumberBank[onesPlace].written}';
+      alternate += '${saiNumberBank[onesPlace].alternate}';
+    }
 
-    return NareNumber(digit: digit, written: written);
+    return NareNumber(digit: digit, written: written, alternate: alternate);
   }
 
   static NareNumber getRandomHourNumber({int min = 1, int max = 99}) {

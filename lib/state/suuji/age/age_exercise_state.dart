@@ -1,6 +1,6 @@
 class AgeExerciseState {
   final int age;
-  final String correctAnswer;
+  final List<String> correctAnswer;
   String userInput = '';
 
   AgeExerciseState({
@@ -9,7 +9,7 @@ class AgeExerciseState {
   });
 
   bool getIsCorrect() {
-    return userInput == correctAnswer;
+    return userInput == correctAnswer[0] || userInput == correctAnswer[1];
   }
 
   clear() {

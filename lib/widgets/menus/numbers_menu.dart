@@ -22,7 +22,7 @@ class NumbersMenu extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              const AdCard(),
+              //const AdCard(),
               NAMenuHeader(
                   icon: Icons.widgets_outlined,
                   transLabel: NA.t('numbers'),
