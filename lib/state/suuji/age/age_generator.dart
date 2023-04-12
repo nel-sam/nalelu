@@ -9,7 +9,7 @@ class AgeGenerator {
 
     return AgeExerciseState(
       age: number.digit,
-      correctAnswer: [number.written, number.kanji],
+      correctAnswers: [number.written, number.kanji],
     );
   }
 
