@@ -84,13 +84,13 @@ class JikanExercise extends StatelessWidget {
                     builder: (context, jikanNotifier, child) {
                       var s = jikanNotifier.getStateItem();
                       // TODO: Make status 3d
-                      var isHourCorrect = s.correctHour == s.userHour
+                      var isHourCorrect = s.correctHour.contains(s.userHour)
                           ? CorrectStatus.correct
                           : CorrectStatus.unstarted;
-                      var isMinCorrect = s.correctMin == s.userMin
+                      var isMinCorrect = s.correctMin.contains(s.userMin)
                           ? CorrectStatus.correct
                           : CorrectStatus.unstarted;
-                      var isSecCorrect = s.correctSec == s.userSec
+                      var isSecCorrect = s.correctSec.contains(s.userSec)
                           ? CorrectStatus.correct
                           : CorrectStatus.unstarted;
 
@@ -100,90 +100,90 @@ class JikanExercise extends StatelessWidget {
                           Column(
                             children: [
                               NAnswerStatusIcon(status: isHourCorrect),
-                              s.correctHour != s.userHour
+                            !s.correctHour.contains(s.userHour)
                                   ? HintButton(
                                       onHintActive: (bool onHintActive) =>
                                           isHintActive = onHintActive,
                                       userInput: s.userHour,
-                                      correctAnswer: s.correctHour,
+                                      correctAnswer: s.correctHour[0],
                                       onHintUpdate: (String hint) => {
                                             jikanNotifier.updateHour(hint),
                                           })
                                   : Container(),
-                              s.correctHour != s.userHour
+                            !s.correctHour.contains(s.userHour)
                                   ? Container(
                                       width: textFieldWidth,
                                       child: QuestionFreeForm(
                                         isActive: isHintActive,
-                                        maxLength: s.correctHour.length,
+                                        maxLength: s.correctHour[0].length,
                                         activeValue: s.userHour,
                                         hintValue: '',
-                                        correctValues: [s.correctHour],
+                                        correctValues: s.correctHour,
                                         onChanged: (String newVal) =>
                                             jikanNotifier.updateHour(newVal),
                                       ),
                                     )
-                                  : Text(s.correctHour,
+                                  : Text(s.userHour,
                                       style: TextStyle(fontSize: 20)),
                             ],
                           ),
                           Column(
                             children: [
                               NAnswerStatusIcon(status: isMinCorrect),
-                              s.correctMin != s.userMin
+                            !s.correctMin.contains(s.userMin)
                                   ? HintButton(
                                       onHintActive: (bool onHintActive) =>
                                           isHintActive = onHintActive,
                                       userInput: s.userMin,
-                                      correctAnswer: s.correctMin,
+                                      correctAnswer: s.correctMin[0],
                                       onHintUpdate: (String hint) => {
                                             jikanNotifier.updateMin(hint),
                                           })
                                   : Container(),
-                              s.correctMin != s.userMin
+                            !s.correctMin.contains(s.userMin)
                                   ? Container(
                                       width: textFieldWidth,
                                       child: QuestionFreeForm(
                                         isActive: isHintActive,
-                                        maxLength: s.correctMin.length,
+                                        maxLength: s.correctMin[0].length,
                                         activeValue: s.userMin,
                                         hintValue: '',
-                                        correctValues: [s.correctMin],
+                                        correctValues: s.correctMin,
                                         onChanged: (String newVal) =>
                                             jikanNotifier.updateMin(newVal),
                                       ),
                                     )
-                                  : Text(s.correctMin,
+                                  : Text(s.userMin,
                                       style: TextStyle(fontSize: 20)),
                             ],
                           ),
                           Column(
                             children: [
                               NAnswerStatusIcon(status: isSecCorrect),
-                              s.correctSec != s.userSec
+                            !s.correctSec.contains(s.userSec)
                                   ? HintButton(
                                       onHintActive: (bool onHintActive) =>
                                           isHintActive = onHintActive,
                                       userInput: s.userSec,
-                                      correctAnswer: s.correctSec,
+                                      correctAnswer: s.correctSec[0],
                                       onHintUpdate: (String hint) => {
                                             jikanNotifier.updateSec(hint),
                                           })
                                   : Container(),
-                              s.correctSec != s.userSec
+                            !s.correctSec.contains(s.userSec)
                                   ? Container(
                                       width: textFieldWidth,
                                       child: QuestionFreeForm(
                                         isActive: isHintActive,
-                                        maxLength: s.correctSec.length,
+                                        maxLength: s.correctSec[0].length,
                                         activeValue: s.userSec,
                                         hintValue: '',
-                                        correctValues: [s.correctSec],
+                                        correctValues: s.correctSec,
                                         onChanged: (String newVal) =>
                                             jikanNotifier.updateSec(newVal),
                                       ),
                                     )
-                                  : Text(s.correctSec,
+                                  : Text(s.userSec,
                                       style: TextStyle(fontSize: 20)),
                             ],
                           ),

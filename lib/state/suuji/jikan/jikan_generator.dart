@@ -13,9 +13,9 @@ class JikanGenerator {
         hour: hour.digit < 10 ? '0${hour.digit}' : hour.digit.toString(),
         min: min.digit < 10 ? '0${min.digit}' : min.digit.toString(),
         sec: sec.digit < 10 ? '0${sec.digit}' : sec.digit.toString(),
-        correctHour: hour.written,
-        correctMin: min.written,
-        correctSec: sec.written,
+        correctHour: [hour.written, hour.kanji],
+        correctMin: [min.written, min.kanji],
+        correctSec: [sec.written, sec.kanji]
       );
     }
   }

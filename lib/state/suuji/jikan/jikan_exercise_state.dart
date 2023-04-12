@@ -1,9 +1,9 @@
 class JikanExerciseState {
-  String correctHour;
+  List<String> correctHour;
   String userHour = '';
-  String correctMin;
+  List<String> correctMin;
   String userMin = '';
-  String correctSec;
+  List<String> correctSec;
   String userSec = '';
   String hour;
   String min;
@@ -19,9 +19,9 @@ class JikanExerciseState {
   });
 
   bool getIsCorrect() {
-    return this.userHour == this.correctHour &&
-        this.userMin == this.correctMin &&
-        this.userSec == this.correctSec;
+    return this.correctHour.contains(this.userHour) &&
+        this.correctMin.contains(this.userMin) &&
+        this.correctSec.contains(this.userSec);
   }
 
   clear() {

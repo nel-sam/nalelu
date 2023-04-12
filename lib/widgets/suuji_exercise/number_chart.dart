@@ -10,8 +10,7 @@ class NumberChart extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: Nrs.NrsAppBar(
-            title: NA.t('numberChart'), context: context),
+        appBar: Nrs.NrsAppBar(title: NA.t('numberChart'), context: context),
         body: Padding(
           padding: EdgeInsets.all(18),
           child: SingleChildScrollView(
@@ -41,7 +40,7 @@ class NumberChart extends StatelessWidget {
             children: [
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                 ...nativeNumberBank.getRange(1, 11).map((e) => Text(
-                      '${e.digit} ${e.written}',
+                      '${e.digit} ${e.written} / ${e.kanji}',
                       style: boldStyle,
                     ))
               ]),
@@ -58,10 +57,9 @@ class NumberChart extends StatelessWidget {
 
     for (int i = 0; i <= maxNum; i++) {
       var hn = NA.getSinoNumber(i);
-      var written = hn.alternate == hn.written
-          ? hn.written
-          : '${hn.written}';
-      numbers.add(NareNumber(digit: hn.digit, written: written));
+      var written = hn.kanji == hn.written ? hn.written : '${hn.written}';
+      var kanji = hn.kanji == hn.kanji ? hn.kanji : '${hn.kanji}';
+      numbers.add(NareNumber(digit: hn.digit, written: written, kanji: kanji));
     }
 
     return Padding(
@@ -78,21 +76,15 @@ class NumberChart extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                ...numbers.getRange(0, 34).map((e) => Text(
-                      '${e.digit} ${e.written}',
+                ...numbers.getRange(0, 50).map((e) => Text(
+                      '${e.digit} ${e.written} / ${e.kanji}',
                       style: boldStyle,
                     ))
               ]),
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
                 ...numbers
-                    .getRange(34, 67)
-                    .map((e) => Text('${e.digit} ${e.written}'))
-              ]),
-              Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
-                ...numbers.getRange(67, 101).map((e) => Text(
-                      '${e.digit} ${e.written}',
-                      style: boldStyle,
-                    ))
+                    .getRange(50, 101)
+                    .map((e) => Text('${e.digit} ${e.written} / ${e.kanji}'))
               ]),
             ],
           ),

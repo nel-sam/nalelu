@@ -40,6 +40,7 @@ class NA {
     }
 
     var written = '';
+    var kanji = '';
     var hundredsPlace = (digit / 100).floor();
     var hundredsValue = hundredsPlace * 100;
     var tensPlace = ((digit - hundredsValue) / 10).floor();
@@ -48,30 +49,41 @@ class NA {
 
     if (hundredsPlace > 0) {
       if (hundredsPlace > 1) {
-        if (hundredsPlace == 3)
+        if (hundredsPlace == 3) {
           written += '${sinoNumberBank[hundredsPlace].written}びゃく';
-        else if (hundredsPlace == 6)
+          kanji += '${sinoNumberBank[hundredsPlace].kanji}百';
+        } else if (hundredsPlace == 6) {
           written += 'ろっぴゃく';
-        else if (hundredsPlace == 8)
+          kanji += '六百';
+        } else if (hundredsPlace == 8) {
           written += 'はっぴゃく';
-        else
+          kanji += '八百';
+        } else {
           written += '${sinoNumberBank[hundredsPlace].written}ひゃく';
-      } else
+          kanji += '${sinoNumberBank[hundredsPlace].kanji}百';
+        }
+      } else {
         written += 'ひゃく';
+        kanji += '百';
+      }
     }
 
     if (tensPlace > 0) {
-      if (tensPlace > 1)
+      if (tensPlace > 1) {
         written += '${sinoNumberBank[tensPlace].written}じゅう';
-      else
+        kanji += '${sinoNumberBank[tensPlace].kanji}十';
+      } else {
         written += 'じゅう';
+        kanji += '十';
+      }
     }
 
     if (onesPlace > 0) {
       written += sinoNumberBank[onesPlace].written;
+      kanji += sinoNumberBank[onesPlace].kanji;
     }
 
-    return NareNumber(digit: digit, written: written);
+    return NareNumber(digit: digit, written: written, kanji: kanji);
   }
 
   static NareNumber getRandomSaiNumber({int min = 1, int max = 99}) {
@@ -87,7 +99,7 @@ class NA {
     }
 
     var written = '';
-    var alternate = '';
+    var kanji = '';
     var hundredsPlace = (digit / 100).floor();
     var hundredsValue = hundredsPlace * 100;
     var tensPlace = ((digit - hundredsValue) / 10).floor();
@@ -97,31 +109,31 @@ class NA {
     if (tensPlace > 1) {
       if (tensPlace == 2 && onesPlace == 0) {
         written += 'はたち';
-        alternate += '二十歳';
+        kanji += '二十歳';
       } else if (onesPlace == 0) {
         written += '${sinoNumberBank[tensPlace].written}じゅっさい';
-        alternate += '${sinoNumberBank[tensPlace].alternate}十歳';
+        kanji += '${sinoNumberBank[tensPlace].kanji}十歳';
       } else {
         written += '${sinoNumberBank[tensPlace].written}じゅう';
-        alternate += '${sinoNumberBank[tensPlace].alternate}十';
+        kanji += '${sinoNumberBank[tensPlace].kanji}十';
       }
     } else if (onesPlace == 0) {
       written += 'じゅっさい';
-      alternate += '十歳';
+      kanji += '十歳';
     } else {
       written += 'じゅう';
-      alternate += '十';
+      kanji += '十';
     }
 
     if (onesPlace > 0) {
       written += '${saiNumberBank[onesPlace].written}';
-      alternate += '${saiNumberBank[onesPlace].alternate}';
+      kanji += '${saiNumberBank[onesPlace].kanji}';
     } else {
       written += '${saiNumberBank[onesPlace].written}';
-      alternate += '${saiNumberBank[onesPlace].alternate}';
+      kanji += '${saiNumberBank[onesPlace].kanji}';
     }
 
-    return NareNumber(digit: digit, written: written, alternate: alternate);
+    return NareNumber(digit: digit, written: written, kanji: kanji);
   }
 
   static NareNumber getRandomHourNumber({int min = 1, int max = 99}) {
@@ -133,6 +145,7 @@ class NA {
 
   static NareNumber getHourNumber(int digit) {
     var written = '';
+    var kanji = '';
     var hundredsPlace = (digit / 100).floor();
     var hundredsValue = hundredsPlace * 100;
     var tensPlace = ((digit - hundredsValue) / 10).floor();
@@ -140,21 +153,39 @@ class NA {
     var onesPlace = digit - hundredsValue - tensValue;
 
     if (tensPlace > 0) {
-      written += 'じゅう';
-      if (onesPlace == 0) written += 'じ';
+      if (tensPlace > 1) {
+        written += '${sinoNumberBank[tensPlace].written}じゅう';
+        kanji += '${sinoNumberBank[tensPlace].kanji}十';
+      } else {
+        written += 'じゅう';
+        kanji += '十';
+      }
+      if (onesPlace == 0) {
+        written += 'じ';
+        kanji += '時';
+      }
     }
 
     if (onesPlace > 0) {
-      if (onesPlace == 4)
+      if (onesPlace == 4) {
         written += 'よじ';
-      else if (onesPlace == 7)
+        kanji += '四時';
+      } else if (onesPlace == 7) {
         written += 'しちじ';
-      else
+        kanji += '七時';
+      } else if (onesPlace == 9) {
+        written += 'くじ';
+        kanji += '九時';
+      } else {
         written += '${sinoNumberBank[onesPlace].written}じ';
-    } else if (onesPlace == 0 && tensPlace == 0)
+        kanji += '${sinoNumberBank[onesPlace].kanji}時';
+      }
+    } else if (onesPlace == 0 && tensPlace == 0) {
       written += '${sinoNumberBank[onesPlace].written}じ';
+      kanji += '${sinoNumberBank[onesPlace].kanji}時';
+    }
 
-    return NareNumber(digit: digit, written: written);
+    return NareNumber(digit: digit, written: written, kanji: kanji);
   }
 
   static NareNumber getRandomMinuteNumber({int min = 0, int max = 99}) {
@@ -166,6 +197,7 @@ class NA {
 
   static NareNumber getMinuteNumber(int digit) {
     var written = '';
+    var kanji = '';
     var hundredsPlace = (digit / 100).floor();
     var hundredsValue = hundredsPlace * 100;
     var tensPlace = ((digit - hundredsValue) / 10).floor();
@@ -173,20 +205,29 @@ class NA {
     var onesPlace = digit - hundredsValue - tensValue;
 
     if (tensPlace > 1) {
-      if (onesPlace == 0)
+      if (onesPlace == 0) {
         written += '${sinoNumberBank[tensPlace].written}じゅうぷん';
-      else
+        kanji += '${sinoNumberBank[tensPlace].kanji}十分';
+      } else {
         written += '${sinoNumberBank[tensPlace].written}じゅう';
-    } else if (tensPlace != 0 && onesPlace != 0)
+        kanji += '${sinoNumberBank[tensPlace].kanji}十';
+      }
+    } else if (tensPlace != 0 && onesPlace != 0) {
       written += 'じゅう';
-    else if (onesPlace == 0) written += 'じゅうぷん';
-
+      kanji += '十';
+    } else if (onesPlace == 0) {
+      written += 'じゅうぷん';
+      kanji += '十分';
+    }
     if (onesPlace > 0) {
       written += '${minuteNumberBank[onesPlace].written}';
-    } else if (tensPlace == 0 && tensPlace == 0)
+      kanji += '${minuteNumberBank[onesPlace].kanji}';
+    } else if (tensPlace == 0 && tensPlace == 0) {
       written += '${minuteNumberBank[onesPlace].written}';
+      kanji += '${minuteNumberBank[onesPlace].kanji}';
+    }
 
-    return NareNumber(digit: digit, written: written);
+    return NareNumber(digit: digit, written: written, kanji: kanji);
   }
 
   static NareNumber getRandomSecondNumber({int min = 0, int max = 99}) {
@@ -198,6 +239,7 @@ class NA {
 
   static NareNumber getSecondNumber(int digit) {
     var written = '';
+    var kanji = '';
     var hundredsPlace = (digit / 100).floor();
     var hundredsValue = hundredsPlace * 100;
     var tensPlace = ((digit - hundredsValue) / 10).floor();
@@ -205,20 +247,30 @@ class NA {
     var onesPlace = digit - hundredsValue - tensValue;
 
     if (tensPlace > 1) {
-      if (onesPlace == 0)
+      if (onesPlace == 0) {
         written += '${sinoNumberBank[tensPlace].written}じゅうびょう';
-      else
+        kanji += '${sinoNumberBank[tensPlace].kanji}十秒';
+      } else {
         written += '${sinoNumberBank[tensPlace].written}じゅう';
-    } else if (tensPlace != 0 && onesPlace != 0)
+        kanji += '${sinoNumberBank[tensPlace].kanji}十';
+      }
+    } else if (tensPlace != 0 && onesPlace != 0) {
       written += 'じゅう';
-    else if (onesPlace == 0) written += 'じゅうびょう';
+      kanji += '十';
+    } else if (onesPlace == 0) {
+      written += 'じゅうびょう';
+      kanji += '十秒';
+    }
 
     if (onesPlace > 0) {
       written += '${sinoNumberBank[onesPlace].written}びょう';
-    } else if (tensPlace == 0 && tensPlace == 0)
+      kanji += '${sinoNumberBank[onesPlace].kanji}秒';
+    } else if (tensPlace == 0 && tensPlace == 0) {
       written += '${sinoNumberBank[onesPlace].written}びょう';
+      kanji += '${sinoNumberBank[onesPlace].kanji}秒';
+    }
 
-    return NareNumber(digit: digit, written: written);
+    return NareNumber(digit: digit, written: written, kanji: kanji);
   }
 
   static String t(String key, {List<String> inserts = const []}) {

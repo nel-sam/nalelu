@@ -46,8 +46,7 @@ class AgeExercise extends StatelessWidget {
                                 status: s.getIsCorrect()
                                     ? CorrectStatus.correct
                                     : CorrectStatus.unstarted),
-                            (s.correctAnswer[0] != s.userInput) &&
-                                    (s.correctAnswer[1] != s.userInput)
+                            !s.correctAnswer.contains(s.userInput)
                                 ? HintButton(
                                     onHintActive: (bool onHintActive) =>
                                         isHintActive = onHintActive,
@@ -57,15 +56,14 @@ class AgeExercise extends StatelessWidget {
                                           ageNotifier.updateAge(hint),
                                         })
                                 : Container(),
-                            (s.correctAnswer[0] != s.userInput) &&
-                                    (s.correctAnswer[1] != s.userInput)
+                            !s.correctAnswer.contains(s.userInput)
                                 ? Container(
                                     width: 150,
                                     child: QuestionFreeForm(
                                       isActive: isHintActive,
                                       maxLength: s.correctAnswer[0].length,
                                       activeValue: s.userInput,
-                                      correctValues: [s.correctAnswer[0]],
+                                      correctValues: s.correctAnswer,
                                       hintValue: '',
                                       onChanged: (String newVal) =>
                                           ageNotifier.updateAge(newVal),

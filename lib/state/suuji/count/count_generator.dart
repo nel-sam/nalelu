@@ -42,8 +42,8 @@ class CountGenerator {
           correctAnswers: [
             numbOfYears.written + '年',
             numbOfYears.written + 'ねん',
-            numbOfYears.alternate + '年',
-            numbOfYears.alternate + 'ねん'
+            numbOfYears.kanji + '年',
+            numbOfYears.kanji + 'ねん'
           ],
           counter: '年',
         );
@@ -54,7 +54,7 @@ class CountGenerator {
       //     icon: Icons.pets,
       //     label: NA.t('animals'),
       //     count: sinoNumb.digit,
-      //     correctAnswer: sinoNumb.alternate,
+      //     correctAnswer: sinoNumb.kanji,
       //     counter: '匹', // TODO: Add furigana
       //   );
 
@@ -64,7 +64,7 @@ class CountGenerator {
       //     icon: Icons.person,
       //     label: NA.t('people'),
       //     count: numb.digit,
-      //     correctAnswer: numb.alternate,
+      //     correctAnswer: numb.kanji,
       //     counter: '人',
       //   );
 
@@ -74,7 +74,7 @@ class CountGenerator {
       //     icon: Icons.wine_bar,
       //     label: NA.t('bottles'),
       //     count: numb.digit,
-      //     correctAnswer: numb.alternate,
+      //     correctAnswer: numb.kanji,
       //     counter: '',
       //   );
 
@@ -84,7 +84,7 @@ class CountGenerator {
       //     icon: Icons.bike_scooter,
       //     label: NA.t('things'),
       //     count: numb.digit,
-      //     correctAnswer: numb.alternate,
+      //     correctAnswer: numb.kanji,
       //     counter: '',
       //   );
 
@@ -94,7 +94,7 @@ class CountGenerator {
       //     icon: Icons.book_outlined,
       //     label: NA.t('books'),
       //     count: numb.digit,
-      //     correctAnswer: numb.alternate,
+      //     correctAnswer: numb.kanji,
       //     counter: '',
       //   );
 
@@ -104,7 +104,7 @@ class CountGenerator {
       //     icon: Icons.local_pizza_outlined,
       //     label: NA.t('slices'),
       //     count: numb.digit,
-      //     correctAnswer: numb.alternate,
+      //     correctAnswer: numb.kanji,
       //     counter: '',
       //   );
 
@@ -114,7 +114,7 @@ class CountGenerator {
       //     icon: Icons.car_rental_outlined,
       //     label: NA.t('cars_machines'),
       //     count: numb.digit,
-      //     correctAnswer: numb.alternate,
+      //     correctAnswer: numb.kanji,
       //     counter: '',
       //   );
     }
