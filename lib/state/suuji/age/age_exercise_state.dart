@@ -8,11 +8,11 @@ class AgeExerciseState {
     required this.correctAnswer,
   });
 
-  bool getIsCorrect() {
-    return userInput == correctAnswer[0] || userInput == correctAnswer[1];
-  }
-
   clear() {
     return this.userInput = '';
+  }
+
+  bool getIsCorrect() {
+    return this.correctAnswer.contains(this.userInput);
   }
 }

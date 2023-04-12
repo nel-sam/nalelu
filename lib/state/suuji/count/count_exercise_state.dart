@@ -4,7 +4,7 @@ class CountExerciseState {
   final IconData icon;
   final String label;
   final int count;
-  final String correctAnswer;
+  final List<String> correctAnswers;
   final String counter;
   final bool isSino;
   String userInput = '';
@@ -15,7 +15,7 @@ class CountExerciseState {
     required this.isSino,
     required this.count,
     required this.counter,
-    required this.correctAnswer,
+    required this.correctAnswers,
   });
 
   clear() {
@@ -23,6 +23,6 @@ class CountExerciseState {
   }
 
   bool getIsCorrect() {
-    return this.userInput == this.correctAnswer;
+    return this.correctAnswers.contains(this.userInput);
   }
 }

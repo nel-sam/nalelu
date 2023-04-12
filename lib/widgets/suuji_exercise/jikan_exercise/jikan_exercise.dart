@@ -4,12 +4,12 @@ import 'package:nareru/state/enums.dart';
 import 'package:nareru/state/exercise_nav_notifier.dart';
 import 'package:nareru/state/suuji/jikan/jikan_notifier.dart';
 import 'package:nareru/widgets/shared/ad_card.dart';
+import 'package:nareru/widgets/shared/hint_button.dart';
 import 'package:nareru/widgets/shared/home_button_wrapper.dart';
 import 'package:nareru/widgets/shared/nav_header_wrapper.dart';
 import 'package:nareru/widgets/shared/question_free_form.dart';
-import 'package:nareru/widgets/suuji_exercise/number_chart.dart';
-import 'package:nareru/widgets/shared/hint_button.dart';
 import 'package:nareru/widgets/suuji_exercise/jikan_exercise/clock.dart';
+import 'package:nareru/widgets/suuji_exercise/number_chart.dart';
 import 'package:nrs_flutter_lib/enums.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 import 'package:nrs_flutter_lib/widgets/n_answer_status_icon.dart';
@@ -33,7 +33,7 @@ class JikanExercise extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               getContent(context),
-              //AdCard(),
+              AdCard(),
             ],
           ),
         ),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nareru/na_helpers.dart';
 import 'package:nareru/lang_data/doushi.dart';
+import 'package:nareru/na_helpers.dart';
 import 'package:nareru/widgets/shared/ad_card.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 import 'package:nrs_flutter_lib/widgets/n_text_span.dart';
@@ -50,7 +50,7 @@ class VerbChart extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            //const AdCard(),
+            AdCard(),
             SingleChildScrollView(
               child: Padding(
                 padding: const EdgeInsets.all(28.0),

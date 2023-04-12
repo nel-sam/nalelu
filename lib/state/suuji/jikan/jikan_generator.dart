@@ -5,7 +5,7 @@ import 'package:nareru/state/suuji/jikan/jikan_exercise_state.dart';
 class JikanGenerator {
   static createExercise(int index) {
     for (int i = 0; i < JIKAN_EXERCISE_COUNT; i++) {
-      var hour = NA.getRandomHourNumber(min: 0, max: 13);
+      var hour = NA.getRandomHourNumber(min: 0, max: 23);
       var min = NA.getRandomMinuteNumber(min: 1, max: 59);
       var sec = NA.getRandomSecondNumber(min: 0, max: 59);
 
