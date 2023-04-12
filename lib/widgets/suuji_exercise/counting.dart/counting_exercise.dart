@@ -26,13 +26,13 @@ class CountingExercise extends StatelessWidget {
         child: Consumer<ExerciseNavNotifier>(
           builder: (context, navNotifier, child) {
             var activeItem = navNotifier.getActive();
-            var label = activeItem.label(context);
+            var label = activeItem.label;
 
             var infoText =
                 activeItem.isSino ? NA.t('use_sino') : NA.t('use_native');
 
             infoText +=
-                ' ${label.toLowerCase()}: ${activeItem.correctAnswer}${activeItem.isSino ? '' : ' '}${activeItem.counter}';
+                ' ${label.toLowerCase()}: ${activeItem.correctAnswers}${activeItem.isSino ? '' : ' '}${activeItem.counter}';
 
             return Padding(
               padding: const EdgeInsets.all(24),
@@ -77,19 +77,19 @@ class CountingExercise extends StatelessWidget {
                               width: 80,
                               child: QuestionFreeForm(
                                 isActive: false,
-                                maxLength: s.correctAnswer.length,
+                                maxLength: s.correctAnswers.length,
                                 activeValue: s.userInput,
                                 hintValue: '',
                                 onChanged: (String newVal) =>
                                     countNotifier.updateCount(newVal),
-                                correctValues: [s.correctAnswer],
+                                correctValues: s.correctAnswers,
                               ),
                             ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                              child: Text(navNotifier.getActive().counter,
-                                  style: TextStyle(fontSize: 28)),
-                            ),
+                            // Padding(
+                            //   padding: const EdgeInsets.all(8.0),
+                            //   child: Text(navNotifier.getActive().counter,
+                            //       style: TextStyle(fontSize: 28)),
+                            // ),
                           ],
                         );
                       },

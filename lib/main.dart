@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:localization/localization.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:localization/localization.dart';
 import 'package:nareru/constants.dart';
 import 'package:nareru/widgets/menus/main_menu.dart';
 
@@ -22,8 +22,8 @@ class MyApp extends StatelessWidget {
           GlobalCupertinoLocalizations.delegate,
         ],
         supportedLocales: [
-          const Locale('en', ''),
-          const Locale('es', ''),
+          const Locale('en', 'US'),
+          const Locale('es', 'MX'),
         ],
         theme: ThemeData(
           brightness: Brightness.light,
