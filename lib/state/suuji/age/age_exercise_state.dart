@@ -1,11 +1,11 @@
 class AgeExerciseState {
   final int age;
-  final List<String> correctAnswer;
+  final List<String> correctAnswers;
   String userInput = '';
 
   AgeExerciseState({
     required this.age,
-    required this.correctAnswer,
+    required this.correctAnswers,
   });
 
   clear() {
@@ -13,6 +13,6 @@ class AgeExerciseState {
   }
 
   bool getIsCorrect() {
-    return this.correctAnswer.contains(this.userInput);
+    return this.correctAnswers.contains(this.userInput);
   }
 }
