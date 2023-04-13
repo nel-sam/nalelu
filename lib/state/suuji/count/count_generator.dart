@@ -7,11 +7,11 @@ import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 class CountGenerator {
   static createExercise(int index) {
     var random =
-        Nrs.getRandomNumber(min: 0, max: 2); //9); TODO: set to case count
+        Nrs.getRandomNumber(min: 0, max: 12);
 
     switch (random) {
       case 0:
-        final numOfMonths = Nrs.getRandomNumber(min: 0, max: 10);
+        final numOfMonths = Nrs.getRandomNumber(min: 1, max: 10);
         return CountExerciseState(
           isSino: true,
           icon: Icons.calendar_month_outlined,
@@ -22,7 +22,7 @@ class CountGenerator {
         );
 
       case 1:
-        final numOfDays = Nrs.getRandomNumber(min: 0, max: 15);
+        final numOfDays = Nrs.getRandomNumber(min: 1, max: 16);
         return CountExerciseState(
           isSino: true,
           icon: Icons.calendar_today_outlined,
@@ -33,90 +33,132 @@ class CountGenerator {
         );
 
       case 2:
-        final numbOfYears = NA.getRandomSinoNumber(min: 0, max: 100);
+        final numbOfYears = NA.getRandomSinoNumber(min: 1, max: 100);
         return CountExerciseState(
           isSino: true,
           icon: Icons.wb_twighlight,
           label: NA.t('years'),
           count: numbOfYears.digit,
           correctAnswers: [
-            numbOfYears.written + '年',
             numbOfYears.written + 'ねん',
+            numbOfYears.written + '年',
+            numbOfYears.kanji + 'ねん',
             numbOfYears.kanji + '年',
-            numbOfYears.kanji + 'ねん'
           ],
           counter: '年',
         );
 
-      // case 3:
-      //   return CountExerciseState(
-      //     isSino: false,
-      //     icon: Icons.pets,
-      //     label: NA.t('animals'),
-      //     count: sinoNumb.digit,
-      //     correctAnswer: sinoNumb.kanji,
-      //     counter: '匹', // TODO: Add furigana
-      //   );
+      case 3:
+        final numbofSmallAnimals = Nrs.getRandomNumber(min: 1, max: 15);
+        return CountExerciseState(
+          isSino: true,
+          icon: Icons.pets,
+          label: NA.t('small_animals'),
+          count: numbofSmallAnimals,
+          correctAnswers: getNumberOfSmallAnimalsAnswerList(numbofSmallAnimals),
+          counter: '匹',
+        );
 
-      // case 4:
-      //   return CountExerciseState(
-      //     isSino: false,
-      //     icon: Icons.person,
-      //     label: NA.t('people'),
-      //     count: numb.digit,
-      //     correctAnswer: numb.kanji,
-      //     counter: '人',
-      //   );
+      case 4:
+        final numbofBigAnimals = Nrs.getRandomNumber(min: 1, max: 15);
+        return CountExerciseState(
+          isSino: true,
+          icon: Icons.pets,
+          label: NA.t('big_animals'),
+          count: numbofBigAnimals,
+          correctAnswers: getNumberOfBigAnimalsAnswerList(numbofBigAnimals),
+          counter: '頭',
+        );
 
-      // case 5:
-      //   return CountExerciseState(
-      //     isSino: false,
-      //     icon: Icons.wine_bar,
-      //     label: NA.t('bottles'),
-      //     count: numb.digit,
-      //     correctAnswer: numb.kanji,
-      //     counter: '',
-      //   );
+      case 5:
+        final numbofFishes = NA.getRandomSinoNumber(min: 1, max: 100);
 
-      // case 6:
-      //   return CountExerciseState(
-      //     isSino: false,
-      //     icon: Icons.bike_scooter,
-      //     label: NA.t('things'),
-      //     count: numb.digit,
-      //     correctAnswer: numb.kanji,
-      //     counter: '',
-      //   );
+        return CountExerciseState(
+          isSino: true,
+          icon: Icons.water,
+          label: NA.t('fishes'),
+          count: numbofFishes.digit,
+          correctAnswers: [
+            numbofFishes.written + 'び',
+            numbofFishes.written + '尾',
+            numbofFishes.kanji + 'び',
+            numbofFishes.kanji + '尾'
+          ],
+          counter: '尾',
+        );
 
-      // case 7:
-      //   return CountExerciseState(
-      //     isSino: false,
-      //     icon: Icons.book_outlined,
-      //     label: NA.t('books'),
-      //     count: numb.digit,
-      //     correctAnswer: numb.kanji,
-      //     counter: '',
-      //   );
+      case 6:
+        final numbofFishesRabbits = Nrs.getRandomNumber(min: 1, max: 16);
 
-      // case 8:
-      //   return CountExerciseState(
-      //     isSino: false,
-      //     icon: Icons.local_pizza_outlined,
-      //     label: NA.t('slices'),
-      //     count: numb.digit,
-      //     correctAnswer: numb.kanji,
-      //     counter: '',
-      //   );
+        return CountExerciseState(
+          isSino: true,
+          icon: Icons.pets,
+          label: NA.t('birds_rabbits'),
+          count: numbofFishesRabbits,
+          correctAnswers:
+              getNumberOfBirdsRabbitsAnswerList(numbofFishesRabbits),
+          counter: '羽',
+        );
 
-      // case 9:
-      //   return CountExerciseState(
-      //     isSino: false,
-      //     icon: Icons.car_rental_outlined,
-      //     label: NA.t('cars_machines'),
-      //     count: numb.digit,
-      //     correctAnswer: numb.kanji,
-      //     counter: '',
-      //   );
+      case 7:
+        final numbofPeople = Nrs.getRandomNumber(min: 1, max: 16);
+
+        return CountExerciseState(
+          isSino: true,
+          icon: Icons.person,
+          label: NA.t('people'),
+          count: numbofPeople,
+          correctAnswers: getNumberOfPeopleAnswerList(numbofPeople),
+          counter: '人',
+        );
+
+      case 8:
+        final numbofThings = Nrs.getRandomNumber(min: 1, max: 16);
+
+        return CountExerciseState(
+          isSino: true,
+          icon: Icons.bike_scooter,
+          label: NA.t('things'),
+          count: numbofThings,
+          correctAnswers: getNumberOfThingsAnswerList(numbofThings),
+          counter: '本',
+        );
+
+      case 9:
+        final numbofBooks = Nrs.getRandomNumber(min: 1, max: 16);
+
+        return CountExerciseState(
+          isSino: true,
+          icon: Icons.book_outlined,
+          label: NA.t('things'),
+          count: numbofBooks,
+          correctAnswers: getNumberOfBooksAnswerList(numbofBooks),
+          counter: '冊',
+        );
+
+      case 10:
+        final numbofSlices = Nrs.getRandomNumber(min: 1, max: 16);
+
+        return CountExerciseState(
+          isSino: true,
+          icon: Icons.local_pizza_outlined,
+          label: NA.t('slices'),
+          count: numbofSlices,
+          correctAnswers: getNumberOfSlicesAnswerList(numbofSlices),
+          counter: '切れ',
+        );
+
+        case 11:
+        final numbofMachinesFurniture = Nrs.getRandomNumber(min: 1, max: 16);
+
+        return CountExerciseState(
+          isSino: true,
+          icon: Icons.car_rental_outlined,
+          label: NA.t('machines_furniture'),
+          count: numbofMachinesFurniture,
+          correctAnswers: getNumberOfMachineFurnitureAnswerList(numbofMachinesFurniture),
+          counter: '台',
+        );
     }
   }
 
@@ -212,6 +254,449 @@ class CountGenerator {
       answerList.add('十ヶ月');
     }
 
+    return answerList;
+  }
+
+  static List<String> getNumberOfSmallAnimalsAnswerList(int numOfMonths) {
+    List<String> answerList = [];
+
+    if (numOfMonths == 1) {
+      answerList.add('いっぴき');
+      answerList.add('一匹');
+    } else if (numOfMonths == 2) {
+      answerList.add('にひき');
+      answerList.add('二匹');
+    } else if (numOfMonths == 3) {
+      answerList.add('さんびき');
+      answerList.add('三匹');
+    } else if (numOfMonths == 4) {
+      answerList.add('よんひき');
+      answerList.add('四匹');
+    } else if (numOfMonths == 5) {
+      answerList.add('ごひき');
+      answerList.add('五匹');
+    } else if (numOfMonths == 6) {
+      answerList.add('ろっぴき');
+      answerList.add('六匹');
+    } else if (numOfMonths == 7) {
+      answerList.add('ななひき');
+      answerList.add('しちひき');
+      answerList.add('七匹');
+    } else if (numOfMonths == 8) {
+      answerList.add('はちひき');
+      answerList.add('はっぴき');
+      answerList.add('八匹');
+    } else if (numOfMonths == 9) {
+      answerList.add('きゅうひき');
+      answerList.add('九匹');
+    } else if (numOfMonths == 10) {
+      answerList.add('じゅっぴき');
+      answerList.add('じっぴき');
+      answerList.add('十匹');
+    } else if (numOfMonths == 11) {
+      answerList.add('じゅういっぴき');
+      answerList.add('十一匹');
+    } else if (numOfMonths == 12) {
+      answerList.add('じゅうにひき');
+      answerList.add('十二匹');
+    } else if (numOfMonths == 13) {
+      answerList.add('じゅうさんびき');
+      answerList.add('十三匹');
+    } else if (numOfMonths == 14) {
+      answerList.add('じゅうよんひき');
+      answerList.add('十四匹');
+    } else if (numOfMonths == 15) {
+      answerList.add('じゅうごひき');
+      answerList.add('十五匹');
+    }
+    return answerList;
+  }
+
+  static List<String> getNumberOfBigAnimalsAnswerList(int numOfMonths) {
+    List<String> answerList = [];
+
+    if (numOfMonths == 1) {
+      answerList.add('いっとう');
+      answerList.add('一頭');
+    } else if (numOfMonths == 2) {
+      answerList.add('にとう');
+      answerList.add('二頭');
+    } else if (numOfMonths == 3) {
+      answerList.add('さんとう');
+      answerList.add('三頭');
+    } else if (numOfMonths == 4) {
+      answerList.add('よんとう');
+      answerList.add('四頭');
+    } else if (numOfMonths == 5) {
+      answerList.add('ごとう');
+      answerList.add('五頭');
+    } else if (numOfMonths == 6) {
+      answerList.add('ろくとう');
+      answerList.add('六頭');
+    } else if (numOfMonths == 7) {
+      answerList.add('ななとう');
+      answerList.add('しちとう');
+      answerList.add('七頭');
+    } else if (numOfMonths == 8) {
+      answerList.add('はちとう');
+      answerList.add('はっとう');
+      answerList.add('八頭');
+    } else if (numOfMonths == 9) {
+      answerList.add('きゅうとう');
+      answerList.add('九頭');
+    } else if (numOfMonths == 10) {
+      answerList.add('じゅっとう');
+      answerList.add('じっとう');
+      answerList.add('十頭');
+    } else if (numOfMonths == 11) {
+      answerList.add('じゅういっとう');
+      answerList.add('十一頭');
+    } else if (numOfMonths == 12) {
+      answerList.add('じゅうにとう');
+      answerList.add('十二頭');
+    } else if (numOfMonths == 13) {
+      answerList.add('じゅうさんとう');
+      answerList.add('十三頭');
+    } else if (numOfMonths == 14) {
+      answerList.add('じゅうよんとう');
+      answerList.add('十四頭');
+    } else if (numOfMonths == 15) {
+      answerList.add('じゅうごとう');
+      answerList.add('十五頭');
+    }
+    return answerList;
+  }
+
+  static List<String> getNumberOfBirdsRabbitsAnswerList(int numOfMonths) {
+    List<String> answerList = [];
+
+    if (numOfMonths == 1) {
+      answerList.add('いちわ');
+      answerList.add('一羽');
+    } else if (numOfMonths == 2) {
+      answerList.add('にわ');
+      answerList.add('二羽');
+    } else if (numOfMonths == 3) {
+      answerList.add('さんわ');
+      answerList.add('さんば');
+      answerList.add('三羽');
+    } else if (numOfMonths == 4) {
+      answerList.add('よんわ');
+      answerList.add('よんば ');
+      answerList.add('よわ');
+      answerList.add('四羽');
+    } else if (numOfMonths == 5) {
+      answerList.add('ごわ');
+      answerList.add('五羽');
+    } else if (numOfMonths == 6) {
+      answerList.add('ろくわ');
+      answerList.add('ろっぱ');
+      answerList.add('六羽');
+    } else if (numOfMonths == 7) {
+      answerList.add('ななわ');
+      answerList.add('しちわ');
+      answerList.add('七羽');
+    } else if (numOfMonths == 8) {
+      answerList.add('はちわ');
+      answerList.add('はっぱ');
+      answerList.add('八羽');
+    } else if (numOfMonths == 9) {
+      answerList.add('きゅうわ');
+      answerList.add('九羽');
+    } else if (numOfMonths == 10) {
+      answerList.add('じゅうわ');
+      answerList.add('じゅっぱ');
+      answerList.add('じっぱ');
+      answerList.add('十羽');
+    } else if (numOfMonths == 11) {
+      answerList.add('じゅういちわ');
+      answerList.add('十一羽');
+    } else if (numOfMonths == 12) {
+      answerList.add('じゅうにわ');
+      answerList.add('十二羽');
+    } else if (numOfMonths == 13) {
+      answerList.add('じゅうさんわ');
+      answerList.add('十三羽');
+    } else if (numOfMonths == 14) {
+      answerList.add('じゅうよんわ');
+      answerList.add('十四羽');
+    } else if (numOfMonths == 15) {
+      answerList.add('じゅうごわ');
+      answerList.add('十五羽');
+    }
+    return answerList;
+  }
+
+  static List<String> getNumberOfPeopleAnswerList(int numOfMonths) {
+    List<String> answerList = [];
+
+    if (numOfMonths == 1) {
+      answerList.add('ひとり');
+      answerList.add('一人');
+    } else if (numOfMonths == 2) {
+      answerList.add('ふたり');
+      answerList.add('二人');
+    } else if (numOfMonths == 3) {
+      answerList.add('さんにん');
+      answerList.add('三人');
+    } else if (numOfMonths == 4) {
+      answerList.add('よにん');
+      answerList.add('四人');
+    } else if (numOfMonths == 5) {
+      answerList.add('ごにん');
+      answerList.add('五人');
+    } else if (numOfMonths == 6) {
+      answerList.add('ろくにん');
+      answerList.add('六人');
+    } else if (numOfMonths == 7) {
+      answerList.add('ななにん');
+      answerList.add('しちにん');
+      answerList.add('七人');
+    } else if (numOfMonths == 8) {
+      answerList.add('はちにん');
+      answerList.add('八人');
+    } else if (numOfMonths == 9) {
+      answerList.add('くにん');
+      answerList.add('きゅうにん');
+      answerList.add('九人');
+    } else if (numOfMonths == 10) {
+      answerList.add('じゅうにん');
+      answerList.add('十人');
+    } else if (numOfMonths == 11) {
+      answerList.add('じゅういちにん');
+      answerList.add('十一人');
+    } else if (numOfMonths == 12) {
+      answerList.add('じゅうににん');
+      answerList.add('十二人');
+    } else if (numOfMonths == 13) {
+      answerList.add('じゅうさんにん');
+      answerList.add('十三人');
+    } else if (numOfMonths == 14) {
+      answerList.add('じゅうよにん');
+      answerList.add('十四人');
+    } else if (numOfMonths == 15) {
+      answerList.add('じゅうごにん');
+      answerList.add('十五人');
+    }
+    return answerList;
+  }
+
+  static List<String> getNumberOfThingsAnswerList(int numOfMonths) {
+    List<String> answerList = [];
+
+    if (numOfMonths == 1) {
+      answerList.add('いっぽん');
+      answerList.add('一本');
+    } else if (numOfMonths == 2) {
+      answerList.add('にほん');
+      answerList.add('二本');
+    } else if (numOfMonths == 3) {
+      answerList.add('さんぼん');
+      answerList.add('三本');
+    } else if (numOfMonths == 4) {
+      answerList.add('よんほん');
+      answerList.add('四本');
+    } else if (numOfMonths == 5) {
+      answerList.add('ごにん');
+      answerList.add('五本');
+    } else if (numOfMonths == 6) {
+      answerList.add('ろっぽん');
+      answerList.add('六本');
+    } else if (numOfMonths == 7) {
+      answerList.add('ななほん');
+      answerList.add('しちほん');
+      answerList.add('七本');
+    } else if (numOfMonths == 8) {
+      answerList.add('はちほん');
+      answerList.add('はっぽん');
+      answerList.add('八本');
+    } else if (numOfMonths == 9) {
+      answerList.add('きゅうほん');
+      answerList.add('九本');
+    } else if (numOfMonths == 10) {
+      answerList.add('じゅっぽん');
+      answerList.add('じっぽん');
+      answerList.add('十本');
+    } else if (numOfMonths == 11) {
+      answerList.add('じゅういっぽん');
+      answerList.add('十一本');
+    } else if (numOfMonths == 12) {
+      answerList.add('じゅうにほん');
+      answerList.add('十二本');
+    } else if (numOfMonths == 13) {
+      answerList.add('じゅうさんほん');
+      answerList.add('十三本');
+    } else if (numOfMonths == 14) {
+      answerList.add('じゅうよんほん');
+      answerList.add('十四本');
+    } else if (numOfMonths == 15) {
+      answerList.add('じゅうごほん');
+      answerList.add('十五本');
+    }
+    return answerList;
+  }
+
+  static List<String> getNumberOfBooksAnswerList(int numOfMonths) {
+    List<String> answerList = [];
+
+    if (numOfMonths == 1) {
+      answerList.add('いっさつ');
+      answerList.add('一冊');
+    } else if (numOfMonths == 2) {
+      answerList.add('にさつ');
+      answerList.add('二冊');
+    } else if (numOfMonths == 3) {
+      answerList.add('さんさつ');
+      answerList.add('三冊');
+    } else if (numOfMonths == 4) {
+      answerList.add('よんさつ');
+      answerList.add('四冊');
+    } else if (numOfMonths == 5) {
+      answerList.add('ごさつ');
+      answerList.add('五冊');
+    } else if (numOfMonths == 6) {
+      answerList.add('ろくさつ');
+      answerList.add('六冊');
+    } else if (numOfMonths == 7) {
+      answerList.add('ななさつ');
+      answerList.add('しちさつ');
+      answerList.add('七冊');
+    } else if (numOfMonths == 8) {
+      answerList.add('はちさつ');
+      answerList.add('はっさつ');
+      answerList.add('八冊');
+    } else if (numOfMonths == 9) {
+      answerList.add('きゅうさつ');
+      answerList.add('九冊');
+    } else if (numOfMonths == 10) {
+      answerList.add('じゅっさつ');
+      answerList.add('じっさつ');
+      answerList.add('十冊');
+    } else if (numOfMonths == 11) {
+      answerList.add('じゅういっさつ');
+      answerList.add('十一冊');
+    } else if (numOfMonths == 12) {
+      answerList.add('じゅうにさつ');
+      answerList.add('十二冊');
+    } else if (numOfMonths == 13) {
+      answerList.add('じゅうさんほん');
+      answerList.add('十三冊');
+    } else if (numOfMonths == 14) {
+      answerList.add('じゅうよんさつ');
+      answerList.add('十四冊');
+    } else if (numOfMonths == 15) {
+      answerList.add('じゅうごさつ');
+      answerList.add('十五冊');
+    }
+    return answerList;
+  }
+
+  static List<String> getNumberOfSlicesAnswerList(int numOfMonths) {
+    List<String> answerList = [];
+
+    if (numOfMonths == 1) {
+      answerList.add('ひときれ');
+      answerList.add('一切れ');
+    } else if (numOfMonths == 2) {
+      answerList.add('ふたきれ');
+      answerList.add('二切れ');
+    } else if (numOfMonths == 3) {
+      answerList.add('みきれ');
+      answerList.add('三切れ');
+    } else if (numOfMonths == 4) {
+      answerList.add('よんきれ');
+      answerList.add('よきれ');
+      answerList.add('四切れ');
+    } else if (numOfMonths == 5) {
+      answerList.add('ごきれ');
+      answerList.add('五切れ');
+    } else if (numOfMonths == 6) {
+      answerList.add('ろっきれ');
+      answerList.add('六切れ');
+    } else if (numOfMonths == 7) {
+      answerList.add('ななきれ');
+      answerList.add('七切れ');
+    } else if (numOfMonths == 8) {
+      answerList.add('はちきれ');
+      answerList.add('はっきれ');
+      answerList.add('八切れ');
+    } else if (numOfMonths == 9) {
+      answerList.add('きゅうきれ');
+      answerList.add('九切れ');
+    } else if (numOfMonths == 10) {
+      answerList.add('じゅっきれ');
+      answerList.add('じっきれ');
+      answerList.add('十切れ');
+    } else if (numOfMonths == 11) {
+      answerList.add('じゅういっきれ');
+      answerList.add('十一切れ');
+    } else if (numOfMonths == 12) {
+      answerList.add('じゅうにきれ');
+      answerList.add('十二切れ');
+    } else if (numOfMonths == 13) {
+      answerList.add('じゅうさんきれ');
+      answerList.add('十三切れ');
+    } else if (numOfMonths == 14) {
+      answerList.add('じゅうよんきれ');
+      answerList.add('じゅうよきれ');
+      answerList.add('十四切れ');
+    } else if (numOfMonths == 15) {
+      answerList.add('じゅうごきれ');
+      answerList.add('十五切れ');
+    }
+    return answerList;
+  }
+
+  static List<String> getNumberOfMachineFurnitureAnswerList(int numOfMonths) {
+    List<String> answerList = [];
+
+    if (numOfMonths == 1) {
+      answerList.add('いちだい');
+      answerList.add('一台');
+    } else if (numOfMonths == 2) {
+      answerList.add('にだい');
+      answerList.add('二台');
+    } else if (numOfMonths == 3) {
+      answerList.add('さんだい');
+      answerList.add('三台');
+    } else if (numOfMonths == 4) {
+      answerList.add('よんだい');
+      answerList.add('四台');
+    } else if (numOfMonths == 5) {
+      answerList.add('ごだい');
+      answerList.add('五台');
+    } else if (numOfMonths == 6) {
+      answerList.add('ろくだい');
+      answerList.add('六台');
+    } else if (numOfMonths == 7) {
+      answerList.add('ななだい');
+      answerList.add('しちだい');
+      answerList.add('七台');
+    } else if (numOfMonths == 8) {
+      answerList.add('はちだい');
+      answerList.add('八台');
+    } else if (numOfMonths == 9) {
+      answerList.add('きゅうだい');
+      answerList.add('九台');
+    } else if (numOfMonths == 10) {
+      answerList.add('じゅうだい');
+      answerList.add('十台');
+    } else if (numOfMonths == 11) {
+      answerList.add('じゅういちだい');
+      answerList.add('十一台');
+    } else if (numOfMonths == 12) {
+      answerList.add('じゅうにだい');
+      answerList.add('十二台');
+    } else if (numOfMonths == 13) {
+      answerList.add('じゅうさんだい');
+      answerList.add('十三台');
+    } else if (numOfMonths == 14) {
+      answerList.add('じゅうよんだい');
+      answerList.add('十四台');
+    } else if (numOfMonths == 15) {
+      answerList.add('じゅうごだい');
+      answerList.add('十五台');
+    }
     return answerList;
   }
 }

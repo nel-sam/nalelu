@@ -4,6 +4,7 @@ import 'package:nareru/state/enums.dart';
 import 'package:nareru/state/exercise_nav_notifier.dart';
 import 'package:nareru/state/suuji/count/count_notifier.dart';
 import 'package:nareru/widgets/shared/ad_card.dart';
+import 'package:nareru/widgets/shared/hint_button.dart';
 import 'package:nareru/widgets/shared/home_button_wrapper.dart';
 import 'package:nareru/widgets/shared/nav_header_wrapper.dart';
 import 'package:nareru/widgets/shared/question_free_form.dart';
@@ -26,6 +27,7 @@ class CountingExercise extends StatelessWidget {
         child: Consumer<ExerciseNavNotifier>(
           builder: (context, navNotifier, child) {
             var activeItem = navNotifier.getActive();
+            bool isHintActive = false;
             var label = activeItem.label;
 
             var infoText =
@@ -73,18 +75,31 @@ class CountingExercise extends StatelessWidget {
                                 child: NAnswerStatusIcon(
                               status: isCorrect,
                             )),
-                            Container(
-                              width: 80,
-                              child: QuestionFreeForm(
-                                isActive: false,
-                                maxLength: s.correctAnswers.length,
-                                activeValue: s.userInput,
-                                hintValue: '',
-                                onChanged: (String newVal) =>
-                                    countNotifier.updateCount(newVal),
-                                correctValues: s.correctAnswers,
-                              ),
-                            ),
+                            !s.correctAnswers.contains(s.userInput)
+                                ? HintButton(
+                                    onHintActive: (bool onHintActive) =>
+                                        isHintActive = onHintActive,
+                                    userInput: s.userInput,
+                                    correctAnswers: s.correctAnswers[0],
+                                    onHintUpdate: (String hint) => {
+                                          countNotifier.updateCount(hint),
+                                        })
+                                : Container(),
+                            !s.correctAnswers.contains(s.userInput)
+                                ? Container(
+                                    width: 80,
+                                    child: QuestionFreeForm(
+                                      isActive: false,
+                                      maxLength: s.correctAnswers.length,
+                                      activeValue: s.userInput,
+                                      hintValue: '',
+                                      onChanged: (String newVal) =>
+                                          countNotifier.updateCount(newVal),
+                                      correctValues: s.correctAnswers,
+                                    ),
+                                  )
+                                : Text(s.userInput,
+                                    style: TextStyle(fontSize: 28)),
                             // Padding(
                             //   padding: const EdgeInsets.all(8.0),
                             //   child: Text(navNotifier.getActive().counter,
