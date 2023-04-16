@@ -280,18 +280,18 @@ class CountGenerator {
       answerList.add('六匹');
     } else if (numOfAnimals == 7) {
       answerList.add('ななひき');
-      answerList.add('しちひき');
+      // answerList.add('しちひき');
       answerList.add('七匹');
     } else if (numOfAnimals == 8) {
       answerList.add('はちひき');
-      answerList.add('はっぴき');
+      // answerList.add('はっぴき');
       answerList.add('八匹');
     } else if (numOfAnimals == 9) {
       answerList.add('きゅうひき');
       answerList.add('九匹');
     } else if (numOfAnimals == 10) {
       answerList.add('じゅっぴき');
-      answerList.add('じっぴき');
+      // answerList.add('じっぴき');
       answerList.add('十匹');
     } else if (numOfAnimals == 11) {
       answerList.add('じゅういっぴき');
@@ -335,18 +335,18 @@ class CountGenerator {
       answerList.add('六頭');
     } else if (numOfBigAnimals == 7) {
       answerList.add('ななとう');
-      answerList.add('しちとう');
+      // answerList.add('しちとう');
       answerList.add('七頭');
     } else if (numOfBigAnimals == 8) {
       answerList.add('はちとう');
-      answerList.add('はっとう');
+      // answerList.add('はっとう');
       answerList.add('八頭');
     } else if (numOfBigAnimals == 9) {
       answerList.add('きゅうとう');
       answerList.add('九頭');
     } else if (numOfBigAnimals == 10) {
       answerList.add('じゅっとう');
-      answerList.add('じっとう');
+      // answerList.add('じっとう');
       answerList.add('十頭');
     } else if (numOfBigAnimals == 11) {
       answerList.add('じゅういっとう');
@@ -378,11 +378,11 @@ class CountGenerator {
       answerList.add('二羽');
     } else if (numOfBirdsRabbits == 3) {
       answerList.add('さんわ');
-      answerList.add('さんば');
+      // answerList.add('さんば');
       answerList.add('三羽');
     } else if (numOfBirdsRabbits == 4) {
       answerList.add('よんわ');
-      answerList.add('よんば ');
+      // answerList.add('よんば ');
       answerList.add('よわ');
       answerList.add('四羽');
     } else if (numOfBirdsRabbits == 5) {
@@ -390,23 +390,23 @@ class CountGenerator {
       answerList.add('五羽');
     } else if (numOfBirdsRabbits == 6) {
       answerList.add('ろくわ');
-      answerList.add('ろっぱ');
+      // answerList.add('ろっぱ');
       answerList.add('六羽');
     } else if (numOfBirdsRabbits == 7) {
       answerList.add('ななわ');
-      answerList.add('しちわ');
+      // answerList.add('しちわ');
       answerList.add('七羽');
     } else if (numOfBirdsRabbits == 8) {
       answerList.add('はちわ');
-      answerList.add('はっぱ');
+      // answerList.add('はっぱ');
       answerList.add('八羽');
     } else if (numOfBirdsRabbits == 9) {
       answerList.add('きゅうわ');
       answerList.add('九羽');
     } else if (numOfBirdsRabbits == 10) {
       answerList.add('じゅうわ');
-      answerList.add('じゅっぱ');
-      answerList.add('じっぱ');
+      // answerList.add('じゅっぱ');
+      // answerList.add('じっぱ');
       answerList.add('十羽');
     } else if (numOfBirdsRabbits == 11) {
       answerList.add('じゅういちわ');
@@ -450,14 +450,14 @@ class CountGenerator {
       answerList.add('六人');
     } else if (numOfPeople == 7) {
       answerList.add('ななにん');
-      answerList.add('しちにん');
+      // answerList.add('しちにん');
       answerList.add('七人');
     } else if (numOfPeople == 8) {
       answerList.add('はちにん');
       answerList.add('八人');
     } else if (numOfPeople == 9) {
       answerList.add('くにん');
-      answerList.add('きゅうにん');
+      // answerList.add('きゅうにん');
       answerList.add('九人');
     } else if (numOfPeople == 10) {
       answerList.add('じゅうにん');
@@ -504,18 +504,18 @@ class CountGenerator {
       answerList.add('六本');
     } else if (numOfThings == 7) {
       answerList.add('ななほん');
-      answerList.add('しちほん');
+      // answerList.add('しちほん');
       answerList.add('七本');
     } else if (numOfThings == 8) {
       answerList.add('はちほん');
-      answerList.add('はっぽん');
+      // answerList.add('はっぽん');
       answerList.add('八本');
     } else if (numOfThings == 9) {
       answerList.add('きゅうほん');
       answerList.add('九本');
     } else if (numOfThings == 10) {
       answerList.add('じゅっぽん');
-      answerList.add('じっぽん');
+      // answerList.add('じっぽん');
       answerList.add('十本');
     } else if (numOfThings == 11) {
       answerList.add('じゅういっぽん');
@@ -559,18 +559,18 @@ class CountGenerator {
       answerList.add('六冊');
     } else if (numOfBooks == 7) {
       answerList.add('ななさつ');
-      answerList.add('しちさつ');
+      // answerList.add('しちさつ');
       answerList.add('七冊');
     } else if (numOfBooks == 8) {
       answerList.add('はちさつ');
-      answerList.add('はっさつ');
+      // answerList.add('はっさつ');
       answerList.add('八冊');
     } else if (numOfBooks == 9) {
       answerList.add('きゅうさつ');
       answerList.add('九冊');
     } else if (numOfBooks == 10) {
       answerList.add('じゅっさつ');
-      answerList.add('じっさつ');
+      // answerList.add('じっさつ');
       answerList.add('十冊');
     } else if (numOfBooks == 11) {
       answerList.add('じゅういっさつ');
@@ -605,7 +605,7 @@ class CountGenerator {
       answerList.add('三切れ');
     } else if (numOfSlices == 4) {
       answerList.add('よんきれ');
-      answerList.add('よきれ');
+      // answerList.add('よきれ');
       answerList.add('四切れ');
     } else if (numOfSlices == 5) {
       answerList.add('ごきれ');
@@ -618,14 +618,14 @@ class CountGenerator {
       answerList.add('七切れ');
     } else if (numOfSlices == 8) {
       answerList.add('はちきれ');
-      answerList.add('はっきれ');
+      // answerList.add('はっきれ');
       answerList.add('八切れ');
     } else if (numOfSlices == 9) {
       answerList.add('きゅうきれ');
       answerList.add('九切れ');
     } else if (numOfSlices == 10) {
       answerList.add('じゅっきれ');
-      answerList.add('じっきれ');
+      // answerList.add('じっきれ');
       answerList.add('十切れ');
     } else if (numOfSlices == 11) {
       answerList.add('じゅういっきれ');
@@ -638,7 +638,7 @@ class CountGenerator {
       answerList.add('十三切れ');
     } else if (numOfSlices == 14) {
       answerList.add('じゅうよんきれ');
-      answerList.add('じゅうよきれ');
+      // answerList.add('じゅうよきれ');
       answerList.add('十四切れ');
     } else if (numOfSlices == 15) {
       answerList.add('じゅうごきれ');
@@ -671,7 +671,7 @@ class CountGenerator {
       answerList.add('六台');
     } else if (numOfMachineFurniture == 7) {
       answerList.add('ななだい');
-      answerList.add('しちだい');
+      // answerList.add('しちだい');
       answerList.add('七台');
     } else if (numOfMachineFurniture == 8) {
       answerList.add('はちだい');
