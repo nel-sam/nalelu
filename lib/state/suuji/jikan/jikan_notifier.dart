@@ -23,7 +23,7 @@ class JikanNotifier extends ChangeNotifier {
 
     _debounce = Timer(
         const Duration(milliseconds: DEBOUNCE_TIME), () => notifyListeners());
-  }
+}
 
   getStateItem() {
     return _getStateItem();
