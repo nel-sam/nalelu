@@ -17,29 +17,35 @@ class FuriganaText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(children: [
-      for (var i in furigana)
-        Column(
-            mainAxisAlignment: MainAxisAlignment.end,
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              Text(
-                i.furigana,
-                style: TextStyle(
-                  fontSize: fontSize * 0.5,
-                  color: labelColor,
-                  fontWeight: fontWeight,
-                ),
-              ),
-              Text(
-                i.text,
-                style: TextStyle(
-                  fontSize: fontSize,
-                  color: labelColor,
-                  fontWeight: fontWeight,
-                ),
-              ),
-            ])
-    ]);
+    return Row(
+        mainAxisSize: MainAxisSize.min,
+        mainAxisAlignment: MainAxisAlignment.center,
+        children: [
+          for (var i in furigana)
+            Column(
+                mainAxisAlignment: MainAxisAlignment.end,
+                mainAxisSize: MainAxisSize.max,
+                children: [
+                  Container(
+                    height: fontSize * 0.7,
+                    child: Text(
+                      i.furigana,
+                      style: TextStyle(
+                        fontSize: fontSize * 0.5,
+                        color: labelColor,
+                        fontWeight: fontWeight,
+                      ),
+                    ),
+                  ),
+                  Text(
+                    i.text,
+                    style: TextStyle(
+                      fontSize: fontSize,
+                      color: labelColor,
+                      fontWeight: fontWeight,
+                    ),
+                  ),
+                ])
+        ]);
   }
 }

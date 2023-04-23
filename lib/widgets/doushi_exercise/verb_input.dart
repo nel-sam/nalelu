@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nareru/lang_data/doushi.dart';
-import 'package:nareru/widgets/shared/question_free_form.dart';
+import 'package:nareru/widgets/shared/na_free_form_entry_wrapper.dart';
 import 'package:nrs_flutter_lib/constants.dart';
+import 'package:nrs_flutter_lib/widgets/n_free_form_entry.dart';
 import 'package:nrs_flutter_lib/widgets/n_text_span.dart';
 
 class VerbInput extends StatelessWidget {
@@ -37,15 +38,14 @@ class VerbInput extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.only(left: 8.0, right: 8.0),
-              child: QuestionFreeForm(
-                isActive: false,
-                maxLength: correctValue.length,
-                activeValue: activeValue,
-                hintValue: doushi.infinitive,
-                correctValues: [correctValue],
+              child: NaFreeFormEntryWrapper(
+                widthType: NFreeFormWidths.half,
+                hintValue: '',
                 onChanged: (String newValue) {
                   onChanged(newValue);
                 },
+                initialValue: activeValue,
+                correctValues: [correctValue],
               ),
             ),
             isCorrect

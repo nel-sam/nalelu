@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nareru/furi_text.dart';
 import 'package:nareru/lang_data/numbers.dart';
 import 'package:nareru/na_helpers.dart';
-import 'package:nareru/widgets/shared/na_number_button.dart';
+import 'package:nareru/widgets/shared/na_number_block.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 import 'package:nrs_flutter_lib/widgets/n_sub_header.dart';
 
@@ -45,11 +45,10 @@ class NumberChart extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         crossAxisSpacing: 3,
         mainAxisSpacing: 3,
-        maxCrossAxisExtent: 100.0,
+        maxCrossAxisExtent: 120.0,
         children: <Widget>[
-          ...nativeNumberBank.getRange(1, 11).map((e) => NANumberButton(
-              label: e.digit.toString(),
-              transLabel: [FuriText(e.kanji, e.written)]))
+          ...nativeNumberBank.getRange(1, 11).map((e) => NANumberBlock(
+              digit: e.digit, furiTexts: [FuriText(e.kanji, e.written)]))
         ],
       ),
     );
@@ -72,11 +71,10 @@ class NumberChart extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         crossAxisSpacing: 3,
         mainAxisSpacing: 3,
-        maxCrossAxisExtent: 100.0,
+        maxCrossAxisExtent: 120.0,
         children: <Widget>[
-          ...numbers.getRange(0, 101).map((e) => NANumberButton(
-              label: e.digit.toString(),
-              transLabel: [FuriText(e.kanji, e.written)]))
+          ...numbers.getRange(0, 101).map((e) => NANumberBlock(
+              digit: e.digit, furiTexts: [FuriText(e.kanji, e.written)]))
         ],
       ),
     );

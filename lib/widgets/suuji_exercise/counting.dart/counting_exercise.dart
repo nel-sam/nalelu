@@ -6,14 +6,15 @@ import 'package:nareru/state/suuji/count/count_notifier.dart';
 import 'package:nareru/widgets/shared/ad_card.dart';
 import 'package:nareru/widgets/shared/hint_button.dart';
 import 'package:nareru/widgets/shared/home_button_wrapper.dart';
+import 'package:nareru/widgets/shared/na_free_form_entry_wrapper.dart';
 import 'package:nareru/widgets/shared/nav_header_wrapper.dart';
-import 'package:nareru/widgets/shared/question_free_form.dart';
 import 'package:nareru/widgets/suuji_exercise/number_chart.dart';
 import 'package:nrs_flutter_lib/enums.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 import 'package:nrs_flutter_lib/widgets/n_answer_status_icon.dart';
 import 'package:nrs_flutter_lib/widgets/n_footer_button.dart';
 import 'package:nrs_flutter_lib/widgets/n_footer_menu.dart';
+import 'package:nrs_flutter_lib/widgets/n_free_form_entry.dart';
 import 'package:nrs_flutter_lib/widgets/n_info_button.dart';
 import 'package:nrs_flutter_lib/widgets/n_text_span.dart';
 import 'package:provider/provider.dart';
@@ -88,23 +89,17 @@ class CountingExercise extends StatelessWidget {
                             !s.correctAnswers.contains(s.userInput)
                                 ? Container(
                                     width: 80,
-                                    child: QuestionFreeForm(
-                                      isActive: false,
-                                      maxLength: s.correctAnswers.length,
-                                      activeValue: s.userInput,
+                                    child: NaFreeFormEntryWrapper(
+                                      widthType: NFreeFormWidths.half,
                                       hintValue: '',
-                                      onChanged: (String newVal) =>
-                                          countNotifier.updateCount(newVal),
+                                      onChanged: (String newValue) =>
+                                          countNotifier.updateCount(newValue),
+                                      initialValue: s.userInput,
                                       correctValues: s.correctAnswers,
                                     ),
                                   )
                                 : Text(s.userInput,
                                     style: TextStyle(fontSize: 28)),
-                            // Padding(
-                            //   padding: const EdgeInsets.all(8.0),
-                            //   child: Text(navNotifier.getActive().counter,
-                            //       style: TextStyle(fontSize: 28)),
-                            // ),
                           ],
                         );
                       },

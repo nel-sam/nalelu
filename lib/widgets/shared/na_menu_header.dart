@@ -55,7 +55,10 @@ class NAMenuHeader extends StatelessWidget {
                     ),
                   ),
                 ),
-                FuriganaText(furigana: label, fontSize: FONT_SIZE * 1.5, fontWeight: FontWeight.bold)
+                FuriganaText(
+                    furigana: label,
+                    fontSize: FONT_SIZE * 1.5,
+                    fontWeight: FontWeight.bold)
               ],
             ),
           ),

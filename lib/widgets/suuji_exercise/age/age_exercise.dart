@@ -6,14 +6,15 @@ import 'package:nareru/state/suuji/age/age_notifier.dart';
 import 'package:nareru/widgets/shared/ad_card.dart';
 import 'package:nareru/widgets/shared/hint_button.dart';
 import 'package:nareru/widgets/shared/home_button_wrapper.dart';
+import 'package:nareru/widgets/shared/na_free_form_entry_wrapper.dart';
 import 'package:nareru/widgets/shared/nav_header_wrapper.dart';
-import 'package:nareru/widgets/shared/question_free_form.dart';
 import 'package:nareru/widgets/suuji_exercise/number_chart.dart';
 import 'package:nrs_flutter_lib/enums.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 import 'package:nrs_flutter_lib/widgets/n_answer_status_icon.dart';
 import 'package:nrs_flutter_lib/widgets/n_footer_button.dart';
 import 'package:nrs_flutter_lib/widgets/n_footer_menu.dart';
+import 'package:nrs_flutter_lib/widgets/n_free_form_entry.dart';
 import 'package:provider/provider.dart';
 
 class AgeExercise extends StatelessWidget {
@@ -59,14 +60,14 @@ class AgeExercise extends StatelessWidget {
                             !s.correctAnswers.contains(s.userInput)
                                 ? Container(
                                     width: 150,
-                                    child: QuestionFreeForm(
-                                      isActive: isHintActive,
-                                      maxLength: s.correctAnswers[0].length,
-                                      activeValue: s.userInput,
-                                      correctValues: s.correctAnswers,
+                                    child: NaFreeFormEntryWrapper(
+                                      widthType: NFreeFormWidths.half,
                                       hintValue: '',
-                                      onChanged: (String newVal) =>
-                                          ageNotifier.updateAge(newVal),
+                                      onChanged: (String newValue) {
+                                        ageNotifier.updateAge(newValue);
+                                      },
+                                      initialValue: s.userInput,
+                                      correctValues: s.correctAnswers,
                                     ),
                                   )
                                 : Text(s.userInput,

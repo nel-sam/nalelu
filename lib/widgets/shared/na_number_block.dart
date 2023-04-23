@@ -3,14 +3,14 @@ import 'package:nareru/furi_text.dart';
 import 'package:nareru/widgets/shared/furigana_text.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 
-class NANumberButton extends StatelessWidget {
-  final String label;
-  final List<FuriText> transLabel;
+class NANumberBlock extends StatelessWidget {
+  final int digit;
+  final List<FuriText> furiTexts;
 
-  const NANumberButton({
+  const NANumberBlock({
     Key? key,
-    required this.label,
-    required this.transLabel,
+    required this.digit,
+    required this.furiTexts,
   }) : super(key: key);
 
   @override
@@ -27,6 +27,7 @@ class NANumberButton extends StatelessWidget {
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
             elevation: 10,
+            minimumSize: Size(250, 250),
             backgroundColor: appBarColor,
             disabledForegroundColor: appBarColor.withOpacity(0.38),
             disabledBackgroundColor: appBarColor.withOpacity(0.12),
@@ -41,16 +42,16 @@ class NANumberButton extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
-                  label,
+                  digit.toString(),
                   style: TextStyle(
-                    fontSize: 10,
+                    fontSize: 18,
                     color: Nrs.getPrimaryColor(context),
                   ),
                 ),
-                if (transLabel.isNotEmpty)
+                if (furiTexts.isNotEmpty)
                   FuriganaText(
-                      furigana: transLabel,
-                      fontSize: 14,
+                      furigana: furiTexts,
+                      fontSize: digit > 38 ? 15 : 18,
                       labelColor: labelColor,
                       fontWeight: FontWeight.bold),
               ]),
