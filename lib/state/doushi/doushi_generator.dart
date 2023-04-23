@@ -1,5 +1,5 @@
-import 'package:nareru/lang_data/doushi.dart';
-import 'package:nareru/state/doushi/doushi_exercise_state.dart';
+import 'package:nalelu/lang_data/doushi.dart';
+import 'package:nalelu/state/doushi/doushi_exercise_state.dart';
 
 class DoushiGenerator {
   static createExercise(int index) {

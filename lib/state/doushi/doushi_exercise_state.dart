@@ -1,4 +1,4 @@
-import 'package:nareru/lang_data/doushi.dart';
+import 'package:nalelu/lang_data/doushi.dart';
 
 class DoushiExerciseState {
   List<String> userInput = [];

@@ -1,4 +1,4 @@
-package com.nrsdev.nareru
+package com.nrsdev.nalelu
 
 import io.flutter.embedding.android.FlutterActivity
 

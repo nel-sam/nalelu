@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.nrsdev.nareru">
+    package="com.nrsdev.nalelu">
    <application
-        android:label="Nareru"
+        android:label="nalelu"
         android:icon="@mipmap/ic_launcher">
         <activity
             android:name=".MainActivity"

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nareru/furi_text.dart';
-import 'package:nareru/widgets/shared/furigana_text.dart';
+import 'package:nalelu/furi_text.dart';
+import 'package:nalelu/widgets/shared/furigana_text.dart';
 import 'package:nrs_flutter_lib/constants.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 

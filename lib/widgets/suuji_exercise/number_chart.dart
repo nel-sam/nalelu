@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:nareru/furi_text.dart';
-import 'package:nareru/lang_data/numbers.dart';
-import 'package:nareru/na_helpers.dart';
-import 'package:nareru/widgets/shared/na_number_block.dart';
+import 'package:nalelu/furi_text.dart';
+import 'package:nalelu/lang_data/numbers.dart';
+import 'package:nalelu/na_helpers.dart';
+import 'package:nalelu/widgets/shared/na_number_block.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 import 'package:nrs_flutter_lib/widgets/n_sub_header.dart';
 

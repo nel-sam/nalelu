@@ -1,13 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:nareru/furi_text.dart';
-import 'package:nareru/na_helpers.dart';
-import 'package:nareru/widgets/shared/ad_card.dart';
-import 'package:nareru/widgets/shared/na_footer_menu.dart';
-import 'package:nareru/widgets/shared/na_menu_button.dart';
-import 'package:nareru/widgets/shared/na_menu_header.dart';
-import 'package:nareru/widgets/suuji_exercise/age/age_exercise.dart';
-import 'package:nareru/widgets/suuji_exercise/counting.dart/counting_exercise.dart';
-import 'package:nareru/widgets/suuji_exercise/jikan_exercise/jikan_exercise.dart';
+import 'package:nalelu/furi_text.dart';
+import 'package:nalelu/na_helpers.dart';
+import 'package:nalelu/widgets/shared/ad_card.dart';
+import 'package:nalelu/widgets/shared/na_footer_menu.dart';
+import 'package:nalelu/widgets/shared/na_menu_button.dart';
+import 'package:nalelu/widgets/shared/na_menu_header.dart';
+import 'package:nalelu/widgets/suuji_exercise/age/age_exercise.dart';
+import 'package:nalelu/widgets/suuji_exercise/counting.dart/counting_exercise.dart';
+import 'package:nalelu/widgets/suuji_exercise/jikan_exercise/jikan_exercise.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 
 class NumbersMenu extends StatelessWidget {

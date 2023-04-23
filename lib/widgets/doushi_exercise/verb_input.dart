@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:nareru/lang_data/doushi.dart';
-import 'package:nareru/widgets/shared/na_free_form_entry_wrapper.dart';
+import 'package:nalelu/lang_data/doushi.dart';
+import 'package:nalelu/widgets/shared/na_free_form_entry_wrapper.dart';
 import 'package:nrs_flutter_lib/constants.dart';
 import 'package:nrs_flutter_lib/widgets/n_free_form_entry.dart';
 import 'package:nrs_flutter_lib/widgets/n_text_span.dart';

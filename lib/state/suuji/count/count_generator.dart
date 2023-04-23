@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:nareru/constants.dart';
-import 'package:nareru/na_helpers.dart';
-import 'package:nareru/state/suuji/count/count_exercise_state.dart';
+import 'package:nalelu/constants.dart';
+import 'package:nalelu/na_helpers.dart';
+import 'package:nalelu/state/suuji/count/count_exercise_state.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 
 class CountGenerator {

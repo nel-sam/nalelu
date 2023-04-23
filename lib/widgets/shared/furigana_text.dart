@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:nareru/furi_text.dart';
+import 'package:nalelu/furi_text.dart';
 
 class FuriganaText extends StatelessWidget {
   final double fontSize;
