@@ -11,18 +11,23 @@ class NumberChart extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final screenHeight = Nrs.getScreenHeight();
+
     return Scaffold(
         appBar: Nrs.NrsAppBar(title: NA.t('numberChart'), context: context),
         body: Column(
           children: <Widget>[
             NSubHeader(NA.t('nativeNumbers')),
             SizedBox(
-              height: 200, // constrain height
+              height: screenHeight * 0.25,
               child: getNativeNumberChart(context),
             ),
-            NSubHeader(NA.t('sinoNumbers')),
+            Padding(
+              padding: const EdgeInsets.only(top: 8.0),
+              child: NSubHeader(NA.t('sinoNumbers')),
+            ),
             SizedBox(
-              height: 300, // constrain height
+              height: screenHeight * 0.4,
               child: getSinoNumberChart(context),
             )
           ],
@@ -45,7 +50,7 @@ class NumberChart extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         crossAxisSpacing: 3,
         mainAxisSpacing: 3,
-        maxCrossAxisExtent: 120.0,
+        maxCrossAxisExtent: 130.0,
         children: <Widget>[
           ...nativeNumberBank.getRange(1, 11).map((e) => NANumberBlock(
               digit: e.digit, furiTexts: [FuriText(e.kanji, e.written)]))
@@ -71,7 +76,7 @@ class NumberChart extends StatelessWidget {
         padding: const EdgeInsets.all(16),
         crossAxisSpacing: 3,
         mainAxisSpacing: 3,
-        maxCrossAxisExtent: 120.0,
+        maxCrossAxisExtent: 130.0,
         children: <Widget>[
           ...numbers.getRange(0, 101).map((e) => NANumberBlock(
               digit: e.digit, furiTexts: [FuriText(e.kanji, e.written)]))
