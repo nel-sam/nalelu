@@ -81,7 +81,7 @@ class CountingExercise extends StatelessWidget {
                                     onHintActive: (bool onHintActive) =>
                                         isHintActive = onHintActive,
                                     userInput: s.userInput,
-                                    correctAnswers: s.correctAnswers[0],
+                                    correctAnswer: s.correctAnswers[0],
                                     onHintUpdate: (String hint) => {
                                           countNotifier.updateCount(hint),
                                         })

@@ -84,7 +84,6 @@ class JikanExercise extends StatelessWidget {
                   child: Consumer<JikanNotifier>(
                     builder: (context, jikanNotifier, child) {
                       var s = jikanNotifier.getStateItem();
-                      // TODO: Make status 3d
                       var isHourCorrect = s.correctHours.contains(s.userHour)
                           ? CorrectStatus.correct
                           : CorrectStatus.unstarted;
@@ -95,8 +94,8 @@ class JikanExercise extends StatelessWidget {
                           ? CorrectStatus.correct
                           : CorrectStatus.unstarted;
 
-                      return Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                      return Wrap(
+                        spacing: 20,
                         children: [
                           Column(
                             children: [
@@ -106,7 +105,7 @@ class JikanExercise extends StatelessWidget {
                                       onHintActive: (bool onHintActive) =>
                                           isHintActive = onHintActive,
                                       userInput: s.userHour,
-                                      correctAnswers: s.correctHours[0],
+                                      correctAnswer: s.correctHours[0],
                                       onHintUpdate: (String hint) => {
                                             jikanNotifier.updateHour(hint),
                                           })
@@ -119,8 +118,8 @@ class JikanExercise extends StatelessWidget {
                                         hintValue: '',
                                         onChanged: (String newValue) =>
                                             jikanNotifier.updateHour(newValue),
-                                        initialValue: s.userInput,
-                                        correctValues: s.correctAnswers,
+                                        initialValue: s.userHour,
+                                        correctValues: s.correctHours,
                                       ),
                                     )
                                   : Text(s.userHour,
@@ -135,7 +134,7 @@ class JikanExercise extends StatelessWidget {
                                       onHintActive: (bool onHintActive) =>
                                           isHintActive = onHintActive,
                                       userInput: s.userMin,
-                                      correctAnswers: s.correctMins[0],
+                                      correctAnswer: s.correctMins[0],
                                       onHintUpdate: (String hint) => {
                                             jikanNotifier.updateMin(hint),
                                           })
@@ -148,8 +147,8 @@ class JikanExercise extends StatelessWidget {
                                         hintValue: '',
                                         onChanged: (String newValue) =>
                                             jikanNotifier.updateMin(newValue),
-                                        initialValue: s.userInput,
-                                        correctValues: s.correctAnswers,
+                                        initialValue: s.userMin,
+                                        correctValues: s.correctMins,
                                       ),
                                     )
                                   : Text(s.userMin,
@@ -164,7 +163,7 @@ class JikanExercise extends StatelessWidget {
                                       onHintActive: (bool onHintActive) =>
                                           isHintActive = onHintActive,
                                       userInput: s.userSec,
-                                      correctAnswers: s.correctSecs[0],
+                                      correctAnswer: s.correctSecs[0],
                                       onHintUpdate: (String hint) => {
                                             jikanNotifier.updateSec(hint),
                                           })
@@ -177,8 +176,8 @@ class JikanExercise extends StatelessWidget {
                                         hintValue: '',
                                         onChanged: (String newValue) =>
                                             jikanNotifier.updateSec(newValue),
-                                        initialValue: s.userInput,
-                                        correctValues: s.correctAnswers,
+                                        initialValue: s.userSec,
+                                        correctValues: s.correctSecs,
                                       ),
                                     )
                                   : Text(s.userSec,

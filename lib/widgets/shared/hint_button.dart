@@ -2,14 +2,14 @@ import 'package:flutter/material.dart';
 
 class HintButton extends StatelessWidget {
   final String userInput;
-  final String correctAnswers;
+  final String correctAnswer;
   final Function(String) onHintUpdate;
   final Function(bool) onHintActive;
 
   const HintButton({
     Key? key,
     required this.userInput,
-    required this.correctAnswers,
+    required this.correctAnswer,
     required this.onHintUpdate,
     required this.onHintActive,
   }) : super(key: key);
@@ -24,13 +24,13 @@ class HintButton extends StatelessWidget {
 
   void getHint(BuildContext context) {
     if (userInput == '') {
-      onHintUpdate(correctAnswers[0]);
+      onHintUpdate(correctAnswer[0]);
     } else {
-      for (var i = 0; i < correctAnswers.length && i < userInput.length; i++) {
-        if (correctAnswers[i] == userInput[i]) {
-          onHintUpdate(userInput + correctAnswers[i + 1]);
+      for (var i = 0; i < correctAnswer.length && i < userInput.length; i++) {
+        if (correctAnswer[i] == userInput[i]) {
+          onHintUpdate(userInput + correctAnswer[i + 1]);
         } else {
-          onHintUpdate(correctAnswers.substring(0, i + 1));
+          onHintUpdate(correctAnswer.substring(0, i + 1));
           break;
         }
       }
