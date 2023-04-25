@@ -88,18 +88,27 @@ class DoushiExerciseLevel1 extends StatelessWidget {
                     NTextSpan(doushi.translation),
                   ],
                 ),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+                  child: NTextSpan(
+                    NA.t('present'),
+                    textAlign: TextAlign.end,
+                  ),
+                ),
                 VerbInput(
                   doushi: doushi,
                   activeValue: doushiNotifier.getUserInput(0),
-                  label: NA.t('present'),
                   correctValue: doushi.banmar.present,
                   onChanged: (String newValue) =>
                       doushiNotifier.updateUserInput(0, newValue),
                 ),
+                NTextSpan(
+                  NA.t('past'),
+                  textAlign: TextAlign.end,
+                ),
                 VerbInput(
                   doushi: doushi,
                   activeValue: doushiNotifier.getUserInput(1),
-                  label: NA.t('past'),
                   correctValue: doushi.banmar.past,
                   onChanged: (String newValue) =>
                       doushiNotifier.updateUserInput(1, newValue),

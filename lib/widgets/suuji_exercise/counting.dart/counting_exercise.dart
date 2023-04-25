@@ -4,7 +4,7 @@ import 'package:nalelu/state/enums.dart';
 import 'package:nalelu/state/exercise_nav_notifier.dart';
 import 'package:nalelu/state/suuji/count/count_notifier.dart';
 import 'package:nalelu/widgets/shared/ad_card.dart';
-import 'package:nalelu/widgets/shared/hint_button.dart';
+import 'package:nrs_flutter_lib/widgets/n_hint_button.dart';
 import 'package:nalelu/widgets/shared/home_button_wrapper.dart';
 import 'package:nalelu/widgets/shared/na_free_form_entry_wrapper.dart';
 import 'package:nalelu/widgets/shared/nav_header_wrapper.dart';
@@ -72,10 +72,6 @@ class CountingExercise extends StatelessWidget {
                         return Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            Container(
-                                child: NAnswerStatusIcon(
-                              status: isCorrect,
-                            )),
                             !s.correctAnswers.contains(s.userInput)
                                 ? HintButton(
                                     onHintActive: (bool onHintActive) =>
@@ -88,7 +84,7 @@ class CountingExercise extends StatelessWidget {
                                 : Container(),
                             !s.correctAnswers.contains(s.userInput)
                                 ? Container(
-                                    width: 80,
+                                    width: 250,
                                     child: NaFreeFormEntryWrapper(
                                       widthType: NFreeFormWidths.half,
                                       hintValue: '',
@@ -98,8 +94,14 @@ class CountingExercise extends StatelessWidget {
                                       correctValues: s.correctAnswers,
                                     ),
                                   )
-                                : Text(s.userInput,
-                                    style: TextStyle(fontSize: 28)),
+                                : Row(children: [
+                                    Text(s.userInput,
+                                        style: TextStyle(fontSize: 28)),
+                                    Container(
+                                        child: NAnswerStatusIcon(
+                                      status: isCorrect,
+                                    )),
+                                  ]),
                           ],
                         );
                       },

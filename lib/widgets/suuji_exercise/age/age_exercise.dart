@@ -4,7 +4,7 @@ import 'package:nalelu/state/enums.dart';
 import 'package:nalelu/state/exercise_nav_notifier.dart';
 import 'package:nalelu/state/suuji/age/age_notifier.dart';
 import 'package:nalelu/widgets/shared/ad_card.dart';
-import 'package:nalelu/widgets/shared/hint_button.dart';
+import 'package:nrs_flutter_lib/widgets/n_hint_button.dart';
 import 'package:nalelu/widgets/shared/home_button_wrapper.dart';
 import 'package:nalelu/widgets/shared/na_free_form_entry_wrapper.dart';
 import 'package:nalelu/widgets/shared/nav_header_wrapper.dart';
@@ -42,11 +42,6 @@ class AgeExercise extends StatelessWidget {
                         return Row(
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
-                            // TODO: Make 3d
-                            NAnswerStatusIcon(
-                                status: s.getIsCorrect()
-                                    ? CorrectStatus.correct
-                                    : CorrectStatus.unstarted),
                             !s.correctAnswers.contains(s.userInput)
                                 ? HintButton(
                                     onHintActive: (bool onHintActive) =>
@@ -59,7 +54,7 @@ class AgeExercise extends StatelessWidget {
                                 : Container(),
                             !s.correctAnswers.contains(s.userInput)
                                 ? Container(
-                                    width: 150,
+                                    width: 250,
                                     child: NaFreeFormEntryWrapper(
                                       widthType: NFreeFormWidths.half,
                                       hintValue: '',
@@ -70,8 +65,17 @@ class AgeExercise extends StatelessWidget {
                                       correctValues: s.correctAnswers,
                                     ),
                                   )
-                                : Text(s.userInput,
-                                    style: TextStyle(fontSize: 28)),
+                                : Row(
+                                    children: [
+                                      Text(s.userInput,
+                                          style: TextStyle(fontSize: 28)),
+                                      // TODO: Make 3d
+                                      NAnswerStatusIcon(
+                                          status: s.getIsCorrect()
+                                              ? CorrectStatus.correct
+                                              : CorrectStatus.unstarted),
+                                    ],
+                                  ),
                             Padding(
                               padding: const EdgeInsets.all(8.0),
                             ),
