@@ -8,14 +8,12 @@ class AdCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(); // TODO: Remove this once the AD ids are in
-
     try {
       var adBanner = BannerAd(
         //adUnitId: 'ca-app-pub-3940256099942544/2934735716', // TEST AD ID
         adUnitId: Platform.isIOS
-            ? '' // ca-app-pub-8911581163547766~5659422189
-            : '', // ca-app-pub-8911581163547766~1043705548
+            ? 'ca-app-pub-8911581163547766~4952673031'
+            : 'ca-app-pub-8911581163547766~9863585915',
         size: AdSize.banner,
         request: AdRequest(),
         listener: BannerAdListener(),
