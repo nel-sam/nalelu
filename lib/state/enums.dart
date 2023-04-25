@@ -3,4 +3,5 @@ enum ExerciseType {
   Count,
   Age,
   Jikan,
+  Manga,
 }

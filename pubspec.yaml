@@ -35,6 +35,7 @@ flutter:
   assets:
     - assets/banners/
     - lib/i18n/
+    - assets/manga/
 
 flutter_intl:
   enabled: true

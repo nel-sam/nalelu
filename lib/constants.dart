@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 const AGE_EXERCISE_COUNT = 10;
+const MANGA_EXERCISE_COUNT = 10;
 const String APP_NAME = "nalelu";
 
 const COUNT_EXERCISE_COUNT = 20;

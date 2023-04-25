@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:localization/localization.dart';
+import 'package:nalelu/lang_data/manga_words.dart';
 import 'package:nalelu/lang_data/numbers.dart';
 import 'package:nrs_flutter_lib/constants.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
@@ -271,6 +272,10 @@ class NA {
     }
 
     return NareNumber(digit: digit, written: written, kanji: kanji);
+  }
+
+  static MangaWord getExercise1Words(int wordIndex) {
+    return exercise1[wordIndex];
   }
 
   static String t(String key, {List<String> inserts = const []}) {

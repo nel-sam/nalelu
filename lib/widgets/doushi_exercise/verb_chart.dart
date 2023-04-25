@@ -50,7 +50,7 @@ class VerbChart extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            AdCard(),
+            //AdCard(),
             SingleChildScrollView(
               child: Padding(
                 padding: const EdgeInsets.all(28.0),
