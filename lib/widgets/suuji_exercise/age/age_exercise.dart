@@ -43,7 +43,7 @@ class AgeExercise extends StatelessWidget {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             !s.correctAnswers.contains(s.userInput)
-                                ? HintButton(
+                                ? NHintButton(
                                     onHintActive: (bool onHintActive) =>
                                         isHintActive = onHintActive,
                                     userInput: s.userInput,

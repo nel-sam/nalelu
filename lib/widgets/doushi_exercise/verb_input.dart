@@ -30,7 +30,7 @@ class VerbInput extends StatelessWidget {
         Row(
           children: [
             correctValue.contains(activeValue)
-                ? HintButton(
+                ? NHintButton(
                     onHintActive: (bool onHintActive) =>
                         isHintActive = onHintActive,
                     userInput: activeValue,

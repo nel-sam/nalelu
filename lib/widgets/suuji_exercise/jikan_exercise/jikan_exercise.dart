@@ -3,8 +3,6 @@ import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/state/enums.dart';
 import 'package:nalelu/state/exercise_nav_notifier.dart';
 import 'package:nalelu/state/suuji/jikan/jikan_notifier.dart';
-import 'package:nalelu/widgets/shared/ad_card.dart';
-import 'package:nrs_flutter_lib/widgets/n_hint_button.dart';
 import 'package:nalelu/widgets/shared/home_button_wrapper.dart';
 import 'package:nalelu/widgets/shared/na_free_form_entry_wrapper.dart';
 import 'package:nalelu/widgets/shared/nav_header_wrapper.dart';
@@ -16,6 +14,7 @@ import 'package:nrs_flutter_lib/widgets/n_answer_status_icon.dart';
 import 'package:nrs_flutter_lib/widgets/n_footer_button.dart';
 import 'package:nrs_flutter_lib/widgets/n_footer_menu.dart';
 import 'package:nrs_flutter_lib/widgets/n_free_form_entry.dart';
+import 'package:nrs_flutter_lib/widgets/n_hint_button.dart';
 import 'package:nrs_flutter_lib/widgets/n_info_button.dart';
 import 'package:provider/provider.dart';
 
@@ -101,7 +100,7 @@ class JikanExercise extends StatelessWidget {
                               mainAxisAlignment: MainAxisAlignment.center,
                               children: [
                                 !s.correctHours.contains(s.userHour)
-                                    ? HintButton(
+                                    ? NHintButton(
                                         onHintActive: (bool onHintActive) =>
                                             isHintActive = onHintActive,
                                         userInput: s.userHour,
@@ -138,7 +137,7 @@ class JikanExercise extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               !s.correctMins.contains(s.userMin)
-                                  ? HintButton(
+                                  ? NHintButton(
                                       onHintActive: (bool onHintActive) =>
                                           isHintActive = onHintActive,
                                       userInput: s.userMin,
@@ -174,7 +173,7 @@ class JikanExercise extends StatelessWidget {
                             mainAxisAlignment: MainAxisAlignment.center,
                             children: [
                               !s.correctSecs.contains(s.userSec)
-                                  ? HintButton(
+                                  ? NHintButton(
                                       onHintActive: (bool onHintActive) =>
                                           isHintActive = onHintActive,
                                       userInput: s.userSec,
