@@ -24,8 +24,5 @@ class AgeNotifier extends ChangeNotifier {
     return _getStateItem();
   }
 
-  void updateAge(String newVal) {
-    _getStateItem().userInput = newVal;
-    deboucedNotifyListeners();
-  }
+ 
 }

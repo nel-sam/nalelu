@@ -4,6 +4,7 @@ import 'package:nalelu/state/enums.dart';
 import 'package:nalelu/state/exercise_nav_notifier.dart';
 import 'package:nalelu/state/suuji/age/age_notifier.dart';
 import 'package:nalelu/widgets/shared/ad_card.dart';
+import 'package:nalelu/widgets/suuji_exercise/age/age_exercise_state_area.dart';
 import 'package:nrs_flutter_lib/widgets/n_hint_button.dart';
 import 'package:nalelu/widgets/shared/home_button_wrapper.dart';
 import 'package:nalelu/widgets/shared/na_free_form_entry_wrapper.dart';
@@ -39,48 +40,7 @@ class AgeExercise extends StatelessWidget {
                     child: Consumer<AgeNotifier>(
                       builder: (context, ageNotifier, child) {
                         var s = ageNotifier.getStateItem();
-                        return Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            !s.correctAnswers.contains(s.userInput)
-                                ? NHintButton(
-                                    onHintActive: (bool onHintActive) =>
-                                        isHintActive = onHintActive,
-                                    userInput: s.userInput,
-                                    correctAnswer: s.correctAnswers[0],
-                                    onHintUpdate: (String hint) => {
-                                          ageNotifier.updateAge(hint),
-                                        })
-                                : Container(),
-                            !s.correctAnswers.contains(s.userInput)
-                                ? Container(
-                                    width: 250,
-                                    child: NaFreeFormEntryWrapper(
-                                      widthType: NFreeFormWidths.half,
-                                      hintValue: '',
-                                      onChanged: (String newValue) {
-                                        ageNotifier.updateAge(newValue);
-                                      },
-                                      initialValue: s.userInput,
-                                      correctValues: s.correctAnswers,
-                                    ),
-                                  )
-                                : Row(
-                                    children: [
-                                      Text(s.userInput,
-                                          style: TextStyle(fontSize: 28)),
-                                      // TODO: Make 3d
-                                      NAnswerStatusIcon(
-                                          status: s.getIsCorrect()
-                                              ? CorrectStatus.correct
-                                              : CorrectStatus.unstarted),
-                                    ],
-                                  ),
-                            Padding(
-                              padding: const EdgeInsets.all(8.0),
-                            ),
-                          ],
-                        );
+                        return AgeExerciseStateArea(state: s);
                       },
                     ),
                   ),

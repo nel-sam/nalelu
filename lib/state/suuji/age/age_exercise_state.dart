@@ -15,4 +15,7 @@ class AgeExerciseState {
   bool getIsCorrect() {
     return this.correctAnswers.contains(this.userInput);
   }
+   void updateAge(String newVal) {
+    this.userInput = newVal;
+  }
 }
