@@ -50,5 +50,6 @@
   "future": "Future",
   "conditional": "Conditional",
   "propositive": "Propositive",
-  "exercise": "Exercise"
+  "exercise": "Exercise",
+  "only_japanese_text_allowed": "Only hiragana and kanji is allowed"
 }
