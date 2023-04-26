@@ -3,6 +3,7 @@ import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/state/enums.dart';
 import 'package:nalelu/state/exercise_nav_notifier.dart';
 import 'package:nalelu/state/manga/manga_notifier.dart';
+import 'package:nalelu/widgets/manga_exercise/text_entry_activator.dart';
 import 'package:nalelu/widgets/shared/ad_card.dart';
 import 'package:nrs_flutter_lib/widgets/n_hint_button.dart';
 import 'package:nalelu/widgets/shared/home_button_wrapper.dart';
@@ -69,13 +70,10 @@ class MangaExercise extends StatelessWidget {
                                               ),
                                               !s.correctAnswers
                                                       .contains(s.userInput)
-                                                  ? IconButton(
-                                                      icon: const Icon(
-                                                          Icons.handshake),
-                                                      onPressed: () => {
-                                                            isTextfieldActive =
-                                                                true
-                                                          })
+                                                  ? TextEntryActivator(
+                                                      onPress: () =>
+                                                          isTextfieldActive = true
+                                                    )
                                                   : Text(s.userInput,
                                                       style: TextStyle(
                                                           fontSize: 12)),
@@ -94,7 +92,7 @@ class MangaExercise extends StatelessWidget {
                                 ],
                               ),
                             ),
-                            !s.correctAnswers.contains(s.userInput)
+                            isHintActive
                                 ? Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
                                     children: [
