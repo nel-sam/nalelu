@@ -28,13 +28,4 @@ class DoushiNotifier with ChangeNotifier {
   getActive() {
     return _getStateItem();
   }
-
-  getUserInput(int index) {
-    return _getStateItem().getUserInput(index);
-  }
-
-  updateUserInput(int index, String newValue) {
-    _getStateItem().updateUserInput(index, newValue);
-    deboucedNotifyListeners();
-  }
 }

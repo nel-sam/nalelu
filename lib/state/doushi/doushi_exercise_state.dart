@@ -29,4 +29,5 @@ class DoushiExerciseState {
   clear() {
     userInput.clear();
   }
+
 }

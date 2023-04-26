@@ -3,15 +3,13 @@ import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/state/doushi/doushi_notifier.dart';
 import 'package:nalelu/state/enums.dart';
 import 'package:nalelu/state/exercise_nav_notifier.dart';
+import 'package:nalelu/widgets/doushi_exercise/doushi_exercise_state_area.dart';
 import 'package:nalelu/widgets/doushi_exercise/verb_chart.dart';
-import 'package:nalelu/widgets/doushi_exercise/verb_input.dart';
 import 'package:nalelu/widgets/shared/ad_card.dart';
 import 'package:nalelu/widgets/shared/nav_header_wrapper.dart';
-import 'package:nrs_flutter_lib/constants.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 import 'package:nrs_flutter_lib/widgets/n_footer_button.dart';
 import 'package:nrs_flutter_lib/widgets/n_footer_menu.dart';
-import 'package:nrs_flutter_lib/widgets/n_text_span.dart';
 import 'package:provider/provider.dart';
 
 class DoushiExerciseLevel1 extends StatelessWidget {
@@ -34,7 +32,7 @@ class DoushiExerciseLevel1 extends StatelessWidget {
                 children: [
                   NavHeaderWrapper(navNotifier: navNotifier),
                   Expanded(child: getExercises(context, navNotifier)),
-                  //AdCard(),
+                  AdCard(),
                 ],
               ),
             ),
@@ -71,51 +69,8 @@ class DoushiExerciseLevel1 extends StatelessWidget {
       child: ChangeNotifierProvider<DoushiNotifier>(
         create: (context) => DoushiNotifier(navNotifier.getActive),
         child: Consumer<DoushiNotifier>(
-          builder: (context, doushiNotifier, child) {
-            var doushi = doushiNotifier.getActive().doushi;
-
-            return Column(
-              children: [
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    NTextSpan(
-                      doushi.infinitive,
-                      textStyle: NA.fontStyleBold(context),
-                      textAlign: TextAlign.end,
-                    ),
-                    SizedBox(width: FONT_SIZE),
-                    NTextSpan(doushi.translation),
-                  ],
-                ),
-                Padding(
-                  padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
-                  child: NTextSpan(
-                    NA.t('present'),
-                    textAlign: TextAlign.end,
-                  ),
-                ),
-                VerbInput(
-                  doushi: doushi,
-                  activeValue: doushiNotifier.getUserInput(0),
-                  correctValue: doushi.banmar.present,
-                  onChanged: (String newValue) =>
-                      doushiNotifier.updateUserInput(0, newValue),
-                ),
-                NTextSpan(
-                  NA.t('past'),
-                  textAlign: TextAlign.end,
-                ),
-                VerbInput(
-                  doushi: doushi,
-                  activeValue: doushiNotifier.getUserInput(1),
-                  correctValue: doushi.banmar.past,
-                  onChanged: (String newValue) =>
-                      doushiNotifier.updateUserInput(1, newValue),
-                ),
-              ],
-            );
-          },
+          builder: (context, doushiNotifier, child) =>
+              DoushiExerciseStateArea(state: doushiNotifier.getActive()),
         ),
       ),
     );

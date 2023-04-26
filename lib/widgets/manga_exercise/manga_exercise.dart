@@ -4,6 +4,7 @@ import 'package:nalelu/state/enums.dart';
 import 'package:nalelu/state/exercise_nav_notifier.dart';
 import 'package:nalelu/state/manga/manga_notifier.dart';
 import 'package:nalelu/widgets/manga_exercise/text_entry_activator.dart';
+import 'package:nalelu/widgets/shared/ad_card.dart';
 import 'package:nalelu/widgets/shared/home_button_wrapper.dart';
 import 'package:nalelu/widgets/shared/na_free_form_entry_wrapper.dart';
 import 'package:nalelu/widgets/shared/nav_header_wrapper.dart';
@@ -149,7 +150,7 @@ class MangaExercise extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               getContent(context),
-              //AdCard(),
+              AdCard(),
             ],
           ),
         ),

@@ -50,7 +50,7 @@ class VerbChart extends StatelessWidget {
       body: Center(
         child: Column(
           children: [
-            //AdCard(),
+            AdCard(),
             SingleChildScrollView(
               child: Padding(
                 padding: const EdgeInsets.all(28.0),
@@ -58,11 +58,11 @@ class VerbChart extends StatelessWidget {
                   children: [
                     ChartRow(
                       label: NA.t('present'),
-                      conj: doushi.banmar.present,
+                      conj: doushi.casual.present,
                     ),
                     ChartRow(
                       label: NA.t('past'),
-                      conj: doushi.banmar.past,
+                      conj: doushi.casual.past,
                     ),
                   ],
                 ),

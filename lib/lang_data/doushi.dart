@@ -7,7 +7,7 @@ var doushiBank = [
     infinitiveFurigana: 'も',
     root: '持ち',
     translation: NA.t('Motsu'),
-    banmar: DoushiConj(
+    casual: DoushiConj(
       present: '持つ',
       past: '持った',
     ),
@@ -18,7 +18,7 @@ var doushiBank = [
     infinitiveFurigana: 'も',
     root: '持ち',
     translation: NA.t('Motsu'),
-    banmar: DoushiConj(
+    casual: DoushiConj(
       present: '持つ',
       past: '持った',
     ),
@@ -29,7 +29,7 @@ var doushiBank = [
     infinitiveFurigana: 'き',
     root: '聞き',
     translation: NA.t('kiku'),
-    banmar: DoushiConj(
+    casual: DoushiConj(
       present: '聞く',
       past: '聞いた',
     ),
@@ -40,7 +40,7 @@ var doushiBank = [
     infinitiveFurigana: 'み',
     root: '見',
     translation: NA.t('miru'),
-    banmar: DoushiConj(
+    casual: DoushiConj(
       present: '見る',
       past: '見た',
     ),
@@ -51,7 +51,7 @@ var doushiBank = [
     infinitiveFurigana: 'はい',
     root: '入り',
     translation: NA.t('hairu'),
-    banmar: DoushiConj(
+    casual: DoushiConj(
       present: '入る',
       past: '入った',
     ),
@@ -62,7 +62,7 @@ var doushiBank = [
     infinitiveFurigana: 'く',
     root: 'き',
     translation: NA.t('kuru'),
-    banmar: DoushiConj(
+    casual: DoushiConj(
       present: '来る',
       past: '来た',
     ),
@@ -73,7 +73,7 @@ var doushiBank = [
     infinitiveFurigana: 'なる',
     root: 'なり',
     translation: NA.t('naru'),
-    banmar: DoushiConj(
+    casual: DoushiConj(
       present: 'なる',
       past: 'なった',
     ),
@@ -84,7 +84,7 @@ var doushiBank = [
     infinitiveFurigana: 'はし',
     root: '走り',
     translation: NA.t('hashiru'),
-    banmar: DoushiConj(
+    casual: DoushiConj(
       present: '走る',
       past: '走った',
     ),
@@ -95,7 +95,7 @@ var doushiBank = [
     infinitiveFurigana: 'する',
     root: '',
     translation: NA.t('suru'),
-    banmar: DoushiConj(
+    casual: DoushiConj(
       present: 'する',
       past: 'した',
     ),
@@ -106,7 +106,7 @@ var doushiBank = [
     infinitiveFurigana: 'ある',
     root: '歩き',
     translation: NA.t('aruku'),
-    banmar: DoushiConj(
+    casual: DoushiConj(
       present: '歩く',
       past: '歩いた',
     ),
@@ -118,7 +118,7 @@ class Doushi {
   final String infinitiveFurigana;
   final String root;
 
-  final DoushiConj banmar;
+  final DoushiConj casual;
   final bool isIrregular;
   final String translation;
 
@@ -126,7 +126,7 @@ class Doushi {
     required this.infinitive,
     required this.infinitiveFurigana,
     required this.root,
-    required this.banmar,
+    required this.casual,
     required this.translation,
     required this.isIrregular,
   });
