@@ -3,6 +3,7 @@ import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/state/doushi/doushi_exercise_state.dart';
 import 'package:nalelu/widgets/doushi_exercise/verb_input.dart';
 import 'package:nrs_flutter_lib/constants.dart';
+import 'package:nrs_flutter_lib/widgets/n_hint_button.dart';
 import 'package:nrs_flutter_lib/widgets/n_text_span.dart';
 
 class DoushiExerciseStateArea extends StatefulWidget {
@@ -18,6 +19,7 @@ class DoushiExerciseStateArea extends StatefulWidget {
 
 class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
   @override
+  bool isHintActive = false;
   Widget build(BuildContext context) {
     return Column(
       children: [
@@ -40,6 +42,19 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
             textAlign: TextAlign.end,
           ),
         ),
+        widget.state.doushi.casual.present
+                .contains(widget.state.getUserInput(0))
+            ? NHintButton(
+                onHintActive: (bool onHintActive) =>
+                    isHintActive = onHintActive,
+                userInput: widget.state.getUserInput(0),
+                correctAnswer: widget.state.doushi.casual.present,
+                onHintUpdate: (String hint) => {
+                      setState(() {
+                        widget.state.updateUserInput(0, hint);
+                      })
+                    })
+            : Container(),
         VerbInput(
           doushi: widget.state.doushi,
           activeValue: widget.state.getUserInput(0),
@@ -51,6 +66,19 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
           NA.t('past'),
           textAlign: TextAlign.end,
         ),
+        widget.state.doushi.casual.present
+                .contains(widget.state.getUserInput(1))
+            ? NHintButton(
+                onHintActive: (bool onHintActive) =>
+                    isHintActive = onHintActive,
+                userInput: widget.state.getUserInput(1),
+                correctAnswer: widget.state.doushi.casual.present,
+                onHintUpdate: (String hint) => {
+                      setState(() {
+                        widget.state.updateUserInput(1, hint);
+                      })
+                    })
+            : Container(),
         VerbInput(
           doushi: widget.state.doushi,
           activeValue: widget.state.getUserInput(1),

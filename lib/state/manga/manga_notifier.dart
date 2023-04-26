@@ -23,9 +23,6 @@ class MangaNotifier extends ChangeNotifier {
   getStateItem() {
     return _getStateItem();
   }
-
-  void updateManga(String newVal) {
-    _getStateItem().userInput = newVal;
-    deboucedNotifyListeners();
-  }
 }
+
+

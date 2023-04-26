@@ -22,21 +22,12 @@ class VerbInput extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     var isCorrect = !correctValue.contains(this.activeValue);
-    bool isHintActive = false;
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Row(
           children: [
-            correctValue.contains(activeValue)
-                ? NHintButton(
-                    onHintActive: (bool onHintActive) =>
-                        isHintActive = onHintActive,
-                    userInput: activeValue,
-                    correctAnswer: correctValue,
-                    onHintUpdate: (String hint) => {onChanged(hint)})
-                : Container(),
             correctValue.contains(activeValue)
                 ? Padding(
                     padding: const EdgeInsets.only(left: 8.0, right: 8.0),
