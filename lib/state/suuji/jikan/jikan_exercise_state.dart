@@ -29,4 +29,16 @@ class JikanExerciseState {
     this.userMin = '';
     this.userSec = '';
   }
+
+  updateHour(String input) {
+    this.userHour = input;
+  }
+
+  updateMin(String input) {
+    this.userMin = input;
+  }
+
+  updateSec(String input) {
+    this.userSec = input;
+  }
 }

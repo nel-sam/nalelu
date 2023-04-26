@@ -28,22 +28,4 @@ class JikanNotifier extends ChangeNotifier {
   getStateItem() {
     return _getStateItem();
   }
-
-  updateHour(String input) {
-    var active = _getStateItem();
-    active.userHour = input;
-    deboucedNotifyListeners();
-  }
-
-  updateMin(String input) {
-    var active = _getStateItem();
-    active.userMin = input;
-    deboucedNotifyListeners();
-  }
-
-  updateSec(String input) {
-    var active = _getStateItem();
-    active.userSec = input;
-    deboucedNotifyListeners();
-  }
 }

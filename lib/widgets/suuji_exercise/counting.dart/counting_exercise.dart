@@ -6,6 +6,7 @@ import 'package:nalelu/state/suuji/count/count_notifier.dart';
 import 'package:nalelu/widgets/shared/home_button_wrapper.dart';
 import 'package:nalelu/widgets/shared/na_free_form_entry_wrapper.dart';
 import 'package:nalelu/widgets/shared/nav_header_wrapper.dart';
+import 'package:nalelu/widgets/suuji_exercise/counting.dart/counting_exercise_state_area.dart';
 import 'package:nalelu/widgets/suuji_exercise/number_chart.dart';
 import 'package:nrs_flutter_lib/enums.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
@@ -64,45 +65,7 @@ class CountingExercise extends StatelessWidget {
                       builder: (context, countNotifier, child) {
                         var s = countNotifier.getStateItem();
                         // TODO: Make 3d
-                        var isCorrect = s.getIsCorrect()
-                            ? CorrectStatus.correct
-                            : CorrectStatus.unstarted;
-
-                        return Row(
-                          mainAxisAlignment: MainAxisAlignment.center,
-                          children: [
-                            !s.correctAnswers.contains(s.userInput)
-                                ? NHintButton(
-                                    onHintActive: (bool onHintActive) =>
-                                        isHintActive = onHintActive,
-                                    userInput: s.userInput,
-                                    correctAnswer: s.correctAnswers[0],
-                                    onHintUpdate: (String hint) => {
-                                          countNotifier.updateCount(hint),
-                                        })
-                                : Container(),
-                            !s.correctAnswers.contains(s.userInput)
-                                ? Container(
-                                    width: 250,
-                                    child: NaFreeFormEntryWrapper(
-                                      widthType: NFreeFormWidths.half,
-                                      hintValue: '',
-                                      onChanged: (String newValue) =>
-                                          countNotifier.updateCount(newValue),
-                                      initialValue: s.userInput,
-                                      correctValues: s.correctAnswers,
-                                    ),
-                                  )
-                                : Row(children: [
-                                    Text(s.userInput,
-                                        style: TextStyle(fontSize: 28)),
-                                    Container(
-                                        child: NAnswerStatusIcon(
-                                      status: isCorrect,
-                                    )),
-                                  ]),
-                          ],
-                        );
+                        return CountingExerciseStateArea(state: s);
                       },
                     ),
                   ),

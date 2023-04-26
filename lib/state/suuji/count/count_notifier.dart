@@ -23,9 +23,4 @@ class CountNotifier with ChangeNotifier {
   getStateItem() {
     return _getStateItem();
   }
-
-  updateCount(String userInput) {
-    _getStateItem().userInput = userInput;
-    debouncedNotifyListeners();
-  }
 }

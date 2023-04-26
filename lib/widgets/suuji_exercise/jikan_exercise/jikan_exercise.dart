@@ -7,6 +7,7 @@ import 'package:nalelu/widgets/shared/home_button_wrapper.dart';
 import 'package:nalelu/widgets/shared/na_free_form_entry_wrapper.dart';
 import 'package:nalelu/widgets/shared/nav_header_wrapper.dart';
 import 'package:nalelu/widgets/suuji_exercise/jikan_exercise/clock.dart';
+import 'package:nalelu/widgets/suuji_exercise/jikan_exercise/jikan_exercise_state_area.dart';
 import 'package:nalelu/widgets/suuji_exercise/number_chart.dart';
 import 'package:nrs_flutter_lib/enums.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
@@ -81,134 +82,10 @@ class JikanExercise extends StatelessWidget {
                 ChangeNotifierProvider<JikanNotifier>(
                   create: (context) => JikanNotifier(navNotifier.getActive),
                   child: Consumer<JikanNotifier>(
-                    builder: (context, jikanNotifier, child) {
-                      var s = jikanNotifier.getStateItem();
-                      var isHourCorrect = s.correctHours.contains(s.userHour)
-                          ? CorrectStatus.correct
-                          : CorrectStatus.unstarted;
-                      var isMinCorrect = s.correctMins.contains(s.userMin)
-                          ? CorrectStatus.correct
-                          : CorrectStatus.unstarted;
-                      var isSecCorrect = s.correctSecs.contains(s.userSec)
-                          ? CorrectStatus.correct
-                          : CorrectStatus.unstarted;
-
-                      return Column(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Row(
-                              mainAxisAlignment: MainAxisAlignment.center,
-                              children: [
-                                !s.correctHours.contains(s.userHour)
-                                    ? NHintButton(
-                                        onHintActive: (bool onHintActive) =>
-                                            isHintActive = onHintActive,
-                                        userInput: s.userHour,
-                                        correctAnswer: s.correctHours[0],
-                                        onHintUpdate: (String hint) => {
-                                              jikanNotifier.updateHour(hint),
-                                            })
-                                    : Container(),
-                                !s.correctHours.contains(s.userHour)
-                                    ? Container(
-                                        width: textFieldWidth,
-                                        child: NaFreeFormEntryWrapper(
-                                          widthType: NFreeFormWidths.full,
-                                          hintValue: '',
-                                          onChanged: (String newValue) =>
-                                              jikanNotifier
-                                                  .updateHour(newValue),
-                                          initialValue: s.userHour,
-                                          correctValues: s.correctHours,
-                                        ),
-                                      )
-                                    : Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.center,
-                                        children: [
-                                          Text(s.userHour,
-                                              style: TextStyle(fontSize: 20)),
-                                          NAnswerStatusIcon(
-                                              status: isHourCorrect),
-                                        ],
-                                      ),
-                              ]),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              !s.correctMins.contains(s.userMin)
-                                  ? NHintButton(
-                                      onHintActive: (bool onHintActive) =>
-                                          isHintActive = onHintActive,
-                                      userInput: s.userMin,
-                                      correctAnswer: s.correctMins[0],
-                                      onHintUpdate: (String hint) => {
-                                            jikanNotifier.updateMin(hint),
-                                          })
-                                  : Container(),
-                              !s.correctMins.contains(s.userMin)
-                                  ? Container(
-                                      width: textFieldWidth,
-                                      child: NaFreeFormEntryWrapper(
-                                        widthType: NFreeFormWidths.full,
-                                        hintValue: '',
-                                        onChanged: (String newValue) =>
-                                            jikanNotifier.updateMin(newValue),
-                                        initialValue: s.userMin,
-                                        correctValues: s.correctMins,
-                                      ),
-                                    )
-                                  : Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Text(s.userMin,
-                                            style: TextStyle(fontSize: 20)),
-                                        NAnswerStatusIcon(status: isMinCorrect),
-                                      ],
-                                    ),
-                            ],
-                          ),
-                          Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              !s.correctSecs.contains(s.userSec)
-                                  ? NHintButton(
-                                      onHintActive: (bool onHintActive) =>
-                                          isHintActive = onHintActive,
-                                      userInput: s.userSec,
-                                      correctAnswer: s.correctSecs[0],
-                                      onHintUpdate: (String hint) => {
-                                            jikanNotifier.updateSec(hint),
-                                          })
-                                  : Container(),
-                              !s.correctSecs.contains(s.userSec)
-                                  ? Container(
-                                      width: textFieldWidth,
-                                      child: NaFreeFormEntryWrapper(
-                                        widthType: NFreeFormWidths.full,
-                                        hintValue: '',
-                                        onChanged: (String newValue) =>
-                                            jikanNotifier.updateSec(newValue),
-                                        initialValue: s.userSec,
-                                        correctValues: s.correctSecs,
-                                      ),
-                                    )
-                                  : Row(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      children: [
-                                        Text(s.userSec,
-                                            style: TextStyle(fontSize: 20)),
-                                        NAnswerStatusIcon(status: isSecCorrect),
-                                      ],
-                                    ),
-                            ],
-                          ),
-                        ],
-                      );
-                    },
-                  ),
+                      builder: (context, jikanNotifier, child) {
+                    var s = jikanNotifier.getStateItem();
+                    return JikanExerciseStateArea(state: s);
+                  }),
                 ),
               ],
             ),

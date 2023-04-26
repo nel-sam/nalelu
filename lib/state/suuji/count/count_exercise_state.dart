@@ -25,4 +25,8 @@ class CountExerciseState {
   bool getIsCorrect() {
     return this.correctAnswers.contains(this.userInput);
   }
+
+   updateCount(String userInput) {
+    this.userInput = userInput;
+  }
 }
