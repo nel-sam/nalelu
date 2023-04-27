@@ -1,40 +1,65 @@
-class MangaExerciseState {
-  final List<String> correctAnswers1;
-  String userInput1 = '';
-  final List<String> correctAnswers2;
-  String userInput2 = '';
-  final List<String> correctAnswers3;
-  String userInput3 = '';
+import 'package:nalelu/lang_data/manga_word.dart';
 
-  MangaExerciseState({
-    required this.correctAnswers1,
-    required this.correctAnswers2,
-    required this.correctAnswers3,
-  });
+class MangaExerciseState {
+  List<String> userInput = [];
+  MangaWord mangaWord;
+
+  MangaExerciseState({required this.mangaWord});
+
+  getUserInput(int index) {
+    fillArray(index);
+    return userInput[index];
+  }
+
+  void fillArray(int index) {
+    if (userInput.length == 0) {
+      userInput.add('');
+    }
+
+    while (userInput.length <= index) {
+      userInput.add('');
+    }
+  }
+
+  updateUserInput(int index, String newValue) {
+    fillArray(index);
+    userInput[index] = newValue;
+  }
 
   clear() {
-    this.userInput1 = '';
-    this.userInput2 = '';
-    this.userInput3 = '';
+    userInput.clear();
   }
 
-  bool getIsCorrect() {
-    return this.correctAnswers1.contains(this.userInput1);
-    //  &&
-    //     this.correctAnswers2.contains(this.userInput2) &&
-    //     this.correctAnswers3.contains(this.userInput3);
-    // Still working on this.
-  }
-
-  updateAnswer1(String input) {
-    this.userInput1 = input;
-  }
-
-  updateAnswer2(String input) {
-    this.userInput2 = input;
-  }
-
-  updateAnswer3(String input) {
-    this.userInput2 = input;
-  }
 }
+
+// class MangaExerciseState {
+//   List<String> userInput = [];
+//   late bool isCorrect;
+
+//   MangaExerciseState();
+
+//   getUserInput(int index) {
+//     fillArray(index);
+//     return userInput[index];
+//   }
+
+//   void fillArray(int index) {
+//     if (userInput.length == 0) {
+//       userInput.add('');
+//     }
+
+//     while (userInput.length <= index) {
+//       userInput.add('');
+//     }
+//   }
+
+//   updateUserInput(int index, String newValue) {
+//     fillArray(index);
+//     userInput[index] = newValue;
+//   }
+
+//   clear() {
+//     userInput.clear();
+//   }
+
+// }

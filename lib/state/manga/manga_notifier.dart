@@ -3,12 +3,17 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:nrs_flutter_lib/constants.dart';
 
-class MangaNotifier extends ChangeNotifier {
+class MangaNotifier with ChangeNotifier {
   late Function() _getStateItem;
   Timer _debounce = Timer(const Duration(milliseconds: 0), () {});
 
   MangaNotifier(Function() getStateItem) {
     _getStateItem = getStateItem;
+  }
+
+  clearInput() {
+    _getStateItem().userInput.clear();
+    deboucedNotifyListeners();
   }
 
   deboucedNotifyListeners() {
@@ -20,9 +25,7 @@ class MangaNotifier extends ChangeNotifier {
         const Duration(milliseconds: DEBOUNCE_TIME), () => notifyListeners());
   }
 
-  getStateItem() {
+  getActive() {
     return _getStateItem();
   }
 }
-
-

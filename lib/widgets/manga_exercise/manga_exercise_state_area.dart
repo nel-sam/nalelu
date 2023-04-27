@@ -1,12 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:nalelu/state/manga/manga_exercise_state.dart';
 import 'package:nalelu/widgets/shared/na_free_form_entry_wrapper.dart';
-import 'package:nrs_flutter_lib/enums.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
-import 'package:nrs_flutter_lib/widgets/n_answer_status_icon.dart';
 import 'package:nrs_flutter_lib/widgets/n_free_form_entry.dart';
 import 'package:nrs_flutter_lib/widgets/n_hint_button.dart';
 
@@ -26,18 +21,9 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
   final mangaWidth = Nrs.getScreenWidth() - 80;
 
   Widget build(BuildContext context) {
-    var isAnswer1Correct =
-        widget.state.correctAnswers1.contains(widget.state.userInput1)
-            ? CorrectStatus.correct
-            : CorrectStatus.unstarted;
-    var isAnswer2Correct =
-        widget.state.correctAnswers2.contains(widget.state.userInput2)
-            ? CorrectStatus.correct
-            : CorrectStatus.unstarted;
-    var isAnswer3Correct =
-        widget.state.correctAnswers3.contains(widget.state.userInput2)
-            ? CorrectStatus.correct
-            : CorrectStatus.unstarted;
+    // TODO: Update this once we start using proper lists
+    final isCorrect = widget.state.mangaWord.answers.answer1 ==
+        (widget.state.getUserInput(0));
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -62,20 +48,19 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                       child: Row(
                         children: [
                           Text(
-                            "美味しいです",
+                            widget.state.mangaWord.text1,
                             style: TextStyle(fontSize: 12, color: Colors.black),
                           ),
-                          !widget.state.correctAnswers1
-                                  .contains(widget.state.userInput1)
-                              ? IconButton(
+                          isCorrect
+                              ? Text(widget.state.mangaWord.answers.answer1,
+                                  style: TextStyle(fontSize: 12))
+                              : IconButton(
                                   icon: const Icon(Icons.lightbulb),
                                   onPressed: () => {
                                         setState(() => {
                                               isTextfieldActive = true,
                                             }),
-                                      })
-                              : Text(widget.state.userInput1,
-                                  style: TextStyle(fontSize: 12)),
+                                      }),
                           Text(
                             "?",
                             style: TextStyle(fontSize: 12, color: Colors.black),
@@ -89,45 +74,37 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
             ],
           ),
         ),
-        !widget.state.correctAnswers1.contains(widget.state.userInput1) &&
-                isTextfieldActive
+         isTextfieldActive && !isCorrect
+  
             ? Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   NHintButton(
                       onHintActive: (bool onHintActive) =>
                           isHintActive = onHintActive,
-                      userInput: widget.state.userInput2,
-                      correctAnswer: widget.state.correctAnswers1[0],
+                      userInput: widget.state.getUserInput(0),
+                      correctAnswer: widget.state.mangaWord.answers.answer1,
                       onHintUpdate: (String hint) => {
                             setState(() => {
-                                  widget.state.updateAnswer1(hint),
+                                  widget.state.updateUserInput(0, hint),
                                 }),
                           }),
                   Container(
-                    width: 250,
+                    width: 200,
                     child: NaFreeFormEntryWrapper(
                       widthType: NFreeFormWidths.half,
                       hintValue: '',
-                      onChanged: (String newValue) {},
-                      initialValue: widget.state.userInput1,
-                      correctValues: widget.state.correctAnswers1,
+                      onChanged: (String newValue) {
+                        setState(() {
+                          widget.state.updateUserInput(0, newValue);
+                        });
+                      },
+                      initialValue: widget.state.getUserInput(0),
+                      correctValues: [widget.state.mangaWord.answers.answer1],
                     ),
                   )
                 ],
-              )
-            : Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(),
-                ],
-              ),
-        widget.state.getIsCorrect()
-            ? NAnswerStatusIcon(
-                status: widget.state.getIsCorrect()
-                    ? CorrectStatus.correct
-                    : CorrectStatus.unstarted)
-            : Container(),
+              ) : Container(),
       ],
     );
   }

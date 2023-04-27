@@ -2,8 +2,8 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:nalelu/state/doushi/doushi_generator.dart';
-import 'package:nalelu/state/enums.dart';
 import 'package:nalelu/state/manga/manga_generator.dart';
+import 'package:nalelu/state/enums.dart';
 import 'package:nalelu/state/suuji/age/age_generator.dart';
 import 'package:nalelu/state/suuji/count/count_generator.dart';
 import 'package:nalelu/state/suuji/jikan/jikan_generator.dart';
