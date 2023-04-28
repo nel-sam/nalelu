@@ -50,14 +50,13 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                       (e) => SpeechBubble(
                         isCorrect: false, // TODO: Figure this out later
                         phrase: e,
-                        onButtonTap: () => {
+                        onButtonTap: (PhrasePart phrasePart) => {
                           setState(() {
-                            activeIndex = widget
-                                .state.mangaExerciseModel.phrases
-                                .indexOf(e);
+                            activePhrasePart = phrasePart;
                             isTextfieldActive = true;
                           })
                         },
+                        mangaWidth: mangaWidth,
                       ),
                     ),
                   ],
@@ -70,7 +69,7 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
             ? Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                   NHintButton(
+                  NHintButton(
                       onHintActive: (bool onHintActive) =>
                           isHintActive = onHintActive,
                       userInput: widget.state.getUserInput(activePhrasePart),
@@ -79,7 +78,8 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                           .toString(),
                       onHintUpdate: (String hint) => {
                             setState(() => {
-                                  widget.state.updateUserInput(activePhrasePart, hint),
+                                  widget.state
+                                      .updateUserInput(activePhrasePart, hint),
                                 }),
                           }),
                   Container(
@@ -89,7 +89,8 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                       hintValue: '',
                       onChanged: (String newValue) {
                         setState(() {
-                          widget.state.updateUserInput(activePhrasePart, newValue);
+                          widget.state
+                              .updateUserInput(activePhrasePart, newValue);
                         });
                       },
                       initialValue: widget.state.getUserInput(activePhrasePart),
