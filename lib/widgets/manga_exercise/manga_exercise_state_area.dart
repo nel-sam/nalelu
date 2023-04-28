@@ -22,7 +22,7 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
 
   Widget build(BuildContext context) {
     // TODO: Update this once we start using proper lists
-    final isCorrect = widget.state.mangaWord.answers.answer1 ==
+    final isCorrect = widget.state.mangaExerciseModel.answers.answer1 ==
         (widget.state.getUserInput(0));
 
     return Column(
@@ -48,11 +48,13 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                       child: Row(
                         children: [
                           Text(
-                            widget.state.mangaWord.text1,
+                            widget.state.mangaExerciseModel.text1,
                             style: TextStyle(fontSize: 12, color: Colors.black),
                           ),
                           isCorrect
-                              ? Text(widget.state.mangaWord.answers.answer1,
+                              ? Text(
+                                  widget
+                                      .state.mangaExerciseModel.answers.answer1,
                                   style: TextStyle(fontSize: 12))
                               : IconButton(
                                   icon: const Icon(Icons.lightbulb),
@@ -74,8 +76,7 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
             ],
           ),
         ),
-         isTextfieldActive && !isCorrect
-  
+        isTextfieldActive && !isCorrect
             ? Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
@@ -83,7 +84,8 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                       onHintActive: (bool onHintActive) =>
                           isHintActive = onHintActive,
                       userInput: widget.state.getUserInput(0),
-                      correctAnswer: widget.state.mangaWord.answers.answer1,
+                      correctAnswer:
+                          widget.state.mangaExerciseModel.answers.answer1,
                       onHintUpdate: (String hint) => {
                             setState(() => {
                                   widget.state.updateUserInput(0, hint),
@@ -100,11 +102,14 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                         });
                       },
                       initialValue: widget.state.getUserInput(0),
-                      correctValues: [widget.state.mangaWord.answers.answer1],
+                      correctValues: [
+                        widget.state.mangaExerciseModel.answers.answer1
+                      ],
                     ),
                   )
                 ],
-              ) : Container(),
+              )
+            : Container(),
       ],
     );
   }

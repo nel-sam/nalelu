@@ -1,14 +1,13 @@
-import 'package:nalelu/lang_data/manga_word.dart';
+import 'package:nalelu/state/manga/models.dart';
 
 class MangaExerciseState {
   List<String> userInput = [];
-  MangaWord mangaWord;
+  MangaExerciseModel mangaExerciseModel;
 
-  MangaExerciseState({required this.mangaWord});
+  MangaExerciseState({required this.mangaExerciseModel});
 
-  getUserInput(int index) {
-    fillArray(index);
-    return userInput[index];
+  clear() {
+    userInput.clear();
   }
 
   void fillArray(int index) {
@@ -21,15 +20,15 @@ class MangaExerciseState {
     }
   }
 
+  getUserInput(int index) {
+    fillArray(index);
+    return userInput[index];
+  }
+
   updateUserInput(int index, String newValue) {
     fillArray(index);
     userInput[index] = newValue;
   }
-
-  clear() {
-    userInput.clear();
-  }
-
 }
 
 // class MangaExerciseState {

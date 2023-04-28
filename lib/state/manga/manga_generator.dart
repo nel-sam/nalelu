@@ -3,7 +3,7 @@ import 'package:nalelu/state/manga/manga_exercise_state.dart';
 
 class MangaGenerator {
   static createExercise(int index) {
-     return MangaExerciseState(mangaWord: mangaWordsBank[index]);
+    return MangaExerciseState(mangaExerciseModel: mangaWordsBank[index]);
     // return MangaExerciseState(manga: mangaExercises[index]);
   }
 
@@ -11,5 +11,3 @@ class MangaGenerator {
     return mangaWordsBank.length - 1;
   }
 }
-
-
