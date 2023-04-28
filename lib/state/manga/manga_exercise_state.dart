@@ -20,8 +20,9 @@ class MangaExerciseState {
     }
   }
 
-  getCorrectAnswers(int i) {
+  String getCorrectAnswers(int i) {
     // TODO: Implement this
+    return "";
   }
 
   getUserInput(int index) {
@@ -29,8 +30,9 @@ class MangaExerciseState {
     return userInput[index];
   }
 
-  isCorrect(int i) {
+  bool isCorrect(int i) {
     // TODO: Implement this
+    return false;
   }
 
   updateUserInput(int index, String newValue) {

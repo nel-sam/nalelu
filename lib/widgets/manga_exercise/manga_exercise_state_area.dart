@@ -42,16 +42,20 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                   children: <Widget>[
                     Image(
                       fit: BoxFit.cover,
-                      image: AssetImage('manga/art_1.jpeg'),
+                      image:
+                          AssetImage(widget.state.mangaExerciseModel.imageUrl),
                     ),
                     ...widget.state.mangaExerciseModel.phrases.map(
                       (e) => SpeechBubble(
                         isCorrect: false, // TODO: Figure this out later
                         phrase: e,
                         onButtonTap: () => {
-                          setState(() => activeIndex = widget
-                              .state.mangaExerciseModel.phrases
-                              .indexOf(e))
+                          setState(() {
+                            activeIndex = widget
+                                .state.mangaExerciseModel.phrases
+                                .indexOf(e);
+                            isTextfieldActive = true;
+                          })
                         },
                       ),
                     ),
@@ -68,10 +72,9 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                   NHintButton(
                       onHintActive: (bool onHintActive) =>
                           isHintActive = onHintActive,
-                      userInput: widget.state.getUserInput(
-                          activeIndex), // TODO: Index will depend on which Phrase we're on
-                      correctAnswer: widget.state.getCorrectAnswers(
-                          activeIndex), // TODO: Index will depend on which Phrase we're on
+                      userInput: widget.state.getUserInput(activeIndex),
+                      correctAnswer:
+                          widget.state.getCorrectAnswers(activeIndex),
                       onHintUpdate: (String hint) => {
                             setState(() => {
                                   widget.state.updateUserInput(0, hint),
@@ -87,11 +90,9 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                           widget.state.updateUserInput(0, newValue);
                         });
                       },
-                      initialValue: widget.state.getUserInput(
-                          activeIndex), // TODO: Index will depend on which Phrase we're on
+                      initialValue: widget.state.getUserInput(activeIndex),
                       correctValues: [
-                        widget.state.getCorrectAnswers(
-                            activeIndex) // TODO: Index will depend on which Phrase we're on
+                        widget.state.getCorrectAnswers(activeIndex)
                       ],
                     ),
                   )

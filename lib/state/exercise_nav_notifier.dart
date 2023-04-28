@@ -66,7 +66,7 @@ class ExerciseNavNotifier extends ChangeNotifier {
   }
 
   setNext() {
-    if (_activeIndex >= _maxIndex - 1) {
+    if (_activeIndex > _maxIndex - 1) {
       _activeIndex = 0;
     } else {
       _activeIndex++;
