@@ -12,8 +12,8 @@ class AdCard extends StatelessWidget {
       var adBanner = BannerAd(
         //adUnitId: 'ca-app-pub-3940256099942544/2934735716', // TEST AD ID
         adUnitId: Platform.isIOS
-            ? 'ca-app-pub-8911581163547766~4952673031'
-            : 'ca-app-pub-8911581163547766~9863585915',
+            ? 'ca-app-pub-8911581163547766/5899703445'
+            : 'ca-app-pub-8911581163547766/4146023671',
         size: AdSize.banner,
         request: AdRequest(),
         listener: BannerAdListener(),

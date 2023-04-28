@@ -33,7 +33,8 @@ flutter:
   generate: true
   uses-material-design: true
   assets:
-    - assets/
+    - assets/banners/
+    - assets/manga/
     - lib/i18n/
 
 flutter_intl:

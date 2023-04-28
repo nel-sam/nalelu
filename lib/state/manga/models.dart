@@ -10,14 +10,14 @@ class MangaExerciseModel {
 class Phrase {
   final String translation;
   final List<PhrasePart> phraseParts;
-  final double top;
-  final double left;
+  final double downPercentage;
+  final double rightPercentage;
 
   Phrase(
       {required this.translation,
       required this.phraseParts,
-      required this.top,
-      required this.left});
+      required this.downPercentage,
+      required this.rightPercentage});
 }
 
 class PhrasePart {

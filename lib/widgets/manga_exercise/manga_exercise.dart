@@ -3,13 +3,10 @@ import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/state/enums.dart';
 import 'package:nalelu/state/exercise_nav_notifier.dart';
 import 'package:nalelu/state/manga/manga_notifier.dart';
-import 'package:nalelu/widgets/doushi_exercise/verb_chart.dart';
 import 'package:nalelu/widgets/manga_exercise/manga_exercise_state_area.dart';
 import 'package:nalelu/widgets/shared/ad_card.dart';
 import 'package:nalelu/widgets/shared/nav_header_wrapper.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
-import 'package:nrs_flutter_lib/widgets/n_footer_button.dart';
-import 'package:nrs_flutter_lib/widgets/n_footer_menu.dart';
 import 'package:provider/provider.dart';
 
 class MangaExercise extends StatelessWidget {
@@ -35,25 +32,6 @@ class MangaExercise extends StatelessWidget {
                 ],
               ),
             ),
-            persistentFooterButtons: [
-              NFooterMenu(
-                buttons: [
-                  NFooterButton(
-                    text: NA.t('verbChart'),
-                    icon: Icons.list,
-                    onPressed: () {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) =>
-                              VerbChart(doushi: navNotifier.getActive().doushi),
-                        ),
-                      );
-                    },
-                  ),
-                ],
-              ),
-            ],
           ),
         ),
       ),
@@ -61,16 +39,11 @@ class MangaExercise extends StatelessWidget {
   }
 
   Widget getExercises(BuildContext context, ExerciseNavNotifier navNotifier) {
-    var width = Nrs.getScreenWidth(halfWidth: true) + 80;
-
-    return Container(
-      width: width,
-      child: ChangeNotifierProvider<MangaNotifier>(
-        create: (context) => MangaNotifier(navNotifier.getActive),
-        child: Consumer<MangaNotifier>(
-          builder: (context, mangaNotifier, child) =>
-              MangaExerciseStateArea(state: mangaNotifier.getActive()),
-        ),
+    return ChangeNotifierProvider<MangaNotifier>(
+      create: (context) => MangaNotifier(navNotifier.getActive),
+      child: Consumer<MangaNotifier>(
+        builder: (context, mangaNotifier, child) =>
+            MangaExerciseStateArea(state: mangaNotifier.getActive()),
       ),
     );
   }
