@@ -1,17 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:nalelu/state/manga/manga_exercise_state.dart';
-import 'package:nalelu/widgets/manga_exercise/speach_bubble.dart';
+import 'package:nalelu/widgets/manga_exercise/speech_bubble.dart';
 import 'package:nalelu/widgets/shared/na_free_form_entry_wrapper.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 import 'package:nrs_flutter_lib/widgets/n_free_form_entry.dart';
 import 'package:nrs_flutter_lib/widgets/n_hint_button.dart';
 
 class MangaExerciseStateArea extends StatefulWidget {
-  final double mangaWidth;
   final MangaExerciseState state;
 
-  const MangaExerciseStateArea(
-      {required this.state, Key? key, required this.mangaWidth})
+  const MangaExerciseStateArea({required this.state, Key? key})
       : super(key: key);
 
   @override
@@ -45,10 +43,11 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                       fit: BoxFit.cover,
                       image: AssetImage('manga/art_1.jpeg'),
                     ),
-                    SpeachBubble(
-                      isCorrect: null,
-                      mangaWidth: null,
-                      phrase: null,
+                    ...widget.state.mangaExerciseModel.phrases.map(
+                      (e) => SpeechBubble(
+                        isCorrect: false, // TODO: Figure this out later
+                        phrase: e,
+                      ),
                     ),
                   ],
                 ),

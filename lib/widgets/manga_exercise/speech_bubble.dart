@@ -2,16 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:nalelu/state/manga/models.dart';
 import 'package:nalelu/widgets/shared/furigana_text.dart';
 
-class SpeachBubble extends StatelessWidget {
-  final double mangaWidth;
+class SpeechBubble extends StatelessWidget {
   final Phrase phrase;
   final bool isCorrect;
 
-  const SpeachBubble(
-      {Key? key,
-      required this.mangaWidth,
-      required this.phrase,
-      required this.isCorrect})
+  const SpeechBubble({Key? key, required this.phrase, required this.isCorrect})
       : super(key: key);
 
   @override
