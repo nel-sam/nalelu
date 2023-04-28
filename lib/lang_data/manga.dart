@@ -43,70 +43,71 @@ final mangaWordsBank = [
           ]),
         ],
         downPercentage: 80,
-        rightPercentage: 30)
+        rightPercentage: 20)
   ]),
   MangaExerciseModel(imageUrl: 'assets/manga/birthday.jpeg', phrases: [
     Phrase(
-        translation: NA.t('nekoirutoshiranakatta'),
+        translation: NA.t('otanjoubiomedetou'),
         phraseParts: [
           PhrasePart(
             furiTexts: [
-              FuriText(text: '猫', furigana: 'ねこ'),
-              FuriText(text: 'いると'),
-              FuriText(text: '知', furigana: 'し'),
-              FuriText(text: 'らなかった')
+              FuriText(text: '誕生日', furigana: 'たんじょうび'),
+              FuriText(text: 'おめでとう'),
             ],
           ),
         ],
-        downPercentage: 1,
-        rightPercentage: 1),
+        downPercentage: 10,
+        rightPercentage: 50),
     Phrase(
-      translation: NA.t('unnihikimoiruyo'),
+      translation: NA.t('arigatou'),
       phraseParts: [
-        PhrasePart(furiTexts: [
-          FuriText(text: 'うん、'),
-        ]),
-        PhrasePart(isAnswerable: true, furiTexts: [
-          FuriText(text: '二匹', furigana: 'にひき'),
-        ]),
-        PhrasePart(furiTexts: [
-          FuriText(text: 'もいるよ'),
-        ]),
+        PhrasePart(
+          furiTexts: [
+            FuriText(text: 'ありがとう'),
+          ],
+        ),
       ],
-      rightPercentage: 1,
-      downPercentage: 1,
+      downPercentage: 30,
+      rightPercentage: 5,
     ),
+    Phrase(
+        translation: NA.t('nijuuissaininattayone'),
+        phraseParts: [
+          PhrasePart(isAnswerable: true, furiTexts: [
+            FuriText(text: '二十一歳', furigana: 'にじゅういっさい'),
+          ]),
+          PhrasePart(furiTexts: [
+            FuriText(text: 'になったよね？'),
+          ]),
+        ],
+        downPercentage: 80,
+        rightPercentage: 20),
   ]),
   MangaExerciseModel(imageUrl: 'assets/manga/dont_run.jpeg', phrases: [
     Phrase(
-        translation: NA.t('nekoirutoshiranakatta'),
+        translation: NA.t('ittekimasu'),
         phraseParts: [
           PhrasePart(
             furiTexts: [
-              FuriText(text: '猫', furigana: 'ねこ'),
-              FuriText(text: 'いると'),
-              FuriText(text: '知', furigana: 'し'),
-              FuriText(text: 'らなかった')
+              FuriText(text: 'いってきます！'),
             ],
           ),
         ],
-        downPercentage: 1,
-        rightPercentage: 1),
+        downPercentage: 10,
+        rightPercentage: 60),
     Phrase(
-      translation: NA.t('unnihikimoiruyo'),
-      phraseParts: [
-        PhrasePart(furiTexts: [
-          FuriText(text: 'うん、'),
-        ]),
-        PhrasePart(isAnswerable: true, furiTexts: [
-          FuriText(text: '二匹', furigana: 'にひき'),
-        ]),
-        PhrasePart(furiTexts: [
-          FuriText(text: 'もいるよ'),
-        ]),
-      ],
-      rightPercentage: 1,
-      downPercentage: 1,
-    ),
+        translation: NA.t('hashiranaide'),
+        phraseParts: [
+          PhrasePart(
+            isAnswerable: true,
+            furiTexts: [
+              FuriText(text: '走', furigana: 'はし'),
+              FuriText(text: 'らないで!'),
+            ],
+          ),
+          PhrasePart(furiTexts: [FuriText(text: 'よ!')]),
+        ],
+        downPercentage: 70,
+        rightPercentage: 10),
   ]),
 ];
