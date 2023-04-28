@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:nalelu/na_helpers.dart';
-import 'package:nalelu/state/doushi/doushi_notifier.dart';
 import 'package:nalelu/state/enums.dart';
 import 'package:nalelu/state/exercise_nav_notifier.dart';
 import 'package:nalelu/state/manga/manga_notifier.dart';
-import 'package:nalelu/widgets/doushi_exercise/doushi_exercise_state_area.dart';
 import 'package:nalelu/widgets/doushi_exercise/verb_chart.dart';
 import 'package:nalelu/widgets/manga_exercise/manga_exercise_state_area.dart';
 import 'package:nalelu/widgets/shared/ad_card.dart';
