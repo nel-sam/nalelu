@@ -47,7 +47,7 @@ class MangaExerciseState {
 
   updateUserInput(PhrasePart? phrasePart, String newValue) {
     if (phrasePart == null) return;
-    userInput.update(phrasePart, (value) => newValue);
+    userInput[phrasePart] = newValue;
   }
 }
 
