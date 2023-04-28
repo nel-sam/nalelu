@@ -22,10 +22,9 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
   bool isHintActive = false;
   bool isTextfieldActive = false;
   final mangaWidth = Nrs.getScreenWidth();
+  PhrasePart? activePhrasePart;
 
   Widget build(BuildContext context) {
-    // TODO: Update this once we start using proper lists
-    PhrasePart? activePhrasePart;
     final isCorrect = widget.state.isCorrect(activePhrasePart);
 
     return Column(
@@ -75,7 +74,7 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                       userInput: widget.state.getUserInput(activePhrasePart),
                       correctAnswer: widget.state
                           .getCorrectAnswers(activePhrasePart)
-                          .toString(),
+                          .first,
                       onHintUpdate: (String hint) => {
                             setState(() => {
                                   widget.state

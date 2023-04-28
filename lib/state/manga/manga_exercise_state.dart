@@ -26,10 +26,10 @@ class MangaExerciseState {
     if (phrasePart == null) return [''];
     List<String> correctAnswers = [];
 
-    phrasePart.furiTexts.map((e) => {
-          correctAnswers.add(e.text),
-          correctAnswers.add(e.furigana),
-        });
+    for (int i = 0; i < phrasePart.furiTexts.length; i++) {
+      correctAnswers.add(phrasePart.furiTexts[i].text);
+      correctAnswers.add(phrasePart.furiTexts[i].furigana);
+    }
 
     return correctAnswers;
   }
