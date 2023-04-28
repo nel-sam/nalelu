@@ -25,35 +25,42 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
 
   Widget build(BuildContext context) {
     // TODO: Update this once we start using proper lists
-    final isCorrect = widget.state.isCorrect(0);
-    int activeIndex = 0;
+    PhrasePart? activePhrasePart;
+    final isCorrect = widget.state.isCorrect(activePhrasePart);
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Container(
-          color: Colors.red,
-          width: mangaWidth,
-          height: mangaWidth,
-          child: Stack(
-            fit: StackFit.expand,
-            children: <Widget>[
-              Image(
-                fit: BoxFit.cover,
-                image: AssetImage(widget.state.mangaExerciseModel.imageUrl),
-              ),
-              ...widget.state.mangaExerciseModel.phrases.map(
-                (e) => SpeechBubble(
-                  isCorrect: false, // TODO: Figure this out later
-                  phrase: e,
-                  onButtonTap: (PhrasePart phrasePart) => {
-                    setState(() {
-                      activeIndex =
-                          widget.state.mangaExerciseModel.phrases.indexOf(e);
-                      isTextfieldActive = true;
-                    })
-                  },
-                  mangaWidth: mangaWidth,
+        SingleChildScrollView(
+          scrollDirection: Axis.horizontal,
+          child: Row(
+            children: [
+              Container(
+                width: mangaWidth,
+                height: mangaWidth,
+                child: Stack(
+                  fit: StackFit.expand,
+                  children: <Widget>[
+                    Image(
+                      fit: BoxFit.cover,
+                      image:
+                          AssetImage(widget.state.mangaExerciseModel.imageUrl),
+                    ),
+                    ...widget.state.mangaExerciseModel.phrases.map(
+                      (e) => SpeechBubble(
+                        isCorrect: false, // TODO: Figure this out later
+                        phrase: e,
+                        onButtonTap: () => {
+                          setState(() {
+                            activeIndex = widget
+                                .state.mangaExerciseModel.phrases
+                                .indexOf(e);
+                            isTextfieldActive = true;
+                          })
+                        },
+                      ),
+                    ),
+                  ],
                 ),
               ),
             ],
@@ -63,15 +70,16 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
             ? Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  NHintButton(
+                   NHintButton(
                       onHintActive: (bool onHintActive) =>
                           isHintActive = onHintActive,
-                      userInput: widget.state.getUserInput(activeIndex),
-                      correctAnswer:
-                          widget.state.getCorrectAnswers(activeIndex),
+                      userInput: widget.state.getUserInput(activePhrasePart),
+                      correctAnswer: widget.state
+                          .getCorrectAnswers(activePhrasePart)
+                          .toString(),
                       onHintUpdate: (String hint) => {
                             setState(() => {
-                                  widget.state.updateUserInput(0, hint),
+                                  widget.state.updateUserInput(activePhrasePart, hint),
                                 }),
                           }),
                   Container(
@@ -81,13 +89,12 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                       hintValue: '',
                       onChanged: (String newValue) {
                         setState(() {
-                          widget.state.updateUserInput(0, newValue);
+                          widget.state.updateUserInput(activePhrasePart, newValue);
                         });
                       },
-                      initialValue: widget.state.getUserInput(activeIndex),
-                      correctValues: [
-                        widget.state.getCorrectAnswers(activeIndex)
-                      ],
+                      initialValue: widget.state.getUserInput(activePhrasePart),
+                      correctValues:
+                          widget.state.getCorrectAnswers(activePhrasePart),
                     ),
                   )
                 ],
