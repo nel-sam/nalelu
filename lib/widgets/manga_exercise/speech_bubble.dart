@@ -5,7 +5,7 @@ import 'package:nalelu/widgets/shared/furigana_text.dart';
 class SpeechBubble extends StatelessWidget {
   final Phrase phrase;
   final bool isCorrect;
-  final Function() onButtonTap;
+  final Function(PhrasePart activePhrase) onButtonTap;
 
   const SpeechBubble(
       {Key? key,
@@ -19,36 +19,29 @@ class SpeechBubble extends StatelessWidget {
     return Positioned(
       top: this.phrase.top,
       left: this.phrase.left,
-      child: Wrap(
-        children: this
-            .phrase
-            .phraseParts
-            .map((e) => e.isAnswerable && !isCorrect
-                ? ElevatedButton(
-                    onPressed: () => onButtonTap(),
-                    child: Icon(Icons.question_mark))
-                : FuriganaText(furigana: e.furiTexts))
-            .toList(),
+      child: Expanded(
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.white,
+            border: Border.all(
+              color: Colors.black,
+              width: 4,
+            ),
+            borderRadius: BorderRadius.circular(40),
+          ),
+          child: Wrap(
+            children: this
+                .phrase
+                .phraseParts
+                .map((e) => e.isAnswerable && !isCorrect
+                    ? ElevatedButton(
+                        onPressed: () => onButtonTap(e),
+                        child: Icon(Icons.question_mark))
+                    : FuriganaText(furigana: e.furiTexts))
+                .toList(),
+          ),
+        ),
       ),
     );
-
-    // Text(
-    //   this.state.mangaExerciseModel.text1,
-    //   style: TextStyle(fontSize: 12),
-    // ),
-    // isCorrect
-    //     ? Text(widget.state.mangaExerciseModel.answers.answer1,
-    //         style: TextStyle(fontSize: 12))
-    //     : IconButton(
-    //         icon: const Icon(Icons.lightbulb),
-    //         onPressed: () => {
-    //               setState(() => {
-    //                     isTextfieldActive = true,
-    //                   }),
-    //             }),
-    // Text(
-    //   "?",
-    //   style: TextStyle(fontSize: 12, color: Colors.black),
-    // ),
   }
 }

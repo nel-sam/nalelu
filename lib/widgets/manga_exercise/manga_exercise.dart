@@ -24,8 +24,7 @@ class MangaExercise extends StatelessWidget {
         child: Consumer<ExerciseNavNotifier>(
           builder: (context, navNotifier, child) => Scaffold(
             resizeToAvoidBottomInset: false,
-            appBar: Nrs.NrsAppBar(
-                title: '${NA.t('Manga')}', context: context),
+            appBar: Nrs.NrsAppBar(title: '${NA.t('Manga')}', context: context),
             body: Center(
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
