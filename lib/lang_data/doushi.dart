@@ -14,17 +14,6 @@ var doushiBank = [
   ),
   Doushi(
     isIrregular: true,
-    infinitive: '持つ',
-    infinitiveFurigana: 'も',
-    root: '持ち',
-    translation: NA.t('Motsu'),
-    casual: DoushiConj(
-      present: '持つ',
-      past: '持った',
-    ),
-  ),
-  Doushi(
-    isIrregular: true,
     infinitive: '聞く',
     infinitiveFurigana: 'き',
     root: '聞き',
