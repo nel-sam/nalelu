@@ -1,10 +1,9 @@
-import 'package:nalelu/lang_data/manga_word.dart';
+import 'package:nalelu/lang_data/manga.dart';
 import 'package:nalelu/state/manga/manga_exercise_state.dart';
 
 class MangaGenerator {
   static createExercise(int index) {
     return MangaExerciseState(mangaExerciseModel: mangaWordsBank[index]);
-    // return MangaExerciseState(manga: mangaExercises[index]);
   }
 
   static int getMaxIndex() {

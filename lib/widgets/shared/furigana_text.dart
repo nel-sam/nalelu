@@ -29,7 +29,7 @@ class FuriganaText extends StatelessWidget {
                   Container(
                     height: fontSize * 0.7,
                     child: Text(
-                      i.furigana,
+                      i.furigana!,
                       style: TextStyle(
                         fontSize: fontSize * 0.5,
                         color: labelColor,

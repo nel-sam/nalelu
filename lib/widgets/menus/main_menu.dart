@@ -46,17 +46,17 @@ class MainMenu extends StatelessWidget {
               NAMenuButton(
                 destination: NumbersMenu(),
                 label: NA.t('numbersExercise'),
-                translabel: [FuriText('数字', 'すうじ')],
+                translabel: [FuriText(text: '数字', furigana: 'すうじ')],
               ),
               NAMenuButton(
                 destination: DoushiExerciseLevel1(),
                 label: NA.t('verbs'),
-                translabel: [FuriText('動詞', 'どうし')],
+                translabel: [FuriText(text: '動詞', furigana: 'どうし')],
               ),
               NAMenuButton(
                 destination: MangaExercise(),
                 label: NA.t('manga'),
-                translabel: [FuriText('漫画', 'まんが')],
+                translabel: [FuriText(text: '漫画', furigana: 'まんが')],
               ),
             ],
           ),

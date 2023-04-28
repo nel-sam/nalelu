@@ -26,21 +26,24 @@ class NumbersMenu extends StatelessWidget {
               NAMenuHeader(
                   icon: Icons.widgets_outlined,
                   transLabel: NA.t('numbers'),
-                  label: [FuriText('数字', 'すうじ')]),
+                  label: [FuriText(text: '数字', furigana: 'すうじ')]),
               Column(
                 children: [
                   NAMenuButton(
                       destination: JikanExercise(),
                       label: NA.t('time'),
-                      translabel: [FuriText('時間', 'じかん')]),
+                      translabel: [FuriText(text: '時間', furigana: 'じかん')]),
                   NAMenuButton(
                       destination: AgeExercise(),
                       label: NA.t('age'),
-                      translabel: [FuriText('年齢', 'ねんれい')]),
+                      translabel: [FuriText(text: '年齢', furigana: 'ねんれい')]),
                   NAMenuButton(
                       destination: CountingExercise(),
                       label: NA.t('counting'),
-                      translabel: [FuriText('数', 'かぞ'), FuriText('えること', '')]),
+                      translabel: [
+                        FuriText(text: '数', furigana: 'かぞ'),
+                        FuriText(text: 'えること')
+                      ]),
                 ],
               ),
             ],
