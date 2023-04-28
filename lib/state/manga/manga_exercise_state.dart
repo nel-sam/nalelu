@@ -20,6 +20,10 @@ class MangaExerciseState {
     }
   }
 
+  getCorrectAnswers(int i) {
+    // TODO: Implement this
+  }
+
   getUserInput(int index) {
     fillArray(index);
     return userInput[index];
@@ -33,8 +37,6 @@ class MangaExerciseState {
     fillArray(index);
     userInput[index] = newValue;
   }
-
-  getCorrectAnswers(int i) {}
 }
 
 // class MangaExerciseState {

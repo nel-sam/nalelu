@@ -5,8 +5,13 @@ import 'package:nalelu/widgets/shared/furigana_text.dart';
 class SpeechBubble extends StatelessWidget {
   final Phrase phrase;
   final bool isCorrect;
+  final Function() onButtonTap;
 
-  const SpeechBubble({Key? key, required this.phrase, required this.isCorrect})
+  const SpeechBubble(
+      {Key? key,
+      required this.phrase,
+      required this.isCorrect,
+      required this.onButtonTap})
       : super(key: key);
 
   @override
@@ -20,7 +25,8 @@ class SpeechBubble extends StatelessWidget {
             .phraseParts
             .map((e) => e.isAnswerable && !isCorrect
                 ? ElevatedButton(
-                    onPressed: () => {}, child: Icon(Icons.question_mark))
+                    onPressed: () => onButtonTap(),
+                    child: Icon(Icons.question_mark))
                 : FuriganaText(furigana: e.furiTexts))
             .toList(),
       ),

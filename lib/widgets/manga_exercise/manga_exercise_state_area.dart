@@ -25,6 +25,7 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
   Widget build(BuildContext context) {
     // TODO: Update this once we start using proper lists
     final isCorrect = widget.state.isCorrect(0);
+    int activeIndex = 0;
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -47,6 +48,11 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                       (e) => SpeechBubble(
                         isCorrect: false, // TODO: Figure this out later
                         phrase: e,
+                        onButtonTap: () => {
+                          setState(() => activeIndex = widget
+                              .state.mangaExerciseModel.phrases
+                              .indexOf(e))
+                        },
                       ),
                     ),
                   ],
@@ -63,9 +69,9 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                       onHintActive: (bool onHintActive) =>
                           isHintActive = onHintActive,
                       userInput: widget.state.getUserInput(
-                          0), // TODO: Index will depend on which Phrase we're on
+                          activeIndex), // TODO: Index will depend on which Phrase we're on
                       correctAnswer: widget.state.getCorrectAnswers(
-                          0), // TODO: Index will depend on which Phrase we're on
+                          activeIndex), // TODO: Index will depend on which Phrase we're on
                       onHintUpdate: (String hint) => {
                             setState(() => {
                                   widget.state.updateUserInput(0, hint),
@@ -82,10 +88,10 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                         });
                       },
                       initialValue: widget.state.getUserInput(
-                          0), // TODO: Index will depend on which Phrase we're on
+                          activeIndex), // TODO: Index will depend on which Phrase we're on
                       correctValues: [
                         widget.state.getCorrectAnswers(
-                            0) // TODO: Index will depend on which Phrase we're on
+                            activeIndex) // TODO: Index will depend on which Phrase we're on
                       ],
                     ),
                   )
