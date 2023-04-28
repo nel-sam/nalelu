@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nalelu/furi_text.dart';
+import 'package:nrs_flutter_lib/constants.dart';
 
 class FuriganaText extends StatelessWidget {
   final double fontSize;
@@ -10,9 +11,9 @@ class FuriganaText extends StatelessWidget {
   const FuriganaText({
     Key? key,
     required this.furigana,
-    required this.fontSize,
+    this.fontSize = FONT_SIZE,
     this.labelColor,
-    this.fontWeight,
+    this.fontWeight = FontWeight.normal,
   }) : super(key: key);
 
   @override
@@ -29,7 +30,7 @@ class FuriganaText extends StatelessWidget {
                   Container(
                     height: fontSize * 0.7,
                     child: Text(
-                      i.furigana!,
+                      i.furigana,
                       style: TextStyle(
                         fontSize: fontSize * 0.5,
                         color: labelColor,

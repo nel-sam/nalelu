@@ -25,10 +25,16 @@ class MangaExerciseState {
     return userInput[index];
   }
 
+  isCorrect(int i) {
+    // TODO: Implement this
+  }
+
   updateUserInput(int index, String newValue) {
     fillArray(index);
     userInput[index] = newValue;
   }
+
+  getCorrectAnswers(int i) {}
 }
 
 // class MangaExerciseState {

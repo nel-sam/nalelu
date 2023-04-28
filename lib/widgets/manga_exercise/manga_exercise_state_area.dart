@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:nalelu/state/manga/manga_exercise_state.dart';
+import 'package:nalelu/widgets/manga_exercise/speach_bubble.dart';
 import 'package:nalelu/widgets/shared/na_free_form_entry_wrapper.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 import 'package:nrs_flutter_lib/widgets/n_free_form_entry.dart';
 import 'package:nrs_flutter_lib/widgets/n_hint_button.dart';
 
 class MangaExerciseStateArea extends StatefulWidget {
+  final double mangaWidth;
   final MangaExerciseState state;
-  const MangaExerciseStateArea({required this.state, Key? key})
+
+  const MangaExerciseStateArea(
+      {required this.state, Key? key, required this.mangaWidth})
       : super(key: key);
 
   @override
@@ -22,8 +26,7 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
 
   Widget build(BuildContext context) {
     // TODO: Update this once we start using proper lists
-    final isCorrect = widget.state.mangaExerciseModel.answers.answer1 ==
-        (widget.state.getUserInput(0));
+    final isCorrect = widget.state.isCorrect(0);
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
@@ -42,33 +45,10 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                       fit: BoxFit.cover,
                       image: AssetImage('manga/art_1.jpeg'),
                     ),
-                    Positioned(
-                      top: mangaWidth * 0.1,
-                      left: mangaWidth * 0.1,
-                      child: Row(
-                        children: [
-                          Text(
-                            widget.state.mangaExerciseModel.text1,
-                            style: TextStyle(fontSize: 12, color: Colors.black),
-                          ),
-                          isCorrect
-                              ? Text(
-                                  widget
-                                      .state.mangaExerciseModel.answers.answer1,
-                                  style: TextStyle(fontSize: 12))
-                              : IconButton(
-                                  icon: const Icon(Icons.lightbulb),
-                                  onPressed: () => {
-                                        setState(() => {
-                                              isTextfieldActive = true,
-                                            }),
-                                      }),
-                          Text(
-                            "?",
-                            style: TextStyle(fontSize: 12, color: Colors.black),
-                          ),
-                        ],
-                      ),
+                    SpeachBubble(
+                      isCorrect: null,
+                      mangaWidth: null,
+                      phrase: null,
                     ),
                   ],
                 ),
@@ -83,9 +63,10 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                   NHintButton(
                       onHintActive: (bool onHintActive) =>
                           isHintActive = onHintActive,
-                      userInput: widget.state.getUserInput(0),
-                      correctAnswer:
-                          widget.state.mangaExerciseModel.answers.answer1,
+                      userInput: widget.state.getUserInput(
+                          0), // TODO: Index will depend on which Phrase we're on
+                      correctAnswer: widget.state.getCorrectAnswers(
+                          0), // TODO: Index will depend on which Phrase we're on
                       onHintUpdate: (String hint) => {
                             setState(() => {
                                   widget.state.updateUserInput(0, hint),
@@ -101,9 +82,11 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                           widget.state.updateUserInput(0, newValue);
                         });
                       },
-                      initialValue: widget.state.getUserInput(0),
+                      initialValue: widget.state.getUserInput(
+                          0), // TODO: Index will depend on which Phrase we're on
                       correctValues: [
-                        widget.state.mangaExerciseModel.answers.answer1
+                        widget.state.getCorrectAnswers(
+                            0) // TODO: Index will depend on which Phrase we're on
                       ],
                     ),
                   )
