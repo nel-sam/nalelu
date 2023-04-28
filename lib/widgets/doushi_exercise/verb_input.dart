@@ -3,7 +3,6 @@ import 'package:nalelu/lang_data/doushi.dart';
 import 'package:nalelu/widgets/shared/na_free_form_entry_wrapper.dart';
 import 'package:nrs_flutter_lib/constants.dart';
 import 'package:nrs_flutter_lib/widgets/n_free_form_entry.dart';
-import 'package:nrs_flutter_lib/widgets/n_hint_button.dart';
 
 class VerbInput extends StatelessWidget {
   final Doushi doushi;

@@ -1,7 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
-import 'package:flutter/src/widgets/placeholder.dart';
 import 'package:nalelu/state/suuji/age/age_exercise_state.dart';
 import 'package:nalelu/widgets/shared/na_free_form_entry_wrapper.dart';
 import 'package:nrs_flutter_lib/enums.dart';
