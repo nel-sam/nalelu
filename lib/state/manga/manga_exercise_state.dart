@@ -23,14 +23,20 @@ class MangaExerciseState {
   // }
 
   List<String> getCorrectAnswers(PhrasePart? phrasePart) {
+    if (phrasePart == null) return [''];
     List<String> correctAnswers = [];
-    phrasePart!.furiTexts.map((e) => {correctAnswers.add(e.text), correctAnswers.add(e.furigana),});
+
+    phrasePart.furiTexts.map((e) => {
+          correctAnswers.add(e.text),
+          correctAnswers.add(e.furigana),
+        });
 
     return correctAnswers;
   }
 
   String getUserInput(PhrasePart? phrasePart) {
-    // fillArray(indexOf(phrasePart.furiTexts));
+    if (phrasePart == null) return '';
+
     return this.userInput[phrasePart] ?? '';
   }
 
@@ -40,7 +46,8 @@ class MangaExerciseState {
   }
 
   updateUserInput(PhrasePart? phrasePart, String newValue) {
-    userInput.update(phrasePart!, (value) => newValue);
+    if (phrasePart == null) return;
+    userInput.update(phrasePart, (value) => newValue);
   }
 }
 
