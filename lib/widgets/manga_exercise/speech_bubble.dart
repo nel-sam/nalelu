@@ -5,7 +5,7 @@ import 'package:nalelu/widgets/shared/furigana_text.dart';
 class SpeechBubble extends StatelessWidget {
   final double mangaWidth;
   final Phrase phrase;
-  final bool isCorrect;
+  final List<bool> isCorrect;
   final Function(PhrasePart activePhrase) onButtonTap;
 
   const SpeechBubble(
@@ -18,6 +18,7 @@ class SpeechBubble extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    int index = 0;
     return Positioned(
       top: this.mangaWidth * (this.phrase.downPercentage / 100),
       left: this.mangaWidth * (this.phrase.rightPercentage / 100),
@@ -36,7 +37,7 @@ class SpeechBubble extends StatelessWidget {
             children: this
                 .phrase
                 .phraseParts
-                .map((e) => e.isAnswerable && !isCorrect
+                .map((e) => e.isAnswerable && !isCorrect[index++]
                     ? IconButton(
                         onPressed: () => onButtonTap(e),
                         icon: Icon(Icons.circle_outlined))

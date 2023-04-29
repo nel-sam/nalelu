@@ -12,24 +12,19 @@ class MangaExerciseState {
     userInput.clear();
   }
 
-  // void fillArray(Phr index) {
-  //   if (userInput.length == 0) {
-  //     userInput.add('');
-  //   }
-
-  //   while (userInput.length <= index) {
-  //     userInput.add('');
-  //   }
-  // }
-
   List<String> getCorrectAnswers(PhrasePart? phrasePart) {
     if (phrasePart == null) return [''];
     List<String> correctAnswers = [];
+    String text = '';
+    String furignana = '';
 
     for (int i = 0; i < phrasePart.furiTexts.length; i++) {
-      correctAnswers.add(phrasePart.furiTexts[i].text);
-      correctAnswers.add(phrasePart.furiTexts[i].furigana);
+      text += phrasePart.furiTexts[i].text;
+      furignana += phrasePart.furiTexts[i].furigana;
     }
+
+    correctAnswers.add(text);
+    correctAnswers.add(furignana);
 
     return correctAnswers;
   }
@@ -40,9 +35,15 @@ class MangaExerciseState {
     return this.userInput[phrasePart] ?? '';
   }
 
-  bool isCorrect(PhrasePart? phrasePart) {
-    // TODO: Implement this
-    return false;
+  List<bool> isCorrect(PhrasePart? phrasePart) {
+    if (phrasePart == null) return [false];
+    List<bool> areCorrects = [];
+    
+    for (int i = 0; i < phrasePart.furiTexts.length; i++) {
+      areCorrects
+          .add(getCorrectAnswers(phrasePart)[i] == this.userInput[phrasePart]);
+    }
+    return areCorrects;
   }
 
   updateUserInput(PhrasePart? phrasePart, String newValue) {
@@ -50,35 +51,3 @@ class MangaExerciseState {
     userInput[phrasePart] = newValue;
   }
 }
-
-// class MangaExerciseState {
-//   List<String> userInput = [];
-//   late bool isCorrect;
-
-//   MangaExerciseState();
-
-//   getUserInput(int index) {
-//     fillArray(index);
-//     return userInput[index];
-//   }
-
-//   void fillArray(int index) {
-//     if (userInput.length == 0) {
-//       userInput.add('');
-//     }
-
-//     while (userInput.length <= index) {
-//       userInput.add('');
-//     }
-//   }
-
-//   updateUserInput(int index, String newValue) {
-//     fillArray(index);
-//     userInput[index] = newValue;
-//   }
-
-//   clear() {
-//     userInput.clear();
-//   }
-
-// }
