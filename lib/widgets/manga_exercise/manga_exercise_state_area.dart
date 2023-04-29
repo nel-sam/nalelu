@@ -18,7 +18,6 @@ class MangaExerciseStateArea extends StatefulWidget {
 }
 
 class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
-  @override
   bool isHintActive = false;
   bool isTextfieldActive = false;
   final mangaWidth = Nrs.getScreenWidth();
@@ -26,7 +25,7 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
 
   Widget build(BuildContext context) {
     return Column(
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         SingleChildScrollView(
           scrollDirection: Axis.horizontal,

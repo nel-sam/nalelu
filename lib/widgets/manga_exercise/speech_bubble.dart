@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nalelu/state/manga/models.dart';
 import 'package:nalelu/widgets/shared/furigana_text.dart';
+import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 
 class SpeechBubble extends StatelessWidget {
   final double mangaWidth;
@@ -40,7 +41,11 @@ class SpeechBubble extends StatelessWidget {
                   ? IconButton(
                       onPressed: () => onButtonTap(e),
                       icon: Icon(Icons.circle_outlined))
-                  : FuriganaText(furigana: e.furiTexts);
+                  : FuriganaText(
+                      furigana: e.furiTexts,
+                      labelColor:
+                          e.isAnswerable ? Nrs.getPrimaryColor(context) : null,
+                    );
             }).toList(),
           ),
         ),
