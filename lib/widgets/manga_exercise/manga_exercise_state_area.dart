@@ -26,6 +26,7 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
   bool isTextfieldActive = false;
   final mangaWidth = Nrs.getScreenWidth();
   PhrasePart? activePhrasePart;
+  Phrase? activePhrase;
 
   Widget build(BuildContext context) {
     widget.navNotifier.onNextOrPrevious = () => activePhrasePart = null;
@@ -49,12 +50,13 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                           AssetImage(widget.state.mangaExerciseModel.imageUrl),
                     ),
                     ...widget.state.mangaExerciseModel.phrases.map(
-                      (e) => SpeechBubble(
+                      (p) => SpeechBubble(
                         getIsCorrect: widget.state.isPhrasePartCorrect,
-                        phrase: e,
+                        phrase: p,
                         onButtonTap: (PhrasePart phrasePart) => {
                           setState(() {
                             activePhrasePart = phrasePart;
+                            activePhrase = p;
                             isTextfieldActive = true;
                           })
                         },
@@ -70,28 +72,28 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
         isTextfieldActive &&
                 activePhrasePart != null &&
                 !widget.state.isPhrasePartCorrect(activePhrasePart)
-            ? Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  NHintButton(
-                      userInput: widget.state.getUserInput(activePhrasePart),
-                      correctAnswer: widget.state
-                          .getCorrectAnswers(activePhrasePart)
-                          .first,
-                      onHintUpdate: (String hint) => {
-                            setState(() {
-                              widget.state
-                                  .updateUserInput(activePhrasePart, hint);
+            ? Padding(
+                padding: const EdgeInsets.all(18.0),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    NHintButton(
+                        userInput: widget.state.getUserInput(activePhrasePart),
+                        correctAnswer: widget.state
+                            .getCorrectAnswers(activePhrasePart)
+                            .first,
+                        onHintUpdate: (String hint) => {
+                              setState(() {
+                                widget.state
+                                    .updateUserInput(activePhrasePart, hint);
 
-                              if (widget.state
-                                  .isPhrasePartCorrect(activePhrasePart)) {
-                                activePhrasePart = null;
-                              }
+                                if (widget.state
+                                    .isPhrasePartCorrect(activePhrasePart)) {
+                                  activePhrasePart = null;
+                                }
+                              }),
                             }),
-                          }),
-                  Container(
-                    width: 200,
-                    child: NaFreeFormEntryWrapper(
+                    NaFreeFormEntryWrapper(
                       widthType: NFreeFormWidths.half,
                       hintValue: '',
                       onChanged: (String newValue) {
@@ -110,11 +112,14 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                       initialValue: widget.state.getUserInput(activePhrasePart),
                       correctValues:
                           widget.state.getCorrectAnswers(activePhrasePart),
-                    ),
-                  )
-                ],
+                    )
+                  ],
+                ),
               )
             : Container(),
+        activePhrasePart != null && activePhrase != null
+            ? Text(activePhrase!.translation)
+            : Container()
       ],
     );
   }
