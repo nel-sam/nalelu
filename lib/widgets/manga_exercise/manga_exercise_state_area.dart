@@ -25,8 +25,6 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
   PhrasePart? activePhrasePart;
 
   Widget build(BuildContext context) {
-    final isCorrect = widget.state.isCorrect(activePhrasePart);
-
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
@@ -47,7 +45,7 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                     ),
                     ...widget.state.mangaExerciseModel.phrases.map(
                       (e) => SpeechBubble(
-                        isCorrect: widget.state.isCorrect(activePhrasePart), // TODO: Figure this out later
+                        getIsCorrect: widget.state.isCorrect,
                         phrase: e,
                         onButtonTap: (PhrasePart phrasePart) => {
                           setState(() {
@@ -64,7 +62,7 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
             ],
           ),
         ),
-        isTextfieldActive && !isCorrect[0]
+        isTextfieldActive && !widget.state.isCorrect(activePhrasePart)
             ? Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

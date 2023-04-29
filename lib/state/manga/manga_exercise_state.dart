@@ -3,7 +3,7 @@ import 'dart:collection';
 import 'package:nalelu/state/manga/models.dart';
 
 class MangaExerciseState {
-  Map<PhrasePart, String> userInput = new HashMap<PhrasePart, String>();
+  Map<String, String> userInput = new HashMap<String, String>();
   MangaExerciseModel mangaExerciseModel;
 
   MangaExerciseState({required this.mangaExerciseModel});
@@ -32,22 +32,24 @@ class MangaExerciseState {
   String getUserInput(PhrasePart? phrasePart) {
     if (phrasePart == null) return '';
 
-    return this.userInput[phrasePart] ?? '';
+    return this.userInput[_getInputKey(phrasePart)] ?? '';
   }
 
-  List<bool> isCorrect(PhrasePart? phrasePart) {
-    if (phrasePart == null) return [false];
-    List<bool> areCorrects = [];
-    
-    for (int i = 0; i < phrasePart.furiTexts.length; i++) {
-      areCorrects
-          .add(getCorrectAnswers(phrasePart)[i] == this.userInput[phrasePart]);
-    }
-    return areCorrects;
+  bool isCorrect(PhrasePart? phrasePart) {
+    if (phrasePart == null) return false;
+
+    final correctAnswers = getCorrectAnswers(phrasePart);
+    final currentInput = getUserInput(phrasePart);
+    final isCorrect = correctAnswers.contains(currentInput);
+    return isCorrect;
   }
 
   updateUserInput(PhrasePart? phrasePart, String newValue) {
     if (phrasePart == null) return;
-    userInput[phrasePart] = newValue;
+    userInput[_getInputKey(phrasePart)] = newValue;
+  }
+
+  String _getInputKey(PhrasePart phrasePart) {
+    return phrasePart.furiTexts.join();
   }
 }

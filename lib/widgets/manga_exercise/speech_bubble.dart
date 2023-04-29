@@ -5,20 +5,19 @@ import 'package:nalelu/widgets/shared/furigana_text.dart';
 class SpeechBubble extends StatelessWidget {
   final double mangaWidth;
   final Phrase phrase;
-  final List<bool> isCorrect;
+  final bool Function(PhrasePart activePhrase) getIsCorrect;
   final Function(PhrasePart activePhrase) onButtonTap;
 
   const SpeechBubble(
       {Key? key,
       required this.mangaWidth,
       required this.phrase,
-      required this.isCorrect,
+      required this.getIsCorrect,
       required this.onButtonTap})
       : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    int index = 0;
     return Positioned(
       top: this.mangaWidth * (this.phrase.downPercentage / 100),
       left: this.mangaWidth * (this.phrase.rightPercentage / 100),
@@ -34,15 +33,15 @@ class SpeechBubble extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(8),
           child: Wrap(
-            children: this
-                .phrase
-                .phraseParts
-                .map((e) => e.isAnswerable && !isCorrect[index++]
-                    ? IconButton(
-                        onPressed: () => onButtonTap(e),
-                        icon: Icon(Icons.circle_outlined))
-                    : FuriganaText(furigana: e.furiTexts))
-                .toList(),
+            children: this.phrase.phraseParts.map((e) {
+              final isCorrect = getIsCorrect(e);
+
+              return e.isAnswerable && !isCorrect
+                  ? IconButton(
+                      onPressed: () => onButtonTap(e),
+                      icon: Icon(Icons.circle_outlined))
+                  : FuriganaText(furigana: e.furiTexts);
+            }).toList(),
           ),
         ),
       ),
