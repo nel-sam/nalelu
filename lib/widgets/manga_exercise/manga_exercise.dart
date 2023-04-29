@@ -42,8 +42,10 @@ class MangaExercise extends StatelessWidget {
     return ChangeNotifierProvider<MangaNotifier>(
       create: (context) => MangaNotifier(navNotifier.getActive),
       child: Consumer<MangaNotifier>(
-        builder: (context, mangaNotifier, child) =>
-            MangaExerciseStateArea(state: mangaNotifier.getActive()),
+        builder: (context, mangaNotifier, child) => MangaExerciseStateArea(
+          state: mangaNotifier.getActive(),
+          navNotifier: navNotifier,
+        ),
       ),
     );
   }

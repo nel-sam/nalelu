@@ -35,7 +35,11 @@ class MangaExerciseState {
     return this.userInput[_getInputKey(phrasePart)] ?? '';
   }
 
-  bool isCorrect(PhrasePart? phrasePart) {
+  bool isPhraseCorrect(Phrase phrase) {
+    return phrase.phraseParts.every((element) => isPhrasePartCorrect(element));
+  }
+
+  bool isPhrasePartCorrect(PhrasePart? phrasePart) {
     if (phrasePart == null) return false;
 
     final correctAnswers = getCorrectAnswers(phrasePart);
