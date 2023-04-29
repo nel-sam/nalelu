@@ -32,7 +32,8 @@ class SpeechBubble extends StatelessWidget {
           borderRadius: BorderRadius.circular(40),
         ),
         child: Padding(
-          padding: const EdgeInsets.all(8),
+          padding:
+              const EdgeInsets.only(top: 4, bottom: 0, left: 18, right: 18),
           child: Wrap(
             children: this.phrase.phraseParts.map((e) {
               final isCorrect = getIsCorrect(e);
@@ -40,11 +41,13 @@ class SpeechBubble extends StatelessWidget {
               return e.isAnswerable && !isCorrect
                   ? IconButton(
                       onPressed: () => onButtonTap(e),
-                      icon: Icon(Icons.circle_outlined))
+                      icon: Icon(Icons.circle_outlined,
+                          color: Nrs.getPrimaryColor(context)))
                   : FuriganaText(
                       furigana: e.furiTexts,
-                      labelColor:
-                          e.isAnswerable ? Nrs.getPrimaryColor(context) : null,
+                      labelColor: e.isAnswerable
+                          ? Nrs.getPrimaryColor(context)
+                          : Colors.black,
                     );
             }).toList(),
           ),

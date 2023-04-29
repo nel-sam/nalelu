@@ -12,6 +12,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final primaryColor = Colors.deepOrange;
+
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: APP_NAME,
@@ -33,7 +34,6 @@ class MyApp extends StatelessWidget {
           primarySwatch: primaryColor,
           primaryColor: Colors.black,
           brightness: Brightness.dark,
-          colorScheme: ColorScheme.dark(background: const Color(0xFF212121)),
           dividerColor: Colors.black12,
         ),
         home: MyHomePage());

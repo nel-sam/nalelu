@@ -32,7 +32,7 @@ final mangaWordsBank = [
           FuriText(text: 'もいるよ'),
         ]),
       ],
-      rightPercentage: 60,
+      rightPercentage: 55,
       downPercentage: 70,
     ),
     Phrase(
@@ -43,7 +43,7 @@ final mangaWordsBank = [
           ]),
         ],
         downPercentage: 80,
-        rightPercentage: 20)
+        rightPercentage: 15)
   ]),
   MangaExerciseModel(imageUrl: 'assets/manga/birthday.jpeg', phrases: [
     Phrase(
