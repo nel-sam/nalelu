@@ -95,15 +95,17 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                       widthType: NFreeFormWidths.half,
                       hintValue: '',
                       onChanged: (String newValue) {
-                        setState(() {
-                          widget.state
-                              .updateUserInput(activePhrasePart, newValue);
+                        widget.state
+                            .updateUserInput(activePhrasePart, newValue);
 
-                          if (widget.state
-                              .isPhrasePartCorrect(activePhrasePart)) {
+                        final isPhrasePartCorrect =
+                            widget.state.isPhrasePartCorrect(activePhrasePart);
+
+                        if (isPhrasePartCorrect) {
+                          setState(() {
                             activePhrasePart = null;
-                          }
-                        });
+                          });
+                        }
                       },
                       initialValue: widget.state.getUserInput(activePhrasePart),
                       correctValues:

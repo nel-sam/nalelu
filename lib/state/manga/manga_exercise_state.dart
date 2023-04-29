@@ -13,30 +13,29 @@ class MangaExerciseState {
   }
 
   List<String> getCorrectAnswers(PhrasePart? phrasePart) {
-    if (phrasePart == null) return [''];
-    List<String> correctAnswers = [];
-    String text = '';
-    String furignana = '';
+    if (phrasePart == null || !phrasePart.isAnswerable) return [''];
+    String kanjiText = '';
+    String kanaText = '';
 
-    for (int i = 0; i < phrasePart.furiTexts.length; i++) {
-      text += phrasePart.furiTexts[i].text;
-      furignana += phrasePart.furiTexts[i].furigana;
+    kanjiText = phrasePart.furiTexts[0].text;
+    kanaText = phrasePart.furiTexts[0].furigana;
+
+    if (phrasePart.furiTexts.length > 1) {
+      kanjiText += phrasePart.furiTexts[1].text;
+      kanaText += phrasePart.furiTexts[1].text;
     }
 
-    correctAnswers.add(text);
-    correctAnswers.add(furignana);
+    if (kanaText == '') {
+      kanaText = kanjiText;
+    }
 
-    return correctAnswers;
+    return [kanjiText, kanaText];
   }
 
   String getUserInput(PhrasePart? phrasePart) {
     if (phrasePart == null) return '';
 
     return this.userInput[_getInputKey(phrasePart)] ?? '';
-  }
-
-  bool isPhraseCorrect(Phrase phrase) {
-    return phrase.phraseParts.every((element) => isPhrasePartCorrect(element));
   }
 
   bool isPhrasePartCorrect(PhrasePart? phrasePart) {
