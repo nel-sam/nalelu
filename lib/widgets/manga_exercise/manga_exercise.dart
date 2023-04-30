@@ -22,14 +22,20 @@ class MangaExercise extends StatelessWidget {
           builder: (context, navNotifier, child) => Scaffold(
             resizeToAvoidBottomInset: false,
             appBar: Nrs.NrsAppBar(title: '${NA.t('Manga')}', context: context),
-            body: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  NavHeaderWrapper(navNotifier: navNotifier),
-                  Expanded(child: getExercises(context, navNotifier)),
-                  AdCard(),
-                ],
+            body: SingleChildScrollView(
+              reverse: true,
+              child: Center(
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    NavHeaderWrapper(navNotifier: navNotifier),
+                    getExercises(context, navNotifier),
+                    AdCard(),
+                    Padding(
+                        padding: EdgeInsets.only(
+                            bottom: MediaQuery.of(context).viewInsets.bottom))
+                  ],
+                ),
               ),
             ),
           ),
