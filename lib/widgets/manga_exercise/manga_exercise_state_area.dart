@@ -24,7 +24,7 @@ class MangaExerciseStateArea extends StatefulWidget {
 
 class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
   bool isTextfieldActive = false;
-  final mangaWidth = Nrs.getScreenWidth();
+  late double mangaWidth;
   PhrasePart? activePhrasePart;
   Phrase? activePhrase;
 
@@ -122,5 +122,11 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
             : Container()
       ],
     );
+  }
+
+  @override
+  void initState() {
+    mangaWidth = Nrs.getScreenWidth();
+    super.initState();
   }
 }

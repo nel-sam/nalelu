@@ -29,7 +29,16 @@ class MangaExercise extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     NavHeaderWrapper(navNotifier: navNotifier),
-                    getExercises(context, navNotifier),
+                    ChangeNotifierProvider<MangaNotifier>(
+                      create: (context) => MangaNotifier(navNotifier.getActive),
+                      child: Consumer<MangaNotifier>(
+                        builder: (context, mangaNotifier, child) =>
+                            MangaExerciseStateArea(
+                          state: mangaNotifier.getActive(),
+                          navNotifier: navNotifier,
+                        ),
+                      ),
+                    ),
                     AdCard(),
                     Padding(
                         padding: EdgeInsets.only(
@@ -39,18 +48,6 @@ class MangaExercise extends StatelessWidget {
               ),
             ),
           ),
-        ),
-      ),
-    );
-  }
-
-  Widget getExercises(BuildContext context, ExerciseNavNotifier navNotifier) {
-    return ChangeNotifierProvider<MangaNotifier>(
-      create: (context) => MangaNotifier(navNotifier.getActive),
-      child: Consumer<MangaNotifier>(
-        builder: (context, mangaNotifier, child) => MangaExerciseStateArea(
-          state: mangaNotifier.getActive(),
-          navNotifier: navNotifier,
         ),
       ),
     );
