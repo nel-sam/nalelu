@@ -19,7 +19,13 @@ class DoushiExerciseStateArea extends StatefulWidget {
 
 class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
   bool isHintActive = false;
+
   Widget build(BuildContext context) {
+    bool isPresentCorrect =
+        widget.state.doushi.casual.present == widget.state.getUserInput(0);
+    bool isPastCorrect =
+        widget.state.doushi.casual.past == widget.state.getUserInput(1);
+
     return Column(
       children: [
         Row(
@@ -41,49 +47,55 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
             textAlign: TextAlign.end,
           ),
         ),
-        widget.state.doushi.casual.present
-                .contains(widget.state.getUserInput(0))
-            ? NHintButton(
+        isPresentCorrect
+            ? Container()
+            : NHintButton(
                 onHintActive: (bool onHintActive) =>
                     isHintActive = onHintActive,
                 userInput: widget.state.getUserInput(0),
                 correctAnswer: widget.state.doushi.casual.present,
                 onHintUpdate: (String hint) => {
-                      setState(() {
-                        widget.state.updateUserInput(0, hint);
-                      })
-                    })
-            : Container(),
+                  setState(() {
+                    widget.state.updateUserInput(0, hint);
+                  })
+                },
+              ),
         VerbInput(
           doushi: widget.state.doushi,
           activeValue: widget.state.getUserInput(0),
           correctValue: widget.state.doushi.casual.present,
-          onChanged: (String newValue) =>
-              widget.state.updateUserInput(0, newValue),
+          onSubmitted: (String newValue) {
+            setState(() {
+              widget.state.updateUserInput(0, newValue);
+            });
+          },
         ),
         NTextSpan(
           NA.t('past'),
           textAlign: TextAlign.end,
         ),
-        widget.state.doushi.casual.present
-                .contains(widget.state.getUserInput(1))
-            ? NHintButton(
+        isPastCorrect
+            ? Container()
+            : NHintButton(
                 onHintActive: (bool onHintActive) =>
                     isHintActive = onHintActive,
                 userInput: widget.state.getUserInput(1),
-                correctAnswer: widget.state.doushi.casual.present,
+                correctAnswer: widget.state.doushi.casual.past,
                 onHintUpdate: (String hint) => {
-                      setState(() {
-                        widget.state.updateUserInput(1, hint);
-                      })
-                    })
-            : Container(),
+                  setState(() {
+                    widget.state.updateUserInput(1, hint);
+                  })
+                },
+              ),
         VerbInput(
           doushi: widget.state.doushi,
           activeValue: widget.state.getUserInput(1),
           correctValue: widget.state.doushi.casual.past,
-          onChanged: (String newValue) =>
-              widget.state.updateUserInput(1, newValue),
+          onSubmitted: (String newValue) {
+            setState(() {
+              widget.state.updateUserInput(1, newValue);
+            });
+          },
         ),
       ],
     );

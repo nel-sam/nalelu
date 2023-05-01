@@ -12,8 +12,14 @@ import 'package:nrs_flutter_lib/widgets/n_footer_button.dart';
 import 'package:nrs_flutter_lib/widgets/n_footer_menu.dart';
 import 'package:provider/provider.dart';
 
-class DoushiExerciseLevel1 extends StatelessWidget {
+class DoushiExerciseLevel1 extends StatefulWidget {
   const DoushiExerciseLevel1({Key? key}) : super(key: key);
+  @override
+  State<DoushiExerciseLevel1> createState() => _DoushiExerciseLevel1State();
+}
+
+class _DoushiExerciseLevel1State extends State<DoushiExerciseLevel1> {
+  late double containerWidth;
 
   @override
   Widget build(BuildContext context) {
@@ -31,7 +37,19 @@ class DoushiExerciseLevel1 extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
                   NavHeaderWrapper(navNotifier: navNotifier),
-                  Expanded(child: getExercises(context, navNotifier)),
+                  Expanded(
+                      child: Container(
+                    width: containerWidth,
+                    child: ChangeNotifierProvider<DoushiNotifier>(
+                      create: (context) =>
+                          DoushiNotifier(navNotifier.getActive),
+                      child: Consumer<DoushiNotifier>(
+                        builder: (context, doushiNotifier, child) =>
+                            DoushiExerciseStateArea(
+                                state: doushiNotifier.getActive()),
+                      ),
+                    ),
+                  )),
                   AdCard(),
                 ],
               ),
@@ -61,18 +79,9 @@ class DoushiExerciseLevel1 extends StatelessWidget {
     );
   }
 
-  Widget getExercises(BuildContext context, ExerciseNavNotifier navNotifier) {
-    var width = Nrs.getScreenWidth(halfWidth: true) + 80;
-
-    return Container(
-      width: width,
-      child: ChangeNotifierProvider<DoushiNotifier>(
-        create: (context) => DoushiNotifier(navNotifier.getActive),
-        child: Consumer<DoushiNotifier>(
-          builder: (context, doushiNotifier, child) =>
-              DoushiExerciseStateArea(state: doushiNotifier.getActive()),
-        ),
-      ),
-    );
+  @override
+  void initState() {
+    containerWidth = Nrs.getScreenWidth(halfWidth: true) + 80;
+    super.initState();
   }
 }

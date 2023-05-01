@@ -9,13 +9,13 @@ class VerbInput extends StatelessWidget {
 
   final String correctValue;
   final String activeValue;
-  final Function(String) onChanged;
+  final Function(String) onSubmitted;
   const VerbInput({
     Key? key,
     required this.doushi,
     required this.correctValue,
     required this.activeValue,
-    required this.onChanged,
+    required this.onSubmitted,
   }) : super(key: key);
 
   @override
@@ -34,7 +34,7 @@ class VerbInput extends StatelessWidget {
                       widthType: NFreeFormWidths.half,
                       hintValue: '',
                       onSubmitted: (String newValue) {
-                        onChanged(newValue);
+                        onSubmitted(newValue);
                       },
                       initialValue: activeValue,
                       correctValues: [correctValue],
