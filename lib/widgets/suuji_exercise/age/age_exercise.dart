@@ -22,7 +22,6 @@ class AgeExercise extends StatelessWidget {
         child: Consumer<ExerciseNavNotifier>(
           builder: (context, navNotifier, child) {
             var s = navNotifier.getActive();
-            bool isHintActive = false;
             return Padding(
               padding: EdgeInsets.all(24),
               child: Column(

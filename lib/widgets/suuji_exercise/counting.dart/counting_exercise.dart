@@ -24,7 +24,6 @@ class CountingExercise extends StatelessWidget {
         child: Consumer<ExerciseNavNotifier>(
           builder: (context, navNotifier, child) {
             var activeItem = navNotifier.getActive();
-            bool isHintActive = false;
             var label = activeItem.label;
 
             var infoText =
@@ -60,7 +59,6 @@ class CountingExercise extends StatelessWidget {
                     child: Consumer<CountNotifier>(
                       builder: (context, countNotifier, child) {
                         var s = countNotifier.getStateItem();
-                        // TODO: Make 3d
                         return CountingExerciseStateArea(state: s);
                       },
                     ),

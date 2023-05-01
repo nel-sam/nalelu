@@ -1,12 +1,18 @@
 {
   "cSpell.words": [
+    "ARGB",
     "Cupertino",
     "doushi",
+    "furi",
+    "furigana",
     "jikan",
     "LTRB",
     "nalelu",
     "Sino",
-    "suuji"
+    "suuji",
+    "translabel",
+    "unfocus",
+    "unstarted"
   ],
   "editor.tabSize": 2,
   "editor.bracketPairColorization.enabled": true,

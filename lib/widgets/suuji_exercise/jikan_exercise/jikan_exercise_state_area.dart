@@ -12,11 +12,10 @@ class JikanExerciseStateArea extends StatefulWidget {
       : super(key: key);
 
   @override
-  State<JikanExerciseStateArea> createState() => _JikanExerciseStateAreatate();
+  State<JikanExerciseStateArea> createState() => _JikanExerciseStateAreaState();
 }
 
-class _JikanExerciseStateAreatate extends State<JikanExerciseStateArea> {
-  @override
+class _JikanExerciseStateAreaState extends State<JikanExerciseStateArea> {
   final double textFieldWidth = 250;
   bool isHintActive = false;
 
@@ -54,7 +53,7 @@ class _JikanExerciseStateAreatate extends State<JikanExerciseStateArea> {
                   child: NaFreeFormEntryWrapper(
                     widthType: NFreeFormWidths.full,
                     hintValue: '',
-                    onChanged: (String newValue) =>
+                    onSubmitted: (String newValue) =>
                         widget.state.updateHour(newValue),
                     initialValue: widget.state.userHour,
                     correctValues: widget.state.correctHours,
@@ -89,7 +88,7 @@ class _JikanExerciseStateAreatate extends State<JikanExerciseStateArea> {
                     child: NaFreeFormEntryWrapper(
                       widthType: NFreeFormWidths.full,
                       hintValue: '',
-                      onChanged: (String newValue) =>
+                      onSubmitted: (String newValue) =>
                           widget.state.updateMin(newValue),
                       initialValue: widget.state.userMin,
                       correctValues: widget.state.correctMins,
@@ -126,7 +125,7 @@ class _JikanExerciseStateAreatate extends State<JikanExerciseStateArea> {
                     child: NaFreeFormEntryWrapper(
                       widthType: NFreeFormWidths.full,
                       hintValue: '',
-                      onChanged: (String newValue) =>
+                      onSubmitted: (String newValue) =>
                           widget.state.updateSec(newValue),
                       initialValue: widget.state.userSec,
                       correctValues: widget.state.correctSecs,

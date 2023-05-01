@@ -18,7 +18,6 @@ class DoushiExerciseStateArea extends StatefulWidget {
 }
 
 class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
-  @override
   bool isHintActive = false;
   Widget build(BuildContext context) {
     return Column(

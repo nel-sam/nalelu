@@ -59,7 +59,6 @@ class JikanExercise extends StatelessWidget {
       child: Consumer<ExerciseNavNotifier>(
         builder: (context, navNotifier, child) {
           var s = navNotifier.getActive();
-          bool isHintActive = false;
           return Padding(
             padding: const EdgeInsets.only(left: 24, right: 24),
             child: Column(

@@ -38,8 +38,9 @@ class NAMenuButton extends StatelessWidget {
         child: ElevatedButton(
           style: ElevatedButton.styleFrom(
             elevation: 10,
-            primary: appBarColor,
-            onSurface: appBarColor,
+            backgroundColor: appBarColor,
+            disabledForegroundColor: appBarColor,
+            disabledBackgroundColor: appBarColor,
             padding: const EdgeInsets.all(0),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(radius)),

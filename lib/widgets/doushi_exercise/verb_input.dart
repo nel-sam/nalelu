@@ -33,7 +33,7 @@ class VerbInput extends StatelessWidget {
                     child: NaFreeFormEntryWrapper(
                       widthType: NFreeFormWidths.half,
                       hintValue: '',
-                      onChanged: (String newValue) {
+                      onSubmitted: (String newValue) {
                         onChanged(newValue);
                       },
                       initialValue: activeValue,

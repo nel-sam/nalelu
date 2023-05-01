@@ -96,7 +96,7 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                     NaFreeFormEntryWrapper(
                       widthType: NFreeFormWidths.half,
                       hintValue: '',
-                      onChanged: (String newValue) {
+                      onSubmitted: (String newValue) {
                         widget.state
                             .updateUserInput(activePhrasePart, newValue);
 

@@ -19,7 +19,6 @@ class AgeExerciseStateArea extends StatefulWidget {
 }
 
 class _MyAgeExerciseStateAreaState extends State<AgeExerciseStateArea> {
-  @override
   bool isHintActive = false;
 
   Widget build(BuildContext context) {
@@ -44,7 +43,7 @@ class _MyAgeExerciseStateAreaState extends State<AgeExerciseStateArea> {
                 child: NaFreeFormEntryWrapper(
                   widthType: NFreeFormWidths.half,
                   hintValue: '',
-                  onChanged: (String newValue) {
+                  onSubmitted: (String newValue) {
                     widget.state.updateAge(newValue);
                   },
                   initialValue: widget.state.userInput,
@@ -54,7 +53,6 @@ class _MyAgeExerciseStateAreaState extends State<AgeExerciseStateArea> {
             : Row(
                 children: [
                   Text(widget.state.userInput, style: TextStyle(fontSize: 28)),
-                  // TODO: Make 3d
                   NAnswerStatusIcon(
                       status: widget.state.getIsCorrect()
                           ? CorrectStatus.correct

@@ -18,7 +18,6 @@ class CountingExerciseStateArea extends StatefulWidget {
 }
 
 class _CountingExerciseStateAreaState extends State<CountingExerciseStateArea> {
-  @override
   bool isHintActive = false;
 
   Widget build(BuildContext context) {
@@ -46,7 +45,7 @@ class _CountingExerciseStateAreaState extends State<CountingExerciseStateArea> {
                 child: NaFreeFormEntryWrapper(
                   widthType: NFreeFormWidths.half,
                   hintValue: '',
-                  onChanged: (String newValue) =>
+                  onSubmitted: (String newValue) =>
                       widget.state.updateCount(newValue),
                   initialValue: widget.state.userInput,
                   correctValues: widget.state.correctAnswers,
