@@ -41,6 +41,7 @@ class _JikanExerciseStateAreaState extends State<JikanExerciseStateArea> {
                       widthType: NFreeFormWidths.full,
                       hintValue: '',
                       onSubmitted: (String newValue) =>
+                          // TODO: Add set state
                           widget.state.updateHour(newValue),
                       initialValue: widget.state.userHour,
                       correctValues: widget.state.correctHours,
