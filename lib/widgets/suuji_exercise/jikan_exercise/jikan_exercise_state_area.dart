@@ -36,18 +36,6 @@ class _JikanExerciseStateAreaState extends State<JikanExerciseStateArea> {
       children: [
         Row(mainAxisAlignment: MainAxisAlignment.center, children: [
           !widget.state.correctHours.contains(widget.state.userHour)
-              ? NHintButton(
-                  onHintActive: (bool onHintActive) =>
-                      isHintActive = onHintActive,
-                  userInput: widget.state.userHour,
-                  correctAnswer: widget.state.correctHours[0],
-                  onHintUpdate: (String hint) => {
-                        setState(() {
-                          widget.state.updateHour(hint);
-                        })
-                      })
-              : Container(),
-          !widget.state.correctHours.contains(widget.state.userHour)
               ? Container(
                   width: textFieldWidth,
                   child: NaFreeFormEntryWrapper(
@@ -57,6 +45,13 @@ class _JikanExerciseStateAreaState extends State<JikanExerciseStateArea> {
                         widget.state.updateHour(newValue),
                     initialValue: widget.state.userHour,
                     correctValues: widget.state.correctHours,
+                     onHintActive: (bool onHintActive) =>
+                      isHintActive = onHintActive,
+                  onHintUpdate: (String hint) => {
+                        setState(() {
+                          widget.state.updateHour(hint);
+                        })
+                      }
                   ),
                 )
               : Row(
@@ -71,18 +66,6 @@ class _JikanExerciseStateAreaState extends State<JikanExerciseStateArea> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             !widget.state.correctMins.contains(widget.state.userMin)
-                ? NHintButton(
-                    onHintActive: (bool onHintActive) =>
-                        isHintActive = onHintActive,
-                    userInput: widget.state.userMin,
-                    correctAnswer: widget.state.correctMins[0],
-                    onHintUpdate: (String hint) => {
-                          setState(() {
-                            widget.state.updateMin(hint);
-                          })
-                        })
-                : Container(),
-            !widget.state.correctMins.contains(widget.state.userMin)
                 ? Container(
                     width: textFieldWidth,
                     child: NaFreeFormEntryWrapper(
@@ -92,6 +75,13 @@ class _JikanExerciseStateAreaState extends State<JikanExerciseStateArea> {
                           widget.state.updateMin(newValue),
                       initialValue: widget.state.userMin,
                       correctValues: widget.state.correctMins,
+                       onHintActive: (bool onHintActive) =>
+                        isHintActive = onHintActive,
+                    onHintUpdate: (String hint) => {
+                          setState(() {
+                            widget.state.updateMin(hint);
+                          })
+                        }
                     ),
                   )
                 : Row(
@@ -108,18 +98,6 @@ class _JikanExerciseStateAreaState extends State<JikanExerciseStateArea> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             !widget.state.correctSecs.contains(widget.state.userSec)
-                ? NHintButton(
-                    onHintActive: (bool onHintActive) =>
-                        isHintActive = onHintActive,
-                    userInput: widget.state.userSec,
-                    correctAnswer: widget.state.correctSecs[0],
-                    onHintUpdate: (String hint) => {
-                          setState(() {
-                            widget.state.updateSec(hint);
-                          })
-                        })
-                : Container(),
-            !widget.state.correctSecs.contains(widget.state.userSec)
                 ? Container(
                     width: textFieldWidth,
                     child: NaFreeFormEntryWrapper(
@@ -129,6 +107,13 @@ class _JikanExerciseStateAreaState extends State<JikanExerciseStateArea> {
                           widget.state.updateSec(newValue),
                       initialValue: widget.state.userSec,
                       correctValues: widget.state.correctSecs,
+                      onHintActive: (bool onHintActive) =>
+                        isHintActive = onHintActive,
+                    onHintUpdate: (String hint) => {
+                          setState(() {
+                            widget.state.updateSec(hint);
+                          })
+                        }
                     ),
                   )
                 : Row(

@@ -6,7 +6,6 @@ import 'package:nalelu/widgets/manga_exercise/speech_bubble.dart';
 import 'package:nalelu/widgets/shared/na_free_form_entry_wrapper.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 import 'package:nrs_flutter_lib/widgets/n_free_form_entry.dart';
-import 'package:nrs_flutter_lib/widgets/n_hint_button.dart';
 
 class MangaExerciseStateArea extends StatefulWidget {
   final MangaExerciseState state;
@@ -77,11 +76,26 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                 child: Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    NHintButton(
-                        userInput: widget.state.getUserInput(activePhrasePart),
-                        correctAnswer: widget.state
-                            .getCorrectAnswers(activePhrasePart)
-                            .first,
+                    NaFreeFormEntryWrapper(
+                        widthType: NFreeFormWidths.half,
+                        hintValue: '',
+                        onSubmitted: (String newValue) {
+                          widget.state
+                              .updateUserInput(activePhrasePart, newValue);
+
+                          final isPhrasePartCorrect = widget.state
+                              .isPhrasePartCorrect(activePhrasePart);
+
+                          if (isPhrasePartCorrect) {
+                            setState(() {
+                              activePhrasePart = null;
+                            });
+                          }
+                        },
+                        initialValue:
+                            widget.state.getUserInput(activePhrasePart),
+                        correctValues:
+                            widget.state.getCorrectAnswers(activePhrasePart),
                         onHintUpdate: (String hint) => {
                               setState(() {
                                 widget.state
@@ -92,27 +106,7 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                                   activePhrasePart = null;
                                 }
                               }),
-                            }),
-                    NaFreeFormEntryWrapper(
-                      widthType: NFreeFormWidths.half,
-                      hintValue: '',
-                      onSubmitted: (String newValue) {
-                        widget.state
-                            .updateUserInput(activePhrasePart, newValue);
-
-                        final isPhrasePartCorrect =
-                            widget.state.isPhrasePartCorrect(activePhrasePart);
-
-                        if (isPhrasePartCorrect) {
-                          setState(() {
-                            activePhrasePart = null;
-                          });
-                        }
-                      },
-                      initialValue: widget.state.getUserInput(activePhrasePart),
-                      correctValues:
-                          widget.state.getCorrectAnswers(activePhrasePart),
-                    )
+                            })
                   ],
                 ),
               )

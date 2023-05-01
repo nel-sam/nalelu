@@ -26,18 +26,6 @@ class _MyAgeExerciseStateAreaState extends State<AgeExerciseStateArea> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         !widget.state.correctAnswers.contains(widget.state.userInput)
-            ? NHintButton(
-                onHintActive: (bool onHintActive) =>
-                    isHintActive = onHintActive,
-                userInput: widget.state.userInput,
-                correctAnswer: widget.state.correctAnswers[0],
-                onHintUpdate: (String hint) => {
-                      setState(() {
-                        widget.state.updateAge(hint);
-                      })
-                    })
-            : Container(),
-        !widget.state.correctAnswers.contains(widget.state.userInput)
             ? Container(
                 width: 250,
                 child: NaFreeFormEntryWrapper(
@@ -48,6 +36,13 @@ class _MyAgeExerciseStateAreaState extends State<AgeExerciseStateArea> {
                   },
                   initialValue: widget.state.userInput,
                   correctValues: widget.state.correctAnswers,
+                  onHintUpdate: (String hint) => {
+                      setState(() {
+                        widget.state.updateAge(hint);
+                      })
+                    },
+                    onHintActive: (bool onHintActive) =>
+                    isHintActive = onHintActive,
                 ),
               )
             : Row(

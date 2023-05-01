@@ -10,12 +10,17 @@ class VerbInput extends StatelessWidget {
   final String correctValue;
   final String activeValue;
   final Function(String) onSubmitted;
+  final Function(String) onHintUpdate;
+  final Function(bool)? onHintActive;
+
   const VerbInput({
     Key? key,
     required this.doushi,
     required this.correctValue,
     required this.activeValue,
     required this.onSubmitted,
+    required this.onHintUpdate,
+    this.onHintActive,
   }) : super(key: key);
 
   @override
@@ -38,6 +43,7 @@ class VerbInput extends StatelessWidget {
                       },
                       initialValue: activeValue,
                       correctValues: [correctValue],
+                      onHintUpdate: onHintUpdate,
                     ),
                   )
                 : Row(

@@ -47,19 +47,6 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
             textAlign: TextAlign.end,
           ),
         ),
-        isPresentCorrect
-            ? Container()
-            : NHintButton(
-                onHintActive: (bool onHintActive) =>
-                    isHintActive = onHintActive,
-                userInput: widget.state.getUserInput(0),
-                correctAnswer: widget.state.doushi.casual.present,
-                onHintUpdate: (String hint) => {
-                  setState(() {
-                    widget.state.updateUserInput(0, hint);
-                  })
-                },
-              ),
         VerbInput(
           doushi: widget.state.doushi,
           activeValue: widget.state.getUserInput(0),
@@ -69,24 +56,16 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
               widget.state.updateUserInput(0, newValue);
             });
           },
+          onHintUpdate: (String hint) => {
+                  setState(() {
+                    widget.state.updateUserInput(0, hint);
+                  })
+                },
         ),
         NTextSpan(
           NA.t('past'),
           textAlign: TextAlign.end,
         ),
-        isPastCorrect
-            ? Container()
-            : NHintButton(
-                onHintActive: (bool onHintActive) =>
-                    isHintActive = onHintActive,
-                userInput: widget.state.getUserInput(1),
-                correctAnswer: widget.state.doushi.casual.past,
-                onHintUpdate: (String hint) => {
-                  setState(() {
-                    widget.state.updateUserInput(1, hint);
-                  })
-                },
-              ),
         VerbInput(
           doushi: widget.state.doushi,
           activeValue: widget.state.getUserInput(1),
@@ -95,7 +74,13 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
             setState(() {
               widget.state.updateUserInput(1, newValue);
             });
+          
           },
+          onHintUpdate: (String hint) => {
+                  setState(() {
+                    widget.state.updateUserInput(1, hint);
+                  })
+                },
         ),
       ],
     );
