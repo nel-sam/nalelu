@@ -3,7 +3,6 @@ import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/state/doushi/doushi_exercise_state.dart';
 import 'package:nalelu/widgets/doushi_exercise/verb_input.dart';
 import 'package:nrs_flutter_lib/constants.dart';
-import 'package:nrs_flutter_lib/widgets/n_hint_button.dart';
 import 'package:nrs_flutter_lib/widgets/n_text_span.dart';
 
 class DoushiExerciseStateArea extends StatefulWidget {
@@ -57,10 +56,10 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
             });
           },
           onHintUpdate: (String hint) => {
-                  setState(() {
-                    widget.state.updateUserInput(0, hint);
-                  })
-                },
+            setState(() {
+              widget.state.updateUserInput(0, hint);
+            })
+          },
         ),
         NTextSpan(
           NA.t('past'),
@@ -74,13 +73,12 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
             setState(() {
               widget.state.updateUserInput(1, newValue);
             });
-          
           },
           onHintUpdate: (String hint) => {
-                  setState(() {
-                    widget.state.updateUserInput(1, hint);
-                  })
-                },
+            setState(() {
+              widget.state.updateUserInput(1, hint);
+            })
+          },
         ),
       ],
     );

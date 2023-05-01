@@ -4,7 +4,6 @@ import 'package:nalelu/widgets/shared/na_free_form_entry_wrapper.dart';
 import 'package:nrs_flutter_lib/enums.dart';
 import 'package:nrs_flutter_lib/widgets/n_answer_status_icon.dart';
 import 'package:nrs_flutter_lib/widgets/n_free_form_entry.dart';
-import 'package:nrs_flutter_lib/widgets/n_hint_button.dart';
 
 class AgeExerciseStateArea extends StatefulWidget {
   final AgeExerciseState state;
@@ -37,12 +36,10 @@ class _MyAgeExerciseStateAreaState extends State<AgeExerciseStateArea> {
                   initialValue: widget.state.userInput,
                   correctValues: widget.state.correctAnswers,
                   onHintUpdate: (String hint) => {
-                      setState(() {
-                        widget.state.updateAge(hint);
-                      })
-                    },
-                    onHintActive: (bool onHintActive) =>
-                    isHintActive = onHintActive,
+                    setState(() {
+                      widget.state.updateAge(hint);
+                    })
+                  },
                 ),
               )
             : Row(
