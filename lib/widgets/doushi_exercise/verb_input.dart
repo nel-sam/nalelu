@@ -11,7 +11,6 @@ class VerbInput extends StatelessWidget {
   final String activeValue;
   final Function(String) onSubmitted;
   final Function(String) onHintUpdate;
-  final Function(bool)? onHintActive;
 
   const VerbInput({
     Key? key,
@@ -20,7 +19,6 @@ class VerbInput extends StatelessWidget {
     required this.activeValue,
     required this.onSubmitted,
     required this.onHintUpdate,
-    this.onHintActive,
   }) : super(key: key);
 
   @override

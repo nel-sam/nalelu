@@ -9,7 +9,6 @@ class NaFreeFormEntryWrapper extends StatelessWidget {
   final NFreeFormWidths widthType;
   final String hintValue;
   final Function(String) onHintUpdate;
-  final Function(bool)? onHintActive;
 
   NaFreeFormEntryWrapper({
     Key? key,
@@ -19,7 +18,6 @@ class NaFreeFormEntryWrapper extends StatelessWidget {
     required this.widthType,
     required this.hintValue,
     required this.onHintUpdate,
-    this.onHintActive,
   }) : super(key: key);
 
   @override
@@ -43,7 +41,6 @@ class NaFreeFormEntryWrapper extends StatelessWidget {
       initialValue: this.initialValue,
       correctValues: this.correctValues,
       onHintUpdate: this.onHintUpdate,
-      onHintActive: this.onHintActive,
     );
   }
 }

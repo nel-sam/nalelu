@@ -4,7 +4,6 @@ import 'package:nalelu/widgets/shared/na_free_form_entry_wrapper.dart';
 import 'package:nrs_flutter_lib/enums.dart';
 import 'package:nrs_flutter_lib/widgets/n_answer_status_icon.dart';
 import 'package:nrs_flutter_lib/widgets/n_free_form_entry.dart';
-import 'package:nrs_flutter_lib/widgets/n_hint_button.dart';
 
 class JikanExerciseStateArea extends StatefulWidget {
   final JikanExerciseState state;
@@ -39,20 +38,17 @@ class _JikanExerciseStateAreaState extends State<JikanExerciseStateArea> {
               ? Container(
                   width: textFieldWidth,
                   child: NaFreeFormEntryWrapper(
-                    widthType: NFreeFormWidths.full,
-                    hintValue: '',
-                    onSubmitted: (String newValue) =>
-                        widget.state.updateHour(newValue),
-                    initialValue: widget.state.userHour,
-                    correctValues: widget.state.correctHours,
-                     onHintActive: (bool onHintActive) =>
-                      isHintActive = onHintActive,
-                  onHintUpdate: (String hint) => {
-                        setState(() {
-                          widget.state.updateHour(hint);
-                        })
-                      }
-                  ),
+                      widthType: NFreeFormWidths.full,
+                      hintValue: '',
+                      onSubmitted: (String newValue) =>
+                          widget.state.updateHour(newValue),
+                      initialValue: widget.state.userHour,
+                      correctValues: widget.state.correctHours,
+                      onHintUpdate: (String hint) => {
+                            setState(() {
+                              widget.state.updateHour(hint);
+                            })
+                          }),
                 )
               : Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -69,20 +65,17 @@ class _JikanExerciseStateAreaState extends State<JikanExerciseStateArea> {
                 ? Container(
                     width: textFieldWidth,
                     child: NaFreeFormEntryWrapper(
-                      widthType: NFreeFormWidths.full,
-                      hintValue: '',
-                      onSubmitted: (String newValue) =>
-                          widget.state.updateMin(newValue),
-                      initialValue: widget.state.userMin,
-                      correctValues: widget.state.correctMins,
-                       onHintActive: (bool onHintActive) =>
-                        isHintActive = onHintActive,
-                    onHintUpdate: (String hint) => {
-                          setState(() {
-                            widget.state.updateMin(hint);
-                          })
-                        }
-                    ),
+                        widthType: NFreeFormWidths.full,
+                        hintValue: '',
+                        onSubmitted: (String newValue) =>
+                            widget.state.updateMin(newValue),
+                        initialValue: widget.state.userMin,
+                        correctValues: widget.state.correctMins,
+                        onHintUpdate: (String hint) => {
+                              setState(() {
+                                widget.state.updateMin(hint);
+                              })
+                            }),
                   )
                 : Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -101,20 +94,17 @@ class _JikanExerciseStateAreaState extends State<JikanExerciseStateArea> {
                 ? Container(
                     width: textFieldWidth,
                     child: NaFreeFormEntryWrapper(
-                      widthType: NFreeFormWidths.full,
-                      hintValue: '',
-                      onSubmitted: (String newValue) =>
-                          widget.state.updateSec(newValue),
-                      initialValue: widget.state.userSec,
-                      correctValues: widget.state.correctSecs,
-                      onHintActive: (bool onHintActive) =>
-                        isHintActive = onHintActive,
-                    onHintUpdate: (String hint) => {
-                          setState(() {
-                            widget.state.updateSec(hint);
-                          })
-                        }
-                    ),
+                        widthType: NFreeFormWidths.full,
+                        hintValue: '',
+                        onSubmitted: (String newValue) =>
+                            widget.state.updateSec(newValue),
+                        initialValue: widget.state.userSec,
+                        correctValues: widget.state.correctSecs,
+                        onHintUpdate: (String hint) => {
+                              setState(() {
+                                widget.state.updateSec(hint);
+                              })
+                            }),
                   )
                 : Row(
                     mainAxisAlignment: MainAxisAlignment.center,
