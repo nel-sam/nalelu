@@ -40,9 +40,8 @@ class _JikanExerciseStateAreaState extends State<JikanExerciseStateArea> {
                   child: NaFreeFormEntryWrapper(
                     widthType: NFreeFormWidths.full,
                     hintValue: '',
-                    onSubmitted: (String newValue) => setState(() {
-                      widget.state.updateHour(newValue);
-                    }),
+                    onSubmitted: (String newValue) =>
+                        widget.state.updateHour(newValue),
                     initialValue: widget.state.userHour,
                     correctValues: widget.state.correctHours,
                   ),
@@ -89,9 +88,8 @@ class _JikanExerciseStateAreaState extends State<JikanExerciseStateArea> {
                     child: NaFreeFormEntryWrapper(
                       widthType: NFreeFormWidths.full,
                       hintValue: '',
-                      onSubmitted: (String newValue) => setState(() {
-                        widget.state.updateSec(newValue);
-                      }),
+                      onSubmitted: (String newValue) =>
+                          widget.state.updateSec(newValue),
                       initialValue: widget.state.userSec,
                       correctValues: widget.state.correctSecs,
                     ),
