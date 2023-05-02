@@ -24,23 +24,15 @@ class NAMenuButton extends StatelessWidget {
     double screenWidth = Nrs.getScreenWidth();
     double buttonWidth = screenWidth - 30;
     double buttonHeight = 90;
-    final isDark = Nrs.isDarkTheme(context);
-    var appBarColor =
-        isDark ? const Color.fromARGB(255, 58, 58, 58) : Nrs.getAppBarColor();
     double radius = 10;
-    final labelColor = isDark ? Colors.white : Colors.black;
 
     return Padding(
       padding: const EdgeInsets.all(FONT_SIZE / 2),
       child: SizedBox(
         height: buttonHeight,
         width: buttonWidth,
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            elevation: 10,
-            backgroundColor: appBarColor,
-            disabledForegroundColor: appBarColor,
-            disabledBackgroundColor: appBarColor,
+        child: OutlinedButton(
+          style: OutlinedButton.styleFrom(
             padding: const EdgeInsets.all(0),
             shape: RoundedRectangleBorder(
               borderRadius: BorderRadius.all(Radius.circular(radius)),
@@ -68,7 +60,6 @@ class NAMenuButton extends StatelessWidget {
                             label.toUpperCase(),
                             style: TextStyle(
                               fontSize: 12,
-                              color: Nrs.getSecondaryColor(),
                             ),
                           ),
                         Padding(
@@ -76,7 +67,6 @@ class NAMenuButton extends StatelessWidget {
                           child: FuriganaText(
                               furigana: translabel,
                               fontSize: 18,
-                              labelColor: labelColor,
                               fontWeight: FontWeight.bold),
                         )
                       ],
