@@ -10,7 +10,6 @@ class VerbInput extends StatelessWidget {
   final String correctValue;
   final String activeValue;
   final Function(String) onSubmitted;
-  final Function(String) onHintUpdate;
 
   const VerbInput({
     Key? key,
@@ -18,33 +17,19 @@ class VerbInput extends StatelessWidget {
     required this.correctValue,
     required this.activeValue,
     required this.onSubmitted,
-    required this.onHintUpdate,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    var isCorrect = !correctValue.contains(this.activeValue);
+    var isCorrect = correctValue == this.activeValue;
 
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Row(
           children: [
-            correctValue.contains(activeValue)
-                ? Padding(
-                    padding: const EdgeInsets.only(left: 8.0, right: 8.0),
-                    child: NaFreeFormEntryWrapper(
-                      widthType: NFreeFormWidths.half,
-                      hintValue: '',
-                      onSubmitted: (String newValue) {
-                        onSubmitted(newValue);
-                      },
-                      initialValue: activeValue,
-                      correctValues: [correctValue],
-                      onHintUpdate: onHintUpdate,
-                    ),
-                  )
-                : Row(
+            isCorrect
+                ? Row(
                     children: [
                       Text(correctValue, style: TextStyle(fontSize: 28)),
                       isCorrect
@@ -57,7 +42,19 @@ class VerbInput extends StatelessWidget {
                               color: Colors.grey,
                             ),
                     ],
-                  ),
+                  )
+                : Padding(
+                    padding: const EdgeInsets.only(left: 8.0, right: 8.0),
+                    child: NaFreeFormEntryWrapper(
+                      widthType: NFreeFormWidths.half,
+                      hintValue: '',
+                      onSubmitted: (String newValue) {
+                        onSubmitted(newValue);
+                      },
+                      initialValue: activeValue,
+                      correctValues: [correctValue],
+                    ),
+                  )
           ],
         ),
       ],

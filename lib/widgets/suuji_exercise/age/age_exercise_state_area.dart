@@ -35,11 +35,6 @@ class _MyAgeExerciseStateAreaState extends State<AgeExerciseStateArea> {
                   },
                   initialValue: widget.state.userInput,
                   correctValues: widget.state.correctAnswers,
-                  onHintUpdate: (String hint) => {
-                    setState(() {
-                      widget.state.updateAge(hint);
-                    })
-                  },
                 ),
               )
             : Row(

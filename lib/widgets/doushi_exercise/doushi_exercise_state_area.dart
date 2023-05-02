@@ -55,11 +55,6 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
               widget.state.updateUserInput(0, newValue);
             });
           },
-          onHintUpdate: (String hint) => {
-            setState(() {
-              widget.state.updateUserInput(0, hint);
-            })
-          },
         ),
         NTextSpan(
           NA.t('past'),
@@ -73,11 +68,6 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
             setState(() {
               widget.state.updateUserInput(1, newValue);
             });
-          },
-          onHintUpdate: (String hint) => {
-            setState(() {
-              widget.state.updateUserInput(1, hint);
-            })
           },
         ),
       ],

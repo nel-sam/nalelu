@@ -45,11 +45,7 @@ class _JikanExerciseStateAreaState extends State<JikanExerciseStateArea> {
                           widget.state.updateHour(newValue),
                       initialValue: widget.state.userHour,
                       correctValues: widget.state.correctHours,
-                      onHintUpdate: (String hint) => {
-                            setState(() {
-                              widget.state.updateHour(hint);
-                            })
-                          }),
+                     ),
                 )
               : Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -72,11 +68,7 @@ class _JikanExerciseStateAreaState extends State<JikanExerciseStateArea> {
                             widget.state.updateMin(newValue),
                         initialValue: widget.state.userMin,
                         correctValues: widget.state.correctMins,
-                        onHintUpdate: (String hint) => {
-                              setState(() {
-                                widget.state.updateMin(hint);
-                              })
-                            }),
+                        ),
                   )
                 : Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -101,11 +93,7 @@ class _JikanExerciseStateAreaState extends State<JikanExerciseStateArea> {
                             widget.state.updateSec(newValue),
                         initialValue: widget.state.userSec,
                         correctValues: widget.state.correctSecs,
-                        onHintUpdate: (String hint) => {
-                              setState(() {
-                                widget.state.updateSec(hint);
-                              })
-                            }),
+                        ),
                   )
                 : Row(
                     mainAxisAlignment: MainAxisAlignment.center,

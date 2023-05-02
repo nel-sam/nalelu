@@ -96,17 +96,7 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                             widget.state.getUserInput(activePhrasePart),
                         correctValues:
                             widget.state.getCorrectAnswers(activePhrasePart),
-                        onHintUpdate: (String hint) => {
-                              setState(() {
-                                widget.state
-                                    .updateUserInput(activePhrasePart, hint);
-
-                                if (widget.state
-                                    .isPhrasePartCorrect(activePhrasePart)) {
-                                  activePhrasePart = null;
-                                }
-                              }),
-                            })
+                     )
                   ],
                 ),
               )

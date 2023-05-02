@@ -36,11 +36,6 @@ class _CountingExerciseStateAreaState extends State<CountingExerciseStateArea> {
                       widget.state.updateCount(newValue),
                   initialValue: widget.state.userInput,
                   correctValues: widget.state.correctAnswers,
-                  onHintUpdate: (String hint) => {
-                    setState(() {
-                      widget.state.updateCount(hint);
-                    })
-                  },
                 ),
               )
             : Row(children: [
