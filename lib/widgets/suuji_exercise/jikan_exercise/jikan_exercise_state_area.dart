@@ -64,9 +64,8 @@ class _JikanExerciseStateAreaState extends State<JikanExerciseStateArea> {
                     child: NaFreeFormEntryWrapper(
                       widthType: NFreeFormWidths.full,
                       hintValue: '',
-                      onSubmitted: (String newValue) => setState(() {
-                        widget.state.updateMin(newValue);
-                      }),
+                      onSubmitted: (String newValue) =>
+                          widget.state.updateMin(newValue),
                       initialValue: widget.state.userMin,
                       correctValues: widget.state.correctMins,
                     ),

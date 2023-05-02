@@ -8,7 +8,6 @@ import 'package:nalelu/widgets/menus/numbers_menu.dart';
 import 'package:nalelu/widgets/shared/ad_card.dart';
 import 'package:nalelu/widgets/shared/na_menu_button.dart';
 import 'package:nrs_flutter_lib/constants.dart';
-import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 
 class MainMenu extends StatelessWidget {
   const MainMenu({Key? key}) : super(key: key);
@@ -17,7 +16,7 @@ class MainMenu extends StatelessWidget {
     return Column(
       children: [
         Container(
-          height: Nrs.getScreenHeight() / 3.5,
+          height: 280,
           decoration: BoxDecoration(
             image: DecorationImage(
               image: AssetImage('assets/banners/gates.jpeg'),

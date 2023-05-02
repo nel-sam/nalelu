@@ -60,9 +60,7 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
           activeValue: widget.state.getUserInput(1),
           correctValue: widget.state.doushi.casual.past,
           onSubmitted: (String newValue) {
-            setState(() {
-              widget.state.updateUserInput(1, newValue);
-            });
+            widget.state.updateUserInput(1, newValue);
           },
         ),
       ],

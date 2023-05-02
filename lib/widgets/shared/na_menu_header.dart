@@ -49,7 +49,6 @@ class NAMenuHeader extends StatelessWidget {
                   child: Text(
                     transLabel.toUpperCase(),
                     style: TextStyle(
-                      color: Nrs.getSecondaryColor(),
                       fontSize: FONT_SIZE,
                       fontWeight: FontWeight.bold,
                     ),
