@@ -43,12 +43,7 @@ class SpeechBubble extends StatelessWidget {
                       onPressed: () => onButtonTap(e),
                       icon: Icon(Icons.circle_outlined,
                           color: Nrs.getPrimaryColor(context)))
-                  : FuriganaText(
-                      furigana: e.furiTexts,
-                      labelColor: e.isAnswerable
-                          ? Nrs.getPrimaryColor(context)
-                          : Colors.black,
-                    );
+                  : FuriganaText(furigana: e.furiTexts);
             }).toList(),
           ),
         ),

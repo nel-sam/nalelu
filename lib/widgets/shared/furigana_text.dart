@@ -4,7 +4,6 @@ import 'package:nrs_flutter_lib/constants.dart';
 
 class FuriganaText extends StatelessWidget {
   final double fontSize;
-  final Color? labelColor;
   final List<FuriText> furigana;
   final FontWeight? fontWeight;
 
@@ -12,7 +11,6 @@ class FuriganaText extends StatelessWidget {
     Key? key,
     required this.furigana,
     this.fontSize = FONT_SIZE,
-    this.labelColor,
     this.fontWeight = FontWeight.normal,
   }) : super(key: key);
 
@@ -33,7 +31,6 @@ class FuriganaText extends StatelessWidget {
                       i.furigana,
                       style: TextStyle(
                         fontSize: fontSize * 0.5,
-                        color: labelColor,
                         fontWeight: fontWeight,
                       ),
                     ),
@@ -42,7 +39,6 @@ class FuriganaText extends StatelessWidget {
                     i.text,
                     style: TextStyle(
                       fontSize: fontSize,
-                      color: labelColor,
                       fontWeight: fontWeight,
                     ),
                   ),

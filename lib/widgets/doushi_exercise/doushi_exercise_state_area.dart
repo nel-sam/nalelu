@@ -20,11 +20,6 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
   bool isHintActive = false;
 
   Widget build(BuildContext context) {
-    bool isPresentCorrect =
-        widget.state.doushi.casual.present == widget.state.getUserInput(0);
-    bool isPastCorrect =
-        widget.state.doushi.casual.past == widget.state.getUserInput(1);
-
     return Column(
       children: [
         Row(
