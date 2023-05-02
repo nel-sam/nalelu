@@ -32,8 +32,9 @@ class _CountingExerciseStateAreaState extends State<CountingExerciseStateArea> {
                 child: NaFreeFormEntryWrapper(
                   widthType: NFreeFormWidths.half,
                   hintValue: '',
-                  onSubmitted: (String newValue) =>
-                      widget.state.updateCount(newValue),
+                  onSubmitted: (String newValue) => setState(() {
+                    widget.state.updateCount(newValue);
+                  }),
                   initialValue: widget.state.userInput,
                   correctValues: widget.state.correctAnswers,
                 ),

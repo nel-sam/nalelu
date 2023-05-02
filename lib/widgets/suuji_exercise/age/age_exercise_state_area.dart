@@ -31,7 +31,9 @@ class _MyAgeExerciseStateAreaState extends State<AgeExerciseStateArea> {
                   widthType: NFreeFormWidths.half,
                   hintValue: '',
                   onSubmitted: (String newValue) {
-                    widget.state.updateAge(newValue);
+                    setState(() {
+                      widget.state.updateAge(newValue);
+                    });
                   },
                   initialValue: widget.state.userInput,
                   correctValues: widget.state.correctAnswers,

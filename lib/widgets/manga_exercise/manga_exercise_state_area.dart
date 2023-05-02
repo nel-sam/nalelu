@@ -77,9 +77,10 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     NaFreeFormEntryWrapper(
-                        widthType: NFreeFormWidths.half,
-                        hintValue: '',
-                        onSubmitted: (String newValue) {
+                      widthType: NFreeFormWidths.half,
+                      hintValue: '',
+                      onSubmitted: (String newValue) {
+                        setState(() {
                           widget.state
                               .updateUserInput(activePhrasePart, newValue);
 
@@ -91,12 +92,12 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                               activePhrasePart = null;
                             });
                           }
-                        },
-                        initialValue:
-                            widget.state.getUserInput(activePhrasePart),
-                        correctValues:
-                            widget.state.getCorrectAnswers(activePhrasePart),
-                     )
+                        });
+                      },
+                      initialValue: widget.state.getUserInput(activePhrasePart),
+                      correctValues:
+                          widget.state.getCorrectAnswers(activePhrasePart),
+                    )
                   ],
                 ),
               )

@@ -38,14 +38,14 @@ class _JikanExerciseStateAreaState extends State<JikanExerciseStateArea> {
               ? Container(
                   width: textFieldWidth,
                   child: NaFreeFormEntryWrapper(
-                      widthType: NFreeFormWidths.full,
-                      hintValue: '',
-                      onSubmitted: (String newValue) =>
-                          // TODO: Add set state
-                          widget.state.updateHour(newValue),
-                      initialValue: widget.state.userHour,
-                      correctValues: widget.state.correctHours,
-                     ),
+                    widthType: NFreeFormWidths.full,
+                    hintValue: '',
+                    onSubmitted: (String newValue) => setState(() {
+                      widget.state.updateHour(newValue);
+                    }),
+                    initialValue: widget.state.userHour,
+                    correctValues: widget.state.correctHours,
+                  ),
                 )
               : Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -62,13 +62,14 @@ class _JikanExerciseStateAreaState extends State<JikanExerciseStateArea> {
                 ? Container(
                     width: textFieldWidth,
                     child: NaFreeFormEntryWrapper(
-                        widthType: NFreeFormWidths.full,
-                        hintValue: '',
-                        onSubmitted: (String newValue) =>
-                            widget.state.updateMin(newValue),
-                        initialValue: widget.state.userMin,
-                        correctValues: widget.state.correctMins,
-                        ),
+                      widthType: NFreeFormWidths.full,
+                      hintValue: '',
+                      onSubmitted: (String newValue) => setState(() {
+                        widget.state.updateMin(newValue);
+                      }),
+                      initialValue: widget.state.userMin,
+                      correctValues: widget.state.correctMins,
+                    ),
                   )
                 : Row(
                     mainAxisAlignment: MainAxisAlignment.center,
@@ -87,13 +88,14 @@ class _JikanExerciseStateAreaState extends State<JikanExerciseStateArea> {
                 ? Container(
                     width: textFieldWidth,
                     child: NaFreeFormEntryWrapper(
-                        widthType: NFreeFormWidths.full,
-                        hintValue: '',
-                        onSubmitted: (String newValue) =>
-                            widget.state.updateSec(newValue),
-                        initialValue: widget.state.userSec,
-                        correctValues: widget.state.correctSecs,
-                        ),
+                      widthType: NFreeFormWidths.full,
+                      hintValue: '',
+                      onSubmitted: (String newValue) => setState(() {
+                        widget.state.updateSec(newValue);
+                      }),
+                      initialValue: widget.state.userSec,
+                      correctValues: widget.state.correctSecs,
+                    ),
                   )
                 : Row(
                     mainAxisAlignment: MainAxisAlignment.center,
