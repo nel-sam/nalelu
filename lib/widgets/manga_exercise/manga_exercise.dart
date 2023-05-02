@@ -40,9 +40,10 @@ class MangaExercise extends StatelessWidget {
                       ),
                     ),
                     AdCard(),
-                    Padding(
-                        padding: EdgeInsets.only(
-                            bottom: MediaQuery.of(context).viewInsets.bottom))
+                    // TODO: Find alternative way to set padding amount
+                    // Padding(
+                    //     padding: EdgeInsets.only(
+                    //         bottom: MediaQuery.of(context).viewInsets.bottom))
                   ],
                 ),
               ),

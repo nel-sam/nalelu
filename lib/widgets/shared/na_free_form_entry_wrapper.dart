@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nalelu/na_helpers.dart';
 import 'package:nrs_flutter_lib/widgets/n_free_form_entry.dart';
 
 class NaFreeFormEntryWrapper extends StatelessWidget {
@@ -24,15 +23,15 @@ class NaFreeFormEntryWrapper extends StatelessWidget {
       widthType: NFreeFormWidths.half,
       hintValue: '',
       onSubmitted: (String newValue) {
-        final isOnlyJapaneseText =
-            RegExp(r'^[ぁ-んァ-ンー一-龥]+$').hasMatch(newValue);
+        // final isOnlyJapaneseText =
+        //     RegExp(r'^[ぁ-んァ-ンー一-龥]+$').hasMatch(newValue);
 
-        if (!isOnlyJapaneseText) {
-          ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-            content: Text(NA.t('only_japanese_text_allowed')),
-          ));
-          return;
-        }
+        // if (!isOnlyJapaneseText) {
+        //   ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+        //     content: Text(NA.t('only_japanese_text_allowed')),
+        //   ));
+        //   return;
+        // }
 
         this.onSubmitted(newValue);
       },

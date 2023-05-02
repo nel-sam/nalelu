@@ -20,7 +20,7 @@ class MainMenu extends StatelessWidget {
           height: Nrs.getScreenHeight() / 3.5,
           decoration: BoxDecoration(
             image: DecorationImage(
-              opacity: Nrs.isDarkTheme(context) ? 0.7 : 0.9,
+              opacity: 0.7,
               image: AssetImage('assets/banners/gates.jpeg'),
               fit: BoxFit.cover,
             ),
