@@ -23,7 +23,7 @@ class MangaExercise extends StatelessWidget {
             resizeToAvoidBottomInset: false,
             appBar: Nrs.NrsAppBar(title: '${NA.t('Manga')}', context: context),
             body: SingleChildScrollView(
-              reverse: true,
+              reverse: false,
               child: Center(
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -40,10 +40,6 @@ class MangaExercise extends StatelessWidget {
                       ),
                     ),
                     AdCard(),
-                    // TODO: Find alternative way to set padding amount
-                    // Padding(
-                    //     padding: EdgeInsets.only(
-                    //         bottom: MediaQuery.of(context).viewInsets.bottom))
                   ],
                 ),
               ),

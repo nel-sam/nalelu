@@ -33,41 +33,6 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: [
-              Container(
-                width: mangaWidth,
-                height: mangaWidth,
-                child: Stack(
-                  fit: StackFit.expand,
-                  children: <Widget>[
-                    Image(
-                      fit: BoxFit.cover,
-                      image:
-                          AssetImage(widget.state.mangaExerciseModel.imageUrl),
-                    ),
-                    ...widget.state.mangaExerciseModel.phrases.map(
-                      (p) => SpeechBubble(
-                        getIsCorrect: widget.state.isPhrasePartCorrect,
-                        phrase: p,
-                        onButtonTap: (PhrasePart phrasePart) => {
-                          setState(() {
-                            activePhrasePart = phrasePart;
-                            activePhrase = p;
-                            isTextfieldActive = true;
-                          })
-                        },
-                        mangaWidth: mangaWidth,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
         isTextfieldActive &&
                 activePhrasePart != null &&
                 !widget.state.isPhrasePartCorrect(activePhrasePart)
@@ -102,7 +67,34 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
             : Container(),
         activePhrasePart != null && activePhrase != null
             ? Text(activePhrase!.translation)
-            : Container()
+            : Container(),
+        Container(
+          width: mangaWidth,
+          height: mangaWidth,
+          child: Stack(
+            fit: StackFit.expand,
+            children: <Widget>[
+              Image(
+                fit: BoxFit.cover,
+                image: AssetImage(widget.state.mangaExerciseModel.imageUrl),
+              ),
+              ...widget.state.mangaExerciseModel.phrases.map(
+                (p) => SpeechBubble(
+                  getIsCorrect: widget.state.isPhrasePartCorrect,
+                  phrase: p,
+                  onButtonTap: (PhrasePart phrasePart) => {
+                    setState(() {
+                      activePhrasePart = phrasePart;
+                      activePhrase = p;
+                      isTextfieldActive = true;
+                    })
+                  },
+                  mangaWidth: mangaWidth,
+                ),
+              ),
+            ],
+          ),
+        ),
       ],
     );
   }

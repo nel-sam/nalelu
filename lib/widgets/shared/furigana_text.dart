@@ -6,12 +6,14 @@ class FuriganaText extends StatelessWidget {
   final double fontSize;
   final List<FuriText> furigana;
   final FontWeight? fontWeight;
+  final Color? textColor;
 
   const FuriganaText({
     Key? key,
     required this.furigana,
     this.fontSize = FONT_SIZE,
     this.fontWeight = FontWeight.normal,
+    this.textColor,
   }) : super(key: key);
 
   @override
@@ -32,6 +34,7 @@ class FuriganaText extends StatelessWidget {
                       style: TextStyle(
                         fontSize: fontSize * 0.5,
                         fontWeight: fontWeight,
+                        color: textColor,
                       ),
                     ),
                   ),
@@ -40,6 +43,7 @@ class FuriganaText extends StatelessWidget {
                     style: TextStyle(
                       fontSize: fontSize,
                       fontWeight: fontWeight,
+                      color: textColor,
                     ),
                   ),
                 ])
