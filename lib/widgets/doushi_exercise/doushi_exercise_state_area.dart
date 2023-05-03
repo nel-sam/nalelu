@@ -36,25 +36,19 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
         ),
         Padding(
           padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
-          child: NTextSpan(
-            NA.t('present'),
-            textAlign: TextAlign.end,
+          child: VerbInput(
+            doushi: widget.state.doushi,
+            hintValue: NA.t('present'),
+            activeValue: widget.state.getUserInput(0),
+            correctValue: widget.state.doushi.casual.present,
+            onSubmitted: (String newValue) {
+              widget.state.updateUserInput(0, newValue);
+            },
           ),
         ),
         VerbInput(
           doushi: widget.state.doushi,
-          activeValue: widget.state.getUserInput(0),
-          correctValue: widget.state.doushi.casual.present,
-          onSubmitted: (String newValue) {
-            widget.state.updateUserInput(0, newValue);
-          },
-        ),
-        NTextSpan(
-          NA.t('past'),
-          textAlign: TextAlign.end,
-        ),
-        VerbInput(
-          doushi: widget.state.doushi,
+          hintValue: NA.t('past'),
           activeValue: widget.state.getUserInput(1),
           correctValue: widget.state.doushi.casual.past,
           onSubmitted: (String newValue) {

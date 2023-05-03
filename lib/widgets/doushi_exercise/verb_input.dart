@@ -6,6 +6,7 @@ import 'package:nrs_flutter_lib/widgets/n_free_form_entry.dart';
 
 class VerbInput extends StatelessWidget {
   final Doushi doushi;
+  final String hintValue;
 
   final String correctValue;
   final String activeValue;
@@ -16,7 +17,7 @@ class VerbInput extends StatelessWidget {
     required this.doushi,
     required this.correctValue,
     required this.activeValue,
-    required this.onSubmitted,
+    required this.onSubmitted, required this.hintValue,
   }) : super(key: key);
 
   @override
@@ -43,18 +44,15 @@ class VerbInput extends StatelessWidget {
                             ),
                     ],
                   )
-                : Padding(
-                    padding: const EdgeInsets.only(left: 8.0, right: 8.0),
-                    child: NaFreeFormEntryWrapper(
-                      widthType: NFreeFormWidths.half,
-                      hintValue: '',
-                      onSubmitted: (String newValue) {
-                        onSubmitted(newValue);
-                      },
-                      initialValue: activeValue,
-                      correctValues: [correctValue],
-                    ),
-                  )
+                : NaFreeFormEntryWrapper(
+                  widthType: NFreeFormWidths.half,
+                  hintValue: hintValue,
+                  onSubmitted: (String newValue) {
+                    onSubmitted(newValue);
+                  },
+                  initialValue: activeValue,
+                  correctValues: [correctValue],
+                )
           ],
         ),
       ],

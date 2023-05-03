@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/state/suuji/count/count_exercise_state.dart';
 import 'package:nrs_flutter_lib/enums.dart';
 import 'package:nrs_flutter_lib/widgets/n_answer_status_icon.dart';
@@ -31,7 +32,7 @@ class _CountingExerciseStateAreaState extends State<CountingExerciseStateArea> {
                 width: 250,
                 child: NaFreeFormEntryWrapper(
                   widthType: NFreeFormWidths.half,
-                  hintValue: '',
+                    hintValue: NA.t('counter'),
                   onSubmitted: (String newValue) =>
                       widget.state.updateCount(newValue),
                   initialValue: widget.state.userInput,

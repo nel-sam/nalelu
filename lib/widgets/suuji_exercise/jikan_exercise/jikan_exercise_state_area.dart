@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/state/suuji/jikan/jikan_exercise_state.dart';
 import 'package:nalelu/widgets/shared/na_free_form_entry_wrapper.dart';
 import 'package:nrs_flutter_lib/enums.dart';
@@ -39,7 +40,7 @@ class _JikanExerciseStateAreaState extends State<JikanExerciseStateArea> {
                   width: textFieldWidth,
                   child: NaFreeFormEntryWrapper(
                     widthType: NFreeFormWidths.full,
-                    hintValue: '',
+                    hintValue: NA.t('hour'),
                     onSubmitted: (String newValue) =>
                         widget.state.updateHour(newValue),
                     initialValue: widget.state.userHour,
@@ -62,7 +63,7 @@ class _JikanExerciseStateAreaState extends State<JikanExerciseStateArea> {
                     width: textFieldWidth,
                     child: NaFreeFormEntryWrapper(
                       widthType: NFreeFormWidths.full,
-                      hintValue: '',
+                      hintValue: NA.t('minute'),
                       onSubmitted: (String newValue) =>
                           widget.state.updateMin(newValue),
                       initialValue: widget.state.userMin,
@@ -87,7 +88,7 @@ class _JikanExerciseStateAreaState extends State<JikanExerciseStateArea> {
                     width: textFieldWidth,
                     child: NaFreeFormEntryWrapper(
                       widthType: NFreeFormWidths.full,
-                      hintValue: '',
+                      hintValue: NA.t('second'),
                       onSubmitted: (String newValue) =>
                           widget.state.updateSec(newValue),
                       initialValue: widget.state.userSec,

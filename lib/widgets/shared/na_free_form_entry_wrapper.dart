@@ -21,7 +21,7 @@ class NaFreeFormEntryWrapper extends StatelessWidget {
   Widget build(BuildContext context) {
     return NFreeFormEntry(
       widthType: NFreeFormWidths.half,
-      hintValue: '',
+      hintValue: hintValue,
       onSubmitted: (String newValue) {
         // final isOnlyJapaneseText =
         //     RegExp(r'^[ぁ-んァ-ンー一-龥]+$').hasMatch(newValue);
@@ -32,7 +32,6 @@ class NaFreeFormEntryWrapper extends StatelessWidget {
         //   ));
         //   return;
         // }
-
         this.onSubmitted(newValue);
       },
       initialValue: this.initialValue,

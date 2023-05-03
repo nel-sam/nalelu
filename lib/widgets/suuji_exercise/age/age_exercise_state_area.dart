@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/state/suuji/age/age_exercise_state.dart';
 import 'package:nalelu/widgets/shared/na_free_form_entry_wrapper.dart';
 import 'package:nrs_flutter_lib/enums.dart';
@@ -29,7 +30,7 @@ class _MyAgeExerciseStateAreaState extends State<AgeExerciseStateArea> {
                 width: 250,
                 child: NaFreeFormEntryWrapper(
                   widthType: NFreeFormWidths.half,
-                  hintValue: '',
+                    hintValue: NA.t('age'),
                   onSubmitted: (String newValue) {
                     widget.state.updateAge(newValue);
                   },
