@@ -1,8 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/state/suuji/count/count_exercise_state.dart';
-import 'package:nrs_flutter_lib/enums.dart';
-import 'package:nrs_flutter_lib/widgets/n_answer_status_icon.dart';
 import 'package:nrs_flutter_lib/widgets/n_free_form_entry.dart';
 
 import '../../shared/na_free_form_entry_wrapper.dart';
@@ -19,35 +17,18 @@ class CountingExerciseStateArea extends StatefulWidget {
 
 class _CountingExerciseStateAreaState extends State<CountingExerciseStateArea> {
   Widget build(BuildContext context) {
-    var isCorrect = widget.state.getIsCorrect()
-        ? CorrectStatus.correct
-        : CorrectStatus.unstarted;
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        !widget.state.getIsCorrect()
-            ? Container(
-                width: 250,
-                child: NaFreeFormEntryWrapper(
-                  widthType: NFreeFormWidths.half,
-                  hintValue: NA.t('counter'),
-                  onChanged: (String newValue) =>
-                      widget.state.updateCount(newValue),
-                  initialValue: widget.state.userInput,
-                  correctValues: widget.state.correctAnswers,
-                  onCorrect: () {
-                    setState(() {});
-                  },
-                ),
-              )
-            : Row(children: [
-                Text(widget.state.userInput, style: TextStyle(fontSize: 28)),
-                Container(
-                    child: NAnswerStatusIcon(
-                  status: isCorrect,
-                )),
-              ]),
-      ],
+    return Container(
+      width: 250,
+      child: NaFreeFormEntryWrapper(
+        widthType: NFreeFormWidths.half,
+        hintValue: NA.t('counter'),
+        onChanged: (String newValue) => widget.state.updateCount(newValue),
+        initialValue: widget.state.userInput,
+        correctValues: widget.state.correctAnswers,
+        onCorrect: () {
+          setState(() {});
+        },
+      ),
     );
   }
 }

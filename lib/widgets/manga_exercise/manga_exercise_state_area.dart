@@ -32,42 +32,44 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        activePhrasePart != null &&
-                !widget.state.isPhrasePartCorrect(activePhrasePart)
-            ? Padding(
-                padding: const EdgeInsets.all(18.0),
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    NaFreeFormEntryWrapper(
-                      widthType: NFreeFormWidths.half,
-                      hintValue: '',
-                      onChanged: (String newValue) {
-                        widget.state
-                            .updateUserInput(activePhrasePart, newValue);
-
-                        final isPhrasePartCorrect =
-                            widget.state.isPhrasePartCorrect(activePhrasePart);
-
-                        if (isPhrasePartCorrect) {
-                          setState(() {
-                            activePhrasePart = null;
-                          });
-                        }
-                      },
-                      initialValue: widget.state.getUserInput(activePhrasePart),
-                      correctValues:
-                          widget.state.getCorrectAnswers(activePhrasePart),
-                      onCorrect: () {
-                        setState(() {});
-                      },
-                    )
-                  ],
-                ),
-              )
-            : Container(),
         activePhrasePart != null && activePhrase != null
-            ? Text(activePhrase!.translation)
+            ? Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.all(18.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        NaFreeFormEntryWrapper(
+                          widthType: NFreeFormWidths.half,
+                          hintValue: '',
+                          onChanged: (String newValue) {
+                            widget.state
+                                .updateUserInput(activePhrasePart, newValue);
+
+                            final isPhrasePartCorrect = widget.state
+                                .isPhrasePartCorrect(activePhrasePart);
+
+                            if (isPhrasePartCorrect) {
+                              setState(() {
+                                activePhrasePart = null;
+                              });
+                            }
+                          },
+                          initialValue:
+                              widget.state.getUserInput(activePhrasePart),
+                          correctValues:
+                              widget.state.getCorrectAnswers(activePhrasePart),
+                          onCorrect: () {
+                            setState(() {});
+                          },
+                        )
+                      ],
+                    ),
+                  ),
+                  Text(activePhrase!.translation),
+                ],
+              )
             : Container(),
         Container(
           width: mangaWidth,

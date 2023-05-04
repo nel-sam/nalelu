@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nalelu/lang_data/doushi.dart';
 import 'package:nalelu/widgets/shared/na_free_form_entry_wrapper.dart';
-import 'package:nrs_flutter_lib/constants.dart';
 import 'package:nrs_flutter_lib/widgets/n_free_form_entry.dart';
 
 class VerbInput extends StatelessWidget {
@@ -25,41 +24,15 @@ class VerbInput extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var isCorrect = correctValue == this.activeValue;
-
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Row(
-          children: [
-            isCorrect
-                ? Row(
-                    children: [
-                      Text(correctValue, style: TextStyle(fontSize: 28)),
-                      isCorrect
-                          ? Icon(
-                              CORRECT_ANSWER_ICON,
-                              color: CORRECT_COLOR,
-                            )
-                          : Icon(
-                              Icons.circle_outlined,
-                              color: Colors.grey,
-                            ),
-                    ],
-                  )
-                : NaFreeFormEntryWrapper(
-                    widthType: NFreeFormWidths.half,
-                    hintValue: hintValue,
-                    onChanged: (String newValue) {
-                      onSubmitted(newValue);
-                    },
-                    initialValue: activeValue,
-                    correctValues: [correctValue],
-                    onCorrect: onCorrect,
-                  )
-          ],
-        ),
-      ],
+    return NaFreeFormEntryWrapper(
+      widthType: NFreeFormWidths.half,
+      hintValue: hintValue,
+      onChanged: (String newValue) {
+        onSubmitted(newValue);
+      },
+      initialValue: activeValue,
+      correctValues: [correctValue],
+      onCorrect: onCorrect,
     );
   }
 }
