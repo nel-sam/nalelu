@@ -45,7 +45,9 @@ class SpeechBubble extends StatelessWidget {
                           color: Nrs.getPrimaryColor(context)))
                   : FuriganaText(
                       furigana: e.furiTexts,
-                      textColor: Colors.black,
+                      textColor: e.isAnswerable
+                          ? Nrs.getPrimaryColor(context)
+                          : Colors.black,
                     );
             }).toList(),
           ),
