@@ -10,11 +10,11 @@ class Clock extends StatelessWidget {
     double screenWidth = Nrs.getScreenWidth();
 
     return Container(
-      height: 200,
+      height: 140,
       decoration: BoxDecoration(
           border: Border.all(color: Colors.grey, width: 10),
           borderRadius: BorderRadius.all(
-            Radius.circular(12),
+            Radius.circular(8),
           )),
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
