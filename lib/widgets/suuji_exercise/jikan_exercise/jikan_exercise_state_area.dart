@@ -33,7 +33,7 @@ class _JikanExerciseStateAreaState extends State<JikanExerciseStateArea> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         Row(mainAxisAlignment: MainAxisAlignment.center, children: [
-          !widget.state.getIsCorrect()
+          !widget.state.getIsHourCorrect()
               ? Container(
                   width: textFieldWidth,
                   child: NaFreeFormEntryWrapper(
@@ -59,7 +59,7 @@ class _JikanExerciseStateAreaState extends State<JikanExerciseStateArea> {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            !widget.state.getIsCorrect()
+            !widget.state.getIsMinCorrect()
                 ? Container(
                     width: textFieldWidth,
                     child: NaFreeFormEntryWrapper(
@@ -87,7 +87,7 @@ class _JikanExerciseStateAreaState extends State<JikanExerciseStateArea> {
         Row(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            !widget.state.getIsCorrect()
+            !widget.state.getIsSecCorrect()
                 ? Container(
                     width: textFieldWidth,
                     child: NaFreeFormEntryWrapper(
