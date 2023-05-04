@@ -22,7 +22,6 @@ class MangaExerciseStateArea extends StatefulWidget {
 }
 
 class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
-  bool isTextfieldActive = false;
   late double mangaWidth;
   PhrasePart? activePhrasePart;
   Phrase? activePhrase;
@@ -33,8 +32,7 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-        isTextfieldActive &&
-                activePhrasePart != null &&
+        activePhrasePart != null &&
                 !widget.state.isPhrasePartCorrect(activePhrasePart)
             ? Padding(
                 padding: const EdgeInsets.all(18.0),
@@ -44,7 +42,7 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                     NaFreeFormEntryWrapper(
                       widthType: NFreeFormWidths.half,
                       hintValue: '',
-                      onSubmitted: (String newValue) {
+                      onChanged: (String newValue) {
                         widget.state
                             .updateUserInput(activePhrasePart, newValue);
 
@@ -60,6 +58,9 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                       initialValue: widget.state.getUserInput(activePhrasePart),
                       correctValues:
                           widget.state.getCorrectAnswers(activePhrasePart),
+                      onCorrect: () {
+                        setState(() {});
+                      },
                     )
                   ],
                 ),
@@ -86,7 +87,6 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                     setState(() {
                       activePhrasePart = phrasePart;
                       activePhrase = p;
-                      isTextfieldActive = true;
                     })
                   },
                   mangaWidth: mangaWidth,

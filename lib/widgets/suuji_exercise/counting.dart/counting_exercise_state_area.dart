@@ -18,8 +18,6 @@ class CountingExerciseStateArea extends StatefulWidget {
 }
 
 class _CountingExerciseStateAreaState extends State<CountingExerciseStateArea> {
-  bool isHintActive = false;
-
   Widget build(BuildContext context) {
     var isCorrect = widget.state.getIsCorrect()
         ? CorrectStatus.correct
@@ -27,16 +25,19 @@ class _CountingExerciseStateAreaState extends State<CountingExerciseStateArea> {
     return Row(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        !widget.state.correctAnswers.contains(widget.state.userInput)
+        !widget.state.getIsCorrect()
             ? Container(
                 width: 250,
                 child: NaFreeFormEntryWrapper(
                   widthType: NFreeFormWidths.half,
-                    hintValue: NA.t('counter'),
-                  onSubmitted: (String newValue) =>
+                  hintValue: NA.t('counter'),
+                  onChanged: (String newValue) =>
                       widget.state.updateCount(newValue),
                   initialValue: widget.state.userInput,
                   correctValues: widget.state.correctAnswers,
+                  onCorrect: () {
+                    setState(() {});
+                  },
                 ),
               )
             : Row(children: [

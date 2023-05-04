@@ -17,8 +17,6 @@ class DoushiExerciseStateArea extends StatefulWidget {
 }
 
 class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
-  bool isHintActive = false;
-
   Widget build(BuildContext context) {
     return Column(
       children: [
@@ -44,6 +42,10 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
             onSubmitted: (String newValue) {
               widget.state.updateUserInput(0, newValue);
             },
+            onCorrect: () {
+              setState(() {
+              });
+            },
           ),
         ),
         VerbInput(
@@ -53,6 +55,10 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
           correctValue: widget.state.doushi.casual.past,
           onSubmitted: (String newValue) {
             widget.state.updateUserInput(1, newValue);
+          },
+          onCorrect: () {
+            setState(() {
+            });
           },
         ),
       ],

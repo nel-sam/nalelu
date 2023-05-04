@@ -2,7 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:nrs_flutter_lib/widgets/n_free_form_entry.dart';
 
 class NaFreeFormEntryWrapper extends StatelessWidget {
-  final Function(String) onSubmitted;
+  final Function(String) onChanged;
+  final Function onCorrect;
+
   final String initialValue;
   final List<String> correctValues;
   final NFreeFormWidths widthType;
@@ -10,7 +12,8 @@ class NaFreeFormEntryWrapper extends StatelessWidget {
 
   NaFreeFormEntryWrapper({
     Key? key,
-    required this.onSubmitted,
+    required this.onChanged,
+    required this.onCorrect,
     required this.initialValue,
     required this.correctValues,
     required this.widthType,
@@ -22,7 +25,7 @@ class NaFreeFormEntryWrapper extends StatelessWidget {
     return NFreeFormEntry(
       widthType: NFreeFormWidths.half,
       hintValue: hintValue,
-      onSubmitted: (String newValue) {
+      onChanged: (String newValue) {
         // final isOnlyJapaneseText =
         //     RegExp(r'^[ぁ-んァ-ンー一-龥]+$').hasMatch(newValue);
 
@@ -32,8 +35,9 @@ class NaFreeFormEntryWrapper extends StatelessWidget {
         //   ));
         //   return;
         // }
-        this.onSubmitted(newValue);
+        this.onChanged(newValue);
       },
+      onCorrect: this.onCorrect,
       initialValue: this.initialValue,
       correctValues: this.correctValues,
     );

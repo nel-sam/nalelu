@@ -11,13 +11,16 @@ class VerbInput extends StatelessWidget {
   final String correctValue;
   final String activeValue;
   final Function(String) onSubmitted;
+  final Function onCorrect;
 
   const VerbInput({
     Key? key,
     required this.doushi,
     required this.correctValue,
     required this.activeValue,
-    required this.onSubmitted, required this.hintValue,
+    required this.onSubmitted,
+    required this.onCorrect,
+    required this.hintValue,
   }) : super(key: key);
 
   @override
@@ -45,14 +48,15 @@ class VerbInput extends StatelessWidget {
                     ],
                   )
                 : NaFreeFormEntryWrapper(
-                  widthType: NFreeFormWidths.half,
-                  hintValue: hintValue,
-                  onSubmitted: (String newValue) {
-                    onSubmitted(newValue);
-                  },
-                  initialValue: activeValue,
-                  correctValues: [correctValue],
-                )
+                    widthType: NFreeFormWidths.half,
+                    hintValue: hintValue,
+                    onChanged: (String newValue) {
+                      onSubmitted(newValue);
+                    },
+                    initialValue: activeValue,
+                    correctValues: [correctValue],
+                    onCorrect: onCorrect,
+                  )
           ],
         ),
       ],
