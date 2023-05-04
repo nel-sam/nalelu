@@ -14,49 +14,39 @@ class JikanExerciseStateArea extends StatefulWidget {
 }
 
 class _JikanExerciseStateAreaState extends State<JikanExerciseStateArea> {
-  final double textFieldWidth = 250;
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        Container(
-          width: textFieldWidth,
-          child: NaFreeFormEntryWrapper(
-            widthType: NFreeFormWidths.full,
-            hintValue: NA.t('hour'),
-            onCorrect: () {
-              setState(() {});
-            },
-            onChanged: (String newValue) => widget.state.updateHour(newValue),
-            initialValue: widget.state.userHour,
-            correctValues: widget.state.correctHours,
-          ),
+        NaFreeFormEntryWrapper(
+          widthType: NFreeFormWidths.full,
+          hintValue: NA.t('hour'),
+          onCorrect: () {
+            setState(() {});
+          },
+          onChanged: (String newValue) => widget.state.updateHour(newValue),
+          initialValue: widget.state.userHour,
+          correctValues: widget.state.correctHours,
         ),
-        Container(
-          width: textFieldWidth,
-          child: NaFreeFormEntryWrapper(
-            widthType: NFreeFormWidths.full,
-            hintValue: NA.t('minute'),
-            onChanged: (String newValue) => widget.state.updateMin(newValue),
-            initialValue: widget.state.userMin,
-            correctValues: widget.state.correctMins,
-            onCorrect: () {
-              setState(() {});
-            },
-          ),
+        NaFreeFormEntryWrapper(
+          widthType: NFreeFormWidths.full,
+          hintValue: NA.t('minute'),
+          onChanged: (String newValue) => widget.state.updateMin(newValue),
+          initialValue: widget.state.userMin,
+          correctValues: widget.state.correctMins,
+          onCorrect: () {
+            setState(() {});
+          },
         ),
-        Container(
-          width: textFieldWidth,
-          child: NaFreeFormEntryWrapper(
-            widthType: NFreeFormWidths.full,
-            hintValue: NA.t('second'),
-            onChanged: (String newValue) => widget.state.updateSec(newValue),
-            initialValue: widget.state.userSec,
-            correctValues: widget.state.correctSecs,
-            onCorrect: () {
-              setState(() {});
-            },
-          ),
+        NaFreeFormEntryWrapper(
+          widthType: NFreeFormWidths.full,
+          hintValue: NA.t('second'),
+          onChanged: (String newValue) => widget.state.updateSec(newValue),
+          initialValue: widget.state.userSec,
+          correctValues: widget.state.correctSecs,
+          onCorrect: () {
+            setState(() {});
+          },
         )
       ],
     );

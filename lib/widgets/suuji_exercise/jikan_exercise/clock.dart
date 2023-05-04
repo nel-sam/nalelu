@@ -7,28 +7,19 @@ class Clock extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = Nrs.getScreenWidth();
-
     return Container(
-      height: 140,
+      height: 100,
       decoration: BoxDecoration(
           border: Border.all(color: Colors.grey, width: 10),
           borderRadius: BorderRadius.all(
-            Radius.circular(8),
+            Radius.circular(18),
           )),
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Text(
-              time,
-              style: TextStyle(
-                  fontSize: screenWidth / 8,
-                  color: Nrs.getPrimaryColor(context)),
-            ),
-          ),
-        ],
+      child: Center(
+        widthFactor: 1,
+        child: Text(
+          time,
+          style: TextStyle(fontSize: 60, color: Nrs.getPrimaryColor(context)),
+        ),
       ),
     );
   }
