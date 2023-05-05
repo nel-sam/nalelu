@@ -35,6 +35,7 @@ class MyApp extends StatelessWidget {
           primaryColor: Colors.black,
           brightness: Brightness.dark,
           dividerColor: Colors.black12,
+          colorScheme: ColorScheme.dark(background: const Color(0xFF212121)),
         ),
         home: MyHomePage());
   }
