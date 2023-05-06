@@ -7,17 +7,16 @@ import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 class NA {
   static TextStyle fontStyleBold(BuildContext context,
       {double fontSize = FONT_SIZE}) {
-    return Nrs.getTextStyle(context: context, fontSize: fontSize, isBold: true);
+    return Nrs.getTextStyle(context: context, isBold: true);
   }
 
   static TextStyle fontStyleItalic(BuildContext context,
       {double fontSize = FONT_SIZE}) {
-    return Nrs.getTextStyle(
-        context: context, fontSize: fontSize, isItalic: true);
+    return Nrs.getTextStyle(context: context, isItalic: true);
   }
 
   static fontStyleNormal(BuildContext context, {double fontSize = FONT_SIZE}) {
-    return Nrs.getTextStyle(context: context, fontSize: fontSize);
+    return Nrs.getTextStyle(context: context);
   }
 
   static NareNumber getHourNumber(int digit) {

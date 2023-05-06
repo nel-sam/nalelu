@@ -18,7 +18,7 @@ class ChartRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
-      // TODO: Center stuffs
+      mainAxisAlignment: MainAxisAlignment.center,
       children: [
         NTextSpan(
           label,

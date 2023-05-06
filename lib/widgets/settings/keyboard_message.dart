@@ -3,7 +3,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 setFirstTimeSetting() async {
   final preferences = (await SharedPreferences.getInstance());
-  preferences.setBool("isFirstTime", true);
+  preferences.setBool("isFirstTime", false);
 }
 
 class KeyboardMessage extends StatelessWidget {

@@ -50,10 +50,14 @@ PODS:
   - nanopb/decode (2.30908.0)
   - nanopb/encode (2.30908.0)
   - PromisesObjC (2.1.1)
+  - shared_preferences_foundation (0.0.1):
+    - Flutter
+    - FlutterMacOS
 
 DEPENDENCIES:
   - Flutter (from `Flutter`)
   - google_mobile_ads (from `.symlinks/plugins/google_mobile_ads/ios`)
+  - shared_preferences_foundation (from `.symlinks/plugins/shared_preferences_foundation/ios`)
 
 SPEC REPOS:
   trunk:
@@ -69,6 +73,8 @@ EXTERNAL SOURCES:
     :path: Flutter
   google_mobile_ads:
     :path: ".symlinks/plugins/google_mobile_ads/ios"
+  shared_preferences_foundation:
+    :path: ".symlinks/plugins/shared_preferences_foundation/ios"
 
 SPEC CHECKSUMS:
   Flutter: f04841e97a9d0b0a8025694d0796dd46242b2854
@@ -79,6 +85,7 @@ SPEC CHECKSUMS:
   GoogleUtilities: bad72cb363809015b1f7f19beb1f1cd23c589f95
   nanopb: a0ba3315591a9ae0a16a309ee504766e90db0c96
   PromisesObjC: ab77feca74fa2823e7af4249b8326368e61014cb
+  shared_preferences_foundation: 986fc17f3d3251412d18b0265f9c64113a8c2472
 
 PODFILE CHECKSUM: ef19549a9bc3046e7bb7d2fab4d021637c0c58a3
 

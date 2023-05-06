@@ -17,11 +17,6 @@ Future<bool> getIsFirstTimeSetting() async {
   return isFirstTime;
 }
 
-setFirstTimeSetting() async {
-  final preferences = (await SharedPreferences.getInstance());
-  preferences.setBool("isFirstTime", false);
-}
-
 class MainMenu extends StatelessWidget {
   const MainMenu({Key? key}) : super(key: key);
   @override
@@ -30,7 +25,7 @@ class MainMenu extends StatelessWidget {
         future: getIsFirstTimeSetting(),
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
-            if (!(snapshot.data as bool)) {
+            if ((snapshot.data as bool)) {
               return KeyboardMessage();
             } else {
               return Column(
