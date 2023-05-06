@@ -18,41 +18,44 @@ class SpeechBubble extends StatelessWidget {
   Widget build(BuildContext context) {
     return Positioned.fill(
       child: LayoutBuilder(builder: (context, constraints) {
-        final left =
-            this.phrase.rightPercentage / 100 * constraints.biggest.width;
-        final top =
-            this.phrase.downPercentage / 100 * constraints.biggest.height;
+        final left = this.phrase.rightPercentage / 100;
+        final top = this.phrase.downPercentage / 100;
 
-        return Padding(
-          padding: EdgeInsets.only(left: left, top: top),
-          child: Container(
-            decoration: BoxDecoration(
-              color: Colors.white,
-              border: Border.all(
-                color: Colors.black,
-                width: 4,
+        return Container(
+          alignment: FractionalOffset(left, top),
+          child: FractionallySizedBox(
+            child: Container(
+              decoration: BoxDecoration(
+                color: Colors.white,
+                border: Border.all(
+                  color: Colors.black,
+                  width: 4,
+                ),
+                borderRadius: BorderRadius.circular(40),
               ),
-              borderRadius: BorderRadius.circular(40),
-            ),
-            child: Padding(
-              padding:
-                  const EdgeInsets.only(top: 4, bottom: 0, left: 18, right: 18),
-              child: Wrap(
-                children: this.phrase.phraseParts.map((e) {
-                  final isCorrect = getIsCorrect(e);
+              child: Padding(
+                padding: const EdgeInsets.only(
+                    top: 4, bottom: 0, left: 18, right: 18),
+                child: Wrap(
+                  children: this.phrase.phraseParts.map((e) {
+                    final isCorrect = getIsCorrect(e);
 
-                  return e.isAnswerable && !isCorrect
-                      ? IconButton(
-                          onPressed: () => onButtonTap(e),
-                          icon: Icon(Icons.circle_outlined,
-                              color: Theme.of(context).primaryColor))
-                      : FuriganaText(
-                          furiTexts: e.furiTexts,
-                          textColor: e.isAnswerable
-                              ? Theme.of(context).primaryColor
-                              : Colors.black,
-                        );
-                }).toList(),
+                    return e.isAnswerable && !isCorrect
+                        ? IconButton(
+                            onPressed: () => onButtonTap(e),
+                            icon: Icon(Icons.circle_outlined,
+                                color: Theme.of(context).primaryColor))
+                        : Padding(
+                            padding: const EdgeInsets.only(bottom: 15.0),
+                            child: FuriganaText(
+                              furiTexts: e.furiTexts,
+                              textColor: e.isAnswerable
+                                  ? Theme.of(context).primaryColor
+                                  : Colors.black,
+                            ),
+                          );
+                  }).toList(),
+                ),
               ),
             ),
           ),
