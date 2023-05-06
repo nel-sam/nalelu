@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 
 class Clock extends StatelessWidget {
   final String time;
@@ -18,7 +17,8 @@ class Clock extends StatelessWidget {
         widthFactor: 1,
         child: Text(
           time,
-          style: TextStyle(fontSize: 60, color: Nrs.getPrimaryColor(context)),
+          style: TextStyle(
+              fontSize: 60, color: Theme.of(context).colorScheme.primary),
         ),
       ),
     );
