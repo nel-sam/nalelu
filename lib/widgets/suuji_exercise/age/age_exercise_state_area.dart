@@ -18,20 +18,17 @@ class AgeExerciseStateArea extends StatefulWidget {
 
 class _MyAgeExerciseStateAreaState extends State<AgeExerciseStateArea> {
   Widget build(BuildContext context) {
-    return Container(
-      width: 250,
-      child: NaFreeFormEntryWrapper(
-        widthType: NFreeFormWidths.half,
-        hintValue: NA.t('age'),
-        onChanged: (String newValue) {
-          widget.state.updateAge(newValue);
-        },
-        initialValue: widget.state.userInput,
-        correctValues: widget.state.correctAnswers,
-        onCorrect: () {
-          setState(() {});
-        },
-      ),
+    return NaFreeFormEntryWrapper(
+      widthType: NFreeFormWidths.half,
+      hintValue: NA.t('age'),
+      onChanged: (String newValue) {
+        widget.state.updateAge(newValue);
+      },
+      initialValue: widget.state.userInput,
+      correctValues: widget.state.correctAnswers,
+      onCorrect: () {
+        setState(() {});
+      },
     );
   }
 }

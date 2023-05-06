@@ -4,13 +4,13 @@ import 'package:nrs_flutter_lib/constants.dart';
 
 class FuriganaText extends StatelessWidget {
   final double fontSize;
-  final List<FuriText> furigana;
+  final List<FuriText> furiTexts;
   final FontWeight? fontWeight;
   final Color? textColor;
 
   const FuriganaText({
     Key? key,
-    required this.furigana,
+    required this.furiTexts,
     this.fontSize = FONT_SIZE,
     this.fontWeight = FontWeight.normal,
     this.textColor,
@@ -22,31 +22,34 @@ class FuriganaText extends StatelessWidget {
         mainAxisSize: MainAxisSize.min,
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          for (var i in furigana)
-            Column(
-                mainAxisAlignment: MainAxisAlignment.end,
-                mainAxisSize: MainAxisSize.max,
-                children: [
-                  Container(
-                    height: fontSize * 0.7,
-                    child: Text(
-                      i.furigana,
-                      style: TextStyle(
-                        fontSize: fontSize * 0.5,
-                        fontWeight: fontWeight,
-                        color: textColor,
-                      ),
-                    ),
-                  ),
-                  Text(
-                    i.text,
+          for (var i in furiTexts)
+            Column(mainAxisSize: MainAxisSize.max, children: [
+              Container(
+                height: i.furigana.length == 0 ? fontSize * 1.3 : fontSize,
+                child: Center(
+                  child: Text(
+                    i.furigana,
+                    textAlign: TextAlign.center,
                     style: TextStyle(
-                      fontSize: fontSize,
+                      fontSize: fontSize * 0.7,
                       fontWeight: fontWeight,
                       color: textColor,
                     ),
                   ),
-                ])
+                ),
+              ),
+              Center(
+                child: Text(
+                  i.text,
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
+                    fontSize: fontSize,
+                    fontWeight: fontWeight,
+                    color: textColor,
+                  ),
+                ),
+              ),
+            ])
         ]);
   }
 }

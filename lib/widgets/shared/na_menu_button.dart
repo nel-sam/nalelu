@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:nalelu/furi_text.dart';
 import 'package:nalelu/widgets/shared/furigana_text.dart';
 import 'package:nrs_flutter_lib/constants.dart';
-import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 import 'package:nrs_flutter_lib/widgets/n_action_arrow.dart';
 
 class NAMenuButton extends StatelessWidget {
@@ -21,79 +20,69 @@ class NAMenuButton extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = Nrs.getScreenWidth();
-    double buttonWidth = screenWidth - 30;
     double buttonHeight = 90;
     double radius = 10;
 
     return Padding(
       padding: const EdgeInsets.all(FONT_SIZE / 2),
-      child: SizedBox(
-        height: buttonHeight,
-        width: buttonWidth,
-        child: OutlinedButton(
-          style: OutlinedButton.styleFrom(
-            padding: const EdgeInsets.all(0),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(radius)),
-            ),
+      child: OutlinedButton(
+        style: OutlinedButton.styleFrom(
+          padding: const EdgeInsets.all(0),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.all(Radius.circular(radius)),
           ),
-          onPressed: () {
-            Navigator.push(
-              context,
-              MaterialPageRoute(builder: (context) => destination),
-            );
-          },
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
+        ),
+        onPressed: () {
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => destination),
+          );
+        },
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            Padding(
+              padding: const EdgeInsets.only(left: FONT_SIZE * 1.3),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.only(left: FONT_SIZE * 2),
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        if (translabel.isNotEmpty)
-                          Text(
-                            label.toUpperCase(),
-                            style: TextStyle(
-                              fontSize: 12,
-                            ),
-                          ),
-                        Padding(
-                          padding: const EdgeInsets.only(top: 8.0),
-                          child: FuriganaText(
-                              furigana: translabel,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold),
-                        )
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-              Column(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Container(
-                    width: buttonHeight,
-                    height: buttonHeight,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.only(
-                        topRight: Radius.circular(radius),
-                        bottomRight: Radius.circular(radius),
+                    padding: const EdgeInsets.only(bottom: 4),
+                    child: Text(
+                      label,
+                      style: TextStyle(
+                        fontSize: FONT_SIZE * 1.2,
+                        fontWeight: FontWeight.bold,
                       ),
                     ),
-                    child: isPremiumLocked
-                        ? const NPremiumIcon()
-                        : const NActionArrow(),
+                  ),
+                  FuriganaText(
+                    furiTexts: translabel,
+                    fontSize: FONT_SIZE,
                   ),
                 ],
               ),
-            ],
-          ),
+            ),
+            Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Container(
+                  width: buttonHeight,
+                  height: buttonHeight,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.only(
+                      topRight: Radius.circular(radius),
+                      bottomRight: Radius.circular(radius),
+                    ),
+                  ),
+                  child: isPremiumLocked
+                      ? const NPremiumIcon()
+                      : const NActionArrow(),
+                ),
+              ],
+            ),
+          ],
         ),
       ),
     );

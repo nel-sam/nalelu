@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nalelu/furi_text.dart';
 import 'package:nalelu/widgets/shared/furigana_text.dart';
-import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 
 class NANumberBlock extends StatelessWidget {
   final int digit;
@@ -38,12 +37,11 @@ class NANumberBlock extends StatelessWidget {
                   digit.toString(),
                   style: TextStyle(
                     fontSize: 18,
-                    color: Nrs.getPrimaryColor(context),
                   ),
                 ),
                 if (furiTexts.isNotEmpty)
                   FuriganaText(
-                      furigana: furiTexts,
+                      furiTexts: furiTexts,
                       fontSize: digit > 38 ? 14 : 18,
                       fontWeight: FontWeight.bold),
               ]),

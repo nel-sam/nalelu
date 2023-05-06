@@ -18,13 +18,12 @@ class ChartRow extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Row(
+      // TODO: Center stuffs
       children: [
-        Container(
-            width: Nrs.getScreenWidth() / 3,
-            child: NTextSpan(
-              label,
-              textAlign: TextAlign.end,
-            )),
+        NTextSpan(
+          label,
+          textAlign: TextAlign.end,
+        ),
         NTextSpan(
           conj,
           textStyle: NA.fontStyleBold(context),

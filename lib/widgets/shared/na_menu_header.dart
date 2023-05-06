@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:nalelu/furi_text.dart';
 import 'package:nalelu/widgets/shared/furigana_text.dart';
 import 'package:nrs_flutter_lib/constants.dart';
-import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 
 class NAMenuHeader extends StatelessWidget {
   final IconData icon;
@@ -17,52 +16,28 @@ class NAMenuHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final headerHeight = Nrs.getScreenHeight() / 3.4;
-
-    return SizedBox(
-      height: headerHeight,
-      width: Nrs.getScreenWidth(),
-      child: Stack(
-        children: [
-          Align(
-            alignment: Alignment.topRight,
-            child: Icon(
-              icon,
-              size: Nrs.getScreenWidth() / 1.5,
-              color: Colors.black.withOpacity(0.08),
-            ),
+    return Stack(
+      children: [
+        Align(
+          alignment: Alignment.topRight,
+          child: Icon(
+            icon,
+            size: 150,
+            color: Colors.black.withOpacity(0.08),
           ),
-          Padding(
-            padding: const EdgeInsets.all(28),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Icon(
-                  icon,
-                  size: FONT_SIZE * 2,
-                  color: Colors.black.withOpacity(0.6),
-                ),
-                Padding(
-                  padding: const EdgeInsets.only(
-                      top: FONT_SIZE * 1.3, bottom: FONT_SIZE / 2),
-                  child: Text(
-                    transLabel.toUpperCase(),
-                    style: TextStyle(
-                      fontSize: FONT_SIZE,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                ),
-                FuriganaText(
-                    furigana: label,
-                    fontSize: FONT_SIZE * 1.5,
-                    fontWeight: FontWeight.bold)
-              ],
-            ),
+        ),
+        Align(
+          alignment: Alignment.centerLeft,
+          heightFactor: 2,
+          child: Padding(
+            padding: const EdgeInsets.only(left: FONT_SIZE),
+            child: FuriganaText(
+                furiTexts: label,
+                fontSize: FONT_SIZE * 1.5,
+                fontWeight: FontWeight.bold),
           ),
-        ],
-      ),
+        ),
+      ],
     );
   }
 }

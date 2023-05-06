@@ -1,17 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:nalelu/state/manga/models.dart';
 import 'package:nalelu/widgets/shared/furigana_text.dart';
-import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 
 class SpeechBubble extends StatelessWidget {
-  final double mangaWidth;
   final Phrase phrase;
   final bool Function(PhrasePart activePhrase) getIsCorrect;
   final Function(PhrasePart activePhrase) onButtonTap;
 
   const SpeechBubble(
       {Key? key,
-      required this.mangaWidth,
       required this.phrase,
       required this.getIsCorrect,
       required this.onButtonTap})
@@ -19,40 +16,48 @@ class SpeechBubble extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Positioned(
-      top: this.mangaWidth * (this.phrase.downPercentage / 100),
-      left: this.mangaWidth * (this.phrase.rightPercentage / 100),
-      child: Container(
-        decoration: BoxDecoration(
-          color: Colors.white,
-          border: Border.all(
-            color: Colors.black,
-            width: 4,
-          ),
-          borderRadius: BorderRadius.circular(40),
-        ),
-        child: Padding(
-          padding:
-              const EdgeInsets.only(top: 4, bottom: 0, left: 18, right: 18),
-          child: Wrap(
-            children: this.phrase.phraseParts.map((e) {
-              final isCorrect = getIsCorrect(e);
+    return Positioned.fill(
+      child: LayoutBuilder(builder: (context, constraints) {
+        final left =
+            this.phrase.rightPercentage / 100 * constraints.biggest.width;
+        final top =
+            this.phrase.downPercentage / 100 * constraints.biggest.height;
 
-              return e.isAnswerable && !isCorrect
-                  ? IconButton(
-                      onPressed: () => onButtonTap(e),
-                      icon: Icon(Icons.circle_outlined,
-                          color: Nrs.getPrimaryColor(context)))
-                  : FuriganaText(
-                      furigana: e.furiTexts,
-                      textColor: e.isAnswerable
-                          ? Nrs.getPrimaryColor(context)
-                          : Colors.black,
-                    );
-            }).toList(),
+        return Padding(
+          padding: EdgeInsets.only(left: left, top: top),
+          child: Container(
+            decoration: BoxDecoration(
+              color: Colors.white,
+              border: Border.all(
+                color: Colors.black,
+                width: 4,
+              ),
+              borderRadius: BorderRadius.circular(40),
+            ),
+            child: Padding(
+              padding:
+                  const EdgeInsets.only(top: 4, bottom: 0, left: 18, right: 18),
+              child: Wrap(
+                children: this.phrase.phraseParts.map((e) {
+                  final isCorrect = getIsCorrect(e);
+
+                  return e.isAnswerable && !isCorrect
+                      ? IconButton(
+                          onPressed: () => onButtonTap(e),
+                          icon: Icon(Icons.circle_outlined,
+                              color: Theme.of(context).primaryColor))
+                      : FuriganaText(
+                          furiTexts: e.furiTexts,
+                          textColor: e.isAnswerable
+                              ? Theme.of(context).primaryColor
+                              : Colors.black,
+                        );
+                }).toList(),
+              ),
+            ),
           ),
-        ),
-      ),
+        );
+      }),
     );
   }
 }

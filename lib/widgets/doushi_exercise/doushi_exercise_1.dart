@@ -19,8 +19,6 @@ class DoushiExerciseLevel1 extends StatefulWidget {
 }
 
 class _DoushiExerciseLevel1State extends State<DoushiExerciseLevel1> {
-  late double containerWidth;
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -39,7 +37,6 @@ class _DoushiExerciseLevel1State extends State<DoushiExerciseLevel1> {
                   NavHeaderWrapper(navNotifier: navNotifier),
                   Expanded(
                       child: Container(
-                    width: containerWidth,
                     child: ChangeNotifierProvider<DoushiNotifier>(
                       create: (context) =>
                           DoushiNotifier(navNotifier.getActive),
@@ -77,11 +74,5 @@ class _DoushiExerciseLevel1State extends State<DoushiExerciseLevel1> {
         ),
       ),
     );
-  }
-
-  @override
-  void initState() {
-    containerWidth = Nrs.getScreenWidth(halfWidth: true) + 80;
-    super.initState();
   }
 }

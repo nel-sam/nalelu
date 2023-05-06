@@ -4,7 +4,6 @@ import 'package:nalelu/state/manga/manga_exercise_state.dart';
 import 'package:nalelu/state/manga/models.dart';
 import 'package:nalelu/widgets/manga_exercise/speech_bubble.dart';
 import 'package:nalelu/widgets/shared/na_free_form_entry_wrapper.dart';
-import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 import 'package:nrs_flutter_lib/widgets/n_free_form_entry.dart';
 
 class MangaExerciseStateArea extends StatefulWidget {
@@ -22,7 +21,6 @@ class MangaExerciseStateArea extends StatefulWidget {
 }
 
 class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
-  late double mangaWidth;
   PhrasePart? activePhrasePart;
   Phrase? activePhrase;
 
@@ -71,39 +69,28 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                 ],
               )
             : Container(),
-        Container(
-          width: mangaWidth,
-          height: mangaWidth,
-          child: Stack(
-            fit: StackFit.expand,
-            children: <Widget>[
-              Image(
-                fit: BoxFit.cover,
-                image: AssetImage(widget.state.mangaExerciseModel.imageUrl),
+        Stack(
+          //fit: StackFit.expand,
+          children: [
+            Image(
+              fit: BoxFit.cover,
+              image: AssetImage(widget.state.mangaExerciseModel.imageUrl),
+            ),
+            ...widget.state.mangaExerciseModel.phrases.map(
+              (p) => SpeechBubble(
+                getIsCorrect: widget.state.isPhrasePartCorrect,
+                phrase: p,
+                onButtonTap: (PhrasePart phrasePart) => {
+                  setState(() {
+                    activePhrasePart = phrasePart;
+                    activePhrase = p;
+                  })
+                },
               ),
-              ...widget.state.mangaExerciseModel.phrases.map(
-                (p) => SpeechBubble(
-                  getIsCorrect: widget.state.isPhrasePartCorrect,
-                  phrase: p,
-                  onButtonTap: (PhrasePart phrasePart) => {
-                    setState(() {
-                      activePhrasePart = phrasePart;
-                      activePhrase = p;
-                    })
-                  },
-                  mangaWidth: mangaWidth,
-                ),
-              ),
-            ],
-          ),
+            ),
+          ],
         ),
       ],
     );
-  }
-
-  @override
-  void initState() {
-    mangaWidth = Nrs.getScreenWidth();
-    super.initState();
   }
 }
