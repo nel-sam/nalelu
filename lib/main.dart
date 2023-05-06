@@ -13,6 +13,15 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final primaryColor = Colors.deepOrange;
 
+    final textTheme = TextTheme(
+      titleLarge: TextStyle(fontSize: 42.0),
+      titleMedium: TextStyle(fontSize: 39.0),
+      titleSmall: TextStyle(fontSize: 22.0),
+      bodyLarge: TextStyle(fontSize: 20.0),
+      bodyMedium: TextStyle(fontSize: 18.0),
+      bodySmall: TextStyle(fontSize: 16.0),
+    );
+
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: APP_NAME,
@@ -29,6 +38,7 @@ class MyApp extends StatelessWidget {
         theme: ThemeData(
           brightness: Brightness.light,
           primarySwatch: primaryColor,
+          textTheme: textTheme,
         ),
         darkTheme: ThemeData(
           primaryColor: Colors.black,
@@ -39,6 +49,7 @@ class MyApp extends StatelessWidget {
             onPrimary: Colors.white,
           ),
           dividerColor: Colors.black12,
+          textTheme: textTheme,
         ),
         themeMode: ThemeMode.system,
         home: MyHomePage());
