@@ -18,10 +18,16 @@ Future<bool> getIsFirstTimeSetting() async {
   return isFirstTime;
 }
 
+setFirstTimeSetting() async {
+  final preferences = (await SharedPreferences.getInstance());
+  preferences.setBool("isFirstTime", true);
+}
+
 class MainMenu extends StatelessWidget {
   const MainMenu({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    // setFirstTimeSetting();
     return FutureBuilder(
         future: getIsFirstTimeSetting(),
         builder: (context, snapshot) {
