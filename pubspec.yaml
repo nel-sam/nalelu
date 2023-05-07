@@ -16,6 +16,16 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   provider: ^5.0.0
+
+  # Location > Approximate location
+  # App activity > App interactions
+  # App info and performance > Crash logs, Diagnostics
+  # Device or other identifiers > Device or other identifiers
+
+  # Is this data collected, shared, or both? Shared
+  # Is this data processed ephemerally? No
+  # Is this data required for your app, or can users choose whether it’s collected? Data collection is required (users can’t turn off this data collection)
+  # Why is this user data shared? Advertising or marketing
   google_mobile_ads: ^1.3.0
 
   nrs_flutter_lib:

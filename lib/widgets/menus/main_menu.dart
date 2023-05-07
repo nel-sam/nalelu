@@ -9,6 +9,7 @@ import 'package:nalelu/widgets/settings/keyboard_message.dart';
 import 'package:nalelu/widgets/shared/ad_card.dart';
 import 'package:nalelu/widgets/shared/na_menu_button.dart';
 import 'package:nrs_flutter_lib/widgets/n_hero_banner.dart';
+import 'package:nrs_flutter_lib/widgets/n_spinner.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 Future<bool> getIsFirstTimeSetting() async {
@@ -31,7 +32,7 @@ class MainMenu extends StatelessWidget {
               return Column(
                 children: [
                   NHeroBanner(
-                    imagePath: 'assets/banners/gates.jpg',
+                    imagePath: 'assets/banners/gates.jpeg',
                     appName: APP_NAME,
                   ),
                   Expanded(
@@ -60,7 +61,7 @@ class MainMenu extends StatelessWidget {
               );
             }
           } else {
-            return Container();
+            return NSpinner();
           }
         });
   }

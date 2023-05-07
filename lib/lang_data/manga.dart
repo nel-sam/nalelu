@@ -42,7 +42,7 @@ final mangaWordsBank = [
             FuriText(text: 'かわいいね！'),
           ]),
         ],
-        downPercentage: 80,
+        downPercentage: 90,
         rightPercentage: 15)
   ]),
   MangaExerciseModel(imageUrl: 'assets/manga/birthday.jpeg', phrases: [
@@ -109,5 +109,65 @@ final mangaWordsBank = [
         ],
         downPercentage: 70,
         rightPercentage: 10),
+  ]),
+  MangaExerciseModel(imageUrl: 'assets/manga/phone_walking.jpeg', phrases: [
+    Phrase(
+        translation: NA.t('imananishiteruno'),
+        phraseParts: [
+          PhrasePart(
+            furiTexts: [
+              FuriText(text: '今', furigana: 'いま'),
+              FuriText(text: '何', furigana: 'なに'),
+              FuriText(text: 'を'),
+            ],
+          ),
+          PhrasePart(isAnswerable: true, furiTexts: [
+            FuriText(text: 'してる', furigana: ''),
+          ]),
+          PhrasePart(furiTexts: [
+            FuriText(text: 'の？', furigana: ''),
+          ]),
+        ],
+        downPercentage: 10,
+        rightPercentage: 10),
+    Phrase(
+      translation: NA.t('imanearuiteruyo'),
+      phraseParts: [
+        PhrasePart(
+          furiTexts: [
+            FuriText(text: '今', furigana: 'いま'),
+            FuriText(text: 'ね、'),
+          ],
+        ),
+        PhrasePart(isAnswerable: true, furiTexts: [
+          FuriText(text: '歩', furigana: 'ある'),
+          FuriText(text: 'いている', furigana: ''),
+        ]),
+      ],
+      downPercentage: 30,
+      rightPercentage: 60,
+    ),
+    Phrase(
+        translation: NA.t('sokkaato15funniaeru'),
+        phraseParts: [
+          PhrasePart(furiTexts: [
+            FuriText(text: 'そうか、あと', furigana: ''),
+          ]),
+          PhrasePart(isAnswerable: true, furiTexts: [
+            FuriText(text: '三十分', furigana: 'さんじゅうぷん'),
+          ]),
+          PhrasePart(furiTexts: [
+            FuriText(text: 'に', furigana: ''),
+          ]),
+          PhrasePart(isAnswerable: true, furiTexts: [
+            FuriText(text: '会', furigana: 'あ'),
+            FuriText(text: 'える', furigana: ''),
+          ]),
+          PhrasePart(furiTexts: [
+            FuriText(text: '?', furigana: ''),
+          ]),
+        ],
+        downPercentage: 80,
+        rightPercentage: 20),
   ]),
 ];
