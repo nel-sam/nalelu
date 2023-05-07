@@ -81,7 +81,7 @@ final mangaWordsBank = [
           ]),
         ],
         downPercentage: 80,
-        rightPercentage: 20),
+        rightPercentage: 40),
   ]),
   MangaExerciseModel(imageUrl: 'assets/manga/dont_run.jpeg', phrases: [
     Phrase(
@@ -128,7 +128,7 @@ final mangaWordsBank = [
             FuriText(text: 'の？', furigana: ''),
           ]),
         ],
-        downPercentage: 10,
+        downPercentage: 0,
         rightPercentage: 10),
     Phrase(
       translation: NA.t('imanearuiteruyo'),
@@ -144,7 +144,7 @@ final mangaWordsBank = [
           FuriText(text: 'いている', furigana: ''),
         ]),
       ],
-      downPercentage: 30,
+      downPercentage: 50,
       rightPercentage: 60,
     ),
     Phrase(

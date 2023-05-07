@@ -44,7 +44,7 @@ class SpeechBubble extends StatelessWidget {
                         ? IconButton(
                             onPressed: () => onButtonTap(e),
                             icon: Icon(Icons.circle_outlined,
-                                color: Theme.of(context).primaryColor))
+                                color: Theme.of(context).colorScheme.primary))
                         : Padding(
                             padding: const EdgeInsets.only(bottom: 15.0),
                             child: FuriganaText(

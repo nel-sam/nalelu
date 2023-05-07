@@ -3,6 +3,7 @@ import 'package:nalelu/state/exercise_nav_notifier.dart';
 import 'package:nalelu/state/manga/manga_exercise_state.dart';
 import 'package:nalelu/state/manga/models.dart';
 import 'package:nalelu/widgets/manga_exercise/speech_bubble.dart';
+import 'package:nalelu/widgets/shared/furigana_text.dart';
 import 'package:nalelu/widgets/shared/na_free_form_entry_wrapper.dart';
 import 'package:nrs_flutter_lib/widgets/n_free_form_entry.dart';
 
@@ -26,7 +27,7 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
 
   Widget build(BuildContext context) {
     widget.navNotifier.onNextOrPrevious = () => activePhrasePart = null;
-
+    const double padding = 8.0;
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
@@ -34,43 +35,54 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
             ? Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(18.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        NaFreeFormEntryWrapper(
-                          widthType: NFreeFormWidths.half,
-                          hintValue: '',
-                          onChanged: (String newValue) {
-                            widget.state
-                                .updateUserInput(activePhrasePart, newValue);
+                    padding: const EdgeInsets.all(padding),
+                    child: Text(activePhrase!.translation),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(padding),
+                    child: Wrap(
+                        children: activePhrase!.phraseParts.map((e) {
+                      return e.isAnswerable
+                          ? Text(
+                              ' ____ ',
+                              style: TextStyle(
+                                height: 2.3,
+                                color: Theme.of(context).colorScheme.primary,
+                              ),
+                            )
+                          : FuriganaText(furiTexts: e.furiTexts);
+                    }).toList()),
+                  ),
+                  Padding(
+                    padding: const EdgeInsets.all(padding),
+                    child: NaFreeFormEntryWrapper(
+                      widthType: NFreeFormWidths.half,
+                      hintValue: '',
+                      onChanged: (String newValue) {
+                        widget.state
+                            .updateUserInput(activePhrasePart, newValue);
 
-                            final isPhrasePartCorrect = widget.state
-                                .isPhrasePartCorrect(activePhrasePart);
+                        final isPhrasePartCorrect =
+                            widget.state.isPhrasePartCorrect(activePhrasePart);
 
-                            if (isPhrasePartCorrect) {
-                              setState(() {
-                                activePhrasePart = null;
-                              });
-                            }
-                          },
-                          initialValue:
-                              widget.state.getUserInput(activePhrasePart),
-                          correctValues:
-                              widget.state.getCorrectAnswers(activePhrasePart),
-                          onCorrect: () {
-                            setState(() {});
-                          },
-                        )
-                      ],
+                        if (isPhrasePartCorrect) {
+                          setState(() {
+                            activePhrasePart = null;
+                          });
+                        }
+                      },
+                      initialValue: widget.state.getUserInput(activePhrasePart),
+                      correctValues:
+                          widget.state.getCorrectAnswers(activePhrasePart),
+                      onCorrect: () {
+                        setState(() {});
+                      },
                     ),
                   ),
-                  Text(activePhrase!.translation),
                 ],
               )
             : Container(),
         Stack(
-          //fit: StackFit.expand,
           children: [
             Image(
               fit: BoxFit.cover,
