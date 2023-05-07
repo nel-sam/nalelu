@@ -8,7 +8,7 @@ import 'package:nalelu/widgets/menus/numbers_menu.dart';
 import 'package:nalelu/widgets/settings/keyboard_message.dart';
 import 'package:nalelu/widgets/shared/ad_card.dart';
 import 'package:nalelu/widgets/shared/na_menu_button.dart';
-import 'package:nrs_flutter_lib/constants.dart';
+import 'package:nrs_flutter_lib/widgets/n_hero_banner.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 Future<bool> getIsFirstTimeSetting() async {
@@ -30,30 +30,9 @@ class MainMenu extends StatelessWidget {
             } else {
               return Column(
                 children: [
-                  Container(
-                    height: 250,
-                    decoration: BoxDecoration(
-                      image: DecorationImage(
-                        image: AssetImage('assets/banners/gates.jpeg'),
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                    child: Padding(
-                      padding: const EdgeInsets.only(
-                          top: FONT_SIZE, left: FONT_SIZE),
-                      child: Row(
-                        children: [
-                          Text(
-                            APP_NAME,
-                            style: TextStyle(
-                              fontSize: 30,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ),
+                  NHeroBanner(
+                    imagePath: 'assets/banners/gates.jpg',
+                    appName: APP_NAME,
                   ),
                   Expanded(
                     child: Column(
