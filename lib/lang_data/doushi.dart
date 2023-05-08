@@ -8,10 +8,10 @@ var doushiBank = [
     root: '持ち',
     translation: NA.t('Motsu'),
     casual: DoushiConj(
-      present: '持つ',
-      pastSimple: '持った',
-      negative: '持たない',
-      negativePast: '持たなかった',
+      present: ['もつ', '持つ'],
+      pastSimple: ['もった', '持った'],
+      negative: ['もたない', '持たない'],
+      negativePast: ['もたなかった', '持たなかった'],
     ),
   ),
   Doushi(
@@ -21,10 +21,10 @@ var doushiBank = [
     root: '聞き',
     translation: NA.t('kiku'),
     casual: DoushiConj(
-      present: '聞く',
-      pastSimple: '聞いた',
-      negative: '聞かない',
-      negativePast: '聞かなかった',
+      present: ['きく', '聞く'],
+      pastSimple: ['きいた', '聞いた'],
+      negative: ['きかない', '聞かない'],
+      negativePast: ['きかなかった', '聞かなかった'],
     ),
   ),
   Doushi(
@@ -34,10 +34,10 @@ var doushiBank = [
     root: '見',
     translation: NA.t('miru'),
     casual: DoushiConj(
-      present: '見る',
-      pastSimple: '見た',
-      negative: '見ない',
-      negativePast: "見なかった",
+      present: ['みる', '見る'],
+      pastSimple: ['みた', '見た'],
+      negative: ['みない', '見ない'],
+      negativePast: ['みなかった', "見なかった"],
     ),
   ),
   Doushi(
@@ -47,10 +47,10 @@ var doushiBank = [
     root: '入り',
     translation: NA.t('hairu'),
     casual: DoushiConj(
-      present: '入る',
-      pastSimple: '入った',
-      negative: '入らない',
-      negativePast: '入らなかった',
+      present: ['はいる', '入る'],
+      pastSimple: ['はいった', '入った'],
+      negative: ['はいらない', '入らない'],
+      negativePast: ['はいらなかった', '入らなかった'],
     ),
   ),
   Doushi(
@@ -60,10 +60,10 @@ var doushiBank = [
     root: 'き',
     translation: NA.t('kuru'),
     casual: DoushiConj(
-      present: '来る',
-      pastSimple: '来た',
-      negative: '来ない',
-      negativePast: '来なかった',
+      present: ['くる', '来る'],
+      pastSimple: ['くた', '来た'],
+      negative: ['くない', '来ない'],
+      negativePast: ['くなかった', '来なかった'],
     ),
   ),
   Doushi(
@@ -73,10 +73,10 @@ var doushiBank = [
     root: 'なり',
     translation: NA.t('naru'),
     casual: DoushiConj(
-      present: 'なる',
-      pastSimple: 'なった',
-      negative: 'ならない',
-      negativePast: 'ならなかった',
+      present: ['なる', '成る'],
+      pastSimple: ['なった', '成った'],
+      negative: ['ならない', '成らない'],
+      negativePast: ['ならなかった', '成らなかった'],
     ),
   ),
   Doushi(
@@ -86,10 +86,10 @@ var doushiBank = [
     root: '走り',
     translation: NA.t('hashiru'),
     casual: DoushiConj(
-      present: '走る',
-      pastSimple: '走った',
-      negative: '走らない',
-      negativePast: '走らなかった',
+      present: ['はしる', '走る'],
+      pastSimple: ['はしった', '走った'],
+      negative: ['はしらない', '走らない'],
+      negativePast: ['はしらなかった', '走らなかった'],
     ),
   ),
   Doushi(
@@ -99,10 +99,10 @@ var doushiBank = [
     root: '',
     translation: NA.t('suru'),
     casual: DoushiConj(
-      present: 'する',
-      pastSimple: 'した',
-      negative: 'しない',
-      negativePast: 'しなかった',
+      present: ['する'],
+      pastSimple: ['した'],
+      negative: ['しない'],
+      negativePast: ['しなかった'],
     ),
   ),
   Doushi(
@@ -112,10 +112,36 @@ var doushiBank = [
     root: '歩き',
     translation: NA.t('aruku'),
     casual: DoushiConj(
-      present: '歩く',
-      pastSimple: '歩いた',
-      negative: '歩かない',
-      negativePast: '歩かなかった',
+      present: ['あるく', '歩く'],
+      pastSimple: ['あるいた', '歩いた'],
+      negative: ['あるかない', '歩かない'],
+      negativePast: ['あるかなかった', '歩かなかった'],
+    ),
+  ),
+  Doushi(
+    isIrregular: true,
+    infinitive: '居る',
+    infinitiveFurigana: 'い',
+    root: '居',
+    translation: NA.t('iru_to_be'),
+    casual: DoushiConj(
+      present: ['いる', '居る'],
+      pastSimple: ['いた', '居た'],
+      negative: ['いない', '居ない'],
+      negativePast: ['いなかった', '居なかった'],
+    ),
+  ),
+  Doushi(
+    isIrregular: true,
+    infinitive: '要る',
+    infinitiveFurigana: 'い',
+    root: '要り',
+    translation: NA.t('iru_need'),
+    casual: DoushiConj(
+      present: ['いる', '要る'],
+      pastSimple: ['いった', '要った'],
+      negative: ['いらない', '要らない'],
+      negativePast: ['いらなかった', '要らなかった'],
     ),
   ),
 ];
@@ -140,10 +166,10 @@ class Doushi {
 }
 
 class DoushiConj {
-  final String present;
-  final String pastSimple;
-  final String negative;
-  final String negativePast;
+  final List<String> present;
+  final List<String> pastSimple;
+  final List<String> negative;
+  final List<String> negativePast;
 
   DoushiConj({
     required this.present,

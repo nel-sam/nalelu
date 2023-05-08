@@ -7,8 +7,8 @@ class VerbInput extends StatelessWidget {
   final Doushi doushi;
   final String hintValue;
 
-  final String
-      correctValue; // TODO: Make into list so we can accept hiragana answers
+  final List<String>
+      correctValues; // TODO: Make into list so we can accept hiragana answers
   final String activeValue;
   final Function(String) onSubmitted;
   final Function onCorrect;
@@ -16,7 +16,7 @@ class VerbInput extends StatelessWidget {
   const VerbInput({
     Key? key,
     required this.doushi,
-    required this.correctValue,
+    required this.correctValues,
     required this.activeValue,
     required this.onSubmitted,
     required this.onCorrect,
@@ -32,7 +32,7 @@ class VerbInput extends StatelessWidget {
         onSubmitted(newValue);
       },
       initialValue: activeValue,
-      correctValues: [correctValue],
+      correctValues: correctValues,
       onCorrect: onCorrect,
     );
   }

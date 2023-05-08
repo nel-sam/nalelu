@@ -57,11 +57,11 @@ class VerbChart extends StatelessWidget {
                   children: [
                     ChartRow(
                       label: NA.t('present'),
-                      conj: doushi.casual.present,
+                      conj: doushi.casual.present.first,
                     ),
                     ChartRow(
                       label: NA.t('past'),
-                      conj: doushi.casual.pastSimple,
+                      conj: doushi.casual.pastSimple.first,
                     ),
                   ],
                 ),

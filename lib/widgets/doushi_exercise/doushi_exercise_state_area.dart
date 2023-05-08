@@ -38,7 +38,7 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
             doushi: widget.state.doushi,
             hintValue: NA.t('present'),
             activeValue: widget.state.getUserInput(0),
-            correctValue: widget.state.doushi.casual.present,
+            correctValues: widget.state.doushi.casual.present,
             onSubmitted: (String newValue) {
               widget.state.updateUserInput(0, newValue);
             },
@@ -51,7 +51,7 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
           doushi: widget.state.doushi,
           hintValue: NA.t('past'),
           activeValue: widget.state.getUserInput(1),
-          correctValue: widget.state.doushi.casual.pastSimple,
+          correctValues: widget.state.doushi.casual.pastSimple,
           onSubmitted: (String newValue) {
             widget.state.updateUserInput(1, newValue);
           },
@@ -63,7 +63,7 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
           doushi: widget.state.doushi,
           hintValue: NA.t('negative'),
           activeValue: widget.state.getUserInput(2),
-          correctValue: widget.state.doushi.casual.negative,
+          correctValues: widget.state.doushi.casual.negative,
           onSubmitted: (String newValue) {
             widget.state.updateUserInput(2, newValue);
           },
@@ -75,7 +75,7 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
           doushi: widget.state.doushi,
           hintValue: NA.t('negativePast'),
           activeValue: widget.state.getUserInput(2),
-          correctValue: widget.state.doushi.casual.negativePast,
+          correctValues: widget.state.doushi.casual.negativePast,
           onSubmitted: (String newValue) {
             widget.state.updateUserInput(3, newValue);
           },
