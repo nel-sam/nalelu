@@ -63,7 +63,7 @@ var doushiBank = [
       present: '来る',
       pastSimple: '来た',
       negative: '来ない',
-      negativePast: 'konakatta',
+      negativePast: '来なかった',
     ),
   ),
   Doushi(

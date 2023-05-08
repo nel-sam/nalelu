@@ -7,7 +7,8 @@ class VerbInput extends StatelessWidget {
   final Doushi doushi;
   final String hintValue;
 
-  final String correctValue;
+  final String
+      correctValue; // TODO: Make into list so we can accept hiragana answers
   final String activeValue;
   final Function(String) onSubmitted;
   final Function onCorrect;
