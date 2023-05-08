@@ -12,6 +12,8 @@ var doushiBank = [
       pastSimple: ['もった', '持った'],
       negative: ['もたない', '持たない'],
       negativePast: ['もたなかった', '持たなかった'],
+      presentProgressive: ['もっている', '持っている'],
+      negativePresentProgressive: ['もっていない', '持っていない'],
     ),
   ),
   Doushi(
@@ -25,6 +27,8 @@ var doushiBank = [
       pastSimple: ['きいた', '聞いた'],
       negative: ['きかない', '聞かない'],
       negativePast: ['きかなかった', '聞かなかった'],
+      presentProgressive: ['きいている', '聞いている'],
+      negativePresentProgressive: ['きいていない', '聞いていない'],
     ),
   ),
   Doushi(
@@ -38,6 +42,8 @@ var doushiBank = [
       pastSimple: ['みた', '見た'],
       negative: ['みない', '見ない'],
       negativePast: ['みなかった', "見なかった"],
+      presentProgressive: ['みている', '見ている'],
+      negativePresentProgressive: ['みていない', '見ていない'],
     ),
   ),
   Doushi(
@@ -51,6 +57,8 @@ var doushiBank = [
       pastSimple: ['はいった', '入った'],
       negative: ['はいらない', '入らない'],
       negativePast: ['はいらなかった', '入らなかった'],
+      presentProgressive: ['はいっている', '入っている'],
+      negativePresentProgressive: ['はいっていない', '入っていない'],
     ),
   ),
   Doushi(
@@ -64,6 +72,8 @@ var doushiBank = [
       pastSimple: ['くた', '来た'],
       negative: ['くない', '来ない'],
       negativePast: ['くなかった', '来なかった'],
+      presentProgressive: ['きている', '来ている'],
+      negativePresentProgressive: ['きていない', '来ていない'],
     ),
   ),
   Doushi(
@@ -77,6 +87,8 @@ var doushiBank = [
       pastSimple: ['なった', '成った'],
       negative: ['ならない', '成らない'],
       negativePast: ['ならなかった', '成らなかった'],
+      presentProgressive: ['なっている', '成っている'],
+      negativePresentProgressive: ['なっていない', '成っていない'],
     ),
   ),
   Doushi(
@@ -90,6 +102,8 @@ var doushiBank = [
       pastSimple: ['はしった', '走った'],
       negative: ['はしらない', '走らない'],
       negativePast: ['はしらなかった', '走らなかった'],
+      presentProgressive: ['はしっている', '走っている'],
+      negativePresentProgressive: ['はしっていない', '走っていない'],
     ),
   ),
   Doushi(
@@ -103,6 +117,8 @@ var doushiBank = [
       pastSimple: ['した'],
       negative: ['しない'],
       negativePast: ['しなかった'],
+      presentProgressive: ['している'],
+      negativePresentProgressive: ['していない'],
     ),
   ),
   Doushi(
@@ -116,10 +132,12 @@ var doushiBank = [
       pastSimple: ['あるいた', '歩いた'],
       negative: ['あるかない', '歩かない'],
       negativePast: ['あるかなかった', '歩かなかった'],
+      presentProgressive: ['あるいている', '歩いている'],
+      negativePresentProgressive: ['あるいていない', '歩いていない'],
     ),
   ),
   Doushi(
-    isIrregular: true,
+    isIrregular: false,
     infinitive: '居る',
     infinitiveFurigana: 'い',
     root: '居',
@@ -129,10 +147,12 @@ var doushiBank = [
       pastSimple: ['いた', '居た'],
       negative: ['いない', '居ない'],
       negativePast: ['いなかった', '居なかった'],
+      presentProgressive: ['', ''],
+      negativePresentProgressive: ['', ''],
     ),
   ),
   Doushi(
-    isIrregular: true,
+    isIrregular: false,
     infinitive: '要る',
     infinitiveFurigana: 'い',
     root: '要り',
@@ -142,6 +162,8 @@ var doushiBank = [
       pastSimple: ['いった', '要った'],
       negative: ['いらない', '要らない'],
       negativePast: ['いらなかった', '要らなかった'],
+      presentProgressive: ['いっている', '要っている'],
+      negativePresentProgressive: ['いっていない', '要っていない'],
     ),
   ),
 ];
@@ -170,11 +192,15 @@ class DoushiConj {
   final List<String> pastSimple;
   final List<String> negative;
   final List<String> negativePast;
+  final List<String> presentProgressive;
+  final List<String> negativePresentProgressive;
 
   DoushiConj({
     required this.present,
     required this.pastSimple,
     required this.negative,
     required this.negativePast,
+    required this.presentProgressive,
+    required this.negativePresentProgressive,
   });
 }

@@ -53,6 +53,10 @@
   "future": "Future",
   "conditional": "Conditional",
   "propositive": "Propositive",
+  "negative": "Negative",
+  "negativePast": "Negative Past",
+  "presentProgressive": "Present Progressive",
+  "negativePresentProgressive": "Present Prog Negative",
   "exercise": "Exercise",
   "only_japanese_text_allowed": "Only hiragana and kanji is allowed",
   "nekoirutoshiranakatta": "I didn't know you had a cat",
@@ -73,8 +77,5 @@
   "welcome_to_nalelu": "Welcome to nalelu",
   "japanese_keyboard_needed": "To use nalelu you'll need a Japanese keyboard installed",
   "instructions": "Instructions",
-  "continue": "Continue",
-  "negative": "Negative",
-  "negativePast": "Negative Past"
-
+  "continue": "Continue"
 }
