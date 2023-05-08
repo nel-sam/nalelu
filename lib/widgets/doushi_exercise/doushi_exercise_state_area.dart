@@ -74,7 +74,7 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
         VerbInput(
           doushi: widget.state.doushi,
           hintValue: NA.t('negativePast'),
-          activeValue: widget.state.getUserInput(2),
+          activeValue: widget.state.getUserInput(3),
           correctValues: widget.state.doushi.casual.negativePast,
           onSubmitted: (String newValue) {
             widget.state.updateUserInput(3, newValue);
