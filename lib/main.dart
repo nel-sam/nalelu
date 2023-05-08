@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:localization/localization.dart';
 import 'package:nalelu/constants.dart';
+import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/widgets/menus/main_menu.dart';
-import 'package:nalelu/widgets/settings/keyboard_message.dart';
+import 'package:nrs_flutter_lib/widgets/n_keyboard_message.dart';
 import 'package:nrs_flutter_lib/widgets/n_spinner.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
@@ -80,7 +81,13 @@ class _MyHomePageState extends State<MyHomePage> {
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             if ((snapshot.data as bool)) {
-              return KeyboardMessage();
+              return KeyboardMessage(
+                continueText: NA.t('continue'),
+                instructionsText: NA.t('instructions'),
+                keyboardNeededText: NA.t('japanese_keyboard_needed'),
+                mainMenu: MainMenu(),
+                welcomeText: NA.t('welcome_to_nalelu'),
+              );
             } else {
               return MainMenu();
             }
