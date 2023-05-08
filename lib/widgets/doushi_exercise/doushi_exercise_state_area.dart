@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/state/doushi/doushi_exercise_state.dart';
 import 'package:nalelu/widgets/doushi_exercise/verb_input.dart';
-import 'package:nrs_flutter_lib/constants.dart';
 import 'package:nrs_flutter_lib/widgets/n_text_span.dart';
 
 class DoushiExerciseStateArea extends StatefulWidget {
@@ -20,18 +19,7 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        Row(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            NTextSpan(
-              widget.state.doushi.infinitive,
-              textStyle: NA.fontStyleBold(context),
-              textAlign: TextAlign.end,
-            ),
-            SizedBox(width: FONT_SIZE),
-            NTextSpan(widget.state.doushi.translation),
-          ],
-        ),
+        NTextSpan(widget.state.doushi.translation),
         Padding(
           padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
           child: VerbInput(
