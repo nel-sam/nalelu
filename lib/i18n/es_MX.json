@@ -71,5 +71,7 @@
   "welcome_to_nalelu": "Bienvenidos a nalelu",
   "japanese_keyboard_needed": "Para usar nalelu, necesitarás configurar el teclado a japonés",
   "instructions": "Instrucciones",
-  "continue": "Continuar"
+  "continue": "Continuar",
+  "negative": "Negativo",
+  "negativePast": "Negativo del pasado"
 }

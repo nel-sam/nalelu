@@ -59,6 +59,30 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
             setState(() {});
           },
         ),
+        VerbInput(
+          doushi: widget.state.doushi,
+          hintValue: NA.t('negative'),
+          activeValue: widget.state.getUserInput(2),
+          correctValue: widget.state.doushi.casual.negative,
+          onSubmitted: (String newValue) {
+            widget.state.updateUserInput(2, newValue);
+          },
+          onCorrect: () {
+            setState(() {});
+          },
+        ),
+        VerbInput(
+          doushi: widget.state.doushi,
+          hintValue: NA.t('negativePast'),
+          activeValue: widget.state.getUserInput(2),
+          correctValue: widget.state.doushi.casual.negativePast,
+          onSubmitted: (String newValue) {
+            widget.state.updateUserInput(3, newValue);
+          },
+          onCorrect: () {
+            setState(() {});
+          },
+        ),
       ],
     );
   }
