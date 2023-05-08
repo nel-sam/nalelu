@@ -10,8 +10,8 @@ var doushiBank = [
     casual: DoushiConj(
       present: '持つ',
       pastSimple: '持った',
-      negative: '',
-      negativePast: '',
+      negative: '持たない',
+      negativePast: '持たなかった',
     ),
   ),
   Doushi(
@@ -23,6 +23,8 @@ var doushiBank = [
     casual: DoushiConj(
       present: '聞く',
       pastSimple: '聞いた',
+      negative: '聞かない',
+      negativePast: '聞かなかった',
     ),
   ),
   Doushi(
@@ -34,6 +36,8 @@ var doushiBank = [
     casual: DoushiConj(
       present: '見る',
       pastSimple: '見た',
+      negative: '見ない',
+      negativePast: "見なかった",
     ),
   ),
   Doushi(
@@ -45,6 +49,8 @@ var doushiBank = [
     casual: DoushiConj(
       present: '入る',
       pastSimple: '入った',
+      negative: '入らない',
+      negativePast: '入らなかった',
     ),
   ),
   Doushi(
@@ -56,6 +62,8 @@ var doushiBank = [
     casual: DoushiConj(
       present: '来る',
       pastSimple: '来た',
+      negative: '来ない',
+      negativePast: 'konakatta',
     ),
   ),
   Doushi(
@@ -67,6 +75,8 @@ var doushiBank = [
     casual: DoushiConj(
       present: 'なる',
       pastSimple: 'なった',
+      negative: 'ならない',
+      negativePast: 'ならなかった',
     ),
   ),
   Doushi(
@@ -78,6 +88,8 @@ var doushiBank = [
     casual: DoushiConj(
       present: '走る',
       pastSimple: '走った',
+      negative: '走らない',
+      negativePast: '走らなかった',
     ),
   ),
   Doushi(
@@ -89,6 +101,8 @@ var doushiBank = [
     casual: DoushiConj(
       present: 'する',
       pastSimple: 'した',
+      negative: 'しない',
+      negativePast: 'しなかった',
     ),
   ),
   Doushi(
@@ -100,6 +114,8 @@ var doushiBank = [
     casual: DoushiConj(
       present: '歩く',
       pastSimple: '歩いた',
+      negative: '歩かない',
+      negativePast: '歩かなかった',
     ),
   ),
 ];
