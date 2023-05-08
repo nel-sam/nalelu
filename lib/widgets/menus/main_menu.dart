@@ -13,35 +13,40 @@ class MainMenu extends StatelessWidget {
   const MainMenu({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        NHeroBanner(
-          imagePath: 'assets/banners/gates.jpeg',
-          appName: APP_NAME,
+    return Scaffold(
+      resizeToAvoidBottomInset: false,
+      body: Center(
+        child: Column(
+          children: [
+            NHeroBanner(
+              imagePath: 'assets/banners/gates.jpeg',
+              appName: APP_NAME,
+            ),
+            Expanded(
+              child: Column(
+                children: [
+                  NAMenuButton(
+                    destination: MangaExercise(),
+                    label: NA.t('manga'),
+                    translabel: [FuriText(text: '漫画', furigana: 'まんが')],
+                  ),
+                  NAMenuButton(
+                    destination: NumbersMenu(),
+                    label: NA.t('numbersExercise'),
+                    translabel: [FuriText(text: '数字', furigana: 'すうじ')],
+                  ),
+                  NAMenuButton(
+                    destination: DoushiExerciseLevel1(),
+                    label: NA.t('verbs'),
+                    translabel: [FuriText(text: '動詞', furigana: 'どうし')],
+                  ),
+                ],
+              ),
+            ),
+            const AdCard(),
+          ],
         ),
-        Expanded(
-          child: Column(
-            children: [
-              NAMenuButton(
-                destination: MangaExercise(),
-                label: NA.t('manga'),
-                translabel: [FuriText(text: '漫画', furigana: 'まんが')],
-              ),
-              NAMenuButton(
-                destination: NumbersMenu(),
-                label: NA.t('numbersExercise'),
-                translabel: [FuriText(text: '数字', furigana: 'すうじ')],
-              ),
-              NAMenuButton(
-                destination: DoushiExerciseLevel1(),
-                label: NA.t('verbs'),
-                translabel: [FuriText(text: '動詞', furigana: 'どうし')],
-              ),
-            ],
-          ),
-        ),
-        const AdCard(),
-      ],
+      ),
     );
   }
 }

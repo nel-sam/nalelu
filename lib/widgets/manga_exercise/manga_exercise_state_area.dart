@@ -35,11 +35,11 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
             ? Column(
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(padding),
+                    padding: const EdgeInsets.only(top: padding),
                     child: Text(activePhrase!.translation),
                   ),
                   Padding(
-                    padding: const EdgeInsets.all(padding),
+                    padding: const EdgeInsets.only(bottom: padding),
                     child: Wrap(
                         children: activePhrase!.phraseParts.map((e) {
                       return e.isAnswerable

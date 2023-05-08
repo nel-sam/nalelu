@@ -82,12 +82,7 @@ class _MyHomePageState extends State<MyHomePage> {
             if ((snapshot.data as bool)) {
               return KeyboardMessage();
             } else {
-              return Scaffold(
-                resizeToAvoidBottomInset: false,
-                body: Center(
-                  child: MainMenu(),
-                ),
-              );
+              return MainMenu();
             }
           } else {
             return NSpinner();

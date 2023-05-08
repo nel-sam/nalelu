@@ -14,10 +14,9 @@ Future setFirstTimeSetting() async {
 }
 
 class KeyboardMessage extends StatelessWidget {
-  final String androidUrl =
-      "https://support.google.com/gboard/answer/7068494?hl=en&co=GENIE.Platform%3DAndroid";
+  final String androidUrl = "https://support.google.com/gboard/answer/7068494";
   final String iosUrl =
-      "https://support.apple.com/guide/iphone/add-or-change-keyboards-iph73b71eb/ios#:~:text=Go%20to%20Settings%20%3E%20General%20%3E%20Keyboard%20%3E%20Keyboards.,alternative%20layout%20from%20the%20list.";
+      "https://support.apple.com/guide/iphone/add-or-change-keyboards-iph73b71eb/ios";
   const KeyboardMessage({Key? key}) : super(key: key);
 
   @override
@@ -30,7 +29,7 @@ class KeyboardMessage extends StatelessWidget {
       isAndroid = false;
     }
 
-    final uri = isAndroid ? Uri(path: androidUrl) : Uri(path: iosUrl);
+    final uri = isAndroid ? Uri.parse(androidUrl) : Uri.parse(iosUrl);
     return Scaffold(
       resizeToAvoidBottomInset: false,
       body: Center(
