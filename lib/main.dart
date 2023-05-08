@@ -18,6 +18,11 @@ Future<bool> getIsFirstTimeSetting() async {
   return isFirstTime;
 }
 
+Future setFirstTimeSetting() async {
+  final preferences = (await SharedPreferences.getInstance());
+  preferences.setBool("isFirstTime", false);
+}
+
 class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
@@ -81,12 +86,18 @@ class _MyHomePageState extends State<MyHomePage> {
         builder: (context, snapshot) {
           if (snapshot.connectionState == ConnectionState.done) {
             if ((snapshot.data as bool)) {
-              return KeyboardMessage(
-                continueText: NA.t('continue'),
-                instructionsText: NA.t('instructions'),
-                keyboardNeededText: NA.t('japanese_keyboard_needed'),
-                mainMenu: MainMenu(),
+              return NKeyboardMessage(
                 welcomeText: NA.t('welcome_to_nalelu'),
+                detailsText: NA.t('japanese_keyboard_needed'),
+                instructionsButtonText: NA.t('instructions'),
+                continueLinkText: NA.t('continue'),
+                onContinue: () async {
+                  await setFirstTimeSetting();
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => MainMenu()),
+                  );
+                },
               );
             } else {
               return MainMenu();
