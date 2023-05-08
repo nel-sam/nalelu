@@ -9,7 +9,9 @@ var doushiBank = [
     translation: NA.t('Motsu'),
     casual: DoushiConj(
       present: '持つ',
-      past: '持った',
+      pastSimple: '持った',
+      negative: '',
+      negativePast: '',
     ),
   ),
   Doushi(
@@ -20,7 +22,7 @@ var doushiBank = [
     translation: NA.t('kiku'),
     casual: DoushiConj(
       present: '聞く',
-      past: '聞いた',
+      pastSimple: '聞いた',
     ),
   ),
   Doushi(
@@ -31,7 +33,7 @@ var doushiBank = [
     translation: NA.t('miru'),
     casual: DoushiConj(
       present: '見る',
-      past: '見た',
+      pastSimple: '見た',
     ),
   ),
   Doushi(
@@ -42,7 +44,7 @@ var doushiBank = [
     translation: NA.t('hairu'),
     casual: DoushiConj(
       present: '入る',
-      past: '入った',
+      pastSimple: '入った',
     ),
   ),
   Doushi(
@@ -53,7 +55,7 @@ var doushiBank = [
     translation: NA.t('kuru'),
     casual: DoushiConj(
       present: '来る',
-      past: '来た',
+      pastSimple: '来た',
     ),
   ),
   Doushi(
@@ -64,7 +66,7 @@ var doushiBank = [
     translation: NA.t('naru'),
     casual: DoushiConj(
       present: 'なる',
-      past: 'なった',
+      pastSimple: 'なった',
     ),
   ),
   Doushi(
@@ -75,7 +77,7 @@ var doushiBank = [
     translation: NA.t('hashiru'),
     casual: DoushiConj(
       present: '走る',
-      past: '走った',
+      pastSimple: '走った',
     ),
   ),
   Doushi(
@@ -86,7 +88,7 @@ var doushiBank = [
     translation: NA.t('suru'),
     casual: DoushiConj(
       present: 'する',
-      past: 'した',
+      pastSimple: 'した',
     ),
   ),
   Doushi(
@@ -97,7 +99,7 @@ var doushiBank = [
     translation: NA.t('aruku'),
     casual: DoushiConj(
       present: '歩く',
-      past: '歩いた',
+      pastSimple: '歩いた',
     ),
   ),
 ];
@@ -123,10 +125,14 @@ class Doushi {
 
 class DoushiConj {
   final String present;
-  final String past;
+  final String pastSimple;
+  final String negative;
+  final String negativePast;
 
   DoushiConj({
     required this.present,
-    required this.past,
+    required this.pastSimple,
+    required this.negative,
+    required this.negativePast,
   });
 }

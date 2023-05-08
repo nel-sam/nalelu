@@ -43,8 +43,7 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
               widget.state.updateUserInput(0, newValue);
             },
             onCorrect: () {
-              setState(() {
-              });
+              setState(() {});
             },
           ),
         ),
@@ -52,13 +51,12 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
           doushi: widget.state.doushi,
           hintValue: NA.t('past'),
           activeValue: widget.state.getUserInput(1),
-          correctValue: widget.state.doushi.casual.past,
+          correctValue: widget.state.doushi.casual.pastSimple,
           onSubmitted: (String newValue) {
             widget.state.updateUserInput(1, newValue);
           },
           onCorrect: () {
-            setState(() {
-            });
+            setState(() {});
           },
         ),
       ],
