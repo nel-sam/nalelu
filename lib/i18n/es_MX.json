@@ -67,6 +67,9 @@
   "counter": "Contador",
   "imananishiteruno": "¿Qué estás haciendo ahora?",
   "imanearuiteruyo": "¿Ahora? Estoy caminando",
-  "sokkaato15funniaeru": "OK. ¿Podemos reunirnos en quince minutos?"
-
+  "sokkaato15funniaeru": "OK. ¿Podemos reunirnos en quince minutos?",
+  "welcome_to_nalelu": "Bienvenidos a nalelu",
+  "japanese_keyboard_needed": "Para usar nalelu, necesitarás configurar el teclado a japonés",
+  "instructions": "Instrucciones",
+  "continue": "Continuar"
 }

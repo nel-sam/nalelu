@@ -53,6 +53,6 @@ class MangaExerciseState {
   }
 
   String _getInputKey(PhrasePart phrasePart) {
-    return phrasePart.furiTexts.join();
+    return phrasePart.furiTexts.map((e) => e.text).join();
   }
 }

@@ -3,9 +3,18 @@ import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:localization/localization.dart';
 import 'package:nalelu/constants.dart';
 import 'package:nalelu/widgets/menus/main_menu.dart';
+import 'package:nalelu/widgets/settings/keyboard_message.dart';
+import 'package:nrs_flutter_lib/widgets/n_spinner.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
   runApp(MyApp());
+}
+
+Future<bool> getIsFirstTimeSetting() async {
+  final preferences = (await SharedPreferences.getInstance());
+  final isFirstTime = preferences.getBool('isFirstTime') ?? true;
+  return isFirstTime;
 }
 
 class MyApp extends StatelessWidget {
@@ -66,10 +75,23 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Center(
-        child: MainMenu(),
-      ),
-    );
+    return FutureBuilder(
+        future: getIsFirstTimeSetting(),
+        builder: (context, snapshot) {
+          if (snapshot.connectionState == ConnectionState.done) {
+            if ((snapshot.data as bool)) {
+              return KeyboardMessage();
+            } else {
+              return Scaffold(
+                resizeToAvoidBottomInset: false,
+                body: Center(
+                  child: MainMenu(),
+                ),
+              );
+            }
+          } else {
+            return NSpinner();
+          }
+        });
   }
 }
