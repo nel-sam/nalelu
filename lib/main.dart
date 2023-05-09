@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:localization/localization.dart';
 import 'package:nalelu/constants.dart';
 import 'package:nalelu/na_helpers.dart';
@@ -9,7 +10,14 @@ import 'package:nrs_flutter_lib/widgets/n_spinner.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 void main() {
-  runApp(MyApp());
+  WidgetsFlutterBinding.ensureInitialized();
+  MobileAds.instance.initialize();
+
+  final RequestConfiguration requestConfiguration = RequestConfiguration(
+      tagForUnderAgeOfConsent: TagForUnderAgeOfConsent.yes);
+  MobileAds.instance.updateRequestConfiguration(requestConfiguration);
+
+  runApp(NaleluApp());
 }
 
 Future<bool> getIsFirstTimeSetting() async {
@@ -23,7 +31,14 @@ Future setFirstTimeSetting() async {
   preferences.setBool("isFirstTime", false);
 }
 
-class MyApp extends StatelessWidget {
+class MyHomePage extends StatefulWidget {
+  MyHomePage({Key? key}) : super(key: key);
+
+  @override
+  _MyHomePageState createState() => _MyHomePageState();
+}
+
+class NaleluApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final primaryColor = Colors.deepOrange;
@@ -69,13 +84,6 @@ class MyApp extends StatelessWidget {
         themeMode: ThemeMode.system,
         home: MyHomePage());
   }
-}
-
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key}) : super(key: key);
-
-  @override
-  _MyHomePageState createState() => _MyHomePageState();
 }
 
 class _MyHomePageState extends State<MyHomePage> {
