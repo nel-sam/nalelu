@@ -90,6 +90,7 @@ class _MyHomePageState extends State<MyHomePage> {
                 detailsText: NA.t('japanese_keyboard_needed'),
                 instructionsButtonText: NA.t('instructions'),
                 continueLinkText: NA.t('continue'),
+                imageUrl: 'assets/banners/slant_keyboard.png',
                 onContinue: () async {
                   await setFirstTimeSetting();
                   Navigator.push(
