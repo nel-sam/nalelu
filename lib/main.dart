@@ -29,13 +29,15 @@ class MyApp extends StatelessWidget {
     final primaryColor = Colors.deepOrange;
 
     final textTheme = TextTheme(
-      titleLarge: TextStyle(fontSize: 42.0),
-      titleMedium: TextStyle(fontSize: 39.0),
-      titleSmall: TextStyle(fontSize: 22.0),
-      bodyLarge: TextStyle(fontSize: 20.0),
-      bodyMedium: TextStyle(fontSize: 18.0),
-      bodySmall: TextStyle(fontSize: 16.0),
-    );
+        titleLarge: TextStyle(fontSize: 16.0),
+        titleMedium: TextStyle(fontSize: 13.0),
+        titleSmall: TextStyle(fontSize: 10.0),
+        bodyLarge: TextStyle(fontSize: 20.0),
+        bodyMedium: TextStyle(fontSize: 18.0),
+        bodySmall: TextStyle(fontSize: 16.0),
+        headlineLarge: TextStyle(fontSize: 42.0),
+        headlineMedium: TextStyle(fontSize: 39.0),
+        headlineSmall: TextStyle(fontSize: 22.0));
 
     return MaterialApp(
         debugShowCheckedModeBanner: false,
@@ -56,14 +58,14 @@ class MyApp extends StatelessWidget {
           textTheme: textTheme,
         ),
         darkTheme: ThemeData(
-          primaryColor: Colors.black,
+          // primaryColor: Colors.black,
           brightness: Brightness.dark,
           colorScheme: ColorScheme.dark(
             primary: primaryColor,
-            background: const Color(0xFF212121),
+            // background: const Color(0xFF212121),
             onPrimary: Colors.white,
           ),
-          dividerColor: Colors.black12,
+          // dividerColor: Colors.black12,
           textTheme: textTheme,
         ),
         themeMode: ThemeMode.system,
