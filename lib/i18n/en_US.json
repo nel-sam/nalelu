@@ -77,5 +77,8 @@
   "welcome_to_nalelu": "Welcome to nalelu",
   "japanese_keyboard_needed": "To use nalelu you'll need a Japanese keyboard installed",
   "instructions": "Instructions",
-  "continue": "Continue"
+  "continue": "Continue",
+  "kanji": "Kanji",
+  "n5": "Level N5",
+  "kanjiToHiragana": "Write the Kanji to Hiragana"
 }

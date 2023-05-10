@@ -3,6 +3,7 @@ import 'dart:async';
 import 'package:flutter/material.dart';
 import 'package:nalelu/state/doushi/doushi_generator.dart';
 import 'package:nalelu/state/enums.dart';
+import 'package:nalelu/state/kanji/kanji_generator.dart';
 import 'package:nalelu/state/manga/manga_generator.dart';
 import 'package:nalelu/state/suuji/age/age_generator.dart';
 import 'package:nalelu/state/suuji/count/count_generator.dart';
@@ -38,6 +39,10 @@ class ExerciseNavNotifier extends ChangeNotifier {
       case ExerciseType.Manga:
         this._maxIndex = MangaGenerator.getMaxIndex();
         this.createExercise = MangaGenerator.createExercise;
+        break;
+        case ExerciseType.Kanji:
+        this._maxIndex = KanjiGenerator.getMaxIndex();
+        this.createExercise = KanjiGenerator.createExercise;
         break;
     }
 

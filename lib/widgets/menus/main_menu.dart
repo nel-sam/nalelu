@@ -4,6 +4,7 @@ import 'package:nalelu/furi_text.dart';
 import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/widgets/doushi_exercise/doushi_exercise_1.dart';
 import 'package:nalelu/widgets/manga_exercise/manga_exercise.dart';
+import 'package:nalelu/widgets/menus/kanji_menu.dart';
 import 'package:nalelu/widgets/menus/numbers_menu.dart';
 import 'package:nalelu/widgets/shared/ad_card.dart';
 import 'package:nalelu/widgets/shared/na_menu_button.dart';
@@ -23,24 +24,31 @@ class MainMenu extends StatelessWidget {
               appName: APP_NAME,
             ),
             Expanded(
-              child: Column(
-                children: [
-                  NAMenuButton(
-                    destination: MangaExercise(),
-                    label: NA.t('manga'),
-                    translabel: [FuriText(text: '漫画', furigana: 'まんが')],
-                  ),
-                  NAMenuButton(
-                    destination: NumbersMenu(),
-                    label: NA.t('numbersExercise'),
-                    translabel: [FuriText(text: '数字', furigana: 'すうじ')],
-                  ),
-                  NAMenuButton(
-                    destination: DoushiExerciseLevel1(),
-                    label: NA.t('verbs'),
-                    translabel: [FuriText(text: '動詞', furigana: 'どうし')],
-                  ),
-                ],
+              child: SingleChildScrollView(
+                child: Column(
+                  children: [
+                    NAMenuButton(
+                      destination: MangaExercise(),
+                      label: NA.t('manga'),
+                      translabel: [FuriText(text: '漫画', furigana: 'まんが')],
+                    ),
+                    NAMenuButton(
+                      destination: NumbersMenu(),
+                      label: NA.t('numbersExercise'),
+                      translabel: [FuriText(text: '数字', furigana: 'すうじ')],
+                    ),
+                    NAMenuButton(
+                      destination: DoushiExerciseLevel1(),
+                      label: NA.t('verbs'),
+                      translabel: [FuriText(text: '動詞', furigana: 'どうし')],
+                    ),
+                    NAMenuButton(
+                      destination: KanjiMenu(),
+                      label: NA.t('kanji'),
+                      translabel: [FuriText(text: '動詞', furigana: 'どうし')],
+                    ),
+                  ],
+                ),
               ),
             ),
             const AdCard(),

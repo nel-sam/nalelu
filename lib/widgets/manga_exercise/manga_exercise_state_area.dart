@@ -29,7 +29,7 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
     // TODO: Is there a better way to do detect next/previous button press?
     widget.navNotifier.onNextOrPrevious = () => activePhrasePart = null;
     const double padding = 8.0;
-    
+
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
