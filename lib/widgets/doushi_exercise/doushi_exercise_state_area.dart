@@ -17,90 +17,114 @@ class DoushiExerciseStateArea extends StatefulWidget {
 
 class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
   Widget build(BuildContext context) {
-    return Column(
-      children: [
-        NTextSpan(widget.state.doushi.translation),
-        Padding(
-          padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
-          child: VerbInput(
-            doushi: widget.state.doushi,
-            hintValue: NA.t('present'),
-            activeValue: widget.state.getUserInput(0),
-            correctValues: widget.state.doushi.casual.present,
-            onSubmitted: (String newValue) {
-              widget.state.updateUserInput(0, newValue);
-            },
-            onCorrect: () {
-              setState(() {});
-            },
+    return SafeArea(
+      child: CustomScrollView(
+        slivers: [
+          SliverFillRemaining(
+            hasScrollBody: false,
+            child: Column(
+              children: [
+                NTextSpan(widget.state.doushi.translation),
+                Padding(
+                  padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+                  child: VerbInput(
+                    doushi: widget.state.doushi,
+                    hintValue: NA.t('present'),
+                    activeValue: widget.state.getUserInput(0),
+                    correctValues: widget.state.doushi.casual.present,
+                    onSubmitted: (String newValue) {
+                      widget.state.updateUserInput(0, newValue);
+                    },
+                    onCorrect: () {
+                      setState(() {});
+                    },
+                  ),
+                ),
+                VerbInput(
+                  doushi: widget.state.doushi,
+                  hintValue: NA.t('past'),
+                  activeValue: widget.state.getUserInput(1),
+                  correctValues: widget.state.doushi.casual.pastSimple,
+                  onSubmitted: (String newValue) {
+                    widget.state.updateUserInput(1, newValue);
+                  },
+                  onCorrect: () {
+                    setState(() {});
+                  },
+                ),
+                VerbInput(
+                  doushi: widget.state.doushi,
+                  hintValue: NA.t('negative'),
+                  activeValue: widget.state.getUserInput(2),
+                  correctValues: widget.state.doushi.casual.negative,
+                  onSubmitted: (String newValue) {
+                    widget.state.updateUserInput(2, newValue);
+                  },
+                  onCorrect: () {
+                    setState(() {});
+                  },
+                ),
+                VerbInput(
+                  doushi: widget.state.doushi,
+                  hintValue: NA.t('negativePast'),
+                  activeValue: widget.state.getUserInput(3),
+                  correctValues: widget.state.doushi.casual.negativePast,
+                  onSubmitted: (String newValue) {
+                    widget.state.updateUserInput(3, newValue);
+                  },
+                  onCorrect: () {
+                    setState(() {});
+                  },
+                ),
+                widget.state.doushi.casual.presentProgressive.first.length != 0
+                    ? VerbInput(
+                        doushi: widget.state.doushi,
+                        hintValue: NA.t('presentProgressive'),
+                        activeValue: widget.state.getUserInput(4),
+                        correctValues:
+                            widget.state.doushi.casual.presentProgressive,
+                        onSubmitted: (String newValue) {
+                          widget.state.updateUserInput(4, newValue);
+                        },
+                        onCorrect: () {
+                          setState(() {});
+                        },
+                      )
+                    : Container(),
+                widget.state.doushi.casual.negativePresentProgressive.first
+                            .length !=
+                        0
+                    ? VerbInput(
+                        doushi: widget.state.doushi,
+                        hintValue: NA.t('negativePresentProgressive'),
+                        activeValue: widget.state.getUserInput(5),
+                        correctValues: widget
+                            .state.doushi.casual.negativePresentProgressive,
+                        onSubmitted: (String newValue) {
+                          widget.state.updateUserInput(5, newValue);
+                        },
+                        onCorrect: () {
+                          setState(() {});
+                        },
+                      )
+                    : Container(),
+                VerbInput(
+                  doushi: widget.state.doushi,
+                  hintValue: NA.t('infinitive'),
+                  activeValue: widget.state.getUserInput(6),
+                  correctValues: [widget.state.doushi.infinitive],
+                  onSubmitted: (String newValue) {
+                    widget.state.updateUserInput(6, newValue);
+                  },
+                  onCorrect: () {
+                    setState(() {});
+                  },
+                )
+              ],
+            ),
           ),
-        ),
-        VerbInput(
-          doushi: widget.state.doushi,
-          hintValue: NA.t('past'),
-          activeValue: widget.state.getUserInput(1),
-          correctValues: widget.state.doushi.casual.pastSimple,
-          onSubmitted: (String newValue) {
-            widget.state.updateUserInput(1, newValue);
-          },
-          onCorrect: () {
-            setState(() {});
-          },
-        ),
-        VerbInput(
-          doushi: widget.state.doushi,
-          hintValue: NA.t('negative'),
-          activeValue: widget.state.getUserInput(2),
-          correctValues: widget.state.doushi.casual.negative,
-          onSubmitted: (String newValue) {
-            widget.state.updateUserInput(2, newValue);
-          },
-          onCorrect: () {
-            setState(() {});
-          },
-        ),
-        VerbInput(
-          doushi: widget.state.doushi,
-          hintValue: NA.t('negativePast'),
-          activeValue: widget.state.getUserInput(3),
-          correctValues: widget.state.doushi.casual.negativePast,
-          onSubmitted: (String newValue) {
-            widget.state.updateUserInput(3, newValue);
-          },
-          onCorrect: () {
-            setState(() {});
-          },
-        ),
-        widget.state.doushi.casual.presentProgressive.first.length != 0
-            ? VerbInput(
-                doushi: widget.state.doushi,
-                hintValue: NA.t('presentProgressive'),
-                activeValue: widget.state.getUserInput(4),
-                correctValues: widget.state.doushi.casual.presentProgressive,
-                onSubmitted: (String newValue) {
-                  widget.state.updateUserInput(4, newValue);
-                },
-                onCorrect: () {
-                  setState(() {});
-                },
-              )
-            : Container(),
-        widget.state.doushi.casual.negativePresentProgressive.first.length != 0
-            ? VerbInput(
-                doushi: widget.state.doushi,
-                hintValue: NA.t('negativePresentProgressive'),
-                activeValue: widget.state.getUserInput(5),
-                correctValues:
-                    widget.state.doushi.casual.negativePresentProgressive,
-                onSubmitted: (String newValue) {
-                  widget.state.updateUserInput(5, newValue);
-                },
-                onCorrect: () {
-                  setState(() {});
-                },
-              )
-            : Container(),
-      ],
+        ],
+      ),
     );
   }
 }

@@ -60,57 +60,19 @@ class _KanjiN5ExerciseStateArea extends State<KanjiN5ExerciseStateArea> {
             ],
           ),
         ),
-        if (widget.state.kanji.phrases.length >= 1)
+        for (var i = 0; i < widget.state.kanji.phrases.length; i++)
           Column(
             children: [
-              Text(widget.state.kanji.phrases[0]),
+              Text(widget.state.kanji.phrases[i]),
               NaFreeFormEntryWrapper(
                 widthType: NFreeFormWidths.half,
                 hintValue:
                     widget.state.kanji.kanji + ' ' + NA.t('kanjiToHiragana'),
                 onChanged: (String newValue) {
-                  widget.state.updateUserInput(0, newValue);
+                  widget.state.updateUserInput(i, newValue);
                 },
-                initialValue: widget.state.getUserInput(0),
-                correctValues: widget.state.kanji.answers,
-                onCorrect: () {
-                  setState(() {});
-                },
-              ),
-            ],
-          ),
-        if (widget.state.kanji.phrases.length >= 2)
-          Column(
-            children: [
-              Text(widget.state.kanji.phrases[1]),
-              NaFreeFormEntryWrapper(
-                widthType: NFreeFormWidths.half,
-                hintValue:
-                    widget.state.kanji.kanji + ' ' + NA.t('kanjiToHiragana'),
-                onChanged: (String newValue) {
-                  widget.state.updateUserInput(1, newValue);
-                },
-                initialValue: widget.state.getUserInput(1),
-                correctValues: widget.state.kanji.answers,
-                onCorrect: () {
-                  setState(() {});
-                },
-              ),
-            ],
-          ),
-        if (widget.state.kanji.phrases.length >= 3)
-          Column(
-            children: [
-              Text(widget.state.kanji.phrases[2]),
-              NaFreeFormEntryWrapper(
-                widthType: NFreeFormWidths.half,
-                hintValue:
-                    widget.state.kanji.kanji + ' ' + NA.t('kanjiToHiragana'),
-                onChanged: (String newValue) {
-                  widget.state.updateUserInput(2, newValue);
-                },
-                initialValue: widget.state.getUserInput(2),
-                correctValues: widget.state.kanji.answers,
+                initialValue: widget.state.getUserInput(i),
+                correctValues: [widget.state.kanji.answers[i]],
                 onCorrect: () {
                   setState(() {});
                 },
