@@ -25,7 +25,6 @@ class KanjiN5 extends StatelessWidget {
               child: Column(
                 children: [
                   NavHeaderWrapper(navNotifier: navNotifier),
-                  Text(s.kanji.phrase, style: TextStyle(fontSize: 24)),
                   ChangeNotifierProvider<KanjiNotifier>(
                     create: (context) => KanjiNotifier(navNotifier.getActive),
                     child: Consumer<KanjiNotifier>(
