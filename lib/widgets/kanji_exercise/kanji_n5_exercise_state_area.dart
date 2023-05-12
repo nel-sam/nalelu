@@ -22,7 +22,7 @@ class _KanjiN5ExerciseStateArea extends State<KanjiN5ExerciseStateArea> {
     return Column(
       children: [
         Padding(
-          padding: const EdgeInsets.only(bottom: 12.0),
+          padding: const EdgeInsets.all(12.0),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -38,6 +38,10 @@ class _KanjiN5ExerciseStateArea extends State<KanjiN5ExerciseStateArea> {
                     padding: const EdgeInsets.only(bottom: 8.0),
                     child: Column(
                       children: [
+                        Text(
+                          widget.state.kanji.translation,
+                          style: TextStyle(fontSize: 12),
+                        ),
                         Text('Kun yomi'),
                         Text(
                           widget.state.kanji.kunYomi,
