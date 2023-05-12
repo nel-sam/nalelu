@@ -19,7 +19,6 @@ class KanjiN5 extends StatelessWidget {
         create: (context) => ExerciseNavNotifier(ExerciseType.Kanji),
         child: Consumer<ExerciseNavNotifier>(
           builder: (context, navNotifier, child) {
-            var s = navNotifier.getActive();
             return Padding(
               padding: EdgeInsets.all(24),
               child: Column(
@@ -45,14 +44,20 @@ class KanjiN5 extends StatelessWidget {
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: Scaffold(
-        resizeToAvoidBottomInset: false,
         appBar: Nrs.NrsAppBar(title: NA.t('kanji'), context: context),
         body: Center(
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              getContent(context),
-              AdCard(),
+          child: CustomScrollView(
+            slivers: [
+              SliverFillRemaining(
+                hasScrollBody: false,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    getContent(context),
+                    AdCard(),
+                  ],
+                ),
+              ),
             ],
           ),
         ),
