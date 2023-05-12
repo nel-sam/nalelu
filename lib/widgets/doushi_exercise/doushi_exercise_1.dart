@@ -27,27 +27,33 @@ class _DoushiExerciseLevel1State extends State<DoushiExerciseLevel1> {
         create: (context) => ExerciseNavNotifier(ExerciseType.Doushi),
         child: Consumer<ExerciseNavNotifier>(
           builder: (context, navNotifier, child) => Scaffold(
-            resizeToAvoidBottomInset: false,
             appBar: Nrs.NrsAppBar(
                 title: '${NA.t('verbs')} 1 (ため口)', context: context),
             body: Center(
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  NavHeaderWrapper(navNotifier: navNotifier),
-                  Expanded(
-                      child: Container(
-                    child: ChangeNotifierProvider<DoushiNotifier>(
-                      create: (context) =>
-                          DoushiNotifier(navNotifier.getActive),
-                      child: Consumer<DoushiNotifier>(
-                        builder: (context, doushiNotifier, child) =>
-                            DoushiExerciseStateArea(
-                                state: doushiNotifier.getActive()),
-                      ),
+              child: CustomScrollView(
+                slivers: [
+                  SliverFillRemaining(
+                    hasScrollBody: false,
+                    child: Column(
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        NavHeaderWrapper(navNotifier: navNotifier),
+                        Expanded(
+                            child: Container(
+                          child: ChangeNotifierProvider<DoushiNotifier>(
+                            create: (context) =>
+                                DoushiNotifier(navNotifier.getActive),
+                            child: Consumer<DoushiNotifier>(
+                              builder: (context, doushiNotifier, child) =>
+                                  DoushiExerciseStateArea(
+                                      state: doushiNotifier.getActive()),
+                            ),
+                          ),
+                        )),
+                        AdCard(),
+                      ],
                     ),
-                  )),
-                  AdCard(),
+                  )
                 ],
               ),
             ),
