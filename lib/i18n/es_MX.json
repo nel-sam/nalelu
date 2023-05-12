@@ -131,8 +131,6 @@
   "簡": "fácil/simple",
   "好": "gustar/amor",
   "嫌": "disgustar/odio",
-  "上手": "bueno en algo",
-  "下手": "malo en algo",
   "多": "muchos/mucho de",
   "少": "pocos/poco de",
   "色": "color",
@@ -161,10 +159,10 @@
   "帰": "regresar/volver/casa",
   "開": "abrir/iniciar/comenzar",
   "閉": "cerrar/finalizar/parar",
-  "出口": "salida",
-  "入口": "entrada",
   "山": "montaña",
   "今": "ahora",
   "川": "rio",
-  "田": "arrozal"
+  "田": "arrozal",
+  "年": "año/edad",
+  "分": "dividir/entender/minuto"
 }

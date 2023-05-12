@@ -131,8 +131,6 @@
   "簡": "easy/simple",
   "好": "like/love",
   "嫌": "dislike/hate",
-  "上手": "good at something",
-  "下手": "bad at something",
   "多": "many/a lot of",
   "少": "few/little bit of",
   "色": "color",
@@ -161,10 +159,11 @@
   "帰": "return/go back/home",
   "開": "open/start/begin",
   "閉": "close/end/stop",
-  "出口": "exit/way out",
-  "入口": "entrance/way in",
   "山": "Mountain",
   "今": "now",
   "川": "river",
-  "田": "rice field"
+  "田": "rice field",
+  "年": "year/age",
+  "分": "divide/understand/minute"
+
 }
