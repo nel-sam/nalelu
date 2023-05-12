@@ -162,5 +162,9 @@
   "開": "open/start/begin",
   "閉": "close/end/stop",
   "出口": "exit/way out",
-  "入口": "entrance/way in"
+  "入口": "entrance/way in",
+  "山": "Mountain",
+  "今": "now",
+  "川": "river",
+  "田": "rice field"
 }

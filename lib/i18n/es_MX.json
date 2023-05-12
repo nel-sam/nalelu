@@ -162,5 +162,9 @@
   "開": "abrir/iniciar/comenzar",
   "閉": "cerrar/finalizar/parar",
   "出口": "salida",
-  "入口": "entrada"
+  "入口": "entrada",
+  "山": "montaña",
+  "今": "ahora",
+  "川": "rio",
+  "田": "arrozal"
 }
