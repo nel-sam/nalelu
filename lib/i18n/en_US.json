@@ -80,7 +80,7 @@
   "continue": "Continue",
   "kanji": "Kanji",
   "n5": "Level N5",
-  "kanjiToHiragana": "Kanji to Hiragana",
+  "kanjiToHiragana": "In hiragana",
   "infinitive": "Infinitive",
 
   "一": "one",
@@ -165,5 +165,4 @@
   "田": "rice field",
   "年": "year/age",
   "分": "divide/understand/minute"
-
 }

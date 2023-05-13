@@ -26,7 +26,7 @@ class MangaExercise extends StatelessWidget {
                 SliverFillRemaining(
                   hasScrollBody: false,
                   child: Column(
-                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       NavHeaderWrapper(navNotifier: navNotifier),
                       ChangeNotifierProvider<MangaNotifier>(

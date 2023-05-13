@@ -33,6 +33,26 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
     return Column(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
+        Stack(
+          children: [
+            Image(
+              fit: BoxFit.cover,
+              image: AssetImage(widget.state.mangaExerciseModel.imageUrl),
+            ),
+            ...widget.state.mangaExerciseModel.phrases.map(
+              (p) => SpeechBubble(
+                getIsCorrect: widget.state.isPhrasePartCorrect,
+                phrase: p,
+                onButtonTap: (PhrasePart phrasePart) => {
+                  setState(() {
+                    activePhrasePart = phrasePart;
+                    activePhrase = p;
+                  })
+                },
+              ),
+            ),
+          ],
+        ),
         activePhrasePart != null && activePhrase != null
             ? Column(
                 children: [
@@ -84,26 +104,6 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                 ],
               )
             : Container(),
-        Stack(
-          children: [
-            Image(
-              fit: BoxFit.cover,
-              image: AssetImage(widget.state.mangaExerciseModel.imageUrl),
-            ),
-            ...widget.state.mangaExerciseModel.phrases.map(
-              (p) => SpeechBubble(
-                getIsCorrect: widget.state.isPhrasePartCorrect,
-                phrase: p,
-                onButtonTap: (PhrasePart phrasePart) => {
-                  setState(() {
-                    activePhrasePart = phrasePart;
-                    activePhrase = p;
-                  })
-                },
-              ),
-            ),
-          ],
-        ),
       ],
     );
   }
