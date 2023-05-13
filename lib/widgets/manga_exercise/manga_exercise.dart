@@ -21,33 +21,30 @@ class MangaExercise extends StatelessWidget {
         child: Consumer<ExerciseNavNotifier>(
           builder: (context, navNotifier, child) => Scaffold(
             appBar: Nrs.NrsAppBar(title: '${NA.t('Manga')}', context: context),
-            body: SingleChildScrollView(
-              reverse: false,
-              child: Center(
-                child: CustomScrollView(slivers: [
-                  SliverFillRemaining(
-                    hasScrollBody: false,
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        NavHeaderWrapper(navNotifier: navNotifier),
-                        ChangeNotifierProvider<MangaNotifier>(
-                          create: (context) =>
-                              MangaNotifier(navNotifier.getActive),
-                          child: Consumer<MangaNotifier>(
-                            builder: (context, mangaNotifier, child) =>
-                                MangaExerciseStateArea(
-                              state: mangaNotifier.getActive(),
-                              navNotifier: navNotifier,
-                            ),
+            body: Center(
+              child: CustomScrollView(slivers: [
+                SliverFillRemaining(
+                  hasScrollBody: false,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      NavHeaderWrapper(navNotifier: navNotifier),
+                      ChangeNotifierProvider<MangaNotifier>(
+                        create: (context) =>
+                            MangaNotifier(navNotifier.getActive),
+                        child: Consumer<MangaNotifier>(
+                          builder: (context, mangaNotifier, child) =>
+                              MangaExerciseStateArea(
+                            state: mangaNotifier.getActive(),
+                            navNotifier: navNotifier,
                           ),
                         ),
-                        AdCard(),
-                      ],
-                    ),
+                      ),
+                      AdCard(),
+                    ],
                   ),
-                ]),
-              ),
+                ),
+              ]),
             ),
           ),
         ),

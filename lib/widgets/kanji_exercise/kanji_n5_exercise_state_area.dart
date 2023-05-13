@@ -19,6 +19,7 @@ class KanjiN5ExerciseStateArea extends StatefulWidget {
 
 class _KanjiN5ExerciseStateArea extends State<KanjiN5ExerciseStateArea> {
   Widget build(BuildContext context) {
+    var kanji = widget.state.kanji.kanji;
     return Column(
       children: [
         Padding(
@@ -70,8 +71,7 @@ class _KanjiN5ExerciseStateArea extends State<KanjiN5ExerciseStateArea> {
               Text(widget.state.kanji.phrases[i]),
               NaFreeFormEntryWrapper(
                 widthType: NFreeFormWidths.half,
-                hintValue:
-                    widget.state.kanji.kanji + ' ' + NA.t('kanjiToHiragana'),
+                hintValue: NA.t('kanjiToHiragana'),
                 onChanged: (String newValue) {
                   widget.state.updateUserInput(i, newValue);
                 },
