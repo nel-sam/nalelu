@@ -8,14 +8,15 @@ class AgeExerciseState {
     required this.correctAnswers,
   });
 
-  clear() {
-    return this.userInput = '';
+  void clear() {
+    this.userInput = '';
   }
 
   bool getIsCorrect() {
     return this.correctAnswers.contains(this.userInput);
   }
-   void updateAge(String newVal) {
+
+  void updateAge(String newVal) {
     this.userInput = newVal;
   }
 }

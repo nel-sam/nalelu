@@ -70,12 +70,12 @@ class _KanjiN5ExerciseStateArea extends State<KanjiN5ExerciseStateArea> {
             ],
           ),
           SizedBox(height: 30),
-          for (var i = 0; i < widget.state.kanji.phrases.length; i++)
-            Column(
+          ...widget.state.kanji.phraseAnswers.map(
+            (pa) => Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(widget.state.kanji.phrases[i],
+                Text(pa.phrase,
                     style: TextStyle(
                         fontSize: Theme.of(context)
                             .textTheme
@@ -85,16 +85,17 @@ class _KanjiN5ExerciseStateArea extends State<KanjiN5ExerciseStateArea> {
                   widthType: NFreeFormWidths.half,
                   hintValue: NA.t('kanjiToHiragana'),
                   onChanged: (String newValue) {
-                    widget.state.updateUserInput(i, newValue);
+                    widget.state.updateUserInput(pa.phrase, newValue);
                   },
-                  initialValue: widget.state.getUserInput(i),
-                  correctValues: [widget.state.kanji.answers[i]],
+                  initialValue: widget.state.getUserInput(pa.phrase),
+                  correctValues: [pa.answer],
                   onCorrect: () {
                     setState(() {});
                   },
                 ),
               ],
             ),
+          ),
         ],
       ),
     );

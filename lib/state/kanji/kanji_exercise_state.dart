@@ -1,7 +1,9 @@
+import 'dart:collection';
+
 import 'package:nalelu/lang_data/kanji.dart';
 
 class KanjiExerciseState {
-  List<String> userInput = [];
+  HashMap<String, String> userInput = new HashMap<String, String>();
   Kanji kanji;
 
   KanjiExerciseState({required this.kanji});
@@ -10,23 +12,11 @@ class KanjiExerciseState {
     userInput.clear();
   }
 
-  void fillArray(int index) {
-    if (userInput.length == 0) {
-      userInput.add('');
-    }
-
-    while (userInput.length <= index) {
-      userInput.add('');
-    }
+  getUserInput(String key) {
+    return userInput[key] ?? '';
   }
 
-  getUserInput(int index) {
-    fillArray(index);
-    return userInput[index];
-  }
-
-  updateUserInput(int index, String newValue) {
-    fillArray(index);
-    userInput[index] = newValue;
+  updateUserInput(String key, String newValue) {
+    userInput[key] = newValue;
   }
 }
