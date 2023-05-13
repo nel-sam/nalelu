@@ -10,7 +10,7 @@ final mangaWordsBank = [
         phraseParts: [
           PhrasePart(furiTexts: [
             FuriText(text: '猫', furigana: 'ねこ'),
-            FuriText(text: 'いると'),
+            FuriText(text: 'がいると'),
           ]),
           PhrasePart(isAnswerable: true, furiTexts: [
             FuriText(text: '知', furigana: 'し'),

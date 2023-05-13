@@ -15,27 +15,22 @@ class NAKanjiBlock extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(4),
       child: Container(
-        child: ElevatedButton(
-          style: ElevatedButton.styleFrom(
-            elevation: 10,
-            minimumSize: Size(100, 100),
-            padding: const EdgeInsets.all(20),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.all(Radius.circular(radius)),
+        height: 120,
+        width: 120,
+        decoration: BoxDecoration(
+          color: Theme.of(context).colorScheme.primary,
+          borderRadius: BorderRadius.all(
+            Radius.circular(radius),
+          ),
+        ),
+        child: Center(
+          child: Text(
+            kanji,
+            style: TextStyle(
+              color: Theme.of(context).colorScheme.onPrimary,
+              fontSize: 70,
             ),
           ),
-          onPressed: () {},
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Text(
-                  kanji,
-                  style: TextStyle(
-                    fontSize: 25,
-                  ),
-                ),
-              ]),
         ),
       ),
     );
