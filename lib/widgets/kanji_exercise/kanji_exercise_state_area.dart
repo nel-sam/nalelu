@@ -5,19 +5,19 @@ import 'package:nalelu/widgets/shared/na_free_form_entry_wrapper.dart';
 import 'package:nalelu/widgets/shared/na_kanji_block.dart';
 import 'package:nrs_flutter_lib/widgets/n_free_form_entry.dart';
 
-class KanjiN5ExerciseStateArea extends StatefulWidget {
+class KanjiExerciseStateArea extends StatefulWidget {
   final KanjiExerciseState state;
 
-  KanjiN5ExerciseStateArea({
+  KanjiExerciseStateArea({
     Key? key,
     required this.state,
   }) : super(key: key);
 
   @override
-  State<KanjiN5ExerciseStateArea> createState() => _KanjiN5ExerciseStateArea();
+  State<KanjiExerciseStateArea> createState() => _KanjiExerciseStateArea();
 }
 
-class _KanjiN5ExerciseStateArea extends State<KanjiN5ExerciseStateArea> {
+class _KanjiExerciseStateArea extends State<KanjiExerciseStateArea> {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 18),
@@ -27,41 +27,29 @@ class _KanjiN5ExerciseStateArea extends State<KanjiN5ExerciseStateArea> {
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              NAKanjiBlock(
-                kanji: widget.state.kanji.kanji,
-              ),
               Padding(
-                padding: const EdgeInsets.only(left: 12),
+                padding: const EdgeInsets.only(right: 14),
+                child: NAKanjiBlock(
+                  kanji: widget.state.kanji.kanji,
+                ),
+              ),
+              ConstrainedBox(
+                constraints: BoxConstraints(maxWidth: 210),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    Wrap(
-                      children: widget.state.kanji.translation
-                          .split(' ')
-                          .map((t) => Text(
-                                t + ' ',
-                                style: TextStyle(fontWeight: FontWeight.bold),
-                              ))
-                          .toList(),
-                    ),
+                    Wrap(children: [
+                      Text(widget.state.kanji.translation.toUpperCase(),
+                          style: TextStyle(fontWeight: FontWeight.bold))
+                    ]),
                     Text('Kun yomi'),
                     Wrap(
-                      children: widget.state.kanji.kunYomi
-                          .split(' ')
-                          .map((t) => Text(
-                                t + ' ',
-                              ))
-                          .toList(),
+                      children: [Text(widget.state.kanji.kunYomi)],
                     ),
                     Text('On yomi'),
                     Wrap(
-                      children: widget.state.kanji.onYomi
-                          .split(' ')
-                          .map((t) => Text(
-                                t + ' ',
-                              ))
-                          .toList(),
+                      children: [Text(widget.state.kanji.onYomi)],
                     ),
                   ],
                 ),

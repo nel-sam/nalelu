@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nalelu/furi_text.dart';
 import 'package:nalelu/na_helpers.dart';
-import 'package:nalelu/widgets/kanji_exercise/kanji_n5.dart';
+import 'package:nalelu/widgets/kanji_exercise/kanji_exercise.dart';
 import 'package:nalelu/widgets/shared/ad_card.dart';
 import 'package:nalelu/widgets/shared/na_footer_menu.dart';
 import 'package:nalelu/widgets/shared/na_menu_button.dart';
@@ -28,7 +28,7 @@ class KanjiMenu extends StatelessWidget {
               Column(
                 children: [
                   NAMenuButton(
-                      destination: KanjiN5(),
+                      destination: KanjiExercise(),
                       label: NA.t('n5'),
                       translabel: [FuriText(text: 'レベル N5', furigana: '')]),
                 ],
