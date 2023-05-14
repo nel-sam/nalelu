@@ -19,7 +19,6 @@ class KanjiN5ExerciseStateArea extends StatefulWidget {
 
 class _KanjiN5ExerciseStateArea extends State<KanjiN5ExerciseStateArea> {
   Widget build(BuildContext context) {
-    var kanji = widget.state.kanji.kanji;
     return Padding(
       padding: const EdgeInsets.only(top: 18),
       child: Column(
