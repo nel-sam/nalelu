@@ -42,7 +42,7 @@ class NANumberBlock extends StatelessWidget {
                 if (furiTexts.isNotEmpty)
                   FuriganaText(
                       furiTexts: furiTexts,
-                      fontSize: digit > 38 ? 14 : 18,
+                      fontSize: digit > 18 ? 10 : 18,
                       fontWeight: FontWeight.bold),
               ]),
         ),

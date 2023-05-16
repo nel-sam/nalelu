@@ -68,7 +68,7 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                           ? Text(
                               ' ____ ',
                               style: TextStyle(
-                                height: 2.3,
+                                height: 2.5,
                                 color: Theme.of(context).colorScheme.primary,
                               ),
                             )

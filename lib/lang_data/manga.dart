@@ -17,7 +17,7 @@ final mangaWordsBank = [
             FuriText(text: 'らなかった')
           ]),
         ],
-        downPercentage: 10,
+        downPercentage: 5,
         rightPercentage: 10),
     Phrase(
       translation: NA.t('unnihikimoiruyo'),
@@ -33,7 +33,7 @@ final mangaWordsBank = [
         ]),
       ],
       rightPercentage: 90,
-      downPercentage: 80,
+      downPercentage: 30,
     ),
     Phrase(
         translation: NA.t('kawaiine'),
@@ -67,7 +67,7 @@ final mangaWordsBank = [
           ],
         ),
       ],
-      downPercentage: 30,
+      downPercentage: 35,
       rightPercentage: 5,
     ),
     Phrase(
@@ -128,7 +128,7 @@ final mangaWordsBank = [
             FuriText(text: 'の？', furigana: ''),
           ]),
         ],
-        downPercentage: 0,
+        downPercentage: 2,
         rightPercentage: 10),
     Phrase(
       translation: NA.t('imanearuiteruyo'),
@@ -167,7 +167,7 @@ final mangaWordsBank = [
             FuriText(text: '?', furigana: ''),
           ]),
         ],
-        downPercentage: 80,
+        downPercentage: 95,
         rightPercentage: 20),
   ]),
 ];

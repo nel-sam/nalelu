@@ -25,7 +25,7 @@ class FuriganaText extends StatelessWidget {
           for (var i in furiTexts)
             Column(mainAxisSize: MainAxisSize.max, children: [
               Container(
-                height: i.furigana.length == 0 ? fontSize * 1.3 : fontSize,
+                height: i.furigana.length == 0 ? fontSize * 1.0 : fontSize,
                 child: Center(
                   child: Text(
                     i.furigana,

@@ -41,10 +41,21 @@ class SpeechBubble extends StatelessWidget {
                     final isCorrect = getIsCorrect(e);
 
                     return e.isAnswerable && !isCorrect
-                        ? IconButton(
-                            onPressed: () => onButtonTap(e),
-                            icon: Icon(Icons.circle_outlined,
-                                color: Theme.of(context).colorScheme.primary))
+                        ? Padding(
+                            padding: const EdgeInsets.all(11.0),
+                            child: ElevatedButton(
+                              onPressed: () => onButtonTap(e),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.min,
+                                children: [
+                                  Icon(
+                                    Icons.create_sharp,
+                                    size: 16.0,
+                                  ),
+                                ],
+                              ),
+                            ),
+                          )
                         : Padding(
                             padding: const EdgeInsets.only(bottom: 15.0),
                             child: FuriganaText(
