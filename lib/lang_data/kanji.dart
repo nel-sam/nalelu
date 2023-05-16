@@ -7,9 +7,9 @@ var kanjiBank = [
       onYomi: 'イチ',
       kunYomi: 'ひと, ひとつ',
       phraseAnswers: [
-        PhraseAnswer(phrase: '一つ', answer: 'ひと'),
-        PhraseAnswer(phrase: '一人', answer: 'ひと'),
-        PhraseAnswer(phrase: '一日', answer: 'いち')
+        PhraseAnswer(phrase: '一人ぼっちとうきょう', answer: 'ひとり'),
+        PhraseAnswer(phrase: 'わたしは一ばんかっこいい', answer: 'いち'),
+        PhraseAnswer(phrase: 'ビイルを一つください', answer: 'ひと')
       ]),
   Kanji(
       translation: NA.t('二'),
@@ -17,9 +17,9 @@ var kanjiBank = [
       onYomi: 'ニ',
       kunYomi: 'ふた, ふたつ',
       phraseAnswers: [
-        PhraseAnswer(phrase: '二月', answer: 'に'),
-        PhraseAnswer(phrase: '二つ', answer: 'ふた'),
-        PhraseAnswer(phrase: '十二月', answer: 'に'),
+        PhraseAnswer(phrase: '二プラス二', answer: 'に'),
+        PhraseAnswer(phrase: 'リンゴを二つ食べる', answer: 'ふた'),
+        PhraseAnswer(phrase: 'わたしわ三十二さいです', answer: 'に'),
       ]),
   Kanji(
       translation: NA.t('三'),
@@ -27,9 +27,9 @@ var kanjiBank = [
       onYomi: 'サン, ゾウ',
       kunYomi: 'み, みつ, みっつ',
       phraseAnswers: [
-        PhraseAnswer(phrase: '三月', answer: 'さん'),
-        PhraseAnswer(phrase: '三日', answer: 'みっ'),
-        PhraseAnswer(phrase: '三つ', answer: 'みっ'),
+        PhraseAnswer(phrase: '三月は寒いです', answer: 'さん'),
+        PhraseAnswer(phrase: '三つのビデオゲームがあります　', answer: 'みっ'),
+        PhraseAnswer(phrase: 'オレンジを三つもっています', answer: 'みっ'),
       ]),
   Kanji(
       translation: NA.t('四'),
@@ -37,9 +37,9 @@ var kanjiBank = [
       onYomi: 'シ',
       kunYomi: 'よ, よつ, よっつ',
       phraseAnswers: [
-        PhraseAnswer(phrase: '四月', answer: 'し'),
-        PhraseAnswer(phrase: '四日', answer: 'よっ'),
-        PhraseAnswer(phrase: '四つ', answer: 'よっ'),
+        PhraseAnswer(phrase: '四月は暑いです', answer: 'し'),
+        PhraseAnswer(phrase: 'クリスマスまであと四日', answer: 'よっ'),
+        PhraseAnswer(phrase: 'メッシは四ゴールをきめた', answer: 'よん'),
       ]),
   Kanji(
       translation: NA.t('五'),
@@ -47,9 +47,9 @@ var kanjiBank = [
       onYomi: 'ゴ',
       kunYomi: 'いつ, いつつ',
       phraseAnswers: [
-        PhraseAnswer(phrase: '五つ', answer: 'いつ'),
-        PhraseAnswer(phrase: '五月', answer: 'ご'),
-        PhraseAnswer(phrase: '五円', answer: 'ご'),
+        PhraseAnswer(phrase: 'ほしが五つあります', answer: 'いつ'),
+        PhraseAnswer(phrase: '五月は好きな月です', answer: 'ご'),
+        PhraseAnswer(phrase: '五百円かせいだ', answer: 'ご'),
       ]),
   Kanji(
       translation: NA.t('六'),
