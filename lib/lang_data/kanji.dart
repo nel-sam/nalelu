@@ -28,7 +28,7 @@ var kanjiBank = [
       kunYomi: 'み, みつ, みっつ',
       phraseAnswers: [
         PhraseAnswer(phrase: '三月は寒いです', answer: 'さん'),
-        PhraseAnswer(phrase: '三つのビデオゲームがあります　', answer: 'みっ'),
+        PhraseAnswer(phrase: '三つのビデオゲームがあります', answer: 'みっ'),
         PhraseAnswer(phrase: 'オレンジを三つもっています', answer: 'みっ'),
       ]),
   Kanji(

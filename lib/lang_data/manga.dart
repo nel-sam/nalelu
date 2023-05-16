@@ -32,8 +32,8 @@ final mangaWordsBank = [
           FuriText(text: 'もいるよ'),
         ]),
       ],
-      rightPercentage: 55,
-      downPercentage: 70,
+      rightPercentage: 90,
+      downPercentage: 80,
     ),
     Phrase(
         translation: NA.t('kawaiine'),
@@ -42,8 +42,8 @@ final mangaWordsBank = [
             FuriText(text: 'かわいいね！'),
           ]),
         ],
-        downPercentage: 90,
-        rightPercentage: 15)
+        downPercentage: 95,
+        rightPercentage: 10)
   ]),
   MangaExerciseModel(imageUrl: 'assets/manga/birthday.jpeg', phrases: [
     Phrase(
