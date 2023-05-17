@@ -744,10 +744,11 @@ var kanjiBank = [
       translation: NA.t('川'),
       kanji: '川',
       onYomi: 'セン',
-      kunYomi: 'かわ',
+      kunYomi: 'かわ、がわ',
       phraseAnswers: [
-        PhraseAnswer(phrase: '川', answer: 'かわ'),
-        PhraseAnswer(phrase: '山川さん', answer: 'かわ'),
+        PhraseAnswer(phrase: '川にいきましょう', answer: 'かわ'),
+        PhraseAnswer(phrase: '山川さん', answer: 'やまかわ'),
+        PhraseAnswer(phrase: 'しな川えきにいるよ', answer: 'しながわ'),
       ]),
   Kanji(
       translation: NA.t('田'),
