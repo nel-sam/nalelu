@@ -741,16 +741,27 @@ var kanjiBank = [
   //       PhraseAnswer(phraseParts: '今に', answer: 'いま'),
   //       PhraseAnswer(phraseParts: '今日', answer: 'きょう'),
   //     ]),
-  // Kanji(
-  //     translation: NA.t('川'),
-  //     kanji: '川',
-  //     onYomi: 'セン',
-  //     kunYomi: 'かわ、がわ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '川にいきましょう', answer: 'かわ'),
-  //       PhraseAnswer(phraseParts: '山川さん', answer: 'やまかわ'),
-  //       PhraseAnswer(phraseParts: 'しな川えきにいるよ', answer: 'しながわ'),
-  //     ]),
+  Kanji(
+      translation: NA.t('川'),
+      kanji: '川',
+      onYomi: 'セン',
+      kunYomi: 'かわ、がわ',
+      phraseAnswers: [
+        PhraseAnswer(phraseParts: [
+          FuriText(text: '川', emphasize: true),
+          FuriText(text: 'に'),
+          FuriText(text: '行きましょう', furigana: 'い'),
+        ], answer: 'かわ'),
+        PhraseAnswer(phraseParts: [
+          FuriText(text: '山川', emphasize: true),
+          FuriText(text: 'さん'),
+        ], answer: 'やまかわ'),
+        PhraseAnswer(phraseParts: [
+          FuriText(text: '品川駅', furigana: 'しな__', emphasize: true),
+          FuriText(text: '駅', furigana: 'えき'),
+          FuriText(text: 'にいるよ'),
+        ], answer: 'しながわ'),
+      ]),
   Kanji(
       translation: NA.t('田'),
       kanji: '田',
@@ -767,7 +778,7 @@ var kanjiBank = [
           FuriText(text: 'にすんでいる'),
         ], answer: 'いなか'),
         PhraseAnswer(phraseParts: [
-          FuriText(text: '成田', furigana: 'なり＿', emphasize: true),
+          FuriText(text: '成田', furigana: 'なり__', emphasize: true),
           FuriText(text: '空港', furigana: 'くうこう'),
         ], answer: 'なりた'),
       ]),
