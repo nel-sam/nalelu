@@ -34,23 +34,26 @@ class _KanjiExerciseStateArea extends State<KanjiExerciseStateArea> {
                   kanji: widget.state.kanji.kanji,
                 ),
               ),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                children: [
-                  Wrap(children: [
-                    Text(widget.state.kanji.translation.toUpperCase(),
-                        style: TextStyle(fontWeight: FontWeight.bold))
-                  ]),
-                  Text('Kun yomi'),
-                  Wrap(
-                    children: [Text(widget.state.kanji.kunYomi)],
-                  ),
-                  Text('On yomi'),
-                  Wrap(
-                    children: [Text(widget.state.kanji.onYomi)],
-                  ),
-                ],
+              ConstrainedBox(
+                constraints: BoxConstraints(maxWidth: 210),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Wrap(children: [
+                      Text(widget.state.kanji.translation.toUpperCase(),
+                          style: TextStyle(fontWeight: FontWeight.bold))
+                    ]),
+                    Text('Kun yomi'),
+                    Wrap(
+                      children: [Text(widget.state.kanji.kunYomi)],
+                    ),
+                    Text('On yomi'),
+                    Wrap(
+                      children: [Text(widget.state.kanji.onYomi)],
+                    ),
+                  ],
+                ),
               ),
             ],
           ),

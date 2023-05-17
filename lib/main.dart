@@ -66,7 +66,7 @@ class NaleluApp extends StatelessWidget {
         darkTheme: ThemeData(
           brightness: Brightness.dark,
           colorScheme: ColorScheme.dark(
-            primary: primaryColor,
+            primary: primaryColor,  
             onPrimary: Colors.white,
           ),
           appBarTheme: nrsAppBarThemeDark,

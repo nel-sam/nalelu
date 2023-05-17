@@ -1679,8 +1679,8 @@ var kanjiBank = [
             phraseParts: [
               FuriText(
                   text: '今月',
-                  furigana: '__げつ',
-                  emphasize: true), // TODO: REplace __ with ?
+                  furigana: '? げつ',
+                  emphasize: true), 
               FuriText(text: 'は'),
               FuriText(text: 'さむいね')
             ],
@@ -1728,7 +1728,7 @@ var kanjiBank = [
         PhraseAnswer(
             translation: NA.t('shinagawaekiniiruyo'),
             phraseParts: [
-              FuriText(text: '品川', furigana: 'しな__', emphasize: true),
+              FuriText(text: '品川', furigana: 'しな ?', emphasize: true),
               FuriText(text: '駅', furigana: 'えき'),
               FuriText(text: 'にいるよ'),
             ],
@@ -1761,6 +1761,7 @@ var kanjiBank = [
             translation: NA.t('naritakuukou'),
             phraseParts: [
               FuriText(text: '成田', furigana: 'なり__', emphasize: true),
+              FuriText(text: '成田', furigana: 'なり ?', emphasize: true),
               FuriText(text: '空港', furigana: 'くうこう'),
             ],
             answer: 'なりた'),
