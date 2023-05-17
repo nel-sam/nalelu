@@ -48,9 +48,10 @@ class NumberChart extends StatelessWidget {
         mainAxisSpacing: 3,
         maxCrossAxisExtent: 130.0,
         children: <Widget>[
-          ...nativeNumberBank.getRange(1, 11).map((e) => NANumberBlock(
-              digit: e.digit,
-              furiTexts: [FuriText(text: e.kanji, furigana: e.written)]))
+          ...nativeNumberBank.getRange(1, 11).map((e) =>
+              NANumberBlock(digit: e.digit, furiTexts: [
+                FuriText(text: e.kanji, furigana: e.written, emphasize: true)
+              ]))
         ],
       ),
     );
@@ -75,9 +76,10 @@ class NumberChart extends StatelessWidget {
         mainAxisSpacing: 3,
         maxCrossAxisExtent: 130.0,
         children: <Widget>[
-          ...numbers.getRange(0, 101).map((e) => NANumberBlock(
-              digit: e.digit,
-              furiTexts: [FuriText(text: e.kanji, furigana: e.written)]))
+          ...numbers.getRange(0, 101).map((e) =>
+              NANumberBlock(digit: e.digit, furiTexts: [
+                FuriText(text: e.kanji, furigana: e.written, emphasize: true)
+              ]))
         ],
       ),
     );

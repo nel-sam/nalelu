@@ -5,14 +5,12 @@ import 'package:nrs_flutter_lib/constants.dart';
 class FuriganaText extends StatelessWidget {
   final double fontSize;
   final List<FuriText> furiTexts;
-  final FontWeight? fontWeight;
   final Color? textColor;
 
   const FuriganaText({
     Key? key,
     required this.furiTexts,
     this.fontSize = FONT_SIZE,
-    this.fontWeight = FontWeight.normal,
     this.textColor,
   }) : super(key: key);
 
@@ -32,7 +30,8 @@ class FuriganaText extends StatelessWidget {
                     textAlign: TextAlign.center,
                     style: TextStyle(
                       fontSize: fontSize * 0.7,
-                      fontWeight: fontWeight,
+                      fontWeight:
+                          i.emphasize ? FontWeight.bold : FontWeight.normal,
                       color: textColor,
                     ),
                   ),
@@ -44,7 +43,8 @@ class FuriganaText extends StatelessWidget {
                   textAlign: TextAlign.start,
                   style: TextStyle(
                     fontSize: fontSize,
-                    fontWeight: fontWeight,
+                    fontWeight:
+                        i.emphasize ? FontWeight.bold : FontWeight.normal,
                     color: textColor,
                   ),
                 ),

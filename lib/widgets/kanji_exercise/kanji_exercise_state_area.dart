@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/state/kanji/kanji_exercise_state.dart';
+import 'package:nalelu/widgets/shared/furigana_text.dart';
 import 'package:nalelu/widgets/shared/na_free_form_entry_wrapper.dart';
 import 'package:nalelu/widgets/shared/na_kanji_block.dart';
 import 'package:nrs_flutter_lib/widgets/n_free_form_entry.dart';
@@ -58,30 +59,31 @@ class _KanjiExerciseStateArea extends State<KanjiExerciseStateArea> {
           ),
           SizedBox(height: 30),
           ...widget.state.kanji.phraseAnswers.map(
-            (pa) => Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(pa.phrase,
-                    style: TextStyle(
-                        fontSize: Theme.of(context)
-                            .textTheme
-                            .headlineSmall!
-                            .fontSize)),
-                NaFreeFormEntryWrapper(
-                  widthType: NFreeFormWidths.half,
-                  hintValue: NA.t('kanjiToHiragana'),
-                  onChanged: (String newValue) {
-                    widget.state.updateUserInput(pa.phrase, newValue);
-                  },
-                  initialValue: widget.state.getUserInput(pa.phrase),
-                  correctValues: [pa.answer],
-                  onCorrect: () {
-                    setState(() {});
-                  },
-                ),
-              ],
-            ),
+            (pa) {
+              var inputKey = pa.phraseParts.map((pp) => pp.text).join();
+
+              return Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  FuriganaText(
+                    furiTexts: pa.phraseParts,
+                  ),
+                  NaFreeFormEntryWrapper(
+                    widthType: NFreeFormWidths.half,
+                    hintValue: NA.t('kanjiToHiragana'),
+                    onChanged: (String newValue) {
+                      widget.state.updateUserInput(inputKey, newValue);
+                    },
+                    initialValue: widget.state.getUserInput(inputKey),
+                    correctValues: [pa.answer],
+                    onCorrect: () {
+                      setState(() {});
+                    },
+                  ),
+                ],
+              );
+            },
           ),
         ],
       ),

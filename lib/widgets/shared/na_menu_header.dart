@@ -33,8 +33,7 @@ class NAMenuHeader extends StatelessWidget {
             padding: const EdgeInsets.only(left: FONT_SIZE),
             child: FuriganaText(
                 furiTexts: label,
-                fontSize: FONT_SIZE * 1.5,
-                fontWeight: FontWeight.bold),
+                fontSize: FONT_SIZE * 1.5),
           ),
         ),
       ],
