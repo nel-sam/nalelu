@@ -752,12 +752,13 @@ var kanjiBank = [
   Kanji(
       translation: NA.t('田'),
       kanji: '田',
-      onYomi: 'デン',
-      kunYomi: 'た',
+      onYomi: 'デン', // No useful words found
+      kunYomi: 'た、いなか',
       phraseAnswers: [
-        PhraseAnswer(phrase: '山田さん', answer: 'だ'),
-        PhraseAnswer(phrase: '水田', answer: 'でん'),
-        PhraseAnswer(phrase: '田', answer: 'だ'),
+        PhraseAnswer(phrase: '山田さん', answer: 'やまだ'),
+        // This uses a non-N5 kanji but there's no way around this
+        PhraseAnswer(phrase: '田舎にすんでいる', answer: 'いなか'),
+        PhraseAnswer(phrase: 'なり田くうこう', answer: 'た'),
       ]),
   Kanji(
     translation: NA.t('分'),
@@ -765,9 +766,9 @@ var kanjiBank = [
     onYomi: 'フン, ブン, プン',
     kunYomi: 'わける, わかる',
     phraseAnswers: [
-      PhraseAnswer(phrase: '分ける', answer: 'わ'),
-      PhraseAnswer(phrase: '十分', answer: 'ぷん'),
-      PhraseAnswer(phrase: '分かる', answer: 'わ')
+      PhraseAnswer(phrase: 'まんなかから分ける', answer: 'わける'),
+      PhraseAnswer(phrase: 'あと十分まってね', answer: 'じゅうぷん'),
+      PhraseAnswer(phrase: 'にほんごが分かる', answer: 'わかる')
     ],
   ),
 ];
