@@ -738,7 +738,7 @@ var kanjiBank = [
       kunYomi: 'いま, きょう',
       phraseAnswers: [
         PhraseAnswer(
-            translation: NA.t(''),
+            translation: NA.t('kongetsuhasamuine'),
             phraseParts: [
               FuriText(text: '今月', furigana: '__げつ', emphasize: true),
               FuriText(text: 'は'),
@@ -746,7 +746,7 @@ var kanjiBank = [
             ],
             answer: 'こんげつ'),
         PhraseAnswer(
-            translation: NA.t(''),
+            translation: NA.t('imahananjidesuka'),
             phraseParts: [
               FuriText(text: '今', emphasize: true),
               FuriText(text: '何時', furigana: 'なんじ'),
@@ -754,7 +754,7 @@ var kanjiBank = [
             ],
             answer: 'いま'),
         PhraseAnswer(
-            translation: NA.t(''),
+            translation: NA.t('kyouhagetsuyoubidayo'),
             phraseParts: [
               FuriText(text: '今日', emphasize: true),
               FuriText(text: 'は'),
@@ -770,24 +770,25 @@ var kanjiBank = [
       kunYomi: 'かわ、がわ',
       phraseAnswers: [
         PhraseAnswer(
-            translation: NA.t(''),
+            translation: NA.t('kawaniikimashou'),
             phraseParts: [
               FuriText(text: '川', emphasize: true),
               FuriText(text: 'に'),
-              FuriText(text: '行きましょう', furigana: 'い'),
+              FuriText(text: '行', furigana: 'い'),
+              FuriText(text: 'きましょう'),
             ],
             answer: 'かわ'),
         PhraseAnswer(
-            translation: NA.t(''),
+            translation: NA.t('yamawakasan'),
             phraseParts: [
               FuriText(text: '山川', emphasize: true),
               FuriText(text: 'さん'),
             ],
             answer: 'やまかわ'),
         PhraseAnswer(
-            translation: NA.t(''),
+            translation: NA.t('shinagawaekiniiruyo'),
             phraseParts: [
-              FuriText(text: '品川駅', furigana: 'しな__', emphasize: true),
+              FuriText(text: '品川', furigana: 'しな__', emphasize: true),
               FuriText(text: '駅', furigana: 'えき'),
               FuriText(text: 'にいるよ'),
             ],
@@ -800,22 +801,24 @@ var kanjiBank = [
       kunYomi: 'た、いなか',
       phraseAnswers: [
         PhraseAnswer(
-            translation: NA.t(''),
+            translation: NA.t('yamadasan'),
             phraseParts: [
               FuriText(text: '山田', emphasize: true),
               FuriText(text: 'さん'),
             ],
             answer: 'やまだ'),
-        // This uses a non-N5 kanji but there's no way around this
         PhraseAnswer(
-            translation: NA.t(''),
+            translation: NA.t('inakanisunderu'),
             phraseParts: [
-              FuriText(text: '田舎', emphasize: true),
+              FuriText(
+                  text: '田舎',
+                  emphasize:
+                      true), // This uses a non-N5 kanji but there's no way around this
               FuriText(text: 'にすんでいる'),
             ],
             answer: 'いなか'),
         PhraseAnswer(
-            translation: NA.t(''),
+            translation: NA.t('naritakuukou'),
             phraseParts: [
               FuriText(text: '成田', furigana: 'なり__', emphasize: true),
               FuriText(text: '空港', furigana: 'くうこう'),
