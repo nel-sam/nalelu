@@ -51,7 +51,7 @@ class KanjiExercise extends StatelessWidget {
               SliverFillRemaining(
                 hasScrollBody: false,
                 child: Column(
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     AdCard(),
                     getContent(context),
