@@ -731,16 +731,29 @@ var kanjiBank = [
   //       PhraseAnswer(phraseParts: '山', answer: 'やま'),
   //       PhraseAnswer(phraseParts: 'ふじ山', answer: 'さん'),
   //     ]),
-  // Kanji(
-  //     translation: NA.t('今'),
-  //     kanji: '今',
-  //     onYomi: 'コン',
-  //     kunYomi: 'いま',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '今月', answer: 'こん'),
-  //       PhraseAnswer(phraseParts: '今に', answer: 'いま'),
-  //       PhraseAnswer(phraseParts: '今日', answer: 'きょう'),
-  //     ]),
+  Kanji(
+      translation: NA.t('今'),
+      kanji: '今',
+      onYomi: 'コン',
+      kunYomi: 'いま, きょう',
+      phraseAnswers: [
+        PhraseAnswer(phraseParts: [
+          FuriText(text: '今月', furigana: '__げつ', emphasize: true),
+          FuriText(text: 'は'),
+          FuriText(text: 'さむいね')
+        ], answer: 'こんげつ'),
+        PhraseAnswer(phraseParts: [
+          FuriText(text: '今', emphasize: true),
+          FuriText(text: '何時', furigana: 'なんじ'),
+          FuriText(text: 'ですか？')
+        ], answer: 'いま'),
+        PhraseAnswer(phraseParts: [
+          FuriText(text: '今日', emphasize: true),
+          FuriText(text: 'は'),
+          FuriText(text: '月曜日', furigana: 'げつようび'),
+          FuriText(text: 'だよ'),
+        ], answer: 'きょう'),
+      ]),
   Kanji(
       translation: NA.t('川'),
       kanji: '川',
