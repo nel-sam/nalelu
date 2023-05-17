@@ -2,735 +2,1650 @@ import 'package:nalelu/furi_text.dart';
 import 'package:nalelu/na_helpers.dart';
 
 var kanjiBank = [
-  // Kanji(
-  //     translation: NA.t('一'),
-  //     kanji: '一',
-  //     onYomi: 'イチ',
-  //     kunYomi: 'ひと, ひとつ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '一人ぼっちとうきょう', answer: 'ひとり'),
-  //       PhraseAnswer(phraseParts: 'わたしは一ばんかっこいい', answer: 'いち'),
-  //       PhraseAnswer(phraseParts: 'ビイルを一つください', answer: 'ひと')
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('二'),
-  //     kanji: '二',
-  //     onYomi: 'ニ',
-  //     kunYomi: 'ふた, ふたつ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '二プラス二', answer: 'に'),
-  //       PhraseAnswer(phraseParts: 'リンゴを二つ食べる', answer: 'ふた'),
-  //       PhraseAnswer(phraseParts: 'わたしわ三十二さいです', answer: 'に'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('三'),
-  //     kanji: '三',
-  //     onYomi: 'サン, ゾウ',
-  //     kunYomi: 'み, みつ, みっつ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '三月は寒いです', answer: 'さん'),
-  //       PhraseAnswer(phraseParts: '三つのビデオゲームがあります', answer: 'みっ'),
-  //       PhraseAnswer(phraseParts: 'オレンジを三つもっています', answer: 'みっ'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('四'),
-  //     kanji: '四',
-  //     onYomi: 'シ',
-  //     kunYomi: 'よ, よつ, よっつ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '四月は暑いです', answer: 'し'),
-  //       PhraseAnswer(phraseParts: 'クリスマスまであと四日', answer: 'よっ'),
-  //       PhraseAnswer(phraseParts: 'メッシは四ゴールをきめた', answer: 'よん'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('五'),
-  //     kanji: '五',
-  //     onYomi: 'ゴ',
-  //     kunYomi: 'いつ, いつつ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: 'ほしが五つあります', answer: 'いつ'),
-  //       PhraseAnswer(phraseParts: '五月は好きな月です', answer: 'ご'),
-  //       PhraseAnswer(phraseParts: '五百円かせいだ', answer: 'ご'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('六'),
-  //     kanji: '六',
-  //     onYomi: 'ロク',
-  //     kunYomi: 'む, むつ, むっつ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '六つ', answer: 'むっ'),
-  //       PhraseAnswer(phraseParts: '六月', answer: 'ろく'),
-  //       PhraseAnswer(phraseParts: '六日', answer: 'むい'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('七'),
-  //     kanji: '七',
-  //     onYomi: 'シチ',
-  //     kunYomi: 'なな, なの',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '七つ', answer: 'なな'),
-  //       PhraseAnswer(phraseParts: '七月', answer: 'しち'),
-  //       PhraseAnswer(phraseParts: '七日', answer: 'なの'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('八'),
-  //     kanji: '八',
-  //     onYomi: 'ハチ',
-  //     kunYomi: 'や, やつ, やっつ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '八つ', answer: 'やっ'),
-  //       PhraseAnswer(phraseParts: '八月', answer: 'はち'),
-  //       PhraseAnswer(phraseParts: '八日', answer: 'よう'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('九'),
-  //     kanji: '九',
-  //     onYomi: 'キュウ, ク',
-  //     kunYomi: 'ここの, ここのつ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '九つ', answer: 'ここの'),
-  //       PhraseAnswer(phraseParts: '九月', answer: 'く'),
-  //       PhraseAnswer(phraseParts: '九日', answer: 'ここの'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('十'),
-  //     kanji: '十',
-  //     onYomi: 'ジュウ',
-  //     kunYomi: 'とお',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '十月', answer: 'じゅう'),
-  //       PhraseAnswer(phraseParts: '十日', answer: 'とお'),
-  //       PhraseAnswer(phraseParts: '十分な', answer: 'じゅう'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('百'),
-  //     kanji: '百',
-  //     onYomi: 'ヒャク',
-  //     kunYomi: 'もも',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '百', answer: 'ひゃく'),
-  //       PhraseAnswer(phraseParts: '三百', answer: 'びゃく'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('千'),
-  //     kanji: '千',
-  //     onYomi: 'セン',
-  //     kunYomi: 'ち',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '千', answer: 'せん'),
-  //       PhraseAnswer(phraseParts: '三千', answer: 'ぜん'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('万'),
-  //     kanji: '万',
-  //     onYomi: 'マン, バン',
-  //     kunYomi: 'よろず',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '一万', answer: 'まん'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('円'),
-  //     kanji: '円',
-  //     onYomi: 'エン',
-  //     kunYomi: 'まる, まるい, まど, まどか',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '円', answer: 'えん'),
-  //       PhraseAnswer(phraseParts: '四万円', answer: 'えん'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('日'),
-  //     kanji: '日',
-  //     onYomi: 'ニチ, ジツ',
-  //     kunYomi: 'ひ, か, かつ, かれる',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '日本', answer: 'に'),
-  //       PhraseAnswer(phraseParts: '日', answer: 'ひ'),
-  //       PhraseAnswer(phraseParts: '休日', answer: 'じつ'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('月'),
-  //     kanji: '月',
-  //     onYomi: 'ゲツ, ガツ',
-  //     kunYomi: 'つき',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '月曜日', answer: 'げつ'),
-  //       PhraseAnswer(phraseParts: '一月', answer: 'がつ'),
-  //       PhraseAnswer(phraseParts: '今月', answer: 'げつ'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('火'),
-  //     kanji: '火',
-  //     onYomi: 'カ',
-  //     kunYomi: 'ひ, ほのお',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '火曜日', answer: 'か'),
-  //       PhraseAnswer(phraseParts: '火山', answer: 'か'),
-  //       PhraseAnswer(phraseParts: '火', answer: 'ひ'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('水'),
-  //     kanji: '水',
-  //     onYomi: 'スイ',
-  //     kunYomi: 'みず, みずうみ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '水曜日', answer: 'すい'),
-  //       PhraseAnswer(phraseParts: '水', answer: 'みず'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('木'),
-  //     kanji: '木',
-  //     onYomi: 'ボク, モク',
-  //     kunYomi: 'き, こ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '木', answer: 'き'),
-  //       PhraseAnswer(phraseParts: '木曜日', answer: 'もく'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('金'),
-  //     kanji: '金',
-  //     onYomi: 'キン, コン, ゴン',
-  //     kunYomi: 'かね, かな, がね',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: 'お金', answer: 'かね'),
-  //       PhraseAnswer(phraseParts: '金', answer: 'きん'),
-  //       PhraseAnswer(phraseParts: '金曜日', answer: 'きん'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('土'),
-  //     kanji: '土',
-  //     onYomi: 'ド, ト',
-  //     kunYomi: 'つち',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '土', answer: 'つち'),
-  //       PhraseAnswer(phraseParts: '土曜日', answer: 'ど'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('曜'),
-  //     kanji: '曜',
-  //     onYomi: 'ヨウ',
-  //     kunYomi: '',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '月曜日', answer: 'よう'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('年'),
-  //     kanji: '年',
-  //     onYomi: 'ネン',
-  //     kunYomi: 'とし',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '年', answer: 'とし'),
-  //       PhraseAnswer(phraseParts: '二千年', answer: 'ねん'),
-  //       PhraseAnswer(phraseParts: '来年', answer: 'ねん'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('上'),
-  //     kanji: '上',
-  //     onYomi: 'ジョウ, ショウ',
-  //     kunYomi: 'うえ, あがる, あげる, のぼる, のぼせる, のぼす',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '上がる', answer: 'あ'),
-  //       PhraseAnswer(phraseParts: '水上スキー', answer: 'じょう'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('下'),
-  //     kanji: '下',
-  //     onYomi: 'カ, ゲ',
-  //     kunYomi: 'した, しも, もと, さがる, さげる, くだる, くだす, くださる',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '下がる', answer: 'さ'),
-  //       PhraseAnswer(phraseParts: '上下', answer: 'げ'),
-  //       PhraseAnswer(phraseParts: '下', answer: 'した'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('中'),
-  //     kanji: '中',
-  //     onYomi: 'チュウ',
-  //     kunYomi: 'なか',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '一日中', answer: 'じゅう'),
-  //       PhraseAnswer(phraseParts: '中', answer: 'なか'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('外'),
-  //     kanji: '外',
-  //     onYomi: 'ガイ',
-  //     kunYomi: 'そと, ほか, はずす, はずれる',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '外国', answer: 'がい'),
-  //       PhraseAnswer(phraseParts: '外', answer: 'そと'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('前'),
-  //     kanji: '前',
-  //     onYomi: 'ゼン',
-  //     kunYomi: 'まえ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '前', answer: 'まえ'),
-  //       PhraseAnswer(phraseParts: '三日前', answer: 'まえ'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('後'),
-  //     kanji: '後',
-  //     onYomi: 'ゴ, コウ',
-  //     kunYomi: 'うしろ, あと, のち',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '後', answer: 'あと'),
-  //       PhraseAnswer(phraseParts: '後ろ', answer: 'うし'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('右'),
-  //     kanji: '右',
-  //     onYomi: 'ウ, ユウ',
-  //     kunYomi: 'みぎ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '右', answer: 'みぎ'),
-  //       PhraseAnswer(phraseParts: '右手', answer: 'みぎ'),
-  //       PhraseAnswer(phraseParts: '左右', answer: 'ゆう'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('左'),
-  //     kanji: '左',
-  //     onYomi: 'サ, シャ',
-  //     kunYomi: 'ひだり',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '左', answer: 'ひだり'),
-  //       PhraseAnswer(phraseParts: '左手', answer: 'ひだり'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('大'),
-  //     kanji: '大',
-  //     onYomi: 'ダイ, タイ',
-  //     kunYomi: 'おお, おお(きい)',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '大きい', answer: 'おお'),
-  //       PhraseAnswer(phraseParts: '大学', answer: 'だい'),
-  //       PhraseAnswer(phraseParts: '大会', answer: 'たい'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('小'),
-  //     kanji: '小',
-  //     onYomi: 'ショウ',
-  //     kunYomi: 'ちい(さい), こ, こ, お, さ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '小さい', answer: 'ちい'),
-  //       PhraseAnswer(phraseParts: '小川', answer: 'お'),
-  //       PhraseAnswer(phraseParts: '小犬', answer: 'こ'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('長'),
-  //     kanji: '長',
-  //     onYomi: 'チョウ',
-  //     kunYomi: 'なが, なが(い)',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '長い', answer: 'なが'),
-  //       PhraseAnswer(phraseParts: '学長', answer: 'ちょう'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('短'),
-  //     kanji: '短',
-  //     onYomi: 'タン',
-  //     kunYomi: 'みじか, みじか(い)',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '短い', answer: 'みじか'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('高'),
-  //     kanji: '高',
-  //     onYomi: 'コウ',
-  //     kunYomi: 'たかい, たか, だか, たか.まる, たか.める',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '高い', answer: 'たか'),
-  //       PhraseAnswer(phraseParts: '円高', answer: 'だか'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('安'),
-  //     kanji: '安',
-  //     onYomi: 'アン',
-  //     kunYomi: 'やすい, やすまる, やす, やす.らか',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '安い', answer: 'やす'),
-  //       PhraseAnswer(phraseParts: '安全', answer: 'あん'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('新'),
-  //     kanji: '新',
-  //     onYomi: 'しん, さん',
-  //     kunYomi: 'アタラシイ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '新しい', answer: 'あたら'),
-  //       PhraseAnswer(phraseParts: '新人', answer: 'しん'),
-  //       PhraseAnswer(phraseParts: '新年', answer: 'しん'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('古'),
-  //     kanji: '古',
-  //     onYomi: 'こ',
-  //     kunYomi: 'フルイ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '古い', answer: 'ふる'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('暑'),
-  //     kanji: '暑',
-  //     onYomi: 'しょ',
-  //     kunYomi: 'アツイ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '暑い', answer: 'あつ'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('寒'),
-  //     kanji: '寒',
-  //     onYomi: 'かん',
-  //     kunYomi: 'サムイ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '寒い', answer: 'さむ'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('明'),
-  //     kanji: '明',
-  //     onYomi: 'メイ, ミョウ',
-  //     kunYomi: 'あかり, あかるい, あかるむ, あからむ, あきらか, あける, あく, あくる, あかす',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '明かり', answer: 'あ'),
-  //       PhraseAnswer(phraseParts: '明き', answer: 'あ'),
-  //       PhraseAnswer(phraseParts: '明日', answer: 'あした'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('暗'),
-  //     kanji: '暗',
-  //     onYomi: 'アン',
-  //     kunYomi: 'くらい',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '暗い', answer: 'くらい'),
-  //       PhraseAnswer(phraseParts: '暗れる', answer: 'く'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('忙'),
-  //     kanji: '忙',
-  //     onYomi: 'ボウ',
-  //     kunYomi: 'いそがしい',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '忙しい', answer: 'いそが'),
-  //       PhraseAnswer(phraseParts: '大忙し', answer: 'いそが'),
-  //       PhraseAnswer(phraseParts: '忙しげ', answer: 'せわ'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('静'),
-  //     kanji: '静',
-  //     onYomi: 'セイ, ジョウ',
-  //     kunYomi: 'しず, しず(か), しず(まる), しず(める)',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '静か', answer: 'しず'),
-  //       PhraseAnswer(phraseParts: '静まる', answer: 'しず'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('難'),
-  //     kanji: '難',
-  //     onYomi: 'ナン',
-  //     kunYomi: 'かたい, がたい',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '難しい', answer: 'むずか'),
-  //       PhraseAnswer(phraseParts: '難', answer: 'なん'),
-  //       PhraseAnswer(phraseParts: '難い', answer: 'にく'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('簡'),
-  //     kanji: '簡',
-  //     onYomi: 'カン',
-  //     kunYomi: 'えらぶ, かんたん',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '簡明', answer: 'かん'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('好'),
-  //     kanji: '好',
-  //     onYomi: 'コウ',
-  //     kunYomi: 'このむ, この(む)',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '好い', answer: 'よ'),
-  //       PhraseAnswer(phraseParts: '大好き', answer: 'す'),
-  //       PhraseAnswer(phraseParts: '好む', answer: 'この'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('嫌'),
-  //     kanji: '嫌',
-  //     onYomi: 'ケン',
-  //     kunYomi: 'きらう, ぎら(い)',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '嫌い', answer: 'きら'),
-  //       PhraseAnswer(phraseParts: '嫌う', answer: 'きら'),
-  //       PhraseAnswer(phraseParts: '嫌', answer: 'いや'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('多'),
-  //     kanji: '多',
-  //     onYomi: 'タ',
-  //     kunYomi: 'おお(い), まさ(に), まさ(る)',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '多分', answer: 'た'),
-  //       PhraseAnswer(phraseParts: '多大', answer: 'た'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('少'),
-  //     kanji: '少',
-  //     onYomi: 'ショウ',
-  //     kunYomi: 'すく.ない, すこ(し)',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '少し', answer: 'すこ'),
-  //       PhraseAnswer(phraseParts: '少年', answer: 'しょう'),
-  //       PhraseAnswer(phraseParts: '少女', answer: 'しょう'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('色'),
-  //     kanji: '色',
-  //     onYomi: 'ショク',
-  //     kunYomi: 'いろ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '色', answer: 'いろ'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('黒'),
-  //     kanji: '黒',
-  //     onYomi: 'コク',
-  //     kunYomi: 'くろ, くろ(い)',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '黒い', answer: 'くろ'),
-  //       PhraseAnswer(phraseParts: '黒色', answer: 'くろ'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('白'),
-  //     kanji: '白',
-  //     onYomi: 'ハク, ビャク',
-  //     kunYomi: 'しろ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '明白', answer: 'はく'),
-  //       PhraseAnswer(phraseParts: '白い', answer: 'しろ'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('赤'),
-  //     kanji: '赤',
-  //     onYomi: 'セキ, シャク',
-  //     kunYomi: 'あか, あか.い, あか.らむ, あか(らめる)',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '赤い', answer: 'あか'),
-  //       PhraseAnswer(phraseParts: '赤ちゃん', answer: 'あか'),
-  //       PhraseAnswer(phraseParts: '赤色', answer: 'あか'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('青'),
-  //     kanji: '青',
-  //     onYomi: 'セイ, ショウ',
-  //     kunYomi: 'あお, あお, あお(い)',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '青い', answer: '青'),
-  //       PhraseAnswer(phraseParts: '青色', answer: 'あお'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('黄'),
-  //     kanji: '黄',
-  //     onYomi: 'コウ',
-  //     kunYomi: 'き, こ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '黄金', answer: 'おう'),
-  //       PhraseAnswer(phraseParts: '着色', answer: 'き'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('紫'),
-  //     kanji: '紫',
-  //     onYomi: 'シ',
-  //     kunYomi: 'むらさき',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '紫色', answer: 'むらさき'),
-  //       PhraseAnswer(phraseParts: '大紫', answer: 'むらさき'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('茶'),
-  //     kanji: '茶',
-  //     onYomi: 'チャ, サ',
-  //     kunYomi: 'ちゃ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: 'お茶', answer: 'ちゃ'),
-  //       PhraseAnswer(phraseParts: '茶色', answer: 'ちゃ'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('食'),
-  //     kanji: '食',
-  //     onYomi: 'ショク, ジキ',
-  //     kunYomi: 'く(う), く(らう), た(べる)',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '食べる', answer: 'た'),
-  //       PhraseAnswer(phraseParts: '食べ物', answer: 'た'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('飲'),
-  //     kanji: '飲',
-  //     onYomi: 'イン',
-  //     kunYomi: 'の(む)',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '飲み物', answer: 'の'),
-  //       PhraseAnswer(phraseParts: '飲み', answer: 'の'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('買'),
-  //     kanji: '買',
-  //     onYomi: 'バイ',
-  //     kunYomi: 'かう',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '買い物', answer: 'か'),
-  //       PhraseAnswer(phraseParts: '買い手', answer: 'か'),
-  //       PhraseAnswer(phraseParts: '買う', answer: 'か'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('見'),
-  //     kanji: '見',
-  //     onYomi: 'ケン',
-  //     kunYomi: 'みる, みえる, みせる',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '見える', answer: 'み'),
-  //       PhraseAnswer(phraseParts: '見る', answer: 'み'),
-  //       PhraseAnswer(phraseParts: '一見', answer: 'けん'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('聞'),
-  //     kanji: '聞',
-  //     onYomi: 'ブン, モン',
-  //     kunYomi: 'きく, きこえる',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '聞く', answer: 'き'),
-  //       PhraseAnswer(phraseParts: '聞こえる', answer: 'き'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('話'),
-  //     kanji: '話',
-  //     onYomi: 'ワ',
-  //     kunYomi: 'はなす, はなし',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '話す', answer: 'はな'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('読'),
-  //     kanji: '読',
-  //     onYomi: 'ドク, トク',
-  //     kunYomi: 'よむ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '読み', answer: 'よ'),
-  //       PhraseAnswer(phraseParts: '読む', answer: 'よ'),
-  //       PhraseAnswer(phraseParts: '読み方', answer: 'よ'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('書'),
-  //     kanji: '書',
-  //     onYomi: 'ショ',
-  //     kunYomi: 'かく',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '書', answer: 'ふみ'),
-  //       PhraseAnswer(phraseParts: '文書', answer: 'しょ'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('入'),
-  //     kanji: '入',
-  //     onYomi: 'ニュウ',
-  //     kunYomi: 'いる, いる, いれる, いれ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '入', answer: 'いり'),
-  //       PhraseAnswer(phraseParts: '入力', answer: 'にゅう'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('出'),
-  //     kanji: '出',
-  //     onYomi: 'シュツ',
-  //     kunYomi: 'でる, でる, だす, だす, だれる, だれる',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '出る', answer: 'で'),
-  //       PhraseAnswer(phraseParts: '出し', answer: 'だ'),
-  //       PhraseAnswer(phraseParts: '出かける', answer: 'で'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('立'),
-  //     kanji: '立',
-  //     onYomi: 'リツ, リュウ',
-  //     kunYomi: 'た(つ), た(ち), た(てる), たて, たてあ(げる), たつ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '立ち', answer: 'た'),
-  //       PhraseAnswer(phraseParts: '立つ', answer: 'た'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('座'),
-  //     kanji: '座',
-  //     onYomi: 'ザ',
-  //     kunYomi: 'すわ(る)',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '座る', answer: 'すわ'),
-  //       PhraseAnswer(phraseParts: '一座', answer: 'ざ'),
-  //       PhraseAnswer(phraseParts: '口座', answer: 'ざ'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('休'),
-  //     kanji: '休',
-  //     onYomi: 'キュウ',
-  //     kunYomi: 'やす(む), やす.まる, やす(める)',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '休み', answer: 'やす'),
-  //       PhraseAnswer(phraseParts: '休む', answer: 'やす'),
-  //       PhraseAnswer(phraseParts: '休日', answer: 'きゅう'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('行'),
-  //     kanji: '行',
-  //     onYomi: 'コウ, ギョウ, アン',
-  //     kunYomi: 'い(く), ゆ(く), おこな(う)',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '行き', answer: 'い'),
-  //       PhraseAnswer(phraseParts: '行方', answer: 'ゆく'),
-  //       PhraseAnswer(phraseParts: '行う', answer: 'おこな'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('来'),
-  //     kanji: '来',
-  //     onYomi: 'ライ, タイ',
-  //     kunYomi: 'く(る), きた(る), きた(す), き(たす), き(たる), き',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '来月', answer: 'らい'),
-  //       PhraseAnswer(phraseParts: '来日', answer: 'らい'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('帰'),
-  //     kanji: '帰',
-  //     onYomi: 'キ',
-  //     kunYomi: 'かえ(る), かえ(す)',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '帰り', answer: 'かえ'),
-  //       PhraseAnswer(phraseParts: '帰国', answer: 'き'),
-  //       PhraseAnswer(phraseParts: '日帰り', answer: 'がえ'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('開'),
-  //     kanji: '開',
-  //     onYomi: 'カイ',
-  //     kunYomi: 'あ(く), あ(ける), ひら(く), ひら(ける), さか(る), さか(ん)',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '開く', answer: 'あ'),
-  //       PhraseAnswer(phraseParts: '開く', answer: 'ひら'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('閉'),
-  //     kanji: '閉',
-  //     onYomi: 'ヘイ',
-  //     kunYomi: 'と(じる), と(ざす), し(める), し(まる)',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '閉まる', answer: 'し'),
-  //       PhraseAnswer(phraseParts: '閉じる', answer: 'と'),
-  //       PhraseAnswer(phraseParts: '閉山', answer: 'へい'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('山'),
-  //     kanji: '山',
-  //     onYomi: 'サン',
-  //     kunYomi: 'やま',
-  //     phraseAnswers: [
-  //       PhraseAnswer(phraseParts: '山', answer: 'やま'),
-  //       PhraseAnswer(phraseParts: 'ふじ山', answer: 'さん'),
-  //     ]),
+  Kanji(
+      translation: NA.t('一'),
+      kanji: '一',
+      onYomi: 'イチ',
+      kunYomi: 'ひと, ひとつ',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '一人ぼっちとうきょう', furigana: '', emphasize: true),
+            ],
+            answer: 'ひとり'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: 'わたしは一ばんかっこいい', furigana: '', emphasize: true),
+            ],
+            answer: 'いち'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: 'ビイルを一つください', furigana: '', emphasize: true)
+            ],
+            answer: 'ひと'),
+      ]),
+  Kanji(
+      translation: NA.t('二'),
+      kanji: '二',
+      onYomi: 'ニ',
+      kunYomi: 'ふた, ふたつ',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '二プラス二', furigana: '', emphasize: true),
+            ],
+            answer: 'に'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: 'リンゴを二つ食べる', furigana: '', emphasize: true),
+            ],
+            answer: 'ふた'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: 'わたしわ三十二さいです', furigana: '', emphasize: true),
+            ],
+            answer: 'に'),
+      ]),
+  Kanji(
+      translation: NA.t('三'),
+      kanji: '三',
+      onYomi: 'サン, ゾウ',
+      kunYomi: 'み, みつ, みっつ',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '三月は寒いです', furigana: '', emphasize: true),
+            ],
+            answer: 'さん'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '三つのビデオゲームがあります', furigana: '', emphasize: true),
+            ],
+            answer: 'みっ'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: 'オレンジを三つもっています', furigana: '', emphasize: true),
+            ],
+            answer: 'みっ'),
+      ]),
+  Kanji(
+      translation: NA.t('四'),
+      kanji: '四',
+      onYomi: 'シ',
+      kunYomi: 'よ, よつ, よっつ',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '四月は暑いです', furigana: '', emphasize: true),
+            ],
+            answer: 'し'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: 'クリスマスまであと四日', furigana: '', emphasize: true),
+            ],
+            answer: 'よっ'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: 'メッシは四ゴールをきめた', furigana: '', emphasize: true),
+            ],
+            answer: 'よん'),
+      ]),
+  Kanji(
+      translation: NA.t('五'),
+      kanji: '五',
+      onYomi: 'ゴ',
+      kunYomi: 'いつ, いつつ',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: 'ほしが五つあります', furigana: '', emphasize: true),
+            ],
+            answer: 'いつ'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '五月は好きな月です', furigana: '', emphasize: true),
+            ],
+            answer: 'ご'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '五百円かせいだ', furigana: '', emphasize: true),
+            ],
+            answer: 'ご'),
+      ]),
+  Kanji(
+      translation: NA.t('六'),
+      kanji: '六',
+      onYomi: 'ロク',
+      kunYomi: 'む, むつ, むっつ',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '六つ', furigana: '', emphasize: true),
+            ],
+            answer: 'むっ'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '六月', furigana: '', emphasize: true),
+            ],
+            answer: 'ろく'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '六日', furigana: '', emphasize: true),
+            ],
+            answer: 'むい'),
+      ]),
+  Kanji(
+      translation: NA.t('七'),
+      kanji: '七',
+      onYomi: 'シチ',
+      kunYomi: 'なな, なの',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '七つ', furigana: '', emphasize: true),
+            ],
+            answer: 'なな'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '七月', furigana: '', emphasize: true),
+            ],
+            answer: 'しち'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '七日', furigana: '', emphasize: true),
+            ],
+            answer: 'なの'),
+      ]),
+  Kanji(
+      translation: NA.t('八'),
+      kanji: '八',
+      onYomi: 'ハチ',
+      kunYomi: 'や, やつ, やっつ',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '八つ', furigana: '', emphasize: true),
+            ],
+            answer: 'やっ'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '八月', furigana: '', emphasize: true),
+            ],
+            answer: 'はち'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '八日', furigana: '', emphasize: true),
+            ],
+            answer: 'よう'),
+      ]),
+  Kanji(
+      translation: NA.t('九'),
+      kanji: '九',
+      onYomi: 'キュウ, ク',
+      kunYomi: 'ここの, ここのつ',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '九つ', furigana: '', emphasize: true),
+            ],
+            answer: 'ここの'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '九月', furigana: '', emphasize: true),
+            ],
+            answer: 'く'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '九日', furigana: '', emphasize: true),
+            ],
+            answer: 'ここの'),
+      ]),
+  Kanji(
+      translation: NA.t('十'),
+      kanji: '十',
+      onYomi: 'ジュウ',
+      kunYomi: 'とお',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '十月', furigana: '', emphasize: true),
+            ],
+            answer: 'じゅう'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '十日', furigana: '', emphasize: true),
+            ],
+            answer: 'とお'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '十分な', furigana: '', emphasize: true),
+            ],
+            answer: 'じゅう'),
+      ]),
+  Kanji(
+      translation: NA.t('百'),
+      kanji: '百',
+      onYomi: 'ヒャク',
+      kunYomi: 'もも',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '百', furigana: '', emphasize: true),
+            ],
+            answer: 'ひゃく'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '三百', furigana: '', emphasize: true),
+            ],
+            answer: 'びゃく'),
+      ]),
+  Kanji(
+      translation: NA.t('千'),
+      kanji: '千',
+      onYomi: 'セン',
+      kunYomi: 'ち',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '千', furigana: '', emphasize: true),
+            ],
+            answer: 'せん'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '三千', furigana: '', emphasize: true),
+            ],
+            answer: 'ぜん'),
+      ]),
+  Kanji(
+      translation: NA.t('万'),
+      kanji: '万',
+      onYomi: 'マン, バン',
+      kunYomi: 'よろず',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '一万', furigana: '', emphasize: true),
+            ],
+            answer: 'まん'),
+      ]),
+  Kanji(
+      translation: NA.t('円'),
+      kanji: '円',
+      onYomi: 'エン',
+      kunYomi: 'まる, まるい, まど, まどか',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '円', furigana: '', emphasize: true),
+            ],
+            answer: 'えん'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '四万円', furigana: '', emphasize: true),
+            ],
+            answer: 'えん'),
+      ]),
+  Kanji(
+      translation: NA.t('日'),
+      kanji: '日',
+      onYomi: 'ニチ, ジツ',
+      kunYomi: 'ひ, か, かつ, かれる',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '日本', furigana: '', emphasize: true),
+            ],
+            answer: 'に'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '日', furigana: '', emphasize: true),
+            ],
+            answer: 'ひ'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '休日', furigana: '', emphasize: true),
+            ],
+            answer: 'じつ'),
+      ]),
+  Kanji(
+      translation: NA.t('月'),
+      kanji: '月',
+      onYomi: 'ゲツ, ガツ',
+      kunYomi: 'つき',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '月曜日', furigana: '', emphasize: true),
+            ],
+            answer: 'げつ'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '一月', furigana: '', emphasize: true),
+            ],
+            answer: 'がつ'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '今月', furigana: '', emphasize: true),
+            ],
+            answer: 'げつ'),
+      ]),
+  Kanji(
+      translation: NA.t('火'),
+      kanji: '火',
+      onYomi: 'カ',
+      kunYomi: 'ひ, ほのお',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '火曜日', furigana: '', emphasize: true),
+            ],
+            answer: 'か'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '火山', furigana: '', emphasize: true),
+            ],
+            answer: 'か'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '火', furigana: '', emphasize: true),
+            ],
+            answer: 'ひ'),
+      ]),
+  Kanji(
+      translation: NA.t('水'),
+      kanji: '水',
+      onYomi: 'スイ',
+      kunYomi: 'みず, みずうみ',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '水曜日', furigana: '', emphasize: true),
+            ],
+            answer: 'すい'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '水', furigana: '', emphasize: true),
+            ],
+            answer: 'みず'),
+      ]),
+  Kanji(
+      translation: NA.t('木'),
+      kanji: '木',
+      onYomi: 'ボク, モク',
+      kunYomi: 'き, こ',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '木', furigana: '', emphasize: true),
+            ],
+            answer: 'き'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '木曜日', furigana: '', emphasize: true),
+            ],
+            answer: 'もく'),
+      ]),
+  Kanji(
+      translation: NA.t('金'),
+      kanji: '金',
+      onYomi: 'キン, コン, ゴン',
+      kunYomi: 'かね, かな, がね',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: 'お金', furigana: '', emphasize: true),
+            ],
+            answer: 'かね'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '金', furigana: '', emphasize: true),
+            ],
+            answer: 'きん'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '金曜日', furigana: '', emphasize: true),
+            ],
+            answer: 'きん'),
+      ]),
+  Kanji(
+      translation: NA.t('土'),
+      kanji: '土',
+      onYomi: 'ド, ト',
+      kunYomi: 'つち',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '土', furigana: '', emphasize: true),
+            ],
+            answer: 'つち'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '土曜日', furigana: '', emphasize: true),
+            ],
+            answer: 'ど'),
+      ]),
+  Kanji(
+      translation: NA.t('曜'),
+      kanji: '曜',
+      onYomi: 'ヨウ',
+      kunYomi: '',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '月曜日', furigana: '', emphasize: true),
+            ],
+            answer: 'よう'),
+      ]),
+  Kanji(
+      translation: NA.t('年'),
+      kanji: '年',
+      onYomi: 'ネン',
+      kunYomi: 'とし',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '年', furigana: '', emphasize: true),
+            ],
+            answer: 'とし'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '二千年', furigana: '', emphasize: true),
+            ],
+            answer: 'ねん'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '来年', furigana: '', emphasize: true),
+            ],
+            answer: 'ねん'),
+      ]),
+  Kanji(
+      translation: NA.t('上'),
+      kanji: '上',
+      onYomi: 'ジョウ, ショウ',
+      kunYomi: 'うえ, あがる, あげる, のぼる, のぼせる, のぼす',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '上がる', furigana: '', emphasize: true),
+            ],
+            answer: 'あ'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '水上スキー', furigana: '', emphasize: true),
+            ],
+            answer: 'じょう'),
+      ]),
+  Kanji(
+      translation: NA.t('下'),
+      kanji: '下',
+      onYomi: 'カ, ゲ',
+      kunYomi: 'した, しも, もと, さがる, さげる, くだる, くだす, くださる',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '下がる', furigana: '', emphasize: true),
+            ],
+            answer: 'さ'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '上下', furigana: '', emphasize: true),
+            ],
+            answer: 'げ'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '下', furigana: '', emphasize: true),
+            ],
+            answer: 'した'),
+      ]),
+  Kanji(
+      translation: NA.t('中'),
+      kanji: '中',
+      onYomi: 'チュウ',
+      kunYomi: 'なか',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '一日中', furigana: '', emphasize: true),
+            ],
+            answer: 'じゅう'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '中', furigana: '', emphasize: true),
+            ],
+            answer: 'なか'),
+      ]),
+  Kanji(
+      translation: NA.t('外'),
+      kanji: '外',
+      onYomi: 'ガイ',
+      kunYomi: 'そと, ほか, はずす, はずれる',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '外国', furigana: '', emphasize: true),
+            ],
+            answer: 'がい'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '外', furigana: '', emphasize: true),
+            ],
+            answer: 'そと'),
+      ]),
+  Kanji(
+      translation: NA.t('前'),
+      kanji: '前',
+      onYomi: 'ゼン',
+      kunYomi: 'まえ',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '前', furigana: '', emphasize: true),
+            ],
+            answer: 'まえ'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '三日前', furigana: '', emphasize: true),
+            ],
+            answer: 'まえ'),
+      ]),
+  Kanji(
+      translation: NA.t('後'),
+      kanji: '後',
+      onYomi: 'ゴ, コウ',
+      kunYomi: 'うしろ, あと, のち',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '後', furigana: '', emphasize: true),
+            ],
+            answer: 'あと'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '後ろ', furigana: '', emphasize: true),
+            ],
+            answer: 'うし'),
+      ]),
+  Kanji(
+      translation: NA.t('右'),
+      kanji: '右',
+      onYomi: 'ウ, ユウ',
+      kunYomi: 'みぎ',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '右', furigana: '', emphasize: true),
+            ],
+            answer: 'みぎ'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '右手', furigana: '', emphasize: true),
+            ],
+            answer: 'みぎ'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '左右', furigana: '', emphasize: true),
+            ],
+            answer: 'ゆう'),
+      ]),
+  Kanji(
+      translation: NA.t('左'),
+      kanji: '左',
+      onYomi: 'サ, シャ',
+      kunYomi: 'ひだり',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '左', furigana: '', emphasize: true),
+            ],
+            answer: 'ひだり'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '左手', furigana: '', emphasize: true),
+            ],
+            answer: 'ひだり'),
+      ]),
+  Kanji(
+      translation: NA.t('大'),
+      kanji: '大',
+      onYomi: 'ダイ, タイ',
+      kunYomi: 'おお, おお(きい)',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '大きい', furigana: '', emphasize: true),
+            ],
+            answer: 'おお'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '大学', furigana: '', emphasize: true),
+            ],
+            answer: 'だい'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '大会', furigana: '', emphasize: true),
+            ],
+            answer: 'たい'),
+      ]),
+  Kanji(
+      translation: NA.t('小'),
+      kanji: '小',
+      onYomi: 'ショウ',
+      kunYomi: 'ちい(さい), こ, こ, お, さ',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '小さい', furigana: '', emphasize: true),
+            ],
+            answer: 'ちい'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '小川', furigana: '', emphasize: true),
+            ],
+            answer: 'お'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '小犬', furigana: '', emphasize: true),
+            ],
+            answer: 'こ'),
+      ]),
+  Kanji(
+      translation: NA.t('長'),
+      kanji: '長',
+      onYomi: 'チョウ',
+      kunYomi: 'なが, なが(い)',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '長い', furigana: '', emphasize: true),
+            ],
+            answer: 'なが'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '学長', furigana: '', emphasize: true),
+            ],
+            answer: 'ちょう'),
+      ]),
+  Kanji(
+      translation: NA.t('短'),
+      kanji: '短',
+      onYomi: 'タン',
+      kunYomi: 'みじか, みじか(い)',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '短い', furigana: '', emphasize: true),
+            ],
+            answer: 'みじか'),
+      ]),
+  Kanji(
+      translation: NA.t('高'),
+      kanji: '高',
+      onYomi: 'コウ',
+      kunYomi: 'たかい, たか, だか, たか.まる, たか.める',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '高い', furigana: '', emphasize: true),
+            ],
+            answer: 'たか'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '円高', furigana: '', emphasize: true),
+            ],
+            answer: 'だか'),
+      ]),
+  Kanji(
+      translation: NA.t('安'),
+      kanji: '安',
+      onYomi: 'アン',
+      kunYomi: 'やすい, やすまる, やす, やす.らか',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '安い', furigana: '', emphasize: true),
+            ],
+            answer: 'やす'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '安全', furigana: '', emphasize: true),
+            ],
+            answer: 'あん'),
+      ]),
+  Kanji(
+      translation: NA.t('新'),
+      kanji: '新',
+      onYomi: 'しん, さん',
+      kunYomi: 'アタラシイ',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '新しい', furigana: '', emphasize: true),
+            ],
+            answer: 'あたら'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '新人', furigana: '', emphasize: true),
+            ],
+            answer: 'しん'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '新年', furigana: '', emphasize: true),
+            ],
+            answer: 'しん'),
+      ]),
+  Kanji(
+      translation: NA.t('古'),
+      kanji: '古',
+      onYomi: 'こ',
+      kunYomi: 'フルイ',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '古い', furigana: '', emphasize: true),
+            ],
+            answer: 'ふる'),
+      ]),
+  Kanji(
+      translation: NA.t('暑'),
+      kanji: '暑',
+      onYomi: 'しょ',
+      kunYomi: 'アツイ',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '暑い', furigana: '', emphasize: true),
+            ],
+            answer: 'あつ'),
+      ]),
+  Kanji(
+      translation: NA.t('寒'),
+      kanji: '寒',
+      onYomi: 'かん',
+      kunYomi: 'サムイ',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '寒い', furigana: '', emphasize: true),
+            ],
+            answer: 'さむ'),
+      ]),
+  Kanji(
+      translation: NA.t('明'),
+      kanji: '明',
+      onYomi: 'メイ, ミョウ',
+      kunYomi: 'あかり, あかるい, あかるむ, あからむ, あきらか, あける, あく, あくる, あかす',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '明かり', furigana: '', emphasize: true),
+            ],
+            answer: 'あ'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '明き', furigana: '', emphasize: true),
+            ],
+            answer: 'あ'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '明日', furigana: '', emphasize: true),
+            ],
+            answer: 'あした'),
+      ]),
+  Kanji(
+      translation: NA.t('暗'),
+      kanji: '暗',
+      onYomi: 'アン',
+      kunYomi: 'くらい',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '暗い', furigana: '', emphasize: true),
+            ],
+            answer: 'くらい'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '暗れる', furigana: '', emphasize: true),
+            ],
+            answer: 'く'),
+      ]),
+  Kanji(
+      translation: NA.t('忙'),
+      kanji: '忙',
+      onYomi: 'ボウ',
+      kunYomi: 'いそがしい',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '忙しい', furigana: '', emphasize: true),
+            ],
+            answer: 'いそが'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '大忙し', furigana: '', emphasize: true),
+            ],
+            answer: 'いそが'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '忙しげ', furigana: '', emphasize: true),
+            ],
+            answer: 'せわ'),
+      ]),
+  Kanji(
+      translation: NA.t('静'),
+      kanji: '静',
+      onYomi: 'セイ, ジョウ',
+      kunYomi: 'しず, しず(か), しず(まる), しず(める)',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '静か', furigana: '', emphasize: true),
+            ],
+            answer: 'しず'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '静まる', furigana: '', emphasize: true),
+            ],
+            answer: 'しず'),
+      ]),
+  Kanji(
+      translation: NA.t('難'),
+      kanji: '難',
+      onYomi: 'ナン',
+      kunYomi: 'かたい, がたい',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '難しい', furigana: '', emphasize: true),
+            ],
+            answer: 'むずか'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '難', furigana: '', emphasize: true),
+            ],
+            answer: 'なん'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '難い', furigana: '', emphasize: true),
+            ],
+            answer: 'にく'),
+      ]),
+  Kanji(
+      translation: NA.t('簡'),
+      kanji: '簡',
+      onYomi: 'カン',
+      kunYomi: 'えらぶ, かんたん',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '簡明', furigana: '', emphasize: true),
+            ],
+            answer: 'かん'),
+      ]),
+  Kanji(
+      translation: NA.t('好'),
+      kanji: '好',
+      onYomi: 'コウ',
+      kunYomi: 'このむ, この(む)',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '好い', furigana: '', emphasize: true),
+            ],
+            answer: 'よ'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '大好き', furigana: '', emphasize: true),
+            ],
+            answer: 'す'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '好む', furigana: '', emphasize: true),
+            ],
+            answer: 'この'),
+      ]),
+  Kanji(
+      translation: NA.t('嫌'),
+      kanji: '嫌',
+      onYomi: 'ケン',
+      kunYomi: 'きらう, ぎら(い)',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '嫌い', furigana: '', emphasize: true),
+            ],
+            answer: 'きら'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '嫌う', furigana: '', emphasize: true),
+            ],
+            answer: 'きら'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '嫌', furigana: '', emphasize: true),
+            ],
+            answer: 'いや'),
+      ]),
+  Kanji(
+      translation: NA.t('多'),
+      kanji: '多',
+      onYomi: 'タ',
+      kunYomi: 'おお(い), まさ(に), まさ(る)',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '多分', furigana: '', emphasize: true),
+            ],
+            answer: 'た'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '多大', furigana: '', emphasize: true),
+            ],
+            answer: 'た'),
+      ]),
+  Kanji(
+      translation: NA.t('少'),
+      kanji: '少',
+      onYomi: 'ショウ',
+      kunYomi: 'すく.ない, すこ(し)',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '少し', furigana: '', emphasize: true),
+            ],
+            answer: 'すこ'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '少年', furigana: '', emphasize: true),
+            ],
+            answer: 'しょう'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '少女', furigana: '', emphasize: true),
+            ],
+            answer: 'しょう'),
+      ]),
+  Kanji(
+      translation: NA.t('色'),
+      kanji: '色',
+      onYomi: 'ショク',
+      kunYomi: 'いろ',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '色', furigana: '', emphasize: true),
+            ],
+            answer: 'いろ'),
+      ]),
+  Kanji(
+      translation: NA.t('黒'),
+      kanji: '黒',
+      onYomi: 'コク',
+      kunYomi: 'くろ, くろ(い)',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '黒い', furigana: '', emphasize: true),
+            ],
+            answer: 'くろ'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '黒色', furigana: '', emphasize: true),
+            ],
+            answer: 'くろ'),
+      ]),
+  Kanji(
+      translation: NA.t('白'),
+      kanji: '白',
+      onYomi: 'ハク, ビャク',
+      kunYomi: 'しろ',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '明白', furigana: '', emphasize: true),
+            ],
+            answer: 'はく'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '白い', furigana: '', emphasize: true),
+            ],
+            answer: 'しろ'),
+      ]),
+  Kanji(
+      translation: NA.t('赤'),
+      kanji: '赤',
+      onYomi: 'セキ, シャク',
+      kunYomi: 'あか, あか.い, あか.らむ, あか(らめる)',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '赤い', furigana: '', emphasize: true),
+            ],
+            answer: 'あか'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '赤ちゃん', furigana: '', emphasize: true),
+            ],
+            answer: 'あか'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '赤色', furigana: '', emphasize: true),
+            ],
+            answer: 'あか'),
+      ]),
+  Kanji(
+      translation: NA.t('青'),
+      kanji: '青',
+      onYomi: 'セイ, ショウ',
+      kunYomi: 'あお, あお, あお(い)',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '青い', furigana: '', emphasize: true),
+            ],
+            answer: '青'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '青色', furigana: '', emphasize: true),
+            ],
+            answer: 'あお'),
+      ]),
+  Kanji(
+      translation: NA.t('黄'),
+      kanji: '黄',
+      onYomi: 'コウ',
+      kunYomi: 'き, こ',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '黄金', furigana: '', emphasize: true),
+            ],
+            answer: 'おう'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '着色', furigana: '', emphasize: true),
+            ],
+            answer: 'き'),
+      ]),
+  Kanji(
+      translation: NA.t('紫'),
+      kanji: '紫',
+      onYomi: 'シ',
+      kunYomi: 'むらさき',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '紫色', furigana: '', emphasize: true),
+            ],
+            answer: 'むらさき'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '大紫', furigana: '', emphasize: true),
+            ],
+            answer: 'むらさき'),
+      ]),
+  Kanji(
+      translation: NA.t('茶'),
+      kanji: '茶',
+      onYomi: 'チャ, サ',
+      kunYomi: 'ちゃ',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: 'お茶', furigana: '', emphasize: true),
+            ],
+            answer: 'ちゃ'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '茶色', furigana: '', emphasize: true),
+            ],
+            answer: 'ちゃ'),
+      ]),
+  Kanji(
+      translation: NA.t('食'),
+      kanji: '食',
+      onYomi: 'ショク, ジキ',
+      kunYomi: 'く(う), く(らう), た(べる)',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '食べる', furigana: '', emphasize: true),
+            ],
+            answer: 'た'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '食べ物', furigana: '', emphasize: true),
+            ],
+            answer: 'た'),
+      ]),
+  Kanji(
+      translation: NA.t('飲'),
+      kanji: '飲',
+      onYomi: 'イン',
+      kunYomi: 'の(む)',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '飲み物', furigana: '', emphasize: true),
+            ],
+            answer: 'の'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '飲み', furigana: '', emphasize: true),
+            ],
+            answer: 'の'),
+      ]),
+  Kanji(
+      translation: NA.t('買'),
+      kanji: '買',
+      onYomi: 'バイ',
+      kunYomi: 'かう',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '買い物', furigana: '', emphasize: true),
+            ],
+            answer: 'か'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '買い手', furigana: '', emphasize: true),
+            ],
+            answer: 'か'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '買う', furigana: '', emphasize: true),
+            ],
+            answer: 'か'),
+      ]),
+  Kanji(
+      translation: NA.t('見'),
+      kanji: '見',
+      onYomi: 'ケン',
+      kunYomi: 'みる, みえる, みせる',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '見える', furigana: '', emphasize: true),
+            ],
+            answer: 'み'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '見る', furigana: '', emphasize: true),
+            ],
+            answer: 'み'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '一見', furigana: '', emphasize: true),
+            ],
+            answer: 'けん'),
+      ]),
+  Kanji(
+      translation: NA.t('聞'),
+      kanji: '聞',
+      onYomi: 'ブン, モン',
+      kunYomi: 'きく, きこえる',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '聞く', furigana: '', emphasize: true),
+            ],
+            answer: 'き'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '聞こえる', furigana: '', emphasize: true),
+            ],
+            answer: 'き'),
+      ]),
+  Kanji(
+      translation: NA.t('話'),
+      kanji: '話',
+      onYomi: 'ワ',
+      kunYomi: 'はなす, はなし',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '話す', furigana: '', emphasize: true),
+            ],
+            answer: 'はな'),
+      ]),
+  Kanji(
+      translation: NA.t('読'),
+      kanji: '読',
+      onYomi: 'ドク, トク',
+      kunYomi: 'よむ',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '読み', furigana: '', emphasize: true),
+            ],
+            answer: 'よ'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '読む', furigana: '', emphasize: true),
+            ],
+            answer: 'よ'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '読み方', furigana: '', emphasize: true),
+            ],
+            answer: 'よ'),
+      ]),
+  Kanji(
+      translation: NA.t('書'),
+      kanji: '書',
+      onYomi: 'ショ',
+      kunYomi: 'かく',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '書', furigana: '', emphasize: true),
+            ],
+            answer: 'ふみ'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '文書', furigana: '', emphasize: true),
+            ],
+            answer: 'しょ'),
+      ]),
+  Kanji(
+      translation: NA.t('入'),
+      kanji: '入',
+      onYomi: 'ニュウ',
+      kunYomi: 'いる, いる, いれる, いれ',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '入', furigana: '', emphasize: true),
+            ],
+            answer: 'いり'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '入力', furigana: '', emphasize: true),
+            ],
+            answer: 'にゅう'),
+      ]),
+  Kanji(
+      translation: NA.t('出'),
+      kanji: '出',
+      onYomi: 'シュツ',
+      kunYomi: 'でる, でる, だす, だす, だれる, だれる',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '出る', furigana: '', emphasize: true),
+            ],
+            answer: 'で'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '出し', furigana: '', emphasize: true),
+            ],
+            answer: 'だ'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '出かける', furigana: '', emphasize: true),
+            ],
+            answer: 'で'),
+      ]),
+  Kanji(
+      translation: NA.t('立'),
+      kanji: '立',
+      onYomi: 'リツ, リュウ',
+      kunYomi: 'た(つ), た(ち), た(てる), たて, たてあ(げる), たつ',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '立ち', furigana: '', emphasize: true),
+            ],
+            answer: 'た'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '立つ', furigana: '', emphasize: true),
+            ],
+            answer: 'た'),
+      ]),
+  Kanji(
+      translation: NA.t('座'),
+      kanji: '座',
+      onYomi: 'ザ',
+      kunYomi: 'すわ(る)',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '座る', furigana: '', emphasize: true),
+            ],
+            answer: 'すわ'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '一座', furigana: '', emphasize: true),
+            ],
+            answer: 'ざ'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '口座', furigana: '', emphasize: true),
+            ],
+            answer: 'ざ'),
+      ]),
+  Kanji(
+      translation: NA.t('休'),
+      kanji: '休',
+      onYomi: 'キュウ',
+      kunYomi: 'やす(む), やす.まる, やす(める)',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '休み', furigana: '', emphasize: true),
+            ],
+            answer: 'やす'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '休む', furigana: '', emphasize: true),
+            ],
+            answer: 'やす'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '休日', furigana: '', emphasize: true),
+            ],
+            answer: 'きゅう'),
+      ]),
+  Kanji(
+      translation: NA.t('行'),
+      kanji: '行',
+      onYomi: 'コウ, ギョウ, アン',
+      kunYomi: 'い(く), ゆ(く), おこな(う)',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '行き', furigana: '', emphasize: true),
+            ],
+            answer: 'い'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '行方', furigana: '', emphasize: true),
+            ],
+            answer: 'ゆく'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '行う', furigana: '', emphasize: true),
+            ],
+            answer: 'おこな'),
+      ]),
+  Kanji(
+      translation: NA.t('来'),
+      kanji: '来',
+      onYomi: 'ライ, タイ',
+      kunYomi: 'く(る), きた(る), きた(す), き(たす), き(たる), き',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '来月', furigana: '', emphasize: true),
+            ],
+            answer: 'らい'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '来日', furigana: '', emphasize: true),
+            ],
+            answer: 'らい'),
+      ]),
+  Kanji(
+      translation: NA.t('帰'),
+      kanji: '帰',
+      onYomi: 'キ',
+      kunYomi: 'かえ(る), かえ(す)',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '帰り', furigana: '', emphasize: true),
+            ],
+            answer: 'かえ'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '帰国', furigana: '', emphasize: true),
+            ],
+            answer: 'き'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '日帰り', furigana: '', emphasize: true),
+            ],
+            answer: 'がえ'),
+      ]),
+  Kanji(
+      translation: NA.t('開'),
+      kanji: '開',
+      onYomi: 'カイ',
+      kunYomi: 'あ(く), あ(ける), ひら(く), ひら(ける), さか(る), さか(ん)',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '開く', furigana: '', emphasize: true),
+            ],
+            answer: 'あ'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '開く', furigana: '', emphasize: true),
+            ],
+            answer: 'ひら'),
+      ]),
+  Kanji(
+      translation: NA.t('閉'),
+      kanji: '閉',
+      onYomi: 'ヘイ',
+      kunYomi: 'と(じる), と(ざす), し(める), し(まる)',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '閉まる', furigana: '', emphasize: true),
+            ],
+            answer: 'し'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '閉じる', furigana: '', emphasize: true),
+            ],
+            answer: 'と'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '閉山', furigana: '', emphasize: true),
+            ],
+            answer: 'へい'),
+      ]),
+  Kanji(
+      translation: NA.t('山'),
+      kanji: '山',
+      onYomi: 'サン',
+      kunYomi: 'やま',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '山', furigana: '', emphasize: true),
+            ],
+            answer: 'やま'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: 'ふじ山', furigana: '', emphasize: true),
+            ],
+            answer: 'さん'),
+      ]),
   Kanji(
       translation: NA.t('今'),
       kanji: '今',
