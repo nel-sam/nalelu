@@ -53,8 +53,8 @@ class KanjiExercise extends StatelessWidget {
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    getContent(context),
                     AdCard(),
+                    getContent(context),
                   ],
                 ),
               ),

@@ -34,26 +34,23 @@ class _KanjiExerciseStateArea extends State<KanjiExerciseStateArea> {
                   kanji: widget.state.kanji.kanji,
                 ),
               ),
-              ConstrainedBox(
-                constraints: BoxConstraints(maxWidth: 210),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Wrap(children: [
-                      Text(widget.state.kanji.translation.toUpperCase(),
-                          style: TextStyle(fontWeight: FontWeight.bold))
-                    ]),
-                    Text('Kun yomi'),
-                    Wrap(
-                      children: [Text(widget.state.kanji.kunYomi)],
-                    ),
-                    Text('On yomi'),
-                    Wrap(
-                      children: [Text(widget.state.kanji.onYomi)],
-                    ),
-                  ],
-                ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Wrap(children: [
+                    Text(widget.state.kanji.translation.toUpperCase(),
+                        style: TextStyle(fontWeight: FontWeight.bold))
+                  ]),
+                  Text('Kun yomi'),
+                  Wrap(
+                    children: [Text(widget.state.kanji.kunYomi)],
+                  ),
+                  Text('On yomi'),
+                  Wrap(
+                    children: [Text(widget.state.kanji.onYomi)],
+                  ),
+                ],
               ),
             ],
           ),
@@ -62,27 +59,36 @@ class _KanjiExerciseStateArea extends State<KanjiExerciseStateArea> {
             (pa) {
               var inputKey = pa.phraseParts.map((pp) => pp.text).join();
 
-              return Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(pa.translation),
-                  FuriganaText(
-                    furiTexts: pa.phraseParts,
-                  ),
-                  NaFreeFormEntryWrapper(
-                    widthType: NFreeFormWidths.half,
-                    hintValue: NA.t('kanjiToHiragana'),
-                    onChanged: (String newValue) {
-                      widget.state.updateUserInput(inputKey, newValue);
-                    },
-                    initialValue: widget.state.getUserInput(inputKey),
-                    correctValues: [pa.answer],
-                    onCorrect: () {
-                      setState(() {});
-                    },
-                  ),
-                ],
+              return Padding(
+                padding: EdgeInsets.only(top: 12),
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    FuriganaText(
+                      furiTexts: pa.phraseParts,
+                    ),
+                    Text(
+                      pa.translation,
+                      style: TextStyle(
+                          color: Colors.grey.shade700,
+                          fontSize:
+                              Theme.of(context).textTheme.bodySmall!.fontSize),
+                    ),
+                    NaFreeFormEntryWrapper(
+                      widthType: NFreeFormWidths.full,
+                      hintValue: NA.t('kanjiToHiragana'),
+                      onChanged: (String newValue) {
+                        widget.state.updateUserInput(inputKey, newValue);
+                      },
+                      initialValue: widget.state.getUserInput(inputKey),
+                      correctValues: [pa.answer],
+                      onCorrect: () {
+                        setState(() {});
+                      },
+                    ),
+                  ],
+                ),
               );
             },
           ),
