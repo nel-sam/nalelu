@@ -66,6 +66,7 @@ class _KanjiExerciseStateArea extends State<KanjiExerciseStateArea> {
                 mainAxisAlignment: MainAxisAlignment.start,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
+                  Text(pa.translation),
                   FuriganaText(
                     furiTexts: pa.phraseParts,
                   ),

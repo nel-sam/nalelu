@@ -737,22 +737,31 @@ var kanjiBank = [
       onYomi: 'コン',
       kunYomi: 'いま, きょう',
       phraseAnswers: [
-        PhraseAnswer(phraseParts: [
-          FuriText(text: '今月', furigana: '__げつ', emphasize: true),
-          FuriText(text: 'は'),
-          FuriText(text: 'さむいね')
-        ], answer: 'こんげつ'),
-        PhraseAnswer(phraseParts: [
-          FuriText(text: '今', emphasize: true),
-          FuriText(text: '何時', furigana: 'なんじ'),
-          FuriText(text: 'ですか？')
-        ], answer: 'いま'),
-        PhraseAnswer(phraseParts: [
-          FuriText(text: '今日', emphasize: true),
-          FuriText(text: 'は'),
-          FuriText(text: '月曜日', furigana: 'げつようび'),
-          FuriText(text: 'だよ'),
-        ], answer: 'きょう'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '今月', furigana: '__げつ', emphasize: true),
+              FuriText(text: 'は'),
+              FuriText(text: 'さむいね')
+            ],
+            answer: 'こんげつ'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '今', emphasize: true),
+              FuriText(text: '何時', furigana: 'なんじ'),
+              FuriText(text: 'ですか？')
+            ],
+            answer: 'いま'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '今日', emphasize: true),
+              FuriText(text: 'は'),
+              FuriText(text: '月曜日', furigana: 'げつようび'),
+              FuriText(text: 'だよ'),
+            ],
+            answer: 'きょう'),
       ]),
   Kanji(
       translation: NA.t('川'),
@@ -760,20 +769,29 @@ var kanjiBank = [
       onYomi: 'セン',
       kunYomi: 'かわ、がわ',
       phraseAnswers: [
-        PhraseAnswer(phraseParts: [
-          FuriText(text: '川', emphasize: true),
-          FuriText(text: 'に'),
-          FuriText(text: '行きましょう', furigana: 'い'),
-        ], answer: 'かわ'),
-        PhraseAnswer(phraseParts: [
-          FuriText(text: '山川', emphasize: true),
-          FuriText(text: 'さん'),
-        ], answer: 'やまかわ'),
-        PhraseAnswer(phraseParts: [
-          FuriText(text: '品川駅', furigana: 'しな__', emphasize: true),
-          FuriText(text: '駅', furigana: 'えき'),
-          FuriText(text: 'にいるよ'),
-        ], answer: 'しながわ'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '川', emphasize: true),
+              FuriText(text: 'に'),
+              FuriText(text: '行きましょう', furigana: 'い'),
+            ],
+            answer: 'かわ'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '山川', emphasize: true),
+              FuriText(text: 'さん'),
+            ],
+            answer: 'やまかわ'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '品川駅', furigana: 'しな__', emphasize: true),
+              FuriText(text: '駅', furigana: 'えき'),
+              FuriText(text: 'にいるよ'),
+            ],
+            answer: 'しながわ'),
       ]),
   Kanji(
       translation: NA.t('田'),
@@ -781,19 +799,28 @@ var kanjiBank = [
       onYomi: 'デン', // No useful words found
       kunYomi: 'た、いなか',
       phraseAnswers: [
-        PhraseAnswer(phraseParts: [
-          FuriText(text: '山田', emphasize: true),
-          FuriText(text: 'さん'),
-        ], answer: 'やまだ'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '山田', emphasize: true),
+              FuriText(text: 'さん'),
+            ],
+            answer: 'やまだ'),
         // This uses a non-N5 kanji but there's no way around this
-        PhraseAnswer(phraseParts: [
-          FuriText(text: '田舎', emphasize: true),
-          FuriText(text: 'にすんでいる'),
-        ], answer: 'いなか'),
-        PhraseAnswer(phraseParts: [
-          FuriText(text: '成田', furigana: 'なり__', emphasize: true),
-          FuriText(text: '空港', furigana: 'くうこう'),
-        ], answer: 'なりた'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '田舎', emphasize: true),
+              FuriText(text: 'にすんでいる'),
+            ],
+            answer: 'いなか'),
+        PhraseAnswer(
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '成田', furigana: 'なり__', emphasize: true),
+              FuriText(text: '空港', furigana: 'くうこう'),
+            ],
+            answer: 'なりた'),
       ]),
   Kanji(
     translation: NA.t('分'),
@@ -801,21 +828,30 @@ var kanjiBank = [
     onYomi: 'フン, ブン, プン',
     kunYomi: 'わける, わかる',
     phraseAnswers: [
-      PhraseAnswer(phraseParts: [
-        FuriText(text: '真ん中', furigana: 'まんなか'),
-        FuriText(text: 'から'),
-        FuriText(text: '分ける', emphasize: true)
-      ], answer: 'わける'),
-      PhraseAnswer(phraseParts: [
-        FuriText(text: 'あと'),
-        FuriText(text: '十分', emphasize: true),
-        FuriText(text: 'まってね'),
-      ], answer: 'じゅうぷん'),
-      PhraseAnswer(phraseParts: [
-        FuriText(text: '日本語', furigana: 'にほんご'),
-        FuriText(text: 'が'),
-        FuriText(text: '分かる', emphasize: true),
-      ], answer: 'わかる'),
+      PhraseAnswer(
+          translation: NA.t('mannakakarawakeru'),
+          phraseParts: [
+            FuriText(text: '真ん中', furigana: 'まんなか'),
+            FuriText(text: 'から'),
+            FuriText(text: '分ける', emphasize: true)
+          ],
+          answer: 'わける'),
+      PhraseAnswer(
+          translation: NA.t('atojuppunmattene'),
+          phraseParts: [
+            FuriText(text: 'あと'),
+            FuriText(text: '十分', emphasize: true),
+            FuriText(text: 'まってね'),
+          ],
+          answer: 'じゅうぷん'),
+      PhraseAnswer(
+          translation: NA.t('nihonngogawakaru'),
+          phraseParts: [
+            FuriText(text: '日本語', furigana: 'にほんご'),
+            FuriText(text: 'が'),
+            FuriText(text: '分かる', emphasize: true),
+          ],
+          answer: 'わかる'),
     ],
   ),
 ];
@@ -839,9 +875,11 @@ class Kanji {
 class PhraseAnswer {
   final List<FuriText> phraseParts;
   final String answer;
+  final String translation;
 
   PhraseAnswer({
     required this.phraseParts,
     required this.answer,
+    required this.translation,
   });
 }
