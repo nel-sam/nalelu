@@ -1534,17 +1534,17 @@ var kanjiBank = [
               FuriText(text: 'の？'),
             ],
             answer: 'いく'),
-        PhraseAnswer(
-            translation: NA.t('okonaukotogadekimasu'),
-            phraseParts: [
-              FuriText(text: '行う', emphasize: true),
-              FuriText(text: 'ことができます'),
-            ],
-            answer: 'おこなう'),
+        // PhraseAnswer(
+        //     translation: NA.t('okonaukotogadekimasu'),
+        //     phraseParts: [
+        //       FuriText(text: '行う', emphasize: true),
+        //       FuriText(text: 'ことができます'),
+        //     ],
+        //     answer: 'おこなう'),
         PhraseAnswer(
             translation: NA.t('tsuukougakinshi'),
             phraseParts: [
-              FuriText(text: '行う', emphasize: true),
+              FuriText(text: '通行', emphasize: true),
               FuriText(text: 'が'),
               FuriText(text: '禁止', furigana: 'きんし'),
             ],
