@@ -11,19 +11,19 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '一人ぼっちとうきょう', furigana: '', emphasize: true),
+  //             FuriText(text: '一人ぼっちとうきょう',  emphasize: true),
   //           ],
   //           answer: 'ひとり'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: 'わたしは一ばんかっこいい', furigana: '', emphasize: true),
+  //             FuriText(text: 'わたしは一ばんかっこいい',  emphasize: true),
   //           ],
   //           answer: 'いち'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: 'ビイルを一つください', furigana: '', emphasize: true)
+  //             FuriText(text: 'ビイルを一つください',  emphasize: true)
   //           ],
   //           answer: 'ひと'),
   //     ]),
@@ -36,19 +36,19 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '二プラス二', furigana: '', emphasize: true),
+  //             FuriText(text: '二プラス二',  emphasize: true),
   //           ],
   //           answer: 'に'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: 'リンゴを二つ食べる', furigana: '', emphasize: true),
+  //             FuriText(text: 'リンゴを二つ食べる',  emphasize: true),
   //           ],
   //           answer: 'ふた'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: 'わたしわ三十二さいです', furigana: '', emphasize: true),
+  //             FuriText(text: 'わたしわ三十二さいです',  emphasize: true),
   //           ],
   //           answer: 'に'),
   //     ]),
@@ -61,19 +61,19 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '三月は寒いです', furigana: '', emphasize: true),
+  //             FuriText(text: '三月は寒いです',  emphasize: true),
   //           ],
   //           answer: 'さん'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '三つのビデオゲームがあります', furigana: '', emphasize: true),
+  //             FuriText(text: '三つのビデオゲームがあります',  emphasize: true),
   //           ],
   //           answer: 'みっ'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: 'オレンジを三つもっています', furigana: '', emphasize: true),
+  //             FuriText(text: 'オレンジを三つもっています',  emphasize: true),
   //           ],
   //           answer: 'みっ'),
   //     ]),
@@ -86,19 +86,19 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '四月は暑いです', furigana: '', emphasize: true),
+  //             FuriText(text: '四月は暑いです',  emphasize: true),
   //           ],
   //           answer: 'し'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: 'クリスマスまであと四日', furigana: '', emphasize: true),
+  //             FuriText(text: 'クリスマスまであと四日',  emphasize: true),
   //           ],
   //           answer: 'よっ'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: 'メッシは四ゴールをきめた', furigana: '', emphasize: true),
+  //             FuriText(text: 'メッシは四ゴールをきめた',  emphasize: true),
   //           ],
   //           answer: 'よん'),
   //     ]),
@@ -111,19 +111,19 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: 'ほしが五つあります', furigana: '', emphasize: true),
+  //             FuriText(text: 'ほしが五つあります',  emphasize: true),
   //           ],
   //           answer: 'いつ'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '五月は好きな月です', furigana: '', emphasize: true),
+  //             FuriText(text: '五月は好きな月です',  emphasize: true),
   //           ],
   //           answer: 'ご'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '五百円かせいだ', furigana: '', emphasize: true),
+  //             FuriText(text: '五百円かせいだ',  emphasize: true),
   //           ],
   //           answer: 'ご'),
   //     ]),
@@ -136,19 +136,19 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '六つ', furigana: '', emphasize: true),
+  //             FuriText(text: '六つ',  emphasize: true),
   //           ],
   //           answer: 'むっ'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '六月', furigana: '', emphasize: true),
+  //             FuriText(text: '六月',  emphasize: true),
   //           ],
   //           answer: 'ろく'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '六日', furigana: '', emphasize: true),
+  //             FuriText(text: '六日',  emphasize: true),
   //           ],
   //           answer: 'むい'),
   //     ]),
@@ -161,19 +161,19 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '七つ', furigana: '', emphasize: true),
+  //             FuriText(text: '七つ',  emphasize: true),
   //           ],
   //           answer: 'なな'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '七月', furigana: '', emphasize: true),
+  //             FuriText(text: '七月',  emphasize: true),
   //           ],
   //           answer: 'しち'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '七日', furigana: '', emphasize: true),
+  //             FuriText(text: '七日',  emphasize: true),
   //           ],
   //           answer: 'なの'),
   //     ]),
@@ -186,19 +186,19 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '八つ', furigana: '', emphasize: true),
+  //             FuriText(text: '八つ',  emphasize: true),
   //           ],
   //           answer: 'やっ'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '八月', furigana: '', emphasize: true),
+  //             FuriText(text: '八月',  emphasize: true),
   //           ],
   //           answer: 'はち'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '八日', furigana: '', emphasize: true),
+  //             FuriText(text: '八日',  emphasize: true),
   //           ],
   //           answer: 'よう'),
   //     ]),
@@ -211,19 +211,19 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '九つ', furigana: '', emphasize: true),
+  //             FuriText(text: '九つ',  emphasize: true),
   //           ],
   //           answer: 'ここの'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '九月', furigana: '', emphasize: true),
+  //             FuriText(text: '九月',  emphasize: true),
   //           ],
   //           answer: 'く'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '九日', furigana: '', emphasize: true),
+  //             FuriText(text: '九日',  emphasize: true),
   //           ],
   //           answer: 'ここの'),
   //     ]),
@@ -236,19 +236,19 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '十月', furigana: '', emphasize: true),
+  //             FuriText(text: '十月',  emphasize: true),
   //           ],
   //           answer: 'じゅう'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '十日', furigana: '', emphasize: true),
+  //             FuriText(text: '十日',  emphasize: true),
   //           ],
   //           answer: 'とお'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '十分な', furigana: '', emphasize: true),
+  //             FuriText(text: '十分な',  emphasize: true),
   //           ],
   //           answer: 'じゅう'),
   //     ]),
@@ -261,13 +261,13 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '百', furigana: '', emphasize: true),
+  //             FuriText(text: '百',  emphasize: true),
   //           ],
   //           answer: 'ひゃく'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '三百', furigana: '', emphasize: true),
+  //             FuriText(text: '三百',  emphasize: true),
   //           ],
   //           answer: 'びゃく'),
   //     ]),
@@ -280,13 +280,13 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '千', furigana: '', emphasize: true),
+  //             FuriText(text: '千',  emphasize: true),
   //           ],
   //           answer: 'せん'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '三千', furigana: '', emphasize: true),
+  //             FuriText(text: '三千',  emphasize: true),
   //           ],
   //           answer: 'ぜん'),
   //     ]),
@@ -299,7 +299,7 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '一万', furigana: '', emphasize: true),
+  //             FuriText(text: '一万',  emphasize: true),
   //           ],
   //           answer: 'まん'),
   //     ]),
@@ -312,13 +312,13 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '円', furigana: '', emphasize: true),
+  //             FuriText(text: '円',  emphasize: true),
   //           ],
   //           answer: 'えん'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '四万円', furigana: '', emphasize: true),
+  //             FuriText(text: '四万円',  emphasize: true),
   //           ],
   //           answer: 'えん'),
   //     ]),
@@ -331,19 +331,19 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '日本', furigana: '', emphasize: true),
+  //             FuriText(text: '日本',  emphasize: true),
   //           ],
   //           answer: 'に'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '日', furigana: '', emphasize: true),
+  //             FuriText(text: '日',  emphasize: true),
   //           ],
   //           answer: 'ひ'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '休日', furigana: '', emphasize: true),
+  //             FuriText(text: '休日',  emphasize: true),
   //           ],
   //           answer: 'じつ'),
   //     ]),
@@ -356,19 +356,19 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '月曜日', furigana: '', emphasize: true),
+  //             FuriText(text: '月曜日',  emphasize: true),
   //           ],
   //           answer: 'げつ'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '一月', furigana: '', emphasize: true),
+  //             FuriText(text: '一月',  emphasize: true),
   //           ],
   //           answer: 'がつ'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '今月', furigana: '', emphasize: true),
+  //             FuriText(text: '今月',  emphasize: true),
   //           ],
   //           answer: 'げつ'),
   //     ]),
@@ -381,19 +381,19 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '火曜日', furigana: '', emphasize: true),
+  //             FuriText(text: '火曜日',  emphasize: true),
   //           ],
   //           answer: 'か'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '火山', furigana: '', emphasize: true),
+  //             FuriText(text: '火山',  emphasize: true),
   //           ],
   //           answer: 'か'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '火', furigana: '', emphasize: true),
+  //             FuriText(text: '火',  emphasize: true),
   //           ],
   //           answer: 'ひ'),
   //     ]),
@@ -406,13 +406,13 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '水曜日', furigana: '', emphasize: true),
+  //             FuriText(text: '水曜日',  emphasize: true),
   //           ],
   //           answer: 'すい'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '水', furigana: '', emphasize: true),
+  //             FuriText(text: '水',  emphasize: true),
   //           ],
   //           answer: 'みず'),
   //     ]),
@@ -425,13 +425,13 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '木', furigana: '', emphasize: true),
+  //             FuriText(text: '木',  emphasize: true),
   //           ],
   //           answer: 'き'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '木曜日', furigana: '', emphasize: true),
+  //             FuriText(text: '木曜日',  emphasize: true),
   //           ],
   //           answer: 'もく'),
   //     ]),
@@ -444,19 +444,19 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: 'お金', furigana: '', emphasize: true),
+  //             FuriText(text: 'お金',  emphasize: true),
   //           ],
   //           answer: 'かね'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '金', furigana: '', emphasize: true),
+  //             FuriText(text: '金',  emphasize: true),
   //           ],
   //           answer: 'きん'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '金曜日', furigana: '', emphasize: true),
+  //             FuriText(text: '金曜日',  emphasize: true),
   //           ],
   //           answer: 'きん'),
   //     ]),
@@ -469,13 +469,13 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '土', furigana: '', emphasize: true),
+  //             FuriText(text: '土',  emphasize: true),
   //           ],
   //           answer: 'つち'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '土曜日', furigana: '', emphasize: true),
+  //             FuriText(text: '土曜日',  emphasize: true),
   //           ],
   //           answer: 'ど'),
   //     ]),
@@ -488,7 +488,7 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '月曜日', furigana: '', emphasize: true),
+  //             FuriText(text: '月曜日',  emphasize: true),
   //           ],
   //           answer: 'よう'),
   //     ]),
@@ -501,19 +501,19 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '年', furigana: '', emphasize: true),
+  //             FuriText(text: '年',  emphasize: true),
   //           ],
   //           answer: 'とし'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '二千年', furigana: '', emphasize: true),
+  //             FuriText(text: '二千年',  emphasize: true),
   //           ],
   //           answer: 'ねん'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '来年', furigana: '', emphasize: true),
+  //             FuriText(text: '来年',  emphasize: true),
   //           ],
   //           answer: 'ねん'),
   //     ]),
@@ -526,13 +526,13 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '上がる', furigana: '', emphasize: true),
+  //             FuriText(text: '上がる',  emphasize: true),
   //           ],
   //           answer: 'あ'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '水上スキー', furigana: '', emphasize: true),
+  //             FuriText(text: '水上スキー',  emphasize: true),
   //           ],
   //           answer: 'じょう'),
   //     ]),
@@ -545,19 +545,19 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '下がる', furigana: '', emphasize: true),
+  //             FuriText(text: '下がる',  emphasize: true),
   //           ],
   //           answer: 'さ'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '上下', furigana: '', emphasize: true),
+  //             FuriText(text: '上下',  emphasize: true),
   //           ],
   //           answer: 'げ'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '下', furigana: '', emphasize: true),
+  //             FuriText(text: '下',  emphasize: true),
   //           ],
   //           answer: 'した'),
   //     ]),
@@ -570,13 +570,13 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '一日中', furigana: '', emphasize: true),
+  //             FuriText(text: '一日中',  emphasize: true),
   //           ],
   //           answer: 'じゅう'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '中', furigana: '', emphasize: true),
+  //             FuriText(text: '中',  emphasize: true),
   //           ],
   //           answer: 'なか'),
   //     ]),
@@ -589,13 +589,13 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '外国', furigana: '', emphasize: true),
+  //             FuriText(text: '外国',  emphasize: true),
   //           ],
   //           answer: 'がい'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '外', furigana: '', emphasize: true),
+  //             FuriText(text: '外',  emphasize: true),
   //           ],
   //           answer: 'そと'),
   //     ]),
@@ -608,13 +608,13 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '前', furigana: '', emphasize: true),
+  //             FuriText(text: '前',  emphasize: true),
   //           ],
   //           answer: 'まえ'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '三日前', furigana: '', emphasize: true),
+  //             FuriText(text: '三日前',  emphasize: true),
   //           ],
   //           answer: 'まえ'),
   //     ]),
@@ -627,13 +627,13 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '後', furigana: '', emphasize: true),
+  //             FuriText(text: '後',  emphasize: true),
   //           ],
   //           answer: 'あと'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '後ろ', furigana: '', emphasize: true),
+  //             FuriText(text: '後ろ',  emphasize: true),
   //           ],
   //           answer: 'うし'),
   //     ]),
@@ -646,19 +646,19 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '右', furigana: '', emphasize: true),
+  //             FuriText(text: '右',  emphasize: true),
   //           ],
   //           answer: 'みぎ'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '右手', furigana: '', emphasize: true),
+  //             FuriText(text: '右手',  emphasize: true),
   //           ],
   //           answer: 'みぎ'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '左右', furigana: '', emphasize: true),
+  //             FuriText(text: '左右',  emphasize: true),
   //           ],
   //           answer: 'ゆう'),
   //     ]),
@@ -671,13 +671,13 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '左', furigana: '', emphasize: true),
+  //             FuriText(text: '左',  emphasize: true),
   //           ],
   //           answer: 'ひだり'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '左手', furigana: '', emphasize: true),
+  //             FuriText(text: '左手',  emphasize: true),
   //           ],
   //           answer: 'ひだり'),
   //     ]),
@@ -690,19 +690,19 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '大きい', furigana: '', emphasize: true),
+  //             FuriText(text: '大きい',  emphasize: true),
   //           ],
   //           answer: 'おお'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '大学', furigana: '', emphasize: true),
+  //             FuriText(text: '大学',  emphasize: true),
   //           ],
   //           answer: 'だい'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '大会', furigana: '', emphasize: true),
+  //             FuriText(text: '大会',  emphasize: true),
   //           ],
   //           answer: 'たい'),
   //     ]),
@@ -715,19 +715,19 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '小さい', furigana: '', emphasize: true),
+  //             FuriText(text: '小さい',  emphasize: true),
   //           ],
   //           answer: 'ちい'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '小川', furigana: '', emphasize: true),
+  //             FuriText(text: '小川',  emphasize: true),
   //           ],
   //           answer: 'お'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '小犬', furigana: '', emphasize: true),
+  //             FuriText(text: '小犬',  emphasize: true),
   //           ],
   //           answer: 'こ'),
   //     ]),
@@ -740,13 +740,13 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '長い', furigana: '', emphasize: true),
+  //             FuriText(text: '長い',  emphasize: true),
   //           ],
   //           answer: 'なが'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '学長', furigana: '', emphasize: true),
+  //             FuriText(text: '学長',  emphasize: true),
   //           ],
   //           answer: 'ちょう'),
   //     ]),
@@ -759,7 +759,7 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '短い', furigana: '', emphasize: true),
+  //             FuriText(text: '短い',  emphasize: true),
   //           ],
   //           answer: 'みじか'),
   //     ]),
@@ -772,13 +772,13 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '高い', furigana: '', emphasize: true),
+  //             FuriText(text: '高い',  emphasize: true),
   //           ],
   //           answer: 'たか'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '円高', furigana: '', emphasize: true),
+  //             FuriText(text: '円高',  emphasize: true),
   //           ],
   //           answer: 'だか'),
   //     ]),
@@ -791,13 +791,13 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '安い', furigana: '', emphasize: true),
+  //             FuriText(text: '安い',  emphasize: true),
   //           ],
   //           answer: 'やす'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '安全', furigana: '', emphasize: true),
+  //             FuriText(text: '安全',  emphasize: true),
   //           ],
   //           answer: 'あん'),
   //     ]),
@@ -810,19 +810,19 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '新しい', furigana: '', emphasize: true),
+  //             FuriText(text: '新しい',  emphasize: true),
   //           ],
   //           answer: 'あたら'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '新人', furigana: '', emphasize: true),
+  //             FuriText(text: '新人',  emphasize: true),
   //           ],
   //           answer: 'しん'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '新年', furigana: '', emphasize: true),
+  //             FuriText(text: '新年',  emphasize: true),
   //           ],
   //           answer: 'しん'),
   //     ]),
@@ -835,7 +835,7 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '古い', furigana: '', emphasize: true),
+  //             FuriText(text: '古い',  emphasize: true),
   //           ],
   //           answer: 'ふる'),
   //     ]),
@@ -848,7 +848,7 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '暑い', furigana: '', emphasize: true),
+  //             FuriText(text: '暑い',  emphasize: true),
   //           ],
   //           answer: 'あつ'),
   //     ]),
@@ -861,7 +861,7 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '寒い', furigana: '', emphasize: true),
+  //             FuriText(text: '寒い',  emphasize: true),
   //           ],
   //           answer: 'さむ'),
   //     ]),
@@ -874,19 +874,19 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '明かり', furigana: '', emphasize: true),
+  //             FuriText(text: '明かり',  emphasize: true),
   //           ],
   //           answer: 'あ'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '明き', furigana: '', emphasize: true),
+  //             FuriText(text: '明き',  emphasize: true),
   //           ],
   //           answer: 'あ'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '明日', furigana: '', emphasize: true),
+  //             FuriText(text: '明日',  emphasize: true),
   //           ],
   //           answer: 'あした'),
   //     ]),
@@ -899,13 +899,13 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '暗い', furigana: '', emphasize: true),
+  //             FuriText(text: '暗い',  emphasize: true),
   //           ],
   //           answer: 'くらい'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '暗れる', furigana: '', emphasize: true),
+  //             FuriText(text: '暗れる',  emphasize: true),
   //           ],
   //           answer: 'く'),
   //     ]),
@@ -918,19 +918,19 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '忙しい', furigana: '', emphasize: true),
+  //             FuriText(text: '忙しい',  emphasize: true),
   //           ],
   //           answer: 'いそが'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '大忙し', furigana: '', emphasize: true),
+  //             FuriText(text: '大忙し',  emphasize: true),
   //           ],
   //           answer: 'いそが'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '忙しげ', furigana: '', emphasize: true),
+  //             FuriText(text: '忙しげ',  emphasize: true),
   //           ],
   //           answer: 'せわ'),
   //     ]),
@@ -943,13 +943,13 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '静か', furigana: '', emphasize: true),
+  //             FuriText(text: '静か',  emphasize: true),
   //           ],
   //           answer: 'しず'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '静まる', furigana: '', emphasize: true),
+  //             FuriText(text: '静まる',  emphasize: true),
   //           ],
   //           answer: 'しず'),
   //     ]),
@@ -962,19 +962,19 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '難しい', furigana: '', emphasize: true),
+  //             FuriText(text: '難しい',  emphasize: true),
   //           ],
   //           answer: 'むずか'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '難', furigana: '', emphasize: true),
+  //             FuriText(text: '難',  emphasize: true),
   //           ],
   //           answer: 'なん'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '難い', furigana: '', emphasize: true),
+  //             FuriText(text: '難い',  emphasize: true),
   //           ],
   //           answer: 'にく'),
   //     ]),
@@ -987,7 +987,7 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '簡明', furigana: '', emphasize: true),
+  //             FuriText(text: '簡明',  emphasize: true),
   //           ],
   //           answer: 'かん'),
   //     ]),
@@ -1000,19 +1000,19 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '好い', furigana: '', emphasize: true),
+  //             FuriText(text: '好い',  emphasize: true),
   //           ],
   //           answer: 'よ'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '大好き', furigana: '', emphasize: true),
+  //             FuriText(text: '大好き',  emphasize: true),
   //           ],
   //           answer: 'す'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '好む', furigana: '', emphasize: true),
+  //             FuriText(text: '好む',  emphasize: true),
   //           ],
   //           answer: 'この'),
   //     ]),
@@ -1025,19 +1025,19 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '嫌い', furigana: '', emphasize: true),
+  //             FuriText(text: '嫌い',  emphasize: true),
   //           ],
   //           answer: 'きら'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '嫌う', furigana: '', emphasize: true),
+  //             FuriText(text: '嫌う',  emphasize: true),
   //           ],
   //           answer: 'きら'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '嫌', furigana: '', emphasize: true),
+  //             FuriText(text: '嫌',  emphasize: true),
   //           ],
   //           answer: 'いや'),
   //     ]),
@@ -1050,13 +1050,13 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '多分', furigana: '', emphasize: true),
+  //             FuriText(text: '多分',  emphasize: true),
   //           ],
   //           answer: 'た'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '多大', furigana: '', emphasize: true),
+  //             FuriText(text: '多大',  emphasize: true),
   //           ],
   //           answer: 'た'),
   //     ]),
@@ -1069,19 +1069,19 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '少し', furigana: '', emphasize: true),
+  //             FuriText(text: '少し',  emphasize: true),
   //           ],
   //           answer: 'すこ'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '少年', furigana: '', emphasize: true),
+  //             FuriText(text: '少年',  emphasize: true),
   //           ],
   //           answer: 'しょう'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '少女', furigana: '', emphasize: true),
+  //             FuriText(text: '少女',  emphasize: true),
   //           ],
   //           answer: 'しょう'),
   //     ]),
@@ -1094,7 +1094,7 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '色', furigana: '', emphasize: true),
+  //             FuriText(text: '色',  emphasize: true),
   //           ],
   //           answer: 'いろ'),
   //     ]),
@@ -1107,13 +1107,13 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '黒い', furigana: '', emphasize: true),
+  //             FuriText(text: '黒い',  emphasize: true),
   //           ],
   //           answer: 'くろ'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '黒色', furigana: '', emphasize: true),
+  //             FuriText(text: '黒色',  emphasize: true),
   //           ],
   //           answer: 'くろ'),
   //     ]),
@@ -1126,13 +1126,13 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '明白', furigana: '', emphasize: true),
+  //             FuriText(text: '明白',  emphasize: true),
   //           ],
   //           answer: 'はく'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '白い', furigana: '', emphasize: true),
+  //             FuriText(text: '白い',  emphasize: true),
   //           ],
   //           answer: 'しろ'),
   //     ]),
@@ -1145,19 +1145,19 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '赤い', furigana: '', emphasize: true),
+  //             FuriText(text: '赤い',  emphasize: true),
   //           ],
   //           answer: 'あか'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '赤ちゃん', furigana: '', emphasize: true),
+  //             FuriText(text: '赤ちゃん',  emphasize: true),
   //           ],
   //           answer: 'あか'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '赤色', furigana: '', emphasize: true),
+  //             FuriText(text: '赤色',  emphasize: true),
   //           ],
   //           answer: 'あか'),
   //     ]),
@@ -1170,13 +1170,13 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '青い', furigana: '', emphasize: true),
+  //             FuriText(text: '青い',  emphasize: true),
   //           ],
   //           answer: '青'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '青色', furigana: '', emphasize: true),
+  //             FuriText(text: '青色',  emphasize: true),
   //           ],
   //           answer: 'あお'),
   //     ]),
@@ -1189,13 +1189,13 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '黄金', furigana: '', emphasize: true),
+  //             FuriText(text: '黄金',  emphasize: true),
   //           ],
   //           answer: 'おう'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '着色', furigana: '', emphasize: true),
+  //             FuriText(text: '着色',  emphasize: true),
   //           ],
   //           answer: 'き'),
   //     ]),
@@ -1208,13 +1208,13 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '紫色', furigana: '', emphasize: true),
+  //             FuriText(text: '紫色',  emphasize: true),
   //           ],
   //           answer: 'むらさき'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '大紫', furigana: '', emphasize: true),
+  //             FuriText(text: '大紫',  emphasize: true),
   //           ],
   //           answer: 'むらさき'),
   //     ]),
@@ -1227,13 +1227,13 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: 'お茶', furigana: '', emphasize: true),
+  //             FuriText(text: 'お茶',  emphasize: true),
   //           ],
   //           answer: 'ちゃ'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '茶色', furigana: '', emphasize: true),
+  //             FuriText(text: '茶色',  emphasize: true),
   //           ],
   //           answer: 'ちゃ'),
   //     ]),
@@ -1246,13 +1246,13 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '食べる', furigana: '', emphasize: true),
+  //             FuriText(text: '食べる',  emphasize: true),
   //           ],
   //           answer: 'た'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '食べ物', furigana: '', emphasize: true),
+  //             FuriText(text: '食べ物',  emphasize: true),
   //           ],
   //           answer: 'た'),
   //     ]),
@@ -1265,13 +1265,13 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '飲み物', furigana: '', emphasize: true),
+  //             FuriText(text: '飲み物',  emphasize: true),
   //           ],
   //           answer: 'の'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '飲み', furigana: '', emphasize: true),
+  //             FuriText(text: '飲み',  emphasize: true),
   //           ],
   //           answer: 'の'),
   //     ]),
@@ -1284,19 +1284,19 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '買い物', furigana: '', emphasize: true),
+  //             FuriText(text: '買い物',  emphasize: true),
   //           ],
   //           answer: 'か'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '買い手', furigana: '', emphasize: true),
+  //             FuriText(text: '買い手',  emphasize: true),
   //           ],
   //           answer: 'か'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '買う', furigana: '', emphasize: true),
+  //             FuriText(text: '買う',  emphasize: true),
   //           ],
   //           answer: 'か'),
   //     ]),
@@ -1309,19 +1309,19 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '見える', furigana: '', emphasize: true),
+  //             FuriText(text: '見える',  emphasize: true),
   //           ],
   //           answer: 'み'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '見る', furigana: '', emphasize: true),
+  //             FuriText(text: '見る',  emphasize: true),
   //           ],
   //           answer: 'み'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '一見', furigana: '', emphasize: true),
+  //             FuriText(text: '一見',  emphasize: true),
   //           ],
   //           answer: 'けん'),
   //     ]),
@@ -1334,13 +1334,13 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '聞く', furigana: '', emphasize: true),
+  //             FuriText(text: '聞く',  emphasize: true),
   //           ],
   //           answer: 'き'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '聞こえる', furigana: '', emphasize: true),
+  //             FuriText(text: '聞こえる',  emphasize: true),
   //           ],
   //           answer: 'き'),
   //     ]),
@@ -1353,7 +1353,7 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '話す', furigana: '', emphasize: true),
+  //             FuriText(text: '話す',  emphasize: true),
   //           ],
   //           answer: 'はな'),
   //     ]),
@@ -1366,19 +1366,19 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '読み', furigana: '', emphasize: true),
+  //             FuriText(text: '読み',  emphasize: true),
   //           ],
   //           answer: 'よ'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '読む', furigana: '', emphasize: true),
+  //             FuriText(text: '読む',  emphasize: true),
   //           ],
   //           answer: 'よ'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '読み方', furigana: '', emphasize: true),
+  //             FuriText(text: '読み方',  emphasize: true),
   //           ],
   //           answer: 'よ'),
   //     ]),
@@ -1391,13 +1391,13 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '書', furigana: '', emphasize: true),
+  //             FuriText(text: '書',  emphasize: true),
   //           ],
   //           answer: 'ふみ'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '文書', furigana: '', emphasize: true),
+  //             FuriText(text: '文書',  emphasize: true),
   //           ],
   //           answer: 'しょ'),
   //     ]),
@@ -1410,13 +1410,13 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '入', furigana: '', emphasize: true),
+  //             FuriText(text: '入',  emphasize: true),
   //           ],
   //           answer: 'いり'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '入力', furigana: '', emphasize: true),
+  //             FuriText(text: '入力',  emphasize: true),
   //           ],
   //           answer: 'にゅう'),
   //     ]),
@@ -1429,19 +1429,19 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '出る', furigana: '', emphasize: true),
+  //             FuriText(text: '出る',  emphasize: true),
   //           ],
   //           answer: 'で'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '出し', furigana: '', emphasize: true),
+  //             FuriText(text: '出し',  emphasize: true),
   //           ],
   //           answer: 'だ'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '出かける', furigana: '', emphasize: true),
+  //             FuriText(text: '出かける',  emphasize: true),
   //           ],
   //           answer: 'で'),
   //     ]),
@@ -1454,13 +1454,13 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '立ち', furigana: '', emphasize: true),
+  //             FuriText(text: '立ち',  emphasize: true),
   //           ],
   //           answer: 'た'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '立つ', furigana: '', emphasize: true),
+  //             FuriText(text: '立つ',  emphasize: true),
   //           ],
   //           answer: 'た'),
   //     ]),
@@ -1473,19 +1473,19 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '座る', furigana: '', emphasize: true),
+  //             FuriText(text: '座る',  emphasize: true),
   //           ],
   //           answer: 'すわ'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '一座', furigana: '', emphasize: true),
+  //             FuriText(text: '一座',  emphasize: true),
   //           ],
   //           answer: 'ざ'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '口座', furigana: '', emphasize: true),
+  //             FuriText(text: '口座',  emphasize: true),
   //           ],
   //           answer: 'ざ'),
   //     ]),
@@ -1498,91 +1498,116 @@ var kanjiBank = [
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '休み', furigana: '', emphasize: true),
+  //             FuriText(text: '休み',  emphasize: true),
   //           ],
   //           answer: 'やす'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '休む', furigana: '', emphasize: true),
+  //             FuriText(text: '休む',  emphasize: true),
   //           ],
   //           answer: 'やす'),
   //       PhraseAnswer(
   //           translation: NA.t(''),
   //           phraseParts: [
-  //             FuriText(text: '休日', furigana: '', emphasize: true),
+  //             FuriText(text: '休日',  emphasize: true),
   //           ],
   //           answer: 'きゅう'),
   //     ]),
-  // Kanji(
-  //     translation: NA.t('行'),
-  //     kanji: '行',
-  //     onYomi: 'コウ, ギョウ, アン',
-  //     kunYomi: 'い(く), ゆ(く), おこな(う)',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '行き', furigana: '', emphasize: true),
-  //           ],
-  //           answer: 'い'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '行方', furigana: '', emphasize: true),
-  //           ],
-  //           answer: 'ゆく'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '行う', furigana: '', emphasize: true),
-  //           ],
-  //           answer: 'おこな'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('来'),
-  //     kanji: '来',
-  //     onYomi: 'ライ, タイ',
-  //     kunYomi: 'く(る), きた(る), きた(す), き(たす), き(たる), き',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '来月', furigana: '', emphasize: true),
-  //           ],
-  //           answer: 'らい'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '来日', furigana: '', emphasize: true),
-  //           ],
-  //           answer: 'らい'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('帰'),
-  //     kanji: '帰',
-  //     onYomi: 'キ',
-  //     kunYomi: 'かえ(る), かえ(す)',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '帰り', furigana: '', emphasize: true),
-  //           ],
-  //           answer: 'かえ'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '帰国', furigana: '', emphasize: true),
-  //           ],
-  //           answer: 'き'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '日帰り', furigana: '', emphasize: true),
-  //           ],
-  //           answer: 'がえ'),
-  //     ]),
+  Kanji(
+      translation: NA.t('行'),
+      kanji: '行',
+      onYomi: 'コウ, ギョウ, アン',
+      kunYomi: 'い(く), ゆ(く), おこな(う)',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t('dokoniikuno'),
+            phraseParts: [
+              FuriText(text: 'どこに'),
+              FuriText(text: '行く', emphasize: true),
+              FuriText(text: 'の？'),
+            ],
+            answer: 'いく'),
+        PhraseAnswer(
+            translation: NA.t('okonaukotogadekimasu'),
+            phraseParts: [
+              FuriText(text: '行う', emphasize: true),
+              FuriText(text: 'ことができます'),
+            ],
+            answer: 'おこなう'),
+        PhraseAnswer(
+            translation: NA.t('tsuukougakinshi'),
+            phraseParts: [
+              FuriText(text: '行う', emphasize: true),
+              FuriText(text: 'が'),
+              FuriText(text: '禁止', furigana: 'きんし'),
+            ],
+            answer: 'つうこう'),
+      ]),
+  Kanji(
+      translation: NA.t('来'),
+      kanji: '来',
+      onYomi: 'ライ, タイ',
+      kunYomi: 'く(る), きた(る), きた(す), き(たす), き(たる), き',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t('raigetsuhagogatsudesu'),
+            phraseParts: [
+              FuriText(text: '来月', emphasize: true),
+              FuriText(text: 'は'),
+              FuriText(text: '５月', furigana: 'ごがつ'),
+              FuriText(text: 'です'),
+            ],
+            answer: 'らいげつ'),
+        PhraseAnswer(
+            translation: NA.t('ashitarainichishimasu'),
+            phraseParts: [
+              FuriText(text: '明日', furigana: 'あした'),
+              FuriText(text: '来日', emphasize: true),
+              FuriText(text: 'します'),
+            ],
+            answer: 'らいにち'),
+        PhraseAnswer(
+            translation: NA.t('hayakukitene'),
+            phraseParts: [
+              FuriText(text: '早', furigana: 'はや'),
+              FuriText(text: 'く'),
+              FuriText(text: '来て', emphasize: true),
+              FuriText(text: 'ね'),
+            ],
+            answer: 'きて'),
+      ]),
+  Kanji(
+      translation: NA.t('帰'),
+      kanji: '帰',
+      onYomi: 'キ',
+      kunYomi: 'かえ, がえ',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t('okaerinasai'),
+            phraseParts: [
+              FuriText(text: 'お帰り', emphasize: true),
+              FuriText(text: 'なさい'),
+            ],
+            answer: 'おかえり'),
+        PhraseAnswer(
+            translation: NA.t('oneesanhakikokushimashita'),
+            phraseParts: [
+              FuriText(text: 'おねえさんは'),
+              FuriText(text: '帰国', emphasize: true),
+              FuriText(text: 'しました'),
+            ],
+            answer: 'きこく'),
+        PhraseAnswer(
+            translation: NA.t('tadanohigaeriryokoudattayo'),
+            phraseParts: [
+              FuriText(text: 'ただの'),
+              FuriText(text: '日帰り', emphasize: true),
+              FuriText(text: '旅行', furigana: 'りょこう'),
+              FuriText(text: 'だったよ'),
+            ],
+            answer: 'ひがえり'),
+      ]),
   Kanji(
       translation: NA.t('開'),
       kanji: '開',
@@ -1592,21 +1617,24 @@ var kanjiBank = [
         PhraseAnswer(phraseParts: [
           FuriText(text: '目', furigana: 'め'),
           FuriText(text: 'を'),
-          FuriText(text: '開けて', furigana: '', emphasize: true),
+          FuriText(text: '開けて', emphasize: true),
         ], answer: 'あけて', translation: NA.t('mewoakete')),
-        // TODO: Finish this
-        // PhraseAnswer(
-        //     translation: NA.t(''),
-        //     phraseParts: [
-        //       FuriText(text: '開く', furigana: '', emphasize: true),
-        //     ],
-        //     answer: 'あく'),
-        // PhraseAnswer(
-        //     translation: NA.t(''),
-        //     phraseParts: [
-        //       FuriText(text: '開く', furigana: '', emphasize: true),
-        //     ],
-        //     answer: 'ひらく'),
+        PhraseAnswer(
+            translation: NA.t('nanjiniaku'),
+            phraseParts: [
+              FuriText(text: '何時', furigana: 'なんじ'),
+              FuriText(text: 'に'),
+              FuriText(text: '開く', emphasize: true),
+              FuriText(text: '？'),
+            ],
+            answer: 'あく'),
+        PhraseAnswer(
+            translation: NA.t('menuwohiraite'),
+            phraseParts: [
+              FuriText(text: 'メニューを'),
+              FuriText(text: '開いて', emphasize: true),
+            ],
+            answer: 'ひらいて'),
       ]),
   Kanji(
       translation: NA.t('閉'),
@@ -1620,7 +1648,7 @@ var kanjiBank = [
               FuriText(text: 'お'),
               FuriText(text: '店', furigana: 'みせ'),
               FuriText(text: 'が', furigana: ''),
-              FuriText(text: '閉まる', furigana: '', emphasize: true),
+              FuriText(text: '閉まる', emphasize: true),
             ],
             answer: 'しまる'),
         PhraseAnswer(
@@ -1628,7 +1656,7 @@ var kanjiBank = [
             phraseParts: [
               FuriText(text: '目', furigana: 'め'),
               FuriText(text: 'を'),
-              FuriText(text: '閉じて', furigana: '', emphasize: true),
+              FuriText(text: '閉じて', emphasize: true),
             ],
             answer: 'とじて'),
         PhraseAnswer(
@@ -1652,14 +1680,14 @@ var kanjiBank = [
             translation: NA.t('sonoyamagaookiidesu'),
             phraseParts: [
               FuriText(text: 'その'),
-              FuriText(text: '山', furigana: '', emphasize: true),
+              FuriText(text: '山', emphasize: true),
               FuriText(text: 'が'),
               FuriText(text: '大', furigana: 'おお'),
               FuriText(text: 'きいです')
             ],
             answer: 'やま'),
         PhraseAnswer(
-            translation: NA.t(''),
+            translation: NA.t('fujisanhachikai'),
             phraseParts: [
               FuriText(text: '富士山', furigana: 'ふじ ?', emphasize: true),
               FuriText(text: 'は'),
