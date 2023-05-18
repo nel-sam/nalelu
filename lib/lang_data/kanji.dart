@@ -1489,31 +1489,37 @@ var kanjiBank = [
   //           ],
   //           answer: 'ざ'),
   //     ]),
-  // Kanji(
-  //     translation: NA.t('休'),
-  //     kanji: '休',
-  //     onYomi: 'キュウ',
-  //     kunYomi: 'やす(む), やす.まる, やす(める)',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '休み',  emphasize: true),
-  //           ],
-  //           answer: 'やす'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '休む',  emphasize: true),
-  //           ],
-  //           answer: 'やす'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '休日',  emphasize: true),
-  //           ],
-  //           answer: 'きゅう'),
-  //     ]),
+  Kanji(
+      translation: NA.t('休'),
+      kanji: '休',
+      onYomi: 'キュウ',
+      kunYomi: 'やす(む), やす.まる, やす(める)',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t('oyasuminasai'),
+            phraseParts: [
+              FuriText(text: 'お'),
+              FuriText(text: '休み', emphasize: true),
+              FuriText(text: 'なさい'),
+            ],
+            answer: 'やす'),
+        PhraseAnswer(
+            translation: NA.t('yukkuriyasunde'),
+            phraseParts: [
+              FuriText(text: 'ゆっくり'),
+              FuriText(text: '休んで', emphasize: true),
+            ],
+            answer: 'やす'),
+        PhraseAnswer(
+            translation: NA.t('kyouhakyuujitsudesu'),
+            phraseParts: [
+              FuriText(text: '今日', furigana: 'きょう'),
+              FuriText(text: 'は'),
+              FuriText(text: '休日', emphasize: true),
+              FuriText(text: 'です'),
+            ],
+            answer: 'きゅうじつ'),
+      ]),
   Kanji(
       translation: NA.t('行'),
       kanji: '行',
