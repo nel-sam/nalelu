@@ -1382,113 +1382,146 @@ var kanjiBank = [
   //           ],
   //           answer: 'よ'),
   //     ]),
-  // Kanji(
-  //     translation: NA.t('書'),
-  //     kanji: '書',
-  //     onYomi: 'ショ',
-  //     kunYomi: 'かく',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '書',  emphasize: true),
-  //           ],
-  //           answer: 'ふみ'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '文書',  emphasize: true),
-  //           ],
-  //           answer: 'しょ'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('入'),
-  //     kanji: '入',
-  //     onYomi: 'ニュウ',
-  //     kunYomi: 'いる, いる, いれる, いれ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '入',  emphasize: true),
-  //           ],
-  //           answer: 'いり'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '入力',  emphasize: true),
-  //           ],
-  //           answer: 'にゅう'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('出'),
-  //     kanji: '出',
-  //     onYomi: 'シュツ',
-  //     kunYomi: 'でる, でる, だす, だす, だれる, だれる',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '出る',  emphasize: true),
-  //           ],
-  //           answer: 'で'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '出し',  emphasize: true),
-  //           ],
-  //           answer: 'だ'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '出かける',  emphasize: true),
-  //           ],
-  //           answer: 'で'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('立'),
-  //     kanji: '立',
-  //     onYomi: 'リツ, リュウ',
-  //     kunYomi: 'た(つ), た(ち), た(てる), たて, たてあ(げる), たつ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '立ち',  emphasize: true),
-  //           ],
-  //           answer: 'た'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '立つ',  emphasize: true),
-  //           ],
-  //           answer: 'た'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('座'),
-  //     kanji: '座',
-  //     onYomi: 'ザ',
-  //     kunYomi: 'すわ(る)',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '座る',  emphasize: true),
-  //           ],
-  //           answer: 'すわ'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '一座',  emphasize: true),
-  //           ],
-  //           answer: 'ざ'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '口座',  emphasize: true),
-  //           ],
-  //           answer: 'ざ'),
-  //     ]),
+  Kanji(
+      translation: NA.t('書'),
+      kanji: '書',
+      onYomi: 'ショ',
+      kunYomi: 'かく',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t('jishowotsukattayo'),
+            phraseParts: [
+              FuriText(text: '辞書', furigana: 'じ?', emphasize: true),
+              FuriText(text: 'を'),
+              FuriText(text: '使', furigana: 'つ'),
+              FuriText(text: 'ったよ'),
+            ],
+            answer: 'じしょ'),
+        PhraseAnswer(
+            translation: NA.t('dokonikakuno'),
+            phraseParts: [
+              FuriText(text: 'どこに'),
+              FuriText(text: '書く', emphasize: true),
+              FuriText(text: 'の？'),
+            ],
+            answer: '書く'),
+      ]),
+  Kanji(
+      translation: NA.t('入'),
+      kanji: '入',
+      onYomi: 'ニュウ',
+      kunYomi: 'いる, いる, いれる, いれ',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t('korehairiguchijanai'),
+            phraseParts: [
+              FuriText(text: 'これは'),
+              FuriText(text: '入口', furigana: '?ぐち', emphasize: true),
+              FuriText(text: 'じゃない'),
+            ],
+            answer: 'いりぐち'),
+        PhraseAnswer(
+            translation: NA.t('namaewonyuuryokushitekudasai'),
+            phraseParts: [
+              FuriText(text: '名前', furigana: 'なまえ'),
+              FuriText(text: 'を'),
+              FuriText(text: '入力', emphasize: true),
+              FuriText(text: 'してください'),
+            ],
+            answer: 'にゅう'),
+        PhraseAnswer(
+            translation: NA.t('ienonakaniiretekureru'),
+            phraseParts: [
+              FuriText(text: '家', furigana: 'いえ'),
+              FuriText(text: 'の'),
+              FuriText(text: '中', furigana: 'なか'),
+              FuriText(text: 'に'),
+              FuriText(text: '入れて', emphasize: true),
+              FuriText(text: 'くれる？'),
+            ],
+            answer: 'いれて'),
+      ]),
+  Kanji(
+      translation: NA.t('出'),
+      kanji: '出',
+      onYomi: 'シュツ',
+      kunYomi: 'でる, でる, だす, だす, だれる, だれる',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t('genkankaradete'),
+            phraseParts: [
+              FuriText(text: '玄関', furigana: 'げんかん'),
+              FuriText(text: 'から'),
+              FuriText(text: '出て', emphasize: true),
+            ],
+            answer: 'でて'),
+        PhraseAnswer(
+            translation: NA.t('honnwodashimashou'),
+            phraseParts: [
+              FuriText(text: '本', furigana: 'ほん'),
+              FuriText(text: 'を'),
+              FuriText(text: '出しましょう', emphasize: true),
+            ],
+            answer: 'だしましょう'),
+        PhraseAnswer(
+            translation: NA.t('moudekakeruyo'),
+            phraseParts: [
+              FuriText(text: 'もう'),
+              FuriText(text: '出かける', emphasize: true),
+              FuriText(text: 'よ!'),
+            ],
+            answer: 'でかける'),
+      ]),
+  Kanji(
+      translation: NA.t('立'),
+      kanji: '立',
+      onYomi: 'リツ, リュウ',
+      kunYomi: 'た(つ), たつ',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t('kokonitattekudasai'),
+            phraseParts: [
+              FuriText(text: 'ここに'),
+              FuriText(text: '立って', emphasize: true),
+              FuriText(text: 'ください'),
+            ],
+            answer: 'たって'),
+        PhraseAnswer(
+            translation: NA.t('kokuritsudaigaku'),
+            phraseParts: [
+              FuriText(text: '国立', emphasize: true),
+              FuriText(text: '大学', furigana: 'だいがく'),
+            ],
+            answer: 'こくりつ'),
+      ]),
+  Kanji(
+      translation: NA.t('座'),
+      kanji: '座',
+      onYomi: 'ザ',
+      kunYomi: 'すわ(る)',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t('kokonisuwatte'),
+            phraseParts: [
+              FuriText(text: 'ここに'),
+              FuriText(text: '座って', emphasize: true),
+            ],
+            answer: 'すわって'),
+        // PhraseAnswer(
+        //     translation: NA.t(''),
+        //     phraseParts: [
+        //       FuriText(text: '座席',  emphasize: true),
+        //     ],
+        //     answer: 'ざ'),
+        PhraseAnswer(
+            translation: NA.t('ginkoukouzagaarimasen'),
+            phraseParts: [
+              FuriText(text: '銀行', furigana: 'ぎんこう'),
+              FuriText(text: '口座', furigana: 'こう?', emphasize: true),
+              FuriText(text: 'がありません'),
+            ],
+            answer: 'こうざ'),
+      ]),
   Kanji(
       translation: NA.t('休'),
       kanji: '休',
