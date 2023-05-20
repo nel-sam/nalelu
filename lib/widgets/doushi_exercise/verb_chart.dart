@@ -1,31 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:nalelu/furi_text.dart';
 import 'package:nalelu/lang_data/doushi.dart';
 import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/widgets/shared/ad_card.dart';
+import 'package:nalelu/widgets/shared/furigana_text.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 
 class ChartRow extends StatelessWidget {
   final String label;
-  final String hiragana;
-  final String kanji;
+  final List<FuriText> furiText;
 
   const ChartRow({
     Key? key,
     required this.label,
-    required this.hiragana,
-    required this.kanji,
+    required this.furiText,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(left: 20.0),
-      child: Container(
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Text(
-            label + ': ' + '\n' + kanji + ' (' + hiragana + ')',
-          ),
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text('${label} :'),
+            FuriganaText(
+              furiTexts: furiText,
+            ),
+          ],
         ),
       ),
     );
@@ -50,35 +54,23 @@ class VerbChart extends StatelessWidget {
         children: [
           AdCard(),
           ChartRow(
-            label: NA.t('present'),
-            hiragana: doushi.casual.present[0],
-            kanji: doushi.casual.present[1],
-          ),
+              label: NA.t('present'),
+              furiText: doushi.casual.present.toFuriText()),
           ChartRow(
-            label: NA.t('past'),
-            hiragana: doushi.casual.pastSimple[0],
-            kanji: doushi.casual.pastSimple[1],
-          ),
+              label: NA.t('past'),
+              furiText: doushi.casual.pastSimple.toFuriText()),
           ChartRow(
-            label: NA.t('negative'),
-            hiragana: doushi.casual.negative[0],
-            kanji: doushi.casual.negative[1],
-          ),
+              label: NA.t('negative'),
+              furiText: doushi.casual.negative.toFuriText()),
           ChartRow(
-            label: NA.t('negativePast'),
-            hiragana: doushi.casual.negativePast[0],
-            kanji: doushi.casual.negativePast[1],
-          ),
+              label: NA.t('negativePast'),
+              furiText: doushi.casual.negativePast.toFuriText()),
           ChartRow(
-            label: NA.t('presentProgressive'),
-            hiragana: doushi.casual.presentProgressive[0],
-            kanji: doushi.casual.presentProgressive[1],
-          ),
+              label: NA.t('presentProgressive'),
+              furiText: doushi.casual.presentProgressive.toFuriText()),
           ChartRow(
-            label: NA.t('negativePresentProgressive'),
-            hiragana: doushi.casual.negativePresentProgressive[0],
-            kanji: doushi.casual.negativePresentProgressive[1],
-          ),
+              label: NA.t('negativePresentProgressive'),
+              furiText: doushi.casual.negativePresentProgressive.toFuriText()),
         ],
       ),
     );

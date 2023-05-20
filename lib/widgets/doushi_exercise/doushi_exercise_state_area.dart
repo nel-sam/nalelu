@@ -26,7 +26,10 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
             doushi: widget.state.doushi,
             hintValue: NA.t('present'),
             activeValue: widget.state.getUserInput(0),
-            correctValues: widget.state.doushi.casual.present,
+            correctValues: [
+              widget.state.doushi.casual.present.kanjiWord,
+              widget.state.doushi.casual.present.kanaWord
+            ],
             onSubmitted: (String newValue) {
               widget.state.updateUserInput(0, newValue);
             },
@@ -39,7 +42,10 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
           doushi: widget.state.doushi,
           hintValue: NA.t('past'),
           activeValue: widget.state.getUserInput(1),
-          correctValues: widget.state.doushi.casual.pastSimple,
+          correctValues: [
+            widget.state.doushi.casual.pastSimple.kanjiWord,
+            widget.state.doushi.casual.pastSimple.kanaWord
+          ],
           onSubmitted: (String newValue) {
             widget.state.updateUserInput(1, newValue);
           },
@@ -51,7 +57,10 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
           doushi: widget.state.doushi,
           hintValue: NA.t('negative'),
           activeValue: widget.state.getUserInput(2),
-          correctValues: widget.state.doushi.casual.negative,
+          correctValues: [
+            widget.state.doushi.casual.negative.kanjiWord,
+            widget.state.doushi.casual.negative.kanaWord
+          ],
           onSubmitted: (String newValue) {
             widget.state.updateUserInput(2, newValue);
           },
@@ -63,7 +72,10 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
           doushi: widget.state.doushi,
           hintValue: NA.t('negativePast'),
           activeValue: widget.state.getUserInput(3),
-          correctValues: widget.state.doushi.casual.negativePast,
+          correctValues: [
+            widget.state.doushi.casual.negativePast.kanjiWord,
+            widget.state.doushi.casual.negativePast.kanaWord
+          ],
           onSubmitted: (String newValue) {
             widget.state.updateUserInput(3, newValue);
           },
@@ -71,12 +83,15 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
             setState(() {});
           },
         ),
-        widget.state.doushi.casual.presentProgressive.first.length != 0
+        widget.state.doushi.casual.presentProgressive.kanjiWord.length != 0
             ? VerbInput(
                 doushi: widget.state.doushi,
                 hintValue: NA.t('presentProgressive'),
                 activeValue: widget.state.getUserInput(4),
-                correctValues: widget.state.doushi.casual.presentProgressive,
+                correctValues: [
+                  widget.state.doushi.casual.presentProgressive.kanjiWord,
+                  widget.state.doushi.casual.presentProgressive.kanaWord
+                ],
                 onSubmitted: (String newValue) {
                   widget.state.updateUserInput(4, newValue);
                 },
@@ -85,13 +100,18 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
                 },
               )
             : Container(),
-        widget.state.doushi.casual.negativePresentProgressive.first.length != 0
+        widget.state.doushi.casual.negativePresentProgressive.kanjiWord
+                    .length !=
+                0
             ? VerbInput(
                 doushi: widget.state.doushi,
                 hintValue: NA.t('negativePresentProgressive'),
                 activeValue: widget.state.getUserInput(5),
-                correctValues:
-                    widget.state.doushi.casual.negativePresentProgressive,
+                correctValues: [
+                  widget
+                      .state.doushi.casual.negativePresentProgressive.kanjiWord,
+                  widget.state.doushi.casual.negativePresentProgressive.kanaWord
+                ],
                 onSubmitted: (String newValue) {
                   widget.state.updateUserInput(5, newValue);
                 },

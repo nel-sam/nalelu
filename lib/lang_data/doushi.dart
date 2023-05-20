@@ -1,3 +1,5 @@
+import 'package:nalelu/furi_text.dart';
+import 'package:nalelu/lang_data/kanji.dart';
 import 'package:nalelu/na_helpers.dart';
 
 var doushiBank = [
@@ -8,12 +10,13 @@ var doushiBank = [
     root: '持ち',
     translation: NA.t('Motsu'),
     casual: DoushiConj(
-      present: ['もつ', '持つ'],
-      pastSimple: ['もった', '持った'],
-      negative: ['もたない', '持たない'],
-      negativePast: ['もたなかった', '持たなかった'],
-      presentProgressive: ['もっている', '持っている'],
-      negativePresentProgressive: ['もっていない', '持っていない'],
+      present: JWord(kanaWord: 'もつ', kanjiWord: '持つ'),
+      pastSimple: JWord(kanaWord: 'もった', kanjiWord: '持った'),
+      negative: JWord(kanaWord: 'もたない', kanjiWord: '持たない'),
+      negativePast: JWord(kanaWord: 'もたなかった', kanjiWord: '持たなかった'),
+      presentProgressive: JWord(kanaWord: 'もっている', kanjiWord: '持っている'),
+      negativePresentProgressive:
+          JWord(kanaWord: 'もっていない', kanjiWord: '持っていない'),
     ),
   ),
   Doushi(
@@ -23,12 +26,13 @@ var doushiBank = [
     root: '聞き',
     translation: NA.t('kiku'),
     casual: DoushiConj(
-      present: ['きく', '聞く'],
-      pastSimple: ['きいた', '聞いた'],
-      negative: ['きかない', '聞かない'],
-      negativePast: ['きかなかった', '聞かなかった'],
-      presentProgressive: ['きいている', '聞いている'],
-      negativePresentProgressive: ['きいていない', '聞いていない'],
+      present: JWord(kanaWord: 'きく', kanjiWord: '聞く'),
+      pastSimple: JWord(kanaWord: 'きいた', kanjiWord: '聞いた'),
+      negative: JWord(kanaWord: 'きかない', kanjiWord: '聞かない'),
+      negativePast: JWord(kanaWord: 'きかなかった', kanjiWord: '聞かなかった'),
+      presentProgressive: JWord(kanaWord: 'きいている', kanjiWord: '聞いている'),
+      negativePresentProgressive:
+          JWord(kanaWord: 'きいていない', kanjiWord: '聞いていない'),
     ),
   ),
   Doushi(
@@ -38,12 +42,12 @@ var doushiBank = [
     root: '見',
     translation: NA.t('miru'),
     casual: DoushiConj(
-      present: ['みる', '見る'],
-      pastSimple: ['みた', '見た'],
-      negative: ['みない', '見ない'],
-      negativePast: ['みなかった', "見なかった"],
-      presentProgressive: ['みている', '見ている'],
-      negativePresentProgressive: ['みていない', '見ていない'],
+      present: JWord(kanaWord: 'みる', kanjiWord: '見る'),
+      pastSimple: JWord(kanaWord: 'みた', kanjiWord: '見た'),
+      negative: JWord(kanaWord: 'みない', kanjiWord: '見ない'),
+      negativePast: JWord(kanaWord: 'みなかった', kanjiWord: "見なかった"),
+      presentProgressive: JWord(kanaWord: 'みている', kanjiWord: '見ている'),
+      negativePresentProgressive: JWord(kanaWord: 'みていない', kanjiWord: '見ていない'),
     ),
   ),
   Doushi(
@@ -53,12 +57,13 @@ var doushiBank = [
     root: '入り',
     translation: NA.t('hairu'),
     casual: DoushiConj(
-      present: ['はいる', '入る'],
-      pastSimple: ['はいった', '入った'],
-      negative: ['はいらない', '入らない'],
-      negativePast: ['はいらなかった', '入らなかった'],
-      presentProgressive: ['はいっている', '入っている'],
-      negativePresentProgressive: ['はいっていない', '入っていない'],
+      present: JWord(kanaWord: 'はいる', kanjiWord: '入る'),
+      pastSimple: JWord(kanaWord: 'はいった', kanjiWord: '入った'),
+      negative: JWord(kanaWord: 'はいらない', kanjiWord: '入らない'),
+      negativePast: JWord(kanaWord: 'はいらなかった', kanjiWord: '入らなかった'),
+      presentProgressive: JWord(kanaWord: 'はいっている', kanjiWord: '入っている'),
+      negativePresentProgressive:
+          JWord(kanaWord: 'はいっていない', kanjiWord: '入っていない'),
     ),
   ),
   Doushi(
@@ -68,12 +73,12 @@ var doushiBank = [
     root: 'き',
     translation: NA.t('kuru'),
     casual: DoushiConj(
-      present: ['くる', '来る'],
-      pastSimple: ['くた', '来た'],
-      negative: ['くない', '来ない'],
-      negativePast: ['くなかった', '来なかった'],
-      presentProgressive: ['きている', '来ている'],
-      negativePresentProgressive: ['きていない', '来ていない'],
+      present: JWord(kanaWord: 'くる', kanjiWord: '来る'),
+      pastSimple: JWord(kanaWord: 'くた', kanjiWord: '来た'),
+      negative: JWord(kanaWord: 'くない', kanjiWord: '来ない'),
+      negativePast: JWord(kanaWord: 'くなかった', kanjiWord: '来なかった'),
+      presentProgressive: JWord(kanaWord: 'きている', kanjiWord: '来ている'),
+      negativePresentProgressive: JWord(kanaWord: 'きていない', kanjiWord: '来ていない'),
     ),
   ),
   Doushi(
@@ -83,12 +88,13 @@ var doushiBank = [
     root: 'なり',
     translation: NA.t('naru'),
     casual: DoushiConj(
-      present: ['なる', '成る'],
-      pastSimple: ['なった', '成った'],
-      negative: ['ならない', '成らない'],
-      negativePast: ['ならなかった', '成らなかった'],
-      presentProgressive: ['なっている', '成っている'],
-      negativePresentProgressive: ['なっていない', '成っていない'],
+      present: JWord(kanaWord: 'なる', kanjiWord: '成る'),
+      pastSimple: JWord(kanaWord: 'なった', kanjiWord: '成った'),
+      negative: JWord(kanaWord: 'ならない', kanjiWord: '成らない'),
+      negativePast: JWord(kanaWord: 'ならなかった', kanjiWord: '成らなかった'),
+      presentProgressive: JWord(kanaWord: 'なっている', kanjiWord: '成っている'),
+      negativePresentProgressive:
+          JWord(kanaWord: 'なっていない', kanjiWord: '成っていない'),
     ),
   ),
   Doushi(
@@ -98,12 +104,13 @@ var doushiBank = [
     root: '走り',
     translation: NA.t('hashiru'),
     casual: DoushiConj(
-      present: ['はしる', '走る'],
-      pastSimple: ['はしった', '走った'],
-      negative: ['はしらない', '走らない'],
-      negativePast: ['はしらなかった', '走らなかった'],
-      presentProgressive: ['はしっている', '走っている'],
-      negativePresentProgressive: ['はしっていない', '走っていない'],
+      present: JWord(kanaWord: 'はしる', kanjiWord: '走る'),
+      pastSimple: JWord(kanaWord: 'はしった', kanjiWord: '走った'),
+      negative: JWord(kanaWord: 'はしらない', kanjiWord: '走らない'),
+      negativePast: JWord(kanaWord: 'はしらなかった', kanjiWord: '走らなかった'),
+      presentProgressive: JWord(kanaWord: 'はしっている', kanjiWord: '走っている'),
+      negativePresentProgressive:
+          JWord(kanaWord: 'はしっていない', kanjiWord: '走っていない'),
     ),
   ),
   Doushi(
@@ -113,12 +120,12 @@ var doushiBank = [
     root: '',
     translation: NA.t('suru'),
     casual: DoushiConj(
-      present: ['する'],
-      pastSimple: ['した'],
-      negative: ['しない'],
-      negativePast: ['しなかった'],
-      presentProgressive: ['している'],
-      negativePresentProgressive: ['していない'],
+      present: JWord(kanaWord: 'する', kanjiWord: ''),
+      pastSimple: JWord(kanaWord: 'した', kanjiWord: ''),
+      negative: JWord(kanaWord: 'しない', kanjiWord: ''),
+      negativePast: JWord(kanaWord: 'しなかった', kanjiWord: ''),
+      presentProgressive: JWord(kanaWord: 'している', kanjiWord: ''),
+      negativePresentProgressive: JWord(kanaWord: 'していない', kanjiWord: ''),
     ),
   ),
   Doushi(
@@ -128,12 +135,13 @@ var doushiBank = [
     root: '歩き',
     translation: NA.t('aruku'),
     casual: DoushiConj(
-      present: ['あるく', '歩く'],
-      pastSimple: ['あるいた', '歩いた'],
-      negative: ['あるかない', '歩かない'],
-      negativePast: ['あるかなかった', '歩かなかった'],
-      presentProgressive: ['あるいている', '歩いている'],
-      negativePresentProgressive: ['あるいていない', '歩いていない'],
+      present: JWord(kanaWord: 'あるく', kanjiWord: '歩く'),
+      pastSimple: JWord(kanaWord: 'あるいた', kanjiWord: '歩いた'),
+      negative: JWord(kanaWord: 'あるかない', kanjiWord: '歩かない'),
+      negativePast: JWord(kanaWord: 'あるかなかった', kanjiWord: '歩かなかった'),
+      presentProgressive: JWord(kanaWord: 'あるいている', kanjiWord: '歩いている'),
+      negativePresentProgressive:
+          JWord(kanaWord: 'あるいていない', kanjiWord: '歩いていない'),
     ),
   ),
   Doushi(
@@ -143,12 +151,12 @@ var doushiBank = [
     root: '居',
     translation: NA.t('iru_to_be'),
     casual: DoushiConj(
-      present: ['いる', '居る'],
-      pastSimple: ['いた', '居た'],
-      negative: ['いない', '居ない'],
-      negativePast: ['いなかった', '居なかった'],
-      presentProgressive: ['', ''],
-      negativePresentProgressive: ['', ''],
+      present: JWord(kanaWord: 'いる', kanjiWord: '居る'),
+      pastSimple: JWord(kanaWord: 'いた', kanjiWord: '居た'),
+      negative: JWord(kanaWord: 'いない', kanjiWord: '居ない'),
+      negativePast: JWord(kanaWord: 'いなかった', kanjiWord: '居なかった'),
+      presentProgressive: JWord(kanaWord: '', kanjiWord: ''),
+      negativePresentProgressive: JWord(kanaWord: '', kanjiWord: ''),
     ),
   ),
   Doushi(
@@ -158,12 +166,13 @@ var doushiBank = [
     root: '要り',
     translation: NA.t('iru_need'),
     casual: DoushiConj(
-      present: ['いる', '要る'],
-      pastSimple: ['いった', '要った'],
-      negative: ['いらない', '要らない'],
-      negativePast: ['いらなかった', '要らなかった'],
-      presentProgressive: ['いっている', '要っている'],
-      negativePresentProgressive: ['いっていない', '要っていない'],
+      present: JWord(kanaWord: 'いる', kanjiWord: '要る'),
+      pastSimple: JWord(kanaWord: 'いった', kanjiWord: '要った'),
+      negative: JWord(kanaWord: 'いらない', kanjiWord: '要らない'),
+      negativePast: JWord(kanaWord: 'いらなかった', kanjiWord: '要らなかった'),
+      presentProgressive: JWord(kanaWord: 'いっている', kanjiWord: '要っている'),
+      negativePresentProgressive:
+          JWord(kanaWord: 'いっていない', kanjiWord: '要っていない'),
     ),
   ),
 ];
@@ -188,12 +197,12 @@ class Doushi {
 }
 
 class DoushiConj {
-  final List<String> present;
-  final List<String> pastSimple;
-  final List<String> negative;
-  final List<String> negativePast;
-  final List<String> presentProgressive;
-  final List<String> negativePresentProgressive;
+  final JWord present;
+  final JWord pastSimple;
+  final JWord negative;
+  final JWord negativePast;
+  final JWord presentProgressive;
+  final JWord negativePresentProgressive;
 
   DoushiConj({
     required this.present,
@@ -203,4 +212,37 @@ class DoushiConj {
     required this.presentProgressive,
     required this.negativePresentProgressive,
   });
+}
+
+class JWord {
+  final String kanjiWord;
+  final String kanaWord;
+  JWord({
+    required this.kanjiWord,
+    required this.kanaWord,
+  });
+  List<FuriText> toFuriText() {
+    if (kanjiWord.length == 0) {
+      return [FuriText(text: kanaWord, furigana: '')];
+    } else {
+      return [
+        FuriText(
+            text: kanjiWord.substring(
+                0, stringDifference(kanaWord, kanjiWord) + 1),
+            furigana: kanaWord.substring(
+                0, stringDifference(kanaWord, kanjiWord) + 1)),
+        FuriText(
+          text: kanjiWord.substring(stringDifference(kanaWord, kanjiWord) + 1),
+          )
+      ];
+    }
+  }
+
+  int stringDifference(String kanaWord, String kanjiWord) {
+    int index = 0;
+    for (var i = 0; i < kanjiWord.length; i++) {
+      if (!kanjiWord.contains(kanaWord[i])) index = i;
+    }
+    return index;
+  }
 }
