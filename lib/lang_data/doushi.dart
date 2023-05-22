@@ -1,5 +1,4 @@
 import 'package:nalelu/furi_text.dart';
-import 'package:nalelu/lang_data/kanji.dart';
 import 'package:nalelu/na_helpers.dart';
 
 var doushiBank = [
