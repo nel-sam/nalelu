@@ -1357,31 +1357,52 @@ var kanjiBank = [
   //           ],
   //           answer: 'はな'),
   //     ]),
-  // Kanji(
-  //     translation: NA.t('読'),
-  //     kanji: '読',
-  //     onYomi: 'ドク, トク',
-  //     kunYomi: 'よむ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '読み',  emphasize: true),
-  //           ],
-  //           answer: 'よ'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '読む',  emphasize: true),
-  //           ],
-  //           answer: 'よ'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '読み方',  emphasize: true),
-  //           ],
-  //           answer: 'よ'),
-  //     ]),
+  Kanji(
+      translation: NA.t('読'),
+      kanji: '読',
+      onYomi: 'ドク, トク',
+      kunYomi: 'よむ',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t('mainichishinbunwoyomu'),
+            phraseParts: [
+              FuriText(text: '毎日', furigana: 'まいにち'),
+              FuriText(text: '新聞', furigana: 'しんぶん'),
+              FuriText(text: 'を'),
+              FuriText(text: '読む', emphasize: true),
+            ],
+            answer: 'よむ'),
+        PhraseAnswer(
+            translation: NA.t('konokanjinoyomikatawakaranai'),
+            phraseParts: [
+              FuriText(text: 'この'),
+              FuriText(text: '漢字', furigana: 'かんじ'),
+              FuriText(text: 'の'),
+              FuriText(text: '読み方', emphasize: true),
+              FuriText(text: 'わからない'),
+            ],
+            answer: 'よ'),
+        PhraseAnswer(
+            translation: NA.t('honnodokusha'),
+            phraseParts: [
+              FuriText(text: '本', furigana: 'ほん'),
+              FuriText(text: 'の'),
+              FuriText(text: '読者', furigana: '?しゃ', emphasize: true),
+            ],
+            answer: 'とくしゃ'),
+        PhraseAnswer(
+            translation: NA.t('jlptnodokkaihamuzukasiidesu'),
+            phraseParts: [
+              FuriText(text: 'JLPT'),
+              FuriText(text: 'の'),
+              FuriText(text: '読解', furigana: '?かい', emphasize: true),
+              FuriText(text: 'は'),
+              FuriText(text: '難', furigana: 'む'),
+              FuriText(text: 'しいです'),
+            ],
+            answer: 'よむ'),
+      ]),
+
   Kanji(
       translation: NA.t('書'),
       kanji: '書',

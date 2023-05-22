@@ -30,7 +30,10 @@ class KanjiMenu extends StatelessWidget {
                   NAMenuButton(
                       destination: KanjiExercise(),
                       label: NA.t('n5'),
-                      translabel: [FuriText(text: 'レベル N5', furigana: '')]),
+                      translabel: [
+                        FuriText(text: '日本語能力試験', furigana: 'にほんごのうりょくしけん'),
+                        FuriText(text: 'のレベルN5')
+                      ]),
                 ],
               ),
             ],
