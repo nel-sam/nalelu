@@ -22,7 +22,7 @@ class KanjiMenu extends StatelessWidget {
             children: [
               AdCard(),
               NAMenuHeader(
-                  icon: Icons.widgets_outlined,
+                  icon: Icons.brush_outlined,
                   transLabel: NA.t('kanji'),
                   label: [FuriText(text: '漢字', furigana: 'かんじ')]),
               Column(

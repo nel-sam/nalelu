@@ -991,100 +991,119 @@ var kanjiBank = [
   //           ],
   //           answer: 'かん'),
   //     ]),
-  // Kanji(
-  //     translation: NA.t('好'),
-  //     kanji: '好',
-  //     onYomi: 'コウ',
-  //     kunYomi: 'このむ, この(む)',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '好い',  emphasize: true),
-  //           ],
-  //           answer: 'よ'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '大好き',  emphasize: true),
-  //           ],
-  //           answer: 'す'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '好む',  emphasize: true),
-  //           ],
-  //           answer: 'この'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('嫌'),
-  //     kanji: '嫌',
-  //     onYomi: 'ケン',
-  //     kunYomi: 'きらう, ぎら(い)',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '嫌い',  emphasize: true),
-  //           ],
-  //           answer: 'きら'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '嫌う',  emphasize: true),
-  //           ],
-  //           answer: 'きら'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '嫌',  emphasize: true),
-  //           ],
-  //           answer: 'いや'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('多'),
-  //     kanji: '多',
-  //     onYomi: 'タ',
-  //     kunYomi: 'おお(い), まさ(に), まさ(る)',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '多分',  emphasize: true),
-  //           ],
-  //           answer: 'た'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '多大',  emphasize: true),
-  //           ],
-  //           answer: 'た'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('少'),
-  //     kanji: '少',
-  //     onYomi: 'ショウ',
-  //     kunYomi: 'すく.ない, すこ(し)',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '少し',  emphasize: true),
-  //           ],
-  //           answer: 'すこ'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '少年',  emphasize: true),
-  //           ],
-  //           answer: 'しょう'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '少女',  emphasize: true),
-  //           ],
-  //           answer: 'しょう'),
-  //     ]),
+  Kanji(
+      translation: NA.t('好'),
+      kanji: '好',
+      onYomi: 'コウ',
+      kunYomi: 'このむ, この(む)',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t('kokonimiyakitabekotoaru'),
+            phraseParts: [
+              FuriText(text: 'お好み焼き',  emphasize: true),
+              FuriText(text: '食', furigana: 'た'),
+              FuriText(text: 'べたことある？'),
+            ],
+            answer: 'おこのみやき'),
+        PhraseAnswer(
+            translation: NA.t('koredaisuki'),
+            phraseParts: [
+              FuriText(text: 'これ'),
+              FuriText(text: '大好き', furigana: 'だい？？',  emphasize: true),
+            ],
+            answer: 'だいすき'),
+        PhraseAnswer(
+            translation: NA.t('osushihadaikoubutsudesu'),
+            phraseParts: [
+              FuriText(text: 'おすしは'),
+              FuriText(text: '大好物',furigana: 'だい？？ぶつ',  emphasize: true),
+              FuriText(text: 'です'),
+            ],
+            answer: 'だいこうぶつ'),
+      ]),
+  Kanji(
+      translation: NA.t('嫌'),
+      kanji: '嫌',
+      onYomi: 'ケン',
+      kunYomi: 'きら(う), きら(い), いや',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t('korehakira'),
+            phraseParts: [
+              FuriText(text: 'これは'),
+              FuriText(text: '嫌い', emphasize: true),
+              FuriText(text: '？'),
+            ],
+            answer: 'きらい'),
+        PhraseAnswer(
+            translation: NA.t('sonohitohontouniiyada'),
+            phraseParts: [
+              FuriText(text: 'その'),
+              FuriText(text: '人', furigana: 'ひと'),
+              FuriText(text: '本当', furigana: 'ほんとう'),
+              FuriText(text: 'に'),
+              FuriText(text: '嫌', emphasize: true),
+              FuriText(text: 'だ'),
+            ],
+            answer: 'いや'),
+      ]),
+  Kanji(
+      translation: NA.t('多'),
+      kanji: '多',
+      onYomi: 'タ',
+      kunYomi: 'おお(い), まさ(に), まさ(る)',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t('hontounihitogaooii'),
+            phraseParts: [
+              FuriText(text: '本当', furigana: 'ほんとう'),
+              FuriText(text: 'に'),
+              FuriText(text: '人', furigana: 'ひと'),
+              FuriText(text: 'が'),
+              FuriText(text: '多いい', emphasize: true),
+            ],
+            answer: 'おおいい'),
+        PhraseAnswer(
+            translation: NA.t('karehatabunkonai'),
+            phraseParts: [
+              FuriText(text: '彼', furigana: 'かれ'),
+              FuriText(text: 'は'),
+              FuriText(text: '多分', emphasize: true),
+              FuriText(text: '来', furigana: 'こ'),
+              FuriText(text: 'ない'),
+            ],
+            answer: 'た'),
+      ]),
+  Kanji(
+      translation: NA.t('少'),
+      kanji: '少',
+      onYomi: 'ショウ',
+      kunYomi: 'すく(ない), すこ(し)',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t('sukosidakechoudai'),
+            phraseParts: [
+              FuriText(text: '少し', emphasize: true),
+              FuriText(text: 'だけちょうだい'),
+            ],
+            answer: 'すこし'),
+        PhraseAnswer(
+            translation: NA.t('shounenmangagaarimasuka'),
+            phraseParts: [
+              FuriText(text: '少年', furigana: '？？ねん', emphasize: true),
+              FuriText(text: 'マンガ', furigana: 'manga'),
+              FuriText(text: 'がありますか？')
+            ],
+            answer: 'しょうねん'),
+        PhraseAnswer(
+            translation: NA.t('arukedosukunaiyo'),
+            phraseParts: [
+              FuriText(text: 'あるけど'),
+              FuriText(text: '少ない', emphasize: true),
+              FuriText(text: 'よ'),
+            ],
+            answer: '少ない'),
+      ]),
   Kanji(
       translation: NA.t('色'),
       kanji: '色',

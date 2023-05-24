@@ -32,7 +32,9 @@ class FuriganaText extends StatelessWidget {
                       fontSize: fontSize * 0.7,
                       fontWeight:
                           i.emphasize ? FontWeight.bold : FontWeight.normal,
-                      color: textColor,
+                      color: i.emphasize
+                          ? Theme.of(context).colorScheme.primary
+                          : textColor,
                     ),
                   ),
                 ),
@@ -45,7 +47,9 @@ class FuriganaText extends StatelessWidget {
                     fontSize: fontSize * 1.2,
                     fontWeight:
                         i.emphasize ? FontWeight.bold : FontWeight.normal,
-                    color: textColor,
+                    color: i.emphasize
+                        ? Theme.of(context).colorScheme.primary
+                        : textColor,
                   ),
                 ),
               ),

@@ -5,10 +5,8 @@ import 'package:nalelu/state/exercise_nav_notifier.dart';
 import 'package:nalelu/state/kanji/kanji_notifier.dart';
 import 'package:nalelu/widgets/kanji_exercise/kanji_exercise_state_area.dart';
 import 'package:nalelu/widgets/shared/ad_card.dart';
-import 'package:nalelu/widgets/shared/home_button_wrapper.dart';
 import 'package:nalelu/widgets/shared/nav_header_wrapper.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
-import 'package:nrs_flutter_lib/widgets/n_footer_menu.dart';
 import 'package:provider/provider.dart';
 
 class KanjiExercise extends StatelessWidget {
@@ -58,11 +56,6 @@ class KanjiExercise extends StatelessWidget {
             ),
           ],
         ),
-        persistentFooterButtons: [
-          NFooterMenu(buttons: [
-            HomeButtonWrapper(),
-          ])
-        ],
       ),
     );
   }
