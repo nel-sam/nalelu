@@ -782,158 +782,239 @@ var kanjiBank = [
   //           ],
   //           answer: 'だか'),
   //     ]),
-  // Kanji(
-  //     translation: NA.t('安'),
-  //     kanji: '安',
-  //     onYomi: 'アン',
-  //     kunYomi: 'やすい, やすまる, やす, やす.らか',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '安い',  emphasize: true),
-  //           ],
-  //           answer: 'やす'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '安全',  emphasize: true),
-  //           ],
-  //           answer: 'あん'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('新'),
-  //     kanji: '新',
-  //     onYomi: 'しん, さん',
-  //     kunYomi: 'アタラシイ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '新しい',  emphasize: true),
-  //           ],
-  //           answer: 'あたら'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '新人',  emphasize: true),
-  //           ],
-  //           answer: 'しん'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '新年',  emphasize: true),
-  //           ],
-  //           answer: 'しん'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('古'),
-  //     kanji: '古',
-  //     onYomi: 'こ',
-  //     kunYomi: 'フルイ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '古い',  emphasize: true),
-  //           ],
-  //           answer: 'ふる'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('暑'),
-  //     kanji: '暑',
-  //     onYomi: 'しょ',
-  //     kunYomi: 'アツイ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '暑い',  emphasize: true),
-  //           ],
-  //           answer: 'あつ'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('寒'),
-  //     kanji: '寒',
-  //     onYomi: 'かん',
-  //     kunYomi: 'サムイ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '寒い',  emphasize: true),
-  //           ],
-  //           answer: 'さむ'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('明'),
-  //     kanji: '明',
-  //     onYomi: 'メイ, ミョウ',
-  //     kunYomi: 'あかり, あかるい, あかるむ, あからむ, あきらか, あける, あく, あくる, あかす',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '明かり',  emphasize: true),
-  //           ],
-  //           answer: 'あ'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '明き',  emphasize: true),
-  //           ],
-  //           answer: 'あ'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '明日',  emphasize: true),
-  //           ],
-  //           answer: 'あした'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('暗'),
-  //     kanji: '暗',
-  //     onYomi: 'アン',
-  //     kunYomi: 'くらい',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '暗い',  emphasize: true),
-  //           ],
-  //           answer: 'くらい'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '暗れる',  emphasize: true),
-  //           ],
-  //           answer: 'く'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('忙'),
-  //     kanji: '忙',
-  //     onYomi: 'ボウ',
-  //     kunYomi: 'いそがしい',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '忙しい',  emphasize: true),
-  //           ],
-  //           answer: 'いそが'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '大忙し',  emphasize: true),
-  //           ],
-  //           answer: 'いそが'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '忙しげ',  emphasize: true),
-  //           ],
-  //           answer: 'せわ'),
-  //     ]),
+  Kanji(
+      translation: NA.t('安'),
+      kanji: '安',
+      onYomi: 'アン',
+      kunYomi: 'やすい, やすまる, やす, やす.らか',
+      phraseAnswers: [
+        PhraseAnswer(
+            // このお店は安いです
+            translation: NA.t('konoomisehayasuidesu'),
+            phraseParts: [
+              FuriText(text: 'このお'),
+              FuriText(text: '店', furigana: 'みせ'),
+              FuriText(text: '安い', emphasize: true),
+              FuriText(text: 'です'),
+            ],
+            answer: 'やすい'),
+        PhraseAnswer(
+            // 安全な街がすきです
+            translation: NA.t('anzennamachigasukidesu'),
+            phraseParts: [
+              FuriText(text: '安全', furigana: '？？ぜん', emphasize: true),
+              FuriText(text: 'な'),
+              FuriText(text: '街', furigana: 'まち'),
+              FuriText(text: 'がすきです'),
+            ],
+            answer: 'あんぜん'),
+      ]),
+  Kanji(
+      translation: NA.t('新'),
+      kanji: '新',
+      onYomi: 'しん, さん',
+      kunYomi: 'アタラシイ',
+      phraseAnswers: [
+        PhraseAnswer(
+            // 新しい車を買いました
+            translation: NA.t('ataraishiikurumiokaimashita'),
+            phraseParts: [
+              FuriText(text: '新しい', emphasize: true),
+              FuriText(text: '車', furigana: 'くるま'),
+              FuriText(text: 'を'),
+              FuriText(text: '買', furigana: 'か', emphasize: true),
+              FuriText(text: 'いました', emphasize: true),
+            ],
+            answer: 'あたらしい'),
+        PhraseAnswer(
+            // 新人が二人も入った
+            translation: NA.t('shinjingafutarimohaitta'),
+            phraseParts: [
+              FuriText(text: '新人', furigana: '？？じん', emphasize: true),
+              FuriText(text: 'が'),
+              FuriText(text: '二人', furigana: 'ふたり'),
+              FuriText(text: 'も'),
+              FuriText(text: '入', furigana: 'はい'),
+              FuriText(text: 'った'),
+            ],
+            answer: 'しんじん'),
+        PhraseAnswer(
+            // 新幹線の座席
+            translation: NA.t('shinkansennozaseki'),
+            phraseParts: [
+              FuriText(text: '新幹線', furigana: '？？かんせん', emphasize: true),
+              FuriText(text: 'の'),
+              FuriText(text: '座席', furigana: 'ざせき'),
+            ],
+            answer: 'しんかんせん'),
+      ]),
+  Kanji(
+      translation: NA.t('古'),
+      kanji: '古',
+      onYomi: 'コ',
+      kunYomi: 'ふる(い)',
+      phraseAnswers: [
+        PhraseAnswer(
+            // この建物は本当に古いです
+            translation: NA.t('konotatemonohontounifuruidesu'),
+            phraseParts: [
+              FuriText(text: 'この'),
+              FuriText(text: '建物', furigana: 'たてもの'),
+              FuriText(text: 'は'),
+              FuriText(text: '古い', emphasize: true),
+              FuriText(text: 'です'),
+            ],
+            answer: 'ふるい'),
+        PhraseAnswer(
+            // 中古の車を買いました
+            translation: NA.t('chuuukonokurumiokaimashita'),
+            phraseParts: [
+              FuriText(text: '中古', furigana: '？こ'),
+              FuriText(text: 'の'),
+              FuriText(text: '車', furigana: 'くるま'),
+              FuriText(text: 'を'),
+              FuriText(text: '買', furigana: 'か', emphasize: true),
+              FuriText(text: 'いました', emphasize: true),
+            ],
+            answer: 'ちゅうこ')
+      ]),
+  Kanji(
+      translation: NA.t('暑'),
+      kanji: '暑',
+      onYomi: 'ショ',
+      kunYomi: 'あつ(い), あつ(がる)',
+      phraseAnswers: [
+        PhraseAnswer(
+            // 天気が暑すぎる
+            translation: NA.t('tenkigaatsusugiru'),
+            phraseParts: [
+              FuriText(text: '天気', furigana: 'てんき'),
+              FuriText(text: 'が'),
+              FuriText(text: '暑', emphasize: true),
+              FuriText(text: 'すぎる'),
+            ],
+            answer: 'あつ'),
+        PhraseAnswer(
+            // 沖縄は暑いですね
+            translation: NA.t('okinawahaatsuidesune'),
+            phraseParts: [
+              FuriText(text: '沖縄', furigana: 'おきなわ'),
+              FuriText(text: 'は'),
+              FuriText(text: '暑い', emphasize: true),
+              FuriText(text: 'ですね'),
+            ],
+            answer: 'あつい'),
+      ]),
+  Kanji(
+      translation: NA.t('寒'),
+      kanji: '寒',
+      onYomi: 'カン',
+      kunYomi: 'さむ(い), さむ(がる)',
+      phraseAnswers: [
+        PhraseAnswer(
+            // アラスカは寒いですね
+            translation: NA.t('arusakahasamuidesune'),
+            phraseParts: [
+              FuriText(text: 'アラスカ', furigana: 'Alaska'),
+              FuriText(text: 'は'),
+              FuriText(text: '寒い', emphasize: true),
+              FuriText(text: 'ですね'),
+            ],
+            answer: 'さむい'),
+        PhraseAnswer(
+            // その人は寒がりです
+            translation: NA.t('sonohitohasamugaridesu'),
+            phraseParts: [
+              FuriText(text: 'その'),
+              FuriText(text: '人', furigana: 'ひと'),
+              FuriText(text: 'は'),
+              FuriText(text: '寒がり', emphasize: true),
+              FuriText(text: 'です'),
+            ],
+            answer: 'さむがり'),
+      ]),
+
+  Kanji(
+      translation: NA.t('明'),
+      kanji: '明',
+      onYomi: 'メイ, ミョウ',
+      kunYomi:
+          'あかり, あかるい, あかるむ, あからむ, あきらか, あける, あく, あくる, あかす', // TODO: Add more phrases
+      phraseAnswers: [
+        PhraseAnswer(
+            // 画面が明るい
+            translation: NA.t('gamengaakarui'),
+            phraseParts: [
+              FuriText(text: '画面', furigana: 'がめん'),
+              FuriText(text: 'が'),
+              FuriText(text: '明かるい', emphasize: true),
+            ],
+            answer: 'あかるい'),
+        PhraseAnswer(
+            // 明日は雨ですか？
+            translation: NA.t('ashitahaamedesuka'),
+            phraseParts: [
+              FuriText(text: '明日', emphasize: true),
+              FuriText(text: 'は'),
+              FuriText(text: '雨', furigana: 'あめ'),
+              FuriText(text: 'ですか？'),
+            ],
+            answer: 'あした'),
+      ]),
+  Kanji(
+      translation: NA.t('暗'),
+      kanji: '暗',
+      onYomi: 'アン',
+      kunYomi: 'くら(い)',
+      phraseAnswers: [
+        PhraseAnswer(
+            // 部屋は暗いね
+            translation: NA.t('heyahekuraine'),
+            phraseParts: [
+              FuriText(text: '部屋', furigana: 'へや'),
+              FuriText(text: 'は'),
+              FuriText(text: '暗い', emphasize: true),
+              FuriText(text: 'ね'),
+            ],
+            answer: 'くらい'),
+        PhraseAnswer(
+            // 暗記が苦手です
+            translation: NA.t('ankiganigatedesu'),
+            phraseParts: [
+              FuriText(text: '暗記', furigana: 'あんき', emphasize: true),
+              FuriText(text: 'が'),
+              FuriText(text: '苦手', furigana: 'にがて'),
+              FuriText(text: 'です'),
+            ],
+            answer: 'あんき'),
+      ]),
+  Kanji(
+      translation: NA.t('忙'),
+      kanji: '忙',
+      onYomi: 'ボウ',
+      kunYomi: 'いそが(しい)',
+      phraseAnswers: [
+        PhraseAnswer(
+            // 今日はちょっと忙しい
+            translation: NA.t('kyouhachottoisogashii'),
+            phraseParts: [
+              FuriText(text: '今日', furigana: 'きょう'),
+              FuriText(text: 'は'),
+              FuriText(text: 'ちょっと'),
+              FuriText(text: '忙しい', emphasize: true),
+            ],
+            answer: 'いそがしい'),
+        PhraseAnswer(
+            // ご多忙の中
+            translation: NA.t('gotabounonaka'),
+            phraseParts: [
+              FuriText(text: 'ご'),
+              FuriText(text: '多忙', furigana: 'たぼう', emphasize: true),
+              FuriText(text: 'の'),
+              FuriText(text: '中', furigana: 'なか'),
+            ],
+            answer: 'たぼう'),
+      ]),
   Kanji(
       translation: NA.t('静'),
       kanji: '静',
