@@ -934,63 +934,80 @@ var kanjiBank = [
   //           ],
   //           answer: 'せわ'),
   //     ]),
-  // Kanji(
-  //     translation: NA.t('静'),
-  //     kanji: '静',
-  //     onYomi: 'セイ, ジョウ',
-  //     kunYomi: 'しず, しず(か), しず(まる), しず(める)',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '静か',  emphasize: true),
-  //           ],
-  //           answer: 'しず'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '静まる',  emphasize: true),
-  //           ],
-  //           answer: 'しず'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('難'),
-  //     kanji: '難',
-  //     onYomi: 'ナン',
-  //     kunYomi: 'かたい, がたい',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '難しい',  emphasize: true),
-  //           ],
-  //           answer: 'むずか'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '難',  emphasize: true),
-  //           ],
-  //           answer: 'なん'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '難い',  emphasize: true),
-  //           ],
-  //           answer: 'にく'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('簡'),
-  //     kanji: '簡',
-  //     onYomi: 'カン',
-  //     kunYomi: 'えらぶ, かんたん',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '簡明',  emphasize: true),
-  //           ],
-  //           answer: 'かん'),
-  //     ]),
+  Kanji(
+      translation: NA.t('静'),
+      kanji: '静',
+      onYomi: 'セイ, ジョウ',
+      kunYomi: 'しず, しず(か), しず(まる), しず(める)',
+      phraseAnswers: [
+        PhraseAnswer(
+            // 静かな所が好きです
+            translation: NA.t('shizukanatokorogasukidesu'),
+            phraseParts: [
+              FuriText(text: '静か', emphasize: true),
+              FuriText(text: 'な'),
+              FuriText(text: '所', furigana: 'ところ'),
+              FuriText(text: 'が'),
+              FuriText(text: '好', furigana: 'す'),
+              FuriText(text: 'きです'),
+            ],
+            answer: 'しずか'),
+        PhraseAnswer(
+            // 静電気は危険ですか？
+            translation: NA.t('seidenkihakikendesuka'),
+            phraseParts: [
+              FuriText(text: '静電気', emphasize: true),
+              FuriText(text: 'は'),
+              FuriText(text: '危険', furigana: 'きけん'),
+              FuriText(text: 'ですか？'),
+            ],
+            answer: 'しず'),
+      ]),
+  Kanji(
+      translation: NA.t('難'),
+      kanji: '難',
+      onYomi: 'ナン',
+      kunYomi: 'むずか(しい), (あり)が(とう)',
+      phraseAnswers: [
+        PhraseAnswer(
+            // 宿題は難しすぎる
+            translation: NA.t('shukudaihamuzukashiisugiru'),
+            phraseParts: [
+              FuriText(text: '宿題', furigana: 'しゅくだい'),
+              FuriText(text: 'は'),
+              FuriText(text: '難しい', furigana: 'むずかしい', emphasize: true),
+              FuriText(text: 'すぎる'),
+            ],
+            answer: 'むずかしい'),
+        PhraseAnswer(
+            // この問題は難しいです
+            translation: NA.t('kitekuretearigatou'),
+            phraseParts: [
+              FuriText(text: '来', furigana: 'き'),
+              FuriText(text: 'て'),
+              FuriText(text: 'くれて'),
+              FuriText(text: '有', furigana: 'あ', emphasize: true),
+              FuriText(text: 'り', emphasize: true),
+              FuriText(text: '難う', furigana: 'が', emphasize: true),
+              FuriText(text: 'う', emphasize: true),
+            ],
+            answer: 'ありがとう'),
+      ]),
+  Kanji(
+      translation: NA.t('簡'),
+      kanji: '簡',
+      onYomi: 'カン, ケン',
+      kunYomi: 'えらぶ',
+      phraseAnswers: [
+        PhraseAnswer(
+            // 簡単なことだよ
+            translation: NA.t('kantannakotodayo'),
+            phraseParts: [
+              FuriText(text: '簡単', furigana: '？？たん', emphasize: true),
+              FuriText(text: 'なことだよ')
+            ],
+            answer: 'かんたん'),
+      ]),
   Kanji(
       translation: NA.t('好'),
       kanji: '好',
@@ -998,25 +1015,28 @@ var kanjiBank = [
       kunYomi: 'このむ, この(む)',
       phraseAnswers: [
         PhraseAnswer(
+            // お好み焼き食べたことある？
             translation: NA.t('kokonimiyakitabekotoaru'),
             phraseParts: [
-              FuriText(text: 'お好み焼き',  emphasize: true),
+              FuriText(text: 'お好み焼き', emphasize: true),
               FuriText(text: '食', furigana: 'た'),
               FuriText(text: 'べたことある？'),
             ],
             answer: 'おこのみやき'),
         PhraseAnswer(
+            // お好み焼き食べたことある？
             translation: NA.t('koredaisuki'),
             phraseParts: [
               FuriText(text: 'これ'),
-              FuriText(text: '大好き', furigana: 'だい？？',  emphasize: true),
+              FuriText(text: '大好き', furigana: 'だい？？', emphasize: true),
             ],
             answer: 'だいすき'),
         PhraseAnswer(
+            // お好み焼き食べたことある？
             translation: NA.t('osushihadaikoubutsudesu'),
             phraseParts: [
               FuriText(text: 'おすしは'),
-              FuriText(text: '大好物',furigana: 'だい？？ぶつ',  emphasize: true),
+              FuriText(text: '大好物', furigana: 'だい？？ぶつ', emphasize: true),
               FuriText(text: 'です'),
             ],
             answer: 'だいこうぶつ'),
@@ -1028,6 +1048,7 @@ var kanjiBank = [
       kunYomi: 'きら(う), きら(い), いや',
       phraseAnswers: [
         PhraseAnswer(
+            // これは嫌い？
             translation: NA.t('korehakira'),
             phraseParts: [
               FuriText(text: 'これは'),
@@ -1036,6 +1057,7 @@ var kanjiBank = [
             ],
             answer: 'きらい'),
         PhraseAnswer(
+            // その人本当に嫌だ
             translation: NA.t('sonohitohontouniiyada'),
             phraseParts: [
               FuriText(text: 'その'),
@@ -1054,6 +1076,7 @@ var kanjiBank = [
       kunYomi: 'おお(い), まさ(に), まさ(る)',
       phraseAnswers: [
         PhraseAnswer(
+            // 本当に人が多いい
             translation: NA.t('hontounihitogaooii'),
             phraseParts: [
               FuriText(text: '本当', furigana: 'ほんとう'),
@@ -1064,6 +1087,7 @@ var kanjiBank = [
             ],
             answer: 'おおいい'),
         PhraseAnswer(
+            // 彼は多分来ない
             translation: NA.t('karehatabunkonai'),
             phraseParts: [
               FuriText(text: '彼', furigana: 'かれ'),
@@ -1081,6 +1105,7 @@ var kanjiBank = [
       kunYomi: 'すく(ない), すこ(し)',
       phraseAnswers: [
         PhraseAnswer(
+            // 少しだけちょうだい
             translation: NA.t('sukosidakechoudai'),
             phraseParts: [
               FuriText(text: '少し', emphasize: true),
@@ -1088,6 +1113,7 @@ var kanjiBank = [
             ],
             answer: 'すこし'),
         PhraseAnswer(
+            // 少年マンガがありますか？
             translation: NA.t('shounenmangagaarimasuka'),
             phraseParts: [
               FuriText(text: '少年', furigana: '？？ねん', emphasize: true),
@@ -1096,6 +1122,7 @@ var kanjiBank = [
             ],
             answer: 'しょうねん'),
         PhraseAnswer(
+            // あるけど少ないよ
             translation: NA.t('arukedosukunaiyo'),
             phraseParts: [
               FuriText(text: 'あるけど'),
@@ -1111,6 +1138,7 @@ var kanjiBank = [
       kunYomi: 'いろ',
       phraseAnswers: [
         PhraseAnswer(
+            // 一番好きな色はなに？
             translation: NA.t('itibansukinairohanani'),
             phraseParts: [
               FuriText(text: '一番', furigana: 'いちばん'),
@@ -1128,6 +1156,7 @@ var kanjiBank = [
       kunYomi: 'くろ, くろ(い)',
       phraseAnswers: [
         PhraseAnswer(
+            // 僕のTシャツは黒い
             translation: NA.t('bokunotshatuhakuroi'),
             phraseParts: [
               FuriText(text: '僕', furigana: 'ぼく'),
@@ -1138,6 +1167,7 @@ var kanjiBank = [
             ],
             answer: 'くろい'),
         PhraseAnswer(
+            // オバマ大統領は黒人です
             translation: NA.t('obamadaitouryouhakokujindesu'),
             phraseParts: [
               FuriText(text: 'オバマ', furigana: 'Obama'),
@@ -1155,6 +1185,7 @@ var kanjiBank = [
       kunYomi: 'しろ',
       phraseAnswers: [
         PhraseAnswer(
+            // 白い車はどう？
             translation: NA.t('shiroikurumahadou'),
             phraseParts: [
               FuriText(text: '白い', emphasize: true),
@@ -1163,6 +1194,7 @@ var kanjiBank = [
             ],
             answer: 'しろい'),
         PhraseAnswer(
+            // ノルウェーは白人が多いい
             translation: NA.t('noruweihahakujinngaooii'),
             phraseParts: [
               FuriText(text: 'ノルウェー', furigana: 'Norway'),
@@ -1181,6 +1213,7 @@ var kanjiBank = [
       kunYomi: 'あか(い)',
       phraseAnswers: [
         PhraseAnswer(
+            // 赤い目が赤いよ
             translation: NA.t('megaakaiyo'),
             phraseParts: [
               FuriText(text: '目', furigana: 'め'),
@@ -1190,6 +1223,7 @@ var kanjiBank = [
             ],
             answer: 'あかい'),
         PhraseAnswer(
+            // 赤ちゃんが小さい
             translation: NA.t('akachangachiisai'),
             phraseParts: [
               FuriText(text: '赤ちゃん', emphasize: true),
@@ -1199,6 +1233,7 @@ var kanjiBank = [
             ],
             answer: 'あかちゃん'),
         PhraseAnswer(
+            // 赤色が好き？
             translation: NA.t('kiirogasuki'),
             phraseParts: [
               FuriText(text: '赤色', furigana: '？？いろ', emphasize: true),
@@ -1213,17 +1248,25 @@ var kanjiBank = [
       kunYomi: 'あお, あお, あお(い)',
       phraseAnswers: [
         PhraseAnswer(
-            translation: NA.t(''),
+            // 海はすごく青いよね？
+            translation: NA.t('umihasugokuaoiyone'),
             phraseParts: [
+              FuriText(text: '海', furigana: 'うみ'),
+              FuriText(text: 'はすごく'),
               FuriText(text: '青い', emphasize: true),
+              FuriText(text: 'よね？'),
             ],
-            answer: '青'),
+            answer: 'あおい'),
         PhraseAnswer(
-            translation: NA.t(''),
+            // 青春期とは何歳まで?
+            translation: NA.t('seinshunkitohanisaimadedesuka'),
             phraseParts: [
-              FuriText(text: '青色', furigana: '？？いろ', emphasize: true),
+              FuriText(text: '青春期', furigana: '？？しゅんき'),
+              FuriText(text: 'とは'),
+              FuriText(text: '何歳', furigana: 'なんさい'),
+              FuriText(text: 'までですか？'),
             ],
-            answer: 'あお'),
+            answer: 'せいしゅんき'),
       ]),
   Kanji(
       translation: NA.t('黄'),
@@ -1232,6 +1275,7 @@ var kanjiBank = [
       kunYomi: 'き, こ',
       phraseAnswers: [
         PhraseAnswer(
+            // わたしの歯が黄色い
             translation: NA.t('watashinohagakiiroi'),
             phraseParts: [
               FuriText(text: 'わたしの'),
@@ -1249,6 +1293,7 @@ var kanjiBank = [
       kunYomi: 'むらさき',
       phraseAnswers: [
         PhraseAnswer(
+            // 紫色がかわいい
             translation: NA.t('murasakiirogakawaii'),
             phraseParts: [
               FuriText(text: '紫色', furigana: '？？？？いろ', emphasize: true),
@@ -1264,6 +1309,7 @@ var kanjiBank = [
       kunYomi: 'ちゃ',
       phraseAnswers: [
         PhraseAnswer(
+            // お茶を毎朝飲みます
             translation: NA.t('ochawomaiasanomimasu'),
             phraseParts: [
               FuriText(text: 'お茶', emphasize: true),
@@ -1274,6 +1320,7 @@ var kanjiBank = [
             ],
             answer: 'おちゃ'),
         PhraseAnswer(
+            // 茶色い家がいい
             translation: NA.t('chairoiiegaii'),
             phraseParts: [
               FuriText(text: '茶色', furigana: '？いろ', emphasize: true),
@@ -1290,6 +1337,7 @@ var kanjiBank = [
       kunYomi: 'く(う), く(らう), た(べる)',
       phraseAnswers: [
         PhraseAnswer(
+            // よく食べるね
             translation: NA.t('yokutaberune'),
             phraseParts: [
               FuriText(text: 'よく'),
@@ -1298,6 +1346,7 @@ var kanjiBank = [
             ],
             answer: 'た'),
         PhraseAnswer(
+            // 食べ物ぜんぜんない
             translation: NA.t('tabemonozenzennai'),
             phraseParts: [
               FuriText(text: '食べ物', emphasize: true),
@@ -1305,6 +1354,7 @@ var kanjiBank = [
             ],
             answer: 'た'),
         PhraseAnswer(
+            // 和食が好き？
             translation: NA.t('washokugasuki'),
             phraseParts: [
               FuriText(text: '和食', furigana: 'わ？？', emphasize: true),
@@ -1319,15 +1369,23 @@ var kanjiBank = [
       kunYomi: 'の(む)',
       phraseAnswers: [
         PhraseAnswer(
-            translation: NA.t(''),
+            // 飲み物を買いました
+            translation: NA.t('nomimotokaimashita'),
             phraseParts: [
               FuriText(text: '飲み物', emphasize: true),
+              FuriText(text: 'を'),
+              FuriText(text: '買', furigana: 'か'),
+              FuriText(text: 'いました'),
             ],
-            answer: 'の'),
+            answer: 'のみもの'),
         PhraseAnswer(
-            translation: NA.t(''),
+            // 飲みに行こう
+            translation: NA.t('nominikou'),
             phraseParts: [
               FuriText(text: '飲み', emphasize: true),
+              FuriText(text: 'に'),
+              FuriText(text: '行', furigana: 'い'),
+              FuriText(text: 'こう'),
             ],
             answer: 'の'),
       ]),
@@ -1338,6 +1396,7 @@ var kanjiBank = [
       kunYomi: 'かう, かい',
       phraseAnswers: [
         PhraseAnswer(
+            // 買い物がすき？
             translation: NA.t('kaimonogasuki'),
             phraseParts: [
               FuriText(text: '買い物', furigana: '？？もの', emphasize: true),
@@ -1345,6 +1404,7 @@ var kanjiBank = [
             ],
             answer: 'かいもの'),
         PhraseAnswer(
+            // 近くに販売機がある？
             translation: NA.t('konochikakunihanbaikigaaru'),
             phraseParts: [
               FuriText(text: '近', furigana: 'ちか'),
@@ -1354,6 +1414,7 @@ var kanjiBank = [
             ],
             answer: 'はんばいき'),
         PhraseAnswer(
+            // 何を買うの？
             translation: NA.t('naniwokauno'),
             phraseParts: [
               FuriText(text: '何', furigana: 'なに'),
@@ -1370,6 +1431,7 @@ var kanjiBank = [
       kunYomi: 'み',
       phraseAnswers: [
         PhraseAnswer(
+            // 何を見てるの？
             translation: NA.t('sorewomieru'),
             phraseParts: [
               FuriText(text: 'それを'),
@@ -1378,6 +1440,7 @@ var kanjiBank = [
             ],
             answer: 'みえる'),
         PhraseAnswer(
+            // 花見しよう
             translation: NA.t('hanamishiyou'),
             phraseParts: [
               FuriText(text: '花見', emphasize: true),
@@ -1385,6 +1448,7 @@ var kanjiBank = [
             ],
             answer: 'み'),
         PhraseAnswer(
+            // わたしの意見
             translation: NA.t('watashinoiken'),
             phraseParts: [
               FuriText(text: 'わたしの'),
@@ -1399,6 +1463,7 @@ var kanjiBank = [
       kunYomi: 'きく, きこえる',
       phraseAnswers: [
         PhraseAnswer(
+            // ちゃんと聞いて
             translation: NA.t('chantokiite'),
             phraseParts: [
               FuriText(text: 'ちゃんと'),
@@ -1406,10 +1471,11 @@ var kanjiBank = [
             ],
             answer: 'きいて'),
         PhraseAnswer(
+            // 何かを聞こえた
             translation: NA.t('nanikawokikoeta'),
             phraseParts: [
               FuriText(text: '何', furigana: 'なに'),
-              FuriText(text: 'を'),
+              FuriText(text: 'かを'),
               FuriText(text: '聞こえた', emphasize: true),
             ],
             answer: 'きこえた'),
@@ -1421,6 +1487,7 @@ var kanjiBank = [
       kunYomi: 'はなす, はなし',
       phraseAnswers: [
         PhraseAnswer(
+            // どういう話ですか？
             translation: NA.t('douiuhanashidesuka'),
             phraseParts: [
               FuriText(text: 'どういう'),
@@ -1429,6 +1496,7 @@ var kanjiBank = [
             ],
             answer: 'はなし'),
         PhraseAnswer(
+            // 母に電話した
             translation: NA.t('hahanidenwashita'),
             phraseParts: [
               FuriText(text: '母', furigana: 'はは'),
@@ -1438,6 +1506,7 @@ var kanjiBank = [
             ],
             answer: 'わだい'),
         PhraseAnswer(
+            // 友達と会話したい
             translation: NA.t('tomodathitokaiwashitai'),
             phraseParts: [
               FuriText(text: '友達', furigana: 'ともだち'),
@@ -1454,6 +1523,7 @@ var kanjiBank = [
       kunYomi: 'よむ',
       phraseAnswers: [
         PhraseAnswer(
+            // 毎日新聞を読む
             translation: NA.t('mainichishinbunwoyomu'),
             phraseParts: [
               FuriText(text: '毎日', furigana: 'まいにち'),
@@ -1463,6 +1533,7 @@ var kanjiBank = [
             ],
             answer: 'よむ'),
         PhraseAnswer(
+            // この漢字の読み方わからない
             translation: NA.t('konokanjinoyomikatawakaranai'),
             phraseParts: [
               FuriText(text: 'この'),
@@ -1471,8 +1542,9 @@ var kanjiBank = [
               FuriText(text: '読み方', emphasize: true),
               FuriText(text: 'わからない'),
             ],
-            answer: 'よ'),
+            answer: 'よみかた'),
         PhraseAnswer(
+            //　本の読者
             translation: NA.t('honnodokusha'),
             phraseParts: [
               FuriText(text: '本', furigana: 'ほん'),
@@ -1481,6 +1553,7 @@ var kanjiBank = [
             ],
             answer: 'どくしゃ'),
         PhraseAnswer(
+            // JLPTの読解は難しいです
             translation: NA.t('jlptnodokkaihamuzukasiidesu'),
             phraseParts: [
               FuriText(text: 'JLPT'),
@@ -1500,6 +1573,7 @@ var kanjiBank = [
       kunYomi: 'かく',
       phraseAnswers: [
         PhraseAnswer(
+            // 辞書を使ったよ
             translation: NA.t('jishowotsukattayo'),
             phraseParts: [
               FuriText(text: '辞書', furigana: 'じ？', emphasize: true),
@@ -1509,6 +1583,7 @@ var kanjiBank = [
             ],
             answer: 'じしょ'),
         PhraseAnswer(
+            // どこに書くの？
             translation: NA.t('dokonikakuno'),
             phraseParts: [
               FuriText(text: 'どこに'),
@@ -1524,6 +1599,7 @@ var kanjiBank = [
       kunYomi: 'いる, いる, いれる, いれ',
       phraseAnswers: [
         PhraseAnswer(
+            // これは入口じゃない
             translation: NA.t('korehairiguchijanai'),
             phraseParts: [
               FuriText(text: 'これは'),
@@ -1532,6 +1608,7 @@ var kanjiBank = [
             ],
             answer: 'いりぐち'),
         PhraseAnswer(
+            // 名前を入力してください
             translation: NA.t('namaewonyuuryokushitekudasai'),
             phraseParts: [
               FuriText(text: '名前', furigana: 'なまえ'),
@@ -1539,8 +1616,9 @@ var kanjiBank = [
               FuriText(text: '入力', emphasize: true),
               FuriText(text: 'してください'),
             ],
-            answer: 'にゅう'),
+            answer: 'にゅうりょく'),
         PhraseAnswer(
+            //　家の中に入れてくれる？
             translation: NA.t('ienonakaniiretekureru'),
             phraseParts: [
               FuriText(text: '家', furigana: 'いえ'),
@@ -1559,6 +1637,7 @@ var kanjiBank = [
       kunYomi: 'でる, でる, だす, だす, だれる, だれる',
       phraseAnswers: [
         PhraseAnswer(
+            // 玄関から出て
             translation: NA.t('genkankaradete'),
             phraseParts: [
               FuriText(text: '玄関', furigana: 'げんかん'),
@@ -1567,6 +1646,7 @@ var kanjiBank = [
             ],
             answer: 'でて'),
         PhraseAnswer(
+            // 本を出しましょう
             translation: NA.t('honnwodashimashou'),
             phraseParts: [
               FuriText(text: '本', furigana: 'ほん'),
@@ -1575,6 +1655,7 @@ var kanjiBank = [
             ],
             answer: 'だしましょう'),
         PhraseAnswer(
+            // 今日は出かけるよ!
             translation: NA.t('moudekakeruyo'),
             phraseParts: [
               FuriText(text: 'もう'),
@@ -1590,6 +1671,7 @@ var kanjiBank = [
       kunYomi: 'た(つ), たつ',
       phraseAnswers: [
         PhraseAnswer(
+            // ここに立ってください
             translation: NA.t('kokonitattekudasai'),
             phraseParts: [
               FuriText(text: 'ここに'),
@@ -1598,6 +1680,7 @@ var kanjiBank = [
             ],
             answer: 'たって'),
         PhraseAnswer(
+            // 国立大学
             translation: NA.t('kokuritsudaigaku'),
             phraseParts: [
               FuriText(text: '国立', furigana: 'こく？？', emphasize: true),
@@ -1612,19 +1695,24 @@ var kanjiBank = [
       kunYomi: 'すわ(る)',
       phraseAnswers: [
         PhraseAnswer(
+            // ここに座って
             translation: NA.t('kokonisuwatte'),
             phraseParts: [
               FuriText(text: 'ここに'),
               FuriText(text: '座って', emphasize: true),
             ],
             answer: 'すわって'),
-        // PhraseAnswer(
-        //     translation: NA.t(''),
-        //     phraseParts: [
-        //       FuriText(text: '座席',  emphasize: true),
-        //     ],
-        //     answer: 'ざ'),
         PhraseAnswer(
+            // 新幹線の座席
+            translation: NA.t('shinkansennozaseki'),
+            phraseParts: [
+              FuriText(text: '新幹線', furigana: 'しんかんせん'),
+              FuriText(text: 'の'),
+              FuriText(text: '座席', furigana: 'ざ？？', emphasize: true),
+            ],
+            answer: 'ざせき'),
+        PhraseAnswer(
+            // 銀行口座がありません
             translation: NA.t('ginkoukouzagaarimasen'),
             phraseParts: [
               FuriText(text: '銀行', furigana: 'ぎんこう'),
@@ -1640,6 +1728,7 @@ var kanjiBank = [
       kunYomi: 'やす(む), やす.まる, やす(める)',
       phraseAnswers: [
         PhraseAnswer(
+            // お休みなさい
             translation: NA.t('oyasuminasai'),
             phraseParts: [
               FuriText(text: 'お'),
@@ -1648,13 +1737,16 @@ var kanjiBank = [
             ],
             answer: 'やす'),
         PhraseAnswer(
+            // ゆっくり休んでね
             translation: NA.t('yukkuriyasunde'),
             phraseParts: [
               FuriText(text: 'ゆっくり'),
               FuriText(text: '休んで', emphasize: true),
+              FuriText(text: 'ね')
             ],
-            answer: 'やす'),
+            answer: 'やすんで'),
         PhraseAnswer(
+            // 今日は休日です
             translation: NA.t('kyouhakyuujitsudesu'),
             phraseParts: [
               FuriText(text: '今日', furigana: 'きょう'),
@@ -1671,6 +1763,7 @@ var kanjiBank = [
       kunYomi: 'い(く), ゆ(く), おこな(う)',
       phraseAnswers: [
         PhraseAnswer(
+            // どこに行くの？
             translation: NA.t('dokoniikuno'),
             phraseParts: [
               FuriText(text: 'どこに'),
@@ -1686,10 +1779,10 @@ var kanjiBank = [
         //     ],
         //     answer: 'おこなう'),
         PhraseAnswer(
-            translation: NA.t('tsuukougakinshi'),
+            // 通行禁止
+            translation: NA.t('tsuukoukinshi'),
             phraseParts: [
               FuriText(text: '通行', emphasize: true),
-              FuriText(text: 'が'),
               FuriText(text: '禁止', furigana: 'きんし'),
             ],
             answer: 'つうこう'),
@@ -1701,6 +1794,7 @@ var kanjiBank = [
       kunYomi: 'く(る), きた(る), きた(す), き(たす), き(たる), き',
       phraseAnswers: [
         PhraseAnswer(
+            // 来月は５月です
             translation: NA.t('raigetsuhagogatsudesu'),
             phraseParts: [
               FuriText(text: '来月', emphasize: true),
@@ -1710,6 +1804,7 @@ var kanjiBank = [
             ],
             answer: 'らいげつ'),
         PhraseAnswer(
+            // 明日来日します
             translation: NA.t('ashitarainichishimasu'),
             phraseParts: [
               FuriText(text: '明日', furigana: 'あした'),
@@ -1718,6 +1813,7 @@ var kanjiBank = [
             ],
             answer: 'らいにち'),
         PhraseAnswer(
+            // 早く来てね
             translation: NA.t('hayakukitene'),
             phraseParts: [
               FuriText(text: '早', furigana: 'はや'),
@@ -1734,6 +1830,7 @@ var kanjiBank = [
       kunYomi: 'かえ, がえ',
       phraseAnswers: [
         PhraseAnswer(
+            // お帰りなさい
             translation: NA.t('okaerinasai'),
             phraseParts: [
               FuriText(text: 'お帰り', emphasize: true),
@@ -1741,6 +1838,7 @@ var kanjiBank = [
             ],
             answer: 'おかえり'),
         PhraseAnswer(
+            // おねえさんは帰国しました
             translation: NA.t('oneesanhakikokushimashita'),
             phraseParts: [
               FuriText(text: 'おねえさんは'),
@@ -1749,6 +1847,7 @@ var kanjiBank = [
             ],
             answer: 'きこく'),
         PhraseAnswer(
+            // ただの日帰り旅行だったよ
             translation: NA.t('tadanohigaeriryokoudattayo'),
             phraseParts: [
               FuriText(text: 'ただの'),
@@ -1764,12 +1863,17 @@ var kanjiBank = [
       onYomi: 'カイ',
       kunYomi: 'あ(く), あ(ける), ひら(く), ひら(ける), さか(る), さか(ん)',
       phraseAnswers: [
-        PhraseAnswer(phraseParts: [
-          FuriText(text: '目', furigana: 'め'),
-          FuriText(text: 'を'),
-          FuriText(text: '開けて', emphasize: true),
-        ], answer: 'あけて', translation: NA.t('mewoakete')),
         PhraseAnswer(
+            // 目を開けて
+            phraseParts: [
+              FuriText(text: '目', furigana: 'め'),
+              FuriText(text: 'を'),
+              FuriText(text: '開けて', emphasize: true),
+            ],
+            answer: 'あけて',
+            translation: NA.t('mewoakete')),
+        PhraseAnswer(
+            // 何時に開く？
             translation: NA.t('nanjiniaku'),
             phraseParts: [
               FuriText(text: '何時', furigana: 'なんじ'),
@@ -1779,6 +1883,7 @@ var kanjiBank = [
             ],
             answer: 'あく'),
         PhraseAnswer(
+            // メニューを開いて
             translation: NA.t('menuwohiraite'),
             phraseParts: [
               FuriText(text: 'メニューを'),
@@ -1793,6 +1898,7 @@ var kanjiBank = [
       kunYomi: 'と(じる), と(ざす), し(める), し(まる)',
       phraseAnswers: [
         PhraseAnswer(
+            // お店が閉まる
             translation: NA.t('omisegashimaru'),
             phraseParts: [
               FuriText(text: 'お'),
@@ -1802,6 +1908,7 @@ var kanjiBank = [
             ],
             answer: 'しまる'),
         PhraseAnswer(
+            // 目を閉じて
             translation: NA.t('mewotojiru'),
             phraseParts: [
               FuriText(text: '目', furigana: 'め'),
@@ -1810,6 +1917,7 @@ var kanjiBank = [
             ],
             answer: 'とじて'),
         PhraseAnswer(
+            // お店が閉店しました
             translation: NA.t('omisegahaitenshimashita'),
             phraseParts: [
               FuriText(text: 'お'),
@@ -1827,6 +1935,7 @@ var kanjiBank = [
       kunYomi: 'やま',
       phraseAnswers: [
         PhraseAnswer(
+            // その山が大きいです
             translation: NA.t('sonoyamagaookiidesu'),
             phraseParts: [
               FuriText(text: 'その'),
@@ -1837,6 +1946,7 @@ var kanjiBank = [
             ],
             answer: 'やま'),
         PhraseAnswer(
+            // 山田さんは近い？
             translation: NA.t('fujisanhachikai'),
             phraseParts: [
               FuriText(text: '富士山', furigana: 'ふじ？？', emphasize: true),
@@ -1853,6 +1963,7 @@ var kanjiBank = [
       kunYomi: 'いま, きょう',
       phraseAnswers: [
         PhraseAnswer(
+            // 今日はさむいね
             translation: NA.t('kongetsuhasamuine'),
             phraseParts: [
               FuriText(text: '今月', furigana: '？？げつ', emphasize: true),
@@ -1861,6 +1972,7 @@ var kanjiBank = [
             ],
             answer: 'こんげつ'),
         PhraseAnswer(
+            // 今何時ですか？
             translation: NA.t('imahananjidesuka'),
             phraseParts: [
               FuriText(text: '今', emphasize: true),
@@ -1869,6 +1981,7 @@ var kanjiBank = [
             ],
             answer: 'いま'),
         PhraseAnswer(
+            // 今日は月曜日だよ
             translation: NA.t('kyouhagetsuyoubidayo'),
             phraseParts: [
               FuriText(text: '今日', emphasize: true),
@@ -1885,6 +1998,7 @@ var kanjiBank = [
       kunYomi: 'かわ、がわ',
       phraseAnswers: [
         PhraseAnswer(
+            // 川に行きましょう
             translation: NA.t('kawaniikimashou'),
             phraseParts: [
               FuriText(text: '川', emphasize: true),
@@ -1894,6 +2008,7 @@ var kanjiBank = [
             ],
             answer: 'かわ'),
         PhraseAnswer(
+            // 山川さん
             translation: NA.t('yamawakasan'),
             phraseParts: [
               FuriText(text: '山川', emphasize: true),
@@ -1901,6 +2016,7 @@ var kanjiBank = [
             ],
             answer: 'やまかわ'),
         PhraseAnswer(
+            // 品川駅にいるよ
             translation: NA.t('shinagawaekiniiruyo'),
             phraseParts: [
               FuriText(text: '品川', furigana: 'しな？？', emphasize: true),
@@ -1916,6 +2032,7 @@ var kanjiBank = [
       kunYomi: 'た、いなか',
       phraseAnswers: [
         PhraseAnswer(
+            // 山田さん
             translation: NA.t('yamadasan'),
             phraseParts: [
               FuriText(text: '山田', emphasize: true),
@@ -1923,16 +2040,20 @@ var kanjiBank = [
             ],
             answer: 'やまだ'),
         PhraseAnswer(
+            // 田舎に住んでいる
             translation: NA.t('inakanisunderu'),
             phraseParts: [
               FuriText(
                   text: '田舎',
                   emphasize:
                       true), // This uses a non-N5 kanji but there's no way around this
-              FuriText(text: 'にすんでいる'),
+              FuriText(text: 'に'),
+              FuriText(text: '住', furigana: 'す'),
+              FuriText(text: 'んでいる'),
             ],
             answer: 'いなか'),
         PhraseAnswer(
+            // 成田空港
             translation: NA.t('naritakuukou'),
             phraseParts: [
               FuriText(text: '成田', furigana: 'なり？', emphasize: true),
@@ -1947,6 +2068,7 @@ var kanjiBank = [
     kunYomi: 'わける, わかる',
     phraseAnswers: [
       PhraseAnswer(
+          // 真ん中から分ける
           translation: NA.t('mannakakarawakeru'),
           phraseParts: [
             FuriText(text: '真ん中', furigana: 'まんなか'),
@@ -1955,6 +2077,7 @@ var kanjiBank = [
           ],
           answer: 'わける'),
       PhraseAnswer(
+          // あと十分待ってね
           translation: NA.t('atojuppunmattene'),
           phraseParts: [
             FuriText(text: 'あと'),
@@ -1963,6 +2086,7 @@ var kanjiBank = [
           ],
           answer: 'じゅうぷん'),
       PhraseAnswer(
+          // 日本語が分かる
           translation: NA.t('nihonngogawakaru'),
           phraseParts: [
             FuriText(text: '日本語', furigana: 'にほんご'),
