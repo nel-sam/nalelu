@@ -750,38 +750,60 @@ var kanjiBank = [
   //           ],
   //           answer: 'ちょう'),
   //     ]),
-  // Kanji(
-  //     translation: NA.t('短'),
-  //     kanji: '短',
-  //     onYomi: 'タン',
-  //     kunYomi: 'みじか, みじか(い)',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '短い',  emphasize: true),
-  //           ],
-  //           answer: 'みじか'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('高'),
-  //     kanji: '高',
-  //     onYomi: 'コウ',
-  //     kunYomi: 'たかい, たか, だか, たか.まる, たか.める',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '高い',  emphasize: true),
-  //           ],
-  //           answer: 'たか'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '円高',  emphasize: true),
-  //           ],
-  //           answer: 'だか'),
-  //     ]),
+  Kanji(
+      translation: NA.t('短'),
+      kanji: '短',
+      onYomi: 'タン',
+      kunYomi: 'みじか, みじか(い)',
+      phraseAnswers: [
+        PhraseAnswer(
+            // 僕の髪の毛が短い
+            translation: NA.t('bokunokaminokegamijikai'),
+            phraseParts: [
+              FuriText(text: '僕', furigana: 'ぼく'),
+              FuriText(text: 'の'),
+              FuriText(text: '髪', furigana: 'かみ'),
+              FuriText(text: 'の'),
+              FuriText(text: '毛', furigana: 'け'),
+              FuriText(text: 'が'),
+              FuriText(text: '短い', emphasize: true),
+            ],
+            answer: 'みじかい'),
+        // TODO: One for on yomi?
+      ]),
+  Kanji(
+      translation: NA.t('高'),
+      kanji: '高',
+      onYomi: 'コウ',
+      kunYomi: 'たかい, たか, だか, たか.まる, たか.める',
+      phraseAnswers: [
+        PhraseAnswer(
+            // 一番背の高い人は誰ですか？
+            translation: NA.t('ichibansenotakaihitohadaresesuka'),
+            phraseParts: [
+              FuriText(text: '一番', furigana: 'いちばん', emphasize: true),
+              FuriText(text: '背', furigana: 'せ', emphasize: true),
+              FuriText(text: 'の'),
+              FuriText(text: '高い', emphasize: true),
+              FuriText(text: '人', furigana: 'ひと'),
+              FuriText(text: 'は'),
+              FuriText(text: '誰', furigana: 'だれ'),
+              FuriText(text: 'ですか？'),
+            ],
+            answer: 'たかい'),
+        PhraseAnswer(
+            // 高級なレストランに行った
+            translation: NA.t('koukyuunaresutoranniitta'),
+            phraseParts: [
+              FuriText(text: '高級', furigana: '？？きゅう', emphasize: true),
+              FuriText(text: 'な'),
+              FuriText(text: 'レストラン', furigana: 'restaurant'),
+              FuriText(text: 'に'),
+              FuriText(text: '行', furigana: 'い'),
+              FuriText(text: 'った'),
+            ],
+            answer: 'こうきゅう'),
+      ]),
   Kanji(
       translation: NA.t('安'),
       kanji: '安',
