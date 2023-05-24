@@ -2,11 +2,18 @@ import 'package:nalelu/lang_data/kanji.dart';
 import 'package:nalelu/state/kanji/kanji_exercise_state.dart';
 
 class KanjiGenerator {
-  static createExercise(int index) {
-    return KanjiExerciseState(kanji: kanjiBank[index]);
+  late List<Kanji> bank;
+
+  KanjiGenerator() {
+    bank = kanjiBank;
+    //bank.shuffle(); // TODO: Uncomment once all Kanji exercises are set up
   }
 
-  static int getMaxIndex() {
-    return kanjiBank.length - 1;
+  createExercise(int index) {
+    return KanjiExerciseState(kanji: bank[index]);
+  }
+
+  int getMaxIndex() {
+    return bank.length - 1;
   }
 }

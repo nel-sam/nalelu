@@ -42,7 +42,7 @@ class FuriganaText extends StatelessWidget {
                   i.text,
                   textAlign: TextAlign.start,
                   style: TextStyle(
-                    fontSize: fontSize,
+                    fontSize: fontSize * 1.2,
                     fontWeight:
                         i.emphasize ? FontWeight.bold : FontWeight.normal,
                     color: textColor,

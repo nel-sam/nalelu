@@ -40,9 +40,10 @@ class ExerciseNavNotifier extends ChangeNotifier {
         this._maxIndex = MangaGenerator.getMaxIndex();
         this.createExercise = MangaGenerator.createExercise;
         break;
-        case ExerciseType.Kanji:
-        this._maxIndex = KanjiGenerator.getMaxIndex();
-        this.createExercise = KanjiGenerator.createExercise;
+      case ExerciseType.Kanji:
+        var kanjiGenerator = new KanjiGenerator();
+        this._maxIndex = kanjiGenerator.getMaxIndex();
+        this.createExercise = kanjiGenerator.createExercise;
         break;
     }
 

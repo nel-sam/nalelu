@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:nalelu/furi_text.dart';
 import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/state/doushi/doushi_exercise_state.dart';
 import 'package:nalelu/widgets/doushi_exercise/verb_input.dart';
+import 'package:nalelu/widgets/shared/furigana_text.dart';
 import 'package:nrs_flutter_lib/widgets/n_text_span.dart';
 
 class DoushiExerciseStateArea extends StatefulWidget {
@@ -19,6 +21,12 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
   Widget build(BuildContext context) {
     return Column(
       children: [
+        FuriganaText(furiTexts: [
+          FuriText(
+              emphasize: true,
+              text: widget.state.doushi.casual.present.kanjiWord,
+              furigana: widget.state.doushi.casual.present.kanaWord)
+        ]),
         NTextSpan(widget.state.doushi.translation),
         Padding(
           padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
