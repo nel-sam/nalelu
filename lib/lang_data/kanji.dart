@@ -1085,82 +1085,108 @@ var kanjiBank = [
   //           ],
   //           answer: 'しょう'),
   //     ]),
-  // Kanji(
-  //     translation: NA.t('色'),
-  //     kanji: '色',
-  //     onYomi: 'ショク',
-  //     kunYomi: 'いろ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '色',  emphasize: true),
-  //           ],
-  //           answer: 'いろ'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('黒'),
-  //     kanji: '黒',
-  //     onYomi: 'コク',
-  //     kunYomi: 'くろ, くろ(い)',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '黒い',  emphasize: true),
-  //           ],
-  //           answer: 'くろ'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '黒色',  emphasize: true),
-  //           ],
-  //           answer: 'くろ'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('白'),
-  //     kanji: '白',
-  //     onYomi: 'ハク, ビャク',
-  //     kunYomi: 'しろ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '明白',  emphasize: true),
-  //           ],
-  //           answer: 'はく'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '白い',  emphasize: true),
-  //           ],
-  //           answer: 'しろ'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('赤'),
-  //     kanji: '赤',
-  //     onYomi: 'セキ, シャク',
-  //     kunYomi: 'あか, あか.い, あか.らむ, あか(らめる)',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '赤い',  emphasize: true),
-  //           ],
-  //           answer: 'あか'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '赤ちゃん',  emphasize: true),
-  //           ],
-  //           answer: 'あか'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '赤色',  emphasize: true),
-  //           ],
-  //           answer: 'あか'),
-  //     ]),
+  Kanji(
+      translation: NA.t('色'),
+      kanji: '色',
+      onYomi: 'ショク',
+      kunYomi: 'いろ',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t('itibansukinairohanani'),
+            phraseParts: [
+              FuriText(text: '一番', furigana: 'いちばん'),
+              FuriText(text: '好', furigana: 'す'),
+              FuriText(text: 'きな'),
+              FuriText(text: '色', emphasize: true),
+              FuriText(text: 'はなに？'),
+            ],
+            answer: 'いろ'),
+      ]),
+  Kanji(
+      translation: NA.t('黒'),
+      kanji: '黒',
+      onYomi: 'コク',
+      kunYomi: 'くろ, くろ(い)',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t('bokunotshatuhakuroi'),
+            phraseParts: [
+              FuriText(text: '僕', furigana: 'ぼく'),
+              FuriText(text: 'の'),
+              FuriText(text: 'Tシャツ', furigana: 'T-shirt'),
+              FuriText(text: 'は'),
+              FuriText(text: '黒い', emphasize: true),
+            ],
+            answer: 'くろい'),
+        PhraseAnswer(
+            translation: NA.t('obamadaitouryouhakokujindesu'),
+            phraseParts: [
+              FuriText(text: 'オバマ', furigana: 'Obama'),
+              FuriText(text: '大統領', furigana: 'だいとうりょう'),
+              FuriText(text: 'は'),
+              FuriText(text: '黒人', emphasize: true),
+              FuriText(text: 'です'),
+            ],
+            answer: 'こくじん'),
+      ]),
+  Kanji(
+      translation: NA.t('白'),
+      kanji: '白',
+      onYomi: 'ハク, ビャク',
+      kunYomi: 'しろ',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t('shiroikurumahadou'),
+            phraseParts: [
+              FuriText(text: '白い', emphasize: true),
+              FuriText(text: '車', furigana: 'くるま'),
+              FuriText(text: 'はどう？')
+            ],
+            answer: 'しろい'),
+        PhraseAnswer(
+            translation: NA.t('noruweihahakujinngaooii'),
+            phraseParts: [
+              FuriText(text: 'ノルウェー', furigana: 'Norway'),
+              FuriText(text: 'は'),
+              FuriText(text: '白人', emphasize: true),
+              FuriText(text: 'が'),
+              FuriText(text: '多', furigana: 'おお'),
+              FuriText(text: 'いい'),
+            ],
+            answer: 'はくじん'),
+      ]),
+  Kanji(
+      translation: NA.t('赤'),
+      kanji: '赤',
+      onYomi: 'セキ, シャク',
+      kunYomi: 'あか(い)',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t('megaakaiyo'),
+            phraseParts: [
+              FuriText(text: '目', furigana: 'め'),
+              FuriText(text: 'が'),
+              FuriText(text: '赤い', emphasize: true),
+              FuriText(text: 'よ'),
+            ],
+            answer: 'あかい'),
+        PhraseAnswer(
+            translation: NA.t('akachangachiisai'),
+            phraseParts: [
+              FuriText(text: '赤ちゃん', emphasize: true),
+              FuriText(text: 'が'),
+              FuriText(text: '小', furigana: 'ち'),
+              FuriText(text: 'さい'),
+            ],
+            answer: 'あかちゃん'),
+        PhraseAnswer(
+            translation: NA.t('kiirogasuki'),
+            phraseParts: [
+              FuriText(text: '赤色', furigana: '？？いろ', emphasize: true),
+              FuriText(text: 'がすき？'),
+            ],
+            answer: 'あかいろ'),
+      ]),
   Kanji(
       translation: NA.t('青'),
       kanji: '青',
@@ -1170,13 +1196,13 @@ var kanjiBank = [
         PhraseAnswer(
             translation: NA.t(''),
             phraseParts: [
-              FuriText(text: '青い',  emphasize: true),
+              FuriText(text: '青い', emphasize: true),
             ],
             answer: '青'),
         PhraseAnswer(
             translation: NA.t(''),
             phraseParts: [
-              FuriText(text: '青色',  emphasize: true),
+              FuriText(text: '青色', furigana: '？？いろ', emphasize: true),
             ],
             answer: 'あお'),
       ]),
@@ -1206,7 +1232,7 @@ var kanjiBank = [
         PhraseAnswer(
             translation: NA.t('murasakiirogakawaii'),
             phraseParts: [
-              FuriText(text: '紫色', furigana: '？いろ', emphasize: true),
+              FuriText(text: '紫色', furigana: '？？？？いろ', emphasize: true),
               FuriText(text: 'が'),
               FuriText(text: 'かわいい')
             ],
@@ -1555,7 +1581,7 @@ var kanjiBank = [
         PhraseAnswer(
             translation: NA.t('kokuritsudaigaku'),
             phraseParts: [
-              FuriText(text: '国立', emphasize: true),
+              FuriText(text: '国立', furigana: 'こく？？', emphasize: true),
               FuriText(text: '大学', furigana: 'だいがく'),
             ],
             answer: 'こくりつ'),
