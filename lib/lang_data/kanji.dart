@@ -681,75 +681,102 @@ var kanjiBank = [
   //           ],
   //           answer: 'ひだり'),
   //     ]),
-  // Kanji(
-  //     translation: NA.t('大'),
-  //     kanji: '大',
-  //     onYomi: 'ダイ, タイ',
-  //     kunYomi: 'おお, おお(きい)',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '大きい',  emphasize: true),
-  //           ],
-  //           answer: 'おお'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '大学',  emphasize: true),
-  //           ],
-  //           answer: 'だい'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '大会',  emphasize: true),
-  //           ],
-  //           answer: 'たい'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('小'),
-  //     kanji: '小',
-  //     onYomi: 'ショウ',
-  //     kunYomi: 'ちい(さい), こ, こ, お, さ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '小さい',  emphasize: true),
-  //           ],
-  //           answer: 'ちい'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '小川',  emphasize: true),
-  //           ],
-  //           answer: 'お'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '小犬',  emphasize: true),
-  //           ],
-  //           answer: 'こ'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('長'),
-  //     kanji: '長',
-  //     onYomi: 'チョウ',
-  //     kunYomi: 'なが, なが(い)',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '長い',  emphasize: true),
-  //           ],
-  //           answer: 'なが'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '学長',  emphasize: true),
-  //           ],
-  //           answer: 'ちょう'),
-  //     ]),
+  Kanji(
+      translation: NA.t('大'),
+      kanji: '大',
+      onYomi: 'ダイ, タイ',
+      kunYomi: 'おお, おお(きい)',
+      phraseAnswers: [
+        PhraseAnswer(
+            // 大きい車は邪魔だ
+            translation: NA.t('ookiikurumahajimada'),
+            phraseParts: [
+              FuriText(text: '大きい', emphasize: true),
+              FuriText(text: '車', furigana: 'くるま'),
+              FuriText(text: 'は'),
+              FuriText(text: '邪魔', furigana: 'じゃま'),
+              FuriText(text: 'だ'),
+            ],
+            answer: 'おおきい'),
+        PhraseAnswer(
+            // 大学に行きたい
+            translation: NA.t('daigakunikitai'),
+            phraseParts: [
+              FuriText(text: '大学', furigana: '？？がく', emphasize: true),
+              FuriText(text: 'に'),
+              FuriText(text: '行きたい'),
+            ],
+            answer: 'だいがく'),
+        PhraseAnswer(
+            // 大型の車
+            translation: NA.t('oogatanokuruma'),
+            phraseParts: [
+              FuriText(text: '大型', furigana: '？？がた', emphasize: true),
+              FuriText(text: 'の'),
+              FuriText(text: '車', furigana: 'くるま'),
+            ],
+            answer: 'おおがた'),
+      ]),
+  Kanji(
+      translation: NA.t('小'),
+      kanji: '小',
+      onYomi: 'ショウ',
+      kunYomi: 'ちい(さい), こ, こ, お, さ',
+      phraseAnswers: [
+        PhraseAnswer(
+            // あの小さい犬は誰のですか？
+            translation: NA.t('anosukunainuhadaredesuka'),
+            phraseParts: [
+              FuriText(text: 'あの'),
+              FuriText(text: '小さい', emphasize: true),
+              FuriText(text: '犬', furigana: 'いぬ'),
+              FuriText(text: 'は'),
+              FuriText(text: '誰', furigana: 'だれ'),
+              FuriText(text: 'の'),
+              FuriText(text: 'ですか？'),
+            ],
+            answer: 'ちいさい'),
+        PhraseAnswer(
+            // 画像を縮小して
+            translation: NA.t('gazouwoshukushoushite'),
+            phraseParts: [
+              FuriText(text: '画像', furigana: 'がぞう'),
+              FuriText(text: 'を'),
+              FuriText(text: '縮小', furigana: 'しゅく？？', emphasize: true),
+              FuriText(text: 'して'),
+            ],
+            answer: 'しゅくしょう'),
+      ]),
+  Kanji(
+      translation: NA.t('長'),
+      kanji: '長',
+      onYomi: 'チョウ',
+      kunYomi: 'なが, なが(い)',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t('nagaikaminokegasuki'),
+            phraseParts: [
+              // 長い髪の毛が好き？
+              FuriText(text: '長い', emphasize: true),
+              FuriText(text: '髪', furigana: 'かみ'),
+              FuriText(text: 'の'),
+              FuriText(text: '毛', furigana: 'け'),
+              FuriText(text: 'が'),
+              FuriText(text: '好', furigana: 'す'),
+              FuriText(text: 'き?'),
+            ],
+            answer: 'ながい'),
+        PhraseAnswer(
+            // 学長は誰ですか？
+            translation: NA.t('kouchouhadaredesuka'),
+            phraseParts: [
+              FuriText(text: '学長', furigana: '？？ちょう', emphasize: true),
+              FuriText(text: 'は'),
+              FuriText(text: '誰', furigana: 'だれ'),
+              FuriText(text: 'ですか？'),
+            ],
+            answer: 'こうちょう'),
+      ]),
   Kanji(
       translation: NA.t('短'),
       kanji: '短',
