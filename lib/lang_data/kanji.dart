@@ -438,88 +438,131 @@ var kanjiBank = [
   //           ],
   //           answer: 'もく'),
   //     ]),
-  // Kanji(
-  //     translation: NA.t('金'),
-  //     kanji: '金',
-  //     onYomi: 'キン, コン, ゴン',
-  //     kunYomi: 'かね, かな, がね',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: 'お金',  emphasize: true),
-  //           ],
-  //           answer: 'かね'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '金',  emphasize: true),
-  //           ],
-  //           answer: 'きん'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '金曜日',  emphasize: true),
-  //           ],
-  //           answer: 'きん'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('土'),
-  //     kanji: '土',
-  //     onYomi: 'ド, ト',
-  //     kunYomi: 'つち',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '土',  emphasize: true),
-  //           ],
-  //           answer: 'つち'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '土曜日',  emphasize: true),
-  //           ],
-  //           answer: 'ど'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('曜'),
-  //     kanji: '曜',
-  //     onYomi: 'ヨウ',
-  //     kunYomi: '',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '月曜日',  emphasize: true),
-  //           ],
-  //           answer: 'よう'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('年'),
-  //     kanji: '年',
-  //     onYomi: 'ネン',
-  //     kunYomi: 'とし',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '年',  emphasize: true),
-  //           ],
-  //           answer: 'とし'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '二千年',  emphasize: true),
-  //           ],
-  //           answer: 'ねん'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '来年',  emphasize: true),
-  //           ],
-  //           answer: 'ねん'),
-  //     ]),
+  Kanji(
+      translation: NA.t('金'),
+      kanji: '金',
+      onYomi: 'キン, コン, ゴン',
+      kunYomi: 'かね, かな, がね',
+      phraseAnswers: [
+        PhraseAnswer(
+            // お金がない
+            translation: NA.t('okaneganai'),
+            phraseParts: [
+              FuriText(text: 'お金', emphasize: true),
+              FuriText(text: 'がない'),
+            ],
+            answer: 'おかね'),
+        PhraseAnswer(
+            // 金魚が病気になった
+            translation: NA.t('kingyogabyoukiniatta'),
+            phraseParts: [
+              FuriText(text: '金魚', furigana: '？？ぎょ', emphasize: true),
+              FuriText(text: 'が'),
+              FuriText(text: '病気', furigana: 'びょうき'),
+              FuriText(text: 'になった'),
+            ],
+            answer: 'きんぎょ'),
+        PhraseAnswer(
+            // 金曜日にまで仕事です
+            translation: NA.t(''),
+            phraseParts: [
+              FuriText(text: '金曜日', furigana: '？？ようび', emphasize: true),
+            ],
+            answer: 'きん'),
+      ]),
+  Kanji(
+      translation: NA.t('土'),
+      kanji: '土',
+      onYomi: 'ド, ト',
+      kunYomi: 'つち',
+      phraseAnswers: [
+        PhraseAnswer(
+            // 土で汚れている
+            translation: NA.t('tsuchideyogoreteiru'),
+            phraseParts: [
+              FuriText(text: '土', emphasize: true),
+              FuriText(text: 'で'),
+              FuriText(text: '汚', furigana: 'よご'),
+              FuriText(text: 'れている'),
+            ],
+            answer: 'つち'),
+        PhraseAnswer(
+            // 土曜日にあいましょう
+            translation: NA.t('dooyoubiniaimashou'),
+            phraseParts: [
+              FuriText(text: '土曜日', furigana: '？ようび', emphasize: true),
+              FuriText(text: 'にあいましょう'),
+            ],
+            answer: 'どようび'),
+      ]),
+  Kanji(
+      translation: NA.t('曜'),
+      kanji: '曜',
+      onYomi: 'ヨウ',
+      kunYomi: '',
+      phraseAnswers: [
+        PhraseAnswer(
+            // 月曜日に予定がある
+            translation: NA.t('getsuyoubinoyoteigaaru'),
+            phraseParts: [
+              FuriText(text: '月曜日', furigana: 'げつ？？び', emphasize: true),
+              FuriText(text: 'に'),
+              FuriText(text: '予定', furigana: 'よてい'),
+              FuriText(text: 'がある'),
+            ],
+            answer: 'げつようび'),
+        PhraseAnswer(
+          //　今日は何曜日ですか？
+          translation: NA.t('kyouhananyoubidesuka'),
+          phraseParts: [
+            FuriText(text: '今日', furigana: 'きょう'),
+            FuriText(text: 'は'),
+            FuriText(text: '何曜日', furigana: 'なん？？び', emphasize: true),
+            FuriText(text: 'ですか？'),
+          ],
+          answer: 'なんようび',
+        )
+      ]),
+  Kanji(
+      translation: NA.t('年'),
+      kanji: '年',
+      onYomi: 'ネン',
+      kunYomi: 'とし',
+      phraseAnswers: [
+        PhraseAnswer(
+            // 今年は何年ですか？
+            translation: NA.t('kotoshihanannendesuka'),
+            phraseParts: [
+              FuriText(text: '今年', furigana: 'ことし'),
+              FuriText(text: 'は'),
+              FuriText(text: '何年', furigana: 'なん？？', emphasize: true),
+              FuriText(text: 'ですか？'),
+            ],
+            answer: 'とし'),
+        PhraseAnswer(
+            // 去年アメリカに行った
+            translation: NA.t('kyonenamerikaniittta'),
+            phraseParts: [
+              FuriText(text: '去年', furigana: 'きょ？？', emphasize: true),
+              FuriText(text: 'アメリカ', furigana: 'america'),
+              FuriText(text: 'に'),
+              FuriText(text: '行', furigana: 'い'),
+              FuriText(text: 'った'),
+            ],
+            answer: 'きょねん'),
+        PhraseAnswer(
+            // 来年から日本に住む
+            translation: NA.t('rainenkaranihonnisumu'),
+            phraseParts: [
+              FuriText(text: '来年', furigana: 'らい？？', emphasize: true),
+              FuriText(text: 'から'),
+              FuriText(text: '日本', furigana: 'にほん'),
+              FuriText(text: 'に'),
+              FuriText(text: '住', furigana: 'す'),
+              FuriText(text: 'む'),
+            ],
+            answer: 'らいねん'),
+      ]),
   Kanji(
       translation: NA.t('上'),
       kanji: '上',
@@ -602,7 +645,7 @@ var kanjiBank = [
             answer: 'なか'),
         PhraseAnswer(
             // 一日中雨が降った
-            translation: NA.t('ichiichuuumegafutta'),
+            translation: NA.t('ichinichichuuumegafutta'),
             phraseParts: [
               FuriText(text: '一日中', furigana: 'いちにち？？', emphasize: true),
               FuriText(text: '雨', furigana: 'あめ'),
