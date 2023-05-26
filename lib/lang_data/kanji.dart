@@ -1,6 +1,9 @@
 import 'package:nalelu/furi_text.dart';
 import 'package:nalelu/na_helpers.dart';
 
+// TODO: Add note somewhere to tell users that examples given here are not
+// textbook Japanese, but rather useful everyday Japanese sentences
+
 var kanjiBank = [
   // Kanji(
   //     translation: NA.t('一'),
@@ -580,107 +583,184 @@ var kanjiBank = [
   //           ],
   //           answer: 'なか'),
   //     ]),
-  // Kanji(
-  //     translation: NA.t('外'),
-  //     kanji: '外',
-  //     onYomi: 'ガイ',
-  //     kunYomi: 'そと, ほか, はずす, はずれる',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '外国',  emphasize: true),
-  //           ],
-  //           answer: 'がい'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '外',  emphasize: true),
-  //           ],
-  //           answer: 'そと'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('前'),
-  //     kanji: '前',
-  //     onYomi: 'ゼン',
-  //     kunYomi: 'まえ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '前',  emphasize: true),
-  //           ],
-  //           answer: 'まえ'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '三日前',  emphasize: true),
-  //           ],
-  //           answer: 'まえ'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('後'),
-  //     kanji: '後',
-  //     onYomi: 'ゴ, コウ',
-  //     kunYomi: 'うしろ, あと, のち',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '後',  emphasize: true),
-  //           ],
-  //           answer: 'あと'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '後ろ',  emphasize: true),
-  //           ],
-  //           answer: 'うし'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('右'),
-  //     kanji: '右',
-  //     onYomi: 'ウ, ユウ',
-  //     kunYomi: 'みぎ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '右',  emphasize: true),
-  //           ],
-  //           answer: 'みぎ'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '右手',  emphasize: true),
-  //           ],
-  //           answer: 'みぎ'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '左右',  emphasize: true),
-  //           ],
-  //           answer: 'ゆう'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('左'),
-  //     kanji: '左',
-  //     onYomi: 'サ, シャ',
-  //     kunYomi: 'ひだり',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '左',  emphasize: true),
-  //           ],
-  //           answer: 'ひだり'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '左手',  emphasize: true),
-  //           ],
-  //           answer: 'ひだり'),
-  //     ]),
+  Kanji(
+      translation: NA.t('外'),
+      kanji: '外',
+      onYomi: 'ガイ',
+      kunYomi: 'そと, ほか, はずす, はずれる',
+      phraseAnswers: [
+        PhraseAnswer(
+            // 外で遊びましょう
+            translation: NA.t('sotoasobimashou'),
+            phraseParts: [
+              FuriText(text: '外', emphasize: true),
+              FuriText(text: 'で'),
+              FuriText(text: '遊', furigana: 'あそ'),
+              FuriText(text: 'びましょう'),
+            ],
+            answer: 'そと'),
+        PhraseAnswer(
+            // 外国人も日本語を話せます
+            translation: NA.t('gaikokujinnmonihonngowohanasemasu'),
+            phraseParts: [
+              FuriText(text: '外国人', furigana: '？？こくじん', emphasize: true),
+              FuriText(text: 'も'),
+              FuriText(text: '日本語', furigana: 'にほんご'),
+              FuriText(text: 'を'),
+              FuriText(text: '話', furigana: 'はな'),
+              FuriText(text: 'せます'),
+            ],
+            answer: 'がいこくじん'),
+        PhraseAnswer(
+            // 外側がきたない
+            translation: NA.t('sotogawagakitanai'),
+            phraseParts: [
+              FuriText(text: '外側', furigana: '？？がわ', emphasize: true),
+              FuriText(text: 'が'),
+              FuriText(text: 'きたない'),
+            ],
+            answer: 'そとがわ'),
+      ]),
+  Kanji(
+      translation: NA.t('前'),
+      kanji: '前',
+      onYomi: 'ゼン',
+      kunYomi: 'まえ',
+      phraseAnswers: [
+        PhraseAnswer(
+            // 午前だけ仕事した
+            translation: NA.t('gozendakeshigotoshita'),
+            phraseParts: [
+              FuriText(text: '午前', furigana: 'ご？？', emphasize: true),
+              FuriText(text: 'だけ'),
+              FuriText(text: '仕事', furigana: 'しごと'),
+              FuriText(text: 'した'),
+            ],
+            answer: 'ごぜん'),
+        PhraseAnswer(
+            // ３年前に日本に行った
+            translation: NA.t('sannenmaenihonnniittta'),
+            phraseParts: [
+              FuriText(text: '３年', furigana: 'さんねん'),
+              FuriText(text: '前', emphasize: true),
+              FuriText(text: 'に'),
+              FuriText(text: '日本', furigana: 'にほん'),
+              FuriText(text: 'に'),
+              FuriText(text: '行', furigana: 'い'),
+              FuriText(text: 'った'),
+            ],
+            answer: 'まえ'),
+      ]),
+  Kanji(
+      translation: NA.t('後'),
+      kanji: '後',
+      onYomi: 'ゴ, コウ',
+      kunYomi: 'うしろ, あと, のち',
+      phraseAnswers: [
+        PhraseAnswer(
+            // あとで電話する
+            translation: NA.t('atosudendenwasuru'),
+            phraseParts: [
+              FuriText(text: '後', emphasize: true),
+              FuriText(text: 'で'),
+              FuriText(text: '電話', furigana: 'でんわ'),
+              FuriText(text: 'する'),
+            ],
+            answer: 'あと'),
+        PhraseAnswer(
+            // 午後に予約がある
+            translation: NA.t('gogoyniyoyakugaaru'),
+            phraseParts: [
+              FuriText(text: '午後', furigana: 'ご？', emphasize: true),
+            ],
+            answer: 'ごご'),
+        PhraseAnswer(
+            // 後ろに座ってください
+            translation: NA.t('ushironisuwattekudasai'),
+            phraseParts: [
+              FuriText(text: '後ろ', emphasize: true),
+              FuriText(text: 'に'),
+              FuriText(text: '座', furigana: 'すわ'),
+              FuriText(text: 'ってください'),
+            ],
+            answer: 'うしろ'),
+        PhraseAnswer(
+            // 週の後半は天気がよかった
+            translation: NA.t('shuunokouhanhatenkigayokatta'),
+            phraseParts: [
+              FuriText(text: '週', furigana: 'しゅう'),
+              FuriText(text: 'の'),
+              FuriText(text: '後半', furigana: '？？はん', emphasize: true),
+              FuriText(text: 'は'),
+              FuriText(text: '天気', furigana: 'てんき'),
+              FuriText(text: 'がよかった'),
+            ],
+            answer: 'こうはん'),
+      ]),
+  Kanji(
+      translation: NA.t('右'),
+      kanji: '右',
+      onYomi: 'ウ, ユウ',
+      kunYomi: 'みぎ',
+      phraseAnswers: [
+        PhraseAnswer(
+            // 右の人は誰？
+            translation: NA.t('miginohitohadare'),
+            phraseParts: [
+              FuriText(text: '右', emphasize: true),
+              FuriText(text: 'の'),
+              FuriText(text: '人', furigana: 'ひと'),
+              FuriText(text: 'は'),
+              FuriText(text: '誰', furigana: 'だれ'),
+              FuriText(text: '？'),
+            ],
+            answer: 'みぎ'),
+        PhraseAnswer(
+            // 右手で拭ってみて
+            translation: NA.t('migitedenuguttemite'),
+            phraseParts: [
+              FuriText(text: '右手', furigana: '？？て', emphasize: true),
+              FuriText(text: 'で'),
+              FuriText(text: '拭', furigana: 'ぬぐ', emphasize: true),
+              FuriText(text: 'ってみて'),
+            ],
+            answer: 'みぎて'),
+        PhraseAnswer(
+          // 右折してください
+          translation: NA.t('usetsushitekudasai'),
+          phraseParts: [
+            FuriText(text: '右折', furigana: '？せつ', emphasize: true),
+            FuriText(text: 'してください'),
+          ],
+          answer: 'うせつ',
+        )
+      ]),
+  Kanji(
+      translation: NA.t('左'),
+      kanji: '左',
+      onYomi: 'サ, シャ',
+      kunYomi: 'ひだり',
+      phraseAnswers: [
+        PhraseAnswer(
+            // もうちょっと右に動いて
+            translation: NA.t('mouchottomiginiugoite'),
+            phraseParts: [
+              FuriText(text: '左', emphasize: true),
+            ],
+            answer: 'ひだり'),
+        PhraseAnswer(
+            //　次の道で左折してください
+            translation: NA.t('tsuginomichidehsasetsushitekudasai'),
+            phraseParts: [
+              FuriText(text: '次', furigana: 'つぎ'),
+              FuriText(text: 'の'),
+              FuriText(text: '道', furigana: 'みち'),
+              FuriText(text: 'で'),
+              FuriText(text: '左折', furigana: '？せつ', emphasize: true),
+              FuriText(text: 'してください'),
+            ],
+            answer: 'させつ'),
+      ]),
   Kanji(
       translation: NA.t('大'),
       kanji: '大',
