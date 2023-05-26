@@ -520,50 +520,70 @@ var kanjiBank = [
   //           ],
   //           answer: 'ねん'),
   //     ]),
-  // Kanji(
-  //     translation: NA.t('上'),
-  //     kanji: '上',
-  //     onYomi: 'ジョウ, ショウ',
-  //     kunYomi: 'うえ, あがる, あげる, のぼる, のぼせる, のぼす',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '上がる',  emphasize: true),
-  //           ],
-  //           answer: 'あ'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '水上スキー',  emphasize: true),
-  //           ],
-  //           answer: 'じょう'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('下'),
-  //     kanji: '下',
-  //     onYomi: 'カ, ゲ',
-  //     kunYomi: 'した, しも, もと, さがる, さげる, くだる, くだす, くださる',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '下がる',  emphasize: true),
-  //           ],
-  //           answer: 'さ'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '上下',  emphasize: true),
-  //           ],
-  //           answer: 'げ'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '下',  emphasize: true),
-  //           ],
-  //           answer: 'した'),
-  //     ]),
+  Kanji(
+      translation: NA.t('上'),
+      kanji: '上',
+      onYomi: 'ジョウ, ショウ',
+      kunYomi: 'うえ, あがる, あげる, のぼる, のぼせる, のぼす',
+      phraseAnswers: [
+        PhraseAnswer(
+            // 2階にあがって
+            translation: NA.t('nikainiagatte'),
+            phraseParts: [
+              FuriText(text: '二階', furigana: 'にかい'),
+              FuriText(text: 'に'),
+              FuriText(text: '上がって', emphasize: true),
+            ],
+            answer: 'あがって'),
+        PhraseAnswer(
+            // 日本語上手ですね
+            translation: NA.t('nihongojouzudesune'),
+            phraseParts: [
+              FuriText(text: '日本語', furigana: 'にほんご'),
+              FuriText(text: '上手', furigana: '？？ず', emphasize: true),
+              FuriText(text: 'ですね'),
+            ],
+            answer: 'じょうず'),
+      ]),
+  Kanji(
+      translation: NA.t('下'),
+      kanji: '下',
+      onYomi: 'カ, ゲ, ヘ',
+      kunYomi: 'した, しも, もと, さがる, さげる, くだる, くだす, くださる',
+      phraseAnswers: [
+        PhraseAnswer(
+            // 下を向いて歩いてる
+            translation: NA.t('shitawomuitearuiteteru'),
+            phraseParts: [
+              FuriText(text: '下', emphasize: true),
+              FuriText(text: 'を'),
+              FuriText(text: '向', furigana: 'む'),
+              FuriText(text: 'いて'),
+              FuriText(text: '歩', furigana: 'ある'),
+              FuriText(text: 'いてる'),
+            ],
+            answer: 'した'),
+        PhraseAnswer(
+            // スピードを下げて
+            translation: NA.t('supiidoosagete'),
+            phraseParts: [
+              FuriText(text: 'スピード', furigana: 'speed', emphasize: true),
+              FuriText(text: 'を'),
+              FuriText(text: '下げて', emphasize: true),
+            ],
+            answer: 'さげて'),
+        PhraseAnswer(
+            // スポーツの下手な人
+            translation: NA.t('supootsunohetanahito'),
+            phraseParts: [
+              FuriText(text: 'スポーツ', furigana: 'sports'),
+              FuriText(text: 'の'),
+              FuriText(text: '下手', furigana: '？た', emphasize: true),
+              FuriText(text: 'な'),
+              FuriText(text: '人', furigana: 'ひと'),
+            ],
+            answer: 'へた'),
+      ]),
   Kanji(
       translation: NA.t('中'),
       kanji: '中',
