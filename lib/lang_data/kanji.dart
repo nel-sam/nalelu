@@ -662,7 +662,7 @@ var kanjiBank = [
       kunYomi: 'そと, ほか, はずす, はずれる',
       phraseAnswers: [
         PhraseAnswer(
-            // 外で遊びましょう
+            // 
             translation: NA.t('sotoasobimashou'),
             phraseParts: [
               FuriText(text: '外', emphasize: true),
