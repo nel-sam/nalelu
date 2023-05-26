@@ -564,25 +564,34 @@ var kanjiBank = [
   //           ],
   //           answer: 'した'),
   //     ]),
-  // Kanji(
-  //     translation: NA.t('中'),
-  //     kanji: '中',
-  //     onYomi: 'チュウ',
-  //     kunYomi: 'なか',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '一日中',  emphasize: true),
-  //           ],
-  //           answer: 'じゅう'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '中',  emphasize: true),
-  //           ],
-  //           answer: 'なか'),
-  //     ]),
+  Kanji(
+      translation: NA.t('中'),
+      kanji: '中',
+      onYomi: 'チュウ',
+      kunYomi: 'なか',
+      phraseAnswers: [
+        PhraseAnswer(
+            // 中に何がありますか？
+            translation: NA.t('nakanihanigaimasuka'),
+            phraseParts: [
+              FuriText(text: '中', emphasize: true),
+              FuriText(text: 'に'),
+              FuriText(text: '何', furigana: 'なに'),
+              FuriText(text: 'がありますか？'),
+            ],
+            answer: 'なか'),
+        PhraseAnswer(
+            // 一日中雨が降った
+            translation: NA.t('ichiichuuumegafutta'),
+            phraseParts: [
+              FuriText(text: '一日中', furigana: 'いちにち？？', emphasize: true),
+              FuriText(text: '雨', furigana: 'あめ'),
+              FuriText(text: 'が'),
+              FuriText(text: '降', furigana: 'ふ'),
+              FuriText(text: 'った'),
+            ],
+            answer: 'いちにちちゅう'),
+      ]),
   Kanji(
       translation: NA.t('外'),
       kanji: '外',
