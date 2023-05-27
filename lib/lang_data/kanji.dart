@@ -419,25 +419,35 @@ var kanjiBank = [
   //           ],
   //           answer: 'みず'),
   //     ]),
-  // Kanji(
-  //     translation: NA.t('木'),
-  //     kanji: '木',
-  //     onYomi: 'ボク, モク',
-  //     kunYomi: 'き, こ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '木',  emphasize: true),
-  //           ],
-  //           answer: 'き'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '木曜日',  emphasize: true),
-  //           ],
-  //           answer: 'もく'),
-  //     ]),
+  Kanji(
+      translation: NA.t('木'),
+      kanji: '木',
+      onYomi: 'ボク, モク',
+      kunYomi: 'き, こ',
+      phraseAnswers: [
+        PhraseAnswer(
+            // この辺は、木が多いです
+            translation: NA.t('konohenhakigaooiidesu'),
+            phraseParts: [
+              FuriText(text: 'この辺', furigana: 'このへん'),
+              FuriText(text: 'は、'),
+              FuriText(text: '木', emphasize: true),
+              FuriText(text: 'が'),
+              FuriText(text: '多', furigana: 'おおい'),
+              FuriText(text: 'いです'),
+            ],
+            answer: 'き'),
+        PhraseAnswer(
+            // 木曜日に帰る
+            translation: NA.t('mokuyoubinikaeru'),
+            phraseParts: [
+              FuriText(text: '木曜日', furigana: '？？ようび', emphasize: true),
+              FuriText(text: 'に'),
+              FuriText(text: '帰', furigana: 'かえ'),
+              FuriText(text: 'る'),
+            ],
+            answer: 'もくようび'),
+      ]),
   Kanji(
       translation: NA.t('金'),
       kanji: '金',
@@ -463,8 +473,8 @@ var kanjiBank = [
             ],
             answer: 'きんぎょ'),
         PhraseAnswer(
-            // 金曜日にまで仕事です
-            translation: NA.t(''),
+            // 金曜日にまで仕事します
+            translation: NA.t('kingyoubinimadeshigotoshimasu'),
             phraseParts: [
               FuriText(text: '金曜日', furigana: '？？ようび', emphasize: true),
             ],
