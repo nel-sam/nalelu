@@ -350,75 +350,115 @@ var kanjiBank = [
   //           ],
   //           answer: 'じつ'),
   //     ]),
-  // Kanji(
-  //     translation: NA.t('月'),
-  //     kanji: '月',
-  //     onYomi: 'ゲツ, ガツ',
-  //     kunYomi: 'つき',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '月曜日',  emphasize: true),
-  //           ],
-  //           answer: 'げつ'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '一月',  emphasize: true),
-  //           ],
-  //           answer: 'がつ'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '今月',  emphasize: true),
-  //           ],
-  //           answer: 'げつ'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('火'),
-  //     kanji: '火',
-  //     onYomi: 'カ',
-  //     kunYomi: 'ひ, ほのお',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '火曜日',  emphasize: true),
-  //           ],
-  //           answer: 'か'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '火山',  emphasize: true),
-  //           ],
-  //           answer: 'か'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '火',  emphasize: true),
-  //           ],
-  //           answer: 'ひ'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('水'),
-  //     kanji: '水',
-  //     onYomi: 'スイ',
-  //     kunYomi: 'みず, みずうみ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '水曜日',  emphasize: true),
-  //           ],
-  //           answer: 'すい'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '水',  emphasize: true),
-  //           ],
-  //           answer: 'みず'),
-  //     ]),
+  Kanji(
+      translation: NA.t('月'),
+      kanji: '月',
+      onYomi: 'ゲツ, ガツ',
+      kunYomi: 'つき',
+      phraseAnswers: [
+        PhraseAnswer(
+            // 昨日の月曜日だった
+            translation: NA.t('kinouhagetsuyoubidatta'),
+            phraseParts: [
+              FuriText(text: '昨日', furigana: 'きのう'),
+              FuriText(text: 'は'),
+              FuriText(text: '月曜日', furigana: '？？ようび', emphasize: true),
+            ],
+            answer: 'げつようび'),
+        PhraseAnswer(
+            // 一月は寒いです
+            translation: NA.t('ichigatsuhasumuidesu'),
+            phraseParts: [
+              FuriText(text: '一月', furigana: 'いち？？', emphasize: true),
+              FuriText(text: 'は'),
+              FuriText(text: '寒', furigana: 'さむ'),
+              FuriText(text: 'いです'),
+            ],
+            answer: 'いちがつ'),
+        PhraseAnswer(
+            // 二ヶ月の休み
+            translation: NA.t('nikagetsunoyasumi'),
+            phraseParts: [
+              FuriText(text: '二ヶ月', emphasize: true),
+              FuriText(text: 'の'),
+              FuriText(text: '休', furigana: 'やす'),
+              FuriText(text: 'み'),
+            ],
+            answer: 'にかげつ'),
+      ]),
+  Kanji(
+      translation: NA.t('火'),
+      kanji: '火',
+      onYomi: 'カ',
+      kunYomi: 'ひ, ほのお',
+      phraseAnswers: [
+        PhraseAnswer(
+            // 明日は火曜日ですね？
+            translation: NA.t('ashitaehakayoubidesune'),
+            phraseParts: [
+              FuriText(text: '明日'),
+              FuriText(text: 'は'),
+              FuriText(text: '火曜日', emphasize: true),
+              FuriText(text: 'ですね？'),
+            ],
+            answer: 'かようび'),
+        PhraseAnswer(
+            // ハワイに火山がある
+            translation: NA.t('hawainikazangaaru'),
+            phraseParts: [
+              FuriText(text: 'ハワイ', furigana: 'hawaii'),
+              FuriText(text: 'に'),
+              FuriText(text: '火山', emphasize: true),
+            ],
+            answer: 'かざん'),
+        PhraseAnswer(
+            // 火を付けてください
+            translation: NA.t('hiwotsuketekudasai'),
+            phraseParts: [
+              FuriText(text: '火', emphasize: true),
+              FuriText(text: 'を'),
+              FuriText(text: '付', furigana: 'つ'),
+              FuriText(text: 'けてください'),
+            ],
+            answer: 'ひ'),
+      ]),
+  Kanji(
+      translation: NA.t('水'),
+      kanji: '水',
+      onYomi: 'スイ',
+      kunYomi: 'みず, みずうみ',
+      phraseAnswers: [
+        PhraseAnswer(
+            // 水曜日に遊ぼう
+            translation: NA.t('suioyoubiniasobou'),
+            phraseParts: [
+              FuriText(text: '水曜日', furigana: '？？ようび', emphasize: true),
+              FuriText(text: 'に'),
+              FuriText(text: '遊', furigana: 'あそ'),
+              FuriText(text: 'ぼう'),
+            ],
+            answer: 'すい'),
+        PhraseAnswer(
+            // お水しか飲みたくない
+            translation: NA.t('omizushikanomitakunai'),
+            phraseParts: [
+              FuriText(text: 'お水', emphasize: true),
+              FuriText(text: 'しか'),
+              FuriText(text: '飲', furigana: 'の'),
+              FuriText(text: 'みたくない'),
+            ],
+            answer: 'おみず'),
+      ]),
+  PhraseAnswer(
+      // 水道の匂いがする
+      translation: NA.t('suinonioigasuru'),
+      phraseParts: [
+        FuriText(text: '水道', emphasize: true),
+        FuriText(text: 'の'),
+        FuriText(text: '匂', furigana: 'にお'),
+        FuriText(text: 'いがする'),
+      ],
+      answer: 'すいどう'),
   Kanji(
       translation: NA.t('木'),
       kanji: '木',
@@ -672,7 +712,7 @@ var kanjiBank = [
       kunYomi: 'そと, ほか, はずす, はずれる',
       phraseAnswers: [
         PhraseAnswer(
-            // 
+            //
             translation: NA.t('sotoasobimashou'),
             phraseParts: [
               FuriText(text: '外', emphasize: true),
