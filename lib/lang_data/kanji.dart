@@ -573,7 +573,8 @@ var kanjiBank = [
               FuriText(text: '来', furigana: 'こ'),
               FuriText(text: 'ない'),
             ],
-            answer: 'じゅっぷん'),
+            // TODO: need to fix this
+            answer: 'じゅうぶん'),
       ]),
   Kanji(
       translation: NA.t('百'),
@@ -639,6 +640,7 @@ var kanjiBank = [
             translation: NA.t('nimanenmonai'),
             phraseParts: [
               FuriText(text: 'ニ万円', furigana: 'に？？えん', emphasize: true),
+              FuriText(text: 'もない'),
             ],
             answer: 'にまんえん'),
       ]),
