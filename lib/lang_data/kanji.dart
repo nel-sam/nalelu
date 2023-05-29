@@ -430,81 +430,106 @@ List<Kanji> kanjiBank = [
   //           ],
   //           answer: 'ご'),
   //     ]),
-  // Kanji(
-  //     translation: NA.t('六'),
-  //     kanji: '六',
-  //     onYomi: 'ロク',
-  //     kunYomi: 'む, むつ, むっつ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '六つ',  emphasize: true),
-  //           ],
-  //           answer: 'むっ'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '六月',  emphasize: true),
-  //           ],
-  //           answer: 'ろく'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '六日',  emphasize: true),
-  //           ],
-  //           answer: 'むい'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('七'),
-  //     kanji: '七',
-  //     onYomi: 'シチ',
-  //     kunYomi: 'なな, なの',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '七つ',  emphasize: true),
-  //           ],
-  //           answer: 'なな'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '七月',  emphasize: true),
-  //           ],
-  //           answer: 'しち'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '七日',  emphasize: true),
-  //           ],
-  //           answer: 'なの'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('八'),
-  //     kanji: '八',
-  //     onYomi: 'ハチ',
-  //     kunYomi: 'や, やつ, やっつ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '八つ',  emphasize: true),
-  //           ],
-  //           answer: 'やっ'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '八月',  emphasize: true),
-  //           ],
-  //           answer: 'はち'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '八日',  emphasize: true),
-  //           ],
-  //           answer: 'よう'),
-  //     ]),
+  Kanji(
+      translation: NA.t('六'),
+      kanji: '六',
+      onYomi: 'ロク',
+      kunYomi: 'む, むつ, むっつ',
+      phraseAnswers: [
+        PhraseAnswer(
+            // 生ビール六つください
+            translation: NA.t('namabirumuttukudasai'),
+            phraseParts: [
+              FuriText(text: '生', furigana: 'なま'),
+              FuriText(text: 'ビール', furigana: 'beer'),
+              FuriText(text: '六つ', emphasize: true),
+              FuriText(text: 'ください'),
+            ],
+            answer: 'むっつ'),
+        PhraseAnswer(
+            // もうすぐ六月です
+            translation: NA.t('mousugurokugatsudesu'),
+            phraseParts: [
+              FuriText(text: 'もうすぐ'),
+              FuriText(text: '六月', furigana: '？？がつ', emphasize: true),
+              FuriText(text: 'です'),
+            ],
+            answer: 'ろくがつ'),
+        PhraseAnswer(
+            // 六日はあいてる？
+            translation: NA.t('muikahaaiteru'),
+            phraseParts: [
+              FuriText(text: '六日', furigana: '？？か', emphasize: true),
+            ],
+            answer: 'むいか'),
+      ]),
+  Kanji(
+      translation: NA.t('七'),
+      kanji: '七',
+      onYomi: 'シチ',
+      kunYomi: 'なな, なの',
+      phraseAnswers: [
+        PhraseAnswer(
+            // りんご七つください
+            translation: NA.t('ringonanatsukudasai'),
+            phraseParts: [
+              FuriText(text: 'りんご', emphasize: true),
+              FuriText(text: '七つ', emphasize: true),
+              FuriText(text: 'ください'),
+            ],
+            answer: 'ななつ'),
+        PhraseAnswer(
+            // 七月に休みがない
+            translation: NA.t('sichigatsuniyasumiganai'),
+            phraseParts: [
+              FuriText(text: '七月', furigana: '？？がつ', emphasize: true),
+              FuriText(text: 'に'),
+              FuriText(text: '休', furigana: 'やす'),
+              FuriText(text: 'みがない'),
+            ],
+            answer: 'しちがつ'),
+        PhraseAnswer(
+            // 七日もいるの？
+            translation: NA.t('nanokamoiruno'),
+            phraseParts: [
+              FuriText(text: '七日', furigana: '？？か', emphasize: true),
+              FuriText(text: 'もいるの？'),
+            ],
+            answer: 'なのか'),
+      ]),
+  Kanji(
+      translation: NA.t('八'),
+      kanji: '八',
+      onYomi: 'ハチ',
+      kunYomi: 'や, よう',
+      phraseAnswers: [
+        // PhraseAnswer(
+        //     translation: NA.t(''),
+        //     phraseParts: [
+        //       FuriText(text: '八つ', emphasize: true),
+        //     ],
+        //     answer: 'やっ'),
+        PhraseAnswer(
+            // 八月の天気はどうですか？
+            translation: NA.t('hachigatsunotenkihadoudesuka'),
+            phraseParts: [
+              FuriText(text: '八月', furigana: '？？がつ', emphasize: true),
+              FuriText(text: 'の'),
+              FuriText(text: '天気', furigana: 'てんき'),
+              FuriText(text: 'はどうですか？'),
+            ],
+            answer: 'はちがつ'),
+        PhraseAnswer(
+            // 八日に何をしますか？
+            translation: NA.t('youkaninaniwoshimasuka'),
+            phraseParts: [
+              FuriText(text: '八日', furigana: '？？か', emphasize: true),
+              FuriText(text: 'に'),
+              FuriText(text: '何', furigana: 'なに'),
+              FuriText(text: 'をしますか？'),
+            ],
+            answer: 'ようか'),
+      ]),
   Kanji(
       translation: NA.t('九'),
       kanji: '九',
