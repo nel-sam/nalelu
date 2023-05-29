@@ -4,7 +4,7 @@ import 'package:nalelu/na_helpers.dart';
 // TODO: Add note somewhere to tell users that examples given here are not
 // textbook Japanese, but rather useful everyday Japanese sentences
 
-var kanjiBank = [
+List<Kanji> kanjiBank = [
   // Kanji(
   //     translation: NA.t('人'),
   //     kanji: '人',
@@ -806,17 +806,18 @@ var kanjiBank = [
               FuriText(text: 'みたくない'),
             ],
             answer: 'おみず'),
+        PhraseAnswer(
+            // 水道の匂いがする
+            translation: NA.t('suinonioigasuru'),
+            phraseParts: [
+              FuriText(text: '水道', furigana: '？？どう', emphasize: true),
+              FuriText(text: 'の'),
+              FuriText(text: '匂', furigana: 'にお'),
+              FuriText(text: 'いがする'),
+            ],
+            answer: 'すいどう'),
       ]),
-  PhraseAnswer(
-      // 水道の匂いがする
-      translation: NA.t('suinonioigasuru'),
-      phraseParts: [
-        FuriText(text: '水道', emphasize: true),
-        FuriText(text: 'の'),
-        FuriText(text: '匂', furigana: 'にお'),
-        FuriText(text: 'いがする'),
-      ],
-      answer: 'すいどう'),
+
   Kanji(
       translation: NA.t('木'),
       kanji: '木',
