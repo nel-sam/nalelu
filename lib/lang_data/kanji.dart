@@ -237,7 +237,7 @@ List<Kanji> kanjiBank = [
           answer: 'あさ',
         ),
         PhraseAnswer(
-          // 朝食を食べない 
+          // 朝食を食べない
           translation: NA.t('choushokuwotabenai'),
           phraseParts: [
             FuriText(text: '朝食', furigana: '？しょく', emphasize: true),
@@ -261,7 +261,7 @@ List<Kanji> kanjiBank = [
             FuriText(text: 'ここは'),
             FuriText(text: '何', furigana: 'なに'),
             FuriText(text: 'が'),
-            FuriText(text: '楽しい', emphasize: true),
+            FuriText(text: '楽しい', furigana: '？', emphasize: true),
             FuriText(text: 'ですか？'),
           ],
           answer: 'たのしい',
@@ -303,7 +303,7 @@ List<Kanji> kanjiBank = [
           phraseParts: [
             FuriText(text: '何', furigana: 'なん'),
             FuriText(text: 'て'),
-            FuriText(text: '言えば', emphasize: true),
+            FuriText(text: '言えば', furigana: '？', emphasize: true),
             FuriText(text: 'いい'),
             FuriText(text: 'か'),
             FuriText(text: 'わからない'),
@@ -344,7 +344,7 @@ List<Kanji> kanjiBank = [
           translation: NA.t('ikurakashirabetekureru'),
           phraseParts: [
             FuriText(text: 'いくらか'),
-            FuriText(text: '調べて', emphasize: true),
+            FuriText(text: '調べて', furigana: '？', emphasize: true),
             FuriText(text: 'くれる？'),
           ],
           answer: 'しらべて',
@@ -382,7 +382,7 @@ List<Kanji> kanjiBank = [
           // 体が痛い
           translation: NA.t('karadagaitai'),
           phraseParts: [
-            FuriText(text: '体', emphasize: true),
+            FuriText(text: '体', furigana: '？', emphasize: true),
             FuriText(text: 'が'),
             FuriText(text: '痛', furigana: 'いた'),
             FuriText(text: 'い'),
@@ -425,7 +425,7 @@ List<Kanji> kanjiBank = [
             FuriText(text: 'で'),
             FuriText(text: '何', furigana: 'なに'),
             FuriText(text: 'かを'),
-            FuriText(text: '作る', emphasize: true),
+            FuriText(text: '作る', furigana: '？', emphasize: true),
           ],
           answer: 'つくる',
         ),
@@ -433,7 +433,7 @@ List<Kanji> kanjiBank = [
           // 作りかた教えて
           translation: NA.t('tsukurikataoshiete'),
           phraseParts: [
-            FuriText(text: '作りかた', emphasize: true),
+            FuriText(text: '作りかた', furigana: '？', emphasize: true),
             FuriText(text: '教', furigana: 'おし'),
             FuriText(text: 'えて'),
           ],
@@ -459,7 +459,7 @@ List<Kanji> kanjiBank = [
           // 何か食べたい
           translation: NA.t('nanikatabetai'),
           phraseParts: [
-            FuriText(text: '何か', emphasize: true),
+            FuriText(text: '何か', furigana: '？', emphasize: true),
             FuriText(text: '食', furigana: 'た'),
             FuriText(text: 'べたい'),
           ],
@@ -470,7 +470,7 @@ List<Kanji> kanjiBank = [
           translation: NA.t('korehanani'),
           phraseParts: [
             FuriText(text: 'これは'),
-            FuriText(text: '何', emphasize: true),
+            FuriText(text: '何', furigana: '？', emphasize: true),
             FuriText(text: '？'),
           ],
           answer: 'なに',
@@ -550,7 +550,7 @@ List<Kanji> kanjiBank = [
             FuriText(text: 'を'),
             FuriText(text: '食', furigana: 'た'),
             FuriText(text: 'べた'),
-            FuriText(text: '事', emphasize: true),
+            FuriText(text: '事', furigana: '？', emphasize: true),
             FuriText(text: 'がありますか？'),
           ],
           answer: 'こと',
@@ -581,7 +581,7 @@ List<Kanji> kanjiBank = [
           phraseParts: [
             FuriText(text: 'お金', furigana: 'おかね'),
             FuriText(text: 'たくさん'),
-            FuriText(text: '使った', emphasize: true),
+            FuriText(text: '使った', furigana: '？', emphasize: true),
           ],
           answer: 'つかった',
         ),
@@ -606,7 +606,7 @@ List<Kanji> kanjiBank = [
           // 俺は待ってる
           translation: NA.t('orehamatteru'),
           phraseParts: [
-            FuriText(text: '俺', emphasize: true),
+            FuriText(text: '俺', furigana: '？', emphasize: true),
             FuriText(text: 'は'),
             FuriText(text: '待', furigana: 'ま'),
             FuriText(text: 'ってる'),
@@ -637,7 +637,7 @@ List<Kanji> kanjiBank = [
           phraseParts: [
             FuriText(text: '何時', furigana: 'なんじ'),
             FuriText(text: 'に'),
-            FuriText(text: '会おう', emphasize: true),
+            FuriText(text: '会おう', furigana: '？', emphasize: true),
             FuriText(text: 'か？'),
           ],
           answer: 'あおう',
@@ -655,7 +655,7 @@ List<Kanji> kanjiBank = [
             translation: NA.t('dokonisumitaikawakaranai'),
             phraseParts: [
               FuriText(text: 'どこに'),
-              FuriText(text: '住みたい', emphasize: true),
+              FuriText(text: '住みたい', furigana: '？', emphasize: true),
               FuriText(text: 'かわからない'),
             ],
             answer: 'すみたい'),
@@ -713,7 +713,7 @@ List<Kanji> kanjiBank = [
             translation: NA.t('biiruhitotsukudasai'),
             phraseParts: [
               FuriText(text: 'ビール', furigana: 'beer'),
-              FuriText(text: '一つ', emphasize: true),
+              FuriText(text: '一つ', furigana: '？', emphasize: true),
               FuriText(text: 'ください'),
             ],
             answer: 'ひとつ'),
@@ -729,7 +729,7 @@ List<Kanji> kanjiBank = [
             translation: NA.t('ringofutatsutabeta'),
             phraseParts: [
               FuriText(text: 'リンゴ'),
-              FuriText(text: '二つ', emphasize: true),
+              FuriText(text: '二つ', furigana: '？', emphasize: true),
               FuriText(text: '食べた'),
             ],
             answer: 'ふたつ'),
@@ -766,7 +766,7 @@ List<Kanji> kanjiBank = [
             phraseParts: [
               FuriText(text: 'ゲーム', furigana: 'game'),
               FuriText(text: 'が'),
-              FuriText(text: '三つ', emphasize: true),
+              FuriText(text: '三つ', furigana: '？', emphasize: true),
               FuriText(text: 'もあります'),
             ],
             answer: 'みっつ'),
@@ -804,7 +804,7 @@ List<Kanji> kanjiBank = [
             phraseParts: [
               FuriText(text: 'メッシ', furigana: 'Messi'),
               FuriText(text: 'は'),
-              FuriText(text: '四', emphasize: true),
+              FuriText(text: '四', furigana: '？', emphasize: true),
               FuriText(text: 'ゴール', furigana: 'goal'),
               FuriText(text: 'を'),
               FuriText(text: '挙', furigana: 'あ'),
@@ -824,7 +824,7 @@ List<Kanji> kanjiBank = [
             phraseParts: [
               FuriText(text: '星', furigana: 'ほし'),
               FuriText(text: 'が'),
-              FuriText(text: '五つ', emphasize: true),
+              FuriText(text: '五つ', furigana: '？', emphasize: true),
               FuriText(text: 'しか'),
               FuriText(text: '見', furigana: 'み'),
               FuriText(text: 'えない'),
@@ -862,7 +862,7 @@ List<Kanji> kanjiBank = [
             phraseParts: [
               FuriText(text: '生', furigana: 'なま'),
               FuriText(text: 'ビール', furigana: 'beer'),
-              FuriText(text: '六つ', emphasize: true),
+              FuriText(text: '六つ', furigana: '？', emphasize: true),
               FuriText(text: 'ください'),
             ],
             answer: 'むっつ'),
@@ -895,7 +895,7 @@ List<Kanji> kanjiBank = [
             translation: NA.t('ringonanatsukudasai'),
             phraseParts: [
               FuriText(text: 'りんご'),
-              FuriText(text: '七つ', emphasize: true),
+              FuriText(text: '七つ', furigana: '？', emphasize: true),
               FuriText(text: 'ください'),
             ],
             answer: 'ななつ'),
@@ -927,7 +927,7 @@ List<Kanji> kanjiBank = [
         // PhraseAnswer(
         //     translation: NA.t(''),
         //     phraseParts: [
-        //       FuriText(text: '八つ', emphasize: true),
+        //       FuriText(text: '八つ', furigana: '？', emphasize: true),
         //     ],
         //     answer: 'やっ'),
         PhraseAnswer(
@@ -1009,17 +1009,13 @@ List<Kanji> kanjiBank = [
             ],
             answer: 'とおか'),
         PhraseAnswer(
-            // もう十分待ってるけどまだ来ない
-            translation: NA.t('moujuppuntatterukedomadakonai'),
+            // 十分食べた？
+            translation: NA.t('juubuntabeta'),
             phraseParts: [
-              FuriText(text: 'もう'),
-              FuriText(text: '十分', furigana: '？ぷん', emphasize: true),
-              FuriText(text: '待', furigana: 'ま'),
-              FuriText(text: 'ってるけどまだ'),
-              FuriText(text: '来', furigana: 'こ'),
-              FuriText(text: 'ない'),
+              FuriText(text: '十分', furigana: '？ぶん', emphasize: true),
+              FuriText(text: '食', furigana: 'た'),
+              FuriText(text: 'べた？'),
             ],
-            // TODO: need to fix this
             answer: 'じゅうぶん'),
       ]),
   Kanji(
@@ -1100,7 +1096,7 @@ List<Kanji> kanjiBank = [
             translation: NA.t('engatakakunatta'),
             phraseParts: [
               // 円が高くなった
-              FuriText(text: '円', emphasize: true),
+              FuriText(text: '円', furigana: '？', emphasize: true),
               FuriText(text: 'が'),
               FuriText(text: '高', furigana: 'たか'),
               FuriText(text: 'くなった'),
@@ -1125,7 +1121,7 @@ List<Kanji> kanjiBank = [
             // 日本に行きたい
             translation: NA.t('nihonniikitai'),
             phraseParts: [
-              FuriText(text: '日本', emphasize: true),
+              FuriText(text: '日本', furigana: '？', emphasize: true),
               FuriText(text: 'に'),
               FuriText(text: '行', furigana: 'い'),
               FuriText(text: 'きたい'),
@@ -1137,7 +1133,7 @@ List<Kanji> kanjiBank = [
             phraseParts: [
               FuriText(text: '今日', furigana: 'きょう', emphasize: true),
               FuriText(text: 'は'),
-              FuriText(text: '日', emphasize: true),
+              FuriText(text: '日', furigana: '？', emphasize: true),
               FuriText(text: 'が'),
               FuriText(text: '強', furigana: 'つよ'),
               FuriText(text: 'い'),
@@ -1183,7 +1179,7 @@ List<Kanji> kanjiBank = [
             // 二ヶ月の休み
             translation: NA.t('nikagetsunoyasumi'),
             phraseParts: [
-              FuriText(text: '二ヶ月', emphasize: true),
+              FuriText(text: '二ヶ月', furigana: '？', emphasize: true),
               FuriText(text: 'の'),
               FuriText(text: '休', furigana: 'やす'),
               FuriText(text: 'み'),
@@ -1202,7 +1198,7 @@ List<Kanji> kanjiBank = [
             phraseParts: [
               FuriText(text: '明日'),
               FuriText(text: 'は'),
-              FuriText(text: '火曜日', emphasize: true),
+              FuriText(text: '火曜日', furigana: '？', emphasize: true),
               FuriText(text: 'ですね？'),
             ],
             answer: 'かようび'),
@@ -1212,14 +1208,14 @@ List<Kanji> kanjiBank = [
             phraseParts: [
               FuriText(text: 'ハワイ', furigana: 'hawaii'),
               FuriText(text: 'に'),
-              FuriText(text: '火山', emphasize: true),
+              FuriText(text: '火山', furigana: '？', emphasize: true),
             ],
             answer: 'かざん'),
         PhraseAnswer(
             // 火を付けてください
             translation: NA.t('hiwotsuketekudasai'),
             phraseParts: [
-              FuriText(text: '火', emphasize: true),
+              FuriText(text: '火', furigana: '？', emphasize: true),
               FuriText(text: 'を'),
               FuriText(text: '付', furigana: 'つ'),
               FuriText(text: 'けてください'),
@@ -1246,7 +1242,7 @@ List<Kanji> kanjiBank = [
             // お水しか飲みたくない
             translation: NA.t('omizushikanomitakunai'),
             phraseParts: [
-              FuriText(text: 'お水', emphasize: true),
+              FuriText(text: 'お水', furigana: '？', emphasize: true),
               FuriText(text: 'しか'),
               FuriText(text: '飲', furigana: 'の'),
               FuriText(text: 'みたくない'),
@@ -1276,7 +1272,7 @@ List<Kanji> kanjiBank = [
             phraseParts: [
               FuriText(text: 'この辺', furigana: 'このへん'),
               FuriText(text: 'は、'),
-              FuriText(text: '木', emphasize: true),
+              FuriText(text: '木', furigana: '？', emphasize: true),
               FuriText(text: 'が'),
               FuriText(text: '多', furigana: 'おおい'),
               FuriText(text: 'いです'),
@@ -1303,7 +1299,7 @@ List<Kanji> kanjiBank = [
             // お金がない
             translation: NA.t('okaneganai'),
             phraseParts: [
-              FuriText(text: 'お金', emphasize: true),
+              FuriText(text: 'お金', furigana: '？', emphasize: true),
               FuriText(text: 'がない'),
             ],
             answer: 'おかね'),
@@ -1338,7 +1334,7 @@ List<Kanji> kanjiBank = [
             // 土で汚れている
             translation: NA.t('tsuchideyogoreteiru'),
             phraseParts: [
-              FuriText(text: '土', emphasize: true),
+              FuriText(text: '土', furigana: '？', emphasize: true),
               FuriText(text: 'で'),
               FuriText(text: '汚', furigana: 'よご'),
               FuriText(text: 'れている'),
@@ -1433,7 +1429,7 @@ List<Kanji> kanjiBank = [
             phraseParts: [
               FuriText(text: '二階', furigana: 'にかい'),
               FuriText(text: 'に'),
-              FuriText(text: '上がって', emphasize: true),
+              FuriText(text: '上がって', furigana: '？', emphasize: true),
             ],
             answer: 'あがって'),
         PhraseAnswer(
@@ -1456,7 +1452,7 @@ List<Kanji> kanjiBank = [
             // 下を向いて歩いてる
             translation: NA.t('shitawomuitearuiteteru'),
             phraseParts: [
-              FuriText(text: '下', emphasize: true),
+              FuriText(text: '下', furigana: '？', emphasize: true),
               FuriText(text: 'を'),
               FuriText(text: '向', furigana: 'む'),
               FuriText(text: 'いて'),
@@ -1470,7 +1466,7 @@ List<Kanji> kanjiBank = [
             phraseParts: [
               FuriText(text: 'スピード', furigana: 'speed'),
               FuriText(text: 'を'),
-              FuriText(text: '下げて', emphasize: true),
+              FuriText(text: '下げて', furigana: '？', emphasize: true),
             ],
             answer: 'さげて'),
         PhraseAnswer(
@@ -1495,7 +1491,7 @@ List<Kanji> kanjiBank = [
             // 中に何がありますか？
             translation: NA.t('nakanihanigaimasuka'),
             phraseParts: [
-              FuriText(text: '中', emphasize: true),
+              FuriText(text: '中', furigana: '？', emphasize: true),
               FuriText(text: 'に'),
               FuriText(text: '何', furigana: 'なに'),
               FuriText(text: 'がありますか？'),
@@ -1523,7 +1519,7 @@ List<Kanji> kanjiBank = [
             //
             translation: NA.t('sotoasobimashou'),
             phraseParts: [
-              FuriText(text: '外', emphasize: true),
+              FuriText(text: '外', furigana: '？', emphasize: true),
               FuriText(text: 'で'),
               FuriText(text: '遊', furigana: 'あそ'),
               FuriText(text: 'びましょう'),
@@ -1572,7 +1568,7 @@ List<Kanji> kanjiBank = [
             translation: NA.t('sannenmaenihonnniittta'),
             phraseParts: [
               FuriText(text: '３年', furigana: 'さんねん'),
-              FuriText(text: '前', emphasize: true),
+              FuriText(text: '前', furigana: '？', emphasize: true),
               FuriText(text: 'に'),
               FuriText(text: '日本', furigana: 'にほん'),
               FuriText(text: 'に'),
@@ -1591,7 +1587,7 @@ List<Kanji> kanjiBank = [
             // あとで電話する
             translation: NA.t('atosudendenwasuru'),
             phraseParts: [
-              FuriText(text: '後', emphasize: true),
+              FuriText(text: '後', furigana: '？', emphasize: true),
               FuriText(text: 'で'),
               FuriText(text: '電話', furigana: 'でんわ'),
               FuriText(text: 'する'),
@@ -1611,7 +1607,7 @@ List<Kanji> kanjiBank = [
             // 後ろに座ってください
             translation: NA.t('ushironisuwattekudasai'),
             phraseParts: [
-              FuriText(text: '後ろ', emphasize: true),
+              FuriText(text: '後ろ', furigana: '？', emphasize: true),
               FuriText(text: 'に'),
               FuriText(text: '座', furigana: 'すわ'),
               FuriText(text: 'ってください'),
@@ -1640,7 +1636,7 @@ List<Kanji> kanjiBank = [
             // 右の人は誰？
             translation: NA.t('miginohitohadare'),
             phraseParts: [
-              FuriText(text: '右', emphasize: true),
+              FuriText(text: '右', furigana: '？', emphasize: true),
               FuriText(text: 'の'),
               FuriText(text: '人', furigana: 'ひと'),
               FuriText(text: 'は'),
@@ -1707,7 +1703,7 @@ List<Kanji> kanjiBank = [
             // 大きい車は邪魔だ
             translation: NA.t('ookiikurumahajimada'),
             phraseParts: [
-              FuriText(text: '大きい', emphasize: true),
+              FuriText(text: '大きい', furigana: '？', emphasize: true),
               FuriText(text: '車', furigana: 'くるま'),
               FuriText(text: 'は'),
               FuriText(text: '邪魔', furigana: 'じゃま'),
@@ -1744,7 +1740,7 @@ List<Kanji> kanjiBank = [
             translation: NA.t('anosukunainuhadaredesuka'),
             phraseParts: [
               FuriText(text: 'あの'),
-              FuriText(text: '小さい', emphasize: true),
+              FuriText(text: '小さい', furigana: '？', emphasize: true),
               FuriText(text: '犬', furigana: 'いぬ'),
               FuriText(text: 'は'),
               FuriText(text: '誰', furigana: 'だれ'),
@@ -1827,7 +1823,7 @@ List<Kanji> kanjiBank = [
               FuriText(text: '一番', furigana: 'いちばん'),
               FuriText(text: '背', furigana: 'せ'),
               FuriText(text: 'の'),
-              FuriText(text: '高い', emphasize: true),
+              FuriText(text: '高い', furigana: '？', emphasize: true),
               FuriText(text: '人', furigana: 'ひと'),
               FuriText(text: 'は'),
               FuriText(text: '誰', furigana: 'だれ'),
@@ -1884,12 +1880,11 @@ List<Kanji> kanjiBank = [
             // 新しい車を買いました
             translation: NA.t('ataraishiikurumiokaimashita'),
             phraseParts: [
-              FuriText(text: '新', furigana: '？', emphasize: true),
-              FuriText(text: 'しい'),
+              FuriText(text: '新しい', furigana: '？', emphasize: true),
               FuriText(text: '車', furigana: 'くるま'),
               FuriText(text: 'を'),
               FuriText(text: '買', furigana: 'か'),
-              FuriText(text: 'いました', emphasize: true),
+              FuriText(text: 'いました', furigana: '？', emphasize: true),
             ],
             answer: 'あたらしい'),
         PhraseAnswer(
@@ -1927,7 +1922,7 @@ List<Kanji> kanjiBank = [
               FuriText(text: 'この'),
               FuriText(text: '建物', furigana: 'たてもの'),
               FuriText(text: 'は'),
-              FuriText(text: '古い', emphasize: true),
+              FuriText(text: '古い', furigana: '？', emphasize: true),
               FuriText(text: 'です'),
             ],
             answer: 'ふるい'),
@@ -1956,7 +1951,7 @@ List<Kanji> kanjiBank = [
             phraseParts: [
               FuriText(text: '天気', furigana: 'てんき'),
               FuriText(text: 'が'),
-              FuriText(text: '暑', emphasize: true),
+              FuriText(text: '暑', furigana: '？', emphasize: true),
               FuriText(text: 'すぎる'),
             ],
             answer: 'あつ'),
@@ -1966,7 +1961,7 @@ List<Kanji> kanjiBank = [
             phraseParts: [
               FuriText(text: '沖縄', furigana: 'おきなわ'),
               FuriText(text: 'は'),
-              FuriText(text: '暑い', emphasize: true),
+              FuriText(text: '暑い', furigana: '？', emphasize: true),
               FuriText(text: 'ですね'),
             ],
             answer: 'あつい'),
@@ -1983,7 +1978,7 @@ List<Kanji> kanjiBank = [
             phraseParts: [
               FuriText(text: 'アラスカ', furigana: 'Alaska'),
               FuriText(text: 'は'),
-              FuriText(text: '寒い', emphasize: true),
+              FuriText(text: '寒い', furigana: '？', emphasize: true),
               FuriText(text: 'ですね'),
             ],
             answer: 'さむい'),
@@ -1994,7 +1989,7 @@ List<Kanji> kanjiBank = [
               FuriText(text: 'その'),
               FuriText(text: '人', furigana: 'ひと'),
               FuriText(text: 'は'),
-              FuriText(text: '寒がり', emphasize: true),
+              FuriText(text: '寒がり', furigana: '？', emphasize: true),
               FuriText(text: 'です'),
             ],
             answer: 'さむがり'),
@@ -2020,7 +2015,7 @@ List<Kanji> kanjiBank = [
             // 明日は雨ですか？
             translation: NA.t('ashitahaamedesuka'),
             phraseParts: [
-              FuriText(text: '明日', emphasize: true),
+              FuriText(text: '明日', furigana: '？', emphasize: true),
               FuriText(text: 'は'),
               FuriText(text: '雨', furigana: 'あめ'),
               FuriText(text: 'ですか？'),
@@ -2039,7 +2034,7 @@ List<Kanji> kanjiBank = [
             phraseParts: [
               FuriText(text: '部屋', furigana: 'へや'),
               FuriText(text: 'は'),
-              FuriText(text: '暗い', emphasize: true),
+              FuriText(text: '暗い', furigana: '？', emphasize: true),
               FuriText(text: 'ね'),
             ],
             answer: 'くらい'),
@@ -2067,7 +2062,7 @@ List<Kanji> kanjiBank = [
               FuriText(text: '今日', furigana: 'きょう'),
               FuriText(text: 'は'),
               FuriText(text: 'ちょっと'),
-              FuriText(text: '忙しい', emphasize: true),
+              FuriText(text: '忙しい', furigana: '？', emphasize: true),
             ],
             answer: 'いそがしい'),
         PhraseAnswer(
@@ -2091,7 +2086,7 @@ List<Kanji> kanjiBank = [
             // 静かな所が好きです
             translation: NA.t('shizukanatokorogasukidesu'),
             phraseParts: [
-              FuriText(text: '静か', emphasize: true),
+              FuriText(text: '静か', furigana: '？', emphasize: true),
               FuriText(text: 'な'),
               FuriText(text: '所', furigana: 'ところ'),
               FuriText(text: 'が'),
@@ -2103,7 +2098,7 @@ List<Kanji> kanjiBank = [
             // 静電気は危険ですか？
             translation: NA.t('seidenkihakikendesuka'),
             phraseParts: [
-              FuriText(text: '静電気', emphasize: true),
+              FuriText(text: '静電気', furigana: '？', emphasize: true),
               FuriText(text: 'は'),
               FuriText(text: '危険', furigana: 'きけん'),
               FuriText(text: 'ですか？'),
@@ -2134,9 +2129,9 @@ List<Kanji> kanjiBank = [
               FuriText(text: 'て'),
               FuriText(text: 'くれて'),
               FuriText(text: '有', furigana: 'あ', emphasize: true),
-              FuriText(text: 'り', emphasize: true),
+              FuriText(text: 'り', furigana: '？', emphasize: true),
               FuriText(text: '難う', furigana: 'が', emphasize: true),
-              FuriText(text: 'う', emphasize: true),
+              FuriText(text: 'う', furigana: '？', emphasize: true),
             ],
             answer: 'ありがとう'),
       ]),
@@ -2165,7 +2160,7 @@ List<Kanji> kanjiBank = [
             // お好み焼き食べたことある？
             translation: NA.t('kokonimiyakitabekotoaru'),
             phraseParts: [
-              FuriText(text: 'お好み焼き', emphasize: true),
+              FuriText(text: 'お好み焼き', furigana: '？', emphasize: true),
               FuriText(text: '食', furigana: 'た'),
               FuriText(text: 'べたことある？'),
             ],
@@ -2199,7 +2194,7 @@ List<Kanji> kanjiBank = [
             translation: NA.t('korehakira'),
             phraseParts: [
               FuriText(text: 'これは'),
-              FuriText(text: '嫌い', emphasize: true),
+              FuriText(text: '嫌い', furigana: '？', emphasize: true),
               FuriText(text: '？'),
             ],
             answer: 'きらい'),
@@ -2211,7 +2206,7 @@ List<Kanji> kanjiBank = [
               FuriText(text: '人', furigana: 'ひと'),
               FuriText(text: '本当', furigana: 'ほんとう'),
               FuriText(text: 'に'),
-              FuriText(text: '嫌', emphasize: true),
+              FuriText(text: '嫌', furigana: '？', emphasize: true),
               FuriText(text: 'だ'),
             ],
             answer: 'いや'),
@@ -2230,7 +2225,7 @@ List<Kanji> kanjiBank = [
               FuriText(text: 'に'),
               FuriText(text: '人', furigana: 'ひと'),
               FuriText(text: 'が'),
-              FuriText(text: '多いい', emphasize: true),
+              FuriText(text: '多いい', furigana: '？', emphasize: true),
             ],
             answer: 'おおいい'),
         PhraseAnswer(
@@ -2239,7 +2234,7 @@ List<Kanji> kanjiBank = [
             phraseParts: [
               FuriText(text: '彼', furigana: 'かれ'),
               FuriText(text: 'は'),
-              FuriText(text: '多分', emphasize: true),
+              FuriText(text: '多分', furigana: '？', emphasize: true),
               FuriText(text: '来', furigana: 'こ'),
               FuriText(text: 'ない'),
             ],
@@ -2255,7 +2250,7 @@ List<Kanji> kanjiBank = [
             // 少しだけちょうだい
             translation: NA.t('sukosidakechoudai'),
             phraseParts: [
-              FuriText(text: '少し', emphasize: true),
+              FuriText(text: '少し', furigana: '？', emphasize: true),
               FuriText(text: 'だけちょうだい'),
             ],
             answer: 'すこし'),
@@ -2273,7 +2268,7 @@ List<Kanji> kanjiBank = [
             translation: NA.t('arukedosukunaiyo'),
             phraseParts: [
               FuriText(text: 'あるけど'),
-              FuriText(text: '少ない', emphasize: true),
+              FuriText(text: '少ない', furigana: '？', emphasize: true),
               FuriText(text: 'よ'),
             ],
             answer: '少ない'),
@@ -2291,7 +2286,7 @@ List<Kanji> kanjiBank = [
               FuriText(text: '一番', furigana: 'いちばん'),
               FuriText(text: '好', furigana: 'す'),
               FuriText(text: 'きな'),
-              FuriText(text: '色', emphasize: true),
+              FuriText(text: '色', furigana: '？', emphasize: true),
               FuriText(text: 'はなに？'),
             ],
             answer: 'いろ'),
@@ -2310,7 +2305,7 @@ List<Kanji> kanjiBank = [
               FuriText(text: 'の'),
               FuriText(text: 'Tシャツ', furigana: 'T-shirt'),
               FuriText(text: 'は'),
-              FuriText(text: '黒い', emphasize: true),
+              FuriText(text: '黒い', furigana: '？', emphasize: true),
             ],
             answer: 'くろい'),
         PhraseAnswer(
@@ -2320,7 +2315,7 @@ List<Kanji> kanjiBank = [
               FuriText(text: 'オバマ', furigana: 'Obama'),
               FuriText(text: '大統領', furigana: 'だいとうりょう'),
               FuriText(text: 'は'),
-              FuriText(text: '黒人', emphasize: true),
+              FuriText(text: '黒人', furigana: '？', emphasize: true),
               FuriText(text: 'です'),
             ],
             answer: 'こくじん'),
@@ -2335,7 +2330,7 @@ List<Kanji> kanjiBank = [
             // 白い車はどう？
             translation: NA.t('shiroikurumahadou'),
             phraseParts: [
-              FuriText(text: '白い', emphasize: true),
+              FuriText(text: '白い', furigana: '？', emphasize: true),
               FuriText(text: '車', furigana: 'くるま'),
               FuriText(text: 'はどう？')
             ],
@@ -2346,7 +2341,7 @@ List<Kanji> kanjiBank = [
             phraseParts: [
               FuriText(text: 'ノルウェー', furigana: 'Norway'),
               FuriText(text: 'は'),
-              FuriText(text: '白人', emphasize: true),
+              FuriText(text: '白人', furigana: '？', emphasize: true),
               FuriText(text: 'が'),
               FuriText(text: '多', furigana: 'おお'),
               FuriText(text: 'いい'),
@@ -2365,7 +2360,7 @@ List<Kanji> kanjiBank = [
             phraseParts: [
               FuriText(text: '目', furigana: 'め'),
               FuriText(text: 'が'),
-              FuriText(text: '赤い', emphasize: true),
+              FuriText(text: '赤い', furigana: '？', emphasize: true),
               FuriText(text: 'よ'),
             ],
             answer: 'あかい'),
@@ -2373,7 +2368,7 @@ List<Kanji> kanjiBank = [
             // 赤ちゃんが小さい
             translation: NA.t('akachangachiisai'),
             phraseParts: [
-              FuriText(text: '赤ちゃん', emphasize: true),
+              FuriText(text: '赤ちゃん', furigana: '？', emphasize: true),
               FuriText(text: 'が'),
               FuriText(text: '小', furigana: 'ち'),
               FuriText(text: 'さい'),
@@ -2400,7 +2395,7 @@ List<Kanji> kanjiBank = [
             phraseParts: [
               FuriText(text: '海', furigana: 'うみ'),
               FuriText(text: 'はすごく'),
-              FuriText(text: '青い', emphasize: true),
+              FuriText(text: '青い', furigana: '？', emphasize: true),
               FuriText(text: 'よね？'),
             ],
             answer: 'あおい'),
@@ -2429,7 +2424,7 @@ List<Kanji> kanjiBank = [
               FuriText(text: '歯', furigana: 'は'),
               FuriText(text: 'が'),
               FuriText(text: '黄色', furigana: '？いろ', emphasize: true),
-              FuriText(text: 'い', emphasize: true)
+              FuriText(text: 'い', furigana: '？', emphasize: true)
             ],
             answer: 'きいろい'),
       ]),
@@ -2459,7 +2454,7 @@ List<Kanji> kanjiBank = [
             // お茶を毎朝飲みます
             translation: NA.t('ochawomaiasanomimasu'),
             phraseParts: [
-              FuriText(text: 'お茶', emphasize: true),
+              FuriText(text: 'お茶', furigana: '？', emphasize: true),
               FuriText(text: 'を'),
               FuriText(text: '毎朝', furigana: 'まいあさ'),
               FuriText(text: '飲', furigana: 'の'),
@@ -2471,7 +2466,7 @@ List<Kanji> kanjiBank = [
             translation: NA.t('chairoiiegaii'),
             phraseParts: [
               FuriText(text: '茶色', furigana: '？いろ', emphasize: true),
-              FuriText(text: 'い', emphasize: true),
+              FuriText(text: 'い', furigana: '？', emphasize: true),
               FuriText(text: '家', furigana: 'いえ'),
               FuriText(text: 'がいい'),
             ],
@@ -2488,7 +2483,7 @@ List<Kanji> kanjiBank = [
             translation: NA.t('yokutaberune'),
             phraseParts: [
               FuriText(text: 'よく'),
-              FuriText(text: '食べる', emphasize: true),
+              FuriText(text: '食べる', furigana: '？', emphasize: true),
               FuriText(text: 'ね'),
             ],
             answer: 'た'),
@@ -2496,7 +2491,7 @@ List<Kanji> kanjiBank = [
             // 食べ物ぜんぜんない
             translation: NA.t('tabemonozenzennai'),
             phraseParts: [
-              FuriText(text: '食べ物', emphasize: true),
+              FuriText(text: '食べ物', furigana: '？', emphasize: true),
               FuriText(text: 'ぜんぜんない')
             ],
             answer: 'た'),
@@ -2519,7 +2514,7 @@ List<Kanji> kanjiBank = [
             // 飲み物を買いました
             translation: NA.t('nomimotokaimashita'),
             phraseParts: [
-              FuriText(text: '飲み物', emphasize: true),
+              FuriText(text: '飲み物', furigana: '？', emphasize: true),
               FuriText(text: 'を'),
               FuriText(text: '買', furigana: 'か'),
               FuriText(text: 'いました'),
@@ -2529,7 +2524,7 @@ List<Kanji> kanjiBank = [
             // 飲みに行こう
             translation: NA.t('nominikou'),
             phraseParts: [
-              FuriText(text: '飲み', emphasize: true),
+              FuriText(text: '飲み', furigana: '？', emphasize: true),
               FuriText(text: 'に'),
               FuriText(text: '行', furigana: 'い'),
               FuriText(text: 'こう'),
@@ -2566,7 +2561,7 @@ List<Kanji> kanjiBank = [
             phraseParts: [
               FuriText(text: '何', furigana: 'なに'),
               FuriText(text: 'を'),
-              FuriText(text: '買う', emphasize: true),
+              FuriText(text: '買う', furigana: '？', emphasize: true),
               FuriText(text: 'の？'),
             ],
             answer: 'かう'),
@@ -2582,7 +2577,7 @@ List<Kanji> kanjiBank = [
             translation: NA.t('sorewomieru'),
             phraseParts: [
               FuriText(text: 'それを'),
-              FuriText(text: '見える', emphasize: true),
+              FuriText(text: '見える', furigana: '？', emphasize: true),
               FuriText(text: '？'),
             ],
             answer: 'みえる'),
@@ -2590,7 +2585,7 @@ List<Kanji> kanjiBank = [
             // 花見しよう
             translation: NA.t('hanamishiyou'),
             phraseParts: [
-              FuriText(text: '花見', emphasize: true),
+              FuriText(text: '花見', furigana: '？', emphasize: true),
               FuriText(text: 'しよう')
             ],
             answer: 'み'),
@@ -2614,7 +2609,7 @@ List<Kanji> kanjiBank = [
             translation: NA.t('chantokiite'),
             phraseParts: [
               FuriText(text: 'ちゃんと'),
-              FuriText(text: '聞いて', emphasize: true),
+              FuriText(text: '聞いて', furigana: '？', emphasize: true),
             ],
             answer: 'きいて'),
         PhraseAnswer(
@@ -2623,7 +2618,7 @@ List<Kanji> kanjiBank = [
             phraseParts: [
               FuriText(text: '何', furigana: 'なに'),
               FuriText(text: 'かを'),
-              FuriText(text: '聞こえた', emphasize: true),
+              FuriText(text: '聞こえた', furigana: '？', emphasize: true),
             ],
             answer: 'きこえた'),
       ]),
@@ -2638,7 +2633,7 @@ List<Kanji> kanjiBank = [
             translation: NA.t('douiuhanashidesuka'),
             phraseParts: [
               FuriText(text: 'どういう'),
-              FuriText(text: '話', emphasize: true),
+              FuriText(text: '話', furigana: '？', emphasize: true),
               FuriText(text: 'ですか？')
             ],
             answer: 'はなし'),
@@ -2676,7 +2671,7 @@ List<Kanji> kanjiBank = [
               FuriText(text: '毎日', furigana: 'まいにち'),
               FuriText(text: '新聞', furigana: 'しんぶん'),
               FuriText(text: 'を'),
-              FuriText(text: '読む', emphasize: true),
+              FuriText(text: '読む', furigana: '？', emphasize: true),
             ],
             answer: 'よむ'),
         PhraseAnswer(
@@ -2686,7 +2681,7 @@ List<Kanji> kanjiBank = [
               FuriText(text: 'この'),
               FuriText(text: '漢字', furigana: 'かんじ'),
               FuriText(text: 'の'),
-              FuriText(text: '読み方', emphasize: true),
+              FuriText(text: '読み方', furigana: '？', emphasize: true),
               FuriText(text: 'わからない'),
             ],
             answer: 'よみかた'),
@@ -2734,7 +2729,7 @@ List<Kanji> kanjiBank = [
             translation: NA.t('dokonikakuno'),
             phraseParts: [
               FuriText(text: 'どこに'),
-              FuriText(text: '書く', emphasize: true),
+              FuriText(text: '書く', furigana: '？', emphasize: true),
               FuriText(text: 'の？'),
             ],
             answer: '書く'),
@@ -2760,7 +2755,7 @@ List<Kanji> kanjiBank = [
             phraseParts: [
               FuriText(text: '名前', furigana: 'なまえ'),
               FuriText(text: 'を'),
-              FuriText(text: '入力', emphasize: true),
+              FuriText(text: '入力', furigana: '？', emphasize: true),
               FuriText(text: 'してください'),
             ],
             answer: 'にゅうりょく'),
@@ -2772,7 +2767,7 @@ List<Kanji> kanjiBank = [
               FuriText(text: 'の'),
               FuriText(text: '中', furigana: 'なか'),
               FuriText(text: 'に'),
-              FuriText(text: '入れて', emphasize: true),
+              FuriText(text: '入れて', furigana: '？', emphasize: true),
               FuriText(text: 'くれる？'),
             ],
             answer: 'いれて'),
@@ -2789,7 +2784,7 @@ List<Kanji> kanjiBank = [
             phraseParts: [
               FuriText(text: '玄関', furigana: 'げんかん'),
               FuriText(text: 'から'),
-              FuriText(text: '出て', emphasize: true),
+              FuriText(text: '出て', furigana: '？', emphasize: true),
             ],
             answer: 'でて'),
         PhraseAnswer(
@@ -2798,7 +2793,7 @@ List<Kanji> kanjiBank = [
             phraseParts: [
               FuriText(text: '本', furigana: 'ほん'),
               FuriText(text: 'を'),
-              FuriText(text: '出しましょう', emphasize: true),
+              FuriText(text: '出しましょう', furigana: '？', emphasize: true),
             ],
             answer: 'だしましょう'),
         PhraseAnswer(
@@ -2806,7 +2801,7 @@ List<Kanji> kanjiBank = [
             translation: NA.t('moudekakeruyo'),
             phraseParts: [
               FuriText(text: 'もう'),
-              FuriText(text: '出かける', emphasize: true),
+              FuriText(text: '出かける', furigana: '？', emphasize: true),
               FuriText(text: 'よ!'),
             ],
             answer: 'でかける'),
@@ -2822,7 +2817,7 @@ List<Kanji> kanjiBank = [
             translation: NA.t('kokonitattekudasai'),
             phraseParts: [
               FuriText(text: 'ここに'),
-              FuriText(text: '立って', emphasize: true),
+              FuriText(text: '立って', furigana: '？', emphasize: true),
               FuriText(text: 'ください'),
             ],
             answer: 'たって'),
@@ -2846,7 +2841,7 @@ List<Kanji> kanjiBank = [
             translation: NA.t('kokonisuwatte'),
             phraseParts: [
               FuriText(text: 'ここに'),
-              FuriText(text: '座って', emphasize: true),
+              FuriText(text: '座って', furigana: '？', emphasize: true),
             ],
             answer: 'すわって'),
         PhraseAnswer(
@@ -2879,7 +2874,7 @@ List<Kanji> kanjiBank = [
             translation: NA.t('oyasuminasai'),
             phraseParts: [
               FuriText(text: 'お'),
-              FuriText(text: '休み', emphasize: true),
+              FuriText(text: '休み', furigana: '？', emphasize: true),
               FuriText(text: 'なさい'),
             ],
             answer: 'やす'),
@@ -2888,7 +2883,7 @@ List<Kanji> kanjiBank = [
             translation: NA.t('yukkuriyasunde'),
             phraseParts: [
               FuriText(text: 'ゆっくり'),
-              FuriText(text: '休んで', emphasize: true),
+              FuriText(text: '休んで', furigana: '？', emphasize: true),
               FuriText(text: 'ね')
             ],
             answer: 'やすんで'),
@@ -2898,7 +2893,7 @@ List<Kanji> kanjiBank = [
             phraseParts: [
               FuriText(text: '今日', furigana: 'きょう'),
               FuriText(text: 'は'),
-              FuriText(text: '休日', emphasize: true),
+              FuriText(text: '休日', furigana: '？', emphasize: true),
               FuriText(text: 'です'),
             ],
             answer: 'きゅうじつ'),
@@ -2914,14 +2909,14 @@ List<Kanji> kanjiBank = [
             translation: NA.t('dokoniikuno'),
             phraseParts: [
               FuriText(text: 'どこに'),
-              FuriText(text: '行く', emphasize: true),
+              FuriText(text: '行く', furigana: '？', emphasize: true),
               FuriText(text: 'の？'),
             ],
             answer: 'いく'),
         // PhraseAnswer(
         //     translation: NA.t('okonaukotogadekimasu'),
         //     phraseParts: [
-        //       FuriText(text: '行う', emphasize: true),
+        //       FuriText(text: '行う', furigana: '？', emphasize: true),
         //       FuriText(text: 'ことができます'),
         //     ],
         //     answer: 'おこなう'),
@@ -2929,7 +2924,7 @@ List<Kanji> kanjiBank = [
             // 通行禁止
             translation: NA.t('tsuukoukinshi'),
             phraseParts: [
-              FuriText(text: '通行', emphasize: true),
+              FuriText(text: '通行', furigana: '？', emphasize: true),
               FuriText(text: '禁止', furigana: 'きんし'),
             ],
             answer: 'つうこう'),
@@ -2944,7 +2939,7 @@ List<Kanji> kanjiBank = [
             // 来月は５月です
             translation: NA.t('raigetsuhagogatsudesu'),
             phraseParts: [
-              FuriText(text: '来月', emphasize: true),
+              FuriText(text: '来月', furigana: '？', emphasize: true),
               FuriText(text: 'は'),
               FuriText(text: '５月', furigana: 'ごがつ'),
               FuriText(text: 'です'),
@@ -2955,7 +2950,7 @@ List<Kanji> kanjiBank = [
             translation: NA.t('ashitarainichishimasu'),
             phraseParts: [
               FuriText(text: '明日', furigana: 'あした'),
-              FuriText(text: '来日', emphasize: true),
+              FuriText(text: '来日', furigana: '？', emphasize: true),
               FuriText(text: 'します'),
             ],
             answer: 'らいにち'),
@@ -2965,7 +2960,7 @@ List<Kanji> kanjiBank = [
             phraseParts: [
               FuriText(text: '早', furigana: 'はや'),
               FuriText(text: 'く'),
-              FuriText(text: '来て', emphasize: true),
+              FuriText(text: '来て', furigana: '？', emphasize: true),
               FuriText(text: 'ね'),
             ],
             answer: 'きて'),
@@ -2980,7 +2975,7 @@ List<Kanji> kanjiBank = [
             // お帰りなさい
             translation: NA.t('okaerinasai'),
             phraseParts: [
-              FuriText(text: 'お帰り', emphasize: true),
+              FuriText(text: 'お帰り', furigana: '？', emphasize: true),
               FuriText(text: 'なさい'),
             ],
             answer: 'おかえり'),
@@ -2989,7 +2984,7 @@ List<Kanji> kanjiBank = [
             translation: NA.t('oneesanhakikokushimashita'),
             phraseParts: [
               FuriText(text: 'おねえさんは'),
-              FuriText(text: '帰国', emphasize: true),
+              FuriText(text: '帰国', furigana: '？', emphasize: true),
               FuriText(text: 'しました'),
             ],
             answer: 'きこく'),
@@ -2998,7 +2993,7 @@ List<Kanji> kanjiBank = [
             translation: NA.t('tadanohigaeriryokoudattayo'),
             phraseParts: [
               FuriText(text: 'ただの'),
-              FuriText(text: '日帰り', emphasize: true),
+              FuriText(text: '日帰り', furigana: '？', emphasize: true),
               FuriText(text: '旅行', furigana: 'りょこう'),
               FuriText(text: 'だったよ'),
             ],
@@ -3015,7 +3010,7 @@ List<Kanji> kanjiBank = [
             phraseParts: [
               FuriText(text: '目', furigana: 'め'),
               FuriText(text: 'を'),
-              FuriText(text: '開けて', emphasize: true),
+              FuriText(text: '開けて', furigana: '？', emphasize: true),
             ],
             answer: 'あけて',
             translation: NA.t('mewoakete')),
@@ -3025,7 +3020,7 @@ List<Kanji> kanjiBank = [
             phraseParts: [
               FuriText(text: '何時', furigana: 'なんじ'),
               FuriText(text: 'に'),
-              FuriText(text: '開く', emphasize: true),
+              FuriText(text: '開く', furigana: '？', emphasize: true),
               FuriText(text: '？'),
             ],
             answer: 'あく'),
@@ -3034,7 +3029,7 @@ List<Kanji> kanjiBank = [
             translation: NA.t('menuwohiraite'),
             phraseParts: [
               FuriText(text: 'メニューを'),
-              FuriText(text: '開いて', emphasize: true),
+              FuriText(text: '開いて', furigana: '？', emphasize: true),
             ],
             answer: 'ひらいて'),
       ]),
@@ -3051,7 +3046,7 @@ List<Kanji> kanjiBank = [
               FuriText(text: 'お'),
               FuriText(text: '店', furigana: 'みせ'),
               FuriText(text: 'が', furigana: ''),
-              FuriText(text: '閉まる', emphasize: true),
+              FuriText(text: '閉まる', furigana: '？', emphasize: true),
             ],
             answer: 'しまる'),
         PhraseAnswer(
@@ -3060,7 +3055,7 @@ List<Kanji> kanjiBank = [
             phraseParts: [
               FuriText(text: '目', furigana: 'め'),
               FuriText(text: 'を'),
-              FuriText(text: '閉じて', emphasize: true),
+              FuriText(text: '閉じて', furigana: '？', emphasize: true),
             ],
             answer: 'とじて'),
         PhraseAnswer(
@@ -3086,7 +3081,7 @@ List<Kanji> kanjiBank = [
             translation: NA.t('sonoyamagaookiidesu'),
             phraseParts: [
               FuriText(text: 'その'),
-              FuriText(text: '山', emphasize: true),
+              FuriText(text: '山', furigana: '？', emphasize: true),
               FuriText(text: 'が'),
               FuriText(text: '大', furigana: 'おお'),
               FuriText(text: 'きいです')
@@ -3122,7 +3117,7 @@ List<Kanji> kanjiBank = [
             // 今何時ですか？
             translation: NA.t('imahananjidesuka'),
             phraseParts: [
-              FuriText(text: '今', emphasize: true),
+              FuriText(text: '今', furigana: '？', emphasize: true),
               FuriText(text: '何時', furigana: 'なんじ'),
               FuriText(text: 'ですか？')
             ],
@@ -3131,7 +3126,7 @@ List<Kanji> kanjiBank = [
             // 今日は月曜日だよ
             translation: NA.t('kyouhagetsuyoubidayo'),
             phraseParts: [
-              FuriText(text: '今日', emphasize: true),
+              FuriText(text: '今日', furigana: '？', emphasize: true),
               FuriText(text: 'は'),
               FuriText(text: '月曜日', furigana: 'げつようび'),
               FuriText(text: 'だよ'),
@@ -3148,7 +3143,7 @@ List<Kanji> kanjiBank = [
             // 川に行きましょう
             translation: NA.t('kawaniikimashou'),
             phraseParts: [
-              FuriText(text: '川', emphasize: true),
+              FuriText(text: '川', furigana: '？', emphasize: true),
               FuriText(text: 'に'),
               FuriText(text: '行', furigana: 'い'),
               FuriText(text: 'きましょう'),
@@ -3158,7 +3153,7 @@ List<Kanji> kanjiBank = [
             // 山川さん
             translation: NA.t('yamawakasan'),
             phraseParts: [
-              FuriText(text: '山川', emphasize: true),
+              FuriText(text: '山川', furigana: '？', emphasize: true),
               FuriText(text: 'さん'),
             ],
             answer: 'やまかわ'),
@@ -3182,7 +3177,7 @@ List<Kanji> kanjiBank = [
             // 山田さん
             translation: NA.t('yamadasan'),
             phraseParts: [
-              FuriText(text: '山田', emphasize: true),
+              FuriText(text: '山田', furigana: '？', emphasize: true),
               FuriText(text: 'さん'),
             ],
             answer: 'やまだ'),
@@ -3220,7 +3215,7 @@ List<Kanji> kanjiBank = [
           phraseParts: [
             FuriText(text: '真ん中', furigana: 'まんなか'),
             FuriText(text: 'から'),
-            FuriText(text: '分ける', emphasize: true)
+            FuriText(text: '分ける', furigana: '？', emphasize: true)
           ],
           answer: 'わける'),
       PhraseAnswer(
@@ -3228,7 +3223,7 @@ List<Kanji> kanjiBank = [
           translation: NA.t('atojuppunmattene'),
           phraseParts: [
             FuriText(text: 'あと'),
-            FuriText(text: '十分', emphasize: true),
+            FuriText(text: '十分', furigana: '？', emphasize: true),
             FuriText(text: 'まってね'),
           ],
           answer: 'じゅうぷん'),
@@ -3238,7 +3233,7 @@ List<Kanji> kanjiBank = [
           phraseParts: [
             FuriText(text: '日本語', furigana: 'にほんご'),
             FuriText(text: 'が'),
-            FuriText(text: '分かる', emphasize: true),
+            FuriText(text: '分かる', furigana: '？', emphasize: true),
           ],
           answer: 'わかる'),
     ],
