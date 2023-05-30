@@ -62,36 +62,38 @@ class _KanjiExerciseStateArea extends State<KanjiExerciseStateArea> {
             (pa) {
               var inputKey = pa.phraseParts.map((pp) => pp.text).join();
 
-              return Padding(
-                padding: EdgeInsets.only(top: 12),
-                child: Column(
-                  mainAxisAlignment: MainAxisAlignment.start,
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    FuriganaText(
-                      furiTexts: pa.phraseParts,
-                    ),
-                    Text(
-                      pa.translation,
-                      style: TextStyle(
-                          color: Colors.grey.shade700,
-                          fontSize:
-                              Theme.of(context).textTheme.bodySmall!.fontSize),
-                    ),
-                    NaFreeFormEntryWrapper(
-                      widthType: NFreeFormWidths.full,
-                      hintValue: NA.t('kanjiToHiragana'),
-                      onChanged: (String newValue) {
-                        widget.state.updateUserInput(inputKey, newValue);
-                      },
-                      initialValue: widget.state.getUserInput(inputKey),
-                      correctValues: [pa.answer],
-                      onCorrect: () {
-                        setState(() {});
-                      },
-                    ),
-                  ],
-                ),
+              return Row(
+                children: [
+                  Column(
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        FuriganaText(
+                          furiTexts: pa.phraseParts,
+                        ),
+                        Text(
+                          pa.translation,
+                          style: TextStyle(
+                              color: Colors.grey.shade700,
+                              fontSize: Theme.of(context)
+                                  .textTheme
+                                  .bodySmall!
+                                  .fontSize),
+                        ),
+                        NaFreeFormEntryWrapper(
+                          widthType: NFreeFormWidths.full,
+                          hintValue: NA.t('kanjiToHiragana'),
+                          onChanged: (String newValue) {
+                            widget.state.updateUserInput(inputKey, newValue);
+                          },
+                          initialValue: widget.state.getUserInput(inputKey),
+                          correctValues: [pa.answer],
+                          onCorrect: () {
+                            setState(() {});
+                          },
+                        ),
+                      ]),
+                ],
               );
             },
           ),

@@ -701,10 +701,10 @@ List<Kanji> kanjiBank = [
               FuriText(text: 'ビール', furigana: 'beer'),
               FuriText(text: 'は'),
               FuriText(text: 'あと'),
-              FuriText(text: '一本', furigana: '？ほん', emphasize: true),
+              FuriText(text: '一本', furigana: '？ぽん', emphasize: true),
               FuriText(text: 'しかない'),
             ],
-            answer: ''),
+            answer: 'いっぽん'),
         PhraseAnswer(
             // ビール一つください
             translation: NA.t('biiruhitotsukudasai'),
