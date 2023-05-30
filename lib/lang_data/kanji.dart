@@ -251,18 +251,81 @@ List<Kanji> kanjiBank = [
   //     onYomi: 'タイ, テイ',
   //     kunYomi: 'からだ',
   // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('作'),
-  //     kanji: '作',
-  //     onYomi: 'サク, サ',
-  //     kunYomi: 'つくる, つくり',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('何'),
-  //     kanji: '何',
-  //     onYomi: 'カ',
-  //     kunYomi: 'なに, なん',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
+  Kanji(
+      translation: NA.t('作'),
+      kanji: '作',
+      onYomi: 'サク, サ',
+      kunYomi: 'つくる, つくり',
+      phraseAnswers: [
+        PhraseAnswer(
+          // 安全な作業
+          translation: NA.t('anzennasagyou'),
+          phraseParts: [
+            FuriText(text: '安全', furigana: 'あんぜん'),
+            FuriText(text: 'な'),
+            FuriText(text: '作業', furigana: '？ぎょう')
+          ],
+          answer: 'さぎょう',
+        ),
+        PhraseAnswer(
+          // 木で何かを作る
+          translation: NA.t('kidenanikawotsukuru'),
+          phraseParts: [
+            FuriText(text: '木', furigana: 'き'),
+            FuriText(text: 'で'),
+            FuriText(text: '何', furigana: 'なに'),
+            FuriText(text: 'かを'),
+            FuriText(text: '作る', emphasize: true),
+          ],
+          answer: 'つくる',
+        ),
+        PhraseAnswer(
+          // 作りかた教えて
+          translation: NA.t('tsukurikataoshiete'),
+          phraseParts: [
+            FuriText(text: '作りかた', emphasize: true),
+            FuriText(text: '教', furigana: 'おし'),
+            FuriText(text: 'えて'),
+          ],
+          answer: 'つくりかた',
+        )
+      ]),
+  Kanji(
+      translation: NA.t('何'),
+      kanji: '何',
+      onYomi: 'カ',
+      kunYomi: 'なに, なん',
+      phraseAnswers: [
+        PhraseAnswer(
+          // 何時ですか？
+          translation: NA.t('nanjideskuka'),
+          phraseParts: [
+            FuriText(text: '何時', furigana: '？？じ'),
+            FuriText(text: 'ですか？'),
+          ],
+          answer: 'なんじ',
+        ),
+        PhraseAnswer(
+          // 何か食べたい
+          translation: NA.t('nanikatabetai'),
+          phraseParts: [
+            FuriText(text: '何か', emphasize: true),
+            FuriText(text: '食', furigana: 'た'),
+            FuriText(text: 'べたい'),
+          ],
+          answer: 'なんか',
+        ),
+        PhraseAnswer(
+          // これは何？
+          translation: NA.t('korehanani'),
+          phraseParts: [
+            FuriText(text: 'これは'),
+            FuriText(text: '何', emphasize: true),
+            FuriText(text: '？'),
+          ],
+          answer: 'なに',
+        )
+      ]),
   Kanji(
       translation: NA.t('具'),
       kanji: '具',

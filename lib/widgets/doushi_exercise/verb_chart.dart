@@ -25,7 +25,7 @@ class ChartRow extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text('${label} :'),
+            Text('$label :'),
             FuriganaText(
               furiTexts: furiText,
             ),
