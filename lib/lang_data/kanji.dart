@@ -229,15 +229,23 @@ List<Kanji> kanjiBank = [
       phraseAnswers: [
         PhraseAnswer(
           // 朝からうるさい
-          translation: NA.t(''),
-          phraseParts: [],
-          answer: '',
+          translation: NA.t('asakaraurusai'),
+          phraseParts: [
+            FuriText(text: '朝', furigana: 'あさ', emphasize: true),
+            FuriText(text: 'からうるさい'),
+          ],
+          answer: 'あさ',
         ),
         PhraseAnswer(
           // 朝食を食べない
-          translation: NA.t(''),
-          phraseParts: [],
-          answer: '',
+          translation: NA.t('choushokuwotabenai'),
+          phraseParts: [
+            FuriText(text: '朝食', furigana: '？？しょく', emphasize: true),
+            FuriText(text: 'を'),
+            FuriText(text: '食', furigana: 'た'),
+            FuriText(text: 'べない'),
+          ],
+          answer: 'ちょうしょく',
         )
       ]),
   Kanji(
