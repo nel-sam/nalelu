@@ -299,137 +299,207 @@ List<Kanji> kanjiBank = [
   //     onYomi: 'カイ, エ',
   //     kunYomi: 'あう',
   //     phraseAnswers: []),
-  // Kanji(
-  //     translation: NA.t('住'),
-  //     kanji: '住',
-  //     onYomi: 'ジュウ, チュウ',
-  //     kunYomi: 'すむ, すまう',
-  //     phraseAnswers: []),
-  // Kanji(
-  //     translation: NA.t('一'),
-  //     kanji: '一',
-  //     onYomi: 'イチ',
-  //     kunYomi: 'ひと, ひとつ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '一人ぼっちとうきょう',  emphasize: true),
-  //           ],
-  //           answer: 'ひとり'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: 'わたしは一ばんかっこいい',  emphasize: true),
-  //           ],
-  //           answer: 'いち'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: 'ビイルを一つください',  emphasize: true)
-  //           ],
-  //           answer: 'ひと'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('二'),
-  //     kanji: '二',
-  //     onYomi: 'ニ',
-  //     kunYomi: 'ふた, ふたつ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '二プラス二',  emphasize: true),
-  //           ],
-  //           answer: 'に'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: 'リンゴを二つ食べる',  emphasize: true),
-  //           ],
-  //           answer: 'ふた'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: 'わたしわ三十二さいです',  emphasize: true),
-  //           ],
-  //           answer: 'に'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('三'),
-  //     kanji: '三',
-  //     onYomi: 'サン, ゾウ',
-  //     kunYomi: 'み, みつ, みっつ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '三月は寒いです',  emphasize: true),
-  //           ],
-  //           answer: 'さん'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '三つのビデオゲームがあります',  emphasize: true),
-  //           ],
-  //           answer: 'みっ'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: 'オレンジを三つもっています',  emphasize: true),
-  //           ],
-  //           answer: 'みっ'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('四'),
-  //     kanji: '四',
-  //     onYomi: 'シ',
-  //     kunYomi: 'よ, よつ, よっつ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '四月は暑いです',  emphasize: true),
-  //           ],
-  //           answer: 'し'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: 'クリスマスまであと四日',  emphasize: true),
-  //           ],
-  //           answer: 'よっ'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: 'メッシは四ゴールをきめた',  emphasize: true),
-  //           ],
-  //           answer: 'よん'),
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('五'),
-  //     kanji: '五',
-  //     onYomi: 'ゴ',
-  //     kunYomi: 'いつ, いつつ',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: 'ほしが五つあります',  emphasize: true),
-  //           ],
-  //           answer: 'いつ'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '五月は好きな月です',  emphasize: true),
-  //           ],
-  //           answer: 'ご'),
-  //       PhraseAnswer(
-  //           translation: NA.t(''),
-  //           phraseParts: [
-  //             FuriText(text: '五百円かせいだ',  emphasize: true),
-  //           ],
-  //           answer: 'ご'),
-  //     ]),
+  Kanji(
+      translation: NA.t('住'),
+      kanji: '住',
+      onYomi: 'ジュウ, チュウ',
+      kunYomi: 'すむ, すまう',
+      phraseAnswers: [
+        PhraseAnswer(
+            // どこに住みたいかわからない
+            translation: NA.t('dokonisumitaikawakaranai'),
+            phraseParts: [
+              FuriText(text: 'どこに'),
+              FuriText(text: '住みたい', emphasize: true),
+              FuriText(text: 'かわからない'),
+            ],
+            answer: 'すみたい'),
+        PhraseAnswer(
+          // 住所を教えてください
+          translation: NA.t('juushowoooshietekudasai'),
+          phraseParts: [
+            FuriText(text: '住所', furigana: '？？しょ', emphasize: true),
+            FuriText(text: 'を'),
+            FuriText(text: '教', furigana: 'おし'),
+            FuriText(text: 'えてください'),
+          ],
+          answer: 'じゅうしょ',
+        ),
+      ]),
+  Kanji(
+      translation: NA.t('一'),
+      kanji: '一',
+      onYomi: 'イチ',
+      kunYomi: 'ひと, ひとつ, いっ',
+      phraseAnswers: [
+        PhraseAnswer(
+            // 一人で行きたい
+            translation: NA.t('hitorideikitai'),
+            phraseParts: [
+              FuriText(text: '一人', furigana: '？？り', emphasize: true),
+            ],
+            answer: 'ひとり'),
+        PhraseAnswer(
+            // 彼は一番かっこいい
+            translation: NA.t('karehaichibanikkoi'),
+            phraseParts: [
+              FuriText(text: '彼', furigana: 'かれ'),
+              FuriText(text: 'は'),
+              FuriText(text: '一番', furigana: '？ばん', emphasize: true),
+              FuriText(text: 'かっこいい'),
+            ],
+            answer: 'いちばん'),
+        PhraseAnswer(
+            // ビールはあと一本しかない
+            translation: NA.t('biiruhaatoipponshikanai'),
+            phraseParts: [
+              FuriText(text: 'ビール', furigana: 'beer'),
+              FuriText(text: 'は'),
+              FuriText(text: 'あと'),
+              FuriText(text: '一本', furigana: '？ほん', emphasize: true),
+              FuriText(text: 'しかない'),
+            ],
+            answer: ''),
+        PhraseAnswer(
+            // ビール一つください
+            translation: NA.t('biiruhitotsukudasai'),
+            phraseParts: [
+              FuriText(text: 'ビール', furigana: 'beer'),
+              FuriText(text: '一つ', emphasize: true),
+              FuriText(text: 'ください'),
+            ],
+            answer: 'ひとつ'),
+      ]),
+  Kanji(
+      translation: NA.t('二'),
+      kanji: '二',
+      onYomi: 'ニ',
+      kunYomi: 'ふた, ふたつ',
+      phraseAnswers: [
+        PhraseAnswer(
+            // リンゴ二つ食べた
+            translation: NA.t('ringofutatsutabeta'),
+            phraseParts: [
+              FuriText(text: 'リンゴ'),
+              FuriText(text: '二つ', emphasize: true),
+              FuriText(text: '食べた'),
+            ],
+            answer: 'ふたつ'),
+        PhraseAnswer(
+            // ２歳の子供がいます
+            translation: NA.t('nisainokodogaimasu'),
+            phraseParts: [
+              FuriText(text: '二歳', furigana: '？さい', emphasize: true),
+              FuriText(text: 'の'),
+              FuriText(text: '子供', furigana: 'こども'),
+              FuriText(text: 'がいます'),
+            ],
+            answer: 'にさい'),
+      ]),
+  Kanji(
+      translation: NA.t('三'),
+      kanji: '三',
+      onYomi: 'サン, ゾウ',
+      kunYomi: 'み, みつ, みっつ',
+      phraseAnswers: [
+        PhraseAnswer(
+            // 三月に来ないほうがいいよ
+            translation: NA.t('sangatsunikonaihougaīyo'),
+            phraseParts: [
+              FuriText(text: '三月', furigana: '？？がつ', emphasize: true),
+              FuriText(text: 'に'),
+              FuriText(text: '来', furigana: 'こ'),
+              FuriText(text: 'ないほうがいいよ'),
+            ],
+            answer: 'さんがつ'),
+        PhraseAnswer(
+            // ゲームが三つもあります
+            translation: NA.t('geemugamittsumoarimasu'),
+            phraseParts: [
+              FuriText(text: 'ゲーム', furigana: 'game'),
+              FuriText(text: 'が'),
+              FuriText(text: '三つ', emphasize: true),
+              FuriText(text: 'もあります'),
+            ],
+            answer: 'みっつ'),
+      ]),
+  Kanji(
+      translation: NA.t('四'),
+      kanji: '四',
+      onYomi: 'シ',
+      kunYomi: 'よ, よつ, よっつ',
+      phraseAnswers: [
+        PhraseAnswer(
+            // 四月はまだ涼しいよ
+            translation: NA.t('shigatsuhamadasuzushiiyo'),
+            phraseParts: [
+              FuriText(text: '四月', furigana: '？がつ', emphasize: true),
+              FuriText(text: 'はまだ'),
+              FuriText(text: '涼', furigana: 'すず'),
+              FuriText(text: 'しいよ'),
+            ],
+            answer: 'し'),
+        PhraseAnswer(
+            // あと四日でクリスマスだ
+            translation: NA.t('atoyokkadekurisumasuda'),
+            phraseParts: [
+              FuriText(text: 'あと'),
+              FuriText(text: '四日', furigana: '？か', emphasize: true),
+              FuriText(text: 'で'),
+              FuriText(text: 'クリスマス', furigana: 'Christmas'),
+              FuriText(text: 'だ'),
+            ],
+            answer: 'よっか'),
+        PhraseAnswer(
+            // メッシは四ゴールを挙げた
+            translation: NA.t('messhihayongooruwoageta'),
+            phraseParts: [
+              FuriText(text: 'メッシ', furigana: 'Messi'),
+              FuriText(text: 'は'),
+              FuriText(text: '四', emphasize: true),
+              FuriText(text: 'ゴール', furigana: 'goal'),
+              FuriText(text: 'を'),
+              FuriText(text: '挙', furigana: 'あ'),
+              FuriText(text: 'げた'),
+            ],
+            answer: 'よん'),
+      ]),
+  Kanji(
+      translation: NA.t('五'),
+      kanji: '五',
+      onYomi: 'ゴ',
+      kunYomi: 'いつ, いつつ',
+      phraseAnswers: [
+        PhraseAnswer(
+            // 星が五つしか見えない
+            translation: NA.t('hoshigaitsutsushikamienai'),
+            phraseParts: [
+              FuriText(text: '星', furigana: 'ほし'),
+              FuriText(text: 'が'),
+              FuriText(text: '五つ', emphasize: true),
+              FuriText(text: 'しか'),
+              FuriText(text: '見', furigana: 'み'),
+              FuriText(text: 'えない'),
+            ],
+            answer: 'いつつ'),
+        PhraseAnswer(
+            // 五月からだんだん暑くなる
+            translation: NA.t('gogatsukaradandanatsukunaru'),
+            phraseParts: [
+              FuriText(text: '五月', furigana: '？がつ', emphasize: true),
+              FuriText(text: 'からだんだん'),
+              FuriText(text: '暑', furigana: 'あつ'),
+              FuriText(text: 'くなる'),
+            ],
+            answer: 'ごがつ'),
+        PhraseAnswer(
+            // マンガは五百円くらいする
+            translation: NA.t('mangahagohyakuenkuraisuru'),
+            phraseParts: [
+              FuriText(text: '五百円', furigana: '？ひゃくえん', emphasize: true),
+            ],
+            answer: 'ごひゃくえん'),
+      ]),
   Kanji(
       translation: NA.t('六'),
       kanji: '六',
