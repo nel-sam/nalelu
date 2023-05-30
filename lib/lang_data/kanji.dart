@@ -229,13 +229,13 @@ List<Kanji> kanjiBank = [
       phraseAnswers: [
         PhraseAnswer(
           // 朝からうるさい
-          translation: NA.t(''),
+          translation: NA.t('asakaraurusai'),
           phraseParts: [],
           answer: '',
         ),
         PhraseAnswer(
           // 朝食を食べない
-          translation: NA.t(''),
+          translation: NA.t('choushokuwotabenai'),
           phraseParts: [],
           answer: '',
         )
