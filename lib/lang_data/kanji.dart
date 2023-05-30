@@ -221,36 +221,178 @@ List<Kanji> kanjiBank = [
   //     onYomi: 'シン',
   //     kunYomi: 'こころ',
   // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('朝'),
-  //     kanji: '朝',
-  //     onYomi: 'チョウ',
-  //     kunYomi: 'あさ',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('楽'),
-  //     kanji: '楽',
-  //     onYomi: 'ガク, ラク',
-  //     kunYomi: 'たのしい, たのしむ',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('言'),
-  //     kanji: '言',
-  //     onYomi: 'ゲン, ゴン',
-  //     kunYomi: 'い',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('調'),
-  //     kanji: '調',
-  //     onYomi: 'チョウ',
-  //     kunYomi: 'しらべる, ととのう',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('体'),
-  //     kanji: '体',
-  //     onYomi: 'タイ, テイ',
-  //     kunYomi: 'からだ',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
+  Kanji(
+      translation: NA.t('朝'),
+      kanji: '朝',
+      onYomi: 'チョウ',
+      kunYomi: 'あさ',
+      phraseAnswers: [
+        PhraseAnswer(
+          // 朝からうるさい
+          translation: NA.t(''),
+          phraseParts: [],
+          answer: '',
+        ),
+        PhraseAnswer(
+          // 朝食を食べない
+          translation: NA.t(''),
+          phraseParts: [],
+          answer: '',
+        )
+      ]),
+  Kanji(
+      translation: NA.t('楽'),
+      kanji: '楽',
+      onYomi: 'ガク, ラク',
+      kunYomi: 'たのしい, たのしむ',
+      phraseAnswers: [
+        PhraseAnswer(
+          // ここは何が楽しいですか？
+          translation: NA.t('kokohananigatanoshiidesuka'),
+          phraseParts: [
+            FuriText(text: 'ここは'),
+            FuriText(text: '何', furigana: 'なに'),
+            FuriText(text: 'が'),
+            FuriText(text: '楽しい', emphasize: true),
+            FuriText(text: 'ですか？'),
+          ],
+          answer: 'たのしい',
+        ),
+        PhraseAnswer(
+          // どんな音楽が好き？
+          translation: NA.t('donnaongakugasuki'),
+          phraseParts: [
+            FuriText(text: 'どんな'),
+            FuriText(text: '音楽', furigana: 'おん？？', emphasize: true),
+            FuriText(text: 'が'),
+            FuriText(text: '好き', furigana: 'すき'),
+            FuriText(text: '？'),
+          ],
+          answer: 'おんがく',
+        ),
+        PhraseAnswer(
+          // 楽な運動をしたい
+          translation: NA.t('rakunaundoushitai'),
+          phraseParts: [
+            FuriText(text: '楽', furigana: 'らく'),
+            FuriText(text: 'な'),
+            FuriText(text: '運動', furigana: 'うんどう', emphasize: true),
+            FuriText(text: 'を'),
+            FuriText(text: 'したい'),
+          ],
+          answer: 'らく',
+        )
+      ]),
+  Kanji(
+      translation: NA.t('言'),
+      kanji: '言',
+      onYomi: 'ゲン, ゴン',
+      kunYomi: 'い',
+      phraseAnswers: [
+        PhraseAnswer(
+          // 何て言えばいいかわからない
+          translation: NA.t('nanteiebaikawakaranai'),
+          phraseParts: [
+            FuriText(text: '何', furigana: 'なん'),
+            FuriText(text: 'て'),
+            FuriText(text: '言えば', emphasize: true),
+            FuriText(text: 'いい'),
+            FuriText(text: 'か'),
+            FuriText(text: 'わからない'),
+          ],
+          answer: 'いえば',
+        ),
+        PhraseAnswer(
+          // 言語いろいろ習いたい
+          translation: NA.t('gengoiroironaraitai'),
+          phraseParts: [
+            FuriText(text: '言語', furigana: '??ご', emphasize: true),
+            FuriText(text: 'いろいろ'),
+            FuriText(text: '習', furigana: 'なら'),
+            FuriText(text: 'いたい'),
+          ],
+          answer: 'げんご',
+        ),
+        PhraseAnswer(
+// 言い方が悪いよ
+          translation: NA.t('iikataawaruiyo'),
+          phraseParts: [
+            FuriText(text: '言い方', furigana: '？いかた', emphasize: true),
+            FuriText(text: 'が'),
+            FuriText(text: '悪', furigana: 'わる'),
+            FuriText(text: 'いよ'),
+          ],
+          answer: 'いいかた',
+        )
+      ]),
+  Kanji(
+      translation: NA.t('調'),
+      kanji: '調',
+      onYomi: 'チョウ',
+      kunYomi: 'しらべる, ととのう',
+      phraseAnswers: [
+        PhraseAnswer(
+          // いくらか調べてくれる？
+          translation: NA.t('ikurakashirabetekureru'),
+          phraseParts: [
+            FuriText(text: 'いくらか'),
+            FuriText(text: '調べて', emphasize: true),
+            FuriText(text: 'くれる？'),
+          ],
+          answer: 'しらべて',
+        ),
+        PhraseAnswer(
+          // 調子が悪い
+          translation: NA.t('choushigawarui'),
+          phraseParts: [
+            FuriText(text: '調子', furigana: '？し'),
+            FuriText(text: 'が'),
+            FuriText(text: '悪', furigana: 'わる'),
+            FuriText(text: 'い'),
+          ],
+          answer: 'ちょうし',
+        ),
+        PhraseAnswer(
+          // 警察は調査しています
+          translation: NA.t('keisatsuhachousashiteimasu'),
+          phraseParts: [
+            FuriText(text: '警察', furigana: 'けいさつ'),
+            FuriText(text: 'は'),
+            FuriText(text: '調査', furigana: '？？さ'),
+            FuriText(text: 'しています'),
+          ],
+          answer: 'ちょうさ',
+        )
+      ]),
+  Kanji(
+      translation: NA.t('体'),
+      kanji: '体',
+      onYomi: 'タイ, テイ',
+      kunYomi: 'からだ',
+      phraseAnswers: [
+        PhraseAnswer(
+          // 体が痛い
+          translation: NA.t('karadagaitai'),
+          phraseParts: [
+            FuriText(text: '体', emphasize: true),
+            FuriText(text: 'が'),
+            FuriText(text: '痛', furigana: 'いた'),
+            FuriText(text: 'い'),
+          ],
+          answer: 'からだ',
+        ),
+        PhraseAnswer(
+          // 一度は体験してみたい
+          translation: NA.t('ichidohataikenshitemitai'),
+          phraseParts: [
+            FuriText(text: '一度', furigana: 'いちど'),
+            FuriText(text: 'は'),
+            FuriText(text: '体験', furigana: '？？けん', emphasize: true),
+            FuriText(text: 'してみたい'),
+          ],
+          answer: 'たいけん',
+        )
+      ]),
   Kanji(
       translation: NA.t('作'),
       kanji: '作',
