@@ -955,7 +955,7 @@ List<Kanji> kanjiBank = [
             // 九月にスペインに行きます
             translation: NA.t('kugatsunisupeinniikimasu'),
             phraseParts: [
-              FuriText(text: '九月', furigana: '？？がつ', emphasize: true),
+              FuriText(text: '九月', furigana: '？がつ', emphasize: true),
               FuriText(text: 'に'),
               FuriText(text: 'スペイン', furigana: 'Spain'),
               FuriText(text: 'に'),
@@ -1026,7 +1026,7 @@ List<Kanji> kanjiBank = [
             // 腹筋を百回やった
             translation: NA.t('fukkinwohyakkaiyatta'),
             phraseParts: [
-              FuriText(text: '腹筋', furigana: 'ふっきん', emphasize: true),
+              FuriText(text: '腹筋', furigana: 'ふっきん'),
               FuriText(text: 'を'),
               FuriText(text: '百回', furigana: '？？かい', emphasize: true),
               FuriText(text: 'やった'),
