@@ -249,7 +249,7 @@ List<Kanji> kanjiBank = [
         )
       ]),
   Kanji(
-      translation: NA.t(''),
+      translation: NA.t('楽'),
       kanji: '楽',
       onYomi: 'ガク, ラク',
       kunYomi: 'たのしい, たのしむ',
