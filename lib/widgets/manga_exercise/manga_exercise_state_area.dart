@@ -78,6 +78,7 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                   Padding(
                     padding: const EdgeInsets.all(padding),
                     child: NaFreeFormEntryWrapper(
+                      showMaxLength: false,
                       widthType: NFreeFormWidths.half,
                       hintValue: '',
                       onChanged: (String newValue) {

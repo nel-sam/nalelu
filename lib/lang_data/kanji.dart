@@ -326,7 +326,8 @@ List<Kanji> kanjiBank = [
 // 言い方が悪いよ
           translation: NA.t('iikataawaruiyo'),
           phraseParts: [
-            FuriText(text: '言い方', furigana: '？いかた', emphasize: true),
+            FuriText(text: '言い', furigana: '？', emphasize: true),
+            FuriText(text: '方', furigana: 'かた', emphasize: true),
             FuriText(text: 'が'),
             FuriText(text: '悪', furigana: 'わる'),
             FuriText(text: 'いよ'),

@@ -19,6 +19,7 @@ class AgeExerciseStateArea extends StatefulWidget {
 class _MyAgeExerciseStateAreaState extends State<AgeExerciseStateArea> {
   Widget build(BuildContext context) {
     return NaFreeFormEntryWrapper(
+      showMaxLength: false,
       widthType: NFreeFormWidths.half,
       hintValue: NA.t('age'),
       onChanged: (String newValue) {

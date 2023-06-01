@@ -9,6 +9,7 @@ class NaFreeFormEntryWrapper extends StatelessWidget {
   final List<String> correctValues;
   final NFreeFormWidths widthType;
   final String hintValue;
+  final bool showMaxLength;
 
   NaFreeFormEntryWrapper({
     Key? key,
@@ -18,11 +19,13 @@ class NaFreeFormEntryWrapper extends StatelessWidget {
     required this.correctValues,
     required this.widthType,
     required this.hintValue,
+    this.showMaxLength = true,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return NFreeFormEntry(
+      showMaxLength: showMaxLength,
       widthType: NFreeFormWidths.half,
       hintValue: hintValue,
       onChanged: (String newValue) {

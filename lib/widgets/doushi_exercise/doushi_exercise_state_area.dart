@@ -47,6 +47,7 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
           ),
         ),
         VerbInput(
+          
           doushi: widget.state.doushi,
           hintValue: NA.t('past'),
           activeValue: widget.state.getUserInput(1),

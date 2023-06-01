@@ -18,6 +18,7 @@ class CountingExerciseStateArea extends StatefulWidget {
 class _CountingExerciseStateAreaState extends State<CountingExerciseStateArea> {
   Widget build(BuildContext context) {
     return NaFreeFormEntryWrapper(
+      showMaxLength: false,
       widthType: NFreeFormWidths.half,
       hintValue: NA.t('counter'),
       onChanged: (String newValue) => widget.state.updateCount(newValue),
