@@ -55,22 +55,22 @@ class VerbChart extends StatelessWidget {
           AdCard(),
           ChartRow(
               label: NA.t('present'),
-              furiText: doushi.casual.present.toFuriText()),
+              furiText: doushi.casual.present.toFuriTexts()),
           ChartRow(
               label: NA.t('past'),
-              furiText: doushi.casual.pastSimple.toFuriText()),
+              furiText: doushi.casual.pastSimple.toFuriTexts()),
           ChartRow(
               label: NA.t('negative'),
-              furiText: doushi.casual.negative.toFuriText()),
+              furiText: doushi.casual.negative.toFuriTexts()),
           ChartRow(
               label: NA.t('negativePast'),
-              furiText: doushi.casual.negativePast.toFuriText()),
+              furiText: doushi.casual.negativePast.toFuriTexts()),
           ChartRow(
               label: NA.t('presentProgressive'),
-              furiText: doushi.casual.presentProgressive.toFuriText()),
+              furiText: doushi.casual.presentProgressive.toFuriTexts()),
           ChartRow(
               label: NA.t('negativePresentProgressive'),
-              furiText: doushi.casual.negativePresentProgressive.toFuriText()),
+              furiText: doushi.casual.negativePresentProgressive.toFuriTexts()),
         ],
       ),
     );

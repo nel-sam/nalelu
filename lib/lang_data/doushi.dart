@@ -119,12 +119,12 @@ var doushiBank = [
     root: '',
     translation: NA.t('suru'),
     casual: DoushiConj(
-      present: JWord(kanaWord: 'する', kanjiWord: 'する'),
-      pastSimple: JWord(kanaWord: 'した', kanjiWord: 'した'),
-      negative: JWord(kanaWord: 'しない', kanjiWord: 'しない'),
-      negativePast: JWord(kanaWord: 'しなかった', kanjiWord: 'しなかった'),
-      presentProgressive: JWord(kanaWord: 'している', kanjiWord: 'している'),
-      negativePresentProgressive: JWord(kanaWord: 'していない', kanjiWord: 'していない'),
+      present: JWord(kanaWord: 'する'),
+      pastSimple: JWord(kanaWord: 'した'),
+      negative: JWord(kanaWord: 'しない'),
+      negativePast: JWord(kanaWord: 'しなかった'),
+      presentProgressive: JWord(kanaWord: 'している'),
+      negativePresentProgressive: JWord(kanaWord: 'していない'),
     ),
   ),
   Doushi(
@@ -214,28 +214,19 @@ class DoushiConj {
 }
 
 class JWord {
-  final String kanjiWord;
+  String kanjiWord;
   final String kanaWord;
   JWord({
-    required this.kanjiWord,
+    this.kanjiWord = '',
     required this.kanaWord,
   });
-  List<FuriText> toFuriText() {
-    if (kanjiWord == kanaWord) {
-      return [FuriText(text: kanaWord, furigana: '')];
-    } else {
-      return [
-        FuriText(
-            text: kanjiWord.substring(
-                0, stringDifferenceKana(kanaWord, kanjiWord) + 1),
-            furigana: kanaWord.substring(
-                0, stringDifferenceKanji(kanaWord, kanjiWord) + 1)),
-        FuriText(
-          text: kanjiWord
-              .substring(stringDifferenceKana(kanaWord, kanjiWord) + 1),
-        )
-      ];
+
+  int stringDifferenceKana(String kanaWord, String kanjiWord) {
+    int index = 0;
+    for (var i = 0; i < kanjiWord.length; i++) {
+      if (!kanaWord.contains(kanjiWord[i])) index = i;
     }
+    return index;
   }
 
   int stringDifferenceKanji(String kanaWord, String kanjiWord) {
@@ -248,11 +239,23 @@ class JWord {
     return 0;
   }
 
-  int stringDifferenceKana(String kanaWord, String kanjiWord) {
-    int index = 0;
-    for (var i = 0; i < kanjiWord.length; i++) {
-      if (!kanaWord.contains(kanjiWord[i])) index = i;
+  List<FuriText> toFuriTexts() {
+    if (kanjiWord.length == 0) {
+      return [FuriText(text: kanaWord, furigana: '')];
+    } else {
+      return [
+        FuriText(
+            emphasize: true,
+            text: kanjiWord.substring(
+                0, stringDifferenceKana(kanaWord, kanjiWord) + 1),
+            furigana: kanaWord.substring(
+                0, stringDifferenceKanji(kanaWord, kanjiWord) + 1)),
+        FuriText(
+          emphasize: true,
+          text: kanjiWord
+              .substring(stringDifferenceKana(kanaWord, kanjiWord) + 1),
+        )
+      ];
     }
-    return index;
   }
 }

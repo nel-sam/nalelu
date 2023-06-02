@@ -32,7 +32,8 @@ class VerbInput extends StatelessWidget {
         onSubmitted(newValue);
       },
       initialValue: activeValue,
-      correctValues: correctValues,
+      correctValues:
+          correctValues.where((element) => element.length > 0).toList(),
       onCorrect: onCorrect,
     );
   }
