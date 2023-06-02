@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nalelu/furi_text.dart';
 import 'package:nalelu/lang_data/numbers.dart';
 import 'package:nalelu/na_helpers.dart';
+import 'package:nalelu/widgets/shared/ad_card.dart';
 import 'package:nalelu/widgets/shared/na_number_block.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 import 'package:nrs_flutter_lib/widgets/n_sub_header.dart';
@@ -15,6 +16,7 @@ class NumberChart extends StatelessWidget {
         appBar: Nrs.NrsAppBar(title: NA.t('numberChart'), context: context),
         body: Column(
           children: <Widget>[
+            AdCard(),
             NSubHeader(NA.t('nativeNumbers')),
             Flexible(
               child: getNativeNumberChart(context),
@@ -48,10 +50,9 @@ class NumberChart extends StatelessWidget {
         mainAxisSpacing: 3,
         maxCrossAxisExtent: 130.0,
         children: <Widget>[
-          ...nativeNumberBank.getRange(1, 11).map((e) =>
-              NANumberBlock(digit: e.digit, furiTexts: [
-                FuriText(text: e.kanji, furigana: e.written, emphasize: true)
-              ]))
+          ...nativeNumberBank.getRange(1, 11).map((e) => NANumberBlock(
+              digit: e.digit,
+              furiTexts: [FuriText(text: e.kanji, furigana: e.written)]))
         ],
       ),
     );
@@ -76,10 +77,9 @@ class NumberChart extends StatelessWidget {
         mainAxisSpacing: 3,
         maxCrossAxisExtent: 130.0,
         children: <Widget>[
-          ...numbers.getRange(0, 101).map((e) =>
-              NANumberBlock(digit: e.digit, furiTexts: [
-                FuriText(text: e.kanji, furigana: e.written, emphasize: true)
-              ]))
+          ...numbers.getRange(0, 101).map((e) => NANumberBlock(
+              digit: e.digit,
+              furiTexts: [FuriText(text: e.kanji, furigana: e.written)]))
         ],
       ),
     );

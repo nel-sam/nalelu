@@ -35,14 +35,11 @@ class NANumberBlock extends StatelessWidget {
               children: [
                 Text(
                   digit.toString(),
-                  style: TextStyle(
-                    fontSize: 18,
-                  ),
+                  style: TextStyle(fontSize: 18),
                 ),
                 if (furiTexts.isNotEmpty)
                   FuriganaText(
-                      furiTexts: furiTexts,
-                      fontSize: digit > 18 ? 10 : 18),
+                      furiTexts: furiTexts, fontSize: digit > 18 ? 10 : 18),
               ]),
         ),
       ),
