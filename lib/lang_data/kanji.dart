@@ -185,42 +185,190 @@ List<Kanji> kanjiBank = [
   //     onYomi: 'イン',
   //     kunYomi: '',
   // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('強'),
-  //     kanji: '強',
-  //     onYomi: 'キョウ, ゴウ',
-  //     kunYomi: 'つよい, しいる',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('元'),
-  //     kanji: '元',
-  //     onYomi: 'ゲン, ガン',
-  //     kunYomi: 'もと',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('兄'),
-  //     kanji: '兄',
-  //     onYomi: 'ケイ, キョウ',
-  //     kunYomi: 'あに',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('岩'),
-  //     kanji: '岩',
-  //     onYomi: 'ガン',
-  //     kunYomi: 'いわ',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('店'),
-  //     kanji: '店',
-  //     onYomi: 'テン',
-  //     kunYomi: 'みせ',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('心'),
-  //     kanji: '心',
-  //     onYomi: 'シン',
-  //     kunYomi: 'こころ',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
+  Kanji(
+      translation: NA.t('強'),
+      kanji: '強',
+      onYomi: 'キョウ, ゴウ',
+      kunYomi: 'つよい, しいる',
+      phraseAnswers: [
+        PhraseAnswer(
+          // 家の犬は強い
+          translation: NA.t('uchinoinuhatsuyoi'),
+          phraseParts: [
+            FuriText(text: '家', furigana: 'うち'),
+            FuriText(text: 'の'),
+            FuriText(text: '犬', furigana: 'いぬ'),
+            FuriText(text: 'は'),
+            FuriText(text: '強', furigana: '？', emphasize: true),
+            FuriText(text: 'い', emphasize: true),
+          ],
+          answer: 'つよい',
+        ),
+        PhraseAnswer(
+          // 勉強は大変です
+          translation: NA.t('benkyouhataihendesu'),
+          phraseParts: [
+            FuriText(text: '勉強', furigana: 'べん？', emphasize: true),
+            FuriText(text: 'は'),
+            FuriText(text: '大変', furigana: 'たいへん'),
+            FuriText(text: 'です'),
+          ],
+          answer: 'べんきょう',
+        ),
+      ]),
+  Kanji(
+      translation: NA.t('元'),
+      kanji: '元',
+      onYomi: 'ゲン, ガン',
+      kunYomi: 'もと',
+      phraseAnswers: [
+        PhraseAnswer(
+          // 足元に気をつけてください
+          translation: NA.t('ashimotonikiwotsuketekudasai'),
+          phraseParts: [
+            FuriText(text: '足元', furigana: '？もと', emphasize: true),
+            FuriText(text: 'に'),
+            FuriText(text: '気', furigana: 'き'),
+            FuriText(text: 'をつけてください'),
+          ],
+          answer: 'あしもと',
+        ),
+        PhraseAnswer(
+          // お母さんは元気かな？
+          translation: NA.t('okaasanhagenkikana'),
+          phraseParts: [
+            FuriText(text: 'お'),
+            FuriText(text: '母', furigana: 'かあ'),
+            FuriText(text: 'さんは'),
+            FuriText(text: '元気', furigana: '？き'),
+            FuriText(text: 'かな？'),
+          ],
+          answer: 'げんき',
+        ),
+      ]),
+  Kanji(
+      translation: NA.t('兄'),
+      kanji: '兄',
+      onYomi: 'ケイ, キョウ',
+      kunYomi: 'あに',
+      phraseAnswers: [
+        PhraseAnswer(
+          // 兄は大学生です
+          translation: NA.t('anihadaigakuseidesu'),
+          phraseParts: [
+            FuriText(text: '兄', furigana: '？', emphasize: true),
+            FuriText(text: 'は'),
+            FuriText(text: '大学生', furigana: 'だいがくせい'),
+            FuriText(text: 'です'),
+          ],
+          answer: 'あに',
+        ),
+        PhraseAnswer(
+          // その二人は兄弟です
+          translation: NA.t('sonofutarihakyoudaidesu'),
+          phraseParts: [
+            FuriText(text: 'その'),
+            FuriText(text: '二人', furigana: 'ふたり'),
+            FuriText(text: 'は'),
+            FuriText(text: '兄弟', furigana: '？だい', emphasize: true),
+            FuriText(text: 'です'),
+          ],
+          answer: 'きょうだい',
+        ),
+      ]),
+  Kanji(
+      translation: NA.t('岩'),
+      kanji: '岩',
+      onYomi: 'ガン',
+      kunYomi: 'いわ',
+      phraseAnswers: [
+        PhraseAnswer(
+          // 岩の上に座っている
+          translation: NA.t('iwanouenisawaatteiru'),
+          phraseParts: [
+            FuriText(text: '岩', furigana: '？', emphasize: true),
+            FuriText(text: 'の'),
+            FuriText(text: '上', furigana: 'うえ'),
+            FuriText(text: 'に'),
+            FuriText(text: '座', furigana: 'すわ'),
+            FuriText(text: 'っている'),
+          ],
+          answer: 'いわ',
+        ),
+        PhraseAnswer(
+          // 火山から溶岩が流れている
+          translation: NA.t('kazankarayouganganagareteiru'),
+          phraseParts: [
+            FuriText(text: '火山', furigana: 'かざん'),
+            FuriText(text: 'から'),
+            FuriText(text: '溶岩', furigana: '？がん', emphasize: true),
+            FuriText(text: 'が'),
+            FuriText(text: '流', furigana: 'なが'),
+            FuriText(text: 'れている'),
+          ],
+          answer: 'ようがん',
+        )
+      ]),
+  Kanji(
+      translation: NA.t('店'),
+      kanji: '店',
+      onYomi: 'テン',
+      kunYomi: 'みせ',
+      phraseAnswers: [
+        PhraseAnswer(
+          // このお店高い
+          translation: NA.t('konoomisetakai'),
+          phraseParts: [
+            FuriText(text: 'この'),
+            FuriText(text: 'お', emphasize: true),
+            FuriText(text: '店', furigana: '？', emphasize: true),
+            FuriText(text: '高', furigana: 'たか'),
+            FuriText(text: 'い'),
+          ],
+          answer: 'おみせ',
+        ),
+        PhraseAnswer(
+          // 閉店のお知らせ
+          translation: NA.t('heitennooshirase'),
+          phraseParts: [
+            FuriText(text: '閉店', furigana: '？てん', emphasize: true),
+            FuriText(text: 'の'),
+            FuriText(text: 'お'),
+            FuriText(text: '知', furigana: 'しら'),
+            FuriText(text: 'らせ'),
+          ],
+          answer: 'へいてん',
+        )
+      ]),
+  Kanji(
+      translation: NA.t('心'),
+      kanji: '心',
+      onYomi: 'シン',
+      kunYomi: 'こころ',
+      phraseAnswers: [
+        PhraseAnswer(
+          // 心の底からありがとうございます
+          translation: NA.t('kokoronosokokaraarigatougozaimasu'),
+          phraseParts: [
+            FuriText(text: '心', furigana: '？', emphasize: true),
+            FuriText(text: 'の'),
+            FuriText(text: '底', furigana: 'そこ'),
+            FuriText(text: 'から'),
+            FuriText(text: 'ありがとうございます'),
+          ],
+          answer: 'こころ',
+        ),
+        PhraseAnswer(
+          // 心配しないでください
+          translation: NA.t('shinpaisinaidekudasai'),
+          phraseParts: [
+            FuriText(text: '心配', furigana: '？', emphasize: true),
+            FuriText(text: '心配', furigana: 'ぱい', emphasize: true),
+            FuriText(text: 'しないでください'),
+          ],
+          answer: 'しんぱい',
+        ),
+      ]),
   Kanji(
       translation: NA.t('朝'),
       kanji: '朝',
