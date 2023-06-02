@@ -137,54 +137,236 @@ List<Kanji> kanjiBank = [
   //     onYomi: 'ギョ, リョウ',
   //     kunYomi: 'うお, -ざかな, -さかな',
   // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('雨'),
-  //     kanji: '雨',
-  //     onYomi: 'ウ',
-  //     kunYomi: 'あめ',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('電'),
-  //     kanji: '電',
-  //     onYomi: 'デン, テン',
-  //     kunYomi: '',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('語'),
-  //     kanji: '語',
-  //     onYomi: 'ゴ, ガ',
-  //     kunYomi: 'かたる, かたらう',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('転'),
-  //     kanji: '転',
-  //     onYomi: 'テン',
-  //     kunYomi: 'ころがる, ころげる',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('週'),
-  //     kanji: '週',
-  //     onYomi: 'シュウ',
-  //     kunYomi: 'しゅう',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('道'),
-  //     kanji: '道',
-  //     onYomi: 'ドウ, トウ',
-  //     kunYomi: 'みち',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('間'),
-  //     kanji: '間',
-  //     onYomi: 'カン, ケン',
-  //     kunYomi: 'あいだ, -ま',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('院'),
-  //     kanji: '院',
-  //     onYomi: 'イン',
-  //     kunYomi: '',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
+  Kanji(
+      translation: NA.t('雨'),
+      kanji: '雨',
+      onYomi: 'ウ, ユ',
+      kunYomi: 'あめ',
+      phraseAnswers: [
+        PhraseAnswer(
+          // 雨が降っています
+          translation: NA.t('amegafutteimasu'),
+          phraseParts: [
+            FuriText(text: '雨', furigana: '？', emphasize: true),
+            FuriText(text: 'が'),
+            FuriText(text: '降', furigana: 'ふ'),
+            FuriText(text: 'っています'),
+          ],
+          answer: 'あめ',
+        ),
+        PhraseAnswer(
+          // 梅雨はいつですか？
+          translation: NA.t('tsuyuhaitsudesuka'),
+          phraseParts: [
+            FuriText(text: '梅雨', furigana: 'つ？', emphasize: true),
+            FuriText(text: 'は'),
+            FuriText(text: 'いつですか？'),
+          ],
+          answer: 'つゆ',
+        ),
+      ]),
+  Kanji(
+      translation: NA.t('電'),
+      kanji: '電',
+      onYomi: 'デン, テン',
+      kunYomi: '',
+      phraseAnswers: [
+        PhraseAnswer(
+          // 電気を消してください
+          translation: NA.t('denkiwokeshitekudasai'),
+          phraseParts: [
+            FuriText(text: '電気', furigana: '？き', emphasize: true),
+            FuriText(text: 'を'),
+            FuriText(text: '消', furigana: 'け'),
+            FuriText(text: 'してください'),
+          ],
+          answer: 'でんき',
+        )
+      ]),
+  Kanji(
+      translation: NA.t('語'),
+      kanji: '語',
+      onYomi: 'ゴ, ガ',
+      kunYomi: 'かたる, かたらう',
+      phraseAnswers: [
+        PhraseAnswer(
+          // 日本語を勉強します
+          translation: NA.t('nihongoobenkyoushimasu'),
+          phraseParts: [
+            FuriText(text: '日本語', furigana: 'にほん？', emphasize: true),
+            FuriText(text: 'を'),
+            FuriText(text: '勉強', furigana: 'べんきょう'),
+            FuriText(text: 'します'),
+          ],
+          answer: 'にほんご',
+        ),
+        PhraseAnswer(
+          // 物語読んでくれる？
+          translation: NA.t('monogatariyondekureru'),
+          phraseParts: [
+            FuriText(text: '物語', furigana: 'もの？'),
+            FuriText(text: '読', furigana: 'よ'),
+            FuriText(text: 'んでくれる？'),
+          ],
+          answer: 'ものがたり',
+        ),
+      ]),
+  Kanji(
+      translation: NA.t('転'),
+      kanji: '転',
+      onYomi: 'テン',
+      kunYomi: 'ころぶ, ころがる, ころげる',
+      phraseAnswers: [
+        PhraseAnswer(
+          // 急に転んだ
+          translation: NA.t('kyuunikoronda'),
+          phraseParts: [
+            FuriText(text: '急', furigana: 'きゅう'),
+            FuriText(text: 'に'),
+            FuriText(text: '転', furigana: '？', emphasize: true),
+            FuriText(text: 'んだ', emphasize: true),
+          ],
+          answer: 'ころんだ',
+        ),
+        PhraseAnswer(
+          // 回転寿司に行きたい
+          translation: NA.t('kaitenzushiniikitai'),
+          phraseParts: [
+            FuriText(text: '回転', furigana: '？てん', emphasize: true),
+            FuriText(text: '寿司', furigana: 'すし'),
+            FuriText(text: 'に'),
+            FuriText(text: '行', furigana: 'い'),
+            FuriText(text: 'きたい'),
+          ],
+          answer: 'かいてん',
+        ),
+      ]),
+  Kanji(
+      translation: NA.t('週'),
+      kanji: '週',
+      onYomi: 'シュウ',
+      kunYomi: 'しゅう',
+      phraseAnswers: [
+        PhraseAnswer(
+          // 週末は何をしますか？
+          translation: NA.t('shuumatsuhananiwoshimasuka'),
+          phraseParts: [
+            FuriText(text: '週末', furigana: '？まつ', emphasize: true),
+            FuriText(text: 'は'),
+            FuriText(text: '何', furigana: 'なに'),
+            FuriText(text: 'をしますか？'),
+          ],
+          answer: 'しゅうまつ',
+        ),
+        PhraseAnswer(
+          // 週に一回
+          translation: NA.t('shuuniikkai'),
+          phraseParts: [
+            FuriText(text: '週', furigana: '？', emphasize: true),
+            FuriText(text: 'に'),
+            FuriText(text: '一回', furigana: 'いっかい'),
+          ],
+          answer: 'しゅう',
+        ),
+      ]),
+  Kanji(
+      translation: NA.t('道'),
+      kanji: '道',
+      onYomi: 'ドウ, トウ',
+      kunYomi: 'みち',
+      phraseAnswers: [
+        PhraseAnswer(
+          // 道がキレイぐです
+          translation: NA.t('michiagakireidesu'),
+          phraseParts: [
+            FuriText(text: '道', furigana: '？', emphasize: true),
+            FuriText(text: 'が'),
+            FuriText(text: 'キレイ'),
+            FuriText(text: 'です'),
+          ],
+          answer: 'みち',
+        ),
+        PhraseAnswer(
+          // 道路は危ないです
+          translation: NA.t('dourohaabunaidesu'),
+          phraseParts: [
+            FuriText(text: '道路', furigana: '？ろ', emphasize: true),
+            FuriText(text: 'は'),
+            FuriText(text: '危', furigana: 'あぶ'),
+            FuriText(text: 'ないです'),
+          ],
+          answer: 'どうろ',
+        ),
+      ]),
+  Kanji(
+      translation: NA.t('間'),
+      kanji: '間',
+      onYomi: 'カン, ケン',
+      kunYomi: 'あいだ, -ま',
+      phraseAnswers: [
+        PhraseAnswer(
+          // 二人の間に座ってください
+          translation: NA.t('futarinoaidanisawattekudasai'),
+          phraseParts: [
+            FuriText(text: '二人', furigana: 'ふたり'),
+            FuriText(text: 'の'),
+            FuriText(text: '間', furigana: '？', emphasize: true),
+            FuriText(text: 'に'),
+            FuriText(text: '座', furigana: 'すわ'),
+            FuriText(text: 'ってください'),
+          ],
+          answer: 'あいだ',
+        ),
+        PhraseAnswer(
+          // 今は時間がない
+          translation: NA.t('imahajikanganai'),
+          phraseParts: [
+            FuriText(text: '今', furigana: 'いま'),
+            FuriText(text: 'は'),
+            FuriText(text: '時間', furigana: 'じ？', emphasize: true),
+            FuriText(text: 'がない'),
+          ],
+          answer: 'じかん',
+        ),
+        PhraseAnswer(
+          // 人間は自省する
+          translation: NA.t('ningenhajiseisuru'),
+          phraseParts: [
+            FuriText(text: '人間', furigana: 'にん？', emphasize: true),
+            FuriText(text: 'は'),
+            FuriText(text: '自省', furigana: 'じせい'),
+            FuriText(text: 'する'),
+          ],
+          answer: 'にんげん',
+        ),
+      ]),
+  Kanji(
+      translation: NA.t('院'),
+      kanji: '院',
+      onYomi: 'イン',
+      kunYomi: '',
+      phraseAnswers: [
+        PhraseAnswer(
+          // 病院に行かないといけない
+          translation: NA.t('byouinniikanaitoikenai'),
+          phraseParts: [
+            FuriText(text: '病院', furigana: 'びょう？', emphasize: true),
+            FuriText(text: 'に'),
+            FuriText(text: '行', furigana: 'い'),
+            FuriText(text: 'かないといけない'),
+          ],
+          answer: 'びょういん',
+        ),
+        PhraseAnswer(
+          // 入院しました
+          translation: NA.t('nyuuinshimashita'),
+          phraseParts: [
+            FuriText(text: '入院', furigana: '？いん', emphasize: true),
+            FuriText(text: 'しました'),
+          ],
+          answer: 'にゅういん',
+        ),
+      ]),
   Kanji(
       translation: NA.t('強'),
       kanji: '強',
