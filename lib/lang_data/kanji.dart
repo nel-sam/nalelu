@@ -438,8 +438,8 @@ List<Kanji> kanjiBank = [
           // 入院しました
           translation: NA.t('nyuuinshimashita'),
           phraseParts: [
-            FuriText(text: '入', furigana: '？', emphasize: true),
-            FuriText(text: '院', furigana: 'いん', emphasize: true),
+            FuriText(text: '入', furigana: 'にゅう', emphasize: true),
+            FuriText(text: '院', furigana: '？', emphasize: true),
             FuriText(text: 'しました'),
           ],
           answer: 'にゅういん',
@@ -487,8 +487,8 @@ List<Kanji> kanjiBank = [
           // 足元に気をつけてください
           translation: NA.t('ashimotonikiwotsuketekudasai'),
           phraseParts: [
-            FuriText(text: '足', furigana: '？', emphasize: true),
-            FuriText(text: '元', furigana: 'もと', emphasize: true),
+            FuriText(text: '足', furigana: 'あし', emphasize: true),
+            FuriText(text: '元', furigana: '？', emphasize: true),
             FuriText(text: 'に'),
             FuriText(text: '気', furigana: 'き'),
             FuriText(text: 'をつけてください'),
@@ -565,8 +565,8 @@ List<Kanji> kanjiBank = [
           phraseParts: [
             FuriText(text: '火山', furigana: 'かざん'),
             FuriText(text: 'から'),
-            FuriText(text: '溶', furigana: '？', emphasize: true),
-            FuriText(text: '岩', furigana: 'がん', emphasize: true),
+            FuriText(text: '溶', furigana: 'よう', emphasize: true),
+            FuriText(text: '岩', furigana: '？', emphasize: true),
             FuriText(text: 'が'),
             FuriText(text: '流', furigana: 'なが'),
             FuriText(text: 'れている'),
@@ -596,8 +596,8 @@ List<Kanji> kanjiBank = [
           // 閉店のお知らせ
           translation: NA.t('heitennooshirase'),
           phraseParts: [
-            FuriText(text: '閉', furigana: '？', emphasize: true),
-            FuriText(text: '店', furigana: 'てん', emphasize: true),
+            FuriText(text: '閉', furigana: 'へい', emphasize: true),
+            FuriText(text: '店', furigana: '？', emphasize: true),
             FuriText(text: 'の'),
             FuriText(text: 'お'),
             FuriText(text: '知', furigana: 'しら'),
