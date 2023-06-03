@@ -4,6 +4,77 @@ import 'package:nalelu/state/manga/models.dart';
 import '../na_helpers.dart';
 
 final mangaWordsBank = [
+  MangaExerciseModel(imageUrl: 'assets/manga/rainy_season.jpeg', phrases: [
+    Phrase(
+      // 雨がいっぱい降っているね
+      translation: NA.t('amegaippaifutterune'),
+      phraseParts: [
+        PhrasePart(
+          isAnswerable: true,
+          furiTexts: [
+            FuriText(text: '雨', furigana: 'あめ'),
+          ],
+        ),
+        PhrasePart(furiTexts: [
+          FuriText(text: 'がいっぱい'),
+        ]),
+        PhrasePart(isAnswerable: true, furiTexts: [
+          FuriText(text: '降', furigana: 'ふ'),
+          FuriText(text: 'って'),
+        ]),
+        PhrasePart(furiTexts: [
+          FuriText(text: 'いるね？'),
+        ]),
+      ],
+      downPercentage: 2,
+      rightPercentage: 2,
+    ),
+    Phrase(
+        // 梅雨だからね
+        translation: NA.t('tsuyudakarane'),
+        phraseParts: [
+          PhrasePart(isAnswerable: true, furiTexts: [
+            FuriText(text: '梅雨', furigana: 'つゆ'),
+          ]),
+          PhrasePart(furiTexts: [
+            FuriText(text: 'だからね'),
+          ]),
+        ],
+        downPercentage: 50,
+        rightPercentage: 80),
+    Phrase(
+      // あれ？来月からじゃなかったっけ？
+      translation: NA.t('areraigetsukarajanakatta'),
+      phraseParts: [
+        PhrasePart(furiTexts: [
+          FuriText(text: 'あれ？'),
+        ]),
+        PhrasePart(isAnswerable: true, furiTexts: [
+          FuriText(text: '来月', furigana: 'らいげつ'),
+        ]),
+        PhrasePart(furiTexts: [
+          FuriText(text: 'からじゃなかった？'),
+        ]),
+      ],
+      downPercentage: 78,
+      rightPercentage: 2,
+    ),
+    Phrase(
+      // 最近早いよね
+      translation: NA.t('saikinhayaiyone'),
+      phraseParts: [
+        PhrasePart(furiTexts: [
+          FuriText(text: '最近', furigana: 'さいきん'),
+        ]),
+        PhrasePart(furiTexts: [
+          FuriText(text: '早い', furigana: 'はや'),
+        ]),
+        PhrasePart(furiTexts: [FuriText(text: 'よね')])
+      ],
+      downPercentage: 98,
+      rightPercentage: 90,
+    )
+  ]),
   MangaExerciseModel(imageUrl: 'assets/manga/cats.jpeg', phrases: [
     Phrase(
         translation: NA.t('nekoirutoshiranakatta'),
