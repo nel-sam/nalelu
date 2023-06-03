@@ -125,18 +125,84 @@ List<Kanji> kanjiBank = [
   //     onYomi: 'フ, フウ',
   //     kunYomi: 'ちち',
   // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('母'),
-  //     kanji: '母',
-  //     onYomi: 'ボ, ボウ',
-  //     kunYomi: 'はは',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('魚'),
-  //     kanji: '魚',
-  //     onYomi: 'ギョ, リョウ',
-  //     kunYomi: 'うお, -ざかな, -さかな',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
+  Kanji(
+      translation: NA.t('母'),
+      kanji: '母',
+      onYomi: 'ボ, ボウ',
+      kunYomi: 'はは, かあ(さん)',
+      phraseAnswers: [
+        PhraseAnswer(
+            // お母さんは優しい人です
+            translation: NA.t('okaasanhayasashiihitodesu'),
+            phraseParts: [
+              FuriText(text: 'お母', furigana: 'おかあ', emphasize: true),
+              FuriText(text: 'さん', emphasize: true),
+              FuriText(text: 'は'),
+              FuriText(text: '優', furigana: 'やさ'),
+              FuriText(text: 'しい'),
+              FuriText(text: '人', furigana: 'ひと'),
+              FuriText(text: 'です'),
+            ],
+            answer: 'おかあさん'),
+        PhraseAnswer(
+          // 母の日はいつですか？
+          translation: NA.t('hahanohihaitsudesuka'),
+          phraseParts: [
+            FuriText(text: '母', furigana: '？', emphasize: true),
+            FuriText(text: 'の'),
+            FuriText(text: '日', furigana: 'ひ'),
+            FuriText(text: 'は'),
+            FuriText(text: 'いつですか？'),
+          ],
+          answer: 'はは',
+        ),
+        PhraseAnswer(
+          // 母国語はスペイン語です
+          translation: NA.t('bokokugowasupeingo'),
+          phraseParts: [
+            FuriText(text: '母', furigana: '？', emphasize: true),
+            FuriText(text: '国', furigana: 'こく', emphasize: true),
+            FuriText(text: '語', furigana: 'ご', emphasize: true),
+            FuriText(text: 'は'),
+            FuriText(text: 'スペイン'),
+            FuriText(text: '語', furigana: 'ご'),
+            FuriText(text: 'です'),
+          ],
+          answer: 'ぼこくご',
+        )
+      ]),
+  Kanji(
+      translation: NA.t('魚'),
+      kanji: '魚',
+      onYomi: 'ギョ, リョウ',
+      kunYomi: 'うお, -ざかな, -さかな',
+      phraseAnswers: [
+        PhraseAnswer(
+          // 彼女はあまり魚を食べない
+          translation: NA.t('kanojohaamarisakanawotabenai'),
+          phraseParts: [
+            FuriText(text: '彼女', furigana: 'かのじょ'),
+            FuriText(text: 'は'),
+            FuriText(text: 'あまり'),
+            FuriText(text: '魚', furigana: '？', emphasize: true),
+            FuriText(text: 'を'),
+            FuriText(text: '食', furigana: 'た'),
+            FuriText(text: 'べない'),
+          ],
+          answer: 'さかな',
+        ),
+        PhraseAnswer(
+            // 金魚を飼っています
+            translation: NA.t('kingyowokatteimasu'),
+            phraseParts: [
+              FuriText(text: '金', furigana: 'きん', emphasize: true),
+              FuriText(text: '魚', furigana: '？', emphasize: true),
+              FuriText(text: 'を'),
+              FuriText(text: '飼', furigana: 'か'),
+              FuriText(text: 'っています'),
+            ],
+            answer: 'きんぎょ'),
+      ]),
   Kanji(
       translation: NA.t('雨'),
       kanji: '雨',

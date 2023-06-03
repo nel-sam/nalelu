@@ -77,6 +77,7 @@ final mangaWordsBank = [
   ]),
   MangaExerciseModel(imageUrl: 'assets/manga/cats.jpeg', phrases: [
     Phrase(
+      // 猫がいると知らなかった
         translation: NA.t('nekoirutoshiranakatta'),
         phraseParts: [
           PhrasePart(furiTexts: [
@@ -91,6 +92,7 @@ final mangaWordsBank = [
         downPercentage: 5,
         rightPercentage: 10),
     Phrase(
+      // うん、二匹もいるよ
       translation: NA.t('unnihikimoiruyo'),
       phraseParts: [
         PhrasePart(furiTexts: [
@@ -107,6 +109,7 @@ final mangaWordsBank = [
       downPercentage: 30,
     ),
     Phrase(
+      // かわいいね！
         translation: NA.t('kawaiine'),
         phraseParts: [
           PhrasePart(furiTexts: [
@@ -118,6 +121,7 @@ final mangaWordsBank = [
   ]),
   MangaExerciseModel(imageUrl: 'assets/manga/birthday.jpeg', phrases: [
     Phrase(
+      // 誕生日おめでとう
         translation: NA.t('otanjoubiomedetou'),
         phraseParts: [
           PhrasePart(
@@ -130,6 +134,7 @@ final mangaWordsBank = [
         downPercentage: 10,
         rightPercentage: 50),
     Phrase(
+      // ありがとう
       translation: NA.t('arigatou'),
       phraseParts: [
         PhrasePart(
@@ -142,6 +147,7 @@ final mangaWordsBank = [
       rightPercentage: 5,
     ),
     Phrase(
+      // 二十一歳になったよね？
         translation: NA.t('nijuuissaininattayone'),
         phraseParts: [
           PhrasePart(isAnswerable: true, furiTexts: [
@@ -156,6 +162,7 @@ final mangaWordsBank = [
   ]),
   MangaExerciseModel(imageUrl: 'assets/manga/dont_run.jpeg', phrases: [
     Phrase(
+      // いってきます！
         translation: NA.t('ittekimasu'),
         phraseParts: [
           PhrasePart(
@@ -167,6 +174,7 @@ final mangaWordsBank = [
         downPercentage: 10,
         rightPercentage: 60),
     Phrase(
+      // 走らないでよ!
         translation: NA.t('hashiranaide'),
         phraseParts: [
           PhrasePart(
@@ -183,6 +191,7 @@ final mangaWordsBank = [
   ]),
   MangaExerciseModel(imageUrl: 'assets/manga/phone_walking.jpeg', phrases: [
     Phrase(
+      // 今何をしてるの？
         translation: NA.t('imananishiteruno'),
         phraseParts: [
           PhrasePart(
@@ -202,6 +211,7 @@ final mangaWordsBank = [
         downPercentage: 2,
         rightPercentage: 10),
     Phrase(
+      // 今ね、歩いている
       translation: NA.t('imanearuiteruyo'),
       phraseParts: [
         PhrasePart(
@@ -219,6 +229,7 @@ final mangaWordsBank = [
       rightPercentage: 60,
     ),
     Phrase(
+       // そうか、あと三十分に会える？
         translation: NA.t('sokkaato15funniaeru'),
         phraseParts: [
           PhrasePart(furiTexts: [
