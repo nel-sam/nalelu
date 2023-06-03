@@ -1237,7 +1237,7 @@ List<Kanji> kanjiBank = [
               FuriText(text: '涼', furigana: 'すず'),
               FuriText(text: 'しいよ'),
             ],
-            answer: 'し'),
+            answer: 'しがつ'),
         PhraseAnswer(
             // あと四日でクリスマスだ
             translation: NA.t('atoyokkadekurisumasuda'),
@@ -1724,7 +1724,7 @@ List<Kanji> kanjiBank = [
               FuriText(text: '遊', furigana: 'あそ'),
               FuriText(text: 'ぼう'),
             ],
-            answer: 'すい'),
+            answer: 'すいようび'),
         PhraseAnswer(
             // お水しか飲みたくない
             translation: NA.t('omizushikanomitakunai'),
@@ -2461,8 +2461,8 @@ List<Kanji> kanjiBank = [
             // 中古の車を買いました
             translation: NA.t('chuuukonokurumiokaimashita'),
             phraseParts: [
-              FuriText(text: '中', furigana: '？', emphasize: true),
-              FuriText(text: '古', furigana: 'こ', emphasize: true),
+              FuriText(text: '中', furigana: 'ちゅう', emphasize: true),
+              FuriText(text: '古', furigana: '？', emphasize: true),
               FuriText(text: 'の'),
               FuriText(text: '車', furigana: 'くるま'),
               FuriText(text: 'を'),
@@ -3846,7 +3846,9 @@ List<Kanji> kanjiBank = [
           // 真ん中から分ける
           translation: NA.t('mannakakarawakeru'),
           phraseParts: [
-            FuriText(text: '真ん中', furigana: 'まんなか'),
+            FuriText(text: '真', furigana: 'ま'),
+            FuriText(text: 'ん'),
+            FuriText(text: '中', furigana: 'なか'),
             FuriText(text: 'から'),
             FuriText(text: '分', furigana: '？', emphasize: true),
             FuriText(text: 'ける', emphasize: true)
