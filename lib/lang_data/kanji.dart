@@ -2035,7 +2035,8 @@ List<Kanji> kanjiBank = [
             // 外国人も日本語を話せます
             translation: NA.t('gaikokujinnmonihonngowohanasemasu'),
             phraseParts: [
-              FuriText(text: '外国人', furigana: '？こくじん', emphasize: true),
+              FuriText(text: '外', furigana: '？', emphasize: true),
+              FuriText(text: '国人', furigana: 'こくじん', emphasize: true),
               FuriText(text: 'も'),
               FuriText(text: '日本語', furigana: 'にほんご'),
               FuriText(text: 'を'),
@@ -2047,7 +2048,8 @@ List<Kanji> kanjiBank = [
             // 外側がきたない
             translation: NA.t('sotogawagakitanai'),
             phraseParts: [
-              FuriText(text: '外側', furigana: '？がわ', emphasize: true),
+              FuriText(text: '外', furigana: '？', emphasize: true),
+              FuriText(text: '側', furigana: 'がわ', emphasize: true),
               FuriText(text: 'が'),
               FuriText(text: 'きたない'),
             ],
@@ -2063,7 +2065,8 @@ List<Kanji> kanjiBank = [
             // 午前だけ仕事した
             translation: NA.t('gozendakeshigotoshita'),
             phraseParts: [
-              FuriText(text: '午前', furigana: 'ご？', emphasize: true),
+              FuriText(text: '午', furigana: 'ご', emphasize: true),
+              FuriText(text: '前', furigana: '？', emphasize: true),
               FuriText(text: 'だけ'),
               FuriText(text: '仕事', furigana: 'しごと'),
               FuriText(text: 'した'),
@@ -2103,7 +2106,8 @@ List<Kanji> kanjiBank = [
             // 午後に予約がある
             translation: NA.t('gogoyniyoyakugaaru'),
             phraseParts: [
-              FuriText(text: '午後', furigana: 'ご？', emphasize: true),
+              FuriText(text: '午', furigana: 'ご', emphasize: true),
+              FuriText(text: '後', furigana: '？', emphasize: true),
               FuriText(text: 'に'),
               FuriText(text: '予約', furigana: 'よやく'),
               FuriText(text: 'がある'),
@@ -2113,7 +2117,8 @@ List<Kanji> kanjiBank = [
             // 後ろに座ってください
             translation: NA.t('ushironisuwattekudasai'),
             phraseParts: [
-              FuriText(text: '後ろ', furigana: '？', emphasize: true),
+              FuriText(text: '後', furigana: '？', emphasize: true),
+              FuriText(text: 'ろ', emphasize: true),
               FuriText(text: 'に'),
               FuriText(text: '座', furigana: 'すわ'),
               FuriText(text: 'ってください'),
@@ -2125,7 +2130,8 @@ List<Kanji> kanjiBank = [
             phraseParts: [
               FuriText(text: '週', furigana: 'しゅう'),
               FuriText(text: 'の'),
-              FuriText(text: '後半', furigana: '？はん', emphasize: true),
+              FuriText(text: '後', furigana: '？', emphasize: true),
+              FuriText(text: '半', furigana: 'はん', emphasize: true),
               FuriText(text: 'は'),
               FuriText(text: '天気', furigana: 'てんき'),
               FuriText(text: 'がよかった'),
@@ -2154,7 +2160,8 @@ List<Kanji> kanjiBank = [
             // 右手で拭ってみて
             translation: NA.t('migitedenuguttemite'),
             phraseParts: [
-              FuriText(text: '右手', furigana: '？て', emphasize: true),
+              FuriText(text: '右', furigana: '？', emphasize: true),
+              FuriText(text: '手', furigana: 'て', emphasize: true),
               FuriText(text: 'で'),
               FuriText(text: '拭', furigana: 'ぬぐ'),
               FuriText(text: 'ってみて'),
@@ -2164,7 +2171,8 @@ List<Kanji> kanjiBank = [
           // 右折してください
           translation: NA.t('usetsushitekudasai'),
           phraseParts: [
-            FuriText(text: '右折', furigana: '？せつ', emphasize: true),
+            FuriText(text: '右', furigana: '？', emphasize: true),
+            FuriText(text: '折', furigana: 'せつ', emphasize: true),
             FuriText(text: 'してください'),
           ],
           answer: 'うせつ',
@@ -2194,7 +2202,8 @@ List<Kanji> kanjiBank = [
               FuriText(text: 'の'),
               FuriText(text: '道', furigana: 'みち'),
               FuriText(text: 'で'),
-              FuriText(text: '左折', furigana: '？せつ', emphasize: true),
+              FuriText(text: '左', furigana: '？', emphasize: true),
+              FuriText(text: '折', furigana: 'せつ', emphasize: true),
               FuriText(text: 'してください'),
             ],
             answer: 'させつ'),
@@ -2209,7 +2218,8 @@ List<Kanji> kanjiBank = [
             // 大きい車は邪魔だ
             translation: NA.t('ookiikurumahajimada'),
             phraseParts: [
-              FuriText(text: '大きい', furigana: '？', emphasize: true),
+              FuriText(text: '大', furigana: '？', emphasize: true),
+              FuriText(text: 'きい', emphasize: true),
               FuriText(text: '車', furigana: 'くるま'),
               FuriText(text: 'は'),
               FuriText(text: '邪魔', furigana: 'じゃま'),
@@ -2220,7 +2230,8 @@ List<Kanji> kanjiBank = [
             // 大学に行きたい
             translation: NA.t('daigakunikitai'),
             phraseParts: [
-              FuriText(text: '大学', furigana: '？がく', emphasize: true),
+              FuriText(text: '大', furigana: '？', emphasize: true),
+              FuriText(text: '学', furigana: 'がく', emphasize: true),
               FuriText(text: 'に'),
               FuriText(text: '行きたい'),
             ],
@@ -2229,7 +2240,8 @@ List<Kanji> kanjiBank = [
             // 大型の車
             translation: NA.t('oogatanokuruma'),
             phraseParts: [
-              FuriText(text: '大型', furigana: '？がた', emphasize: true),
+              FuriText(text: '大', furigana: '？', emphasize: true),
+              FuriText(text: '型', furigana: 'がた', emphasize: true),
               FuriText(text: 'の'),
               FuriText(text: '車', furigana: 'くるま'),
             ],
@@ -2246,7 +2258,8 @@ List<Kanji> kanjiBank = [
             translation: NA.t('anosukunainuhadaredesuka'),
             phraseParts: [
               FuriText(text: 'あの'),
-              FuriText(text: '小さい', furigana: '？', emphasize: true),
+              FuriText(text: '小', furigana: '？', emphasize: true),
+              FuriText(text: 'さい', emphasize: true),
               FuriText(text: '犬', furigana: 'いぬ'),
               FuriText(text: 'は'),
               FuriText(text: '誰', furigana: 'だれ'),
@@ -2260,7 +2273,8 @@ List<Kanji> kanjiBank = [
             phraseParts: [
               FuriText(text: '画像', furigana: 'がぞう'),
               FuriText(text: 'を'),
-              FuriText(text: '縮小', furigana: 'しゅく？', emphasize: true),
+              FuriText(text: '縮', furigana: 'しゅく', emphasize: true),
+              FuriText(text: '小', furigana: '？', emphasize: true),
               FuriText(text: 'して'),
             ],
             answer: 'しゅくしょう'),
@@ -2275,7 +2289,8 @@ List<Kanji> kanjiBank = [
             translation: NA.t('nagaikaminokegasuki'),
             phraseParts: [
               // 長い髪の毛が好き？
-              FuriText(text: '長い', furigana: '？', emphasize: true),
+              FuriText(text: '長', furigana: '？', emphasize: true),
+              FuriText(text: 'い', emphasize: true),
               FuriText(text: '髪', furigana: 'かみ'),
               FuriText(text: 'の'),
               FuriText(text: '毛', furigana: 'け'),
@@ -2288,7 +2303,8 @@ List<Kanji> kanjiBank = [
             // 学長は誰ですか？
             translation: NA.t('kouchouhadaredesuka'),
             phraseParts: [
-              FuriText(text: '学長', furigana: '？ちょう', emphasize: true),
+              FuriText(text: '学', furigana: 'こう', emphasize: true),
+              FuriText(text: '長', furigana: '？', emphasize: true),
               FuriText(text: 'は'),
               FuriText(text: '誰', furigana: 'だれ'),
               FuriText(text: 'ですか？'),
@@ -2311,7 +2327,8 @@ List<Kanji> kanjiBank = [
               FuriText(text: 'の'),
               FuriText(text: '毛', furigana: 'け'),
               FuriText(text: 'が'),
-              FuriText(text: '短い', furigana: '？', emphasize: true),
+              FuriText(text: '短', furigana: '？', emphasize: true),
+              FuriText(text: 'い', emphasize: true),
             ],
             answer: 'みじかい'),
         // TODO: One for on yomi？
@@ -2329,7 +2346,8 @@ List<Kanji> kanjiBank = [
               FuriText(text: '一番', furigana: 'いちばん'),
               FuriText(text: '背', furigana: 'せ'),
               FuriText(text: 'の'),
-              FuriText(text: '高い', furigana: '？', emphasize: true),
+              FuriText(text: '高', furigana: '？', emphasize: true),
+              FuriText(text: 'い', emphasize: true),
               FuriText(text: '人', furigana: 'ひと'),
               FuriText(text: 'は'),
               FuriText(text: '誰', furigana: 'だれ'),
@@ -2340,7 +2358,8 @@ List<Kanji> kanjiBank = [
             // 高級なレストランに行った
             translation: NA.t('koukyuunaresutoranniitta'),
             phraseParts: [
-              FuriText(text: '高級', furigana: '？きゅう', emphasize: true),
+              FuriText(text: '高', furigana: '？', emphasize: true),
+              FuriText(text: '級', furigana: 'きゅう', emphasize: true),
               FuriText(text: 'な'),
               FuriText(text: 'レストラン', furigana: 'restaurant'),
               FuriText(text: 'に'),
