@@ -135,7 +135,8 @@ List<Kanji> kanjiBank = [
             // お母さんは優しい人です
             translation: NA.t('okaasanhayasashiihitodesu'),
             phraseParts: [
-              FuriText(text: 'お母', furigana: 'おかあ', emphasize: true),
+              FuriText(text: 'お', emphasize: true),
+              FuriText(text: '母', furigana: '?', emphasize: true),
               FuriText(text: 'さん', emphasize: true),
               FuriText(text: 'は'),
               FuriText(text: '優', furigana: 'やさ'),
