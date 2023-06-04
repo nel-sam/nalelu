@@ -3125,17 +3125,17 @@ List<Kanji> kanjiBank = [
               FuriText(text: 'がすき？')
             ],
             answer: 'かいもの'),
-        PhraseAnswer(
-            // 近くに販売機がある？
-            //TODO: need to check
-            translation: NA.t('konochikakunihanbaikigaaru'),
-            phraseParts: [
-              FuriText(text: '近', furigana: 'ちか'),
-              FuriText(text: 'くに'),
-              FuriText(text: '販売機', furigana: 'はん？き', emphasize: true),
-              FuriText(text: 'がある？')
-            ],
-            answer: 'はんばいき'),
+        // PhraseAnswer(
+        //     // 近くに販売機がある？
+        //     //TODO: need to check
+        //     translation: NA.t('konochikakunihanbaikigaaru'),
+        //     phraseParts: [
+        //       FuriText(text: '近', furigana: 'ちか'),
+        //       FuriText(text: 'くに'),
+        //       FuriText(text: '販売機', furigana: 'はん？き', emphasize: true),
+        //       FuriText(text: 'がある？')
+        //     ],
+        //     answer: 'はんばいき'),
         PhraseAnswer(
             // 何を買うの？
             translation: NA.t('naniwokauno'),
