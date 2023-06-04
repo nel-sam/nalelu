@@ -95,7 +95,10 @@ class _KanjiExerciseStateArea extends State<KanjiExerciseStateArea> {
                             initialValue: widget.state.getUserInput(inputKey),
                             correctValues: [pa.answer],
                             onCorrect: () {
-                              setState(() {});
+                              WidgetsBinding.instance
+                                  .addPostFrameCallback((timeStamp) {
+                                setState(() {});
+                              });
                             },
                           ),
                         ]),
