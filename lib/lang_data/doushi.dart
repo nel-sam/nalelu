@@ -241,7 +241,13 @@ class JWord {
 
   List<FuriText> toFuriTexts() {
     if (kanjiWord.length == 0) {
-      return [FuriText(text: kanaWord, furigana: '')];
+      return [
+        FuriText(
+          text: kanaWord,
+          furigana: '',
+          emphasize: true,
+        )
+      ];
     } else {
       return [
         FuriText(

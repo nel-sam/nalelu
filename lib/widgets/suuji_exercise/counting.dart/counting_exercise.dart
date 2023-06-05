@@ -49,7 +49,7 @@ class CountingExercise extends StatelessWidget {
                         ],
                       ),
                       Text(
-                        '× ${navNotifier.getActive().count}',
+                        '${navNotifier.getActive().count}${navNotifier.getActive().counter}',
                         style: TextStyle(fontSize: 40),
                       ),
                     ],

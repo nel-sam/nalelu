@@ -4,7 +4,7 @@ import 'package:nrs_flutter_lib/widgets/n_free_form_entry.dart';
 class NaFreeFormEntryWrapper extends StatelessWidget {
   final Function(String) onChanged;
   final Function onCorrect;
-
+  final bool isAnswerCentered;
   final String initialValue;
   final List<String> correctValues;
   final NFreeFormWidths widthType;
@@ -13,6 +13,7 @@ class NaFreeFormEntryWrapper extends StatelessWidget {
 
   NaFreeFormEntryWrapper({
     Key? key,
+    this.isAnswerCentered = true,
     required this.onChanged,
     required this.onCorrect,
     required this.initialValue,
@@ -25,6 +26,7 @@ class NaFreeFormEntryWrapper extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NFreeFormEntry(
+      isAnswerCentered: isAnswerCentered,
       showMaxLength: showMaxLength,
       widthType: NFreeFormWidths.half,
       hintValue: hintValue,

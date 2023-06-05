@@ -27,8 +27,7 @@ class _DoushiExerciseLevel1State extends State<DoushiExerciseLevel1> {
         create: (context) => ExerciseNavNotifier(ExerciseType.Doushi),
         child: Consumer<ExerciseNavNotifier>(
           builder: (context, navNotifier, child) => Scaffold(
-            appBar: Nrs.NrsAppBar(
-                title: '${NA.t('verbs')} 1 (ため口)', context: context),
+            appBar: Nrs.NrsAppBar(title: NA.t('verbs'), context: context),
             body: Center(
               child: CustomScrollView(
                 slivers: [

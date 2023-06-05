@@ -40,9 +40,9 @@ class CountGenerator {
           count: count.digit,
           correctAnswers: [
             count.written + 'ねん',
+            count.kanji + '年',
             count.written + '年',
             count.kanji + 'ねん',
-            count.kanji + '年',
           ],
           counter: '年',
         );
@@ -79,9 +79,9 @@ class CountGenerator {
           count: count.digit,
           correctAnswers: [
             count.written + 'び',
+            count.kanji + '尾',
             count.written + '尾',
             count.kanji + 'び',
-            count.kanji + '尾'
           ],
           counter: '尾',
         );
