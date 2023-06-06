@@ -174,6 +174,66 @@ var doushiBank = [
           JWord(kanaWord: 'いっていない', kanjiWord: '要っていない'),
     ),
   ),
+  Doushi(
+      isIrregular: false,
+      infinitive: '話す',
+      infinitiveFurigana: 'はなす',
+      root: '話し',
+      translation: NA.t('hanasu'),
+      casual: DoushiConj(
+        present: JWord(kanaWord: 'はなす', kanjiWord: '話す'),
+        pastSimple: JWord(kanaWord: 'はなした', kanjiWord: '話した'),
+        negative: JWord(kanaWord: 'はなさない', kanjiWord: '話さない'),
+        negativePast: JWord(kanaWord: 'はなさなかった', kanjiWord: '話さなかった'),
+        presentProgressive: JWord(kanaWord: 'はなしている', kanjiWord: '話している'),
+        negativePresentProgressive:
+            JWord(kanaWord: 'はなしていない', kanjiWord: '話していない'),
+      )),
+  Doushi(
+      isIrregular: false,
+      infinitive: '読む',
+      infinitiveFurigana: 'よむ',
+      root: '読み',
+      translation: NA.t('yomu'),
+      casual: DoushiConj(
+        present: JWord(kanaWord: 'よむ', kanjiWord: '読む'),
+        pastSimple: JWord(kanaWord: 'よんだ', kanjiWord: '読んだ'),
+        negative: JWord(kanaWord: 'よまない', kanjiWord: '読まない'),
+        negativePast: JWord(kanaWord: 'よまなかった', kanjiWord: '読まなかった'),
+        presentProgressive: JWord(kanaWord: 'よんでいる', kanjiWord: '読んでいる'),
+        negativePresentProgressive:
+            JWord(kanaWord: 'よんていない', kanjiWord: '読んていない'),
+      )),
+  Doushi(
+      isIrregular: false,
+      infinitive: '書く',
+      infinitiveFurigana: 'かく',
+      root: '書き',
+      translation: NA.t('kaku'),
+      casual: DoushiConj(
+        present: JWord(kanaWord: 'かく', kanjiWord: '書く'),
+        pastSimple: JWord(kanaWord: 'かいた', kanjiWord: '書いた'),
+        negative: JWord(kanaWord: 'かかない', kanjiWord: '書かない'),
+        negativePast: JWord(kanaWord: 'かかなかった', kanjiWord: '書かなかった'),
+        presentProgressive: JWord(kanaWord: 'かいている', kanjiWord: '書いている'),
+        negativePresentProgressive:
+            JWord(kanaWord: 'かいていない', kanjiWord: '書いていない'),
+      )),
+  Doushi(
+      isIrregular: false,
+      infinitive: '泳ぐ',
+      infinitiveFurigana: 'およぐ',
+      root: '泳ぎ',
+      translation: NA.t('oyogu'),
+      casual: DoushiConj(
+        present: JWord(kanaWord: 'およぐ', kanjiWord: '泳ぐ'),
+        pastSimple: JWord(kanaWord: 'およいだ', kanjiWord: '泳いだ'),
+        negative: JWord(kanaWord: 'およがない', kanjiWord: '泳がない'),
+        negativePast: JWord(kanaWord: 'およがなかった', kanjiWord: '泳がなかった'),
+        presentProgressive: JWord(kanaWord: 'およいでいる', kanjiWord: '泳いでいる'),
+        negativePresentProgressive:
+            JWord(kanaWord: 'およいていない', kanjiWord: '泳いていない'),
+      ))
 ];
 
 class Doushi {

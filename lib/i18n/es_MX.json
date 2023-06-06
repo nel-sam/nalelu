@@ -11,6 +11,10 @@
   "aruku": "Caminar",
   "iru_to_be": "Estar",
   "iru_need": "Necesitar",
+  "hanasu": "Hablar",
+  "yomu": "Leer",
+  "kaku": "Escribir",
+  "oyogu": "Nadar",
   "days": "Días",
   "months": "Meses",
   "years": "Años",
@@ -348,7 +352,7 @@
   "bokokugowasupeingo": "Mi idioma nativo es el español",
   "juugatsuhasamuidesuka": "¿Hace frío en octubre?",
   "kyonenamerikaniittta": "Fui a Estados Unidos el año pasado",
-  
+
   "一": "uno",
   "二": "dos",
   "三": "tres",
