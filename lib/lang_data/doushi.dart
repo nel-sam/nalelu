@@ -4,6 +4,230 @@ import 'package:nalelu/na_helpers.dart';
 var doushiBank = [
   Doushi(
     isIrregular: false,
+    infinitive: '教える',
+    infinitiveFurigana: 'おしえる',
+    root: '教え',
+    translation: NA.t('oshieru'),
+    casual: DoushiConj(
+      present: JWord(kanaWord: 'おしえる', kanjiWord: '教える'),
+      pastSimple: JWord(kanaWord: 'おしえた', kanjiWord: '教えた'),
+      negative: JWord(kanaWord: 'おしえない', kanjiWord: '教えない'),
+      negativePast: JWord(kanaWord: 'おしえなかった', kanjiWord: '教えなかった'),
+      presentProgressive: JWord(kanaWord: 'おしえている', kanjiWord: '教えている'),
+      negativePresentProgressive:
+          JWord(kanaWord: 'おしえていない', kanjiWord: '教えていない'),
+    ),
+  ),
+  Doushi(
+    isIrregular: false,
+    infinitive: '頼む',
+    infinitiveFurigana: 'たのむ',
+    root: '頼も',
+    translation: NA.t('tanomu'),
+    casual: DoushiConj(
+      present: JWord(kanaWord: 'たのむ', kanjiWord: '頼む'),
+      pastSimple: JWord(kanaWord: 'たのんだ', kanjiWord: '頼んだ'),
+      negative: JWord(kanaWord: 'たのまない', kanjiWord: '頼まない'),
+      negativePast: JWord(kanaWord: 'たのまなかった', kanjiWord: '頼まなかった'),
+      presentProgressive: JWord(kanaWord: 'たのんでいる', kanjiWord: '頼んでいる'),
+      negativePresentProgressive:
+          JWord(kanaWord: 'たのんでいない', kanjiWord: '頼んでいない'),
+    ),
+  ),
+  Doushi(
+    isIrregular: false,
+    infinitive: '歌う',
+    infinitiveFurigana: 'うた',
+    root: '歌い',
+    translation: NA.t('utau'),
+    casual: DoushiConj(
+      present: JWord(kanaWord: 'うたう', kanjiWord: '歌う'),
+      pastSimple: JWord(kanaWord: 'うたった', kanjiWord: '歌った'),
+      negative: JWord(kanaWord: 'うたわない', kanjiWord: '歌わない'),
+      negativePast: JWord(kanaWord: 'うたわなかった', kanjiWord: '歌わなかった'),
+      presentProgressive: JWord(kanaWord: 'うたっている', kanjiWord: '歌っている'),
+      negativePresentProgressive:
+          JWord(kanaWord: 'うたっていない', kanjiWord: '歌っていない'),
+    ),
+  ),
+  Doushi(
+    isIrregular: false,
+    infinitive: '喋る',
+    infinitiveFurigana: 'しゃべ',
+    root: 'しゃべる',
+    translation: NA.t('shaberu'),
+    casual: DoushiConj(
+      present: JWord(kanaWord: 'しゃべる', kanjiWord: '喋る'),
+      pastSimple: JWord(kanaWord: 'しゃべった', kanjiWord: '喋った'),
+      negative: JWord(kanaWord: 'しゃべらない', kanjiWord: '喋らない'),
+      negativePast: JWord(kanaWord: 'しゃべらなかった', kanjiWord: '喋らなかった'),
+      presentProgressive: JWord(kanaWord: 'しゃべっている', kanjiWord: '喋っている'),
+      negativePresentProgressive:
+          JWord(kanaWord: 'しゃべっていない', kanjiWord: '喋っていない'),
+    ),
+  ),
+  Doushi(
+    isIrregular: false,
+    infinitive: '答える',
+    infinitiveFurigana: 'こたえ',
+    root: '答え',
+    translation: NA.t('kotaeru'),
+    casual: DoushiConj(
+      present: JWord(kanaWord: 'こたえる', kanjiWord: '答える'),
+      pastSimple: JWord(kanaWord: 'こたえた', kanjiWord: '答えた'),
+      negative: JWord(kanaWord: 'こたえない', kanjiWord: '答えない'),
+      negativePast: JWord(kanaWord: 'こたえなかった', kanjiWord: '答えなかった'),
+      presentProgressive: JWord(kanaWord: 'こたえている', kanjiWord: '答えている'),
+      negativePresentProgressive:
+          JWord(kanaWord: 'こたえていない', kanjiWord: '答えていない'),
+    ),
+  ),
+  Doushi(
+    isIrregular: true,
+    infinitive: '掃除する',
+    infinitiveFurigana: 'そうじする',
+    root: 'そうじ',
+    translation: NA.t('soujisuru'),
+    casual: DoushiConj(
+      present: JWord(kanaWord: 'そうじする', kanjiWord: '掃除する'),
+      pastSimple: JWord(kanaWord: 'そうじした', kanjiWord: '掃除した'),
+      negative: JWord(kanaWord: 'そうじしない', kanjiWord: '掃除しない'),
+      negativePast: JWord(kanaWord: 'そうじしなかった', kanjiWord: '掃除しなかった'),
+      presentProgressive: JWord(kanaWord: 'そうじしている', kanjiWord: '掃除している'),
+      negativePresentProgressive:
+          JWord(kanaWord: 'そうじしていない', kanjiWord: '掃除していない'),
+    ),
+  ),
+  Doushi(
+    isIrregular: true,
+    infinitive: '散歩する',
+    infinitiveFurigana: 'さんぽする',
+    root: 'さんぽ',
+    translation: NA.t('sanposuru'),
+    casual: DoushiConj(
+      present: JWord(kanaWord: 'さんぽする', kanjiWord: '散歩する'),
+      pastSimple: JWord(kanaWord: 'さんぽした', kanjiWord: '散歩した'),
+      negative: JWord(kanaWord: 'さんぽしない', kanjiWord: '散歩しない'),
+      negativePast: JWord(kanaWord: 'さんぽしなかった', kanjiWord: '散歩しなかった'),
+      presentProgressive: JWord(kanaWord: 'さんぽしている', kanjiWord: '散歩している'),
+      negativePresentProgressive:
+          JWord(kanaWord: 'さんぽしていない', kanjiWord: '散歩していない'),
+    ),
+  ),
+  Doushi(
+    isIrregular: true,
+    infinitive: '料理する',
+    infinitiveFurigana: 'りょうりする',
+    root: '料理',
+    translation: NA.t('ryourisuru'),
+    casual: DoushiConj(
+      present: JWord(kanaWord: 'りょうりする', kanjiWord: '料理する'),
+      pastSimple: JWord(kanaWord: 'りょうりした', kanjiWord: '料理した'),
+      negative: JWord(kanaWord: 'りょうりしない', kanjiWord: '料理しない'),
+      negativePast: JWord(kanaWord: 'りょうりしなかった', kanjiWord: '料理しなかった'),
+      presentProgressive: JWord(kanaWord: 'りょうりしている', kanjiWord: '料理している'),
+      negativePresentProgressive:
+          JWord(kanaWord: 'りょうりしていない', kanjiWord: '料理していない'),
+    ),
+  ),
+  Doushi(
+    isIrregular: true,
+    infinitive: '練習する',
+    infinitiveFurigana: 'れんしゅうする',
+    root: '練習',
+    translation: NA.t('renshuusuru'),
+    casual: DoushiConj(
+      present: JWord(kanaWord: 'れんしゅうする', kanjiWord: '練習する'),
+      pastSimple: JWord(kanaWord: 'れんしゅうした', kanjiWord: '練習した'),
+      negative: JWord(kanaWord: 'れんしゅうしない', kanjiWord: '練習しない'),
+      negativePast: JWord(kanaWord: 'れんしゅうしなかった', kanjiWord: '練習しなかった'),
+      presentProgressive: JWord(kanaWord: 'れんしゅうしている', kanjiWord: '練習している'),
+      negativePresentProgressive:
+          JWord(kanaWord: 'れんしゅうしていない', kanjiWord: '練習していない'),
+    ),
+  ),
+  Doushi(
+    isIrregular: true,
+    infinitive: '結婚する',
+    infinitiveFurigana: 'けっこんする',
+    root: '結婚',
+    translation: NA.t('kekkonsuru'),
+    casual: DoushiConj(
+      present: JWord(kanaWord: 'けっこんする', kanjiWord: '結婚する'),
+      pastSimple: JWord(kanaWord: 'けっこんした', kanjiWord: '結婚した'),
+      negative: JWord(kanaWord: 'けっこんしない', kanjiWord: '結婚しない'),
+      negativePast: JWord(kanaWord: 'けっこんしなかった', kanjiWord: '結婚しなかった'),
+      presentProgressive: JWord(kanaWord: 'けっこんしている', kanjiWord: '結婚している'),
+      negativePresentProgressive:
+          JWord(kanaWord: 'けっこんしていない', kanjiWord: '結婚していない'),
+    ),
+  ),
+  Doushi(
+    isIrregular: true,
+    infinitive: '勉強する',
+    infinitiveFurigana: 'べんきょう',
+    root: '勉強',
+    translation: NA.t('benkyousuru'),
+    casual: DoushiConj(
+      present: JWord(kanaWord: 'べんきょうする', kanjiWord: '勉強する'),
+      pastSimple: JWord(kanaWord: 'べんきょうした', kanjiWord: '勉強した'),
+      negative: JWord(kanaWord: 'べんきょうしない', kanjiWord: '勉強しない'),
+      negativePast: JWord(kanaWord: 'べんきょうしなかった', kanjiWord: '勉強しなかった'),
+      presentProgressive: JWord(kanaWord: 'べんきょうしている', kanjiWord: '勉強している'),
+      negativePresentProgressive:
+          JWord(kanaWord: 'べんきょうしていない', kanjiWord: '勉強していない'),
+    ),
+  ),
+  Doushi(
+    isIrregular: true,
+    infinitive: '宿題する',
+    infinitiveFurigana: 'しゅくだい',
+    root: '宿題',
+    translation: NA.t('shukudaisuru'),
+    casual: DoushiConj(
+      present: JWord(kanaWord: 'しゅくだいする', kanjiWord: '宿題する'),
+      pastSimple: JWord(kanaWord: 'しゅくだいした', kanjiWord: '宿題した'),
+      negative: JWord(kanaWord: 'しゅくだいしない', kanjiWord: '宿題しない'),
+      negativePast: JWord(kanaWord: 'しゅくだいしなかった', kanjiWord: '宿題しなかった'),
+      presentProgressive: JWord(kanaWord: 'しゅくだいしている', kanjiWord: '宿題している'),
+      negativePresentProgressive:
+          JWord(kanaWord: 'しゅくだいしていない', kanjiWord: '宿題していない'),
+    ),
+  ),
+  Doushi(
+    isIrregular: true,
+    infinitive: '復習する',
+    infinitiveFurigana: 'ふくしゅう',
+    root: '復習',
+    translation: NA.t('fukushuusuru'),
+    casual: DoushiConj(
+      present: JWord(kanaWord: 'ふくしゅうする', kanjiWord: '復習する'),
+      pastSimple: JWord(kanaWord: 'ふくしゅうした', kanjiWord: '復習した'),
+      negative: JWord(kanaWord: 'ふくしゅうしない', kanjiWord: '復習しない'),
+      negativePast: JWord(kanaWord: 'ふくしゅうしなかった', kanjiWord: '復習しなかった'),
+      presentProgressive: JWord(kanaWord: 'ふくしゅうしている', kanjiWord: '復習している'),
+      negativePresentProgressive:
+          JWord(kanaWord: 'ふくしゅうしていない', kanjiWord: '復習していない'),
+    ),
+  ),
+  Doushi(
+    isIrregular: true,
+    infinitive: '電話する',
+    infinitiveFurigana: 'でんわ',
+    root: '電話し',
+    translation: NA.t('denwasuru'),
+    casual: DoushiConj(
+      present: JWord(kanaWord: 'でんわする', kanjiWord: '電話する'),
+      pastSimple: JWord(kanaWord: 'でんわした', kanjiWord: '電話した'),
+      negative: JWord(kanaWord: 'でんわしない', kanjiWord: '電話しない'),
+      negativePast: JWord(kanaWord: 'でんわしなかった', kanjiWord: '電話しなかった'),
+      presentProgressive: JWord(kanaWord: 'でんわしている', kanjiWord: '電話している'),
+      negativePresentProgressive:
+          JWord(kanaWord: 'でんわしていない', kanjiWord: '電話していない'),
+    ),
+  ),
+  Doushi(
+    isIrregular: false,
     infinitive: '遊ぶ',
     infinitiveFurigana: 'あそ',
     root: '遊び',
@@ -34,7 +258,7 @@ var doushiBank = [
           JWord(kanaWord: 'あけていない', kanjiWord: '開けていない'),
     ),
   ),
-Doushi(
+  Doushi(
     isIrregular: false,
     infinitive: '出る',
     infinitiveFurigana: 'でる',
@@ -46,8 +270,7 @@ Doushi(
       negative: JWord(kanaWord: 'でない', kanjiWord: '出ない'),
       negativePast: JWord(kanaWord: 'でなかった', kanjiWord: '出なかった'),
       presentProgressive: JWord(kanaWord: 'でている', kanjiWord: '出ている'),
-      negativePresentProgressive:
-          JWord(kanaWord: 'でていない', kanjiWord: '出ていない'),
+      negativePresentProgressive: JWord(kanaWord: 'でていない', kanjiWord: '出ていない'),
     ),
   ),
   Doushi(
