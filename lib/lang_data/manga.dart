@@ -4,6 +4,309 @@ import 'package:nalelu/state/manga/models.dart';
 import '../na_helpers.dart';
 
 final mangaWordsBank = [
+  MangaExerciseModel(imageUrl: 'assets/manga/coffee.jpeg', phrases: [
+    Phrase(
+        // 何か飲みたい
+        translation: NA.t('nanikanomitai'),
+        phraseParts: [
+          PhrasePart(
+            furiTexts: [
+              FuriText(text: '何', furigana: 'なに'),
+              FuriText(text: 'か'),
+              FuriText(text: '飲', furigana: 'の'),
+              FuriText(text: 'みたい'),
+            ],
+          ),
+        ],
+        downPercentage: 10,
+        rightPercentage: 10),
+    Phrase(
+      // コーヒーは飲みますか
+      translation: NA.t('koohiihanomimasuka'),
+      phraseParts: [
+        PhrasePart(
+          furiTexts: [
+            FuriText(text: 'コーヒーは'),
+          ],
+        ),
+        PhrasePart(isAnswerable: true, furiTexts: [
+          FuriText(text: '飲', furigana: 'の'),
+          FuriText(text: 'み'),
+        ]),
+        PhrasePart(furiTexts: [
+          FuriText(text: 'ますか'),
+        ]),
+      ],
+      downPercentage: 60,
+      rightPercentage: 90,
+    ),
+    Phrase(
+        // お茶しか飲まない
+        translation: NA.t('ochashikanomanai'),
+        phraseParts: [
+          PhrasePart(isAnswerable: true, furiTexts: [
+            FuriText(
+              text: 'お',
+            ),
+            FuriText(
+              text: '茶',
+              furigana: 'ちゃ',
+            ),
+          ]),
+          PhrasePart(furiTexts: [
+            FuriText(
+              text: 'しか',
+            ),
+            FuriText(
+              text: '飲',
+              furigana: 'の',
+            ),
+            FuriText(
+              text: 'まない',
+            ),
+          ]),
+        ],
+        downPercentage: 90,
+        rightPercentage: 10),
+  ]),
+  MangaExerciseModel(imageUrl: 'assets/manga/stars.jpeg', phrases: [
+    Phrase(
+        // 星が五つしか見えない
+        translation: NA.t('hoshigaitsutsushikamienai'),
+        phraseParts: [
+          PhrasePart(
+            furiTexts: [
+              FuriText(text: '星', furigana: 'ほし'),
+              FuriText(text: 'が'),
+              FuriText(text: '五', furigana: 'いつ'),
+              FuriText(text: 'つしか'),
+            ],
+          ),
+          PhrasePart(
+            isAnswerable: true,
+            furiTexts: [
+              FuriText(text: '見', furigana: 'み'),
+              FuriText(text: 'え'),
+            ],
+          ),
+          PhrasePart(
+            furiTexts: [
+              FuriText(text: 'ない'),
+            ],
+          ),
+        ],
+        downPercentage: 20,
+        rightPercentage: 90),
+    Phrase(
+      // もっと星が見えるよ
+      translation: NA.t('mottohoshigamieruyo'),
+      phraseParts: [
+        PhrasePart(
+          furiTexts: [
+            FuriText(text: 'もっと'),
+          ],
+        ),
+        PhrasePart(isAnswerable: true, furiTexts: [
+          FuriText(text: '星', furigana: 'ほし'),
+        ]),
+        PhrasePart(furiTexts: [
+          FuriText(text: 'が'),
+          FuriText(text: '見', furigana: 'み'),
+          FuriText(text: 'えるよ'),
+        ]),
+      ],
+      downPercentage: 70,
+      rightPercentage: 10,
+    ),
+    Phrase(
+        // 本当ね
+        translation: NA.t('hontoune'),
+        phraseParts: [
+          PhrasePart(furiTexts: [
+            FuriText(
+              text: '本',
+              furigana: 'ほん',
+            ),
+            FuriText(
+              text: '当',
+              furigana: 'とう',
+            ),
+            FuriText(
+              text: 'ね',
+            ),
+          ]),
+        ],
+        downPercentage: 95,
+        rightPercentage: 90),
+  ]),
+  MangaExerciseModel(imageUrl: 'assets/manga/sunny_day.jpeg', phrases: [
+    Phrase(
+        // 今日は日が強い
+        translation: NA.t('kyouhahigatsuyoi'),
+        phraseParts: [
+          PhrasePart(
+            furiTexts: [
+              FuriText(text: '今日', furigana: 'きょう'),
+              FuriText(text: 'は'),
+              FuriText(text: '日', furigana: 'ひ'),
+              FuriText(text: 'が'),
+              FuriText(text: '強', furigana: 'つよ'),
+              FuriText(text: 'い'),
+            ],
+          ),
+        ],
+        downPercentage: 20,
+        rightPercentage: 80),
+    Phrase(
+      // 飲み物を買いました
+      translation: NA.t('nomimotokaimashita'),
+      phraseParts: [
+        PhrasePart(
+          furiTexts: [
+            FuriText(text: '飲', furigana: 'の'),
+            FuriText(
+              text: 'み',
+            ),
+            FuriText(text: '物', furigana: 'もの'),
+            FuriText(text: 'を'),
+          ],
+        ),
+        PhrasePart(isAnswerable: true, furiTexts: [
+          FuriText(text: '買', furigana: 'か'),
+        ]),
+        PhrasePart(furiTexts: [
+          FuriText(text: 'いました'),
+        ]),
+      ],
+      downPercentage: 60,
+      rightPercentage: 10,
+    ),
+    Phrase(
+        // 飲みに行こう
+        translation: NA.t('nominikou'),
+        phraseParts: [
+          PhrasePart(isAnswerable: true, furiTexts: [
+            FuriText(
+              text: '飲',
+              furigana: 'の',
+            ),
+          ]),
+          PhrasePart(furiTexts: [
+            FuriText(
+              text: 'み',
+            ),
+            FuriText(text: 'に'),
+            FuriText(text: '行', furigana: 'い'),
+            FuriText(text: 'こう'),
+          ]),
+        ],
+        downPercentage: 90,
+        rightPercentage: 80),
+  ]),
+  MangaExerciseModel(imageUrl: 'assets/manga/music.jpeg', phrases: [
+    Phrase(
+        // どんな音楽が好き
+        translation: NA.t('donnaongakugasuki'),
+        phraseParts: [
+          PhrasePart(
+            furiTexts: [
+              FuriText(text: 'どんな'),
+            ],
+          ),
+          PhrasePart(isAnswerable: true, furiTexts: [
+            FuriText(text: '音', furigana: 'おん'),
+            FuriText(text: '楽', furigana: 'がく'),
+          ]),
+          PhrasePart(furiTexts: [
+            FuriText(text: 'が'),
+            FuriText(text: '好', furigana: 'す'),
+            FuriText(text: 'き'),
+          ]),
+        ],
+        downPercentage: 50,
+        rightPercentage: 10),
+    Phrase(
+      // ロックとポップ
+      translation: NA.t('rokkutopoppu'),
+      phraseParts: [
+        PhrasePart(
+          furiTexts: [
+            FuriText(text: 'ロックとポップ'),
+          ],
+        ),
+      ],
+      downPercentage: 72,
+      rightPercentage: 85,
+    ),
+    Phrase(
+        // ロックとポップも好き
+        translation: NA.t('rokkutopoppumosuki'),
+        phraseParts: [
+          PhrasePart(furiTexts: [
+            FuriText(text: 'ロックとポップも'),
+          ]),
+          PhrasePart(isAnswerable: true, furiTexts: [
+            FuriText(text: '好', furigana: 'す'),
+          ]),
+          PhrasePart(furiTexts: [
+            FuriText(text: 'き'),
+          ]),
+        ],
+        downPercentage: 95,
+        rightPercentage: 10),
+  ]),
+  MangaExerciseModel(imageUrl: 'assets/manga/goal.jpeg', phrases: [
+    Phrase(
+        // ルーベンは何ゴール挙めました
+        translation: NA.t('rubenhanangouruamemashita'),
+        phraseParts: [
+          PhrasePart(
+            furiTexts: [
+              FuriText(text: 'ルーベンは'),
+            ],
+          ),
+          PhrasePart(isAnswerable: true, furiTexts: [
+            FuriText(text: '何', furigana: 'なん'),
+          ]),
+          PhrasePart(furiTexts: [
+            FuriText(text: 'ゴール'),
+            FuriText(text: '挙', furigana: 'あ'),
+            FuriText(text: 'めました'),
+          ]),
+        ],
+        downPercentage: 2,
+        rightPercentage: 50),
+    Phrase(
+      // 彼は三ゴールを挙げた
+      translation: NA.t('karehasangouruwoageta'),
+      phraseParts: [
+        PhrasePart(
+          furiTexts: [
+            FuriText(text: '彼', furigana: '彼'),
+            FuriText(text: 'は'),
+            FuriText(text: '三', furigana: 'さん'),
+            FuriText(text: 'ゴールを'),
+          ],
+        ),
+        PhrasePart(isAnswerable: true, furiTexts: [
+          FuriText(text: '挙', furigana: 'あ'),
+          FuriText(text: 'げた'),
+        ]),
+      ],
+      downPercentage: 60,
+      rightPercentage: 10,
+    ),
+    Phrase(
+        // やったー
+        translation: NA.t('yatta'),
+        phraseParts: [
+          PhrasePart(furiTexts: [
+            FuriText(text: 'やったー'),
+          ]),
+        ],
+        downPercentage: 90,
+        rightPercentage: 80),
+  ]),
   MangaExerciseModel(imageUrl: 'assets/manga/rainy_season.jpeg', phrases: [
     Phrase(
       // 雨がいっぱい降っているね
@@ -77,7 +380,7 @@ final mangaWordsBank = [
   ]),
   MangaExerciseModel(imageUrl: 'assets/manga/cats.jpeg', phrases: [
     Phrase(
-      // 猫がいると知らなかった
+        // 猫がいると知らなかった
         translation: NA.t('nekoirutoshiranakatta'),
         phraseParts: [
           PhrasePart(furiTexts: [
@@ -109,7 +412,7 @@ final mangaWordsBank = [
       downPercentage: 30,
     ),
     Phrase(
-      // かわいいね！
+        // かわいいね！
         translation: NA.t('kawaiine'),
         phraseParts: [
           PhrasePart(furiTexts: [
@@ -121,7 +424,7 @@ final mangaWordsBank = [
   ]),
   MangaExerciseModel(imageUrl: 'assets/manga/birthday.jpeg', phrases: [
     Phrase(
-      // 誕生日おめでとう
+        // 誕生日おめでとう
         translation: NA.t('otanjoubiomedetou'),
         phraseParts: [
           PhrasePart(
@@ -147,7 +450,7 @@ final mangaWordsBank = [
       rightPercentage: 5,
     ),
     Phrase(
-      // 二十一歳になったよね？
+        // 二十一歳になったよね？
         translation: NA.t('nijuuissaininattayone'),
         phraseParts: [
           PhrasePart(isAnswerable: true, furiTexts: [
@@ -162,7 +465,7 @@ final mangaWordsBank = [
   ]),
   MangaExerciseModel(imageUrl: 'assets/manga/dont_run.jpeg', phrases: [
     Phrase(
-      // いってきます！
+        // いってきます！
         translation: NA.t('ittekimasu'),
         phraseParts: [
           PhrasePart(
@@ -174,7 +477,7 @@ final mangaWordsBank = [
         downPercentage: 10,
         rightPercentage: 60),
     Phrase(
-      // 走らないでよ!
+        // 走らないでよ!
         translation: NA.t('hashiranaide'),
         phraseParts: [
           PhrasePart(
@@ -191,7 +494,7 @@ final mangaWordsBank = [
   ]),
   MangaExerciseModel(imageUrl: 'assets/manga/phone_walking.jpeg', phrases: [
     Phrase(
-      // 今何をしてるの？
+        // 今何をしてるの？
         translation: NA.t('imananishiteruno'),
         phraseParts: [
           PhrasePart(
@@ -229,7 +532,7 @@ final mangaWordsBank = [
       rightPercentage: 60,
     ),
     Phrase(
-       // そうか、あと三十分に会える？
+        // そうか、あと三十分に会える？
         translation: NA.t('sokkaato15funniaeru'),
         phraseParts: [
           PhrasePart(furiTexts: [
