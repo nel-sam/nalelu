@@ -7,7 +7,7 @@
   "hairu": "To go",
   "miru": "To see",
   "kiku": "To listen",
-  "Motsu": "To carry, to hold",
+  "motsu": "To carry, to hold",
   "aruku": "To walk",
   "iru_to_be": "To be",
   "iru_need": "To need",
@@ -376,7 +376,6 @@
   "nanikanomitai": "I want something to drink",
   "koohiihanomimasuka": "Would you like some coffee?",
   "ochashikanomanai": "I only drink tea",
-
   "一": "one",
   "二": "two",
   "三": "three",
