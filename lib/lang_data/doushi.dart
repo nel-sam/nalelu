@@ -213,7 +213,7 @@ Doushi(
     infinitive: '洗う',
     infinitiveFurigana: 'あらう',
     root: '洗い',
-    translation: NA.t('to wash'),
+    translation: NA.t('arau'),
     casual: DoushiConj(
       present: JWord(kanaWord: 'あらう', kanjiWord: '洗う'),
       pastSimple: JWord(kanaWord: 'あらった', kanjiWord: '洗った'),
@@ -229,7 +229,7 @@ Doushi(
     infinitive: '付ける',
     infinitiveFurigana: 'つける',
     root: '付け',
-    translation: NA.t('to attach'),
+    translation: NA.t('tsukeru'),
     casual: DoushiConj(
       present: JWord(kanaWord: 'つける', kanjiWord: '付ける'),
       pastSimple: JWord(kanaWord: 'つけた', kanjiWord: '付けた'),
