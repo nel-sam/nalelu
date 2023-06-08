@@ -1042,18 +1042,18 @@ var doushiBank = [
   ),
   Doushi(
     isIrregular: false,
-    infinitive: '届ける',
-    infinitiveFurigana: 'とどける',
-    root: '届け',
+    infinitive: '届く',
+    infinitiveFurigana: 'とどく',
+    root: '届',
     translation: NA.t('todokeru'),
     casual: DoushiConj(
-      present: JWord(kanaWord: 'とどける', kanjiWord: '届ける'),
-      pastSimple: JWord(kanaWord: 'とどけた', kanjiWord: '届けた'),
-      negative: JWord(kanaWord: 'とどけない', kanjiWord: '届けない'),
-      negativePast: JWord(kanaWord: 'とどけなかった', kanjiWord: '届けなかった'),
-      presentProgressive: JWord(kanaWord: 'とどけている', kanjiWord: '届けている'),
+      present: JWord(kanaWord: 'とどく', kanjiWord: '届く'),
+      pastSimple: JWord(kanaWord: 'とどいた', kanjiWord: '届いた'),
+      negative: JWord(kanaWord: 'とどかない', kanjiWord: '届かない'),
+      negativePast: JWord(kanaWord: 'とどかなかった', kanjiWord: '届かなかった'),
+      presentProgressive: JWord(kanaWord: 'とどいている', kanjiWord: '届いている'),
       negativePresentProgressive:
-          JWord(kanaWord: 'とどけていない', kanjiWord: '届けていない'),
+          JWord(kanaWord: 'とどいていない', kanjiWord: '届いていない'),
     ),
   ),
   Doushi(
