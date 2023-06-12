@@ -52,14 +52,23 @@ class _TutorialContainerState extends State<TutorialContainer> {
               onTap: () {
                 overlayEntry.remove();
               },
-              child: NTooltip(
-                message: widget.instructions,
-                child: Container(
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(8.0),
-                    border: Border.all(color: widget.color, width: 3),
+              child: Column(
+                children: [
+                  NTooltip(
+                    message: widget.instructions,
+                    child: Container(
+                      decoration: BoxDecoration(
+                        borderRadius: BorderRadius.circular(8.0),
+                        border: Border.all(color: widget.color, width: 3),
+                      ),
+                    ),
                   ),
-                ),
+                  IconButton(
+                    onPressed: () {
+                      overlayEntry.remove();
+                    }
+                  , icon: Icon(Icons.close))
+                ],
               ),
             ),
           ),

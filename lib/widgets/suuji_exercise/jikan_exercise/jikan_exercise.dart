@@ -15,6 +15,8 @@ import 'package:nrs_flutter_lib/widgets/n_footer_menu.dart';
 import 'package:nrs_flutter_lib/widgets/n_info_button.dart';
 import 'package:provider/provider.dart';
 
+import '../../shared/tutorial_container.dart';
+
 class JikanExercise extends StatelessWidget {
   final double textFieldWidth = 250;
 
@@ -64,7 +66,11 @@ class JikanExercise extends StatelessWidget {
             child: Column(
               children: [
                 NavHeaderWrapper(navNotifier: navNotifier),
-                Clock(time: '${s.hour}:${s.min}:${s.sec}'),
+                TutorialContainer(
+                  instructions:
+                      'This displays a time in hours, minutes, and seconds.',
+                  widget: Clock(time: '${s.hour}:${s.min}:${s.sec}'),
+                ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [

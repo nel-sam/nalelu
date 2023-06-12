@@ -23,11 +23,8 @@ class _NTooltipState extends State<NTooltip> {
   late OverlayEntry overlayEntry;
 
   @override
-  void initState() {
-    super.initState();
-    WidgetsBinding.instance.addPostFrameCallback((_) {
-      showTooltip();
-    });
+  Widget build(BuildContext context) {
+    return widget.child;
   }
 
   @override
@@ -36,10 +33,17 @@ class _NTooltipState extends State<NTooltip> {
     super.dispose();
   }
 
+  @override
+  void initState() {
+    super.initState();
+    WidgetsBinding.instance.addPostFrameCallback((_) {
+      showTooltip();
+    });
+  }
+
   void showTooltip() {
     final RenderBox renderBox = context.findRenderObject() as RenderBox;
     final Offset offset = renderBox.localToGlobal(Offset.zero);
-    final tooltip = Text(widget.message, style: widget.textStyle);
 
     overlayEntry = OverlayEntry(
       builder: (BuildContext context) {
@@ -54,17 +58,13 @@ class _NTooltipState extends State<NTooltip> {
                 borderRadius: BorderRadius.circular(widget.borderRadius),
               ),
               padding: EdgeInsets.symmetric(horizontal: 8.0, vertical: 4.0),
-              child: tooltip,
+              // TODO: Fix wrapping
+              child: Text(widget.message, style: widget.textStyle),
             ),
           ),
         );
       },
     );
     Overlay.of(context).insert(overlayEntry);
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return widget.child;
   }
 }
