@@ -95,18 +95,55 @@ List<Kanji> kanjiBank = [
   //     onYomi: 'セキ、シャク、コク',
   //     kunYomi: 'いし',
   // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('耳'),
-  //     kanji: '耳',
-  //     onYomi: 'ジ',
-  //     kunYomi: 'みみ',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('車'),
-  //     kanji: '車',
-  //     onYomi: 'シャ',
-  //     kunYomi: 'くるま',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
+  Kanji(
+      translation: NA.t('耳'),
+      kanji: '耳',
+      onYomi: 'ジ',
+      kunYomi: 'みみ',
+      phraseAnswers: [
+        PhraseAnswer(
+          // 耳が痛い
+          translation: NA.t('mimigaitai'),
+          phraseParts: [
+            FuriText(text: '耳', furigana: '？', emphasize: true),
+            FuriText(text: 'が'),
+            FuriText(text: '痛', furigana: 'いた'),
+            FuriText(text: 'い'),
+          ],
+          answer: 'みみ',
+        )
+        // TODO: One for onYomi
+      ]),
+  Kanji(
+      translation: NA.t('車'),
+      kanji: '車',
+      onYomi: 'シャ',
+      kunYomi: 'くるま',
+      phraseAnswers: [
+        PhraseAnswer(
+          // 車ないところに行きたい
+          translation: NA.t('kurumanaitokoroniikitai'),
+          phraseParts: [
+            FuriText(text: '車', furigana: '？', emphasize: true),
+            FuriText(text: 'ないところに'),
+            FuriText(text: '行', furigana: 'い'),
+            FuriText(text: 'きたい'),
+          ],
+          answer: 'くるま',
+        ),
+        PhraseAnswer(
+          // 電車で行こう
+          translation: NA.t('denshadeikou'),
+          phraseParts: [
+            FuriText(text: '電', furigana: 'でん', emphasize: true),
+            FuriText(text: '車', furigana: '？', emphasize: true),
+            FuriText(text: 'で'),
+            FuriText(text: '行', furigana: 'い'),
+            FuriText(text: 'こう'),
+          ],
+          answer: 'でんしゃ',
+        ),
+      ]),
   Kanji(
       translation: NA.t('学'),
       kanji: '学',
