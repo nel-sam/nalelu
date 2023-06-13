@@ -8,7 +8,7 @@ class NaFreeFormEntryWrapper extends StatelessWidget {
   final String initialValue;
   final List<String> correctValues;
   final NFreeFormWidths widthType;
-  final String hintValue;
+  final String labelText;
   final bool showMaxLength;
 
   NaFreeFormEntryWrapper({
@@ -19,7 +19,7 @@ class NaFreeFormEntryWrapper extends StatelessWidget {
     required this.initialValue,
     required this.correctValues,
     required this.widthType,
-    required this.hintValue,
+    required this.labelText,
     this.showMaxLength = true,
   }) : super(key: key);
 
@@ -29,7 +29,7 @@ class NaFreeFormEntryWrapper extends StatelessWidget {
       isAnswerCentered: isAnswerCentered,
       showMaxLength: showMaxLength,
       widthType: NFreeFormWidths.half,
-      hintValue: hintValue,
+      labelText: labelText,
       onChanged: (String newValue) {
         // final isOnlyJapaneseText =
         //     RegExp(r'^[ぁ-んァ-ンー一-龥]+$').hasMatch(newValue);

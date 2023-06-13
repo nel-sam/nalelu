@@ -20,7 +20,7 @@ class _CountingExerciseStateAreaState extends State<CountingExerciseStateArea> {
     return NaFreeFormEntryWrapper(
       showMaxLength: false,
       widthType: NFreeFormWidths.half,
-      hintValue: NA.t('counter'),
+      labelText: NA.t('counter'),
       onChanged: (String newValue) => widget.state.updateCount(newValue),
       initialValue: widget.state.userInput,
       correctValues: widget.state.correctAnswers,

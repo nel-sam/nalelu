@@ -89,7 +89,7 @@ class _KanjiExerciseStateArea extends State<KanjiExerciseStateArea> {
                           NaFreeFormEntryWrapper(
                             isAnswerCentered: false,
                             widthType: NFreeFormWidths.full,
-                            hintValue: NA.t('kanjiToHiragana'),
+                            labelText: NA.t('kanjiToHiragana'),
                             onChanged: (String newValue) {
                               widget.state.updateUserInput(inputKey, newValue);
                             },
