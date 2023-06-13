@@ -220,7 +220,7 @@ List<Kanji> kanjiBank = [
             FuriText(text: '父', furigana: '?', emphasize: true),
             FuriText(text: 'さん', emphasize: true),
             FuriText(text: 'と'),
-            FuriText(text: '一緒', furigana: '一緒'),
+            FuriText(text: '一緒', furigana: 'いっしょ'),
             FuriText(text: 'にいる'),
           ],
           answer: 'おとうさん',
