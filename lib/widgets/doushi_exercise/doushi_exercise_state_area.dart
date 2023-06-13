@@ -35,7 +35,9 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
               widget.state.updateUserInput(6, newValue);
             },
             onCorrect: () {
-              setState(() {});
+              WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+                setState(() {});
+              });
             },
           ),
         ),
@@ -51,7 +53,9 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
             widget.state.updateUserInput(0, newValue);
           },
           onCorrect: () {
-            setState(() {});
+            WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+              setState(() {});
+            });
           },
         ),
         VerbInput(
@@ -66,7 +70,9 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
             widget.state.updateUserInput(1, newValue);
           },
           onCorrect: () {
-            setState(() {});
+            WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+              setState(() {});
+            });
           },
         ),
         VerbInput(
@@ -81,7 +87,9 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
             widget.state.updateUserInput(2, newValue);
           },
           onCorrect: () {
-            setState(() {});
+            WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+              setState(() {});
+            });
           },
         ),
         VerbInput(
@@ -96,7 +104,9 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
             widget.state.updateUserInput(3, newValue);
           },
           onCorrect: () {
-            setState(() {});
+            WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+              setState(() {});
+            });
           },
         ),
         widget.state.doushi.casual.presentProgressive.kanjiWord.length != 0
@@ -112,7 +122,9 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
                   widget.state.updateUserInput(4, newValue);
                 },
                 onCorrect: () {
-                  setState(() {});
+                  WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+                    setState(() {});
+                  });
                 },
               )
             : Container(),
@@ -133,7 +145,9 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
                   widget.state.updateUserInput(5, newValue);
                 },
                 onCorrect: () {
-                  setState(() {});
+                  WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+                    setState(() {});
+                  });
                 },
               )
             : Container(),
