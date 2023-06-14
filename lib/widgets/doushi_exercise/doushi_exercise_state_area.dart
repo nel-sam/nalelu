@@ -109,7 +109,7 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
             });
           },
         ),
-        widget.state.doushi.casual.presentProgressive.kanjiWord.length != 0
+        widget.state.doushi.casual.presentProgressive.kanaWord.length != 0
             ? VerbInput(
                 doushi: widget.state.doushi,
                 hintValue: NA.t('presentProgressive'),
@@ -128,8 +128,7 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
                 },
               )
             : Container(),
-        widget.state.doushi.casual.negativePresentProgressive.kanjiWord
-                    .length !=
+        widget.state.doushi.casual.negativePresentProgressive.kanaWord.length !=
                 0
             ? VerbInput(
                 doushi: widget.state.doushi,
