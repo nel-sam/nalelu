@@ -24,23 +24,23 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
             fontSize: Theme.of(context).textTheme.headlineSmall!.fontSize!,
             furiTexts: widget.state.doushi.casual.present.toFuriTexts()),
         NTextSpan(widget.state.doushi.translation),
-        Padding(
-          padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
-          child: VerbInput(
-            doushi: widget.state.doushi,
-            hintValue: NA.t('infinitive'),
-            activeValue: widget.state.getUserInput(6),
-            correctValues: [widget.state.doushi.infinitive],
-            onSubmitted: (String newValue) {
-              widget.state.updateUserInput(6, newValue);
-            },
-            onCorrect: () {
-              WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
-                setState(() {});
-              });
-            },
-          ),
-        ),
+        // Padding(
+        //   padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+        //   child: VerbInput(
+        //     doushi: widget.state.doushi,
+        //     hintValue: NA.t('infinitive'),
+        //     activeValue: widget.state.getUserInput(6),
+        //     correctValues: [widget.state.doushi.infinitive],
+        //     onSubmitted: (String newValue) {
+        //       widget.state.updateUserInput(6, newValue);
+        //     },
+        //     onCorrect: () {
+        //       WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+        //         setState(() {});
+        //       });
+        //     },
+        //   ),
+        // ),
         VerbInput(
           doushi: widget.state.doushi,
           hintValue: NA.t('present'),
