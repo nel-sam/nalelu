@@ -89,12 +89,40 @@ List<Kanji> kanjiBank = [
   //     onYomi: 'モク, ボク',
   //     kunYomi: 'め',
   // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('石'),
-  //     kanji: '石',
-  //     onYomi: 'セキ、シャク、コク',
-  //     kunYomi: 'いし',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
+  Kanji(
+      translation: NA.t('石'),
+      kanji: '石',
+      onYomi: 'セキ、シャク、コク',
+      kunYomi: 'いし',
+      phraseAnswers: [
+        PhraseAnswer(
+          // 彼は石を投げた
+          translation: NA.t('karehaishiotageta'),
+          phraseParts: [
+            FuriText(text: '彼', furigana: 'かれ', emphasize: true),
+            FuriText(text: 'は'),
+            FuriText(text: '石', furigana: '？', emphasize: true),
+            FuriText(text: 'を'),
+            FuriText(text: '投', furigana: 'な'),
+            FuriText(text: 'げた'),
+          ],
+          answer: 'いし',
+        ),
+        PhraseAnswer(
+          // 石油は悪いですか？
+          translation: NA.t('sekiyuhawaruidesuka'),
+          phraseParts: [
+            FuriText(text: '石', furigana: '？', emphasize: true),
+            FuriText(text: '油', furigana: 'ゆ', emphasize: true),
+            FuriText(text: 'は'),
+            FuriText(text: '悪', furigana: 'わる'),
+            FuriText(text: 'い'),
+            FuriText(text: 'です'),
+            FuriText(text: 'か？'),
+          ],
+          answer: 'せきゆ',
+        ),
+      ]),
   Kanji(
       translation: NA.t('耳'),
       kanji: '耳',
