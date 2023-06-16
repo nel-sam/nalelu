@@ -78,7 +78,7 @@ class NaleluApp extends StatelessWidget {
                         : null),
                 trackColor: MaterialStateProperty.resolveWith((states) =>
                     states.contains(MaterialState.selected)
-                        ? primaryColor
+                        ? primaryColor.withOpacity(0.4)
                         : null))),
         themeMode: ThemeMode.system,
         home: MyHomePage());
