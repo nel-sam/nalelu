@@ -30,7 +30,8 @@ class ExerciseNavNotifier extends ChangeNotifier {
         this._maxIndex = maxExerciseCount < doushiBank.length
             ? maxExerciseCount
             : doushiBank.length - 1;
-        this.createExercise = DoushiGenerator.createExercise;
+        var doushiGenerator = new DoushiGenerator();
+        this.createExercise = doushiGenerator.createExercise;
         break;
       case ExerciseType.Count:
         this._maxIndex = maxExerciseCount != 9999
@@ -54,7 +55,8 @@ class ExerciseNavNotifier extends ChangeNotifier {
         this._maxIndex = maxExerciseCount < mangaExerciseBank.length
             ? maxExerciseCount
             : mangaExerciseBank.length - 1;
-        this.createExercise = MangaGenerator.createExercise;
+        var mangaGenerator = new MangaGenerator();
+        this.createExercise = mangaGenerator.createExercise;
         break;
       case ExerciseType.Kanji:
         this._maxIndex = maxExerciseCount < kanjiBank.length
