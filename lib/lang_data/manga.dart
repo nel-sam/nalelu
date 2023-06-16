@@ -217,12 +217,11 @@ final mangaExerciseBank = [
         downPercentage: 20,
         rightPercentage: 80),
     Phrase(
-      // うん、だから冷たい飲み物買った
-      translation: NA.t('undakaratsumetainomimotokatta'),
+      // だから冷たい飲み物買った
+      translation: NA.t('dakaratsumetainomimotokatta'),
       phraseParts: [
         PhrasePart(
           furiTexts: [
-            FuriText(text: 'うん、'),
             FuriText(text: 'だから'),
           ],
         ),
@@ -244,10 +243,7 @@ final mangaExerciseBank = [
           ],
         ),
         PhrasePart(isAnswerable: true, furiTexts: [
-          FuriText(text: '買', furigana: 'か'),
-        ]),
-        PhrasePart(furiTexts: [
-          FuriText(text: 'った'),
+          FuriText(text: '買った', furigana: 'かった'),
         ]),
       ],
       downPercentage: 60,
