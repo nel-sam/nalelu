@@ -99,7 +99,7 @@ List<Kanji> kanjiBank = [
           // 彼は石を投げた
           translation: NA.t('karehaishiotageta'),
           phraseParts: [
-            FuriText(text: '彼', furigana: 'かれ', emphasize: true),
+            FuriText(text: '彼', furigana: 'かれ'),
             FuriText(text: 'は'),
             FuriText(text: '石', furigana: '？', emphasize: true),
             FuriText(text: 'を'),
