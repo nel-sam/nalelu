@@ -33,19 +33,19 @@ class ExerciseNavNotifier extends ChangeNotifier {
         this.createExercise = DoushiGenerator.createExercise;
         break;
       case ExerciseType.Count:
-        this._maxIndex = maxExerciseCount < COUNT_EXERCISE_COUNT
+        this._maxIndex = maxExerciseCount != 9999
             ? maxExerciseCount
             : COUNT_EXERCISE_COUNT - 1;
         this.createExercise = CountGenerator.createExercise;
         break;
       case ExerciseType.Age:
-        this._maxIndex = maxExerciseCount < AGE_EXERCISE_COUNT
+        this._maxIndex = maxExerciseCount != 9999
             ? maxExerciseCount
             : AGE_EXERCISE_COUNT - 1;
         this.createExercise = AgeGenerator.createExercise;
         break;
       case ExerciseType.Jikan:
-        this._maxIndex = maxExerciseCount < JIKAN_EXERCISE_COUNT
+        this._maxIndex = maxExerciseCount != 9999
             ? maxExerciseCount
             : JIKAN_EXERCISE_COUNT - 1;
         this.createExercise = JikanGenerator.createExercise;
