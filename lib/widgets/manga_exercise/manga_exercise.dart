@@ -17,7 +17,8 @@ class MangaExercise extends StatelessWidget {
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: ChangeNotifierProvider<ExerciseNavNotifier>(
-        create: (context) => ExerciseNavNotifier(ExerciseType.Manga, 0),
+        create: (context) =>
+            ExerciseNavNotifier(exerciseType: ExerciseType.Manga),
         child: Consumer<ExerciseNavNotifier>(
           builder: (context, navNotifier, child) => Scaffold(
             appBar: Nrs.NrsAppBar(title: '${NA.t('Manga')}', context: context),

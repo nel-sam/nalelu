@@ -23,7 +23,8 @@ class ExerciseNavNotifier extends ChangeNotifier {
   Function onNextOrPrevious = () => {};
   late Function(int) createExercise;
 
-  ExerciseNavNotifier(ExerciseType exerciseType, int maxExerciseCount) {
+  ExerciseNavNotifier(
+      {required ExerciseType exerciseType, int maxExerciseCount = 9999}) {
     switch (exerciseType) {
       case ExerciseType.Doushi:
         this._maxIndex = maxExerciseCount < doushiBank.length

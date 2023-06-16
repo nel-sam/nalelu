@@ -25,7 +25,9 @@ class AgeExercise extends StatelessWidget {
   Widget build(BuildContext context) {
     Widget getContent(BuildContext context) {
       return ChangeNotifierProvider<ExerciseNavNotifier>(
-        create: (context) => ExerciseNavNotifier(ExerciseType.Age, numberOfAgeExercises),
+        create: (context) => ExerciseNavNotifier(
+            exerciseType: ExerciseType.Age,
+            maxExerciseCount: numberOfAgeExercises),
         child: Consumer<ExerciseNavNotifier>(
           builder: (context, navNotifier, child) {
             var s = navNotifier.getActive();

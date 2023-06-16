@@ -35,7 +35,8 @@ class _DoushiExerciseLevel1State extends State<DoushiExerciseLevel1> {
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: ChangeNotifierProvider<ExerciseNavNotifier>(
         create: (context) => ExerciseNavNotifier(
-            ExerciseType.Doushi, widget.numberOfDoushiExercises),
+            exerciseType: ExerciseType.Doushi,
+            maxExerciseCount: widget.numberOfDoushiExercises),
         child: Consumer<ExerciseNavNotifier>(
           builder: (context, navNotifier, child) => Scaffold(
             appBar: Nrs.NrsAppBar(title: NA.t('verbs'), context: context),
