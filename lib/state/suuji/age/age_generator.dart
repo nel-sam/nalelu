@@ -11,8 +11,4 @@ class AgeGenerator {
       correctAnswers: [number.written, number.kanji],
     );
   }
-
-  static int getMaxIndex(int value) {
-    return value;
-  }
 }

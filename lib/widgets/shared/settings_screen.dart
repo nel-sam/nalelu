@@ -36,50 +36,49 @@ class _SettingsScreenState extends State<SettingsScreen> {
   bool showKanjiFurigana = true;
   bool showVerbFurigana = true;
 
-  @override
-  void initState() {
-    super.initState();
-    loadSettings();
-  }
-
-  void loadSettings() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    setState(() {
-      numberOfKanjiExercises = prefs.getInt('numberOfKanjiExercises') ?? 10;
-      numberOfDoushiExercises = prefs.getInt('numberOfDoushiExercises') ?? 10;
-      numberOfAgeExercises = prefs.getInt('numberOfAgeExercises') ?? 10;
-      numberOfCountingExercises =
-          prefs.getInt('numberOfCountingExercises') ?? 10;
-      numberOfJikanExercises = prefs.getInt('numberOfJikanExercises') ?? 10;
-      showKanjiTranslation = prefs.getBool('showKanjiTranslation') ?? true;
-      showVerbTranslation = prefs.getBool('showVerbTranslation') ?? true;
-      showPhraseTranslation = prefs.getBool('showPhraseTranslation') ?? true;
-      showKanjiFurigana = prefs.getBool('showKanjiFurigana') ?? true;
-      showVerbFurigana = prefs.getBool('showVerbFurigana') ?? true;
-    });
-  }
-
-  void saveSettings() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setInt('numberOfKanjiExercises', numberOfKanjiExercises);
-    await prefs.setInt('numberOfDoushiExercises', numberOfDoushiExercises);
-    await prefs.setInt('numberOfAgeExercises', numberOfAgeExercises);
-    await prefs.setInt('numberOfCountingExercises', numberOfCountingExercises);
-    await prefs.setInt('numberOfJikanExercises', numberOfJikanExercises);
-    await prefs.setBool('showKanjiTranslation', showKanjiTranslation);
-    await prefs.setBool('showVerbTranslation', showVerbTranslation);
-    await prefs.setBool('showPhraseTranslation', showPhraseTranslation);
-    await prefs.setBool('showKanjiFurigana', showKanjiFurigana);
-    await prefs.setBool('showVerbFurigana', showVerbFurigana);
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text(NA.t('settings')),
+  Widget ageSettings() {
+    return ListView(children: [
+      ListTile(
+        subtitle: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(NA.t('iwanttodo')),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: DropdownButton<int>(
+                    value: numberOfAgeExercises,
+                    onChanged: (value) {
+                      setState(() {
+                        numberOfAgeExercises = value!;
+                      });
+                      saveSettings();
+                    },
+                    items: [
+                      DropdownMenuItem<int>(
+                        value: 10,
+                        child: Text('10'),
+                      ),
+                      DropdownMenuItem<int>(value: 25, child: Text('25')),
+                    ].toList(),
+                  ),
+                ),
+                Text(NA.t('exercises')),
+              ],
+            ),
+          ],
         ),
-        body: allSettings(widget.exerciseType));
+      ),
+      SizedBox(height: 20),
+      NAMenuButton(
+        destination: AgeExercise(
+          numberOfAgeExercises: numberOfAgeExercises - 1,
+        ),
+        label: NA.t('Start'),
+        translabel: [FuriText(text: '始', furigana: 'はじ'), FuriText(text: 'める')],
+      ),
+    ]);
   }
 
   Widget allSettings(ExerciseType exerciseType) {
@@ -105,6 +104,60 @@ class _SettingsScreenState extends State<SettingsScreen> {
         break;
     }
     return settings;
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text(NA.t('settings')),
+        ),
+        body: allSettings(widget.exerciseType));
+  }
+
+  Widget countingSettings() {
+    return ListView(children: [
+      ListTile(
+        subtitle: Column(
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Text(NA.t('iwanttodo')),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: DropdownButton<int>(
+                    value: numberOfCountingExercises,
+                    onChanged: (value) {
+                      setState(() {
+                        numberOfCountingExercises = value!;
+                      });
+                      saveSettings();
+                    },
+                    items: [
+                      DropdownMenuItem<int>(
+                        value: 10,
+                        child: Text('10'),
+                      ),
+                      DropdownMenuItem<int>(value: 25, child: Text('25')),
+                    ].toList(),
+                  ),
+                ),
+                Text(NA.t('exercises')),
+              ],
+            ),
+          ],
+        ),
+      ),
+      SizedBox(height: 20),
+      NAMenuButton(
+        destination: CountingExercise(
+          numberOfCountingExercises: numberOfCountingExercises - 1,
+        ),
+        label: NA.t('Start'),
+        translabel: [FuriText(text: '始', furigana: 'はじ'), FuriText(text: 'める')],
+      ),
+    ]);
   }
 
   Widget doushiSettings() {
@@ -146,7 +199,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             showVerbTranslation ? NTextSpan(NA.t('kawaigaru')) : Container(),
             NFreeFormEntry(
               readOnly: true,
-              correctValues: ['Kawairu'],
+              correctValues: ['Kawaigaru'],
               initialValue: '',
               labelText: 'Present',
               onChanged: (String) {},
@@ -204,94 +257,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
     );
   }
 
-  Widget countingSettings() {
-    return ListView(children: [
-      ListTile(
-        subtitle: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(NA.t('iwanttodo')),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: DropdownButton<int>(
-                    value: numberOfCountingExercises,
-                    onChanged: (value) {
-                      setState(() {
-                        numberOfCountingExercises = value!;
-                      });
-                      saveSettings();
-                    },
-                    items: [
-                      DropdownMenuItem<int>(
-                        value: 10,
-                        child: Text('10'),
-                      ),
-                      DropdownMenuItem<int>(value: 25, child: Text('25')),
-                    ].toList(),
-                  ),
-                ),
-                Text(NA.t('exercises')),
-              ],
-            ),
-          ],
-        ),
-      ),
-      SizedBox(height: 20),
-      NAMenuButton(
-        destination: CountingExercise(
-          numberOfCountingExercises: numberOfCountingExercises - 1,
-        ),
-        label: NA.t('Start'),
-        translabel: [FuriText(text: '始', furigana: 'はじ'), FuriText(text: 'める')],
-      ),
-    ]);
-  }
-
-  Widget ageSettings() {
-    return ListView(children: [
-      ListTile(
-        subtitle: Column(
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(NA.t('iwanttodo')),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: DropdownButton<int>(
-                    value: numberOfAgeExercises,
-                    onChanged: (value) {
-                      setState(() {
-                        numberOfAgeExercises = value!;
-                      });
-                      saveSettings();
-                    },
-                    items: [
-                      DropdownMenuItem<int>(
-                        value: 10,
-                        child: Text('10'),
-                      ),
-                      DropdownMenuItem<int>(value: 25, child: Text('25')),
-                    ].toList(),
-                  ),
-                ),
-                Text(NA.t('exercises')),
-              ],
-            ),
-          ],
-        ),
-      ),
-      SizedBox(height: 20),
-      NAMenuButton(
-        destination: AgeExercise(
-          numberOfAgeExercises: numberOfAgeExercises - 1,
-        ),
-        label: NA.t('Start'),
-        translabel: [FuriText(text: '始', furigana: 'はじ'), FuriText(text: 'める')],
-      ),
-    ]);
+  @override
+  void initState() {
+    super.initState();
+    loadSettings();
   }
 
   Widget jikanSettings() {
@@ -427,7 +396,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   FuriganaText(
                     showFurigana: showKanjiFurigana,
                     furiTexts: [
-                      FuriText(text: '彼', furigana: 'かれ', emphasize: true),
+                      FuriText(text: '彼', furigana: 'かれ'),
                       FuriText(text: 'は'),
                       FuriText(text: '石', furigana: '？', emphasize: true),
                       FuriText(text: 'を'),
@@ -511,5 +480,36 @@ class _SettingsScreenState extends State<SettingsScreen> {
         ),
       ],
     );
+  }
+
+  void loadSettings() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      numberOfKanjiExercises = prefs.getInt('numberOfKanjiExercises') ?? 10;
+      numberOfDoushiExercises = prefs.getInt('numberOfDoushiExercises') ?? 10;
+      numberOfAgeExercises = prefs.getInt('numberOfAgeExercises') ?? 10;
+      numberOfCountingExercises =
+          prefs.getInt('numberOfCountingExercises') ?? 10;
+      numberOfJikanExercises = prefs.getInt('numberOfJikanExercises') ?? 10;
+      showKanjiTranslation = prefs.getBool('showKanjiTranslation') ?? true;
+      showVerbTranslation = prefs.getBool('showVerbTranslation') ?? true;
+      showPhraseTranslation = prefs.getBool('showPhraseTranslation') ?? true;
+      showKanjiFurigana = prefs.getBool('showKanjiFurigana') ?? true;
+      showVerbFurigana = prefs.getBool('showVerbFurigana') ?? true;
+    });
+  }
+
+  void saveSettings() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setInt('numberOfKanjiExercises', numberOfKanjiExercises);
+    await prefs.setInt('numberOfDoushiExercises', numberOfDoushiExercises);
+    await prefs.setInt('numberOfAgeExercises', numberOfAgeExercises);
+    await prefs.setInt('numberOfCountingExercises', numberOfCountingExercises);
+    await prefs.setInt('numberOfJikanExercises', numberOfJikanExercises);
+    await prefs.setBool('showKanjiTranslation', showKanjiTranslation);
+    await prefs.setBool('showVerbTranslation', showVerbTranslation);
+    await prefs.setBool('showPhraseTranslation', showPhraseTranslation);
+    await prefs.setBool('showKanjiFurigana', showKanjiFurigana);
+    await prefs.setBool('showVerbFurigana', showVerbFurigana);
   }
 }

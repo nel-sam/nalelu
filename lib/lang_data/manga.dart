@@ -3,9 +3,9 @@ import 'package:nalelu/state/manga/models.dart';
 
 import '../na_helpers.dart';
 
-final mangaWordsBank = [
+final mangaExerciseBank = [
   //TODO: Need to fix this manga exercises
-  
+
   // MangaExerciseModel(imageUrl: 'assets/manga/coffee.jpeg', phrases: [
   //   Phrase(
   //       // 何か飲みたい

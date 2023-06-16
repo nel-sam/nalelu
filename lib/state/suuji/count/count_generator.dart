@@ -171,10 +171,6 @@ class CountGenerator {
     }
   }
 
-  static int getMaxIndex(int value) {
-    return value;
-  }
-
   static List<String> getNumberOfBigAnimalsAnswerList(int count) {
     List<String> answerList = [];
 

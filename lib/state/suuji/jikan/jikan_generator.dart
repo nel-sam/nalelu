@@ -15,8 +15,4 @@ class JikanGenerator {
         correctMins: [min.written, min.kanji],
         correctSecs: [sec.written, sec.kanji]);
   }
-
-  static int getMaxIndex(int value) {
-    return value;
-  }
 }

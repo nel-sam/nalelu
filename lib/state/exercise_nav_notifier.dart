@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:nalelu/constants.dart';
 import 'package:nalelu/state/doushi/doushi_generator.dart';
 import 'package:nalelu/state/enums.dart';
 import 'package:nalelu/state/kanji/kanji_generator.dart';
@@ -10,6 +11,10 @@ import 'package:nalelu/state/suuji/count/count_generator.dart';
 import 'package:nalelu/state/suuji/jikan/jikan_generator.dart';
 import 'package:nrs_flutter_lib/constants.dart';
 
+import '../lang_data/doushi.dart';
+import '../lang_data/kanji.dart';
+import '../lang_data/manga.dart';
+
 class ExerciseNavNotifier extends ChangeNotifier {
   Timer _debounce = Timer(const Duration(milliseconds: 0), () {});
   int _activeIndex = 0;
@@ -18,31 +23,43 @@ class ExerciseNavNotifier extends ChangeNotifier {
   Function onNextOrPrevious = () => {};
   late Function(int) createExercise;
 
-  ExerciseNavNotifier(ExerciseType exerciseType, int value) {
+  ExerciseNavNotifier(ExerciseType exerciseType, int maxExerciseCount) {
     switch (exerciseType) {
       case ExerciseType.Doushi:
-        this._maxIndex = DoushiGenerator.getMaxIndex(value);
+        this._maxIndex = maxExerciseCount < doushiBank.length
+            ? maxExerciseCount
+            : doushiBank.length - 1;
         this.createExercise = DoushiGenerator.createExercise;
         break;
       case ExerciseType.Count:
-        this._maxIndex = CountGenerator.getMaxIndex(value);
+        this._maxIndex = maxExerciseCount < COUNT_EXERCISE_COUNT
+            ? maxExerciseCount
+            : COUNT_EXERCISE_COUNT - 1;
         this.createExercise = CountGenerator.createExercise;
         break;
       case ExerciseType.Age:
-        this._maxIndex = AgeGenerator.getMaxIndex(value);
+        this._maxIndex = maxExerciseCount < AGE_EXERCISE_COUNT
+            ? maxExerciseCount
+            : AGE_EXERCISE_COUNT - 1;
         this.createExercise = AgeGenerator.createExercise;
         break;
       case ExerciseType.Jikan:
-        this._maxIndex = JikanGenerator.getMaxIndex(value);
+        this._maxIndex = maxExerciseCount < JIKAN_EXERCISE_COUNT
+            ? maxExerciseCount
+            : JIKAN_EXERCISE_COUNT - 1;
         this.createExercise = JikanGenerator.createExercise;
         break;
       case ExerciseType.Manga:
-        this._maxIndex = MangaGenerator.getMaxIndex();
+        this._maxIndex = maxExerciseCount < mangaExerciseBank.length
+            ? maxExerciseCount
+            : mangaExerciseBank.length - 1;
         this.createExercise = MangaGenerator.createExercise;
         break;
       case ExerciseType.Kanji:
+        this._maxIndex = maxExerciseCount < kanjiBank.length
+            ? maxExerciseCount
+            : kanjiBank.length - 1;
         var kanjiGenerator = new KanjiGenerator();
-        this._maxIndex = kanjiGenerator.getMaxIndex(value);
         this.createExercise = kanjiGenerator.createExercise;
         break;
     }

@@ -3,7 +3,6 @@ import 'package:nalelu/furi_text.dart';
 import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/state/enums.dart';
 import 'package:nalelu/widgets/shared/ad_card.dart';
-import 'package:nalelu/widgets/shared/na_footer_menu.dart';
 import 'package:nalelu/widgets/shared/na_menu_button.dart';
 import 'package:nalelu/widgets/shared/na_menu_header.dart';
 import 'package:nalelu/widgets/shared/settings_screen.dart';
@@ -38,7 +37,6 @@ class KanjiMenu extends StatelessWidget {
           ),
         ),
       ),
-      persistentFooterButtons: [NAMenuFooter(activeIndex: 1)],
     );
   }
 }

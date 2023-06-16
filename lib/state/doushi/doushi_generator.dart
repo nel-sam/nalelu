@@ -5,8 +5,4 @@ class DoushiGenerator {
   static createExercise(int index) {
     return DoushiExerciseState(doushi: doushiBank[index]);
   }
-
-  static int getMaxIndex(int value) {
-    return value;
-  }
 }
