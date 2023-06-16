@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:nalelu/constants.dart';
 import 'package:nalelu/na_helpers.dart';
-import 'package:nalelu/widgets/doushi_exercise/doushi_exercise_1.dart';
+import 'package:nalelu/state/enums.dart';
 import 'package:nalelu/widgets/menus/numbers_menu.dart';
 import 'package:nalelu/widgets/shared/home_button_wrapper.dart';
+import 'package:nalelu/widgets/shared/settings_screen.dart';
 import 'package:nrs_flutter_lib/widgets/n_footer_button.dart';
 import 'package:nrs_flutter_lib/widgets/n_footer_menu.dart';
 
@@ -39,7 +40,9 @@ class NAMenuFooter extends StatelessWidget {
             Navigator.push(
               context,
               MaterialPageRoute(
-                builder: (context) => DoushiExerciseLevel1(),
+                builder: (context) => SettingsScreen(
+                  exerciseType: ExerciseType.Doushi,
+                ),
               ),
             );
           },

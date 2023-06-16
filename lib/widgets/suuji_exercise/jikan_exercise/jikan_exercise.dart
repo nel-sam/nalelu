@@ -19,6 +19,11 @@ import '../../shared/tutorial_container.dart';
 
 class JikanExercise extends StatelessWidget {
   final double textFieldWidth = 250;
+  final int numberOfJikanExercises;
+
+  JikanExercise({
+    required this.numberOfJikanExercises,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -57,7 +62,9 @@ class JikanExercise extends StatelessWidget {
 
   getContent(BuildContext context) {
     return ChangeNotifierProvider<ExerciseNavNotifier>(
-      create: (context) => ExerciseNavNotifier(ExerciseType.Jikan),
+      create: (context) => ExerciseNavNotifier(
+          exerciseType: ExerciseType.Jikan,
+          maxExerciseCount: numberOfJikanExercises),
       child: Consumer<ExerciseNavNotifier>(
         builder: (context, navNotifier, child) {
           var s = navNotifier.getActive();

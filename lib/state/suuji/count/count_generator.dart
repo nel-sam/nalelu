@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nalelu/constants.dart';
 import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/state/suuji/count/count_exercise_state.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
@@ -170,10 +169,6 @@ class CountGenerator {
           counter: '',
         );
     }
-  }
-
-  static int getMaxIndex() {
-    return COUNT_EXERCISE_COUNT;
   }
 
   static List<String> getNumberOfBigAnimalsAnswerList(int count) {

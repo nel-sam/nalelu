@@ -12,8 +12,4 @@ class KanjiGenerator {
   createExercise(int index) {
     return KanjiExerciseState(kanji: bank[index]);
   }
-
-  int getMaxIndex() {
-    return bank.length - 1;
-  }
 }

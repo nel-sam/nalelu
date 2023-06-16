@@ -7,8 +7,14 @@ import 'package:nrs_flutter_lib/widgets/n_text_span.dart';
 
 class DoushiExerciseStateArea extends StatefulWidget {
   final DoushiExerciseState state;
+  final bool showVerbFurigana;
+  final bool showVerbTranslations;
 
-  const DoushiExerciseStateArea({Key? key, required this.state})
+  const DoushiExerciseStateArea(
+      {Key? key,
+      required this.state,
+      required this.showVerbFurigana,
+      required this.showVerbTranslations})
       : super(key: key);
 
   @override
@@ -21,24 +27,30 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
     return Column(
       children: [
         FuriganaText(
+            showFurigana: widget.showVerbFurigana,
             fontSize: Theme.of(context).textTheme.headlineSmall!.fontSize!,
             furiTexts: widget.state.doushi.casual.present.toFuriTexts()),
-        NTextSpan(widget.state.doushi.translation),
-        Padding(
-          padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
-          child: VerbInput(
-            doushi: widget.state.doushi,
-            hintValue: NA.t('infinitive'),
-            activeValue: widget.state.getUserInput(6),
-            correctValues: [widget.state.doushi.infinitive],
-            onSubmitted: (String newValue) {
-              widget.state.updateUserInput(6, newValue);
-            },
-            onCorrect: () {
-              setState(() {});
-            },
-          ),
-        ),
+
+        widget.showVerbTranslations
+            ? NTextSpan(widget.state.doushi.translation)
+            : Container(),
+        // Padding(
+        //   padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
+        //   child: VerbInput(
+        //     doushi: widget.state.doushi,
+        //     hintValue: NA.t('infinitive'),
+        //     activeValue: widget.state.getUserInput(6),
+        //     correctValues: [widget.state.doushi.infinitive],
+        //     onSubmitted: (String newValue) {
+        //       widget.state.updateUserInput(6, newValue);
+        //     },
+        //     onCorrect: () {
+        //       WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+        //         setState(() {});
+        //       });
+        //     },
+        //   ),
+        // ),
         VerbInput(
           doushi: widget.state.doushi,
           hintValue: NA.t('present'),
@@ -51,7 +63,9 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
             widget.state.updateUserInput(0, newValue);
           },
           onCorrect: () {
-            setState(() {});
+            WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+              setState(() {});
+            });
           },
         ),
         VerbInput(
@@ -66,7 +80,9 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
             widget.state.updateUserInput(1, newValue);
           },
           onCorrect: () {
-            setState(() {});
+            WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+              setState(() {});
+            });
           },
         ),
         VerbInput(
@@ -81,7 +97,9 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
             widget.state.updateUserInput(2, newValue);
           },
           onCorrect: () {
-            setState(() {});
+            WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+              setState(() {});
+            });
           },
         ),
         VerbInput(
@@ -96,10 +114,12 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
             widget.state.updateUserInput(3, newValue);
           },
           onCorrect: () {
-            setState(() {});
+            WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+              setState(() {});
+            });
           },
         ),
-        widget.state.doushi.casual.presentProgressive.kanjiWord.length != 0
+        widget.state.doushi.casual.presentProgressive.kanaWord.length != 0
             ? VerbInput(
                 doushi: widget.state.doushi,
                 hintValue: NA.t('presentProgressive'),
@@ -112,12 +132,13 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
                   widget.state.updateUserInput(4, newValue);
                 },
                 onCorrect: () {
-                  setState(() {});
+                  WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+                    setState(() {});
+                  });
                 },
               )
             : Container(),
-        widget.state.doushi.casual.negativePresentProgressive.kanjiWord
-                    .length !=
+        widget.state.doushi.casual.negativePresentProgressive.kanaWord.length !=
                 0
             ? VerbInput(
                 doushi: widget.state.doushi,
@@ -133,7 +154,9 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
                   widget.state.updateUserInput(5, newValue);
                 },
                 onCorrect: () {
-                  setState(() {});
+                  WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+                    setState(() {});
+                  });
                 },
               )
             : Container(),

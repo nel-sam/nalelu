@@ -451,6 +451,17 @@
   "nanikanomitai": "I want something to drink",
   "koohiihanomimasuka": "Would you like some coffee?",
   "ochashikanomanai": "I only drink tea",
+  "otousantoisshoniiru": "I'm with my dad",
+  "chichihaneteiru": "My dad is sleeping",
+  "gakkouniiku": "I'm going to school",
+  "daigakuseidesu": "I'm a university student",
+  "daigakudeookunokotowomananda": "I learned a lot at university",
+  "kurumanaitokoroniikitai": "I want to go to a place where there are no cars",
+  "denshadeikou": "I'm going by train",
+  "mimigaitai": "My ear hurts",
+  "karehaishiotageta": "He threw a rock",
+  "sekiyuhawaruidesuka": "Is petrol bad?",
+
   "一": "one",
   "二": "two",
   "三": "three",
@@ -582,5 +593,13 @@
   "使": "use, send out, employ",
   "俺": "I (ego)",
   "会": "meeting, conference, society, association, club",
-  "住": "dwell, reside, live, inhabit"
+  "住": "dwell, reside, live, inhabit",
+
+  "showkanji": "Show Kanji translation",
+  "showVerb": "Show verb translation",
+  "showphrase": "Show phrase translation",
+  "showfurigana": "Show Furigana",
+  "iwanttodo": "I want to do",
+  "exercises": "Exercises",
+  "settings": "Settings"
 }

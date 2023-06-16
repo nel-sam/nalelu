@@ -8,10 +8,16 @@ import 'package:nrs_flutter_lib/widgets/n_free_form_entry.dart';
 
 class KanjiExerciseStateArea extends StatefulWidget {
   final KanjiExerciseState state;
+  final bool showKanjiTranslations;
+  final bool showPhraseTranslations;
+  final bool showFurigana;
 
   KanjiExerciseStateArea({
     Key? key,
     required this.state,
+    required this.showKanjiTranslations,
+    required this.showPhraseTranslations,
+    required this.showFurigana,
   }) : super(key: key);
 
   @override
@@ -35,14 +41,16 @@ class _KanjiExerciseStateArea extends State<KanjiExerciseStateArea> {
                 ),
               ),
               ConstrainedBox(
-                constraints: BoxConstraints(maxWidth: 210),
+                constraints: BoxConstraints(maxWidth: 190),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Wrap(children: [
-                      Text(widget.state.kanji.translation.toUpperCase(),
-                          style: TextStyle(fontWeight: FontWeight.bold))
+                      widget.showKanjiTranslations
+                          ? Text(widget.state.kanji.translation.toUpperCase(),
+                              style: TextStyle(fontWeight: FontWeight.bold))
+                          : Container()
                     ]),
                     Text('Kun yomi'),
                     Wrap(
@@ -72,24 +80,27 @@ class _KanjiExerciseStateArea extends State<KanjiExerciseStateArea> {
                         children: [
                           Wrap(children: [
                             FuriganaText(
+                              showFurigana: widget.showFurigana,
                               furiTexts: pa.phraseParts,
                             ),
                           ]),
                           Wrap(children: [
-                            Text(
-                              pa.translation,
-                              style: TextStyle(
-                                  color: Colors.grey.shade700,
-                                  fontSize: Theme.of(context)
-                                      .textTheme
-                                      .bodySmall!
-                                      .fontSize),
-                            ),
+                            widget.showPhraseTranslations
+                                ? Text(
+                                    pa.translation,
+                                    style: TextStyle(
+                                        color: Colors.grey.shade700,
+                                        fontSize: Theme.of(context)
+                                            .textTheme
+                                            .bodySmall!
+                                            .fontSize),
+                                  )
+                                : Container()
                           ]),
                           NaFreeFormEntryWrapper(
                             isAnswerCentered: false,
                             widthType: NFreeFormWidths.full,
-                            hintValue: NA.t('kanjiToHiragana'),
+                            labelText: NA.t('kanjiToHiragana'),
                             onChanged: (String newValue) {
                               widget.state.updateUserInput(inputKey, newValue);
                             },

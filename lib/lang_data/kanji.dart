@@ -89,42 +89,182 @@ List<Kanji> kanjiBank = [
   //     onYomi: 'モク, ボク',
   //     kunYomi: 'め',
   // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('石'),
-  //     kanji: '石',
-  //     onYomi: 'セキ、シャク、コク',
-  //     kunYomi: 'いし',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('耳'),
-  //     kanji: '耳',
-  //     onYomi: 'ジ',
-  //     kunYomi: 'みみ',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('車'),
-  //     kanji: '車',
-  //     onYomi: 'シャ',
-  //     kunYomi: 'くるま',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('学'),
-  //     kanji: '学',
-  //     onYomi: 'ガク, マナブ',
-  //     kunYomi: 'まなぶ',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('校'),
-  //     kanji: '校',
-  //     onYomi: 'コウ, キョウ',
-  //     kunYomi: '',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('父'),
-  //     kanji: '父',
-  //     onYomi: 'フ, フウ',
-  //     kunYomi: 'ちち',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
+  Kanji(
+      translation: NA.t('石'),
+      kanji: '石',
+      onYomi: 'セキ、シャク、コク',
+      kunYomi: 'いし',
+      phraseAnswers: [
+        PhraseAnswer(
+          // 彼は石を投げた
+          translation: NA.t('karehaishiotageta'),
+          phraseParts: [
+            FuriText(text: '彼', furigana: 'かれ'),
+            FuriText(text: 'は'),
+            FuriText(text: '石', furigana: '？', emphasize: true),
+            FuriText(text: 'を'),
+            FuriText(text: '投', furigana: 'な'),
+            FuriText(text: 'げた'),
+          ],
+          answer: 'いし',
+        ),
+        PhraseAnswer(
+          // 石油は悪いですか？
+          translation: NA.t('sekiyuhawaruidesuka'),
+          phraseParts: [
+            FuriText(text: '石', furigana: '？', emphasize: true),
+            FuriText(text: '油', furigana: 'ゆ', emphasize: true),
+            FuriText(text: 'は'),
+            FuriText(text: '悪', furigana: 'わる'),
+            FuriText(text: 'い'),
+            FuriText(text: 'です'),
+            FuriText(text: 'か？'),
+          ],
+          answer: 'せきゆ',
+        ),
+      ]),
+  Kanji(
+      translation: NA.t('耳'),
+      kanji: '耳',
+      onYomi: 'ジ',
+      kunYomi: 'みみ',
+      phraseAnswers: [
+        PhraseAnswer(
+          // 耳が痛い
+          translation: NA.t('mimigaitai'),
+          phraseParts: [
+            FuriText(text: '耳', furigana: '？', emphasize: true),
+            FuriText(text: 'が'),
+            FuriText(text: '痛', furigana: 'いた'),
+            FuriText(text: 'い'),
+          ],
+          answer: 'みみ',
+        )
+        // TODO: One for onYomi
+      ]),
+  Kanji(
+      translation: NA.t('車'),
+      kanji: '車',
+      onYomi: 'シャ',
+      kunYomi: 'くるま',
+      phraseAnswers: [
+        PhraseAnswer(
+          // 車ないところに行きたい
+          translation: NA.t('kurumanaitokoroniikitai'),
+          phraseParts: [
+            FuriText(text: '車', furigana: '？', emphasize: true),
+            FuriText(text: 'ないところに'),
+            FuriText(text: '行', furigana: 'い'),
+            FuriText(text: 'きたい'),
+          ],
+          answer: 'くるま',
+        ),
+        PhraseAnswer(
+          // 電車で行こう
+          translation: NA.t('denshadeikou'),
+          phraseParts: [
+            FuriText(text: '電', furigana: 'でん', emphasize: true),
+            FuriText(text: '車', furigana: '？', emphasize: true),
+            FuriText(text: 'で'),
+            FuriText(text: '行', furigana: 'い'),
+            FuriText(text: 'こう'),
+          ],
+          answer: 'でんしゃ',
+        ),
+      ]),
+  Kanji(
+      translation: NA.t('学'),
+      kanji: '学',
+      onYomi: 'ガク',
+      kunYomi: 'まなぶ',
+      phraseAnswers: [
+        PhraseAnswer(
+          // 学校に行く
+          translation: NA.t('gakkouniiku'),
+          phraseParts: [
+            FuriText(text: '学', furigana: '？', emphasize: true),
+            FuriText(text: '校', furigana: 'こう', emphasize: true),
+            FuriText(text: 'に'),
+            FuriText(text: '行', furigana: 'い'),
+            FuriText(text: 'く'),
+          ],
+          answer: 'がっこう',
+        ),
+        PhraseAnswer(
+          // 大学生です
+          translation: NA.t('daigakuseidesu'),
+          phraseParts: [
+            FuriText(text: '大', furigana: 'だい', emphasize: true),
+            FuriText(text: '学', furigana: '？  ', emphasize: true),
+            FuriText(text: '生', furigana: 'せい', emphasize: true),
+            FuriText(text: 'です'),
+          ],
+          answer: 'だいがくせい',
+        ),
+        PhraseAnswer(
+          //　大学で多くのことを学んだ
+          translation: NA.t('daigakudeookunokotowomananda'),
+          phraseParts: [
+            FuriText(text: '大学', furigana: 'だいがく'),
+            FuriText(text: 'で'),
+            FuriText(text: '多', furigana: 'おお'),
+            FuriText(text: 'くのことを'),
+            FuriText(text: '学', furigana: 'まな', emphasize: true),
+            FuriText(text: 'んだ', emphasize: true),
+          ],
+          answer: 'まなんだ',
+        ),
+      ]),
+  Kanji(
+      translation: NA.t('校'),
+      kanji: '校',
+      onYomi: 'コウ, キョウ',
+      kunYomi: '',
+      phraseAnswers: [
+        PhraseAnswer(
+          // 学校に行く
+          translation: NA.t('gakkouniiku'),
+          phraseParts: [
+            FuriText(text: '学', furigana: 'がっ', emphasize: true),
+            FuriText(text: '校', furigana: '?', emphasize: true),
+            FuriText(text: 'に'),
+            FuriText(text: '行', furigana: 'い'),
+            FuriText(text: 'く'),
+          ],
+          answer: 'がっこう',
+        ),
+      ]),
+  Kanji(
+      translation: NA.t('父'),
+      kanji: '父',
+      onYomi: 'フ, フウ',
+      kunYomi: 'ちち, とう',
+      phraseAnswers: [
+        PhraseAnswer(
+          // お父さんと一緒にいる
+          translation: NA.t('otousantoisshoniiru'),
+          phraseParts: [
+            FuriText(text: 'お', emphasize: true),
+            FuriText(text: '父', furigana: '?', emphasize: true),
+            FuriText(text: 'さん', emphasize: true),
+            FuriText(text: 'と'),
+            FuriText(text: '一緒', furigana: 'いっしょ'),
+            FuriText(text: 'にいる'),
+          ],
+          answer: 'おとうさん',
+        ),
+        PhraseAnswer(
+          // 父は寝ている
+          translation: NA.t('chichihaneteiru'),
+          phraseParts: [
+            FuriText(text: '父', furigana: '?', emphasize: true),
+            FuriText(text: 'は'),
+            FuriText(text: '寝', furigana: 'ね'),
+            FuriText(text: 'ている'),
+          ],
+          answer: 'ちち',
+        ),
+      ]),
   Kanji(
       translation: NA.t('母'),
       kanji: '母',

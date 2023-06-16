@@ -1622,9 +1622,8 @@ var doushiBank = [
       pastSimple: JWord(kanaWord: 'いった', kanjiWord: '要った'),
       negative: JWord(kanaWord: 'いらない', kanjiWord: '要らない'),
       negativePast: JWord(kanaWord: 'いらなかった', kanjiWord: '要らなかった'),
-      presentProgressive: JWord(kanaWord: 'いっている', kanjiWord: '要っている'),
-      negativePresentProgressive:
-          JWord(kanaWord: 'いっていない', kanjiWord: '要っていない'),
+      presentProgressive: JWord(kanaWord: ''),
+      negativePresentProgressive: JWord(kanaWord: ''),
     ),
   ),
   Doushi(

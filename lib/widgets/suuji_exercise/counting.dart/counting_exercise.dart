@@ -16,11 +16,19 @@ import 'package:nrs_flutter_lib/widgets/n_text_span.dart';
 import 'package:provider/provider.dart';
 
 class CountingExercise extends StatelessWidget {
+  final int numberOfCountingExercises;
+
+  CountingExercise({
+    required this.numberOfCountingExercises,
+  });
+
   @override
   Widget build(BuildContext context) {
     getContent(BuildContext context) {
       return ChangeNotifierProvider<ExerciseNavNotifier>(
-        create: (context) => ExerciseNavNotifier(ExerciseType.Count),
+        create: (context) => ExerciseNavNotifier(
+            exerciseType: ExerciseType.Count,
+            maxExerciseCount: numberOfCountingExercises),
         child: Consumer<ExerciseNavNotifier>(
           builder: (context, navNotifier, child) {
             var activeItem = navNotifier.getActive();

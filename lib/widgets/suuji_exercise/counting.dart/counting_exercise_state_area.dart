@@ -7,6 +7,7 @@ import '../../shared/na_free_form_entry_wrapper.dart';
 
 class CountingExerciseStateArea extends StatefulWidget {
   final CountExerciseState state;
+  
   const CountingExerciseStateArea({required this.state, Key? key})
       : super(key: key);
 
@@ -20,7 +21,7 @@ class _CountingExerciseStateAreaState extends State<CountingExerciseStateArea> {
     return NaFreeFormEntryWrapper(
       showMaxLength: false,
       widthType: NFreeFormWidths.half,
-      hintValue: NA.t('counter'),
+      labelText: NA.t('counter'),
       onChanged: (String newValue) => widget.state.updateCount(newValue),
       initialValue: widget.state.userInput,
       correctValues: widget.state.correctAnswers,

@@ -10,6 +10,18 @@ import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 import 'package:provider/provider.dart';
 
 class KanjiExercise extends StatelessWidget {
+  final bool showKanjiTranslations;
+  final bool showPhraseTranslations;
+  final bool showFurigana;
+  final int numberOfExercises;
+
+  KanjiExercise({
+    required this.showKanjiTranslations,
+    required this.showPhraseTranslations,
+    required this.showFurigana,
+    required this.numberOfExercises,
+  });
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -25,8 +37,9 @@ class KanjiExercise extends StatelessWidget {
                 children: [
                   AdCard(),
                   ChangeNotifierProvider<ExerciseNavNotifier>(
-                    create: (context) =>
-                        ExerciseNavNotifier(ExerciseType.Kanji),
+                    create: (context) => ExerciseNavNotifier(
+                        exerciseType: ExerciseType.Kanji,
+                        maxExerciseCount: numberOfExercises),
                     child: Consumer<ExerciseNavNotifier>(
                       builder: (context, navNotifier, child) {
                         return Padding(
@@ -41,7 +54,12 @@ class KanjiExercise extends StatelessWidget {
                                 child: Consumer<KanjiNotifier>(
                                   builder: (context, kanjiNotifier, child) {
                                     return KanjiExerciseStateArea(
-                                        state: kanjiNotifier.getActive());
+                                        state: kanjiNotifier.getActive(),
+                                        showFurigana: showFurigana,
+                                        showKanjiTranslations:
+                                            showKanjiTranslations,
+                                        showPhraseTranslations:
+                                            showPhraseTranslations);
                                   },
                                 ),
                               ),

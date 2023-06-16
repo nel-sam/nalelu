@@ -27,7 +27,7 @@ class VerbInput extends StatelessWidget {
     return NaFreeFormEntryWrapper(
       showMaxLength: false,
       widthType: NFreeFormWidths.full,
-      hintValue: hintValue,
+      labelText: hintValue,
       onChanged: (String newValue) {
         onSubmitted(newValue);
       },
