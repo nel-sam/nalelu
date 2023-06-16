@@ -12,14 +12,13 @@ class KanjiExerciseStateArea extends StatefulWidget {
   final bool showPhraseTranslations;
   final bool showFurigana;
 
-  KanjiExerciseStateArea(
-      {Key? key,
-      required this.state,
-      required this.showKanjiTranslations,
-      required this.showPhraseTranslations,
-      required this.showFurigana,
-      })
-      : super(key: key);
+  KanjiExerciseStateArea({
+    Key? key,
+    required this.state,
+    required this.showKanjiTranslations,
+    required this.showPhraseTranslations,
+    required this.showFurigana,
+  }) : super(key: key);
 
   @override
   State<KanjiExerciseStateArea> createState() => _KanjiExerciseStateArea();
@@ -42,7 +41,7 @@ class _KanjiExerciseStateArea extends State<KanjiExerciseStateArea> {
                 ),
               ),
               ConstrainedBox(
-                constraints: BoxConstraints(maxWidth: 210),
+                constraints: BoxConstraints(maxWidth: 190),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
