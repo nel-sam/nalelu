@@ -1,4 +1,3 @@
-import 'package:nalelu/constants.dart';
 import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/state/suuji/jikan/jikan_exercise_state.dart';
 
@@ -17,7 +16,7 @@ class JikanGenerator {
         correctSecs: [sec.written, sec.kanji]);
   }
 
-  static int getMaxIndex() {
-    return JIKAN_EXERCISE_COUNT;
+  static int getMaxIndex(int value) {
+    return value;
   }
 }

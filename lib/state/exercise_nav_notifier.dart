@@ -18,22 +18,22 @@ class ExerciseNavNotifier extends ChangeNotifier {
   Function onNextOrPrevious = () => {};
   late Function(int) createExercise;
 
-  ExerciseNavNotifier(ExerciseType exerciseType) {
+  ExerciseNavNotifier(ExerciseType exerciseType, int value) {
     switch (exerciseType) {
       case ExerciseType.Doushi:
-        this._maxIndex = DoushiGenerator.getMaxIndex();
+        this._maxIndex = DoushiGenerator.getMaxIndex(value);
         this.createExercise = DoushiGenerator.createExercise;
         break;
       case ExerciseType.Count:
-        this._maxIndex = CountGenerator.getMaxIndex();
+        this._maxIndex = CountGenerator.getMaxIndex(value);
         this.createExercise = CountGenerator.createExercise;
         break;
       case ExerciseType.Age:
-        this._maxIndex = AgeGenerator.getMaxIndex();
+        this._maxIndex = AgeGenerator.getMaxIndex(value);
         this.createExercise = AgeGenerator.createExercise;
         break;
       case ExerciseType.Jikan:
-        this._maxIndex = JikanGenerator.getMaxIndex();
+        this._maxIndex = JikanGenerator.getMaxIndex(value);
         this.createExercise = JikanGenerator.createExercise;
         break;
       case ExerciseType.Manga:
@@ -42,7 +42,7 @@ class ExerciseNavNotifier extends ChangeNotifier {
         break;
       case ExerciseType.Kanji:
         var kanjiGenerator = new KanjiGenerator();
-        this._maxIndex = kanjiGenerator.getMaxIndex();
+        this._maxIndex = kanjiGenerator.getMaxIndex(value);
         this.createExercise = kanjiGenerator.createExercise;
         break;
     }

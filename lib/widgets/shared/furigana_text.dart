@@ -6,12 +6,14 @@ class FuriganaText extends StatelessWidget {
   final double fontSize;
   final List<FuriText> furiTexts;
   final Color? textColor;
+  final bool showFurigana;
 
   const FuriganaText({
     Key? key,
     required this.furiTexts,
     this.fontSize = FONT_SIZE,
     this.textColor,
+    this.showFurigana = true,
   }) : super(key: key);
 
   @override
@@ -22,23 +24,27 @@ class FuriganaText extends StatelessWidget {
         children: [
           for (var i in furiTexts)
             Column(mainAxisSize: MainAxisSize.max, children: [
-              Container(
-                height: i.furigana.length == 0 ? fontSize * 1.0 : fontSize,
-                child: Center(
-                  child: Text(
-                    i.furigana,
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: fontSize * 0.7,
-                      fontWeight:
-                          i.emphasize ? FontWeight.bold : FontWeight.normal,
-                      color: i.emphasize
-                          ? Theme.of(context).colorScheme.primary
-                          : textColor,
-                    ),
-                  ),
-                ),
-              ),
+              showFurigana
+                  ? Container(
+                      height:
+                          i.furigana.length == 0 ? fontSize * 1.0 : fontSize,
+                      child: Center(
+                        child: Text(
+                          i.furigana,
+                          textAlign: TextAlign.center,
+                          style: TextStyle(
+                            fontSize: fontSize * 0.7,
+                            fontWeight: i.emphasize
+                                ? FontWeight.bold
+                                : FontWeight.normal,
+                            color: i.emphasize
+                                ? Theme.of(context).colorScheme.primary
+                                : textColor,
+                          ),
+                        ),
+                      ),
+                    )
+                  : Container(),
               Center(
                 child: Text(
                   i.text,

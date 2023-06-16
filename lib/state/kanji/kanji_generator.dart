@@ -13,7 +13,7 @@ class KanjiGenerator {
     return KanjiExerciseState(kanji: bank[index]);
   }
 
-  int getMaxIndex() {
-    return bank.length - 1;
+  int getMaxIndex(int value) {
+    return value;
   }
 }

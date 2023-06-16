@@ -16,11 +16,16 @@ import 'package:nrs_flutter_lib/widgets/n_footer_menu.dart';
 import 'package:provider/provider.dart';
 
 class AgeExercise extends StatelessWidget {
+  final int numberOfAgeExercises;
+
+  AgeExercise({
+    required this.numberOfAgeExercises,
+  });
   @override
   Widget build(BuildContext context) {
     Widget getContent(BuildContext context) {
       return ChangeNotifierProvider<ExerciseNavNotifier>(
-        create: (context) => ExerciseNavNotifier(ExerciseType.Age),
+        create: (context) => ExerciseNavNotifier(ExerciseType.Age, numberOfAgeExercises),
         child: Consumer<ExerciseNavNotifier>(
           builder: (context, navNotifier, child) {
             var s = navNotifier.getActive();

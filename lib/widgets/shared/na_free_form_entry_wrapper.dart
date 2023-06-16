@@ -10,6 +10,7 @@ class NaFreeFormEntryWrapper extends StatelessWidget {
   final NFreeFormWidths widthType;
   final String labelText;
   final bool showMaxLength;
+  final bool readOnly;
 
   NaFreeFormEntryWrapper({
     Key? key,
@@ -21,6 +22,7 @@ class NaFreeFormEntryWrapper extends StatelessWidget {
     required this.widthType,
     required this.labelText,
     this.showMaxLength = true,
+    this.readOnly = false,
   }) : super(key: key);
 
   @override
@@ -45,6 +47,7 @@ class NaFreeFormEntryWrapper extends StatelessWidget {
       onCorrect: this.onCorrect,
       initialValue: this.initialValue,
       correctValues: this.correctValues,
+      readOnly: readOnly,
     );
   }
 }

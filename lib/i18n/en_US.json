@@ -593,5 +593,13 @@
   "使": "use, send out, employ",
   "俺": "I (ego)",
   "会": "meeting, conference, society, association, club",
-  "住": "dwell, reside, live, inhabit"
+  "住": "dwell, reside, live, inhabit",
+
+  "showkanji": "Show Kanji translation",
+  "showVerb": "Show verb translation",
+  "showphrase": "Show phrase translation",
+  "showfurigana": "Show Furigana",
+  "iwanttodo": "I want to do",
+  "exercises": "Exercises",
+  "settings": "Settings"
 }

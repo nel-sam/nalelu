@@ -1,4 +1,3 @@
-import 'package:nalelu/constants.dart';
 import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/lang_data/numbers.dart';
 import 'package:nalelu/state/suuji/age/age_exercise_state.dart';
@@ -13,7 +12,7 @@ class AgeGenerator {
     );
   }
 
-  static int getMaxIndex() {
-    return AGE_EXERCISE_COUNT;
+  static int getMaxIndex(int value) {
+    return value;
   }
 }

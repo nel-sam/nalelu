@@ -13,7 +13,17 @@ import 'package:nrs_flutter_lib/widgets/n_footer_menu.dart';
 import 'package:provider/provider.dart';
 
 class DoushiExerciseLevel1 extends StatefulWidget {
-  const DoushiExerciseLevel1({Key? key}) : super(key: key);
+  final bool showVerbFurigana;
+  final bool showVerbTranslations;
+  final int numberOfDoushiExercises;
+
+  const DoushiExerciseLevel1(
+      {Key? key,
+      required this.showVerbFurigana,
+      required this.showVerbTranslations,
+      required this.numberOfDoushiExercises})
+      : super(key: key);
+
   @override
   State<DoushiExerciseLevel1> createState() => _DoushiExerciseLevel1State();
 }
@@ -24,7 +34,8 @@ class _DoushiExerciseLevel1State extends State<DoushiExerciseLevel1> {
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: ChangeNotifierProvider<ExerciseNavNotifier>(
-        create: (context) => ExerciseNavNotifier(ExerciseType.Doushi),
+        create: (context) => ExerciseNavNotifier(
+            ExerciseType.Doushi, widget.numberOfDoushiExercises),
         child: Consumer<ExerciseNavNotifier>(
           builder: (context, navNotifier, child) => Scaffold(
             appBar: Nrs.NrsAppBar(title: NA.t('verbs'), context: context),
@@ -45,7 +56,11 @@ class _DoushiExerciseLevel1State extends State<DoushiExerciseLevel1> {
                             child: Consumer<DoushiNotifier>(
                               builder: (context, doushiNotifier, child) =>
                                   DoushiExerciseStateArea(
-                                      state: doushiNotifier.getActive()),
+                                      state: doushiNotifier.getActive(),
+                                      showVerbTranslations:
+                                          widget.showVerbTranslations,
+                                      showVerbFurigana:
+                                          widget.showVerbFurigana),
                             ),
                           ),
                         )),

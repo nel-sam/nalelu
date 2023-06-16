@@ -7,6 +7,7 @@ import '../../shared/na_free_form_entry_wrapper.dart';
 
 class CountingExerciseStateArea extends StatefulWidget {
   final CountExerciseState state;
+  
   const CountingExerciseStateArea({required this.state, Key? key})
       : super(key: key);
 

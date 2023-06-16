@@ -8,11 +8,18 @@ import 'package:nrs_flutter_lib/widgets/n_free_form_entry.dart';
 
 class KanjiExerciseStateArea extends StatefulWidget {
   final KanjiExerciseState state;
+  final bool showKanjiTranslations;
+  final bool showPhraseTranslations;
+  final bool showFurigana;
 
-  KanjiExerciseStateArea({
-    Key? key,
-    required this.state,
-  }) : super(key: key);
+  KanjiExerciseStateArea(
+      {Key? key,
+      required this.state,
+      required this.showKanjiTranslations,
+      required this.showPhraseTranslations,
+      required this.showFurigana,
+      })
+      : super(key: key);
 
   @override
   State<KanjiExerciseStateArea> createState() => _KanjiExerciseStateArea();
@@ -41,8 +48,10 @@ class _KanjiExerciseStateArea extends State<KanjiExerciseStateArea> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Wrap(children: [
-                      Text(widget.state.kanji.translation.toUpperCase(),
-                          style: TextStyle(fontWeight: FontWeight.bold))
+                      widget.showKanjiTranslations
+                          ? Text(widget.state.kanji.translation.toUpperCase(),
+                              style: TextStyle(fontWeight: FontWeight.bold))
+                          : Container()
                     ]),
                     Text('Kun yomi'),
                     Wrap(
@@ -72,19 +81,22 @@ class _KanjiExerciseStateArea extends State<KanjiExerciseStateArea> {
                         children: [
                           Wrap(children: [
                             FuriganaText(
+                              showFurigana: widget.showFurigana,
                               furiTexts: pa.phraseParts,
                             ),
                           ]),
                           Wrap(children: [
-                            Text(
-                              pa.translation,
-                              style: TextStyle(
-                                  color: Colors.grey.shade700,
-                                  fontSize: Theme.of(context)
-                                      .textTheme
-                                      .bodySmall!
-                                      .fontSize),
-                            ),
+                            widget.showPhraseTranslations
+                                ? Text(
+                                    pa.translation,
+                                    style: TextStyle(
+                                        color: Colors.grey.shade700,
+                                        fontSize: Theme.of(context)
+                                            .textTheme
+                                            .bodySmall!
+                                            .fontSize),
+                                  )
+                                : Container()
                           ]),
                           NaFreeFormEntryWrapper(
                             isAnswerCentered: false,

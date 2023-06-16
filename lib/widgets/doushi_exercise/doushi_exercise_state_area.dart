@@ -7,8 +7,14 @@ import 'package:nrs_flutter_lib/widgets/n_text_span.dart';
 
 class DoushiExerciseStateArea extends StatefulWidget {
   final DoushiExerciseState state;
+  final bool showVerbFurigana;
+  final bool showVerbTranslations;
 
-  const DoushiExerciseStateArea({Key? key, required this.state})
+  const DoushiExerciseStateArea(
+      {Key? key,
+      required this.state,
+      required this.showVerbFurigana,
+      required this.showVerbTranslations})
       : super(key: key);
 
   @override
@@ -21,9 +27,13 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
     return Column(
       children: [
         FuriganaText(
+            showFurigana: widget.showVerbFurigana,
             fontSize: Theme.of(context).textTheme.headlineSmall!.fontSize!,
             furiTexts: widget.state.doushi.casual.present.toFuriTexts()),
-        NTextSpan(widget.state.doushi.translation),
+
+        widget.showVerbTranslations
+            ? NTextSpan(widget.state.doushi.translation)
+            : Container(),
         // Padding(
         //   padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
         //   child: VerbInput(
