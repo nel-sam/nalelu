@@ -199,7 +199,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             showVerbTranslation ? NTextSpan(NA.t('kawaigaru')) : Container(),
             NFreeFormEntry(
               readOnly: true,
-              correctValues: ['Kawaigaru'],
+              correctValues: ['かわいがる'],
               initialValue: '',
               labelText: 'Present',
               onChanged: (String) {},
