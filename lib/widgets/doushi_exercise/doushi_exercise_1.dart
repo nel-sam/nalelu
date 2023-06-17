@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:nalelu/lang_data/doushi.dart';
 import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/state/doushi/doushi_notifier.dart';
 import 'package:nalelu/state/enums.dart';
