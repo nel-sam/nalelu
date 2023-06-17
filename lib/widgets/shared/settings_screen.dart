@@ -193,16 +193,19 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 showFurigana: showVerbFurigana,
                 fontSize: Theme.of(context).textTheme.headlineSmall!.fontSize!,
                 furiTexts: [
-                  FuriText(text: '可愛', furigana: 'かわい'),
-                  FuriText(text: 'がる')
+                  FuriText(text: '可愛', furigana: 'かわい', emphasize: true),
+                  FuriText(text: 'がる', emphasize: true)
                 ]),
             showVerbTranslation ? NTextSpan(NA.t('kawaigaru')) : Container(),
-            NFreeFormEntry(
+            NaFreeFormEntryWrapper(
               readOnly: true,
-              correctValues: ['Kawaigaru'],
+              isAnswerCentered: true,
+              widthType: NFreeFormWidths.full,
+              labelText: NA.t('Present'),
+              onChanged: (String newValue) {},
               initialValue: '',
-              labelText: 'Present',
-              onChanged: (String) {},
+              correctValues: ['かわいがる'],
+              onCorrect: () {},
             ),
           ],
         ),

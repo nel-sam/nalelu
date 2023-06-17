@@ -10,43 +10,51 @@ import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 import 'package:provider/provider.dart';
 
 class MangaExercise extends StatelessWidget {
-  const MangaExercise({Key? key}) : super(key: key);
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
-      child: ChangeNotifierProvider<ExerciseNavNotifier>(
-        create: (context) =>
-            ExerciseNavNotifier(exerciseType: ExerciseType.Manga),
-        child: Consumer<ExerciseNavNotifier>(
-          builder: (context, navNotifier, child) => Scaffold(
-            appBar: Nrs.NrsAppBar(title: '${NA.t('Manga')}', context: context),
-            body: Center(
-              child: CustomScrollView(slivers: [
-                SliverFillRemaining(
-                  hasScrollBody: false,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      NavHeaderWrapper(navNotifier: navNotifier),
-                      ChangeNotifierProvider<MangaNotifier>(
-                        create: (context) =>
-                            MangaNotifier(navNotifier.getActive),
-                        child: Consumer<MangaNotifier>(
-                          builder: (context, mangaNotifier, child) =>
-                              MangaExerciseStateArea(
-                            state: mangaNotifier.getActive(),
-                            navNotifier: navNotifier,
-                          ),
-                        ),
+      child: Scaffold(
+        appBar: Nrs.NrsAppBar(title: '${NA.t('Manga')}', context: context),
+        body: Center(
+          child: CustomScrollView(
+            slivers: [
+              SliverFillRemaining(
+                hasScrollBody: false,
+                child: Column(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    ChangeNotifierProvider<ExerciseNavNotifier>(
+                      create: (context) =>
+                          ExerciseNavNotifier(exerciseType: ExerciseType.Manga),
+                      child: Consumer<ExerciseNavNotifier>(
+                        builder: (context, navNotifier, child) {
+                          return Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              NavHeaderWrapper(navNotifier: navNotifier),
+                              ChangeNotifierProvider<MangaNotifier>(
+                                create: (context) =>
+                                    MangaNotifier(navNotifier.getActive),
+                                child: Consumer<MangaNotifier>(
+                                  builder: (context, mangaNotifier, child) {
+                                    return MangaExerciseStateArea(
+                                      state: mangaNotifier.getActive(),
+                                      navNotifier: navNotifier,
+                                    );
+                                  },
+                                ),
+                              ),
+                            ],
+                          );
+                        },
                       ),
-                      AdCard(),
-                    ],
-                  ),
+                    ),
+                    AdCard(),
+                  ],
                 ),
-              ]),
-            ),
+              ),
+            ],
           ),
         ),
       ),

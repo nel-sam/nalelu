@@ -64,14 +64,22 @@ class NaleluApp extends StatelessWidget {
           appBarTheme: nrsAppBarThemeLight,
         ),
         darkTheme: ThemeData(
-          brightness: Brightness.dark,
-          colorScheme: ColorScheme.dark(
-            primary: primaryColor,  
-            onPrimary: Colors.white,
-          ),
-          appBarTheme: nrsAppBarThemeDark,
-          textTheme: nrsTextTheme,
-        ),
+            brightness: Brightness.dark,
+            colorScheme: ColorScheme.dark(
+              primary: primaryColor,
+              onPrimary: Colors.white,
+            ),
+            appBarTheme: nrsAppBarThemeDark,
+            textTheme: nrsTextTheme,
+            switchTheme: SwitchThemeData(
+                thumbColor: MaterialStateProperty.resolveWith((states) =>
+                    states.contains(MaterialState.selected)
+                        ? primaryColor
+                        : null),
+                trackColor: MaterialStateProperty.resolveWith((states) =>
+                    states.contains(MaterialState.selected)
+                        ? primaryColor.withOpacity(0.4)
+                        : null))),
         themeMode: ThemeMode.system,
         home: MyHomePage());
   }
