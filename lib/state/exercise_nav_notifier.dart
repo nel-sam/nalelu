@@ -12,7 +12,7 @@ import 'package:nalelu/state/suuji/jikan/jikan_generator.dart';
 import 'package:nrs_flutter_lib/constants.dart';
 
 import '../lang_data/doushi.dart';
-import '../lang_data/kanji.dart';
+import '../lang_data/N5.dart';
 import '../lang_data/manga.dart';
 
 class ExerciseNavNotifier extends ChangeNotifier {
@@ -57,9 +57,9 @@ class ExerciseNavNotifier extends ChangeNotifier {
         this.createExercise = new MangaGenerator().createExercise;
         break;
       case ExerciseType.Kanji:
-        this._maxIndex = maxExerciseCount < kanjiBank.length
+        this._maxIndex = maxExerciseCount < kanjiN5Bank.length
             ? maxExerciseCount
-            : kanjiBank.length - 1;
+            : kanjiN5Bank.length - 1;
         this.createExercise = new KanjiGenerator().createExercise;
         break;
     }
