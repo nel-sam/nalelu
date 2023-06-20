@@ -29,41 +29,39 @@ class SpeechBubble extends StatelessWidget {
                 color: Colors.white,
                 border: Border.all(
                   color: Colors.black,
-                  width: 4,
+                  width: 2,
                 ),
-                borderRadius: BorderRadius.circular(40),
+                borderRadius: BorderRadius.circular(30),
               ),
               child: Padding(
-                padding: const EdgeInsets.only(
-                    top: 4, bottom: 0, left: 18, right: 18),
+                padding: const EdgeInsets.only(left: 10.0, right: 10.0),
                 child: Wrap(
                   children: this.phrase.phraseParts.map((e) {
                     final isCorrect = getIsCorrect(e);
 
                     return e.isAnswerable && !isCorrect
                         ? Padding(
-                            padding: const EdgeInsets.all(11.0),
-                            child: ElevatedButton(
-                              onPressed: () => onButtonTap(e),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.min,
-                                children: [
-                                  Icon(
-                                    Icons.create_sharp,
-                                    size: 16.0,
-                                  ),
-                                ],
+                            padding: const EdgeInsets.only(top: 5.0),
+                            child: IconButton(
+                              padding: EdgeInsets.zero,
+                              constraints: BoxConstraints(),
+                              icon: Icon(
+                                Icons.create_sharp,
+                                color: Theme.of(context).colorScheme.primary,
+                                size: 16.0,
                               ),
+                              onPressed: () => onButtonTap(e),
                             ),
                           )
-                        : Padding(
-                            padding: const EdgeInsets.only(bottom: 15.0),
-                            child: FuriganaText(
-                              furiTexts: e.furiTexts,
-                              textColor: e.isAnswerable
-                                  ? Theme.of(context).primaryColor
-                                  : Colors.black,
-                            ),
+                        : FuriganaText(
+                            fontSize: Theme.of(context)
+                                .textTheme
+                                .titleSmall!
+                                .fontSize!,
+                            furiTexts: e.furiTexts,
+                            textColor: e.isAnswerable
+                                ? Theme.of(context).colorScheme.primary
+                                : Colors.black,
                           );
                   }).toList(),
                 ),

@@ -243,7 +243,8 @@ final mangaExerciseBank = [
           ],
         ),
         PhrasePart(isAnswerable: true, furiTexts: [
-          FuriText(text: '買った', furigana: 'かった'),
+          FuriText(text: '買', furigana: 'か'),
+          FuriText(text: 'った'),
         ]),
       ],
       downPercentage: 60,
@@ -304,12 +305,13 @@ final mangaExerciseBank = [
       translation: NA.t('nandemosukidayo'),
       phraseParts: [
         PhrasePart(isAnswerable: true, furiTexts: [
-          FuriText(text: '何でも', furigana: 'なん'),
+          FuriText(text: '何', furigana: 'なん'),
           FuriText(text: 'でも'),
         ]),
         PhrasePart(
           furiTexts: [
-            FuriText(text: '何でも好きだよ'),
+            FuriText(text: '好', furigana: 'す'),
+            FuriText(text: 'きだよ'),
           ],
         ),
       ],

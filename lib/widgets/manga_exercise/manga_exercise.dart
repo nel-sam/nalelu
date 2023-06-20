@@ -30,7 +30,7 @@ class MangaExercise extends StatelessWidget {
                       child: Consumer<ExerciseNavNotifier>(
                         builder: (context, navNotifier, child) {
                           return Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.center,
                             children: [
                               NavHeaderWrapper(navNotifier: navNotifier),
                               ChangeNotifierProvider<MangaNotifier>(
