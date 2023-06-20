@@ -53,42 +53,195 @@ List<Kanji> kanjiBank = [
   //     onYomi: 'ジ',
   //     kunYomi: 'とき',
   // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('本'),
-  //     kanji: '本',
-  //     onYomi: 'ホン',
-  //     kunYomi: 'もと',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('東'),
-  //     kanji: '東',
-  //     onYomi: 'トウ',
-  //     kunYomi: 'ひがし',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('犬'),
-  //     kanji: '犬',
-  //     onYomi: 'ケン',
-  //     kunYomi: 'いぬ',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('玉'),
-  //     kanji: '玉',
-  //     onYomi: 'ギョク',
-  //     kunYomi: 'たま',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('生'),
-  //     kanji: '生',
-  //     onYomi: 'セイ, ショウ',
-  //     kunYomi: 'いきる',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('目'),
-  //     kanji: '目',
-  //     onYomi: 'モク, ボク',
-  //     kunYomi: 'め',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
+  Kanji(
+      translation: NA.t('本'),
+      kanji: '本',
+      onYomi: 'ホン',
+      kunYomi: 'もと',
+  phraseAnswers: [
+    PhraseAnswer(
+      // 本読んでる
+      translation: NA.t('honyonderu'),
+      phraseParts: [
+        FuriText(text: '本', furigana: '？', emphasize: true),
+        FuriText(text: '読', furigana: 'よ'),
+        FuriText(text: 'んでる'),
+      ],
+      answer: 'ほん',
+    ),
+    PhraseAnswer(
+      // 本当ですか？
+      translation: NA.t('hontoudesuka'),
+      phraseParts: [
+        FuriText(text: '本', furigana: '？', emphasize: true),
+        FuriText(text: '当', furigana: 'とう'),
+        FuriText(text: 'ですか？'),
+      ],
+      answer: 'ほんとう',
+    ),
+    PhraseAnswer(
+      // 山本さんはいい人です
+      translation: NA.t('yamamotosanhaiijindesu'),
+      phraseParts: [
+        FuriText(text: '山', furigana: 'やま', emphasize: true),
+        FuriText(text: '本', furigana: '？', emphasize: true),
+        FuriText(text: 'さんはいい'),
+        FuriText(text: '人', furigana: 'ひと'),
+        FuriText(text: 'です'),
+      ],
+      answer: 'やまもと',
+    ),
+    ]),
+  Kanji(
+      translation: NA.t('東'),
+      kanji: '東',
+      onYomi: 'トウ',
+      kunYomi: 'ひがし',
+      phraseAnswers: [
+        PhraseAnswer(
+          // 東京はすごいね
+          translation: NA.t('toukyouhasugoine'),
+          phraseParts: [
+            FuriText(text: '東', furigana: '？', emphasize: true),
+            FuriText(text: '京', furigana: 'きょう', emphasize: true),
+            FuriText(text: 'は'),
+            FuriText(text: 'すごい'),
+            FuriText(text: 'ね'),
+          ],
+          answer: 'ようきょう',
+        ),
+        PhraseAnswer(
+          // 東に山がたくさんある
+          translation: NA.t('higashiyniyamagatakusanaru'),
+          phraseParts: [
+            FuriText(text: '東', furigana: '？', emphasize: true),
+            FuriText(text: 'に'),
+            FuriText(text: '山', furigana: 'やま'),
+            FuriText(text: 'が'),
+            FuriText(text: 'たくさん'),
+            FuriText(text: 'ある'),
+          ],
+          answer: 'ひがし',
+        ),
+      ]),
+  Kanji(
+      translation: NA.t('犬'),
+      kanji: '犬',
+      onYomi: 'ケン',
+      kunYomi: 'いぬ',
+      phraseAnswers: [
+        PhraseAnswer(
+          // どんな犬が好きですか？
+          translation: NA.t('donnainugagokidesuka'),
+          phraseParts: [
+            FuriText(text: 'どんな'),
+            FuriText(text: '犬', furigana: '？', emphasize: true),
+            FuriText(text: 'が'),
+            FuriText(text: '好', furigana: 'す'),
+            FuriText(text: 'き'),
+            FuriText(text: 'ですか？'),
+          ],
+          answer: 'いぬ',
+        ),
+        //PhraseAnswer(
+        //　TODO: 狂犬病 for higher levels
+        //),
+      ]),
+  Kanji(
+      translation: NA.t('玉'),
+      kanji: '玉',
+      onYomi: 'ギョク',
+      kunYomi: 'たま',
+      phraseAnswers: [
+        PhraseAnswer(
+          // 玉ねぎ
+          translation: NA.t('tamanegi'),
+          phraseParts: [
+            FuriText(text: '玉', furigana: '？', emphasize: true),
+            FuriText(text: 'ねぎ'),
+          ],
+          answer: 'たま',
+        ),
+      ]),
+  Kanji(
+      translation: NA.t('生'),
+      kanji: '生',
+      onYomi: 'セイ, ショウ',
+      kunYomi: 'い(きる), う(まれる), なま',
+      phraseAnswers: [
+        PhraseAnswer(
+          // 生卵食べたい
+          translation: NA.t('namatamagotabetai'),
+          phraseParts: [
+            FuriText(text: '生', furigana: '？', emphasize: true),
+            FuriText(text: '卵', furigana: 'たまご'),
+            FuriText(text: '食', furigana: 'た'),
+            FuriText(text: 'べたい'),
+          ],
+          answer: 'なま',
+        ),
+        PhraseAnswer(
+          // 先生は日本人です
+          translation: NA.t('senseihanihonjindesu'),
+          phraseParts: [
+            FuriText(text: '先', furigana: 'せん', emphasize: true),
+            FuriText(text: '生', furigana: '？', emphasize: true),
+            FuriText(text: 'は'),
+            FuriText(text: '日本人', furigana: 'にほんじん'),
+            FuriText(text: 'です'),
+          ],
+          answer: 'せんせい',
+        ),
+        PhraseAnswer(
+          // 生ビール二つください
+          translation: NA.t('namabiirufutatsukudasai'),
+          phraseParts: [
+            FuriText(text: '生', furigana: '？', emphasize: true),
+            FuriText(text: 'ビール'),
+            FuriText(text: '二', furigana: 'ふた'),
+            FuriText(text: 'つください'),
+          ],
+          answer: 'なま',
+        ),
+        PhraseAnswer(),
+      ]),
+  Kanji(
+      translation: NA.t('目'),
+      kanji: '目',
+      onYomi: 'モク, ボク',
+      kunYomi: 'め',
+      phraseAnswers: [
+        PhraseAnswer(
+          // 彼は目を閉じた
+          translation: NA.t('karehaameowotojita'),
+          phraseParts: [
+            FuriText(text: '彼', furigana: 'かれ'),
+            FuriText(text: 'は'),
+            FuriText(text: '目', furigana: '？', emphasize: true),
+            FuriText(text: 'を'),
+            FuriText(text: '閉', furigana: 'と'),
+            FuriText(text: 'じた'),
+          ],
+          answer: 'め',
+        ),
+        PhraseAnswer(
+          // 何の目的で来たのですか？
+          translation: NA.t('nanomokutekidekitanodesuka'),
+          phraseParts: [
+            FuriText(text: '何', furigana: 'なん'),
+            FuriText(text: 'の'),
+            FuriText(text: '目', furigana: '？', emphasize: true),
+            FuriText(text: '的', furigana: 'てき', emphasize: true),
+            FuriText(text: 'で'),
+            FuriText(text: '来', furigana: 'き'),
+            FuriText(text: 'た'),
+            FuriText(text: 'の'),
+            FuriText(text: 'です'),
+            FuriText(text: 'か？'),
+          ],
+          answer: 'もくてき',
+        ),
+      ]),
   Kanji(
       translation: NA.t('石'),
       kanji: '石',
