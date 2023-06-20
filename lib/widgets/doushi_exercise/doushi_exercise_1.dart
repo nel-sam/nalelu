@@ -16,11 +16,14 @@ class DoushiExerciseLevel1 extends StatelessWidget {
   final bool showVerbFurigana;
   final bool showVerbTranslations;
   final int numberOfDoushiExercises;
+    final bool verbShuffle;
+
 
   DoushiExerciseLevel1(
       {required this.showVerbFurigana,
       required this.showVerbTranslations,
-      required this.numberOfDoushiExercises});
+      required this.numberOfDoushiExercises, required this.verbShuffle});
+      //
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +44,8 @@ class DoushiExerciseLevel1 extends StatelessWidget {
                     ChangeNotifierProvider<ExerciseNavNotifier>(
                       create: (context) => ExerciseNavNotifier(
                           exerciseType: ExerciseType.Doushi,
-                          maxExerciseCount: numberOfDoushiExercises),
+                          maxExerciseCount: numberOfDoushiExercises,
+                          verbShuffle: verbShuffle),
                       child: Consumer<ExerciseNavNotifier>(
                         builder: (context, navNotifier, child) {
                           nav = navNotifier;

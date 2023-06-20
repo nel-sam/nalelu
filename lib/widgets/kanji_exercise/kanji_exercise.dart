@@ -14,12 +14,16 @@ class KanjiExercise extends StatelessWidget {
   final bool showPhraseTranslations;
   final bool showFurigana;
   final int numberOfExercises;
+  final bool kanjiShuffle;
+  final ExerciseType exerciseType;
 
   KanjiExercise({
     required this.showKanjiTranslations,
     required this.showPhraseTranslations,
     required this.showFurigana,
     required this.numberOfExercises,
+    required this.kanjiShuffle,
+    required this.exerciseType,
   });
 
   @override
@@ -38,8 +42,9 @@ class KanjiExercise extends StatelessWidget {
                   AdCard(),
                   ChangeNotifierProvider<ExerciseNavNotifier>(
                     create: (context) => ExerciseNavNotifier(
-                        exerciseType: ExerciseType.Kanji,
-                        maxExerciseCount: numberOfExercises),
+                        exerciseType: exerciseType,
+                        maxExerciseCount: numberOfExercises,
+                        kanjiShuffle: kanjiShuffle),
                     child: Consumer<ExerciseNavNotifier>(
                       builder: (context, navNotifier, child) {
                         return Padding(

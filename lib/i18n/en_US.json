@@ -172,6 +172,7 @@
   "continue": "Continue",
   "kanji": "Kanji",
   "n5": "JLPT Level N5",
+  "n4": "JLPT Level N4",
   "kanjiToHiragana": "In hiragana",
   "infinitive": "Infinitive",
   "mannakakarawakeru": "Part it down the middle",
@@ -622,5 +623,6 @@
   "showfurigana": "Show Furigana",
   "iwanttodo": "I want to do",
   "exercises": "Exercises",
-  "settings": "Settings"
+  "settings": "Settings",
+  "shuffle": "Random order"
 }

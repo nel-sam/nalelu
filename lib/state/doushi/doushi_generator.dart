@@ -4,9 +4,10 @@ import 'package:nalelu/state/doushi/doushi_exercise_state.dart';
 class DoushiGenerator {
   late List<Doushi> bank;
 
-  DoushiGenerator() {
+  DoushiGenerator(bool isShuffled) {
     bank = doushiBank;
-    //bank.shuffle(); // TODO: Uncomment once all Kanji exercises are set up
+    if (isShuffled)
+      bank.shuffle(); // TODO: Uncomment once all Kanji exercises are set up
   }
 
   createExercise(int index) {

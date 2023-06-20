@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:nalelu/constants.dart';
+import 'package:nalelu/lang_data/N4.dart';
 import 'package:nalelu/state/doushi/doushi_generator.dart';
 import 'package:nalelu/state/enums.dart';
 import 'package:nalelu/state/kanji/kanji_generator.dart';
@@ -24,13 +25,16 @@ class ExerciseNavNotifier extends ChangeNotifier {
   late Function(int) createExercise;
 
   ExerciseNavNotifier(
-      {required ExerciseType exerciseType, int maxExerciseCount = 9999}) {
+      {required ExerciseType exerciseType,
+      int maxExerciseCount = 9999,
+      bool verbShuffle = false,
+      bool kanjiShuffle = false}) {
     switch (exerciseType) {
       case ExerciseType.Doushi:
         this._maxIndex = maxExerciseCount < doushiBank.length
             ? maxExerciseCount
             : doushiBank.length - 1;
-        this.createExercise = new DoushiGenerator().createExercise;
+        this.createExercise = new DoushiGenerator(verbShuffle).createExercise;
         break;
       case ExerciseType.Count:
         this._maxIndex = maxExerciseCount != 9999
@@ -56,11 +60,22 @@ class ExerciseNavNotifier extends ChangeNotifier {
             : mangaExerciseBank.length - 1;
         this.createExercise = new MangaGenerator().createExercise;
         break;
-      case ExerciseType.Kanji:
+      case ExerciseType.N5:
         this._maxIndex = maxExerciseCount < kanjiN5Bank.length
             ? maxExerciseCount
             : kanjiN5Bank.length - 1;
-        this.createExercise = new KanjiGenerator().createExercise;
+        this.createExercise =
+            new KanjiGenerator(kanjiShuffle, exerciseType).createExercise;
+        break;
+      case ExerciseType.N4:
+        this._maxIndex = maxExerciseCount < kanjiN4Bank.length
+            ? maxExerciseCount
+            : kanjiN4Bank.length - 1;
+        this.createExercise =
+            new KanjiGenerator(kanjiShuffle, exerciseType).createExercise;
+        break;
+      case ExerciseType.Kanji:
+        // TODO: Handle this case.
         break;
     }
 
