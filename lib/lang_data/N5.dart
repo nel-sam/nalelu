@@ -205,7 +205,7 @@ List<Kanji> kanjiN5Bank = [
           translation: NA.t('hontoudesuka'),
           phraseParts: [
             FuriText(text: '本', furigana: '？', emphasize: true),
-            FuriText(text: '当', furigana: 'とう'),
+            FuriText(text: '当', furigana: 'とう', emphasize: true),
             FuriText(text: 'ですか？'),
           ],
           answer: 'ほんとう',
