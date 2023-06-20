@@ -7,11 +7,147 @@ import 'package:nalelu/widgets/kanji.dart';
 
 List<Kanji> kanjiN5Bank = [
   // Kanji(
+  //   translation: NA.t('北'),
+  //   kanji: '北',
+  //   onYomi: 'ホク',
+  //   kunYomi: 'きた',
+  //   phraseAnswers: [
+  //     PhraseAnswer(
+  //       translation: NA.t(''),
+  //       phraseParts: [],
+  //       answer: '',
+  //     )
+  //   ],
+  // ),
+  // Kanji(
+  //   translation: NA.t('午'),
+  //   kanji: '午',
+  //   onYomi: 'ゴ',
+  //   kunYomi: 'うま',
+  //   phraseAnswers: [
+  //     PhraseAnswer(
+  //       translation: NA.t(''),
+  //       phraseParts: [],
+  //       answer: '',
+  //     )
+  //   ],
+  // ),
+  // Kanji(
+  //   translation: NA.t('半'),
+  //   kanji: '半',
+  //   onYomi: 'ハン',
+  //   kunYomi: 'なか、はん',
+  //   phraseAnswers: [
+  //     PhraseAnswer(
+  //       translation: NA.t(''),
+  //       phraseParts: [],
+  //       answer: '',
+  //     )
+  //   ],
+  // ),
+  // Kanji(
+  //   translation: NA.t('南'),
+  //   kanji: '南',
+  //   onYomi: 'ナン',
+  //   kunYomi: 'みなみ',
+  //   phraseAnswers: [
+  //     PhraseAnswer(
+  //       translation: NA.t(''),
+  //       phraseParts: [],
+  //       answer: '',
+  //     )
+  //   ],
+  // ),
+  // Kanji(
+  //   translation: NA.t('国'),
+  //   kanji: '国',
+  //   onYomi: 'コク',
+  //   kunYomi: 'くに',
+  //   phraseAnswers: [
+  //     PhraseAnswer(
+  //       translation: NA.t(''),
+  //       phraseParts: [],
+  //       answer: '',
+  //     )
+  //   ],
+  // ),
+  // Kanji(
+  //   translation: NA.t('女'),
+  //   kanji: '女',
+  //   onYomi: 'ジョ、ニョ、ニョウ',
+  //   kunYomi: 'おんな',
+  //   phraseAnswers: [
+  //     PhraseAnswer(
+  //       translation: NA.t(''),
+  //       phraseParts: [],
+  //       answer: '',
+  //     )
+  //   ],
+  // ),
+  //  Kanji(
+  //   translation: NA.t('毎'),
+  //   kanji: '毎',
+  //   onYomi: 'マイ',
+  //   kunYomi: 'ごと',
+  //   phraseAnswers: [
+  //     PhraseAnswer(
+  //       translation: NA.t(''),
+  //       phraseParts: [],
+  //       answer: '',
+  //     )
+  //   ],
+  // ),
+  // Kanji(
+  //   translation: NA.t('気'),
+  //   kanji: '気',
+  //   onYomi: 'キ、ケ',
+  //   kunYomi: 'いき',
+  //   phraseAnswers: [
+  //     PhraseAnswer(
+  //       translation: NA.t(''),
+  //       phraseParts: [],
+  //       answer: '',
+  //     )
+  //   ],
+  // ),
+  // Kanji(
+  //   translation: NA.t('男'),
+  //   kanji: '男',
+  //   onYomi: 'ダン、ナン',
+  //   kunYomi: 'おとこ',
+  //   phraseAnswers: [
+  //     PhraseAnswer(
+  //       translation: NA.t(''),
+  //       phraseParts: [],
+  //       answer: '',
+  //     )
+  //   ],
+  // ),
+  // Kanji(
+  //   translation: NA.t('西'),
+  //   kanji: '西',
+  //   onYomi: 'セイ、サイ',
+  //   kunYomi: 'にし',
+  //   phraseAnswers: [
+  //     PhraseAnswer(
+  //       translation: NA.t(''),
+  //       phraseParts: [],
+  //       answer: '',
+  //     )
+  //   ],
+  // ),
+  // Kanji(
   //     translation: NA.t('人'),
   //     kanji: '人',
   //     onYomi: 'ジン、ニン',
   //     kunYomi: 'ひと、-り、-と',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
+  //     phraseAnswers: [
+  //       PhraseAnswer(
+  //         translation: NA.t(''),
+  //         phraseParts: [],
+  //         answer: '',
+  //       )
+  //     ]),
   // Kanji(
   //     translation: NA.t('先'),
   //     kanji: '先',
@@ -408,9 +544,7 @@ List<Kanji> kanjiN5Bank = [
           answer: 'ものがたり',
         ),
       ]),
-  
- 
-  
+
   Kanji(
       translation: NA.t('間'),
       kanji: '間',
@@ -493,7 +627,7 @@ List<Kanji> kanjiN5Bank = [
           answer: 'なに',
         )
       ]),
-  
+
   Kanji(
       translation: NA.t('一'),
       kanji: '一',
@@ -1224,7 +1358,7 @@ List<Kanji> kanjiN5Bank = [
             ],
             answer: 'どようび'),
       ]),
-  
+
   Kanji(
       translation: NA.t('年'),
       kanji: '年',
@@ -1661,7 +1795,7 @@ List<Kanji> kanjiN5Bank = [
             ],
             answer: 'こうちょう'),
       ]),
-  
+
   Kanji(
       translation: NA.t('高'),
       kanji: '高',
@@ -1697,8 +1831,7 @@ List<Kanji> kanjiN5Bank = [
             ],
             answer: 'こうきゅう'),
       ]),
-  
-  
+
   Kanji(
       translation: NA.t('白'),
       kanji: '白',
@@ -1729,7 +1862,7 @@ List<Kanji> kanjiN5Bank = [
             ],
             answer: 'はくじん'),
       ]),
- 
+
   Kanji(
       translation: NA.t('食'),
       kanji: '食',
@@ -1766,7 +1899,7 @@ List<Kanji> kanjiN5Bank = [
             ],
             answer: 'わしょく'),
       ]),
-  
+
   Kanji(
       translation: NA.t('見'),
       kanji: '見',
@@ -2027,8 +2160,7 @@ List<Kanji> kanjiN5Bank = [
             ],
             answer: 'でかける'),
       ]),
-  
-  
+
   Kanji(
       translation: NA.t('休'),
       kanji: '休',
@@ -2139,7 +2271,7 @@ List<Kanji> kanjiN5Bank = [
             ],
             answer: 'きて'),
       ]),
-  
+
   Kanji(
       translation: NA.t('山'),
       kanji: '山',
@@ -2241,7 +2373,7 @@ List<Kanji> kanjiN5Bank = [
             ],
             answer: 'しながわ'),
       ]),
-  
+
   Kanji(
     translation: NA.t('分'),
     kanji: '分',
@@ -2283,5 +2415,3 @@ List<Kanji> kanjiN5Bank = [
     ],
   ),
 ];
-
-
