@@ -622,7 +622,8 @@
   "showphrase": "Show phrase translation",
   "showfurigana": "Show Furigana",
   "iwanttodo": "I want to do",
-  "exercises": "Exercises",
+  "exercises": "exercises",
   "settings": "Settings",
-  "shuffle": "Random order"
+  "shuffle": "Random order",
+  "all": "all"
 }
