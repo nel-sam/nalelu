@@ -57,7 +57,7 @@ class ExerciseNavNotifier extends ChangeNotifier {
         this._maxIndex = maxExerciseCount < mangaExerciseBank.length
             ? maxExerciseCount
             : mangaExerciseBank.length - 1;
-        this.createExercise = new MangaGenerator().createExercise;
+        this.createExercise = new MangaGenerator(shuffle).createExercise;
         break;
       case ExerciseType.Kanji_N5:
         this._maxIndex = maxExerciseCount < kanjiN5Bank.length

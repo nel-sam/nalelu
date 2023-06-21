@@ -10,6 +10,10 @@ import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 import 'package:provider/provider.dart';
 
 class MangaExercise extends StatelessWidget {
+  final bool verbShuffle;
+
+  MangaExercise({required this.verbShuffle});
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -26,7 +30,7 @@ class MangaExercise extends StatelessWidget {
                   children: [
                     ChangeNotifierProvider<ExerciseNavNotifier>(
                       create: (context) =>
-                          ExerciseNavNotifier(exerciseType: ExerciseType.Manga),
+                          ExerciseNavNotifier(exerciseType: ExerciseType.Manga, shuffle: verbShuffle),
                       child: Consumer<ExerciseNavNotifier>(
                         builder: (context, navNotifier, child) {
                           return Column(

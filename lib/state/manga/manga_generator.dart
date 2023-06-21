@@ -5,9 +5,10 @@ import 'package:nalelu/state/manga/models.dart';
 class MangaGenerator {
   late List<MangaExerciseModel> bank;
 
-  MangaGenerator() {
-    bank = mangaExerciseBank;
-    // bank.shuffle(); // TODO: Uncomment once all Kanji exercises are set up
+  MangaGenerator(bool isShuffled) {
+    bank = [...mangaExerciseBank];
+
+    if (isShuffled) bank.shuffle();
   }
 
   createExercise(int index) {

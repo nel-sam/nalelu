@@ -4,6 +4,7 @@ import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/state/enums.dart';
 import 'package:nalelu/widgets/doushi_exercise/doushi_exercise_1.dart';
 import 'package:nalelu/widgets/kanji_exercise/kanji_exercise.dart';
+import 'package:nalelu/widgets/manga_exercise/manga_exercise.dart';
 import 'package:nalelu/widgets/shared/furigana_text.dart';
 import 'package:nalelu/widgets/shared/na_free_form_entry_wrapper.dart';
 import 'package:nalelu/widgets/shared/na_kanji_block.dart';
@@ -47,33 +48,53 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget ageSettings() {
     return ListView(children: [
       ListTile(
-        subtitle: Column(
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(NA.t('iwanttodo')),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: DropdownButton<int>(
-                    value: numberOfAgeExercises,
-                    onChanged: (value) {
-                      setState(() {
-                        numberOfAgeExercises = value!;
-                      });
-                      saveSettings();
-                    },
-                    items: [
-                      DropdownMenuItem<int>(
-                        value: 10,
-                        child: Text('10'),
-                      ),
-                      DropdownMenuItem<int>(value: 25, child: Text('25')),
-                    ].toList(),
+            Text(
+              NA.t('iwanttodo'),
+              style: TextStyle(
+                  fontSize: Theme.of(context).textTheme.bodyMedium!.fontSize!),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: DropdownButton<int>(
+                value: numberOfAgeExercises,
+                onChanged: (value) {
+                  setState(() {
+                    numberOfAgeExercises = value!;
+                  });
+                  saveSettings();
+                },
+                items: [
+                  DropdownMenuItem<int>(
+                    value: 10,
+                    child: Text(
+                      NA.t('10'),
+                      style: TextStyle(
+                          fontSize:
+                              Theme.of(context).textTheme.bodyMedium!.fontSize!,
+                          color: Theme.of(context).colorScheme.primary),
+                    ),
                   ),
-                ),
-                Text(NA.t('exercises')),
-              ],
+                  DropdownMenuItem<int>(
+                    value: 25,
+                    child: Text(
+                      NA.t('25'),
+                      style: TextStyle(
+                          fontSize:
+                              Theme.of(context).textTheme.bodyMedium!.fontSize!,
+                          color: Theme.of(context).colorScheme.primary),
+                    ),
+                  ),
+                ].toList(),
+              ),
+            ),
+            Text(
+              NA.t('exercises'),
+              style: TextStyle(
+                fontSize: Theme.of(context).textTheme.bodyMedium!.fontSize!,
+              ),
             ),
           ],
         ),
@@ -105,7 +126,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         settings = jikanSettings();
         break;
       case ExerciseType.Manga:
-        // TODO: Handle this case.
+        settings = mangaSettings();
         break;
       case ExerciseType.Kanji_N5:
         settings = kanjiN5Settings();
@@ -126,36 +147,88 @@ class _SettingsScreenState extends State<SettingsScreen> {
         body: allSettings(widget.exerciseType));
   }
 
+  Widget mangaSettings() {
+    return ListView(
+      children: [
+        ListTile(
+          title: Text(
+            NA.t('shuffle'),
+            style: TextStyle(
+                fontSize: Theme.of(context).textTheme.bodyMedium!.fontSize!),
+          ),
+          trailing: Switch(
+            value: mangaShuffle,
+            onChanged: (bool value) {
+              setState(() {
+                mangaShuffle = value;
+              });
+              saveSettings();
+            },
+          ),
+        ),
+        SizedBox(height: 20),
+        NAMenuButton(
+          destination: MangaExercise(verbShuffle: mangaShuffle),
+          label: NA.t('Start'),
+          translabel: [
+            FuriText(text: '始', furigana: 'はじ'),
+            FuriText(text: 'める')
+          ],
+        ),
+      ],
+    );
+  }
+
   Widget countingSettings() {
     return ListView(children: [
       ListTile(
-        subtitle: Column(
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(NA.t('iwanttodo')),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: DropdownButton<int>(
-                    value: numberOfCountingExercises,
-                    onChanged: (value) {
-                      setState(() {
-                        numberOfCountingExercises = value!;
-                      });
-                      saveSettings();
-                    },
-                    items: [
-                      DropdownMenuItem<int>(
-                        value: 10,
-                        child: Text('10'),
-                      ),
-                      DropdownMenuItem<int>(value: 25, child: Text('25')),
-                    ].toList(),
+            Text(
+              NA.t('iwanttodo'),
+              style: TextStyle(
+                  fontSize: Theme.of(context).textTheme.bodyMedium!.fontSize!),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: DropdownButton<int>(
+                value: numberOfCountingExercises,
+                onChanged: (value) {
+                  setState(() {
+                    numberOfCountingExercises = value!;
+                  });
+                  saveSettings();
+                },
+                items: [
+                  DropdownMenuItem<int>(
+                    value: 10,
+                    child: Text(
+                      NA.t('10'),
+                      style: TextStyle(
+                          fontSize:
+                              Theme.of(context).textTheme.bodyMedium!.fontSize!,
+                          color: Theme.of(context).colorScheme.primary),
+                    ),
                   ),
-                ),
-                Text(NA.t('exercises')),
-              ],
+                  DropdownMenuItem<int>(
+                    value: 25,
+                    child: Text(
+                      NA.t('25'),
+                      style: TextStyle(
+                          fontSize:
+                              Theme.of(context).textTheme.bodyMedium!.fontSize!,
+                          color: Theme.of(context).colorScheme.primary),
+                    ),
+                  ),
+                ].toList(),
+              ),
+            ),
+            Text(
+              NA.t('exercises'),
+              style: TextStyle(
+                fontSize: Theme.of(context).textTheme.bodyMedium!.fontSize!,
+              ),
             ),
           ],
         ),
@@ -175,7 +248,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
     return ListView(
       children: [
         ListTile(
-          subtitle: Text(NA.t('shuffle')),
+          title: Text(
+            NA.t('shuffle'),
+            style: TextStyle(
+                fontSize: Theme.of(context).textTheme.bodyMedium!.fontSize!),
+          ),
           trailing: Switch(
             value: verbShuffle,
             onChanged: (bool value) {
@@ -186,8 +263,18 @@ class _SettingsScreenState extends State<SettingsScreen> {
             },
           ),
         ),
+        Divider(
+          height: 1.0,
+          indent: 16.0,
+          endIndent: 16.0,
+          color: Colors.grey[300],
+        ),
         ListTile(
-          subtitle: Text(NA.t('showVerb')),
+          title: Text(
+            NA.t('showVerb'),
+            style: TextStyle(
+                fontSize: Theme.of(context).textTheme.bodyMedium!.fontSize!),
+          ),
           trailing: Switch(
             value: showVerbTranslation,
             onChanged: (bool value) {
@@ -198,8 +285,18 @@ class _SettingsScreenState extends State<SettingsScreen> {
             },
           ),
         ),
+        Divider(
+          height: 1.0,
+          indent: 16.0,
+          endIndent: 16.0,
+          color: Colors.grey[300],
+        ),
         ListTile(
-          subtitle: Text(NA.t('showfurigana')),
+          title: Text(
+            NA.t('showfurigana'),
+            style: TextStyle(
+                fontSize: Theme.of(context).textTheme.bodyMedium!.fontSize!),
+          ),
           trailing: Switch(
             value: showVerbFurigana,
             onChanged: (bool value) {
@@ -221,6 +318,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 ]),
             showVerbTranslation ? NTextSpan(NA.t('kawaigaru')) : Container(),
             NaFreeFormEntryWrapper(
+              showMaxLength: false,
               readOnly: true,
               isAnswerCentered: true,
               widthType: NFreeFormWidths.full,
@@ -233,12 +331,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ],
         ),
         ListTile(
-          subtitle: Column(
+          title: Column(
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(NA.t('iwanttodo')),
+                  Text(
+                    NA.t('iwanttodo'),
+                    style: TextStyle(
+                        fontSize:
+                            Theme.of(context).textTheme.bodyMedium!.fontSize!),
+                  ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: DropdownButton<int>(
@@ -252,15 +355,62 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       items: [
                         DropdownMenuItem<int>(
                           value: 10,
-                          child: Text('10'),
+                          child: Text(
+                            NA.t('10'),
+                            style: TextStyle(
+                                fontSize: Theme.of(context)
+                                    .textTheme
+                                    .bodyMedium!
+                                    .fontSize!,
+                                color: Theme.of(context).colorScheme.primary),
+                          ),
                         ),
-                        DropdownMenuItem<int>(value: 25, child: Text('25')),
-                        DropdownMenuItem<int>(value: 50, child: Text('50')),
-                        DropdownMenuItem<int>(value: 9999, child: Text(NA.t('all'))),
+                        DropdownMenuItem<int>(
+                          value: 25,
+                          child: Text(
+                            NA.t('25'),
+                            style: TextStyle(
+                                fontSize: Theme.of(context)
+                                    .textTheme
+                                    .bodyMedium!
+                                    .fontSize!,
+                                color: Theme.of(context).colorScheme.primary),
+                          ),
+                        ),
+                        DropdownMenuItem<int>(
+                          value: 50,
+                          child: Text(
+                            NA.t('50'),
+                            style: TextStyle(
+                                fontSize: Theme.of(context)
+                                    .textTheme
+                                    .bodyMedium!
+                                    .fontSize!,
+                                color: Theme.of(context).colorScheme.primary),
+                          ),
+                        ),
+                        DropdownMenuItem<int>(
+                          value: 9999,
+                          child: Text(
+                            NA.t('all'),
+                            style: TextStyle(
+                                fontSize: Theme.of(context)
+                                    .textTheme
+                                    .bodyMedium!
+                                    .fontSize!,
+                                color: Theme.of(context).colorScheme.primary),
+                          ),
+                        ),
                       ].toList(),
                     ),
                   ),
-                  Text(NA.t('exercises')),
+                  Text(
+                    NA.t('exercises'),
+                    style: TextStyle(
+                      fontSize:
+                          Theme.of(context).textTheme.bodyMedium!.fontSize!,
+                    ),
+                  ),
                 ],
               ),
             ],
@@ -292,33 +442,53 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget jikanSettings() {
     return ListView(children: [
       ListTile(
-        subtitle: Column(
+        title: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(NA.t('iwanttodo')),
-                Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: DropdownButton<int>(
-                    value: numberOfJikanExercises,
-                    onChanged: (value) {
-                      setState(() {
-                        numberOfJikanExercises = value!;
-                      });
-                      saveSettings();
-                    },
-                    items: [
-                      DropdownMenuItem<int>(
-                        value: 10,
-                        child: Text('10'),
-                      ),
-                      DropdownMenuItem<int>(value: 25, child: Text('25')),
-                    ].toList(),
+            Text(
+              NA.t('iwanttodo'),
+              style: TextStyle(
+                  fontSize: Theme.of(context).textTheme.bodyMedium!.fontSize!),
+            ),
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: DropdownButton<int>(
+                value: numberOfJikanExercises,
+                onChanged: (value) {
+                  setState(() {
+                    numberOfJikanExercises = value!;
+                  });
+                  saveSettings();
+                },
+                items: [
+                  DropdownMenuItem<int>(
+                    value: 10,
+                    child: Text(
+                      NA.t('10'),
+                      style: TextStyle(
+                          fontSize:
+                              Theme.of(context).textTheme.bodyMedium!.fontSize!,
+                          color: Theme.of(context).colorScheme.primary),
+                    ),
                   ),
-                ),
-                Text(NA.t('exercises')),
-              ],
+                  DropdownMenuItem<int>(
+                    value: 25,
+                    child: Text(
+                      NA.t('25'),
+                      style: TextStyle(
+                          fontSize:
+                              Theme.of(context).textTheme.bodyMedium!.fontSize!,
+                          color: Theme.of(context).colorScheme.primary),
+                    ),
+                  ),
+                ].toList(),
+              ),
+            ),
+            Text(
+              NA.t('exercises'),
+              style: TextStyle(
+                fontSize: Theme.of(context).textTheme.bodyMedium!.fontSize!,
+              ),
             ),
           ],
         ),
@@ -338,7 +508,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
     return ListView(
       children: [
         ListTile(
-          subtitle: Text(NA.t('shuffle')),
+          title: Text(
+            NA.t('shuffle'),
+            style: TextStyle(
+                fontSize: Theme.of(context).textTheme.bodyMedium!.fontSize!),
+          ),
           trailing: Switch(
             value: kanjiN4Shuffle,
             onChanged: (bool value) {
@@ -349,8 +523,18 @@ class _SettingsScreenState extends State<SettingsScreen> {
             },
           ),
         ),
+        Divider(
+          height: 1.0,
+          indent: 16.0,
+          endIndent: 16.0,
+          color: Colors.grey[300],
+        ),
         ListTile(
-          subtitle: Text(NA.t('showkanji')),
+          title: Text(
+            NA.t('showkanji'),
+            style: TextStyle(
+                fontSize: Theme.of(context).textTheme.bodyMedium!.fontSize!),
+          ),
           trailing: Switch(
             value: showKanjiN4Translation,
             onChanged: (bool value) {
@@ -361,8 +545,18 @@ class _SettingsScreenState extends State<SettingsScreen> {
             },
           ),
         ),
+        Divider(
+          height: 1.0,
+          indent: 16.0,
+          endIndent: 16.0,
+          color: Colors.grey[300],
+        ),
         ListTile(
-          subtitle: Text(NA.t('showphrase')),
+          title: Text(
+            NA.t('showphrase'),
+            style: TextStyle(
+                fontSize: Theme.of(context).textTheme.bodyMedium!.fontSize!),
+          ),
           trailing: Switch(
             value: showN4PhraseTranslation,
             onChanged: (bool value) {
@@ -373,8 +567,18 @@ class _SettingsScreenState extends State<SettingsScreen> {
             },
           ),
         ),
+        Divider(
+          height: 1.0,
+          indent: 16.0,
+          endIndent: 16.0,
+          color: Colors.grey[300],
+        ),
         ListTile(
-          subtitle: Text(NA.t('showfurigana')),
+          title: Text(
+            NA.t('showfurigana'),
+            style: TextStyle(
+                fontSize: Theme.of(context).textTheme.bodyMedium!.fontSize!),
+          ),
           trailing: Switch(
             value: showKanjiN4Furigana,
             onChanged: (bool value) {
@@ -423,7 +627,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ],
           ),
         ),
-        SizedBox(height: 30),
+        SizedBox(height: 4),
         ConstrainedBox(
           constraints: BoxConstraints(maxWidth: 300),
           child: Column(
@@ -457,6 +661,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       : Container()
                 ]),
                 NaFreeFormEntryWrapper(
+                  showMaxLength: false,
                   readOnly: true,
                   isAnswerCentered: true,
                   widthType: NFreeFormWidths.full,
@@ -469,12 +674,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
               ]),
         ),
         ListTile(
-          subtitle: Column(
+          title: Column(
             children: [
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(NA.t('iwanttodo')),
+                  Text(
+                    NA.t('iwanttodo'),
+                    style: TextStyle(
+                        fontSize:
+                            Theme.of(context).textTheme.bodyMedium!.fontSize!),
+                  ),
                   Padding(
                     padding: const EdgeInsets.all(8.0),
                     child: DropdownButton<int>(
@@ -488,15 +698,62 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       items: [
                         DropdownMenuItem<int>(
                           value: 10,
-                          child: Text('10'),
+                          child: Text(
+                            NA.t('10'),
+                            style: TextStyle(
+                                fontSize: Theme.of(context)
+                                    .textTheme
+                                    .bodyMedium!
+                                    .fontSize!,
+                                color: Theme.of(context).colorScheme.primary),
+                          ),
                         ),
-                        DropdownMenuItem<int>(value: 25, child: Text('25')),
-                        DropdownMenuItem<int>(value: 50, child: Text('50')),
-                        DropdownMenuItem<int>(value: 9999, child: Text(NA.t('all'))),
+                        DropdownMenuItem<int>(
+                          value: 25,
+                          child: Text(
+                            NA.t('25'),
+                            style: TextStyle(
+                                fontSize: Theme.of(context)
+                                    .textTheme
+                                    .bodyMedium!
+                                    .fontSize!,
+                                color: Theme.of(context).colorScheme.primary),
+                          ),
+                        ),
+                        DropdownMenuItem<int>(
+                          value: 50,
+                          child: Text(
+                            NA.t('50'),
+                            style: TextStyle(
+                                fontSize: Theme.of(context)
+                                    .textTheme
+                                    .bodyMedium!
+                                    .fontSize!,
+                                color: Theme.of(context).colorScheme.primary),
+                          ),
+                        ),
+                        DropdownMenuItem<int>(
+                          value: 9999,
+                          child: Text(
+                            NA.t('all'),
+                            style: TextStyle(
+                                fontSize: Theme.of(context)
+                                    .textTheme
+                                    .bodyMedium!
+                                    .fontSize!,
+                                color: Theme.of(context).colorScheme.primary),
+                          ),
+                        ),
                       ].toList(),
                     ),
                   ),
-                  Text(NA.t('exercises')),
+                  Text(
+                    NA.t('exercises'),
+                    style: TextStyle(
+                      fontSize:
+                          Theme.of(context).textTheme.bodyMedium!.fontSize!,
+                    ),
+                  ),
                 ],
               ),
             ],
@@ -605,12 +862,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
               saveSettings();
             },
           ),
-        ),
-        Divider(
-          height: 1.0,
-          indent: 16.0,
-          endIndent: 16.0,
-          color: Colors.grey[300],
         ),
         Padding(
           padding: const EdgeInsets.all(12.0),

@@ -29,7 +29,8 @@ class MainMenu extends StatelessWidget {
                 child: Column(
                   children: [
                     NAMenuButton(
-                      destination: MangaExercise(),
+                      destination:
+                          SettingsScreen(exerciseType: ExerciseType.Manga),
                       label: NA.t('manga'),
                       translabel: [FuriText(text: '漫画', furigana: 'まんが')],
                     ),
@@ -39,7 +40,8 @@ class MainMenu extends StatelessWidget {
                       translabel: [FuriText(text: '数字', furigana: 'すうじ')],
                     ),
                     NAMenuButton(
-                      destination: SettingsScreen(exerciseType: ExerciseType.Doushi),
+                      destination:
+                          SettingsScreen(exerciseType: ExerciseType.Doushi),
                       label: NA.t('verbs'),
                       translabel: [FuriText(text: '動詞', furigana: 'どうし')],
                     ),
