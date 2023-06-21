@@ -423,7 +423,7 @@ List<Kanji> kanjiN5Bank = [
           translation: NA.t('daigakuseidesu'),
           phraseParts: [
             FuriText(text: '大', furigana: 'だい', emphasize: true),
-            FuriText(text: '学', furigana: '？  ', emphasize: true),
+            FuriText(text: '学', furigana: '？', emphasize: true),
             FuriText(text: '生', furigana: 'せい', emphasize: true),
             FuriText(text: 'です'),
           ],
@@ -454,7 +454,7 @@ List<Kanji> kanjiN5Bank = [
           translation: NA.t('gakkouniiku'),
           phraseParts: [
             FuriText(text: '学', furigana: 'がっ', emphasize: true),
-            FuriText(text: '校', furigana: '?', emphasize: true),
+            FuriText(text: '校', furigana: '？', emphasize: true),
             FuriText(text: 'に'),
             FuriText(text: '行', furigana: 'い'),
             FuriText(text: 'く'),
@@ -473,7 +473,7 @@ List<Kanji> kanjiN5Bank = [
           translation: NA.t('otousantoisshoniiru'),
           phraseParts: [
             FuriText(text: 'お', emphasize: true),
-            FuriText(text: '父', furigana: '?', emphasize: true),
+            FuriText(text: '父', furigana: '？', emphasize: true),
             FuriText(text: 'さん', emphasize: true),
             FuriText(text: 'と'),
             FuriText(text: '一緒', furigana: 'いっしょ'),
@@ -485,7 +485,7 @@ List<Kanji> kanjiN5Bank = [
           // 父は寝ている
           translation: NA.t('chichihaneteiru'),
           phraseParts: [
-            FuriText(text: '父', furigana: '?', emphasize: true),
+            FuriText(text: '父', furigana: '？', emphasize: true),
             FuriText(text: 'は'),
             FuriText(text: '寝', furigana: 'ね'),
             FuriText(text: 'ている'),
@@ -504,7 +504,7 @@ List<Kanji> kanjiN5Bank = [
             translation: NA.t('okaasanhayasashiihitodesu'),
             phraseParts: [
               FuriText(text: 'お', emphasize: true),
-              FuriText(text: '母', furigana: '?', emphasize: true),
+              FuriText(text: '母', furigana: '？', emphasize: true),
               FuriText(text: 'さん', emphasize: true),
               FuriText(text: 'は'),
               FuriText(text: '優', furigana: 'やさ'),
@@ -1111,16 +1111,16 @@ List<Kanji> kanjiN5Bank = [
       phraseAnswers: [
         PhraseAnswer(
             // 二千人も参加しました
-            translation: NA.t('nisenninmosankashimashita'),
+            translation: NA.t('sansenninmosankashimashita'),
             phraseParts: [
-              FuriText(text: '二', furigana: 'に', emphasize: true),
+              FuriText(text: '三', furigana: 'さん', emphasize: true),
               FuriText(text: '千', furigana: '？', emphasize: true),
               FuriText(text: '人', furigana: 'にん', emphasize: true),
               FuriText(text: 'も'),
               FuriText(text: '参加', furigana: 'さんか'),
               FuriText(text: 'しました'),
             ],
-            answer: 'にせんにん'),
+            answer: 'さんせんにん'),
         PhraseAnswer(
             // 三千秒は何時間ですか？
             translation: NA.t('sanzenbyouhananjikandesuka'),
@@ -2245,12 +2245,12 @@ List<Kanji> kanjiN5Bank = [
             // お休みなさい
             translation: NA.t('oyasuminasai'),
             phraseParts: [
-              FuriText(text: 'お'),
+              FuriText(text: 'お', emphasize: true),
               FuriText(text: '休', furigana: '？', emphasize: true),
               FuriText(text: 'み', emphasize: true),
               FuriText(text: 'なさい'),
             ],
-            answer: 'やす'),
+            answer: 'おやすみ'),
         PhraseAnswer(
             // ゆっくり休んでね
             translation: NA.t('yukkuriyasunde'),

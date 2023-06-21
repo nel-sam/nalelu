@@ -2,7 +2,6 @@ import 'dart:collection';
 
 import 'package:nalelu/widgets/kanji.dart';
 
-
 class KanjiExerciseState {
   HashMap<String, String> userInput = new HashMap<String, String>();
   Kanji kanji;

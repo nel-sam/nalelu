@@ -7,6 +7,8 @@ class FuriganaText extends StatelessWidget {
   final List<FuriText> furiTexts;
   final Color? textColor;
   final bool showFurigana;
+  final bool isCorrect;
+  final String answer;
 
   const FuriganaText({
     Key? key,
@@ -14,7 +16,25 @@ class FuriganaText extends StatelessWidget {
     this.fontSize = FONT_SIZE,
     this.textColor,
     this.showFurigana = true,
+    this.isCorrect = false,
+    this.answer = '',
   }) : super(key: key);
+
+  String subtractChars(String answer, List<FuriText> furigana) {
+    var result = answer;
+    RegExp regex;
+    for (var i in furiTexts) {
+      if (i.emphasize) {
+        if (i.furigana == '')
+          regex = RegExp(i.text, multiLine: true);
+        else
+          regex = RegExp(i.furigana, multiLine: true);
+        result = result.replaceAll(regex, '');
+        if (result == '') result = i.furigana;
+      }
+    }
+    return result;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -30,7 +50,9 @@ class FuriganaText extends StatelessWidget {
                           i.furigana.length == 0 ? fontSize * 1.0 : fontSize,
                       child: Center(
                         child: Text(
-                          i.furigana,
+                          i.furigana == '？' && isCorrect
+                              ? subtractChars(answer, furiTexts)
+                              : i.furigana,
                           textAlign: TextAlign.center,
                           style: TextStyle(
                             fontSize: fontSize * 0.7,
@@ -38,7 +60,9 @@ class FuriganaText extends StatelessWidget {
                                 ? FontWeight.bold
                                 : FontWeight.normal,
                             color: i.emphasize
-                                ? Theme.of(context).colorScheme.primary
+                                ? isCorrect
+                                    ? Colors.green
+                                    : Theme.of(context).colorScheme.primary
                                 : textColor,
                           ),
                         ),
@@ -54,7 +78,9 @@ class FuriganaText extends StatelessWidget {
                     fontWeight:
                         i.emphasize ? FontWeight.bold : FontWeight.normal,
                     color: i.emphasize
-                        ? Theme.of(context).colorScheme.primary
+                        ? isCorrect
+                            ? Colors.green
+                            : Theme.of(context).colorScheme.primary
                         : textColor,
                   ),
                 ),

@@ -80,9 +80,11 @@ class _KanjiExerciseStateArea extends State<KanjiExerciseStateArea> {
                         children: [
                           Wrap(children: [
                             FuriganaText(
-                              showFurigana: widget.showFurigana,
-                              furiTexts: pa.phraseParts,
-                            ),
+                                showFurigana: widget.showFurigana,
+                                furiTexts: pa.phraseParts,
+                                isCorrect: pa.answer ==
+                                    widget.state.getUserInput(inputKey),
+                                    answer: pa.answer),
                           ]),
                           Wrap(children: [
                             widget.showPhraseTranslations
