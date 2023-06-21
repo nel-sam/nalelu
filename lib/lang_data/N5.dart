@@ -166,24 +166,98 @@ List<Kanji> kanjiN5Bank = [
   //     onYomi: 'ユウ',
   //     kunYomi: 'とも',
   // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('天'),
-  //     kanji: '天',
-  //     onYomi: 'テン',
-  //     kunYomi: 'あまつ、あめ、あま',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('子'),
-  //     kanji: '子',
-  //     onYomi: 'シ、ス、ツ',
-  //     kunYomi: 'こ',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('時'),
-  //     kanji: '時',
-  //     onYomi: 'ジ',
-  //     kunYomi: 'とき',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
+  Kanji(
+      translation: NA.t('天'),
+      kanji: '天',
+      onYomi: 'テン',
+      kunYomi: 'あまつ、あめ、あま',
+      phraseAnswers: [
+        PhraseAnswer(
+          // 天気がいいです
+          translation: NA.t('tenkgaiidesu'),
+          phraseParts: [
+            FuriText(text: '天', furigana: '？', emphasize: true),
+            FuriText(text: '気', furigana: 'き', emphasize: true),
+            FuriText(text: 'がいいです'),
+          ],
+          answer: 'てんき',
+        ),
+      ]),
+  Kanji(
+      translation: NA.t('子'),
+      kanji: '子',
+      onYomi: 'シ、ス、ツ',
+      kunYomi: 'こ',
+      phraseAnswers: [
+        PhraseAnswer(
+          // 子供がいますか？
+          translation: NA.t('kodomonogaimasuka'),
+          phraseParts: [
+            FuriText(text: '子', furigana: '？', emphasize: true),
+            FuriText(text: '供', furigana: 'ども'),
+            FuriText(text: 'がいますか？'),
+          ],
+          answer: 'こども',
+        ),
+        PhraseAnswer(
+          //  女子たちは学校に行きます
+          translation: NA.t('joshitachihagakkouniikimasu'),
+          phraseParts: [
+            FuriText(text: '女', furigana: 'じょ', emphasize: true),
+            FuriText(text: '子', furigana: '？', emphasize: true),
+            FuriText(text: 'たちは'),
+            FuriText(text: '学校', furigana: 'がっこう'),
+            FuriText(text: 'に', furigana: ''),
+            FuriText(text: '行', furigana: 'い'),
+            FuriText(text: 'きます'),
+          ],
+          answer: 'じょし',
+        ),
+        PhraseAnswer(
+          // 椅子に座ってください
+          translation: NA.t('isunisuwattekudasai'),
+          phraseParts: [
+            FuriText(text: '椅', furigana: 'い', emphasize: true),
+            FuriText(text: '子', furigana: '？', emphasize: true),
+            FuriText(text: 'に'),
+            FuriText(text: '座', furigana: 'すわ'),
+            FuriText(text: 'ってください'),
+          ],
+          answer: 'いす',
+        ),
+      ]),
+  Kanji(
+      translation: NA.t('時'),
+      kanji: '時',
+      onYomi: 'ジ',
+      kunYomi: 'とき',
+      phraseAnswers: [
+        PhraseAnswer(
+          // 時間がありますか？
+          translation: NA.t('jikangaarimasuka'),
+          phraseParts: [
+            FuriText(text: '時', furigana: '？', emphasize: true),
+            FuriText(text: '間', furigana: 'かん'),
+            FuriText(text: 'がありますか？'),
+          ],
+          answer: 'じかん',
+        ),
+        PhraseAnswer(
+          // 来た時に連絡してください
+          translation: NA.t('kitatokinirenrakushitekudasai'),
+          phraseParts: [
+            FuriText(text: '来', furigana: 'き'),
+            FuriText(
+              text: 'た',
+            ),
+            FuriText(text: '時', furigana: '？', emphasize: true),
+            FuriText(text: 'に'),
+            FuriText(text: '連絡', furigana: 'れんらく'),
+            FuriText(text: 'してください'),
+          ],
+          answer: 'とき',
+        ),
+      ]),
   Kanji(
       translation: NA.t('本'),
       kanji: '本',
