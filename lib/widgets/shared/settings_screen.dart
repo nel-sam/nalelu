@@ -720,18 +720,18 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                 color: Theme.of(context).colorScheme.primary),
                           ),
                         ),
-                        DropdownMenuItem<int>(
-                          value: 50,
-                          child: Text(
-                            NA.t('50'),
-                            style: TextStyle(
-                                fontSize: Theme.of(context)
-                                    .textTheme
-                                    .bodyMedium!
-                                    .fontSize!,
-                                color: Theme.of(context).colorScheme.primary),
-                          ),
-                        ),
+                        // DropdownMenuItem<int>(
+                        //   value: 50,
+                        //   child: Text(
+                        //     NA.t('50'),
+                        //     style: TextStyle(
+                        //         fontSize: Theme.of(context)
+                        //             .textTheme
+                        //             .bodyMedium!
+                        //             .fontSize!,
+                        //         color: Theme.of(context).colorScheme.primary),
+                        //   ),
+                        // ),
                         DropdownMenuItem<int>(
                           value: 9999,
                           child: Text(
