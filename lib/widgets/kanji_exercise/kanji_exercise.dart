@@ -14,7 +14,7 @@ class KanjiExercise extends StatelessWidget {
   final bool showPhraseTranslations;
   final bool showFurigana;
   final int numberOfExercises;
-  final bool kanjiShuffle;
+  final bool shuffle;
   final ExerciseType exerciseType;
 
   KanjiExercise({
@@ -22,7 +22,7 @@ class KanjiExercise extends StatelessWidget {
     required this.showPhraseTranslations,
     required this.showFurigana,
     required this.numberOfExercises,
-    required this.kanjiShuffle,
+    required this.shuffle,
     required this.exerciseType,
   });
 
@@ -44,7 +44,7 @@ class KanjiExercise extends StatelessWidget {
                     create: (context) => ExerciseNavNotifier(
                         exerciseType: exerciseType,
                         maxExerciseCount: numberOfExercises,
-                        kanjiShuffle: kanjiShuffle),
+                        shuffle: shuffle),
                     child: Consumer<ExerciseNavNotifier>(
                       builder: (context, navNotifier, child) {
                         return Padding(

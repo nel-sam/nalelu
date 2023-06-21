@@ -12,8 +12,8 @@ import 'package:nalelu/state/suuji/count/count_generator.dart';
 import 'package:nalelu/state/suuji/jikan/jikan_generator.dart';
 import 'package:nrs_flutter_lib/constants.dart';
 
-import '../lang_data/doushi.dart';
 import '../lang_data/N5.dart';
+import '../lang_data/doushi.dart';
 import '../lang_data/manga.dart';
 
 class ExerciseNavNotifier extends ChangeNotifier {
@@ -27,14 +27,13 @@ class ExerciseNavNotifier extends ChangeNotifier {
   ExerciseNavNotifier(
       {required ExerciseType exerciseType,
       int maxExerciseCount = 9999,
-      bool verbShuffle = false,
-      bool kanjiShuffle = false}) {
+      bool shuffle = false}) {
     switch (exerciseType) {
       case ExerciseType.Doushi:
         this._maxIndex = maxExerciseCount < doushiBank.length
             ? maxExerciseCount
             : doushiBank.length - 1;
-        this.createExercise = new DoushiGenerator(verbShuffle).createExercise;
+        this.createExercise = new DoushiGenerator(shuffle).createExercise;
         break;
       case ExerciseType.Count:
         this._maxIndex = maxExerciseCount != 9999
@@ -60,22 +59,19 @@ class ExerciseNavNotifier extends ChangeNotifier {
             : mangaExerciseBank.length - 1;
         this.createExercise = new MangaGenerator().createExercise;
         break;
-      case ExerciseType.N5:
+      case ExerciseType.Kanji_N5:
         this._maxIndex = maxExerciseCount < kanjiN5Bank.length
             ? maxExerciseCount
             : kanjiN5Bank.length - 1;
         this.createExercise =
-            new KanjiGenerator(kanjiShuffle, exerciseType).createExercise;
+            new KanjiGenerator(shuffle, exerciseType).createExercise;
         break;
-      case ExerciseType.N4:
+      case ExerciseType.Kanji_N4:
         this._maxIndex = maxExerciseCount < kanjiN4Bank.length
             ? maxExerciseCount
             : kanjiN4Bank.length - 1;
         this.createExercise =
-            new KanjiGenerator(kanjiShuffle, exerciseType).createExercise;
-        break;
-      case ExerciseType.Kanji:
-        // TODO: Handle this case.
+            new KanjiGenerator(shuffle, exerciseType).createExercise;
         break;
     }
 

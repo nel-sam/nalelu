@@ -107,10 +107,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
       case ExerciseType.Manga:
         // TODO: Handle this case.
         break;
-      case ExerciseType.N5:
+      case ExerciseType.Kanji_N5:
         settings = kanjiN5Settings();
         break;
-      case ExerciseType.N4:
+      case ExerciseType.Kanji_N4:
         settings = kanjiN4Settings();
         break;
     }
@@ -334,193 +334,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
     ]);
   }
 
-  Widget kanjiN5Settings() {
-    return ListView(
-      children: [
-        ListTile(
-          subtitle: Text(NA.t('shuffle')),
-          trailing: Switch(
-            value: kanjiN5Shuffle,
-            onChanged: (bool value) {
-              setState(() {
-                kanjiN5Shuffle = value;
-              });
-              saveSettings();
-            },
-          ),
-        ),
-        ListTile(
-          subtitle: Text(NA.t('showkanji')),
-          trailing: Switch(
-            value: showKanjiN5Translation,
-            onChanged: (bool value) {
-              setState(() {
-                showKanjiN5Translation = value;
-              });
-              saveSettings();
-            },
-          ),
-        ),
-        ListTile(
-          subtitle: Text(NA.t('showphrase')),
-          trailing: Switch(
-            value: showN5PhraseTranslation,
-            onChanged: (bool value) {
-              setState(() {
-                showN5PhraseTranslation = value;
-              });
-              saveSettings();
-            },
-          ),
-        ),
-        ListTile(
-          subtitle: Text(NA.t('showfurigana')),
-          trailing: Switch(
-            value: showKanjiN5Furigana,
-            onChanged: (bool value) {
-              setState(() {
-                showKanjiN5Furigana = value;
-              });
-              saveSettings();
-            },
-          ),
-        ),
-        Padding(
-          padding: const EdgeInsets.all(12.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              Padding(
-                padding: const EdgeInsets.only(right: 14),
-                child: NAKanjiBlock(
-                  kanji: '石',
-                ),
-              ),
-              ConstrainedBox(
-                constraints: BoxConstraints(maxWidth: 210),
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                  children: [
-                    Wrap(children: [
-                      showKanjiN5Translation
-                          ? Text('Stone, Rock',
-                              style: TextStyle(fontWeight: FontWeight.bold))
-                          : Container()
-                    ]),
-                    Text('Kun yomi'),
-                    Wrap(
-                      children: [Text('いし')],
-                    ),
-                    Text('On yomi'),
-                    Wrap(
-                      children: [Text('セキ、シャク、コク')],
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-        ),
-        SizedBox(height: 30),
-        ConstrainedBox(
-          constraints: BoxConstraints(maxWidth: 300),
-          child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                Wrap(children: [
-                  FuriganaText(
-                    showFurigana: showKanjiN5Furigana,
-                    furiTexts: [
-                      FuriText(text: '彼', furigana: 'かれ'),
-                      FuriText(text: 'は'),
-                      FuriText(text: '石', furigana: '？', emphasize: true),
-                      FuriText(text: 'を'),
-                      FuriText(text: '投', furigana: 'な'),
-                      FuriText(text: 'げた'),
-                    ],
-                  ),
-                ]),
-                Wrap(children: [
-                  showN5PhraseTranslation
-                      ? Text(
-                          NA.t('karehaishiotageta'),
-                          style: TextStyle(
-                              color: Colors.grey.shade700,
-                              fontSize: Theme.of(context)
-                                  .textTheme
-                                  .bodySmall!
-                                  .fontSize),
-                        )
-                      : Container()
-                ]),
-                NaFreeFormEntryWrapper(
-                  readOnly: true,
-                  isAnswerCentered: true,
-                  widthType: NFreeFormWidths.full,
-                  labelText: NA.t('kanjiToHiragana'),
-                  onChanged: (String newValue) {},
-                  initialValue: '',
-                  correctValues: ['いし'],
-                  onCorrect: () {},
-                ),
-              ]),
-        ),
-        ListTile(
-          subtitle: Column(
-            children: [
-              Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(NA.t('iwanttodo')),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: DropdownButton<int>(
-                      value: numberOfKanjiN5Exercises,
-                      onChanged: (value) {
-                        setState(() {
-                          numberOfKanjiN5Exercises = value!;
-                        });
-                        saveSettings();
-                      },
-                      items: [
-                        DropdownMenuItem<int>(
-                          value: 10,
-                          child: Text('10'),
-                        ),
-                        DropdownMenuItem<int>(value: 25, child: Text('25')),
-                        DropdownMenuItem<int>(value: 50, child: Text('50')),
-                        DropdownMenuItem<int>(value: 9999, child: Text('All')),
-                      ].toList(),
-                    ),
-                  ),
-                  Text(NA.t('exercises')),
-                ],
-              ),
-            ],
-          ),
-        ),
-        SizedBox(height: 20),
-        NAMenuButton(
-          destination: KanjiExercise(
-              showFurigana: showKanjiN5Furigana,
-              showKanjiTranslations: showKanjiN5Translation,
-              showPhraseTranslations: showN5PhraseTranslation,
-              numberOfExercises: numberOfKanjiN5Exercises - 1,
-              kanjiShuffle: kanjiN5Shuffle,
-              exerciseType: widget.exerciseType),
-          label: NA.t('Start'),
-          translabel: [
-            FuriText(text: '始', furigana: 'はじ'),
-            FuriText(text: 'める')
-          ],
-        ),
-      ],
-    );
-  }
-
   Widget kanjiN4Settings() {
     return ListView(
       children: [
@@ -696,7 +509,194 @@ class _SettingsScreenState extends State<SettingsScreen> {
               showKanjiTranslations: showKanjiN4Translation,
               showPhraseTranslations: showN4PhraseTranslation,
               numberOfExercises: numberOfKanjiN4Exercises - 1,
-              kanjiShuffle: kanjiN4Shuffle,
+              shuffle: kanjiN4Shuffle,
+              exerciseType: widget.exerciseType),
+          label: NA.t('Start'),
+          translabel: [
+            FuriText(text: '始', furigana: 'はじ'),
+            FuriText(text: 'める')
+          ],
+        ),
+      ],
+    );
+  }
+
+  Widget kanjiN5Settings() {
+    return ListView(
+      children: [
+        ListTile(
+          subtitle: Text(NA.t('shuffle')),
+          trailing: Switch(
+            value: kanjiN5Shuffle,
+            onChanged: (bool value) {
+              setState(() {
+                kanjiN5Shuffle = value;
+              });
+              saveSettings();
+            },
+          ),
+        ),
+        ListTile(
+          subtitle: Text(NA.t('showkanji')),
+          trailing: Switch(
+            value: showKanjiN5Translation,
+            onChanged: (bool value) {
+              setState(() {
+                showKanjiN5Translation = value;
+              });
+              saveSettings();
+            },
+          ),
+        ),
+        ListTile(
+          subtitle: Text(NA.t('showphrase')),
+          trailing: Switch(
+            value: showN5PhraseTranslation,
+            onChanged: (bool value) {
+              setState(() {
+                showN5PhraseTranslation = value;
+              });
+              saveSettings();
+            },
+          ),
+        ),
+        ListTile(
+          subtitle: Text(NA.t('showfurigana')),
+          trailing: Switch(
+            value: showKanjiN5Furigana,
+            onChanged: (bool value) {
+              setState(() {
+                showKanjiN5Furigana = value;
+              });
+              saveSettings();
+            },
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.all(12.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(right: 14),
+                child: NAKanjiBlock(
+                  kanji: '石',
+                ),
+              ),
+              ConstrainedBox(
+                constraints: BoxConstraints(maxWidth: 210),
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Wrap(children: [
+                      showKanjiN5Translation
+                          ? Text('Stone, Rock',
+                              style: TextStyle(fontWeight: FontWeight.bold))
+                          : Container()
+                    ]),
+                    Text('Kun yomi'),
+                    Wrap(
+                      children: [Text('いし')],
+                    ),
+                    Text('On yomi'),
+                    Wrap(
+                      children: [Text('セキ、シャク、コク')],
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+        ),
+        SizedBox(height: 30),
+        ConstrainedBox(
+          constraints: BoxConstraints(maxWidth: 300),
+          child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Wrap(children: [
+                  FuriganaText(
+                    showFurigana: showKanjiN5Furigana,
+                    furiTexts: [
+                      FuriText(text: '彼', furigana: 'かれ'),
+                      FuriText(text: 'は'),
+                      FuriText(text: '石', furigana: '？', emphasize: true),
+                      FuriText(text: 'を'),
+                      FuriText(text: '投', furigana: 'な'),
+                      FuriText(text: 'げた'),
+                    ],
+                  ),
+                ]),
+                Wrap(children: [
+                  showN5PhraseTranslation
+                      ? Text(
+                          NA.t('karehaishiotageta'),
+                          style: TextStyle(
+                              color: Colors.grey.shade700,
+                              fontSize: Theme.of(context)
+                                  .textTheme
+                                  .bodySmall!
+                                  .fontSize),
+                        )
+                      : Container()
+                ]),
+                NaFreeFormEntryWrapper(
+                  readOnly: true,
+                  isAnswerCentered: true,
+                  widthType: NFreeFormWidths.full,
+                  labelText: NA.t('kanjiToHiragana'),
+                  onChanged: (String newValue) {},
+                  initialValue: '',
+                  correctValues: ['いし'],
+                  onCorrect: () {},
+                ),
+              ]),
+        ),
+        ListTile(
+          subtitle: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(NA.t('iwanttodo')),
+                  Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: DropdownButton<int>(
+                      value: numberOfKanjiN5Exercises,
+                      onChanged: (value) {
+                        setState(() {
+                          numberOfKanjiN5Exercises = value!;
+                        });
+                        saveSettings();
+                      },
+                      items: [
+                        DropdownMenuItem<int>(
+                          value: 10,
+                          child: Text('10'),
+                        ),
+                        DropdownMenuItem<int>(value: 25, child: Text('25')),
+                        DropdownMenuItem<int>(value: 50, child: Text('50')),
+                        DropdownMenuItem<int>(value: 9999, child: Text('All')),
+                      ].toList(),
+                    ),
+                  ),
+                  Text(NA.t('exercises')),
+                ],
+              ),
+            ],
+          ),
+        ),
+        SizedBox(height: 20),
+        NAMenuButton(
+          destination: KanjiExercise(
+              showFurigana: showKanjiN5Furigana,
+              showKanjiTranslations: showKanjiN5Translation,
+              showPhraseTranslations: showN5PhraseTranslation,
+              numberOfExercises: numberOfKanjiN5Exercises - 1,
+              shuffle: kanjiN5Shuffle,
               exerciseType: widget.exerciseType),
           label: NA.t('Start'),
           translabel: [

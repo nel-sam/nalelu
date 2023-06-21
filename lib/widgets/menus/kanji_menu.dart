@@ -27,13 +27,13 @@ class KanjiMenu extends StatelessWidget {
                 children: [
                   NAMenuButton(
                       destination: SettingsScreen(
-                        exerciseType: ExerciseType.N5,
+                        exerciseType: ExerciseType.Kanji_N5,
                       ),
                       label: NA.t('n5'),
                       translabel: [FuriText(text: 'レベル N5')]),
                   NAMenuButton(
                       destination: SettingsScreen(
-                        exerciseType: ExerciseType.N4,
+                        exerciseType: ExerciseType.Kanji_N4,
                       ),
                       label: NA.t('n4'),
                       translabel: [FuriText(text: 'レベル N4')]),
