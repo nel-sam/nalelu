@@ -10,10 +10,10 @@ class KanjiGenerator {
   KanjiGenerator(bool isShuffled, ExerciseType kanjiType) {
     switch (kanjiType) {
       case ExerciseType.Kanji_N5:
-        bank = kanjiN5Bank;
+        bank = [...kanjiN5Bank];
         break;
       case ExerciseType.Kanji_N4:
-        bank = kanjiN4Bank;
+        bank = [...kanjiN4Bank];
         break;
     }
 

@@ -5,7 +5,8 @@ class DoushiGenerator {
   late List<Doushi> bank;
 
   DoushiGenerator(bool isShuffled) {
-    bank = doushiBank;
+    bank = [...doushiBank];
+
     if (isShuffled)
       bank.shuffle(); // TODO: Uncomment once all Kanji exercises are set up
   }
