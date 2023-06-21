@@ -52,7 +52,9 @@ class VerbChart extends StatelessWidget {
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          AdCard(),
+          Center(
+            child: AdCard(),
+          ),
           ChartRow(
               label: NA.t('present'),
               furiText: doushi.casual.present.toFuriTexts()),
