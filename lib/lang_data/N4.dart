@@ -349,13 +349,12 @@ List<Kanji> kanjiN4Bank = [
       phraseAnswers: [
         PhraseAnswer(
           // 心の底からありがとうございます
-          translation: NA.t('kokoronosokokaraarigatougozaimasu'),
+          translation: NA.t('kokoronosokokaraarigatou'),
           phraseParts: [
             FuriText(text: '心', furigana: '？', emphasize: true),
             FuriText(text: 'の'),
             FuriText(text: '底', furigana: 'そこ'),
-            FuriText(text: 'から'),
-            FuriText(text: 'ありがとうございます'),
+            FuriText(text: 'からありがとう'),
           ],
           answer: 'こころ',
         ),
