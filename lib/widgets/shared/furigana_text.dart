@@ -20,22 +20,6 @@ class FuriganaText extends StatelessWidget {
     this.answer = '',
   }) : super(key: key);
 
-  String subtractChars(String answer, List<FuriText> furigana) {
-    var result = answer;
-    RegExp regex;
-    for (var i in furiTexts) {
-      if (i.emphasize) {
-        if (i.furigana == '')
-          regex = RegExp(i.text, multiLine: true);
-        else
-          regex = RegExp(i.furigana, multiLine: true);
-        result = result.replaceAll(regex, '');
-        if (result == '') result = i.furigana;
-      }
-    }
-    return result;
-  }
-
   @override
   Widget build(BuildContext context) {
     return Row(
@@ -87,5 +71,20 @@ class FuriganaText extends StatelessWidget {
               ),
             ])
         ]);
+  }
+
+  String subtractChars(String answer, List<FuriText> furigana) {
+    var result = answer;
+    RegExp regex;
+    for (var i in furiTexts) {
+      if (i.emphasize) {
+        if (i.furigana == '')
+          regex = RegExp(i.text, multiLine: true);
+        else
+          regex = RegExp(i.furigana, multiLine: true);
+        result = result.replaceFirst(regex, '');
+      }
+    }
+    return result;
   }
 }
