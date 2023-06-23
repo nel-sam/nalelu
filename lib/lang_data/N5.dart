@@ -7,11 +7,23 @@ import 'package:nalelu/widgets/kanji.dart';
 
 List<Kanji> kanjiN5Bank = [
   // Kanji(
+  //   translation: NA.t('友'),
+  //   kanji: '友',
+  //   onYomi: 'ユウ',
+  //   kunYomi: 'とも',
+  //   phraseAnswers: [
+  //     PhraseAnswer(
+  //       translation: NA.t(''),
+  //       phraseParts: [],
+  //       answer: '',
+  //     )
+  //   ]),
+  // Kanji(
   //   translation: NA.t('北'),
   //   kanji: '北',
   //   onYomi: 'ホク',
   //   kunYomi: 'きた',
-  //   phraseAnswers: [
+  //   phras\eAnswers: [
   //     PhraseAnswer(
   //       translation: NA.t(''),
   //       phraseParts: [],
@@ -147,8 +159,8 @@ List<Kanji> kanjiN5Bank = [
         phraseParts: [
           FuriText(text: 'アメリカ'),
           FuriText(text: 'の'),
-          FuriText(text: '西', furigana: '？'),
-          FuriText(text: '南', furigana: 'なん'),
+          FuriText(text: '西', furigana: '？', emphasize: true),
+          FuriText(text: '南', furigana: 'なん', emphasize: true),
           FuriText(text: 'に'),
           FuriText(text: 'アリゾナ'),
           FuriText(text: 'がある'),
@@ -186,7 +198,7 @@ List<Kanji> kanjiN5Bank = [
           // カナダ人は優しいです
           translation: NA.t('kanadajinwayasashiidesu'),
           phraseParts: [
-            FuriText(text: 'カナダ', furigana: '？', emphasize: true),
+            FuriText(text: 'カナダ', furigana: 'かなだ', emphasize: true),
             FuriText(text: '人', furigana: '？', emphasize: true),
             FuriText(text: 'は'),
             FuriText(text: '優', furigana: 'やさ'),
@@ -289,18 +301,6 @@ List<Kanji> kanjiN5Bank = [
             FuriText(text: 'たことない'),
           ],
           answer: 'ゆうめい',
-        )
-      ]),
-  Kanji(
-      translation: NA.t('友'),
-      kanji: '友',
-      onYomi: 'ユウ',
-      kunYomi: 'とも',
-      phraseAnswers: [
-        PhraseAnswer(
-          translation: NA.t(''),
-          phraseParts: [],
-          answer: '',
         )
       ]),
   Kanji(
