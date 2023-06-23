@@ -123,49 +123,186 @@ List<Kanji> kanjiN5Bank = [
   //     )
   //   ],
   // ),
-  // Kanji(
-  //   translation: NA.t('西'),
-  //   kanji: '西',
-  //   onYomi: 'セイ、サイ',
-  //   kunYomi: 'にし',
-  //   phraseAnswers: [
-  //     PhraseAnswer(
-  //       translation: NA.t(''),
-  //       phraseParts: [],
-  //       answer: '',
-  //     )
-  //   ],
-  // ),
-  // Kanji(
-  //     translation: NA.t('人'),
-  //     kanji: '人',
-  //     onYomi: 'ジン、ニン',
-  //     kunYomi: 'ひと、-り、-と',
-  //     phraseAnswers: [
-  //       PhraseAnswer(
-  //         translation: NA.t(''),
-  //         phraseParts: [],
-  //         answer: '',
-  //       )
-  //     ]),
-  // Kanji(
-  //     translation: NA.t('先'),
-  //     kanji: '先',
-  //     onYomi: 'セン',
-  //     kunYomi: 'さき、ま',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('名'),
-  //     kanji: '名',
-  //     onYomi: 'メイ、ミョウ',
-  //     kunYomi: 'な',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
-  // Kanji(
-  //     translation: NA.t('友'),
-  //     kanji: '友',
-  //     onYomi: 'ユウ',
-  //     kunYomi: 'とも',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
+  Kanji(
+    translation: NA.t('西'),
+    kanji: '西',
+    onYomi: 'セイ、サイ',
+    kunYomi: 'にし',
+    phraseAnswers: [
+      PhraseAnswer(
+        // 西日本は暑いですか？
+        translation: NA.t('nishinihonwaatsuidesuka'),
+        phraseParts: [
+          FuriText(text: '西', furigana: '？', emphasize: true),
+          FuriText(text: '日本', furigana: 'にほん'),
+          FuriText(text: 'は'),
+          FuriText(text: '暑', furigana: 'あつ'),
+          FuriText(text: 'いですか？'),
+        ],
+        answer: 'にし',
+      ),
+      PhraseAnswer(
+        // アメリカの西南にアリゾナがある
+        translation: NA.t('amerikanoseinanniarizonagaaru'),
+        phraseParts: [
+          FuriText(text: 'アメリカ'),
+          FuriText(text: 'の'),
+          FuriText(text: '西', furigana: '？'),
+          FuriText(text: '南', furigana: 'なん'),
+          FuriText(text: 'に'),
+          FuriText(text: 'アリゾナ'),
+          FuriText(text: 'がある'),
+        ],
+        answer: 'せいなん',
+      )
+    ],
+  ),
+  Kanji(
+      translation: NA.t('人'),
+      kanji: '人',
+      onYomi: 'ジン、ニン',
+      kunYomi: 'ひと、-り、-と',
+      phraseAnswers: [
+        PhraseAnswer(
+          // 人がいっぱい
+          translation: NA.t('hitogaippai'),
+          phraseParts: [
+            FuriText(text: '人', furigana: '？', emphasize: true),
+            FuriText(text: 'がいっぱい'),
+          ],
+          answer: 'ひと',
+        ),
+        PhraseAnswer(
+          // 何人くるの？
+          translation: NA.t('naninikuruno'),
+          phraseParts: [
+            FuriText(text: '何', furigana: 'なん', emphasize: true),
+            FuriText(text: '人', furigana: '？', emphasize: true),
+            FuriText(text: 'くるの？'),
+          ],
+          answer: 'なんにん',
+        ),
+        PhraseAnswer(
+          // カナダ人は優しいです
+          translation: NA.t('kanadajinwayasashiidesu'),
+          phraseParts: [
+            FuriText(text: 'カナダ', furigana: '？', emphasize: true),
+            FuriText(text: '人', furigana: '？', emphasize: true),
+            FuriText(text: 'は'),
+            FuriText(text: '優', furigana: 'やさ'),
+            FuriText(text: 'しいです'),
+          ],
+          answer: 'かなだじん',
+        ),
+        PhraseAnswer(
+          // 二人しかいない
+          translation: NA.t('futarishikainai'),
+          phraseParts: [
+            FuriText(text: '二', furigana: 'ふた', emphasize: true),
+            FuriText(text: '人', furigana: '？', emphasize: true),
+            FuriText(text: 'しかいない'),
+          ],
+          answer: 'ふたり',
+        ),
+      ]),
+  Kanji(
+      translation: NA.t('先'),
+      kanji: '先',
+      onYomi: 'セン',
+      kunYomi: 'さき、ま',
+      phraseAnswers: [
+        PhraseAnswer(
+          // 先に行きます
+          translation: NA.t('sakiniikimasu'),
+          phraseParts: [
+            FuriText(text: '先', furigana: '？', emphasize: true),
+            FuriText(text: 'に'),
+            FuriText(text: '行', furigana: 'い'),
+            FuriText(text: 'きます'),
+          ],
+          answer: 'さき',
+        ),
+        PhraseAnswer(
+          // 先生は元気ですか？
+          translation: NA.t('senseihagenkidesuka'),
+          phraseParts: [
+            FuriText(text: '先', furigana: '？', emphasize: true),
+            FuriText(text: '生', furigana: 'せい', emphasize: true),
+            FuriText(text: 'は'),
+            FuriText(text: '元', furigana: 'げん'),
+            FuriText(text: '気', furigana: 'き'),
+            FuriText(text: 'ですか？'),
+          ],
+          answer: 'せんせい',
+        ),
+        PhraseAnswer(
+          // 先週忙しかった
+          translation: NA.t('senshuisogashikatta'),
+          phraseParts: [
+            FuriText(text: '先', furigana: '？', emphasize: true),
+            FuriText(text: '週', furigana: 'しゅう', emphasize: true),
+            FuriText(text: '忙', furigana: 'いそが'),
+            FuriText(text: 'しかった'),
+          ],
+          answer: 'せんしゅう',
+        ),
+      ]),
+  Kanji(
+      translation: NA.t('名'),
+      kanji: '名',
+      onYomi: 'メイ、ミョウ',
+      kunYomi: 'な',
+      phraseAnswers: [
+        PhraseAnswer(
+          // 君の名は
+          translation: NA.t('kiminonawa'),
+          phraseParts: [
+            FuriText(text: '君', furigana: 'きみ'),
+            FuriText(text: 'の'),
+            FuriText(text: '名', furigana: '？', emphasize: true),
+            FuriText(text: 'は'),
+          ],
+          answer: 'な',
+        ),
+        PhraseAnswer(
+          // 名前は何ですか
+          translation: NA.t('namaehanandesuka'),
+          phraseParts: [
+            FuriText(text: '名', furigana: '？', emphasize: true),
+            FuriText(text: '前', furigana: 'まえ', emphasize: true),
+            FuriText(text: 'は'),
+            FuriText(text: '何', furigana: 'なん'),
+            FuriText(text: 'ですか？'),
+          ],
+          answer: 'なまえ',
+        ),
+        PhraseAnswer(
+          // 有名な人を見たことない
+          translation: NA.t('yuumeinahitowomitakotonai'),
+          phraseParts: [
+            FuriText(text: '有', furigana: 'ゆう', emphasize: true),
+            FuriText(text: '名', furigana: '？', emphasize: true),
+            FuriText(text: 'な'),
+            FuriText(text: '人', furigana: 'ひと'),
+            FuriText(text: 'を'),
+            FuriText(text: '見', furigana: 'み'),
+            FuriText(text: 'たことない'),
+          ],
+          answer: 'ゆうめい',
+        )
+      ]),
+  Kanji(
+      translation: NA.t('友'),
+      kanji: '友',
+      onYomi: 'ユウ',
+      kunYomi: 'とも',
+      phraseAnswers: [
+        PhraseAnswer(
+          translation: NA.t(''),
+          phraseParts: [],
+          answer: '',
+        )
+      ]),
   Kanji(
       translation: NA.t('天'),
       kanji: '天',
