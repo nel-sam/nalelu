@@ -3,12 +3,54 @@ import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/widgets/kanji.dart';
 
 List<Kanji> kanjiN3Bank = [
-  //     Kanji(
-  //     translation: NA.t('市'),
-  //     kanji: '市',
-  //     onYomi: 'シ',
-  //     kunYomi: 'いち',
-  // phraseAnswers: [PhraseAnswer(translation: NA.t(''),phraseParts: [],answer: '',)]),
+  Kanji(
+      translation: NA.t('市'),
+      kanji: '市',
+      onYomi: 'シ',
+      kunYomi: 'いち',
+      phraseAnswers: [
+        PhraseAnswer(
+          // 市内に住んでいます
+          translation: NA.t('shinainijundemasu'),
+          phraseParts: [
+            FuriText(text: '市', furigana: '？', emphasize: true),
+            FuriText(text: '内', furigana: 'ない', emphasize: true),
+            FuriText(text: 'に'),
+            FuriText(text: '住', furigana: 'す'),
+            FuriText(text: 'んでいます'),
+          ],
+          answer: 'しない',
+        ),
+        PhraseAnswer(
+          // いなかより市のほうが好きです
+          translation: NA.t('inakayorishinohougasukidesu'),
+          phraseParts: [
+            FuriText(text: 'いなかより'),
+            FuriText(text: '都', furigana: '？', emphasize: true),
+            FuriText(text: '市', furigana: 'し', emphasize: true),
+            FuriText(text: 'の'),
+            FuriText(text: 'ほうが'),
+            FuriText(text: '好', furigana: 'す'),
+            FuriText(text: 'き'),
+            FuriText(text: 'です'),
+          ],
+          answer: 'とし',
+        ),
+        PhraseAnswer(
+          // 市場で買い物をします
+          translation: NA.t('ichibadekaimonowoshimasu'),
+          phraseParts: [
+            FuriText(text: '市', furigana: '？', emphasize: true),
+            FuriText(text: '場', furigana: 'ば', emphasize: true),
+            FuriText(text: 'で'),
+            FuriText(text: '買', furigana: 'か'),
+            FuriText(text: 'い物', furigana: 'もの', emphasize: true),
+            FuriText(text: 'を'),
+            FuriText(text: 'します'),
+          ],
+          answer: 'いちば',
+        ),
+      ]),
   Kanji(
       translation: NA.t('石'),
       kanji: '石',
