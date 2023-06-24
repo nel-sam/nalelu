@@ -29,7 +29,7 @@ List<Kanji> kanjiN5Bank = [
           // 親友と一緒に旅行に行きたい
           translation: NA.t('shinyuutoisshoniryokouniikitai'),
           phraseParts: [
-            FuriText(text: '親', furigana: 'しん'),
+            FuriText(text: '親', furigana: 'しん', emphasize: true),
             FuriText(text: '友', furigana: '？', emphasize: true),
             FuriText(text: 'と'),
             FuriText(text: '一', furigana: 'いっ'),
@@ -64,9 +64,9 @@ List<Kanji> kanjiN5Bank = [
         // 北海道に行きたいです
         translation: NA.t('hokkaidouniikitaidesu'),
         phraseParts: [
-          FuriText(text: '北', furigana: '？'),
-          FuriText(text: '海', furigana: 'かい'),
-          FuriText(text: '道', furigana: 'どう'),
+          FuriText(text: '北', furigana: '？', emphasize: true),
+          FuriText(text: '海', furigana: 'かい', emphasize: true),
+          FuriText(text: '道', furigana: 'どう', emphasize: true),
           FuriText(text: 'に'),
           FuriText(text: '行', furigana: 'い'),
           FuriText(text: 'きたいです'),
@@ -77,7 +77,7 @@ List<Kanji> kanjiN5Bank = [
         // 北のほうが寒いです
         translation: NA.t('kitanohougasamuidesu'),
         phraseParts: [
-          FuriText(text: '北', furigana: 'きた', emphasize: true),
+          FuriText(text: '北', furigana: '？', emphasize: true),
           FuriText(text: 'の'),
           FuriText(text: 'ほうが'),
           FuriText(text: '寒', furigana: 'さむ'),
@@ -200,8 +200,8 @@ List<Kanji> kanjiN5Bank = [
         // 中国語は難しいですか？
         translation: NA.t('chuugokugohimuzukashii'),
         phraseParts: [
-          FuriText(text: '中', furigana: '？', emphasize: true),
-          FuriText(text: '国', furigana: 'ちゅう', emphasize: true),
+          FuriText(text: '中', furigana: 'ちゅう', emphasize: true),
+          FuriText(text: '国', furigana: '？', emphasize: true),
           FuriText(text: '語', furigana: 'ご', emphasize: true),
           FuriText(text: 'は'),
           FuriText(text: '難', furigana: 'むずか'),
@@ -257,7 +257,7 @@ List<Kanji> kanjiN5Bank = [
         translation: NA.t('mainichishigotosuru'),
         phraseParts: [
           FuriText(text: '毎', furigana: '？', emphasize: true),
-          FuriText(text: '日', furigana: 'にち'),
+          FuriText(text: '日', furigana: 'にち', emphasize: true),
           FuriText(text: '仕事', furigana: 'しごと'),
           FuriText(text: 'する'),
         ],

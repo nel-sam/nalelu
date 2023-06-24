@@ -26,8 +26,8 @@ List<Kanji> kanjiN3Bank = [
           translation: NA.t('inakayorishinohougasukidesu'),
           phraseParts: [
             FuriText(text: 'いなかより'),
-            FuriText(text: '都', furigana: '？', emphasize: true),
-            FuriText(text: '市', furigana: 'し', emphasize: true),
+            FuriText(text: '都', furigana: 'と', emphasize: true),
+            FuriText(text: '市', furigana: '？', emphasize: true),
             FuriText(text: 'の'),
             FuriText(text: 'ほうが'),
             FuriText(text: '好', furigana: 'す'),
