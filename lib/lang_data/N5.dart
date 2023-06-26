@@ -2091,6 +2091,7 @@ List<Kanji> kanjiN5Bank = [
               FuriText(text: '左', furigana: '？', emphasize: true),
               FuriText(text: 'に'),
               FuriText(text: '動', furigana: 'うご'),
+              FuriText(text: 'いて'),
             ],
             answer: 'ひだり'),
         PhraseAnswer(
