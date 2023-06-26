@@ -2215,7 +2215,7 @@ List<Kanji> kanjiN5Bank = [
       translation: NA.t('高'),
       kanji: '高',
       onYomi: 'コウ',
-      kunYomi: 'たかい, たか, だか, たか.まる, たか.める',
+      kunYomi: 'たかい, たか, だか, たか(まる), たか(める)',
       phraseAnswers: [
         PhraseAnswer(
             // 一番背の高い人は誰ですか？
@@ -2575,7 +2575,7 @@ List<Kanji> kanjiN5Bank = [
       translation: NA.t('休'),
       kanji: '休',
       onYomi: 'キュウ',
-      kunYomi: 'やす(む), やす.まる, やす(める)',
+      kunYomi: 'やす(む), やす(まる), やす(める)',
       phraseAnswers: [
         PhraseAnswer(
             // お休みなさい
