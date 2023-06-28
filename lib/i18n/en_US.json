@@ -798,5 +798,12 @@
   "exercises": "exercises",
   "settings": "Settings",
   "shuffle": "Random order",
-  "all": "all"
+  "all": "all",
+  "Doushi": "Verbs",
+  "Count": "Counting",
+  "Age": "Age",
+  "Jikan": "Time",
+  "Manga": "Manga",
+  "Kanji_N5": "N5 Kanji",
+  "Kanji_N4": "N4 Kanji"
 }

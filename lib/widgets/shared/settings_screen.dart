@@ -142,7 +142,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(NA.t('settings')),
+          title: Text(
+              NA.t(widget.exerciseType.name.toString()) + ' ' + NA.t('settings')),
         ),
         body: allSettings(widget.exerciseType));
   }
