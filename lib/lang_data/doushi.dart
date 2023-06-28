@@ -16,6 +16,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'かわいがっている', kanjiWord: '可愛がっている'),
       negativePresentProgressive:
           JWord(kanaWord: 'かわいがっていない', kanjiWord: '可愛がっていない'),
+      teForm: JWord(kanaWord: "かわいがって", kanjiWord: "可愛がって"),
     ),
   ),
   Doushi(
@@ -32,6 +33,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'おどろいている', kanjiWord: '驚いている'),
       negativePresentProgressive:
           JWord(kanaWord: 'おどろいていない', kanjiWord: '驚いていない'),
+      teForm: JWord(kanaWord: "おどろいて", kanjiWord: "驚いて"),
     ),
   ),
   Doushi(
@@ -48,6 +50,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'ないている', kanjiWord: '泣いている'),
       negativePresentProgressive:
           JWord(kanaWord: 'ないていない', kanjiWord: '泣いていない'),
+      teForm: JWord(kanaWord: "ないて", kanjiWord: "泣いて"),
     ),
   ),
   Doushi(
@@ -64,6 +67,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'おこっている', kanjiWord: '怒っている'),
       negativePresentProgressive:
           JWord(kanaWord: 'おこっていない', kanjiWord: '怒っていない'),
+      teForm: JWord(kanaWord: "おこって", kanjiWord: "怒って"),
     ),
   ),
   Doushi(
@@ -80,6 +84,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'わらっている', kanjiWord: '笑っている'),
       negativePresentProgressive:
           JWord(kanaWord: 'わらっていない', kanjiWord: '笑っていない'),
+      teForm: JWord(kanaWord: "わらって", kanjiWord: "笑って"),
     ),
   ),
   Doushi(
@@ -96,6 +101,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'こわがっている', kanjiWord: '怖がっている'),
       negativePresentProgressive:
           JWord(kanaWord: 'こわがっていない', kanjiWord: '怖がっていない'),
+      teForm: JWord(kanaWord: "こわがって", kanjiWord: "怖がって"),
     ),
   ),
   Doushi(
@@ -112,6 +118,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'ほれている', kanjiWord: '惚れている'),
       negativePresentProgressive:
           JWord(kanaWord: 'ほれていない', kanjiWord: '惚れていない'),
+      teForm: JWord(kanaWord: "ほれて", kanjiWord: "惚れて"),
     ),
   ),
   Doushi(
@@ -128,6 +135,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'あわてている', kanjiWord: '慌てている'),
       negativePresentProgressive:
           JWord(kanaWord: 'あわてていない', kanjiWord: '慌てていない'),
+      teForm: JWord(kanaWord: "あわてて", kanjiWord: "慌てて"),
     ),
   ),
   Doushi(
@@ -144,6 +152,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'なぐさめている', kanjiWord: '慰めている'),
       negativePresentProgressive:
           JWord(kanaWord: 'なぐさめていない', kanjiWord: '慰めていない'),
+      teForm: JWord(kanaWord: "なぐさめて", kanjiWord: "慰めて"),
     ),
   ),
   Doushi(
@@ -160,6 +169,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'おもっている', kanjiWord: '思っている'),
       negativePresentProgressive:
           JWord(kanaWord: 'おもっていない', kanjiWord: '思っていない'),
+      teForm: JWord(kanaWord: "おもって", kanjiWord: "思って"),
     ),
   ),
   Doushi(
@@ -176,6 +186,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'かんがえている', kanjiWord: '考えている'),
       negativePresentProgressive:
           JWord(kanaWord: 'かんがえていない', kanjiWord: '考えていない'),
+      teForm: JWord(kanaWord: "かんがえて", kanjiWord: "考えて"),
     ),
   ),
   Doushi(
@@ -192,6 +203,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'ほめている', kanjiWord: '褒めている'),
       negativePresentProgressive:
           JWord(kanaWord: 'ほめていない', kanjiWord: '褒めていない'),
+      teForm: JWord(kanaWord: "ほめて", kanjiWord: "褒めて"),
     ),
   ),
   Doushi(
@@ -208,6 +220,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'ささえている', kanjiWord: '支えている'),
       negativePresentProgressive:
           JWord(kanaWord: 'ささえていない', kanjiWord: '支えていない'),
+      teForm: JWord(kanaWord: "ささえて", kanjiWord: "支えて"),
     ),
   ),
   Doushi(
@@ -224,6 +237,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'わすれている', kanjiWord: '忘れている'),
       negativePresentProgressive:
           JWord(kanaWord: 'わすれていない', kanjiWord: '忘れていない'),
+      teForm: JWord(kanaWord: "わすれて", kanjiWord: "忘れて"),
     ),
   ),
   Doushi(
@@ -240,6 +254,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'おぼえている', kanjiWord: '覚えている'),
       negativePresentProgressive:
           JWord(kanaWord: 'おぼえていない', kanjiWord: '覚えていない'),
+      teForm: JWord(kanaWord: "おぼえて", kanjiWord: "覚えて"),
     ),
   ),
   Doushi(
@@ -256,6 +271,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'つかれている', kanjiWord: '疲れている'),
       negativePresentProgressive:
           JWord(kanaWord: 'つかれていない', kanjiWord: '疲れていない'),
+      teForm: JWord(kanaWord: "つかれて", kanjiWord: "疲れて"),
     ),
   ),
   Doushi(
@@ -272,6 +288,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'しんじている', kanjiWord: '信じている'),
       negativePresentProgressive:
           JWord(kanaWord: 'しんじていない', kanjiWord: '信じていない'),
+      teForm: JWord(kanaWord: "しんじて", kanjiWord: "信じて"),
     ),
   ),
   Doushi(
@@ -288,6 +305,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'まちがっている', kanjiWord: '間違っている'),
       negativePresentProgressive:
           JWord(kanaWord: 'まちがっていない', kanjiWord: '間違っていない'),
+      teForm: JWord(kanaWord: "まちがえて", kanjiWord: "間違えて"),
     ),
   ),
   Doushi(
@@ -304,6 +322,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'しっている', kanjiWord: '知っている'),
       negativePresentProgressive:
           JWord(kanaWord: 'しっていない', kanjiWord: '知っていない'),
+      teForm: JWord(kanaWord: "しって", kanjiWord: "知って"),
     ),
   ),
   Doushi(
@@ -320,6 +339,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'くるしみている', kanjiWord: '苦しみている'),
       negativePresentProgressive:
           JWord(kanaWord: 'くるしみていない', kanjiWord: '苦しみていない'),
+      teForm: JWord(kanaWord: "くるしみて", kanjiWord: "苦しんで"),
     ),
   ),
   Doushi(
@@ -336,6 +356,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'いたみている', kanjiWord: '痛みている'),
       negativePresentProgressive:
           JWord(kanaWord: 'いたみていない', kanjiWord: '痛みていない'),
+      teForm: JWord(kanaWord: "いたんで", kanjiWord: "痛んで"),
     ),
   ),
   Doushi(
@@ -352,6 +373,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'のぼっている', kanjiWord: '登っている'),
       negativePresentProgressive:
           JWord(kanaWord: 'のぼっていない', kanjiWord: '登っていない'),
+      teForm: JWord(kanaWord: "のぼって", kanjiWord: "登って"),
     ),
   ),
   Doushi(
@@ -368,6 +390,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'すわっている', kanjiWord: '座っている'),
       negativePresentProgressive:
           JWord(kanaWord: 'すわっていない', kanjiWord: '座っていない'),
+      teForm: JWord(kanaWord: "すわって", kanjiWord: "座って"),
     ),
   ),
   Doushi(
@@ -384,6 +407,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'とんでいる', kanjiWord: '飛んでいる'),
       negativePresentProgressive:
           JWord(kanaWord: 'とんでいない', kanjiWord: '飛んでいない'),
+      teForm: JWord(kanaWord: "とんで", kanjiWord: "飛んで"),
     ),
   ),
   Doushi(
@@ -399,6 +423,7 @@ var doushiBank = [
       negativePast: JWord(kanaWord: 'こなかった', kanjiWord: '来なかった'),
       presentProgressive: JWord(kanaWord: 'きている', kanjiWord: '来ている'),
       negativePresentProgressive: JWord(kanaWord: 'きていない', kanjiWord: '来ていない'),
+      teForm: JWord(kanaWord: "きて", kanjiWord: "来て"),
     ),
   ),
   Doushi(
@@ -415,6 +440,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'かよっている', kanjiWord: '通っている'),
       negativePresentProgressive:
           JWord(kanaWord: 'かよっていない', kanjiWord: '通っていない'),
+      teForm: JWord(kanaWord: "かよって", kanjiWord: "通って"),
     ),
   ),
   Doushi(
@@ -431,6 +457,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'おどっている', kanjiWord: '踊っている'),
       negativePresentProgressive:
           JWord(kanaWord: 'おどっていない', kanjiWord: '踊っていない'),
+      teForm: JWord(kanaWord: "おどって", kanjiWord: "踊って"),
     ),
   ),
   Doushi(
@@ -447,6 +474,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'だいている', kanjiWord: '抱いている'),
       negativePresentProgressive:
           JWord(kanaWord: 'だいていない', kanjiWord: '抱いていない'),
+      teForm: JWord(kanaWord: "だいて", kanjiWord: "抱いて"),
     ),
   ),
   Doushi(
@@ -463,6 +491,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'はたらいている', kanjiWord: '働いている'),
       negativePresentProgressive:
           JWord(kanaWord: 'はたらいていない', kanjiWord: '働いていない'),
+      teForm: JWord(kanaWord: "はたらいて", kanjiWord: "働いて"),
     ),
   ),
   Doushi(
@@ -479,6 +508,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'およいでいる', kanjiWord: '泳いでいる'),
       negativePresentProgressive:
           JWord(kanaWord: 'およいでいない', kanjiWord: '泳いでいない'),
+      teForm: JWord(kanaWord: "およんで", kanjiWord: "泳いで"),
     ),
   ),
   Doushi(
@@ -495,6 +525,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'けしている', kanjiWord: '消している'),
       negativePresentProgressive:
           JWord(kanaWord: 'けしていない', kanjiWord: '消していない'),
+      teForm: JWord(kanaWord: "けして", kanjiWord: "消して"),
     ),
   ),
   Doushi(
@@ -511,6 +542,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'うごいている', kanjiWord: '動いている'),
       negativePresentProgressive:
           JWord(kanaWord: 'うごいていない', kanjiWord: '動いていない'),
+      teForm: JWord(kanaWord: "うごいて", kanjiWord: "動いて"),
     ),
   ),
   Doushi(
@@ -527,6 +559,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'ついている', kanjiWord: '次いている'),
       negativePresentProgressive:
           JWord(kanaWord: 'ついていない', kanjiWord: '次いていない'),
+      teForm: JWord(kanaWord: "ついで", kanjiWord: "次いで"),
     ),
   ),
   Doushi(
@@ -543,6 +576,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'みせている', kanjiWord: '見せている'),
       negativePresentProgressive:
           JWord(kanaWord: 'みせていない', kanjiWord: '見せていない'),
+      teForm: JWord(kanaWord: "みせて", kanjiWord: "見せて"),
     ),
   ),
   Doushi(
@@ -559,6 +593,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'おきている', kanjiWord: '起きている'),
       negativePresentProgressive:
           JWord(kanaWord: 'おきていない', kanjiWord: '起きていない'),
+      teForm: JWord(kanaWord: "おきて", kanjiWord: "起きて"),
     ),
   ),
   Doushi(
@@ -575,6 +610,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'おりている', kanjiWord: '降りている'),
       negativePresentProgressive:
           JWord(kanaWord: 'おりていない', kanjiWord: '降りていない'),
+      teForm: JWord(kanaWord: "おりて", kanjiWord: "降りて"),
     ),
   ),
   Doushi(
@@ -591,6 +627,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'にげている', kanjiWord: '逃げている'),
       negativePresentProgressive:
           JWord(kanaWord: 'にげていない', kanjiWord: '逃げていない'),
+      teForm: JWord(kanaWord: "にげて", kanjiWord: "逃げて"),
     ),
   ),
   Doushi(
@@ -607,6 +644,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'たおれている', kanjiWord: '倒れている'),
       negativePresentProgressive:
           JWord(kanaWord: 'たおれていない', kanjiWord: '倒れていない'),
+      teForm: JWord(kanaWord: "たおれて", kanjiWord: "倒れて"),
     ),
   ),
   Doushi(
@@ -623,6 +661,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'いそいでいる', kanjiWord: '急いでいる'),
       negativePresentProgressive:
           JWord(kanaWord: 'いそいでいない', kanjiWord: '急いでいない'),
+      teForm: JWord(kanaWord: "いそいで", kanjiWord: "急いで"),
     ),
   ),
   Doushi(
@@ -639,6 +678,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'あげている', kanjiWord: 'あげている'),
       negativePresentProgressive:
           JWord(kanaWord: 'あげていない', kanjiWord: 'あげていない'),
+      teForm: JWord(kanaWord: "あげて", kanjiWord: "あげて"),
     ),
   ),
   Doushi(
@@ -655,6 +695,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'もらっている', kanjiWord: 'もらっている'),
       negativePresentProgressive:
           JWord(kanaWord: 'もらっていない', kanjiWord: 'もらっていない'),
+      teForm: JWord(kanaWord: "もらって", kanjiWord: "もらって"),
     ),
   ),
   Doushi(
@@ -671,6 +712,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'おわっている', kanjiWord: '終わっている'),
       negativePresentProgressive:
           JWord(kanaWord: 'おわっていない', kanjiWord: '終わっていない'),
+      teForm: JWord(kanaWord: "おわって", kanjiWord: "終わって"),
     ),
   ),
   Doushi(
@@ -687,6 +729,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'かっている', kanjiWord: '買っている'),
       negativePresentProgressive:
           JWord(kanaWord: 'かっていない', kanjiWord: '買っていない'),
+      teForm: JWord(kanaWord: "かって", kanjiWord: "買って"),
     ),
   ),
   Doushi(
@@ -703,6 +746,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'かえしている', kanjiWord: '返している'),
       negativePresentProgressive:
           JWord(kanaWord: 'かえしていない', kanjiWord: '返していない'),
+      teForm: JWord(kanaWord: "かえして", kanjiWord: "返して"),
     ),
   ),
   Doushi(
@@ -719,6 +763,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'かわっている', kanjiWord: '代わっている'),
       negativePresentProgressive:
           JWord(kanaWord: 'かわっていない', kanjiWord: '代わっていない'),
+      teForm: JWord(kanaWord: "かわって", kanjiWord: "代わって"),
     ),
   ),
   Doushi(
@@ -735,6 +780,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'おしている', kanjiWord: '押している'),
       negativePresentProgressive:
           JWord(kanaWord: 'おしていない', kanjiWord: '押していない'),
+      teForm: JWord(kanaWord: "おして", kanjiWord: "押して"),
     ),
   ),
   Doushi(
@@ -751,6 +797,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'ひいている', kanjiWord: '引いている'),
       negativePresentProgressive:
           JWord(kanaWord: 'ひいていない', kanjiWord: '引いていない'),
+      teForm: JWord(kanaWord: "ひいて", kanjiWord: "引いて"),
     ),
   ),
   Doushi(
@@ -767,6 +814,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'てつだっている', kanjiWord: '手伝っている'),
       negativePresentProgressive:
           JWord(kanaWord: 'てつだっていない', kanjiWord: '手伝っていない'),
+      teForm: JWord(kanaWord: "てつだって", kanjiWord: "手伝って"),
     ),
   ),
   Doushi(
@@ -783,6 +831,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'おしえている', kanjiWord: '教えている'),
       negativePresentProgressive:
           JWord(kanaWord: 'おしえていない', kanjiWord: '教えていない'),
+      teForm: JWord(kanaWord: "おしえて", kanjiWord: "教えて"),
     ),
   ),
   Doushi(
@@ -799,6 +848,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'たのんでいる', kanjiWord: '頼んでいる'),
       negativePresentProgressive:
           JWord(kanaWord: 'たのんでいない', kanjiWord: '頼んでいない'),
+      teForm: JWord(kanaWord: "たのんで", kanjiWord: "頼んで"),
     ),
   ),
   Doushi(
@@ -815,6 +865,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'うたっている', kanjiWord: '歌っている'),
       negativePresentProgressive:
           JWord(kanaWord: 'うたっていない', kanjiWord: '歌っていない'),
+      teForm: JWord(kanaWord: "うたって", kanjiWord: "歌って"),
     ),
   ),
   Doushi(
@@ -831,6 +882,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'しゃべっている', kanjiWord: '喋っている'),
       negativePresentProgressive:
           JWord(kanaWord: 'しゃべっていない', kanjiWord: '喋っていない'),
+      teForm: JWord(kanaWord: "しゃべって", kanjiWord: "喋って"),
     ),
   ),
   Doushi(
@@ -847,6 +899,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'こたえている', kanjiWord: '答えている'),
       negativePresentProgressive:
           JWord(kanaWord: 'こたえていない', kanjiWord: '答えていない'),
+      teForm: JWord(kanaWord: "こたえて", kanjiWord: "答えて"),
     ),
   ),
   Doushi(
@@ -863,6 +916,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'そうじしている', kanjiWord: '掃除している'),
       negativePresentProgressive:
           JWord(kanaWord: 'そうじしていない', kanjiWord: '掃除していない'),
+      teForm: JWord(kanaWord: "そうじして", kanjiWord: "掃除して"),
     ),
   ),
   Doushi(
@@ -879,6 +933,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'さんぽしている', kanjiWord: '散歩している'),
       negativePresentProgressive:
           JWord(kanaWord: 'さんぽしていない', kanjiWord: '散歩していない'),
+      teForm: JWord(kanaWord: "さんぽして", kanjiWord: "散歩して"),
     ),
   ),
   Doushi(
@@ -895,6 +950,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'りょうりしている', kanjiWord: '料理している'),
       negativePresentProgressive:
           JWord(kanaWord: 'りょうりしていない', kanjiWord: '料理していない'),
+      teForm: JWord(kanaWord: "りょうりして", kanjiWord: "料理して"),
     ),
   ),
   Doushi(
@@ -911,6 +967,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'れんしゅうしている', kanjiWord: '練習している'),
       negativePresentProgressive:
           JWord(kanaWord: 'れんしゅうしていない', kanjiWord: '練習していない'),
+      teForm: JWord(kanaWord: "れんしゅうして", kanjiWord: "練習して"),
     ),
   ),
   Doushi(
@@ -927,6 +984,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'けっこんしている', kanjiWord: '結婚している'),
       negativePresentProgressive:
           JWord(kanaWord: 'けっこんしていない', kanjiWord: '結婚していない'),
+      teForm: JWord(kanaWord: "けっこんして", kanjiWord: "結婚して"),
     ),
   ),
   Doushi(
@@ -943,6 +1001,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'べんきょうしている', kanjiWord: '勉強している'),
       negativePresentProgressive:
           JWord(kanaWord: 'べんきょうしていない', kanjiWord: '勉強していない'),
+      teForm: JWord(kanaWord: "べんきょうして", kanjiWord: "勉強して"),
     ),
   ),
   Doushi(
@@ -959,6 +1018,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'しゅくだいしている', kanjiWord: '宿題している'),
       negativePresentProgressive:
           JWord(kanaWord: 'しゅくだいしていない', kanjiWord: '宿題していない'),
+      teForm: JWord(kanaWord: "しゅくだいして", kanjiWord: "宿題して"),
     ),
   ),
   Doushi(
@@ -975,6 +1035,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'ふくしゅうしている', kanjiWord: '復習している'),
       negativePresentProgressive:
           JWord(kanaWord: 'ふくしゅうしていない', kanjiWord: '復習していない'),
+      teForm: JWord(kanaWord: "ふくしゅうして", kanjiWord: "復習して"),
     ),
   ),
   Doushi(
@@ -991,6 +1052,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'でんわしている', kanjiWord: '電話している'),
       negativePresentProgressive:
           JWord(kanaWord: 'でんわしていない', kanjiWord: '電話していない'),
+      teForm: JWord(kanaWord: "でんわして", kanjiWord: "電話して"),
     ),
   ),
   Doushi(
@@ -1007,6 +1069,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'あそんでいる', kanjiWord: '遊んでいる'),
       negativePresentProgressive:
           JWord(kanaWord: 'あそんでいない', kanjiWord: '遊んでいない'),
+      teForm: JWord(kanaWord: "あそんで", kanjiWord: "遊んで"),
     ),
   ),
   Doushi(
@@ -1023,6 +1086,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'あけている', kanjiWord: '開けている'),
       negativePresentProgressive:
           JWord(kanaWord: 'あけていない', kanjiWord: '開けていない'),
+      teForm: JWord(kanaWord: "あけて", kanjiWord: "開けて"),
     ),
   ),
   Doushi(
@@ -1038,6 +1102,7 @@ var doushiBank = [
       negativePast: JWord(kanaWord: 'でなかった', kanjiWord: '出なかった'),
       presentProgressive: JWord(kanaWord: 'でている', kanjiWord: '出ている'),
       negativePresentProgressive: JWord(kanaWord: 'でていない', kanjiWord: '出ていない'),
+      teForm: JWord(kanaWord: "でて", kanjiWord: "出て"),
     ),
   ),
   Doushi(
@@ -1054,6 +1119,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'とどいている', kanjiWord: '届いている'),
       negativePresentProgressive:
           JWord(kanaWord: 'とどいていない', kanjiWord: '届いていない'),
+      teForm: JWord(kanaWord: "とどいて", kanjiWord: "届いて"),
     ),
   ),
   Doushi(
@@ -1070,6 +1136,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'やいている', kanjiWord: '焼いている'),
       negativePresentProgressive:
           JWord(kanaWord: 'やいていない', kanjiWord: '焼いていない'),
+      teForm: JWord(kanaWord: "やいて", kanjiWord: "焼いて"),
     ),
   ),
   Doushi(
@@ -1086,6 +1153,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'まぜている', kanjiWord: '混ぜている'),
       negativePresentProgressive:
           JWord(kanaWord: 'まぜていない', kanjiWord: '混ぜていない'),
+      teForm: JWord(kanaWord: "まぜて", kanjiWord: "混ぜて"),
     ),
   ),
   Doushi(
@@ -1102,6 +1170,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'みがいている', kanjiWord: '磨いている'),
       negativePresentProgressive:
           JWord(kanaWord: 'みがいていない', kanjiWord: '磨いていない'),
+      teForm: JWord(kanaWord: "みがいて", kanjiWord: "磨いて"),
     ),
   ),
   Doushi(
@@ -1118,6 +1187,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'さわっている', kanjiWord: '触っている'),
       negativePresentProgressive:
           JWord(kanaWord: 'さわっていない', kanjiWord: '触っていない'),
+      teForm: JWord(kanaWord: "さわって", kanjiWord: "触って"),
     ),
   ),
   Doushi(
@@ -1133,6 +1203,7 @@ var doushiBank = [
       negativePast: JWord(kanaWord: 'きなかった', kanjiWord: '着なかった'),
       presentProgressive: JWord(kanaWord: 'きている', kanjiWord: '着ている'),
       negativePresentProgressive: JWord(kanaWord: 'きていない', kanjiWord: '着ていない'),
+      teForm: JWord(kanaWord: "きて", kanjiWord: "着て"),
     ),
   ),
   Doushi(
@@ -1149,6 +1220,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'きっている', kanjiWord: '切っている'),
       negativePresentProgressive:
           JWord(kanaWord: 'きっていない', kanjiWord: '切っていない'),
+      teForm: JWord(kanaWord: "きって", kanjiWord: "切って"),
     ),
   ),
   Doushi(
@@ -1164,6 +1236,7 @@ var doushiBank = [
       negativePast: JWord(kanaWord: 'ねなかった', kanjiWord: '寝なかった'),
       presentProgressive: JWord(kanaWord: 'ねている', kanjiWord: '寝ている'),
       negativePresentProgressive: JWord(kanaWord: 'ねていない', kanjiWord: '寝ていない'),
+      teForm: JWord(kanaWord: "ねて", kanjiWord: "寝て"),
     ),
   ),
   Doushi(
@@ -1180,6 +1253,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'あびている', kanjiWord: '浴びている'),
       negativePresentProgressive:
           JWord(kanaWord: 'あびていない', kanjiWord: '浴びていない'),
+      teForm: JWord(kanaWord: "あびて", kanjiWord: "浴びて"),
     ),
   ),
   Doushi(
@@ -1196,6 +1270,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'すんでいる', kanjiWord: '住んでいる'),
       negativePresentProgressive:
           JWord(kanaWord: 'すんでいない', kanjiWord: '住んでいない'),
+      teForm: JWord(kanaWord: "すんで", kanjiWord: "住んで"),
     ),
   ),
   Doushi(
@@ -1212,6 +1287,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'あらっている', kanjiWord: '洗っている'),
       negativePresentProgressive:
           JWord(kanaWord: 'あらっていない', kanjiWord: '洗っていない'),
+      teForm: JWord(kanaWord: "あらって", kanjiWord: "洗って"),
     ),
   ),
   Doushi(
@@ -1228,6 +1304,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'つけている', kanjiWord: '付けている'),
       negativePresentProgressive:
           JWord(kanaWord: 'つけていない', kanjiWord: '付けていない'),
+      teForm: JWord(kanaWord: "つけて", kanjiWord: "付けて"),
     ),
   ),
   Doushi(
@@ -1244,6 +1321,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'のんでいる', kanjiWord: '飲んでいる'),
       negativePresentProgressive:
           JWord(kanaWord: 'のんでいない', kanjiWord: '飲んでいない'),
+      teForm: JWord(kanaWord: "のんで", kanjiWord: "飲んで"),
     ),
   ),
   Doushi(
@@ -1260,6 +1338,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'かえっている', kanjiWord: '帰っている'),
       negativePresentProgressive:
           JWord(kanaWord: 'かえっていない', kanjiWord: '帰っていない'),
+      teForm: JWord(kanaWord: "かえって", kanjiWord: "帰って"),
     ),
   ),
   Doushi(
@@ -1276,6 +1355,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'つかっている', kanjiWord: '使っている'),
       negativePresentProgressive:
           JWord(kanaWord: 'つかっていない', kanjiWord: '使っていない'),
+      teForm: JWord(kanaWord: "つかって", kanjiWord: "使って"),
     ),
   ),
   Doushi(
@@ -1292,6 +1372,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'まなんでいる', kanjiWord: '学んでいる'),
       negativePresentProgressive:
           JWord(kanaWord: 'まなんでいない', kanjiWord: '学んでいない'),
+      teForm: JWord(kanaWord: "まなんで", kanjiWord: "学んで"),
     ),
   ),
   Doushi(
@@ -1308,6 +1389,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'うけている', kanjiWord: '受けている'),
       negativePresentProgressive:
           JWord(kanaWord: 'うけていない', kanjiWord: '受けていない'),
+      teForm: JWord(kanaWord: "うけて", kanjiWord: "受けて"),
     ),
   ),
   Doushi(
@@ -1324,6 +1406,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'つくっている', kanjiWord: '作っている'),
       negativePresentProgressive:
           JWord(kanaWord: 'つくっていない', kanjiWord: '作っていない'),
+      teForm: JWord(kanaWord: "つくって", kanjiWord: "作って"),
     ),
   ),
   Doushi(
@@ -1340,6 +1423,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'ついている', kanjiWord: '着いている'),
       negativePresentProgressive:
           JWord(kanaWord: 'ついていない', kanjiWord: '着いていない'),
+      teForm: JWord(kanaWord: "ついて", kanjiWord: "着いて"),
     ),
   ),
   Doushi(
@@ -1356,6 +1440,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'あっている', kanjiWord: '会っている'),
       negativePresentProgressive:
           JWord(kanaWord: 'あっていない', kanjiWord: '会っていない'),
+      teForm: JWord(kanaWord: "あって", kanjiWord: "会って"),
     ),
   ),
   Doushi(
@@ -1372,6 +1457,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'よんでいる', kanjiWord: '呼んでいる'),
       negativePresentProgressive:
           JWord(kanaWord: 'よんでいない', kanjiWord: '呼んでいない'),
+      teForm: JWord(kanaWord: "よんで", kanjiWord: "呼んで"),
     ),
   ),
   Doushi(
@@ -1388,6 +1474,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'おいている', kanjiWord: '置いている'),
       negativePresentProgressive:
           JWord(kanaWord: 'おいていない', kanjiWord: '置いていない'),
+      teForm: JWord(kanaWord: "おいて", kanjiWord: "置いて"),
     ),
   ),
   Doushi(
@@ -1404,6 +1491,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'いっている', kanjiWord: '言っている'),
       negativePresentProgressive:
           JWord(kanaWord: 'いっていない', kanjiWord: '言っていない'),
+      teForm: JWord(kanaWord: "いって", kanjiWord: "言って"),
     ),
   ),
   Doushi(
@@ -1420,6 +1508,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'おくっている', kanjiWord: '送っている'),
       negativePresentProgressive:
           JWord(kanaWord: 'おくっていない', kanjiWord: '送っていない'),
+      teForm: JWord(kanaWord: "おくって", kanjiWord: "送って"),
     ),
   ),
   Doushi(
@@ -1436,6 +1525,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'まっている', kanjiWord: '待っている'),
       negativePresentProgressive:
           JWord(kanaWord: 'まっていない', kanjiWord: '待っていない'),
+      teForm: JWord(kanaWord: "まって", kanjiWord: "待って"),
     ),
   ),
   Doushi(
@@ -1452,6 +1542,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'たべている', kanjiWord: '食べている'),
       negativePresentProgressive:
           JWord(kanaWord: 'たべていない', kanjiWord: '食べていない'),
+      teForm: JWord(kanaWord: "たべて", kanjiWord: "食べて"),
     ),
   ),
   Doushi(
@@ -1468,6 +1559,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'いっている', kanjiWord: '行っている'),
       negativePresentProgressive:
           JWord(kanaWord: 'いっていない', kanjiWord: '行っていない'),
+      teForm: JWord(kanaWord: "いって", kanjiWord: "行って"),
     ),
   ),
   Doushi(
@@ -1484,6 +1576,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'もっている', kanjiWord: '持っている'),
       negativePresentProgressive:
           JWord(kanaWord: 'もっていない', kanjiWord: '持っていない'),
+      teForm: JWord(kanaWord: "もって", kanjiWord: "持って"),
     ),
   ),
   Doushi(
@@ -1500,6 +1593,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'きいている', kanjiWord: '聞いている'),
       negativePresentProgressive:
           JWord(kanaWord: 'きいていない', kanjiWord: '聞いていない'),
+      teForm: JWord(kanaWord: "きいて", kanjiWord: "聞いて"),
     ),
   ),
   Doushi(
@@ -1515,6 +1609,7 @@ var doushiBank = [
       negativePast: JWord(kanaWord: 'みなかった', kanjiWord: "見なかった"),
       presentProgressive: JWord(kanaWord: 'みている', kanjiWord: '見ている'),
       negativePresentProgressive: JWord(kanaWord: 'みていない', kanjiWord: '見ていない'),
+      teForm: JWord(kanaWord: "みて", kanjiWord: "見て"),
     ),
   ),
   Doushi(
@@ -1531,6 +1626,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'はいっている', kanjiWord: '入っている'),
       negativePresentProgressive:
           JWord(kanaWord: 'はいっていない', kanjiWord: '入っていない'),
+      teForm: JWord(kanaWord: "はいって", kanjiWord: "入って"),
     ),
   ),
   Doushi(
@@ -1547,6 +1643,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'なっている', kanjiWord: '成っている'),
       negativePresentProgressive:
           JWord(kanaWord: 'なっていない', kanjiWord: '成っていない'),
+      teForm: JWord(kanaWord: "なって", kanjiWord: "なって"),
     ),
   ),
   Doushi(
@@ -1563,6 +1660,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'はしっている', kanjiWord: '走っている'),
       negativePresentProgressive:
           JWord(kanaWord: 'はしっていない', kanjiWord: '走っていない'),
+      teForm: JWord(kanaWord: "はしって", kanjiWord: "走って"),
     ),
   ),
   Doushi(
@@ -1578,6 +1676,7 @@ var doushiBank = [
       negativePast: JWord(kanaWord: 'しなかった'),
       presentProgressive: JWord(kanaWord: 'している'),
       negativePresentProgressive: JWord(kanaWord: 'していない'),
+      teForm: JWord(kanaWord: "して", kanjiWord: "して"),
     ),
   ),
   Doushi(
@@ -1594,6 +1693,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'あるいている', kanjiWord: '歩いている'),
       negativePresentProgressive:
           JWord(kanaWord: 'あるいていない', kanjiWord: '歩いていない'),
+      teForm: JWord(kanaWord: "あるいて", kanjiWord: "歩いて"),
     ),
   ),
   Doushi(
@@ -1609,6 +1709,7 @@ var doushiBank = [
       negativePast: JWord(kanaWord: 'いなかった', kanjiWord: '居なかった'),
       presentProgressive: JWord(kanaWord: '', kanjiWord: ''),
       negativePresentProgressive: JWord(kanaWord: '', kanjiWord: ''),
+      teForm: JWord(kanaWord: "いて", kanjiWord: "居て"),
     ),
   ),
   Doushi(
@@ -1624,6 +1725,7 @@ var doushiBank = [
       negativePast: JWord(kanaWord: 'いらなかった', kanjiWord: '要らなかった'),
       presentProgressive: JWord(kanaWord: ''),
       negativePresentProgressive: JWord(kanaWord: ''),
+      teForm: JWord(kanaWord: "いります", kanjiWord: "要ります"),
     ),
   ),
   Doushi(
@@ -1640,6 +1742,7 @@ var doushiBank = [
         presentProgressive: JWord(kanaWord: 'はなしている', kanjiWord: '話している'),
         negativePresentProgressive:
             JWord(kanaWord: 'はなしていない', kanjiWord: '話していない'),
+        teForm: JWord(kanaWord: "はなして", kanjiWord: "話して"),
       )),
   Doushi(
       isIrregular: false,
@@ -1655,6 +1758,7 @@ var doushiBank = [
         presentProgressive: JWord(kanaWord: 'よんでいる', kanjiWord: '読んでいる'),
         negativePresentProgressive:
             JWord(kanaWord: 'よんでいない', kanjiWord: '読んでいない'),
+        teForm: JWord(kanaWord: "よんで", kanjiWord: "読んで"),
       )),
   Doushi(
       isIrregular: false,
@@ -1670,6 +1774,7 @@ var doushiBank = [
         presentProgressive: JWord(kanaWord: 'かいている', kanjiWord: '書いている'),
         negativePresentProgressive:
             JWord(kanaWord: 'かいていない', kanjiWord: '書いていない'),
+        teForm: JWord(kanaWord: "かいて", kanjiWord: "書いて"),
       )),
 ];
 
@@ -1699,6 +1804,7 @@ class DoushiConj {
   final JWord negativePast;
   final JWord presentProgressive;
   final JWord negativePresentProgressive;
+  final JWord teForm;
 
   DoushiConj({
     required this.present,
@@ -1707,6 +1813,7 @@ class DoushiConj {
     required this.negativePast,
     required this.presentProgressive,
     required this.negativePresentProgressive,
+    required this.teForm,
   });
 }
 
