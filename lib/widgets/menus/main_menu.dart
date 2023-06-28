@@ -3,7 +3,6 @@ import 'package:nalelu/constants.dart';
 import 'package:nalelu/furi_text.dart';
 import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/state/enums.dart';
-import 'package:nalelu/widgets/manga_exercise/manga_exercise.dart';
 import 'package:nalelu/widgets/menus/kanji_menu.dart';
 import 'package:nalelu/widgets/menus/numbers_menu.dart';
 import 'package:nalelu/widgets/shared/ad_card.dart';

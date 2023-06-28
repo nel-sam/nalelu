@@ -177,6 +177,23 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
             });
           },
         ),
+        VerbInput(
+          doushi: widget.state.doushi,
+          hintValue: NA.t('negativeteform'),
+          activeValue: widget.state.getUserInput(7),
+          correctValues: [
+            widget.state.doushi.casual.negativeTeForm.kanaWord,
+            widget.state.doushi.casual.negativeTeForm.kanjiWord
+          ],
+          onSubmitted: (String newValue) {
+            widget.state.updateUserInput(7, newValue);
+          },
+          onCorrect: () {
+            WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+              setState(() {});
+            });
+          },
+        ),
       ],
     );
   }

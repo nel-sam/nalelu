@@ -1,5 +1,3 @@
-import 'dart:js_interop';
-
 import 'package:flutter/material.dart';
 import 'package:nalelu/furi_text.dart';
 import 'package:nalelu/lang_data/doushi.dart';
@@ -83,6 +81,9 @@ class VerbChart extends StatelessWidget {
           ChartRow(
               label: NA.t('teform'),
               furiText: doushi.casual.teForm.toFuriTexts()),
+              ChartRow(
+              label: NA.t('negativeteform'),
+              furiText: doushi.casual.negativeTeForm.toFuriTexts()),
         ],
       ),
     );
