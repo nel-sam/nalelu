@@ -1,3 +1,5 @@
+import 'dart:js_interop';
+
 import 'package:flutter/material.dart';
 import 'package:nalelu/furi_text.dart';
 import 'package:nalelu/lang_data/doushi.dart';
@@ -67,12 +69,20 @@ class VerbChart extends StatelessWidget {
           ChartRow(
               label: NA.t('negativePast'),
               furiText: doushi.casual.negativePast.toFuriTexts()),
+          doushi.casual.presentProgressive.kanaWord.isEmpty
+              ? Container()
+              : ChartRow(
+                  label: NA.t('presentProgressive'),
+                  furiText: doushi.casual.presentProgressive.toFuriTexts()),
+          doushi.casual.negativePresentProgressive.kanaWord.isEmpty
+              ? Container()
+              : ChartRow(
+                  label: NA.t('negativePresentProgressive'),
+                  furiText:
+                      doushi.casual.negativePresentProgressive.toFuriTexts()),
           ChartRow(
-              label: NA.t('presentProgressive'),
-              furiText: doushi.casual.presentProgressive.toFuriTexts()),
-          ChartRow(
-              label: NA.t('negativePresentProgressive'),
-              furiText: doushi.casual.negativePresentProgressive.toFuriTexts()),
+              label: NA.t('teform'),
+              furiText: doushi.casual.teForm.toFuriTexts()),
         ],
       ),
     );

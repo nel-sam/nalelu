@@ -1725,7 +1725,7 @@ var doushiBank = [
       negativePast: JWord(kanaWord: 'いらなかった', kanjiWord: '要らなかった'),
       presentProgressive: JWord(kanaWord: ''),
       negativePresentProgressive: JWord(kanaWord: ''),
-      teForm: JWord(kanaWord: "いります", kanjiWord: "要ります"),
+      teForm: JWord(kanaWord: "いって", kanjiWord: "要って"),
     ),
   ),
   Doushi(

@@ -160,6 +160,23 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
                 },
               )
             : Container(),
+        VerbInput(
+          doushi: widget.state.doushi,
+          hintValue: NA.t('teform'),
+          activeValue: widget.state.getUserInput(6),
+          correctValues: [
+            widget.state.doushi.casual.teForm.kanaWord,
+            widget.state.doushi.casual.teForm.kanjiWord
+          ],
+          onSubmitted: (String newValue) {
+            widget.state.updateUserInput(6, newValue);
+          },
+          onCorrect: () {
+            WidgetsBinding.instance.addPostFrameCallback((timeStamp) {
+              setState(() {});
+            });
+          },
+        ),
       ],
     );
   }
