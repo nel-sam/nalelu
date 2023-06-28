@@ -339,7 +339,7 @@ var doushiBank = [
       presentProgressive: JWord(kanaWord: 'くるしみている', kanjiWord: '苦しみている'),
       negativePresentProgressive:
           JWord(kanaWord: 'くるしみていない', kanjiWord: '苦しみていない'),
-      teForm: JWord(kanaWord: "くるしみて", kanjiWord: "苦しんで"),
+      teForm: JWord(kanaWord: "くるしんで", kanjiWord: "苦しんで"),
     ),
   ),
   Doushi(
