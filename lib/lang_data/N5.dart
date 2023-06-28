@@ -36,6 +36,8 @@ List<Kanji> kanjiN5Bank = [
             FuriText(text: '緒', furigana: 'しょ'),
             FuriText(text: 'に'),
             FuriText(text: '旅', furigana: 'りょ'),
+            FuriText(text: '行', furigana: 'こう'),
+            FuriText(text: 'に'),
             FuriText(text: '行', furigana: 'い'),
             FuriText(text: 'きたい'),
           ],
@@ -240,7 +242,7 @@ List<Kanji> kanjiN5Bank = [
           FuriText(text: '用', furigana: 'よう', emphasize: true),
           FuriText(text: 'の'),
           FuriText(text: 'トイレ', furigana: 'Toilet'),
-          FuriText(text: 'どこですか？は'),
+          FuriText(text: 'はどこですか？'),
         ],
         answer: 'じょせいよう',
       )
@@ -1515,7 +1517,7 @@ List<Kanji> kanjiN5Bank = [
             // 四千円するよ
             translation: NA.t('yonsenensuruyo'),
             phraseParts: [
-              FuriText(text: '四万', furigana: 'よんせん', emphasize: true),
+              FuriText(text: '四千', furigana: 'よんせん', emphasize: true),
               FuriText(text: '円', furigana: '？', emphasize: true),
               FuriText(text: 'するよ'),
             ],
@@ -2308,7 +2310,9 @@ List<Kanji> kanjiN5Bank = [
             phraseParts: [
               FuriText(text: '和', furigana: 'わ', emphasize: true),
               FuriText(text: '食', furigana: '？', emphasize: true),
-              FuriText(text: 'がすき？')
+              FuriText(text: 'が'),
+              FuriText(text: '好', furigana: 'す', emphasize: true),
+              FuriText(text: 'き？'),
             ],
             answer: 'わしょく'),
       ]),
@@ -2705,7 +2709,7 @@ List<Kanji> kanjiN5Bank = [
               FuriText(text: '富士', furigana: 'ふじ', emphasize: true),
               FuriText(text: '山', furigana: '？', emphasize: true),
               FuriText(text: 'は'),
-              FuriText(text: '近', furigana: 'ち'),
+              FuriText(text: '近', furigana: 'ちか'),
               FuriText(text: 'い？')
             ],
             answer: 'ふじさん'),
@@ -2807,7 +2811,8 @@ List<Kanji> kanjiN5Bank = [
             FuriText(text: 'あと'),
             FuriText(text: '十', furigana: 'じゅう', emphasize: true),
             FuriText(text: '分', furigana: '？', emphasize: true),
-            FuriText(text: 'まってね'),
+            FuriText(text: '待', furigana: 'ま'),
+            FuriText(text: 'ってね'),
           ],
           answer: 'じゅうぷん'),
       PhraseAnswer(
