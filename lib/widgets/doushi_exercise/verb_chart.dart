@@ -49,41 +49,49 @@ class VerbChart extends StatelessWidget {
     return Scaffold(
       resizeToAvoidBottomInset: false,
       appBar: Nrs.NrsAppBar(title: doushi.infinitive, context: context),
-      body: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Center(
-            child: AdCard(),
-          ),
-          ChartRow(
-              label: NA.t('present'),
-              furiText: doushi.casual.present.toFuriTexts()),
-          ChartRow(
-              label: NA.t('past'),
-              furiText: doushi.casual.pastSimple.toFuriTexts()),
-          ChartRow(
-              label: NA.t('negative'),
-              furiText: doushi.casual.negative.toFuriTexts()),
-          ChartRow(
-              label: NA.t('negativePast'),
-              furiText: doushi.casual.negativePast.toFuriTexts()),
-          doushi.casual.presentProgressive.kanaWord.isEmpty
-              ? Container()
-              : ChartRow(
-                  label: NA.t('presentProgressive'),
-                  furiText: doushi.casual.presentProgressive.toFuriTexts()),
-          doushi.casual.negativePresentProgressive.kanaWord.isEmpty
-              ? Container()
-              : ChartRow(
-                  label: NA.t('negativePresentProgressive'),
-                  furiText:
-                      doushi.casual.negativePresentProgressive.toFuriTexts()),
-          ChartRow(
-              label: NA.t('teform'),
-              furiText: doushi.casual.teForm.toFuriTexts()),
-          ChartRow(
-              label: NA.t('negativeteform'),
-              furiText: doushi.casual.negativeTeForm.toFuriTexts()),
+      body: CustomScrollView(
+        slivers: [
+          SliverFillRemaining(
+            hasScrollBody: false,
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Center(
+                  child: AdCard(),
+                ),
+                ChartRow(
+                    label: NA.t('present'),
+                    furiText: doushi.casual.present.toFuriTexts()),
+                ChartRow(
+                    label: NA.t('past'),
+                    furiText: doushi.casual.pastSimple.toFuriTexts()),
+                ChartRow(
+                    label: NA.t('negative'),
+                    furiText: doushi.casual.negative.toFuriTexts()),
+                ChartRow(
+                    label: NA.t('negativePast'),
+                    furiText: doushi.casual.negativePast.toFuriTexts()),
+                doushi.casual.presentProgressive.kanaWord.isEmpty
+                    ? Container()
+                    : ChartRow(
+                        label: NA.t('presentProgressive'),
+                        furiText:
+                            doushi.casual.presentProgressive.toFuriTexts()),
+                doushi.casual.negativePresentProgressive.kanaWord.isEmpty
+                    ? Container()
+                    : ChartRow(
+                        label: NA.t('negativePresentProgressive'),
+                        furiText: doushi.casual.negativePresentProgressive
+                            .toFuriTexts()),
+                ChartRow(
+                    label: NA.t('teform'),
+                    furiText: doushi.casual.teForm.toFuriTexts()),
+                ChartRow(
+                    label: NA.t('negativeteform'),
+                    furiText: doushi.casual.negativeTeForm.toFuriTexts()),
+              ],
+            ),
+          )
         ],
       ),
     );
