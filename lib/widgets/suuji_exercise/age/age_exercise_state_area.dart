@@ -21,7 +21,7 @@ class _MyAgeExerciseStateAreaState extends State<AgeExerciseStateArea> {
     return NaFreeFormEntryWrapper(
       showMaxLength: false,
       widthType: NFreeFormWidths.half,
-      labelText: NA.t('age'),
+      hintValue: NA.t('age'),
       onChanged: (String newValue) {
         widget.state.updateAge(newValue);
       },

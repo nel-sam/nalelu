@@ -52,6 +52,7 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
         //   ),
         // ),
         VerbInput(
+          labelText: NA.t('positive'),
           doushi: widget.state.doushi,
           hintValue: NA.t('present'),
           activeValue: widget.state.getUserInput(0),
@@ -69,6 +70,7 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
           },
         ),
         VerbInput(
+          labelText: NA.t('positive'),
           doushi: widget.state.doushi,
           hintValue: NA.t('past'),
           activeValue: widget.state.getUserInput(1),
@@ -86,8 +88,9 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
           },
         ),
         VerbInput(
+          labelText: NA.t('negative'),
           doushi: widget.state.doushi,
-          hintValue: NA.t('negative'),
+          hintValue: NA.t('present'),
           activeValue: widget.state.getUserInput(2),
           correctValues: [
             widget.state.doushi.casual.negative.kanaWord,
@@ -103,8 +106,9 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
           },
         ),
         VerbInput(
+          labelText: NA.t('negative'),
           doushi: widget.state.doushi,
-          hintValue: NA.t('negativePast'),
+          hintValue: NA.t('past'),
           activeValue: widget.state.getUserInput(3),
           correctValues: [
             widget.state.doushi.casual.negativePast.kanaWord,
@@ -121,6 +125,7 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
         ),
         widget.state.doushi.casual.presentProgressive.kanaWord.length != 0
             ? VerbInput(
+                labelText: NA.t('positive'),
                 doushi: widget.state.doushi,
                 hintValue: NA.t('presentProgressive'),
                 activeValue: widget.state.getUserInput(4),
@@ -141,8 +146,9 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
         widget.state.doushi.casual.negativePresentProgressive.kanaWord.length !=
                 0
             ? VerbInput(
+                labelText: NA.t('negative'),
                 doushi: widget.state.doushi,
-                hintValue: NA.t('negativePresentProgressive'),
+                hintValue: NA.t('presentProgressive'),
                 activeValue: widget.state.getUserInput(5),
                 correctValues: [
                   widget
@@ -161,6 +167,7 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
               )
             : Container(),
         VerbInput(
+          labelText: NA.t('positive'),
           doushi: widget.state.doushi,
           hintValue: NA.t('teform'),
           activeValue: widget.state.getUserInput(6),
@@ -178,8 +185,9 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
           },
         ),
         VerbInput(
+          labelText: NA.t('negative'),
           doushi: widget.state.doushi,
-          hintValue: NA.t('negativeteform'),
+          hintValue: NA.t('teform'),
           activeValue: widget.state.getUserInput(7),
           correctValues: [
             widget.state.doushi.casual.negativeTeForm.kanaWord,

@@ -6,7 +6,7 @@ import 'package:nrs_flutter_lib/widgets/n_free_form_entry.dart';
 class VerbInput extends StatelessWidget {
   final Doushi doushi;
   final String hintValue;
-
+  final String labelText;
   final List<String> correctValues;
   final String activeValue;
   final Function(String) onSubmitted;
@@ -20,6 +20,7 @@ class VerbInput extends StatelessWidget {
     required this.onSubmitted,
     required this.onCorrect,
     required this.hintValue,
+    this.labelText = '',
   }) : super(key: key);
 
   @override
@@ -27,7 +28,8 @@ class VerbInput extends StatelessWidget {
     return NaFreeFormEntryWrapper(
       showMaxLength: false,
       widthType: NFreeFormWidths.full,
-      labelText: hintValue,
+      labelText: labelText,
+      hintValue: hintValue,
       onChanged: (String newValue) {
         onSubmitted(newValue);
       },

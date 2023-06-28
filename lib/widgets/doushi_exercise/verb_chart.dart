@@ -81,7 +81,7 @@ class VerbChart extends StatelessWidget {
           ChartRow(
               label: NA.t('teform'),
               furiText: doushi.casual.teForm.toFuriTexts()),
-              ChartRow(
+          ChartRow(
               label: NA.t('negativeteform'),
               furiText: doushi.casual.negativeTeForm.toFuriTexts()),
         ],

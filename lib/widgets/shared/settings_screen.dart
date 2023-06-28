@@ -143,7 +143,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     return Scaffold(
         appBar: AppBar(
           title: Text(
-              NA.t(widget.exerciseType.name.toString()) + ' ' + NA.t('settings')),
+              NA.t(widget.exerciseType.name.toString().toLowerCase()) + ' ' + NA.t('settings')),
         ),
         body: allSettings(widget.exerciseType));
   }
@@ -323,7 +323,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               readOnly: true,
               isAnswerCentered: true,
               widthType: NFreeFormWidths.full,
-              labelText: NA.t('Present'),
+              hintValue: NA.t('Present'),
               onChanged: (String newValue) {},
               initialValue: '',
               correctValues: ['かわいがる'],
@@ -666,7 +666,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   readOnly: true,
                   isAnswerCentered: true,
                   widthType: NFreeFormWidths.full,
-                  labelText: NA.t('kanjiToHiragana'),
+                  hintValue: NA.t('kanjiToHiragana'),
                   onChanged: (String newValue) {},
                   initialValue: '',
                   correctValues: ['いし'],
@@ -940,7 +940,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   readOnly: true,
                   isAnswerCentered: true,
                   widthType: NFreeFormWidths.full,
-                  labelText: NA.t('kanjiToHiragana'),
+                  hintValue: NA.t('kanjiToHiragana'),
                   onChanged: (String newValue) {},
                   initialValue: '',
                   correctValues: ['いし'],
