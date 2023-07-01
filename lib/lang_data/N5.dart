@@ -1571,7 +1571,7 @@ List<Kanji> kanjiN5Bank = [
       kunYomi: 'つき',
       phraseAnswers: [
         PhraseAnswer(
-            // 昨日の月曜日だった
+            // 昨日は月曜日だった
             translation: NA.t('kinouhagetsuyoubidatta'),
             phraseParts: [
               FuriText(text: '昨日', furigana: 'きのう'),
