@@ -759,12 +759,34 @@ List<Kanji> kanjiN4Bank = [
   //     onYomi: 'ケン',
   //     kunYomi: 'あかし, ため(す)',
   //     phraseAnswers: []),
-  // Kanji(
-  //     translation: NA.t('鳥'),
-  //     kanji: '鳥',
-  //     onYomi: 'チョウ',
-  //     kunYomi: 'とり',
-  //     phraseAnswers: []),
+  Kanji(
+      translation: NA.t('鳥'),
+      kanji: '鳥',
+      onYomi: 'チョウ',
+      kunYomi: 'とり',
+      phraseAnswers: [
+        PhraseAnswer(
+          // ここはどんな鳥がいますか？
+          translation: NA.t('kokohadonnatorigaimasuka'),
+          phraseParts: [
+            FuriText(text: 'ここはどんな'),
+            FuriText(text: '鳥', furigana: '？', emphasize: true),
+            FuriText(text: 'がいますか？'),
+          ],
+          answer: 'とり',
+        ),
+        PhraseAnswer(
+          // 白鳥は奇麗です
+          translation: NA.t('hakuchouhakireidesu'),
+          phraseParts: [
+            FuriText(text: '白', furigana: 'はく', emphasize: true),
+            FuriText(text: '鳥', furigana: '？', emphasize: true),
+            FuriText(text: 'は'),
+            FuriText(text: 'きれいです'),
+          ],
+          answer: 'はくちょう',
+        ),
+      ]),
   Kanji(
       translation: NA.t('犬'),
       kanji: '犬',

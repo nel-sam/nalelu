@@ -4,8 +4,6 @@ import 'package:nalelu/state/manga/models.dart';
 import '../na_helpers.dart';
 
 final mangaExerciseBank = [
-
-
   MangaExerciseModel(imageUrl: 'assets/manga/goal.jpeg', phrases: [
     Phrase(
         // 彼は何ゴール決めたの？
@@ -72,7 +70,6 @@ final mangaExerciseBank = [
         downPercentage: 90,
         rightPercentage: 80),
   ]),
-
   MangaExerciseModel(imageUrl: 'assets/manga/coffee.jpeg', phrases: [
     Phrase(
         // 何か飲みたい
@@ -140,7 +137,6 @@ final mangaExerciseBank = [
         downPercentage: 90,
         rightPercentage: 10),
   ]),
-
   MangaExerciseModel(imageUrl: 'assets/manga/stars.jpeg', phrases: [
     Phrase(
         // 星がピカピカしてて、奇麗だね？
@@ -209,7 +205,6 @@ final mangaExerciseBank = [
         downPercentage: 95,
         rightPercentage: 90),
   ]),
-
   MangaExerciseModel(imageUrl: 'assets/manga/sunny_day.jpeg', phrases: [
     Phrase(
         // わー、日が強いね？
@@ -294,7 +289,6 @@ final mangaExerciseBank = [
         downPercentage: 90,
         rightPercentage: 80),
   ]),
-
   MangaExerciseModel(imageUrl: 'assets/manga/music.jpeg', phrases: [
     Phrase(
         // どんな音楽が好き？
@@ -353,7 +347,6 @@ final mangaExerciseBank = [
         downPercentage: 95,
         rightPercentage: 10),
   ]),
-
   MangaExerciseModel(imageUrl: 'assets/manga/rainy_season.jpeg', phrases: [
     Phrase(
       // 雨がいっぱい降っているね
@@ -425,7 +418,6 @@ final mangaExerciseBank = [
       rightPercentage: 90,
     )
   ]),
-
   MangaExerciseModel(imageUrl: 'assets/manga/cats.jpeg', phrases: [
     Phrase(
         // 猫がいると知らなかった
