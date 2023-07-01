@@ -53,7 +53,7 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
             ),
           ],
         ),
-        activePhrasePart != null && activePhrase != null
+        activePhrase != null && activePhrasePart != null
             ? Column(
                 children: [
                   Padding(
@@ -64,7 +64,8 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                     padding: const EdgeInsets.only(bottom: padding),
                     child: Wrap(
                         children: activePhrase!.phraseParts.map((e) {
-                      return e.isAnswerable
+                      return e.isAnswerable &&
+                              !widget.state.isPhrasePartCorrect(e)
                           ? Text(
                               ' ____ ',
                               style: TextStyle(
@@ -72,7 +73,12 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                                 color: Theme.of(context).colorScheme.primary,
                               ),
                             )
-                          : FuriganaText(furiTexts: e.furiTexts);
+                          : e.isAnswerable
+                              ? FuriganaText(
+                                  furiTexts: e.furiTexts,
+                                  textColor:
+                                      Theme.of(context).colorScheme.primary)
+                              : FuriganaText(furiTexts: e.furiTexts);
                     }).toList()),
                   ),
                   Padding(
@@ -84,15 +90,6 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
                       onChanged: (String newValue) {
                         widget.state
                             .updateUserInput(activePhrasePart, newValue);
-
-                        final isPhrasePartCorrect =
-                            widget.state.isPhrasePartCorrect(activePhrasePart);
-
-                        if (isPhrasePartCorrect) {
-                          setState(() {
-                            activePhrasePart = null;
-                          });
-                        }
                       },
                       initialValue: widget.state.getUserInput(activePhrasePart),
                       correctValues:
