@@ -15,7 +15,7 @@ final mangaExerciseBank = [
             ],
           ),
           PhrasePart(isAnswerable: true, furiTexts: [
-            FuriText(text: '何', furigana: 'なん'),
+            FuriText(text: '何回', furigana: 'なんかい'),
           ]),
           PhrasePart(furiTexts: [
             FuriText(text: 'ゴール'),
@@ -64,7 +64,7 @@ final mangaExerciseBank = [
             FuriText(text: '上手', furigana: 'じょうず'),
           ]),
           PhrasePart(furiTexts: [
-            FuriText(text: 'だ！'),
+            FuriText(text: 'だね！'),
           ]),
         ],
         downPercentage: 90,
@@ -92,15 +92,15 @@ final mangaExerciseBank = [
       phraseParts: [
         PhrasePart(
           furiTexts: [
-            FuriText(text: 'コーヒーは'),
+            FuriText(text: 'コーヒー'),
           ],
         ),
         PhrasePart(isAnswerable: true, furiTexts: [
           FuriText(text: '飲', furigana: 'の'),
-          FuriText(text: 'み'),
+          FuriText(text: 'む'),
         ]),
         PhrasePart(furiTexts: [
-          FuriText(text: 'ますか？'),
+          FuriText(text: '？'),
         ]),
       ],
       downPercentage: 60,
@@ -150,13 +150,13 @@ final mangaExerciseBank = [
           ),
           PhrasePart(furiTexts: [
             FuriText(text: 'が'),
-            FuriText(text: 'ピカピカしてて'),
+            FuriText(text: 'キラキラしていて'),
           ]),
           PhrasePart(isAnswerable: true, furiTexts: [
-            FuriText(text: '奇麗', furigana: 'きれい'),
+            FuriText(text: 'きれい'),
           ]),
           PhrasePart(furiTexts: [
-            FuriText(text: 'だね？'),
+            FuriText(text: 'だね'),
           ]),
         ],
         downPercentage: 20,
@@ -222,7 +222,7 @@ final mangaExerciseBank = [
             FuriText(text: 'い'),
           ]),
           PhrasePart(furiTexts: [
-            FuriText(text: 'ね？'),
+            FuriText(text: 'ね'),
           ])
         ],
         downPercentage: 20,
@@ -232,11 +232,6 @@ final mangaExerciseBank = [
       translation: NA.t('dakaratsumetainomimotokatta'),
       phraseParts: [
         PhrasePart(
-          furiTexts: [
-            FuriText(text: 'だから'),
-          ],
-        ),
-        PhrasePart(
           isAnswerable: true,
           furiTexts: [
             FuriText(text: '冷', furigana: 'つめ'),
@@ -245,12 +240,11 @@ final mangaExerciseBank = [
         ),
         PhrasePart(
           furiTexts: [
-            FuriText(text: '飲', furigana: 'の'),
             FuriText(
-              text: 'み',
+              text: 'のが',
             ),
-            FuriText(text: '物', furigana: 'もの'),
-            FuriText(text: 'を'),
+            FuriText(text: '飲', furigana: 'の'),
+            FuriText(text: 'みたい'),
           ],
         ),
         PhrasePart(isAnswerable: true, furiTexts: [
@@ -334,8 +328,7 @@ final mangaExerciseBank = [
         translation: NA.t('sokkarokkutopopputoka'),
         phraseParts: [
           PhrasePart(furiTexts: [
-            FuriText(text: 'そうか？'),
-            FuriText(text: 'ロックとポップ'),
+            FuriText(text: 'ロックとか、ポップ'),
           ]),
           PhrasePart(isAnswerable: true, furiTexts: [
             FuriText(text: 'とか'),
@@ -425,11 +418,11 @@ final mangaExerciseBank = [
         phraseParts: [
           PhrasePart(furiTexts: [
             FuriText(text: '猫', furigana: 'ねこ'),
-            FuriText(text: 'がいると'),
+            FuriText(text: 'がいるとは'),
           ]),
           PhrasePart(isAnswerable: true, furiTexts: [
             FuriText(text: '知', furigana: 'し'),
-            FuriText(text: 'らなかった')
+            FuriText(text: 'らなかったよ')
           ]),
         ],
         downPercentage: 5,
@@ -576,13 +569,13 @@ final mangaExerciseBank = [
         translation: NA.t('sokkaato15funniaeru'),
         phraseParts: [
           PhrasePart(furiTexts: [
-            FuriText(text: 'そうか、あと', furigana: ''),
+            FuriText(text: 'そうか、', furigana: ''),
           ]),
           PhrasePart(isAnswerable: true, furiTexts: [
-            FuriText(text: '三十分', furigana: 'さんじゅうぷん'),
+            FuriText(text: '三十分後', furigana: 'さんじゅうぷんご'),
           ]),
           PhrasePart(furiTexts: [
-            FuriText(text: 'に', furigana: ''),
+            FuriText(text: 'に'),
           ]),
           PhrasePart(isAnswerable: true, furiTexts: [
             FuriText(text: '会', furigana: 'あ'),
