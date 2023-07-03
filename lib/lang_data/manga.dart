@@ -6,7 +6,6 @@ import '../na_helpers.dart';
 final mangaExerciseBank = [
   MangaExerciseModel(imageUrl: 'assets/manga/goal.jpeg', phrases: [
     Phrase(
-        // 彼は何ゴール決めたの？
         translation: NA.t('karehanangouruwokimetano'),
         phraseParts: [
           PhrasePart(
@@ -26,7 +25,6 @@ final mangaExerciseBank = [
         downPercentage: 2,
         rightPercentage: 50),
     Phrase(
-      // もう三つも決めたよ
       translation: NA.t('moumittsumokimetayo'),
       phraseParts: [
         PhrasePart(furiTexts: [
@@ -48,7 +46,6 @@ final mangaExerciseBank = [
       rightPercentage: 10,
     ),
     Phrase(
-        // 本当に上手だ！
         translation: NA.t('hontounijouzuda'),
         phraseParts: [
           PhrasePart(
@@ -72,7 +69,6 @@ final mangaExerciseBank = [
   ]),
   MangaExerciseModel(imageUrl: 'assets/manga/coffee.jpeg', phrases: [
     Phrase(
-        // 何か飲みたい
         translation: NA.t('nanikanomitai'),
         phraseParts: [
           PhrasePart(
@@ -87,7 +83,6 @@ final mangaExerciseBank = [
         downPercentage: 10,
         rightPercentage: 10),
     Phrase(
-      // コーヒーは飲みますか？
       translation: NA.t('koohiihanomimasuka'),
       phraseParts: [
         PhrasePart(
@@ -107,7 +102,6 @@ final mangaExerciseBank = [
       rightPercentage: 90,
     ),
     Phrase(
-        // お茶しか飲みたくない
         translation: NA.t('ochashikanomitakunai'),
         phraseParts: [
           PhrasePart(isAnswerable: true, furiTexts: [
@@ -139,7 +133,6 @@ final mangaExerciseBank = [
   ]),
   MangaExerciseModel(imageUrl: 'assets/manga/stars.jpeg', phrases: [
     Phrase(
-        // 星がピカピカしてて、奇麗だね？
         translation: NA.t('hoshigapikapikashitetekireidane'),
         phraseParts: [
           PhrasePart(
@@ -162,7 +155,6 @@ final mangaExerciseBank = [
         downPercentage: 20,
         rightPercentage: 90),
     Phrase(
-      // こんなに沢山あって、すごいね
       translation: NA.t('konnanitakusanattesugoine'),
       phraseParts: [
         PhrasePart(furiTexts: [
@@ -185,7 +177,6 @@ final mangaExerciseBank = [
       rightPercentage: 10,
     ),
     Phrase(
-        // 本当ね
         translation: NA.t('hontoune'),
         phraseParts: [
           PhrasePart(furiTexts: [
@@ -207,7 +198,6 @@ final mangaExerciseBank = [
   ]),
   MangaExerciseModel(imageUrl: 'assets/manga/sunny_day.jpeg', phrases: [
     Phrase(
-        // わー、日が強いね？
         translation: NA.t('waahigatsuyoine'),
         phraseParts: [
           PhrasePart(
@@ -228,7 +218,6 @@ final mangaExerciseBank = [
         downPercentage: 20,
         rightPercentage: 80),
     Phrase(
-      // だから冷たい飲み物買った
       translation: NA.t('dakaratsumetainomimotokatta'),
       phraseParts: [
         PhrasePart(
@@ -252,7 +241,6 @@ final mangaExerciseBank = [
       rightPercentage: 10,
     ),
     Phrase(
-        // じゃあ、買いに行こう
         translation: NA.t('jaakainikou'),
         phraseParts: [
           PhrasePart(
@@ -281,7 +269,6 @@ final mangaExerciseBank = [
   ]),
   MangaExerciseModel(imageUrl: 'assets/manga/music.jpeg', phrases: [
     Phrase(
-        // どんな音楽が好き？
         translation: NA.t('donnaongakugasuki'),
         phraseParts: [
           PhrasePart(
@@ -302,7 +289,6 @@ final mangaExerciseBank = [
         downPercentage: 50,
         rightPercentage: 10),
     Phrase(
-      // 何でも好きだよ
       translation: NA.t('nandemosukidayo'),
       phraseParts: [
         PhrasePart(isAnswerable: true, furiTexts: [
@@ -320,7 +306,6 @@ final mangaExerciseBank = [
       rightPercentage: 85,
     ),
     Phrase(
-        // そうか？　ロックとポップとか？
         translation: NA.t('sokkarokkutopopputoka'),
         phraseParts: [
           PhrasePart(furiTexts: [
@@ -338,7 +323,6 @@ final mangaExerciseBank = [
   ]),
   MangaExerciseModel(imageUrl: 'assets/manga/rainy_season.jpeg', phrases: [
     Phrase(
-      // 雨がいっぱい降っているね
       translation: NA.t('amegaippaifutterune'),
       phraseParts: [
         PhrasePart(
@@ -362,7 +346,6 @@ final mangaExerciseBank = [
       rightPercentage: 2,
     ),
     Phrase(
-        // 梅雨だからね
         translation: NA.t('tsuyudakarane'),
         phraseParts: [
           PhrasePart(isAnswerable: true, furiTexts: [
@@ -375,7 +358,6 @@ final mangaExerciseBank = [
         downPercentage: 50,
         rightPercentage: 80),
     Phrase(
-      // あれ？来月からじゃなかったっけ？
       translation: NA.t('areraigetsukarajanakatta'),
       phraseParts: [
         PhrasePart(furiTexts: [
@@ -392,7 +374,6 @@ final mangaExerciseBank = [
       rightPercentage: 2,
     ),
     Phrase(
-      // 最近早いよね
       translation: NA.t('saikinhayaiyone'),
       phraseParts: [
         PhrasePart(furiTexts: [
@@ -409,7 +390,6 @@ final mangaExerciseBank = [
   ]),
   MangaExerciseModel(imageUrl: 'assets/manga/cats.jpeg', phrases: [
     Phrase(
-        // 猫がいると知らなかった
         translation: NA.t('nekoirutoshiranakatta'),
         phraseParts: [
           PhrasePart(furiTexts: [
@@ -424,7 +404,6 @@ final mangaExerciseBank = [
         downPercentage: 5,
         rightPercentage: 10),
     Phrase(
-      // うん、二匹もいるよ
       translation: NA.t('unnihikimoiruyo'),
       phraseParts: [
         PhrasePart(furiTexts: [
@@ -441,7 +420,6 @@ final mangaExerciseBank = [
       downPercentage: 30,
     ),
     Phrase(
-        // かわいいね！
         translation: NA.t('kawaiine'),
         phraseParts: [
           PhrasePart(furiTexts: [
@@ -453,7 +431,6 @@ final mangaExerciseBank = [
   ]),
   MangaExerciseModel(imageUrl: 'assets/manga/birthday.jpeg', phrases: [
     Phrase(
-        // 誕生日おめでとう
         translation: NA.t('otanjoubiomedetou'),
         phraseParts: [
           PhrasePart(
@@ -466,7 +443,6 @@ final mangaExerciseBank = [
         downPercentage: 10,
         rightPercentage: 50),
     Phrase(
-      // ありがとう
       translation: NA.t('arigatou'),
       phraseParts: [
         PhrasePart(
@@ -479,7 +455,6 @@ final mangaExerciseBank = [
       rightPercentage: 5,
     ),
     Phrase(
-        // 二十一歳になったよね？
         translation: NA.t('nijuuissaininattayone'),
         phraseParts: [
           PhrasePart(isAnswerable: true, furiTexts: [
@@ -494,7 +469,6 @@ final mangaExerciseBank = [
   ]),
   MangaExerciseModel(imageUrl: 'assets/manga/dont_run.jpeg', phrases: [
     Phrase(
-        // いってきます！
         translation: NA.t('ittekimasu'),
         phraseParts: [
           PhrasePart(
@@ -506,7 +480,6 @@ final mangaExerciseBank = [
         downPercentage: 10,
         rightPercentage: 60),
     Phrase(
-        // 走らないでよ!
         translation: NA.t('hashiranaide'),
         phraseParts: [
           PhrasePart(
@@ -523,7 +496,6 @@ final mangaExerciseBank = [
   ]),
   MangaExerciseModel(imageUrl: 'assets/manga/phone_walking.jpeg', phrases: [
     Phrase(
-        // 今何をしてるの？
         translation: NA.t('imananishiteruno'),
         phraseParts: [
           PhrasePart(
@@ -543,7 +515,6 @@ final mangaExerciseBank = [
         downPercentage: 2,
         rightPercentage: 10),
     Phrase(
-      // 今ね、歩いている
       translation: NA.t('imanearuiteruyo'),
       phraseParts: [
         PhrasePart(
@@ -561,7 +532,6 @@ final mangaExerciseBank = [
       rightPercentage: 60,
     ),
     Phrase(
-        // そうか、あと三十分に会える？
         translation: NA.t('sokkaato15funniaeru'),
         phraseParts: [
           PhrasePart(furiTexts: [
