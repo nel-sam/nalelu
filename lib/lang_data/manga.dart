@@ -241,16 +241,12 @@ final mangaExerciseBank = [
         PhrasePart(
           furiTexts: [
             FuriText(
-              text: 'のが',
+              text: 'ものが',
             ),
             FuriText(text: '飲', furigana: 'の'),
             FuriText(text: 'みたい'),
           ],
         ),
-        PhrasePart(isAnswerable: true, furiTexts: [
-          FuriText(text: '買', furigana: 'か'),
-          FuriText(text: 'った'),
-        ]),
       ],
       downPercentage: 60,
       rightPercentage: 10,
