@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/state/kanji/kanji_exercise_state.dart';
+import 'package:nalelu/widgets/kanji.dart';
 import 'package:nalelu/widgets/shared/furigana_text.dart';
 import 'package:nalelu/widgets/shared/na_free_form_entry_wrapper.dart';
 import 'package:nalelu/widgets/shared/na_kanji_block.dart';
@@ -26,6 +27,8 @@ class KanjiExerciseStateArea extends StatefulWidget {
 
 class _KanjiExerciseStateArea extends State<KanjiExerciseStateArea> {
   Widget build(BuildContext context) {
+    List<PhraseAnswer> phraseAnswers = widget.state.kanji.phraseAnswers;
+    phraseAnswers.shuffle();
     return Padding(
       padding: const EdgeInsets.only(top: 18),
       child: Column(
@@ -66,7 +69,7 @@ class _KanjiExerciseStateArea extends State<KanjiExerciseStateArea> {
             ],
           ),
           SizedBox(height: 30),
-          ...widget.state.kanji.phraseAnswers.map(
+          ...phraseAnswers.map(
             (pa) {
               var inputKey = pa.phraseParts.map((pp) => pp.text).join();
 
