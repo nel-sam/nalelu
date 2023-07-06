@@ -16,6 +16,7 @@ class KanjiGenerator {
         bank = [...kanjiN4Bank];
         break;
     }
+    shufflePhrases();
 
     if (isShuffled) {
       bank.shuffle();
@@ -24,5 +25,11 @@ class KanjiGenerator {
 
   createExercise(int index) {
     return KanjiExerciseState(kanji: bank[index]);
+  }
+
+  shufflePhrases() {
+    for (var kanji in bank) {
+      kanji.phraseAnswers.shuffle();
+    }
   }
 }

@@ -27,8 +27,6 @@ class KanjiExerciseStateArea extends StatefulWidget {
 
 class _KanjiExerciseStateArea extends State<KanjiExerciseStateArea> {
   Widget build(BuildContext context) {
-    List<PhraseAnswer> phraseAnswers = widget.state.kanji.phraseAnswers;
-    phraseAnswers.shuffle();
     return Padding(
       padding: const EdgeInsets.only(top: 18),
       child: Column(
@@ -69,7 +67,7 @@ class _KanjiExerciseStateArea extends State<KanjiExerciseStateArea> {
             ],
           ),
           SizedBox(height: 30),
-          ...phraseAnswers.map(
+          ...widget.state.kanji.phraseAnswers.map(
             (pa) {
               var inputKey = pa.phraseParts.map((pp) => pp.text).join();
 
@@ -87,7 +85,7 @@ class _KanjiExerciseStateArea extends State<KanjiExerciseStateArea> {
                                 furiTexts: pa.phraseParts,
                                 isCorrect: pa.answer ==
                                     widget.state.getUserInput(inputKey),
-                                    answer: pa.answer),
+                                answer: pa.answer),
                           ]),
                           Wrap(children: [
                             widget.showPhraseTranslations
