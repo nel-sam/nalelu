@@ -524,7 +524,6 @@
   "kokohadonnatorigaimasuka": "¿Qué tipo de pájaros hay aquí?",
   "hakuchouhakireidesu": "El cisne es hermoso",
   "hoshigaitsutsushikamienai": "Solo puedo ver cinco estrellas",
-
   "一": "uno",
   "二": "dos",
   "三": "tres",
@@ -796,8 +795,9 @@
   "鳥": "pájaro",
   "showkanji": "Mostrar traducción del Kanji",
   "showphrase": "Mostrar traducción de la frase",
+  "translation": "Traducción",
   "showVerb": "Mostrar traducción del verbo",
-  "showfurigana": "Mostrar Furigana",
+  "showfurigana": "Furigana",
   "iwanttodo": "Quiero hacer",
   "exercises": "ejercicios",
   "settings": "Ajustes",
@@ -808,5 +808,6 @@
   "jikan": "La hora",
   "kanji_n5": "N5 Kanji",
   "kanji_n4": "N4 Kanji",
+  "selectall": "Selecccionar todos",
   "kudasainote": "La forma て se usa cuando se conectan dos cláusulas en una oración y también cuando se le pide a alguien que haga algo (órdenes). Cuando se usa para órdenes, adjunte ください para que sea cortés."
 }

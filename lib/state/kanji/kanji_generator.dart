@@ -13,7 +13,7 @@ class KanjiGenerator {
         bank = [...selectedKanjis];
         break;
       case ExerciseType.Kanji_N4:
-        bank = [...kanjiN4Bank];
+        bank = [...selectedKanjis];
         break;
     }
     shufflePhrases();

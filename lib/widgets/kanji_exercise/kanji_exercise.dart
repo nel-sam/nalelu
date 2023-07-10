@@ -12,20 +12,14 @@ import 'package:provider/provider.dart';
 
 class KanjiExercise extends StatelessWidget {
   final List<Kanji> selectedKanjis;
-  final bool showKanjiTranslations;
-  final bool showPhraseTranslations;
-  final bool showFurigana;
-  final int numberOfExercises;
+
   final bool shuffle;
   final ExerciseType exerciseType;
 
   KanjiExercise({
-    required this.showKanjiTranslations,
-    required this.showPhraseTranslations,
-    required this.showFurigana,
-    required this.numberOfExercises,
     required this.shuffle,
-    required this.exerciseType, required this.selectedKanjis,
+    required this.exerciseType,
+    required this.selectedKanjis,
   });
 
   @override
@@ -45,7 +39,6 @@ class KanjiExercise extends StatelessWidget {
                   ChangeNotifierProvider<ExerciseNavNotifier>(
                     create: (context) => ExerciseNavNotifier(
                         exerciseType: exerciseType,
-                        maxExerciseCount: numberOfExercises,
                         selectedKanjis: selectedKanjis,
                         shuffle: shuffle),
                     child: Consumer<ExerciseNavNotifier>(
@@ -62,12 +55,8 @@ class KanjiExercise extends StatelessWidget {
                                 child: Consumer<KanjiNotifier>(
                                   builder: (context, kanjiNotifier, child) {
                                     return KanjiExerciseStateArea(
-                                        state: kanjiNotifier.getActive(),
-                                        showFurigana: showFurigana,
-                                        showKanjiTranslations:
-                                            showKanjiTranslations,
-                                        showPhraseTranslations:
-                                            showPhraseTranslations);
+                                      state: kanjiNotifier.getActive(),
+                                    );
                                   },
                                 ),
                               ),

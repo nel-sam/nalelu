@@ -68,9 +68,7 @@ class ExerciseNavNotifier extends ChangeNotifier {
                 .createExercise;
         break;
       case ExerciseType.Kanji_N4:
-        this._maxIndex = maxExerciseCount < kanjiN4Bank.length
-            ? maxExerciseCount
-            : kanjiN4Bank.length - 1;
+        this._maxIndex = selectedKanjis!.length - 1;
         this.createExercise =
             new KanjiGenerator(shuffle, exerciseType, selectedKanjis!)
                 .createExercise;

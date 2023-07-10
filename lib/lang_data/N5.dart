@@ -7,6 +7,516 @@ import 'package:nalelu/widgets/kanji.dart';
 
 List<Kanji> kanjiN5Bank = [
   Kanji(
+      translation: NA.t('一'),
+      kanji: '一',
+      onYomi: 'イチ',
+      kunYomi: 'ひと, ひとつ, いっ',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t('hitorideikitai'),
+            phraseParts: [
+              FuriText(text: '一', furigana: '？', emphasize: true),
+              FuriText(text: '人', furigana: 'り', emphasize: true),
+              FuriText(text: 'で'),
+              FuriText(text: '行', furigana: 'い'),
+              FuriText(text: 'きたい'),
+            ],
+            answer: 'ひとり'),
+        PhraseAnswer(
+            translation: NA.t('karehaichibanikkoi'),
+            phraseParts: [
+              FuriText(text: '彼', furigana: 'かれ'),
+              FuriText(text: 'は'),
+              FuriText(text: '一', furigana: '？', emphasize: true),
+              FuriText(text: '番', furigana: 'ばん', emphasize: true),
+              FuriText(text: 'かっこいい'),
+            ],
+            answer: 'いちばん'),
+        PhraseAnswer(
+            translation: NA.t('biiruhaatoipponshikanai'),
+            phraseParts: [
+              FuriText(text: 'ビール', furigana: 'beer'),
+              FuriText(text: 'は'),
+              FuriText(text: 'あと'),
+              FuriText(text: '一', furigana: '？', emphasize: true),
+              FuriText(text: '本', furigana: 'ぽん', emphasize: true),
+              FuriText(text: 'しかない'),
+            ],
+            answer: 'いっぽん'),
+        PhraseAnswer(
+            translation: NA.t('buttongahitotsushikanai'),
+            phraseParts: [
+              FuriText(text: 'ボタンが', furigana: 'button'),
+              FuriText(text: '一', furigana: '？', emphasize: true),
+              FuriText(text: 'つ', emphasize: true),
+              FuriText(text: 'しかない'),
+            ],
+            answer: 'ひとつ'),
+      ]),
+  Kanji(
+      translation: NA.t('二'),
+      kanji: '二',
+      onYomi: 'ニ',
+      kunYomi: 'ふた, ふたつ',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t('ringofutatsutabeta'),
+            phraseParts: [
+              FuriText(text: 'リンゴ'),
+              FuriText(text: '二', furigana: '？', emphasize: true),
+              FuriText(text: 'つ', emphasize: true),
+              FuriText(text: '食べた'),
+            ],
+            answer: 'ふたつ'),
+        PhraseAnswer(
+            translation: NA.t('nisainokodogaimasu'),
+            phraseParts: [
+              FuriText(text: '二', furigana: '？', emphasize: true),
+              FuriText(text: '歳', furigana: 'さい', emphasize: true),
+              FuriText(text: 'の'),
+              FuriText(text: '子供', furigana: 'こども'),
+              FuriText(text: 'がいます'),
+            ],
+            answer: 'にさい'),
+      ]),
+  Kanji(
+      translation: NA.t('三'),
+      kanji: '三',
+      onYomi: 'サン, ゾウ',
+      kunYomi: 'み, みつ, みっつ',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t('sangatsunikonaihougaīyo'),
+            phraseParts: [
+              FuriText(text: '三', furigana: '？', emphasize: true),
+              FuriText(text: '月', furigana: 'がつ', emphasize: true),
+              FuriText(text: 'には'),
+              FuriText(text: '来', furigana: 'こ'),
+              FuriText(text: 'ないほうがいいよ'),
+            ],
+            answer: 'さんがつ'),
+        PhraseAnswer(
+            translation: NA.t('geemugamittsumoarimasu'),
+            phraseParts: [
+              FuriText(text: 'ゲーム', furigana: 'game'),
+              FuriText(text: 'が'),
+              FuriText(text: '三', furigana: '？', emphasize: true),
+              FuriText(text: 'つ', emphasize: true),
+              FuriText(text: 'もあります'),
+            ],
+            answer: 'みっつ'),
+      ]),
+  Kanji(
+      translation: NA.t('四'),
+      kanji: '四',
+      onYomi: 'シ',
+      kunYomi: 'よ, よつ, よっつ',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t('shigatsuhamadasuzushiiyo'),
+            phraseParts: [
+              FuriText(text: '四', furigana: '？', emphasize: true),
+              FuriText(text: '月', furigana: 'がつ', emphasize: true),
+              FuriText(text: 'はまだ'),
+              FuriText(text: '涼', furigana: 'すず'),
+              FuriText(text: 'しいよ'),
+            ],
+            answer: 'しがつ'),
+        PhraseAnswer(
+            translation: NA.t('atoyokkadekurisumasuda'),
+            phraseParts: [
+              FuriText(text: 'あと'),
+              FuriText(text: '四', furigana: '？', emphasize: true),
+              FuriText(text: '日', furigana: 'か', emphasize: true),
+              FuriText(text: 'で'),
+              FuriText(text: 'クリスマス', furigana: 'Christmas'),
+              FuriText(text: 'だ'),
+            ],
+            answer: 'よっか'),
+        PhraseAnswer(
+            translation: NA.t('messhihayongooruwoageta'),
+            phraseParts: [
+              FuriText(text: 'メッシ', furigana: 'Messi'),
+              FuriText(text: 'は'),
+              FuriText(text: '四', furigana: '？', emphasize: true),
+              FuriText(text: 'ゴール', furigana: 'goal'),
+              FuriText(text: 'を'),
+              FuriText(text: '挙', furigana: 'あ'),
+              FuriText(text: 'げた'),
+            ],
+            answer: 'よん'),
+      ]),
+  Kanji(
+      translation: NA.t('五'),
+      kanji: '五',
+      onYomi: 'ゴ',
+      kunYomi: 'いつ, いつつ',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t('hoshigaitsutsushikamienai'),
+            phraseParts: [
+              FuriText(text: '星', furigana: 'ほし'),
+              FuriText(text: 'が'),
+              FuriText(text: '五', furigana: '？', emphasize: true),
+              FuriText(text: 'つ', emphasize: true),
+              FuriText(text: 'しか'),
+              FuriText(text: '見', furigana: 'み'),
+              FuriText(text: 'えない'),
+            ],
+            answer: 'いつつ'),
+        PhraseAnswer(
+            translation: NA.t('gogatsukaradandanatsukunaru'),
+            phraseParts: [
+              FuriText(text: '五', furigana: '？', emphasize: true),
+              FuriText(text: '月', furigana: 'がつ', emphasize: true),
+              FuriText(text: 'からだんだん'),
+              FuriText(text: '暑', furigana: 'あつ'),
+              FuriText(text: 'くなる'),
+            ],
+            answer: 'ごがつ'),
+        PhraseAnswer(
+            translation: NA.t('mangahagohyakuenkuraisuru'),
+            phraseParts: [
+              FuriText(text: 'マンガは'),
+              FuriText(text: '五', furigana: '？', emphasize: true),
+              FuriText(text: '百円', furigana: 'ひゃくえん', emphasize: true),
+              FuriText(text: 'くらいする'),
+            ],
+            answer: 'ごひゃくえん'),
+      ]),
+  Kanji(
+      translation: NA.t('六'),
+      kanji: '六',
+      onYomi: 'ロク',
+      kunYomi: 'む, むつ, むっつ',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t('namabirumuttukudasai'),
+            phraseParts: [
+              FuriText(text: '生', furigana: 'なま'),
+              FuriText(text: 'ビール', furigana: 'beer'),
+              FuriText(text: '六', furigana: '？', emphasize: true),
+              FuriText(text: 'つ', emphasize: true),
+              FuriText(text: 'ください'),
+            ],
+            answer: 'むっつ'),
+        PhraseAnswer(
+            translation: NA.t('mousugurokugatsudesu'),
+            phraseParts: [
+              FuriText(text: 'もうすぐ'),
+              FuriText(text: '六', furigana: '？', emphasize: true),
+              FuriText(text: '月', furigana: 'がつ', emphasize: true),
+              FuriText(text: 'です'),
+            ],
+            answer: 'ろくがつ'),
+        PhraseAnswer(
+            translation: NA.t('muikahaaiteru'),
+            phraseParts: [
+              FuriText(text: '六', furigana: '？', emphasize: true),
+              FuriText(text: '日', furigana: 'か', emphasize: true),
+              FuriText(text: 'はあいてる？'),
+            ],
+            answer: 'むいか'),
+      ]),
+  Kanji(
+      translation: NA.t('七'),
+      kanji: '七',
+      onYomi: 'シチ',
+      kunYomi: 'なな, なの',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t('ringonanatsukudasai'),
+            phraseParts: [
+              FuriText(text: 'りんご'),
+              FuriText(text: '七', furigana: '？', emphasize: true),
+              FuriText(text: 'つ', emphasize: true),
+              FuriText(text: 'ください'),
+            ],
+            answer: 'ななつ'),
+        PhraseAnswer(
+            translation: NA.t('sichigatsuniyasumiganai'),
+            phraseParts: [
+              FuriText(text: '七', furigana: '？', emphasize: true),
+              FuriText(text: '月', furigana: 'がつ', emphasize: true),
+              FuriText(text: 'に'),
+              FuriText(text: '休', furigana: 'やす'),
+              FuriText(text: 'みがない'),
+            ],
+            answer: 'しちがつ'),
+        PhraseAnswer(
+            translation: NA.t('nanokamoiruno'),
+            phraseParts: [
+              FuriText(text: '七', furigana: '？', emphasize: true),
+              FuriText(text: '日', furigana: 'か', emphasize: true),
+              FuriText(text: 'もいるの？'),
+            ],
+            answer: 'なのか'),
+      ]),
+  Kanji(
+      translation: NA.t('八'),
+      kanji: '八',
+      onYomi: 'ハチ',
+      kunYomi: 'や, よう',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t('hachigatsunotenkihadoudesuka'),
+            phraseParts: [
+              FuriText(text: '八', furigana: '？', emphasize: true),
+              FuriText(text: '月', furigana: 'がつ', emphasize: true),
+              FuriText(text: 'の'),
+              FuriText(text: '天気', furigana: 'てんき'),
+              FuriText(text: 'はどうですか？'),
+            ],
+            answer: 'はちがつ'),
+        PhraseAnswer(
+            translation: NA.t('youkaninaniwoshimasuka'),
+            phraseParts: [
+              FuriText(text: '八', furigana: '？', emphasize: true),
+              FuriText(text: '日', furigana: 'か', emphasize: true),
+              FuriText(text: 'に'),
+              FuriText(text: '何', furigana: 'なに'),
+              FuriText(text: 'をしますか？'),
+            ],
+            answer: 'ようか'),
+      ]),
+  Kanji(
+      translation: NA.t('九'),
+      kanji: '九',
+      onYomi: 'キュウ, ク',
+      kunYomi: 'ここの, ここのつ',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t('kugatsunisupeinniikimasu'),
+            phraseParts: [
+              FuriText(text: '九', furigana: '？', emphasize: true),
+              FuriText(text: '月', furigana: 'がつ', emphasize: true),
+              FuriText(text: 'に'),
+              FuriText(text: 'スペイン', furigana: 'Spain'),
+              FuriText(text: 'に'),
+              FuriText(text: '行', furigana: 'い'),
+              FuriText(text: 'きます'),
+            ],
+            answer: 'くがつ'),
+        PhraseAnswer(
+            translation: NA.t('kokonokaniaimashou'),
+            phraseParts: [
+              FuriText(text: '九', furigana: '？', emphasize: true),
+              FuriText(text: '日', furigana: 'か', emphasize: true),
+              FuriText(text: 'に'),
+              FuriText(text: '会', furigana: 'あ'),
+              FuriText(text: 'いましょう'),
+            ],
+            answer: 'ここのか'),
+      ]),
+  Kanji(
+      translation: NA.t('十'),
+      kanji: '十',
+      onYomi: 'ジュウ',
+      kunYomi: 'とお',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t('juugatsuhasamuidesuka'),
+            phraseParts: [
+              FuriText(text: '十', furigana: '？', emphasize: true),
+              FuriText(text: '月', furigana: 'がつ', emphasize: true),
+              FuriText(text: 'は'),
+              FuriText(text: '寒', furigana: 'さむ'),
+              FuriText(text: 'いですか？'),
+            ],
+            answer: 'じゅうがつ'),
+        PhraseAnswer(
+            translation: NA.t('tookabunnofukumottekitene'),
+            phraseParts: [
+              FuriText(text: '十', furigana: '？', emphasize: true),
+              FuriText(text: '日', furigana: 'か', emphasize: true),
+              FuriText(text: '分', furigana: 'ぶん'),
+              FuriText(text: 'の'),
+              FuriText(text: '服', furigana: 'ふく'),
+              FuriText(text: '持', furigana: 'も'),
+              FuriText(text: 'ってきてね'),
+            ],
+            answer: 'とおか'),
+        PhraseAnswer(
+            translation: NA.t('juubuntabeta'),
+            phraseParts: [
+              FuriText(text: '十', furigana: '？', emphasize: true),
+              FuriText(text: '分', furigana: 'ぶん', emphasize: true),
+              FuriText(text: '食', furigana: 'た'),
+              FuriText(text: 'べた？'),
+            ],
+            answer: 'じゅうぶん'),
+      ]),
+  Kanji(
+      translation: NA.t('百'),
+      kanji: '百',
+      onYomi: 'ヒャク',
+      kunYomi: 'もも',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t('fukkinwohyakkaiyatta'),
+            phraseParts: [
+              FuriText(text: '腹筋', furigana: 'ふっきん'),
+              FuriText(text: 'を'),
+              FuriText(text: '百', furigana: '？', emphasize: true),
+              FuriText(text: '回', furigana: 'かい', emphasize: true),
+              FuriText(text: 'やった'),
+            ],
+            answer: 'ひゃっかい'),
+        PhraseAnswer(
+            translation: NA.t('sambyakuenaru'),
+            phraseParts: [
+              FuriText(text: '三', furigana: 'さん', emphasize: true),
+              FuriText(text: '百', furigana: '？', emphasize: true),
+              FuriText(text: '円', furigana: 'えん', emphasize: true),
+              FuriText(text: 'ある？'),
+            ],
+            answer: 'さんびゃくえん'),
+      ]),
+  Kanji(
+      translation: NA.t('千'),
+      kanji: '千',
+      onYomi: 'セン',
+      kunYomi: 'ち',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t('sansenninmosankashimashita'),
+            phraseParts: [
+              FuriText(text: '三', furigana: 'さん', emphasize: true),
+              FuriText(text: '千', furigana: '？', emphasize: true),
+              FuriText(text: '人', furigana: 'にん', emphasize: true),
+              FuriText(text: 'も'),
+              FuriText(text: '参加', furigana: 'さんか'),
+              FuriText(text: 'しました'),
+            ],
+            answer: 'さんせんにん'),
+        PhraseAnswer(
+            translation: NA.t('sanzenbyouhananjikandesuka'),
+            phraseParts: [
+              FuriText(text: '三', furigana: 'さん', emphasize: true),
+              FuriText(text: '千', furigana: '？', emphasize: true),
+              FuriText(text: '秒', furigana: 'びょう', emphasize: true),
+              FuriText(text: 'は'),
+              FuriText(text: '何', furigana: 'なん'),
+              FuriText(text: '時間', furigana: 'じかん'),
+              FuriText(text: 'ですか？'),
+            ],
+            answer: 'さんぜんびょう'),
+      ]),
+  Kanji(
+      translation: NA.t('万'),
+      kanji: '万',
+      onYomi: 'マン, バン',
+      kunYomi: 'よろず',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t('nimanenmonai'),
+            phraseParts: [
+              FuriText(text: 'ニ', furigana: 'に', emphasize: true),
+              FuriText(text: '万', furigana: '？', emphasize: true),
+              FuriText(text: '円', furigana: 'えん', emphasize: true),
+              FuriText(text: 'もない'),
+            ],
+            answer: 'にまんえん'),
+      ]),
+  Kanji(
+      translation: NA.t('円'),
+      kanji: '円',
+      onYomi: 'エン',
+      kunYomi: 'まる, まるい, まど, まどか',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t('engatakakunatta'),
+            phraseParts: [
+              FuriText(text: '円', furigana: '？', emphasize: true),
+              FuriText(text: 'が'),
+              FuriText(text: '高', furigana: 'たか'),
+              FuriText(text: 'くなった'),
+            ],
+            answer: 'えん'),
+        PhraseAnswer(
+            translation: NA.t('yonsenensuruyo'),
+            phraseParts: [
+              FuriText(text: '四千', furigana: 'よんせん', emphasize: true),
+              FuriText(text: '円', furigana: '？', emphasize: true),
+              FuriText(text: 'するよ'),
+            ],
+            answer: 'よんせんえん'),
+      ]),
+  Kanji(
+      translation: NA.t('日'),
+      kanji: '日',
+      onYomi: 'ニチ, ジツ',
+      kunYomi: 'ひ, か, かつ, かれる',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t('nihonniikitai'),
+            phraseParts: [
+              FuriText(text: '日', furigana: '？', emphasize: true),
+              FuriText(text: '本', furigana: 'ほん', emphasize: true),
+              FuriText(text: 'に'),
+              FuriText(text: '行', furigana: 'い'),
+              FuriText(text: 'きたい'),
+            ],
+            answer: 'にほん'),
+        PhraseAnswer(
+            translation: NA.t('kyouhahigatsuyoi'),
+            phraseParts: [
+              FuriText(text: '今日', furigana: 'きょう'),
+              FuriText(text: 'は'),
+              FuriText(text: '日', furigana: '？', emphasize: true),
+              FuriText(text: 'が'),
+              FuriText(text: '強', furigana: 'つよ'),
+              FuriText(text: 'い'),
+            ],
+            answer: 'ひ'),
+        PhraseAnswer(
+            translation: NA.t('tsuginokyuujitsuhaitsudesuka'),
+            phraseParts: [
+              FuriText(text: '次', furigana: 'つぎ'),
+              FuriText(text: 'の'),
+              FuriText(text: '休', furigana: 'きゅう', emphasize: true),
+              FuriText(text: '日', furigana: '？', emphasize: true),
+              FuriText(text: 'はいつですか？'),
+            ],
+            answer: 'きゅうじつ'),
+      ]),
+  Kanji(
+      translation: NA.t('月'),
+      kanji: '月',
+      onYomi: 'ゲツ, ガツ',
+      kunYomi: 'つき',
+      phraseAnswers: [
+        PhraseAnswer(
+            translation: NA.t('kinouhagetsuyoubidatta'),
+            phraseParts: [
+              FuriText(text: '昨日', furigana: 'きのう'),
+              FuriText(text: 'は'),
+              FuriText(text: '月', furigana: '？', emphasize: true),
+              FuriText(text: '曜日', furigana: 'ようび', emphasize: true),
+            ],
+            answer: 'げつようび'),
+        PhraseAnswer(
+            translation: NA.t('ichigatsuhasumuidesu'),
+            phraseParts: [
+              FuriText(text: '一', furigana: 'いち', emphasize: true),
+              FuriText(text: '月', furigana: '？', emphasize: true),
+              FuriText(text: 'は'),
+              FuriText(text: '寒', furigana: 'さむ'),
+              FuriText(text: 'いです'),
+            ],
+            answer: 'いちがつ'),
+        PhraseAnswer(
+            translation: NA.t('nikagetsunoyasumi'),
+            phraseParts: [
+              FuriText(text: '二', furigana: 'に', emphasize: true),
+              FuriText(text: 'ヶ月', furigana: '？', emphasize: true),
+              FuriText(text: 'の'),
+              FuriText(text: '休', furigana: 'やす'),
+              FuriText(text: 'み'),
+            ],
+            answer: 'にかげつ'),
+      ]),
+  Kanji(
       translation: NA.t('友'),
       kanji: '友',
       onYomi: 'ユウ',
@@ -984,516 +1494,6 @@ List<Kanji> kanjiN5Bank = [
           ],
           answer: 'なに',
         )
-      ]),
-  Kanji(
-      translation: NA.t('一'),
-      kanji: '一',
-      onYomi: 'イチ',
-      kunYomi: 'ひと, ひとつ, いっ',
-      phraseAnswers: [
-        PhraseAnswer(
-            translation: NA.t('hitorideikitai'),
-            phraseParts: [
-              FuriText(text: '一', furigana: '？', emphasize: true),
-              FuriText(text: '人', furigana: 'り', emphasize: true),
-              FuriText(text: 'で'),
-              FuriText(text: '行', furigana: 'い'),
-              FuriText(text: 'きたい'),
-            ],
-            answer: 'ひとり'),
-        PhraseAnswer(
-            translation: NA.t('karehaichibanikkoi'),
-            phraseParts: [
-              FuriText(text: '彼', furigana: 'かれ'),
-              FuriText(text: 'は'),
-              FuriText(text: '一', furigana: '？', emphasize: true),
-              FuriText(text: '番', furigana: 'ばん', emphasize: true),
-              FuriText(text: 'かっこいい'),
-            ],
-            answer: 'いちばん'),
-        PhraseAnswer(
-            translation: NA.t('biiruhaatoipponshikanai'),
-            phraseParts: [
-              FuriText(text: 'ビール', furigana: 'beer'),
-              FuriText(text: 'は'),
-              FuriText(text: 'あと'),
-              FuriText(text: '一', furigana: '？', emphasize: true),
-              FuriText(text: '本', furigana: 'ぽん', emphasize: true),
-              FuriText(text: 'しかない'),
-            ],
-            answer: 'いっぽん'),
-        PhraseAnswer(
-            translation: NA.t('buttongahitotsushikanai'),
-            phraseParts: [
-              FuriText(text: 'ボタンが', furigana: 'button'),
-              FuriText(text: '一', furigana: '？', emphasize: true),
-              FuriText(text: 'つ', emphasize: true),
-              FuriText(text: 'しかない'),
-            ],
-            answer: 'ひとつ'),
-      ]),
-  Kanji(
-      translation: NA.t('二'),
-      kanji: '二',
-      onYomi: 'ニ',
-      kunYomi: 'ふた, ふたつ',
-      phraseAnswers: [
-        PhraseAnswer(
-            translation: NA.t('ringofutatsutabeta'),
-            phraseParts: [
-              FuriText(text: 'リンゴ'),
-              FuriText(text: '二', furigana: '？', emphasize: true),
-              FuriText(text: 'つ', emphasize: true),
-              FuriText(text: '食べた'),
-            ],
-            answer: 'ふたつ'),
-        PhraseAnswer(
-            translation: NA.t('nisainokodogaimasu'),
-            phraseParts: [
-              FuriText(text: '二', furigana: '？', emphasize: true),
-              FuriText(text: '歳', furigana: 'さい', emphasize: true),
-              FuriText(text: 'の'),
-              FuriText(text: '子供', furigana: 'こども'),
-              FuriText(text: 'がいます'),
-            ],
-            answer: 'にさい'),
-      ]),
-  Kanji(
-      translation: NA.t('三'),
-      kanji: '三',
-      onYomi: 'サン, ゾウ',
-      kunYomi: 'み, みつ, みっつ',
-      phraseAnswers: [
-        PhraseAnswer(
-            translation: NA.t('sangatsunikonaihougaīyo'),
-            phraseParts: [
-              FuriText(text: '三', furigana: '？', emphasize: true),
-              FuriText(text: '月', furigana: 'がつ', emphasize: true),
-              FuriText(text: 'には'),
-              FuriText(text: '来', furigana: 'こ'),
-              FuriText(text: 'ないほうがいいよ'),
-            ],
-            answer: 'さんがつ'),
-        PhraseAnswer(
-            translation: NA.t('geemugamittsumoarimasu'),
-            phraseParts: [
-              FuriText(text: 'ゲーム', furigana: 'game'),
-              FuriText(text: 'が'),
-              FuriText(text: '三', furigana: '？', emphasize: true),
-              FuriText(text: 'つ', emphasize: true),
-              FuriText(text: 'もあります'),
-            ],
-            answer: 'みっつ'),
-      ]),
-  Kanji(
-      translation: NA.t('四'),
-      kanji: '四',
-      onYomi: 'シ',
-      kunYomi: 'よ, よつ, よっつ',
-      phraseAnswers: [
-        PhraseAnswer(
-            translation: NA.t('shigatsuhamadasuzushiiyo'),
-            phraseParts: [
-              FuriText(text: '四', furigana: '？', emphasize: true),
-              FuriText(text: '月', furigana: 'がつ', emphasize: true),
-              FuriText(text: 'はまだ'),
-              FuriText(text: '涼', furigana: 'すず'),
-              FuriText(text: 'しいよ'),
-            ],
-            answer: 'しがつ'),
-        PhraseAnswer(
-            translation: NA.t('atoyokkadekurisumasuda'),
-            phraseParts: [
-              FuriText(text: 'あと'),
-              FuriText(text: '四', furigana: '？', emphasize: true),
-              FuriText(text: '日', furigana: 'か', emphasize: true),
-              FuriText(text: 'で'),
-              FuriText(text: 'クリスマス', furigana: 'Christmas'),
-              FuriText(text: 'だ'),
-            ],
-            answer: 'よっか'),
-        PhraseAnswer(
-            translation: NA.t('messhihayongooruwoageta'),
-            phraseParts: [
-              FuriText(text: 'メッシ', furigana: 'Messi'),
-              FuriText(text: 'は'),
-              FuriText(text: '四', furigana: '？', emphasize: true),
-              FuriText(text: 'ゴール', furigana: 'goal'),
-              FuriText(text: 'を'),
-              FuriText(text: '挙', furigana: 'あ'),
-              FuriText(text: 'げた'),
-            ],
-            answer: 'よん'),
-      ]),
-  Kanji(
-      translation: NA.t('五'),
-      kanji: '五',
-      onYomi: 'ゴ',
-      kunYomi: 'いつ, いつつ',
-      phraseAnswers: [
-        PhraseAnswer(
-            translation: NA.t('hoshigaitsutsushikamienai'),
-            phraseParts: [
-              FuriText(text: '星', furigana: 'ほし'),
-              FuriText(text: 'が'),
-              FuriText(text: '五', furigana: '？', emphasize: true),
-              FuriText(text: 'つ', emphasize: true),
-              FuriText(text: 'しか'),
-              FuriText(text: '見', furigana: 'み'),
-              FuriText(text: 'えない'),
-            ],
-            answer: 'いつつ'),
-        PhraseAnswer(
-            translation: NA.t('gogatsukaradandanatsukunaru'),
-            phraseParts: [
-              FuriText(text: '五', furigana: '？', emphasize: true),
-              FuriText(text: '月', furigana: 'がつ', emphasize: true),
-              FuriText(text: 'からだんだん'),
-              FuriText(text: '暑', furigana: 'あつ'),
-              FuriText(text: 'くなる'),
-            ],
-            answer: 'ごがつ'),
-        PhraseAnswer(
-            translation: NA.t('mangahagohyakuenkuraisuru'),
-            phraseParts: [
-              FuriText(text: 'マンガは'),
-              FuriText(text: '五', furigana: '？', emphasize: true),
-              FuriText(text: '百円', furigana: 'ひゃくえん', emphasize: true),
-              FuriText(text: 'くらいする'),
-            ],
-            answer: 'ごひゃくえん'),
-      ]),
-  Kanji(
-      translation: NA.t('六'),
-      kanji: '六',
-      onYomi: 'ロク',
-      kunYomi: 'む, むつ, むっつ',
-      phraseAnswers: [
-        PhraseAnswer(
-            translation: NA.t('namabirumuttukudasai'),
-            phraseParts: [
-              FuriText(text: '生', furigana: 'なま'),
-              FuriText(text: 'ビール', furigana: 'beer'),
-              FuriText(text: '六', furigana: '？', emphasize: true),
-              FuriText(text: 'つ', emphasize: true),
-              FuriText(text: 'ください'),
-            ],
-            answer: 'むっつ'),
-        PhraseAnswer(
-            translation: NA.t('mousugurokugatsudesu'),
-            phraseParts: [
-              FuriText(text: 'もうすぐ'),
-              FuriText(text: '六', furigana: '？', emphasize: true),
-              FuriText(text: '月', furigana: 'がつ', emphasize: true),
-              FuriText(text: 'です'),
-            ],
-            answer: 'ろくがつ'),
-        PhraseAnswer(
-            translation: NA.t('muikahaaiteru'),
-            phraseParts: [
-              FuriText(text: '六', furigana: '？', emphasize: true),
-              FuriText(text: '日', furigana: 'か', emphasize: true),
-              FuriText(text: 'はあいてる？'),
-            ],
-            answer: 'むいか'),
-      ]),
-  Kanji(
-      translation: NA.t('七'),
-      kanji: '七',
-      onYomi: 'シチ',
-      kunYomi: 'なな, なの',
-      phraseAnswers: [
-        PhraseAnswer(
-            translation: NA.t('ringonanatsukudasai'),
-            phraseParts: [
-              FuriText(text: 'りんご'),
-              FuriText(text: '七', furigana: '？', emphasize: true),
-              FuriText(text: 'つ', emphasize: true),
-              FuriText(text: 'ください'),
-            ],
-            answer: 'ななつ'),
-        PhraseAnswer(
-            translation: NA.t('sichigatsuniyasumiganai'),
-            phraseParts: [
-              FuriText(text: '七', furigana: '？', emphasize: true),
-              FuriText(text: '月', furigana: 'がつ', emphasize: true),
-              FuriText(text: 'に'),
-              FuriText(text: '休', furigana: 'やす'),
-              FuriText(text: 'みがない'),
-            ],
-            answer: 'しちがつ'),
-        PhraseAnswer(
-            translation: NA.t('nanokamoiruno'),
-            phraseParts: [
-              FuriText(text: '七', furigana: '？', emphasize: true),
-              FuriText(text: '日', furigana: 'か', emphasize: true),
-              FuriText(text: 'もいるの？'),
-            ],
-            answer: 'なのか'),
-      ]),
-  Kanji(
-      translation: NA.t('八'),
-      kanji: '八',
-      onYomi: 'ハチ',
-      kunYomi: 'や, よう',
-      phraseAnswers: [
-        PhraseAnswer(
-            translation: NA.t('hachigatsunotenkihadoudesuka'),
-            phraseParts: [
-              FuriText(text: '八', furigana: '？', emphasize: true),
-              FuriText(text: '月', furigana: 'がつ', emphasize: true),
-              FuriText(text: 'の'),
-              FuriText(text: '天気', furigana: 'てんき'),
-              FuriText(text: 'はどうですか？'),
-            ],
-            answer: 'はちがつ'),
-        PhraseAnswer(
-            translation: NA.t('youkaninaniwoshimasuka'),
-            phraseParts: [
-              FuriText(text: '八', furigana: '？', emphasize: true),
-              FuriText(text: '日', furigana: 'か', emphasize: true),
-              FuriText(text: 'に'),
-              FuriText(text: '何', furigana: 'なに'),
-              FuriText(text: 'をしますか？'),
-            ],
-            answer: 'ようか'),
-      ]),
-  Kanji(
-      translation: NA.t('九'),
-      kanji: '九',
-      onYomi: 'キュウ, ク',
-      kunYomi: 'ここの, ここのつ',
-      phraseAnswers: [
-        PhraseAnswer(
-            translation: NA.t('kugatsunisupeinniikimasu'),
-            phraseParts: [
-              FuriText(text: '九', furigana: '？', emphasize: true),
-              FuriText(text: '月', furigana: 'がつ', emphasize: true),
-              FuriText(text: 'に'),
-              FuriText(text: 'スペイン', furigana: 'Spain'),
-              FuriText(text: 'に'),
-              FuriText(text: '行', furigana: 'い'),
-              FuriText(text: 'きます'),
-            ],
-            answer: 'くがつ'),
-        PhraseAnswer(
-            translation: NA.t('kokonokaniaimashou'),
-            phraseParts: [
-              FuriText(text: '九', furigana: '？', emphasize: true),
-              FuriText(text: '日', furigana: 'か', emphasize: true),
-              FuriText(text: 'に'),
-              FuriText(text: '会', furigana: 'あ'),
-              FuriText(text: 'いましょう'),
-            ],
-            answer: 'ここのか'),
-      ]),
-  Kanji(
-      translation: NA.t('十'),
-      kanji: '十',
-      onYomi: 'ジュウ',
-      kunYomi: 'とお',
-      phraseAnswers: [
-        PhraseAnswer(
-            translation: NA.t('juugatsuhasamuidesuka'),
-            phraseParts: [
-              FuriText(text: '十', furigana: '？', emphasize: true),
-              FuriText(text: '月', furigana: 'がつ', emphasize: true),
-              FuriText(text: 'は'),
-              FuriText(text: '寒', furigana: 'さむ'),
-              FuriText(text: 'いですか？'),
-            ],
-            answer: 'じゅうがつ'),
-        PhraseAnswer(
-            translation: NA.t('tookabunnofukumottekitene'),
-            phraseParts: [
-              FuriText(text: '十', furigana: '？', emphasize: true),
-              FuriText(text: '日', furigana: 'か', emphasize: true),
-              FuriText(text: '分', furigana: 'ぶん'),
-              FuriText(text: 'の'),
-              FuriText(text: '服', furigana: 'ふく'),
-              FuriText(text: '持', furigana: 'も'),
-              FuriText(text: 'ってきてね'),
-            ],
-            answer: 'とおか'),
-        PhraseAnswer(
-            translation: NA.t('juubuntabeta'),
-            phraseParts: [
-              FuriText(text: '十', furigana: '？', emphasize: true),
-              FuriText(text: '分', furigana: 'ぶん', emphasize: true),
-              FuriText(text: '食', furigana: 'た'),
-              FuriText(text: 'べた？'),
-            ],
-            answer: 'じゅうぶん'),
-      ]),
-  Kanji(
-      translation: NA.t('百'),
-      kanji: '百',
-      onYomi: 'ヒャク',
-      kunYomi: 'もも',
-      phraseAnswers: [
-        PhraseAnswer(
-            translation: NA.t('fukkinwohyakkaiyatta'),
-            phraseParts: [
-              FuriText(text: '腹筋', furigana: 'ふっきん'),
-              FuriText(text: 'を'),
-              FuriText(text: '百', furigana: '？', emphasize: true),
-              FuriText(text: '回', furigana: 'かい', emphasize: true),
-              FuriText(text: 'やった'),
-            ],
-            answer: 'ひゃっかい'),
-        PhraseAnswer(
-            translation: NA.t('sambyakuenaru'),
-            phraseParts: [
-              FuriText(text: '三', furigana: 'さん', emphasize: true),
-              FuriText(text: '百', furigana: '？', emphasize: true),
-              FuriText(text: '円', furigana: 'えん', emphasize: true),
-              FuriText(text: 'ある？'),
-            ],
-            answer: 'さんびゃくえん'),
-      ]),
-  Kanji(
-      translation: NA.t('千'),
-      kanji: '千',
-      onYomi: 'セン',
-      kunYomi: 'ち',
-      phraseAnswers: [
-        PhraseAnswer(
-            translation: NA.t('sansenninmosankashimashita'),
-            phraseParts: [
-              FuriText(text: '三', furigana: 'さん', emphasize: true),
-              FuriText(text: '千', furigana: '？', emphasize: true),
-              FuriText(text: '人', furigana: 'にん', emphasize: true),
-              FuriText(text: 'も'),
-              FuriText(text: '参加', furigana: 'さんか'),
-              FuriText(text: 'しました'),
-            ],
-            answer: 'さんせんにん'),
-        PhraseAnswer(
-            translation: NA.t('sanzenbyouhananjikandesuka'),
-            phraseParts: [
-              FuriText(text: '三', furigana: 'さん', emphasize: true),
-              FuriText(text: '千', furigana: '？', emphasize: true),
-              FuriText(text: '秒', furigana: 'びょう', emphasize: true),
-              FuriText(text: 'は'),
-              FuriText(text: '何', furigana: 'なん'),
-              FuriText(text: '時間', furigana: 'じかん'),
-              FuriText(text: 'ですか？'),
-            ],
-            answer: 'さんぜんびょう'),
-      ]),
-  Kanji(
-      translation: NA.t('万'),
-      kanji: '万',
-      onYomi: 'マン, バン',
-      kunYomi: 'よろず',
-      phraseAnswers: [
-        PhraseAnswer(
-            translation: NA.t('nimanenmonai'),
-            phraseParts: [
-              FuriText(text: 'ニ', furigana: 'に', emphasize: true),
-              FuriText(text: '万', furigana: '？', emphasize: true),
-              FuriText(text: '円', furigana: 'えん', emphasize: true),
-              FuriText(text: 'もない'),
-            ],
-            answer: 'にまんえん'),
-      ]),
-  Kanji(
-      translation: NA.t('円'),
-      kanji: '円',
-      onYomi: 'エン',
-      kunYomi: 'まる, まるい, まど, まどか',
-      phraseAnswers: [
-        PhraseAnswer(
-            translation: NA.t('engatakakunatta'),
-            phraseParts: [
-              FuriText(text: '円', furigana: '？', emphasize: true),
-              FuriText(text: 'が'),
-              FuriText(text: '高', furigana: 'たか'),
-              FuriText(text: 'くなった'),
-            ],
-            answer: 'えん'),
-        PhraseAnswer(
-            translation: NA.t('yonsenensuruyo'),
-            phraseParts: [
-              FuriText(text: '四千', furigana: 'よんせん', emphasize: true),
-              FuriText(text: '円', furigana: '？', emphasize: true),
-              FuriText(text: 'するよ'),
-            ],
-            answer: 'よんせんえん'),
-      ]),
-  Kanji(
-      translation: NA.t('日'),
-      kanji: '日',
-      onYomi: 'ニチ, ジツ',
-      kunYomi: 'ひ, か, かつ, かれる',
-      phraseAnswers: [
-        PhraseAnswer(
-            translation: NA.t('nihonniikitai'),
-            phraseParts: [
-              FuriText(text: '日', furigana: '？', emphasize: true),
-              FuriText(text: '本', furigana: 'ほん', emphasize: true),
-              FuriText(text: 'に'),
-              FuriText(text: '行', furigana: 'い'),
-              FuriText(text: 'きたい'),
-            ],
-            answer: 'にほん'),
-        PhraseAnswer(
-            translation: NA.t('kyouhahigatsuyoi'),
-            phraseParts: [
-              FuriText(text: '今日', furigana: 'きょう'),
-              FuriText(text: 'は'),
-              FuriText(text: '日', furigana: '？', emphasize: true),
-              FuriText(text: 'が'),
-              FuriText(text: '強', furigana: 'つよ'),
-              FuriText(text: 'い'),
-            ],
-            answer: 'ひ'),
-        PhraseAnswer(
-            translation: NA.t('tsuginokyuujitsuhaitsudesuka'),
-            phraseParts: [
-              FuriText(text: '次', furigana: 'つぎ'),
-              FuriText(text: 'の'),
-              FuriText(text: '休', furigana: 'きゅう', emphasize: true),
-              FuriText(text: '日', furigana: '？', emphasize: true),
-              FuriText(text: 'はいつですか？'),
-            ],
-            answer: 'きゅうじつ'),
-      ]),
-  Kanji(
-      translation: NA.t('月'),
-      kanji: '月',
-      onYomi: 'ゲツ, ガツ',
-      kunYomi: 'つき',
-      phraseAnswers: [
-        PhraseAnswer(
-            translation: NA.t('kinouhagetsuyoubidatta'),
-            phraseParts: [
-              FuriText(text: '昨日', furigana: 'きのう'),
-              FuriText(text: 'は'),
-              FuriText(text: '月', furigana: '？', emphasize: true),
-              FuriText(text: '曜日', furigana: 'ようび', emphasize: true),
-            ],
-            answer: 'げつようび'),
-        PhraseAnswer(
-            translation: NA.t('ichigatsuhasumuidesu'),
-            phraseParts: [
-              FuriText(text: '一', furigana: 'いち', emphasize: true),
-              FuriText(text: '月', furigana: '？', emphasize: true),
-              FuriText(text: 'は'),
-              FuriText(text: '寒', furigana: 'さむ'),
-              FuriText(text: 'いです'),
-            ],
-            answer: 'いちがつ'),
-        PhraseAnswer(
-            translation: NA.t('nikagetsunoyasumi'),
-            phraseParts: [
-              FuriText(text: '二', furigana: 'に', emphasize: true),
-              FuriText(text: 'ヶ月', furigana: '？', emphasize: true),
-              FuriText(text: 'の'),
-              FuriText(text: '休', furigana: 'やす'),
-              FuriText(text: 'み'),
-            ],
-            answer: 'にかげつ'),
       ]),
   Kanji(
       translation: NA.t('火'),

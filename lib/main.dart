@@ -40,7 +40,7 @@ class MyHomePage extends StatefulWidget {
 }
 
 class NaleluApp extends StatelessWidget {
-  @override
+@override
   Widget build(BuildContext context) {
     final primaryColor = Colors.deepOrange;
 

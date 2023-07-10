@@ -1,24 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:nalelu/furi_text.dart';
 import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/state/kanji/kanji_exercise_state.dart';
-import 'package:nalelu/widgets/kanji.dart';
 import 'package:nalelu/widgets/shared/furigana_text.dart';
 import 'package:nalelu/widgets/shared/na_free_form_entry_wrapper.dart';
 import 'package:nalelu/widgets/shared/na_kanji_block.dart';
 import 'package:nrs_flutter_lib/widgets/n_free_form_entry.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class KanjiExerciseStateArea extends StatefulWidget {
   final KanjiExerciseState state;
-  final bool showKanjiTranslations;
-  final bool showPhraseTranslations;
-  final bool showFurigana;
 
   KanjiExerciseStateArea({
     Key? key,
     required this.state,
-    required this.showKanjiTranslations,
-    required this.showPhraseTranslations,
-    required this.showFurigana,
   }) : super(key: key);
 
   @override
@@ -26,11 +21,84 @@ class KanjiExerciseStateArea extends StatefulWidget {
 }
 
 class _KanjiExerciseStateArea extends State<KanjiExerciseStateArea> {
+  bool showTranslations = true;
+  bool showFurigana = true;
+
+  @override
+  void initState() {
+    super.initState();
+    loadSettings();
+  }
+
+  void loadSettings() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      showTranslations = prefs.getBool('showTranslations') ?? true;
+      showFurigana = prefs.getBool('showFurigana') ?? true;
+    });
+  }
+
+  void saveSettings() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('showTranslations', showTranslations);
+    await prefs.setBool('showFurigana', showFurigana);
+  }
+
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 18),
       child: Column(
         children: [
+          Padding(
+            padding: const EdgeInsets.all(16.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Row(
+                  children: [
+                    Tooltip(
+                      message: NA.t('translation'),
+                      child: Icon(
+                        Icons.translate,
+                        color: Theme.of(context).colorScheme.primary,
+                      ),
+                    ),
+                    Switch(
+                        value: showTranslations,
+                        onChanged: (value) {
+                          setState(() {
+                            showTranslations = value;
+                            saveSettings();
+                          });
+                        })
+                  ],
+                ),
+                Row(
+                  children: [
+                    Tooltip(
+                      message: NA.t('showfurigana'),
+                      child: FuriganaText(
+                        fontSize:
+                            Theme.of(context).textTheme.titleMedium!.fontSize!,
+                        showFurigana: showFurigana,
+                        furiTexts: [
+                          FuriText(text: '水', furigana: 'みず', emphasize: true)
+                        ],
+                      ),
+                    ),
+                    Switch(
+                        value: showFurigana,
+                        onChanged: (value) {
+                          setState(() {
+                            showFurigana = value;
+                            saveSettings();
+                          });
+                        })
+                  ],
+                ),
+              ],
+            ),
+          ),
           Row(
             mainAxisAlignment: MainAxisAlignment.start,
             crossAxisAlignment: CrossAxisAlignment.start,
@@ -48,7 +116,7 @@ class _KanjiExerciseStateArea extends State<KanjiExerciseStateArea> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Wrap(children: [
-                      widget.showKanjiTranslations
+                      showTranslations
                           ? Text(widget.state.kanji.translation.toUpperCase(),
                               style: TextStyle(fontWeight: FontWeight.bold))
                           : Container()
@@ -81,14 +149,14 @@ class _KanjiExerciseStateArea extends State<KanjiExerciseStateArea> {
                         children: [
                           Wrap(children: [
                             FuriganaText(
-                                showFurigana: widget.showFurigana,
+                                showFurigana: showFurigana,
                                 furiTexts: pa.phraseParts,
                                 isCorrect: pa.answer ==
                                     widget.state.getUserInput(inputKey),
                                 answer: pa.answer),
                           ]),
                           Wrap(children: [
-                            widget.showPhraseTranslations
+                            showTranslations
                                 ? Text(
                                     pa.translation,
                                     style: TextStyle(
