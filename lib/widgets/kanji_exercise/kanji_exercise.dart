@@ -3,6 +3,7 @@ import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/state/enums.dart';
 import 'package:nalelu/state/exercise_nav_notifier.dart';
 import 'package:nalelu/state/kanji/kanji_notifier.dart';
+import 'package:nalelu/widgets/kanji.dart';
 import 'package:nalelu/widgets/kanji_exercise/kanji_exercise_state_area.dart';
 import 'package:nalelu/widgets/shared/ad_card.dart';
 import 'package:nalelu/widgets/shared/nav_header_wrapper.dart';
@@ -10,6 +11,7 @@ import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 import 'package:provider/provider.dart';
 
 class KanjiExercise extends StatelessWidget {
+  final List<Kanji> selectedKanjis;
   final bool showKanjiTranslations;
   final bool showPhraseTranslations;
   final bool showFurigana;
@@ -23,7 +25,7 @@ class KanjiExercise extends StatelessWidget {
     required this.showFurigana,
     required this.numberOfExercises,
     required this.shuffle,
-    required this.exerciseType,
+    required this.exerciseType, required this.selectedKanjis,
   });
 
   @override
@@ -44,6 +46,7 @@ class KanjiExercise extends StatelessWidget {
                     create: (context) => ExerciseNavNotifier(
                         exerciseType: exerciseType,
                         maxExerciseCount: numberOfExercises,
+                        selectedKanjis: selectedKanjis,
                         shuffle: shuffle),
                     child: Consumer<ExerciseNavNotifier>(
                       builder: (context, navNotifier, child) {

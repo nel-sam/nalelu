@@ -10,6 +10,7 @@ import 'package:nalelu/state/manga/manga_generator.dart';
 import 'package:nalelu/state/suuji/age/age_generator.dart';
 import 'package:nalelu/state/suuji/count/count_generator.dart';
 import 'package:nalelu/state/suuji/jikan/jikan_generator.dart';
+import 'package:nalelu/widgets/kanji.dart';
 import 'package:nrs_flutter_lib/constants.dart';
 
 import '../lang_data/N5.dart';
@@ -26,6 +27,7 @@ class ExerciseNavNotifier extends ChangeNotifier {
 
   ExerciseNavNotifier(
       {required ExerciseType exerciseType,
+      List<Kanji>? selectedKanjis,
       int maxExerciseCount = 9999,
       bool shuffle = false}) {
     switch (exerciseType) {
@@ -56,22 +58,22 @@ class ExerciseNavNotifier extends ChangeNotifier {
       case ExerciseType.Manga:
         this._maxIndex = maxExerciseCount < mangaExerciseBank.length
             ? maxExerciseCount
-            : mangaExerciseBank.length - 1;
+            : mangaExerciseBank.length;
         this.createExercise = new MangaGenerator(shuffle).createExercise;
         break;
       case ExerciseType.Kanji_N5:
-        this._maxIndex = maxExerciseCount < kanjiN5Bank.length
-            ? maxExerciseCount
-            : kanjiN5Bank.length - 1;
+        this._maxIndex = selectedKanjis!.length - 1;
         this.createExercise =
-            new KanjiGenerator(shuffle, exerciseType).createExercise;
+            new KanjiGenerator(shuffle, exerciseType, selectedKanjis!)
+                .createExercise;
         break;
       case ExerciseType.Kanji_N4:
         this._maxIndex = maxExerciseCount < kanjiN4Bank.length
             ? maxExerciseCount
             : kanjiN4Bank.length - 1;
         this.createExercise =
-            new KanjiGenerator(shuffle, exerciseType).createExercise;
+            new KanjiGenerator(shuffle, exerciseType, selectedKanjis!)
+                .createExercise;
         break;
     }
 

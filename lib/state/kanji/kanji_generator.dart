@@ -7,10 +7,10 @@ import 'package:nalelu/widgets/kanji.dart';
 class KanjiGenerator {
   late List<Kanji> bank;
 
-  KanjiGenerator(bool isShuffled, ExerciseType kanjiType) {
+  KanjiGenerator(bool isShuffled, ExerciseType kanjiType, List<Kanji> selectedKanjis) {
     switch (kanjiType) {
       case ExerciseType.Kanji_N5:
-        bank = [...kanjiN5Bank];
+        bank = [...selectedKanjis];
         break;
       case ExerciseType.Kanji_N4:
         bank = [...kanjiN4Bank];
