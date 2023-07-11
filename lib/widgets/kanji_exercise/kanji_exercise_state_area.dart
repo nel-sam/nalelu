@@ -145,7 +145,7 @@ class _KanjiExerciseStateArea extends State<KanjiExerciseStateArea> {
                     constraints: BoxConstraints(maxWidth: 320),
                     child: Column(
                         crossAxisAlignment: CrossAxisAlignment.center,
-                        mainAxisAlignment: MainAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           Wrap(children: [
                             FuriganaText(
@@ -159,6 +159,7 @@ class _KanjiExerciseStateArea extends State<KanjiExerciseStateArea> {
                             showTranslations
                                 ? Text(
                                     pa.translation,
+                                    textAlign: TextAlign.center,
                                     style: TextStyle(
                                         color: Colors.grey.shade700,
                                         fontSize: Theme.of(context)
