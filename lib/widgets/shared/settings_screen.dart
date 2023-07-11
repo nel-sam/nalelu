@@ -28,7 +28,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
   int numberOfAgeExercises = 10;
   int numberOfCountingExercises = 10;
   int numberOfJikanExercises = 10;
-  bool selectAll = true;
+  bool selectAll = false;
   bool verbShuffle = false;
   bool mangaShuffle = false;
   bool kanjiN5Shuffle = false;
@@ -665,7 +665,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
       numberOfCountingExercises =
           prefs.getInt('numberOfCountingExercises') ?? 10;
       numberOfJikanExercises = prefs.getInt('numberOfJikanExercises') ?? 10;
-      selectAll = prefs.getBool('selectAll') ?? false;
+      // selectAll = prefs.getBool('selectAll') ?? false;
       verbShuffle = prefs.getBool('verbShuffle') ?? false;
       mangaShuffle = prefs.getBool('mangaShuffle') ?? false;
       kanjiN5Shuffle = prefs.getBool('kanjiN5Shuffle') ?? false;
@@ -678,7 +678,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     await prefs.setInt('numberOfAgeExercises', numberOfAgeExercises);
     await prefs.setInt('numberOfCountingExercises', numberOfCountingExercises);
     await prefs.setInt('numberOfJikanExercises', numberOfJikanExercises);
-    await prefs.setBool('selectAll', selectAll);
+    // await prefs.setBool('selectAll', selectAll);
     await prefs.setBool('verbShuffle', verbShuffle);
     await prefs.setBool('mangaShuffle', mangaShuffle);
     await prefs.setBool('kanjiN5Shuffle', kanjiN5Shuffle);

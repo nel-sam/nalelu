@@ -100,8 +100,7 @@ class _KanjiExerciseStateArea extends State<KanjiExerciseStateArea> {
             ),
           ),
           Row(
-            mainAxisAlignment: MainAxisAlignment.start,
-            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
                 padding: const EdgeInsets.only(right: 14),
@@ -113,7 +112,6 @@ class _KanjiExerciseStateArea extends State<KanjiExerciseStateArea> {
                 constraints: BoxConstraints(maxWidth: 190),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Wrap(children: [
                       showTranslations
@@ -140,12 +138,14 @@ class _KanjiExerciseStateArea extends State<KanjiExerciseStateArea> {
               var inputKey = pa.phraseParts.map((pp) => pp.text).join();
 
               return Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   ConstrainedBox(
-                    constraints: BoxConstraints(maxWidth: 300),
+                    constraints: BoxConstraints(maxWidth: 320),
                     child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.center,
                         mainAxisAlignment: MainAxisAlignment.start,
-                        crossAxisAlignment: CrossAxisAlignment.start,
                         children: [
                           Wrap(children: [
                             FuriganaText(
