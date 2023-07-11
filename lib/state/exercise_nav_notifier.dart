@@ -2,7 +2,6 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:nalelu/constants.dart';
-import 'package:nalelu/lang_data/N4.dart';
 import 'package:nalelu/state/doushi/doushi_generator.dart';
 import 'package:nalelu/state/enums.dart';
 import 'package:nalelu/state/kanji/kanji_generator.dart';
@@ -12,8 +11,6 @@ import 'package:nalelu/state/suuji/count/count_generator.dart';
 import 'package:nalelu/state/suuji/jikan/jikan_generator.dart';
 import 'package:nalelu/widgets/kanji.dart';
 import 'package:nrs_flutter_lib/constants.dart';
-
-import '../lang_data/N5.dart';
 import '../lang_data/doushi.dart';
 import '../lang_data/manga.dart';
 
@@ -28,14 +25,14 @@ class ExerciseNavNotifier extends ChangeNotifier {
   ExerciseNavNotifier(
       {required ExerciseType exerciseType,
       List<Kanji>? selectedKanjis,
+      List<Doushi>? selectedVerbs,
       int maxExerciseCount = 9999,
       bool shuffle = false}) {
     switch (exerciseType) {
       case ExerciseType.Doushi:
-        this._maxIndex = maxExerciseCount < doushiBank.length
-            ? maxExerciseCount
-            : doushiBank.length - 1;
-        this.createExercise = new DoushiGenerator(shuffle).createExercise;
+        this._maxIndex = selectedVerbs!.length - 1;
+        this.createExercise =
+            new DoushiGenerator(shuffle, selectedVerbs).createExercise;
         break;
       case ExerciseType.Count:
         this._maxIndex = maxExerciseCount != 9999
@@ -64,13 +61,13 @@ class ExerciseNavNotifier extends ChangeNotifier {
       case ExerciseType.Kanji_N5:
         this._maxIndex = selectedKanjis!.length - 1;
         this.createExercise =
-            new KanjiGenerator(shuffle, exerciseType, selectedKanjis!)
+            new KanjiGenerator(shuffle, exerciseType, selectedKanjis)
                 .createExercise;
         break;
       case ExerciseType.Kanji_N4:
         this._maxIndex = selectedKanjis!.length - 1;
         this.createExercise =
-            new KanjiGenerator(shuffle, exerciseType, selectedKanjis!)
+            new KanjiGenerator(shuffle, exerciseType, selectedKanjis)
                 .createExercise;
         break;
     }

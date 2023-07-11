@@ -1,5 +1,3 @@
-import 'package:nalelu/lang_data/N4.dart';
-import 'package:nalelu/lang_data/N5.dart';
 import 'package:nalelu/state/enums.dart';
 import 'package:nalelu/state/kanji/kanji_exercise_state.dart';
 import 'package:nalelu/widgets/kanji.dart';

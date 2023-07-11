@@ -2,20 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:nalelu/furi_text.dart';
 import 'package:nalelu/lang_data/N4.dart';
 import 'package:nalelu/lang_data/N5.dart';
+import 'package:nalelu/lang_data/doushi.dart';
 import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/state/enums.dart';
 import 'package:nalelu/widgets/doushi_exercise/doushi_exercise_1.dart';
 import 'package:nalelu/widgets/kanji.dart';
 import 'package:nalelu/widgets/kanji_exercise/kanji_exercise.dart';
 import 'package:nalelu/widgets/manga_exercise/manga_exercise.dart';
-import 'package:nalelu/widgets/shared/furigana_text.dart';
-import 'package:nalelu/widgets/shared/na_free_form_entry_wrapper.dart';
 import 'package:nalelu/widgets/shared/na_menu_button.dart';
 import 'package:nalelu/widgets/suuji_exercise/age/age_exercise.dart';
 import 'package:nalelu/widgets/suuji_exercise/counting.dart/counting_exercise.dart';
 import 'package:nalelu/widgets/suuji_exercise/jikan_exercise/jikan_exercise.dart';
-import 'package:nrs_flutter_lib/widgets/n_free_form_entry.dart';
-import 'package:nrs_flutter_lib/widgets/n_text_span.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 class SettingsScreen extends StatefulWidget {
@@ -28,19 +25,17 @@ class SettingsScreen extends StatefulWidget {
 }
 
 class _SettingsScreenState extends State<SettingsScreen> {
-  int numberOfDoushiExercises = 10;
   int numberOfAgeExercises = 10;
   int numberOfCountingExercises = 10;
   int numberOfJikanExercises = 10;
   bool selectAll = true;
-  bool showVerbTranslation = true;
-  bool showVerbFurigana = true;
   bool verbShuffle = false;
   bool mangaShuffle = false;
   bool kanjiN5Shuffle = false;
   bool kanjiN4Shuffle = false;
   List<Kanji> selectedN5Kanjis = [];
   List<Kanji> selectedN4Kanjis = [];
+  List<Doushi> selectedVerbs = [];
 
   Widget ageSettings() {
     return ListView(children: [
@@ -244,184 +239,110 @@ class _SettingsScreenState extends State<SettingsScreen> {
   }
 
   Widget doushiSettings() {
-    return ListView(
+    bool hasSelectedIItems = selectedVerbs.length == 1;
+    if (selectedVerbs.isEmpty) {
+      selectedVerbs.add(doushiBank.first);
+    }
+    return Column(
       children: [
-        ListTile(
-          title: Text(
-            NA.t('shuffle'),
-            style: TextStyle(
-                fontSize: Theme.of(context).textTheme.bodyMedium!.fontSize!),
-          ),
-          trailing: Switch(
-            value: verbShuffle,
-            onChanged: (bool value) {
-              setState(() {
-                verbShuffle = value;
-              });
-              saveSettings();
-            },
-          ),
-        ),
-        Divider(
-          height: 1.0,
-          indent: 16.0,
-          endIndent: 16.0,
-          color: Colors.grey[300],
-        ),
-        ListTile(
-          title: Text(
-            NA.t('showVerb'),
-            style: TextStyle(
-                fontSize: Theme.of(context).textTheme.bodyMedium!.fontSize!),
-          ),
-          trailing: Switch(
-            value: showVerbTranslation,
-            onChanged: (bool value) {
-              setState(() {
-                showVerbTranslation = value;
-              });
-              saveSettings();
-            },
-          ),
-        ),
-        Divider(
-          height: 1.0,
-          indent: 16.0,
-          endIndent: 16.0,
-          color: Colors.grey[300],
-        ),
-        ListTile(
-          title: Text(
-            NA.t('showfurigana'),
-            style: TextStyle(
-                fontSize: Theme.of(context).textTheme.bodyMedium!.fontSize!),
-          ),
-          trailing: Switch(
-            value: showVerbFurigana,
-            onChanged: (bool value) {
-              setState(() {
-                showVerbFurigana = value;
-              });
-              saveSettings();
-            },
-          ),
-        ),
-        Column(
-          children: [
-            FuriganaText(
-                showFurigana: showVerbFurigana,
-                fontSize: Theme.of(context).textTheme.headlineSmall!.fontSize!,
-                furiTexts: [
-                  FuriText(text: '可愛', furigana: 'かわい', emphasize: true),
-                  FuriText(text: 'がる', emphasize: true)
-                ]),
-            showVerbTranslation ? NTextSpan(NA.t('kawaigaru')) : Container(),
-            NaFreeFormEntryWrapper(
-              showMaxLength: false,
-              readOnly: true,
-              isAnswerCentered: true,
-              widthType: NFreeFormWidths.full,
-              hintValue: NA.t('Present'),
-              onChanged: (String newValue) {},
-              initialValue: '',
-              correctValues: ['かわいがる'],
-              onCorrect: () {},
-            ),
-          ],
-        ),
-        ListTile(
-          title: Column(
+        Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               Row(
-                mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  Text(
-                    NA.t('iwanttodo'),
-                    style: TextStyle(
-                        fontSize:
-                            Theme.of(context).textTheme.bodyMedium!.fontSize!),
+                  Tooltip(
+                    message: NA.t('selectall'),
+                    child: Icon(
+                      Icons.select_all,
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
                   ),
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: DropdownButton<int>(
-                      value: numberOfDoushiExercises,
+                  Switch(
+                      value: selectAll,
                       onChanged: (value) {
                         setState(() {
-                          numberOfDoushiExercises = value!;
+                          selectAll = value;
+                          if (selectAll) {
+                            selectedVerbs = List<Doushi>.from(doushiBank);
+                          } else {
+                            selectedVerbs.clear();
+                            selectedVerbs.add(doushiBank.first);
+                          }
+                          saveSettings();
                         });
-                        saveSettings();
-                      },
-                      items: [
-                        DropdownMenuItem<int>(
-                          value: 10,
-                          child: Text(
-                            NA.t('10'),
-                            style: TextStyle(
-                                fontSize: Theme.of(context)
-                                    .textTheme
-                                    .bodyMedium!
-                                    .fontSize!,
-                                color: Theme.of(context).colorScheme.primary),
-                          ),
-                        ),
-                        DropdownMenuItem<int>(
-                          value: 25,
-                          child: Text(
-                            NA.t('25'),
-                            style: TextStyle(
-                                fontSize: Theme.of(context)
-                                    .textTheme
-                                    .bodyMedium!
-                                    .fontSize!,
-                                color: Theme.of(context).colorScheme.primary),
-                          ),
-                        ),
-                        DropdownMenuItem<int>(
-                          value: 50,
-                          child: Text(
-                            NA.t('50'),
-                            style: TextStyle(
-                                fontSize: Theme.of(context)
-                                    .textTheme
-                                    .bodyMedium!
-                                    .fontSize!,
-                                color: Theme.of(context).colorScheme.primary),
-                          ),
-                        ),
-                        DropdownMenuItem<int>(
-                          value: 9999,
-                          child: Text(
-                            NA.t('all'),
-                            style: TextStyle(
-                                fontSize: Theme.of(context)
-                                    .textTheme
-                                    .bodyMedium!
-                                    .fontSize!,
-                                color: Theme.of(context).colorScheme.primary),
-                          ),
-                        ),
-                      ].toList(),
+                      })
+                ],
+              ),
+              Row(
+                children: [
+                  Tooltip(
+                    message: NA.t('shuffle'),
+                    child: Icon(
+                      Icons.shuffle,
+                      color: Theme.of(context).colorScheme.primary,
                     ),
                   ),
-                  Text(
-                    NA.t('exercises'),
-                    style: TextStyle(
-                      fontSize:
-                          Theme.of(context).textTheme.bodyMedium!.fontSize!,
-                    ),
-                  ),
+                  Switch(
+                      value: verbShuffle,
+                      onChanged: (value) {
+                        setState(() {
+                          verbShuffle = value;
+                          if (verbShuffle) {
+                            selectedVerbs.shuffle();
+                          }
+                          saveSettings();
+                        });
+                      })
                 ],
               ),
             ],
           ),
         ),
+        Expanded(
+          child: GridView.builder(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 5,
+              childAspectRatio: 1,
+            ),
+            itemCount: doushiBank.length,
+            itemBuilder: (BuildContext context, int index) {
+              final item = doushiBank[index];
+              bool isSelected = selectedVerbs.contains(item);
+              return GestureDetector(
+                onTap: () {
+                  setState(() {
+                    if (isSelected) {
+                      if (!hasSelectedIItems) selectedVerbs.remove(item);
+                    } else {
+                      selectedVerbs.add(item);
+                    }
+                  });
+                },
+                child: Container(
+                  margin: EdgeInsets.all(4),
+                  decoration: BoxDecoration(
+                    color: isSelected
+                        ? Theme.of(context).colorScheme.primary
+                        : null,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Center(
+                    child: Text(
+                      item.infinitive,
+                      style: TextStyle(fontSize: 16),
+                    ),
+                  ),
+                ),
+              );
+            },
+          ),
+        ),
         SizedBox(height: 20),
         NAMenuButton(
           destination: DoushiExerciseLevel1(
-              showVerbFurigana: showVerbFurigana,
-              showVerbTranslations: showVerbTranslation,
-              numberOfDoushiExercises: numberOfDoushiExercises - 1,
-              verbShuffle: verbShuffle),
+              selectedVerbs: selectedVerbs, verbShuffle: verbShuffle),
           label: NA.t('Start'),
           translabel: [
             FuriText(text: '始', furigana: 'はじ'),
@@ -740,14 +661,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
   void loadSettings() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
-      numberOfDoushiExercises = prefs.getInt('numberOfDoushiExercises') ?? 10;
       numberOfAgeExercises = prefs.getInt('numberOfAgeExercises') ?? 10;
       numberOfCountingExercises =
           prefs.getInt('numberOfCountingExercises') ?? 10;
       numberOfJikanExercises = prefs.getInt('numberOfJikanExercises') ?? 10;
       selectAll = prefs.getBool('selectAll') ?? false;
-      showVerbTranslation = prefs.getBool('showVerbTranslation') ?? true;
-      showVerbFurigana = prefs.getBool('showVerbFurigana') ?? true;
       verbShuffle = prefs.getBool('verbShuffle') ?? false;
       mangaShuffle = prefs.getBool('mangaShuffle') ?? false;
       kanjiN5Shuffle = prefs.getBool('kanjiN5Shuffle') ?? false;
@@ -757,13 +675,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   void saveSettings() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setInt('numberOfDoushiExercises', numberOfDoushiExercises);
     await prefs.setInt('numberOfAgeExercises', numberOfAgeExercises);
     await prefs.setInt('numberOfCountingExercises', numberOfCountingExercises);
     await prefs.setInt('numberOfJikanExercises', numberOfJikanExercises);
     await prefs.setBool('selectAll', selectAll);
-    await prefs.setBool('showVerbTranslation', showVerbTranslation);
-    await prefs.setBool('showVerbFurigana', showVerbFurigana);
     await prefs.setBool('verbShuffle', verbShuffle);
     await prefs.setBool('mangaShuffle', mangaShuffle);
     await prefs.setBool('kanjiN5Shuffle', kanjiN5Shuffle);

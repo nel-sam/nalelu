@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nalelu/lang_data/doushi.dart';
 import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/state/doushi/doushi_notifier.dart';
 import 'package:nalelu/state/enums.dart';
@@ -13,22 +14,19 @@ import 'package:nrs_flutter_lib/widgets/n_footer_menu.dart';
 import 'package:provider/provider.dart';
 
 class DoushiExerciseLevel1 extends StatelessWidget {
-  final bool showVerbFurigana;
-  final bool showVerbTranslations;
-  final int numberOfDoushiExercises;
   final bool verbShuffle;
+  final List<Doushi> selectedVerbs;
 
   DoushiExerciseLevel1(
-      {required this.showVerbFurigana,
-      required this.showVerbTranslations,
-      required this.numberOfDoushiExercises,
-      required this.verbShuffle});
+      {required this.verbShuffle, required this.selectedVerbs});
   //
 
   @override
   Widget build(BuildContext context) {
-    ExerciseNavNotifier nav =
-        ExerciseNavNotifier(exerciseType: ExerciseType.Doushi);
+    ExerciseNavNotifier nav = ExerciseNavNotifier(
+        exerciseType: ExerciseType.Doushi,
+        shuffle: verbShuffle,
+        selectedVerbs: selectedVerbs);
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: Scaffold(
@@ -44,8 +42,8 @@ class DoushiExerciseLevel1 extends StatelessWidget {
                     ChangeNotifierProvider<ExerciseNavNotifier>(
                       create: (context) => ExerciseNavNotifier(
                           exerciseType: ExerciseType.Doushi,
-                          maxExerciseCount: numberOfDoushiExercises,
-                          shuffle: verbShuffle),
+                          shuffle: verbShuffle,
+                          selectedVerbs: selectedVerbs),
                       child: Consumer<ExerciseNavNotifier>(
                         builder: (context, navNotifier, child) {
                           nav = navNotifier;
@@ -59,10 +57,8 @@ class DoushiExerciseLevel1 extends StatelessWidget {
                                 child: Consumer<DoushiNotifier>(
                                   builder: (context, doushiNotifier, child) {
                                     return DoushiExerciseStateArea(
-                                        state: doushiNotifier.getActive(),
-                                        showVerbTranslations:
-                                            showVerbTranslations,
-                                        showVerbFurigana: showVerbFurigana);
+                                      state: doushiNotifier.getActive(),
+                                    );
                                   },
                                 ),
                               ),

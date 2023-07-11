@@ -1,20 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:nalelu/furi_text.dart';
 import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/state/doushi/doushi_exercise_state.dart';
 import 'package:nalelu/widgets/doushi_exercise/verb_input.dart';
 import 'package:nalelu/widgets/shared/furigana_text.dart';
 import 'package:nrs_flutter_lib/widgets/n_text_span.dart';
+import 'package:shared_preferences/shared_preferences.dart';
 
 class DoushiExerciseStateArea extends StatefulWidget {
   final DoushiExerciseState state;
-  final bool showVerbFurigana;
-  final bool showVerbTranslations;
 
-  const DoushiExerciseStateArea(
-      {Key? key,
-      required this.state,
-      required this.showVerbFurigana,
-      required this.showVerbTranslations})
+  const DoushiExerciseStateArea({Key? key, required this.state})
       : super(key: key);
 
   @override
@@ -23,15 +19,88 @@ class DoushiExerciseStateArea extends StatefulWidget {
 }
 
 class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
+  bool showVerbFurigana = true;
+  bool showVerbTranslations = true;
+
+  @override
+  void initState() {
+    super.initState();
+    loadSettings();
+  }
+
+  void loadSettings() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      showVerbTranslations = prefs.getBool('showVerbTranslations') ?? true;
+      showVerbFurigana = prefs.getBool('showVerbFurigana') ?? true;
+    });
+  }
+
+  void saveSettings() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setBool('showVerbTranslations', showVerbTranslations);
+    await prefs.setBool('showVerbFurigana', showVerbFurigana);
+  }
+
   Widget build(BuildContext context) {
     return Column(
       children: [
+        Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  Tooltip(
+                    message: NA.t('translation'),
+                    child: Icon(
+                      Icons.translate,
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+                  ),
+                  Switch(
+                      value: showVerbTranslations,
+                      onChanged: (value) {
+                        setState(() {
+                          showVerbTranslations = value;
+                          saveSettings();
+                        });
+                      })
+                ],
+              ),
+              Row(
+                children: [
+                  Tooltip(
+                    message: NA.t('showfurigana'),
+                    child: FuriganaText(
+                      fontSize:
+                          Theme.of(context).textTheme.titleMedium!.fontSize!,
+                      showFurigana: showVerbFurigana,
+                      furiTexts: [
+                        FuriText(text: '水', furigana: 'みず', emphasize: true)
+                      ],
+                    ),
+                  ),
+                  Switch(
+                      value: showVerbFurigana,
+                      onChanged: (value) {
+                        setState(() {
+                          showVerbFurigana = value;
+                          saveSettings();
+                        });
+                      })
+                ],
+              ),
+            ],
+          ),
+        ),
         FuriganaText(
-            showFurigana: widget.showVerbFurigana,
+            showFurigana: showVerbFurigana,
             fontSize: Theme.of(context).textTheme.headlineSmall!.fontSize!,
             furiTexts: widget.state.doushi.casual.present.toFuriTexts()),
 
-        widget.showVerbTranslations
+        showVerbTranslations
             ? NTextSpan(widget.state.doushi.translation)
             : Container(),
         // Padding(
