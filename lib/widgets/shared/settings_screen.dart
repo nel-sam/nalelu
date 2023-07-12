@@ -14,6 +14,7 @@ import 'package:nalelu/widgets/suuji_exercise/age/age_exercise.dart';
 import 'package:nalelu/widgets/suuji_exercise/counting.dart/counting_exercise.dart';
 import 'package:nalelu/widgets/suuji_exercise/jikan_exercise/jikan_exercise.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'dart:convert';
 
 class SettingsScreen extends StatefulWidget {
   final ExerciseType exerciseType;
@@ -36,6 +37,297 @@ class _SettingsScreenState extends State<SettingsScreen> {
   List<Kanji> selectedN5Kanjis = [];
   List<Kanji> selectedN4Kanjis = [];
   List<Doushi> selectedVerbs = [];
+
+  @override
+  void initState() {
+    super.initState();
+    loadSettings();
+  }
+
+  void loadSettings() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    setState(() {
+      numberOfAgeExercises = prefs.getInt('numberOfAgeExercises') ?? 10;
+      numberOfCountingExercises =
+          prefs.getInt('numberOfCountingExercises') ?? 10;
+      numberOfJikanExercises = prefs.getInt('numberOfJikanExercises') ?? 10;
+      verbShuffle = prefs.getBool('verbShuffle') ?? false;
+      mangaShuffle = prefs.getBool('mangaShuffle') ?? false;
+      kanjiN5Shuffle = prefs.getBool('kanjiN5Shuffle') ?? false;
+      kanjiN4Shuffle = prefs.getBool('kanjiN4Shuffle') ?? false;
+      String jsonN4 = prefs.getString('kanjiN4') ?? '';
+      if (jsonN4.isNotEmpty) {
+        List<dynamic> jsonList = jsonDecode(jsonN4);
+        selectedN4Kanjis = jsonList.map((e) => Kanji.fromJson(e)).toList();
+      } else {
+        selectedN4Kanjis.add(kanjiN4Bank.first);
+      }
+      String jsonN5 = prefs.getString('kanjiN5') ?? '';
+      if (jsonN5.isNotEmpty) {
+        List<dynamic> jsonList = jsonDecode(jsonN5);
+        selectedN5Kanjis = jsonList.map((e) => Kanji.fromJson(e)).toList();
+      } else {
+        selectedN5Kanjis.add(kanjiN5Bank.first);
+      }
+    });
+  }
+
+  void saveSettings() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setInt('numberOfAgeExercises', numberOfAgeExercises);
+    await prefs.setInt('numberOfCountingExercises', numberOfCountingExercises);
+    await prefs.setInt('numberOfJikanExercises', numberOfJikanExercises);
+    // await prefs.setBool('selectAll', selectAll);
+    await prefs.setBool('verbShuffle', verbShuffle);
+    await prefs.setBool('mangaShuffle', mangaShuffle);
+    await prefs.setBool('kanjiN5Shuffle', kanjiN5Shuffle);
+    await prefs.setBool('kanjiN4Shuffle', kanjiN4Shuffle);
+    String jsonN4 =
+        jsonEncode(selectedN4Kanjis.map((e) => e.toJson()).toList());
+    await prefs.setString('kanjiN4', jsonN4);
+    String jsonN5 =
+        jsonEncode(selectedN5Kanjis.map((e) => e.toJson()).toList());
+    await prefs.setString('kanjiN5', jsonN5);
+  }
+
+  Widget kanjiN4Settings() {
+    bool hasSelectedIItems = selectedN4Kanjis.length == 1;
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  Tooltip(
+                    message: NA.t('selectall'),
+                    child: Icon(
+                      Icons.select_all,
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+                  ),
+                  Switch(
+                      value: selectAll,
+                      onChanged: (value) {
+                        setState(() {
+                          selectAll = value;
+                          if (selectAll) {
+                            selectedN4Kanjis = List<Kanji>.from(kanjiN4Bank);
+                          } else {
+                            selectedN4Kanjis.clear();
+                            selectedN4Kanjis.add(kanjiN4Bank.first);
+                          }
+                          saveSettings();
+                        });
+                      })
+                ],
+              ),
+              Row(
+                children: [
+                  Tooltip(
+                    message: NA.t('shuffle'),
+                    child: Icon(
+                      Icons.shuffle,
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+                  ),
+                  Switch(
+                      value: kanjiN4Shuffle,
+                      onChanged: (value) {
+                        setState(() {
+                          kanjiN4Shuffle = value;
+                          if (kanjiN4Shuffle) {
+                            selectedN4Kanjis.shuffle();
+                          }
+                        });
+                      })
+                ],
+              ),
+            ],
+          ),
+        ),
+        Expanded(
+          child: GridView.builder(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 6,
+              childAspectRatio: 1,
+            ),
+            itemCount: kanjiN4Bank.length,
+            itemBuilder: (BuildContext context, int index) {
+              final item = kanjiN4Bank[index];
+              int i = selectedN4Kanjis
+                  .indexWhere((element) => element.kanji == item.kanji);
+              bool isSelected = i != -1;
+
+              return GestureDetector(
+                onTap: () {
+                  setState(() {
+                    if (isSelected) {
+                      if (!hasSelectedIItems)
+                        selectedN4Kanjis.removeWhere(
+                            (element) => element.kanji == item.kanji);
+                    } else {
+                      selectedN4Kanjis.add(item);
+                    }
+                    saveSettings();
+                  });
+                },
+                child: Container(
+                  margin: EdgeInsets.all(4),
+                  decoration: BoxDecoration(
+                    color: isSelected
+                        ? Theme.of(context).colorScheme.primary
+                        : null,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Center(
+                    child: Text(
+                      item.kanji,
+                      style: TextStyle(fontSize: 20),
+                    ),
+                  ),
+                ),
+              );
+            },
+          ),
+        ),
+        SizedBox(height: 20),
+        NAMenuButton(
+          destination: KanjiExercise(
+              selectedKanjis: selectedN4Kanjis,
+              shuffle: kanjiN4Shuffle,
+              exerciseType: widget.exerciseType),
+          label: NA.t('Start'),
+          translabel: [
+            FuriText(text: '始', furigana: 'はじ'),
+            FuriText(text: 'める')
+          ],
+        ),
+      ],
+    );
+  }
+
+  Widget kanjiN5Settings() {
+    bool hasSelectedIItems = selectedN5Kanjis.length == 1;
+
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  Tooltip(
+                    message: NA.t('selectall'),
+                    child: Icon(
+                      Icons.select_all,
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+                  ),
+                  Switch(
+                      value: selectAll,
+                      onChanged: (value) {
+                        setState(() {
+                          selectAll = value;
+                          if (selectAll) {
+                            selectedN5Kanjis = List<Kanji>.from(kanjiN5Bank);
+                          } else {
+                            selectedN5Kanjis.clear();
+                            selectedN5Kanjis.add(kanjiN5Bank.first);
+                          }
+                          saveSettings();
+                        });
+                      })
+                ],
+              ),
+              Row(
+                children: [
+                  Tooltip(
+                    message: NA.t('shuffle'),
+                    child: Icon(
+                      Icons.shuffle,
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+                  ),
+                  Switch(
+                      value: kanjiN5Shuffle,
+                      onChanged: (value) {
+                        setState(() {
+                          kanjiN5Shuffle = value;
+                          if (kanjiN5Shuffle) {
+                            selectedN5Kanjis.shuffle();
+                          }
+                          saveSettings();
+                        });
+                      })
+                ],
+              ),
+            ],
+          ),
+        ),
+        Expanded(
+          child: GridView.builder(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 6,
+              childAspectRatio: 1,
+            ),
+            itemCount: kanjiN5Bank.length,
+            itemBuilder: (BuildContext context, int index) {
+              final item = kanjiN5Bank[index];
+              int i = selectedN5Kanjis
+                  .indexWhere((element) => element.kanji == item.kanji);
+              bool isSelected = i != -1;
+              return GestureDetector(
+                onTap: () {
+                  setState(() {
+                    if (isSelected) {
+                      if (!hasSelectedIItems)
+                        selectedN5Kanjis.removeWhere(
+                            (element) => element.kanji == item.kanji);
+                    } else {
+                      selectedN5Kanjis.add(item);
+                    }
+                    saveSettings();
+                  });
+                },
+                child: Container(
+                  margin: EdgeInsets.all(4),
+                  decoration: BoxDecoration(
+                    color: isSelected
+                        ? Theme.of(context).colorScheme.primary
+                        : null,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Center(
+                    child: Text(
+                      item.kanji,
+                      style: TextStyle(fontSize: 20),
+                    ),
+                  ),
+                ),
+              );
+            },
+          ),
+        ),
+        SizedBox(height: 20),
+        NAMenuButton(
+          destination: KanjiExercise(
+              selectedKanjis: selectedN5Kanjis,
+              shuffle: kanjiN5Shuffle,
+              exerciseType: widget.exerciseType),
+          label: NA.t('Start'),
+          translabel: [
+            FuriText(text: '始', furigana: 'はじ'),
+            FuriText(text: 'める')
+          ],
+        ),
+      ],
+    );
+  }
 
   Widget ageSettings() {
     return ListView(children: [
@@ -353,12 +645,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
     );
   }
 
-  @override
-  void initState() {
-    super.initState();
-    loadSettings();
-  }
-
   Widget jikanSettings() {
     return ListView(children: [
       ListTile(
@@ -422,266 +708,5 @@ class _SettingsScreenState extends State<SettingsScreen> {
         translabel: [FuriText(text: '始', furigana: 'はじ'), FuriText(text: 'める')],
       ),
     ]);
-  }
-
-  Widget kanjiN4Settings() {
-    bool hasSelectedIItems = selectedN4Kanjis.length == 1;
-    if (selectedN4Kanjis.isEmpty) {
-      selectedN4Kanjis.add(kanjiN4Bank.first);
-    }
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  Tooltip(
-                    message: NA.t('selectall'),
-                    child: Icon(
-                      Icons.select_all,
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
-                  ),
-                  Switch(
-                      value: selectAll,
-                      onChanged: (value) {
-                        setState(() {
-                          selectAll = value;
-                          if (selectAll) {
-                            selectedN4Kanjis = List<Kanji>.from(kanjiN4Bank);
-                          } else {
-                            selectedN4Kanjis.clear();
-                            selectedN4Kanjis.add(kanjiN4Bank.first);
-                          }
-                          saveSettings();
-                        });
-                      })
-                ],
-              ),
-              Row(
-                children: [
-                  Tooltip(
-                    message: NA.t('shuffle'),
-                    child: Icon(
-                      Icons.shuffle,
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
-                  ),
-                  Switch(
-                      value: kanjiN4Shuffle,
-                      onChanged: (value) {
-                        setState(() {
-                          kanjiN4Shuffle = value;
-                          if (kanjiN4Shuffle) {
-                            selectedN4Kanjis.shuffle();
-                          }
-                          saveSettings();
-                        });
-                      })
-                ],
-              ),
-            ],
-          ),
-        ),
-        Expanded(
-          child: GridView.builder(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 6,
-              childAspectRatio: 1,
-            ),
-            itemCount: kanjiN4Bank.length,
-            itemBuilder: (BuildContext context, int index) {
-              final item = kanjiN4Bank[index];
-              bool isSelected = selectedN4Kanjis.contains(item);
-              return GestureDetector(
-                onTap: () {
-                  setState(() {
-                    if (isSelected) {
-                      if (!hasSelectedIItems) selectedN4Kanjis.remove(item);
-                    } else {
-                      selectedN4Kanjis.add(item);
-                    }
-                  });
-                },
-                child: Container(
-                  margin: EdgeInsets.all(4),
-                  decoration: BoxDecoration(
-                    color: isSelected
-                        ? Theme.of(context).colorScheme.primary
-                        : null,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Center(
-                    child: Text(
-                      item.kanji,
-                      style: TextStyle(fontSize: 20),
-                    ),
-                  ),
-                ),
-              );
-            },
-          ),
-        ),
-        SizedBox(height: 20),
-        NAMenuButton(
-          destination: KanjiExercise(
-              selectedKanjis: selectedN4Kanjis,
-              shuffle: kanjiN4Shuffle,
-              exerciseType: widget.exerciseType),
-          label: NA.t('Start'),
-          translabel: [
-            FuriText(text: '始', furigana: 'はじ'),
-            FuriText(text: 'める')
-          ],
-        ),
-      ],
-    );
-  }
-
-  Widget kanjiN5Settings() {
-    bool hasSelectedIItems = selectedN5Kanjis.length == 1;
-    if (selectedN5Kanjis.isEmpty) {
-      selectedN5Kanjis.add(kanjiN5Bank.first);
-    }
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  Tooltip(
-                    message: NA.t('selectall'),
-                    child: Icon(
-                      Icons.select_all,
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
-                  ),
-                  Switch(
-                      value: selectAll,
-                      onChanged: (value) {
-                        setState(() {
-                          selectAll = value;
-                          if (selectAll) {
-                            selectedN5Kanjis = List<Kanji>.from(kanjiN5Bank);
-                          } else {
-                            selectedN5Kanjis.clear();
-                            selectedN5Kanjis.add(kanjiN5Bank.first);
-                          }
-                          saveSettings();
-                        });
-                      })
-                ],
-              ),
-              Row(
-                children: [
-                  Tooltip(
-                    message: NA.t('shuffle'),
-                    child: Icon(
-                      Icons.shuffle,
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
-                  ),
-                  Switch(
-                      value: kanjiN5Shuffle,
-                      onChanged: (value) {
-                        setState(() {
-                          kanjiN5Shuffle = value;
-                          if (kanjiN5Shuffle) {
-                            selectedN5Kanjis.shuffle();
-                          }
-                          saveSettings();
-                        });
-                      })
-                ],
-              ),
-            ],
-          ),
-        ),
-        Expanded(
-          child: GridView.builder(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 6,
-              childAspectRatio: 1,
-            ),
-            itemCount: kanjiN5Bank.length,
-            itemBuilder: (BuildContext context, int index) {
-              final item = kanjiN5Bank[index];
-              bool isSelected = selectedN5Kanjis.contains(item);
-              return GestureDetector(
-                onTap: () {
-                  setState(() {
-                    if (isSelected) {
-                      if (!hasSelectedIItems) selectedN5Kanjis.remove(item);
-                    } else {
-                      selectedN5Kanjis.add(item);
-                    }
-                  });
-                },
-                child: Container(
-                  margin: EdgeInsets.all(4),
-                  decoration: BoxDecoration(
-                    color: isSelected
-                        ? Theme.of(context).colorScheme.primary
-                        : null,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Center(
-                    child: Text(
-                      item.kanji,
-                      style: TextStyle(fontSize: 20),
-                    ),
-                  ),
-                ),
-              );
-            },
-          ),
-        ),
-        SizedBox(height: 20),
-        NAMenuButton(
-          destination: KanjiExercise(
-              selectedKanjis: selectedN5Kanjis,
-              shuffle: kanjiN5Shuffle,
-              exerciseType: widget.exerciseType),
-          label: NA.t('Start'),
-          translabel: [
-            FuriText(text: '始', furigana: 'はじ'),
-            FuriText(text: 'める')
-          ],
-        ),
-      ],
-    );
-  }
-
-  void loadSettings() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    setState(() {
-      numberOfAgeExercises = prefs.getInt('numberOfAgeExercises') ?? 10;
-      numberOfCountingExercises =
-          prefs.getInt('numberOfCountingExercises') ?? 10;
-      numberOfJikanExercises = prefs.getInt('numberOfJikanExercises') ?? 10;
-      // selectAll = prefs.getBool('selectAll') ?? false;
-      verbShuffle = prefs.getBool('verbShuffle') ?? false;
-      mangaShuffle = prefs.getBool('mangaShuffle') ?? false;
-      kanjiN5Shuffle = prefs.getBool('kanjiN5Shuffle') ?? false;
-      kanjiN4Shuffle = prefs.getBool('kanjiN4Shuffle') ?? false;
-    });
-  }
-
-  void saveSettings() async {
-    SharedPreferences prefs = await SharedPreferences.getInstance();
-    await prefs.setInt('numberOfAgeExercises', numberOfAgeExercises);
-    await prefs.setInt('numberOfCountingExercises', numberOfCountingExercises);
-    await prefs.setInt('numberOfJikanExercises', numberOfJikanExercises);
-    // await prefs.setBool('selectAll', selectAll);
-    await prefs.setBool('verbShuffle', verbShuffle);
-    await prefs.setBool('mangaShuffle', mangaShuffle);
-    await prefs.setBool('kanjiN5Shuffle', kanjiN5Shuffle);
-    await prefs.setBool('kanjiN4Shuffle', kanjiN4Shuffle);
   }
 }
