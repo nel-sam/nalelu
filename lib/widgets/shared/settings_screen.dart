@@ -46,6 +46,45 @@ class _SettingsScreenState extends State<SettingsScreen> {
     loadSettings();
   }
 
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+        appBar: AppBar(
+          title: Text(NA.t(widget.exerciseType.name.toString().toLowerCase()) +
+              ' ' +
+              NA.t('settings')),
+        ),
+        body: allSettings(widget.exerciseType));
+  }
+
+  Widget allSettings(ExerciseType exerciseType) {
+    Widget settings = ListView();
+    switch (exerciseType) {
+      case ExerciseType.Doushi:
+        settings = doushiSettings();
+        break;
+      case ExerciseType.Count:
+        settings = countingSettings();
+        break;
+      case ExerciseType.Age:
+        settings = ageSettings();
+        break;
+      case ExerciseType.Jikan:
+        settings = jikanSettings();
+        break;
+      case ExerciseType.Manga:
+        settings = mangaSettings();
+        break;
+      case ExerciseType.Kanji_N5:
+        settings = kanjiN5Settings();
+        break;
+      case ExerciseType.Kanji_N4:
+        settings = kanjiN4Settings();
+        break;
+    }
+    return settings;
+  }
+
   void loadSettings() async {
     SharedPreferences prefs = await SharedPreferences.getInstance();
     setState(() {
@@ -61,26 +100,26 @@ class _SettingsScreenState extends State<SettingsScreen> {
       kanjiN5Shuffle = prefs.getBool('kanjiN5Shuffle') ?? false;
       kanjiN4Shuffle = prefs.getBool('kanjiN4Shuffle') ?? false;
       String jsonN4 = prefs.getString('kanjiN4') ?? '';
-      if (jsonN4.isNotEmpty) {
-        List<dynamic> jsonList = jsonDecode(jsonN4);
-        selectedN4Kanjis = jsonList.map((e) => Kanji.fromJson(e)).toList();
-      } else {
-        selectedN4Kanjis.add(kanjiN4Bank.first);
-      }
-      String jsonN5 = prefs.getString('kanjiN5') ?? '';
-      if (jsonN5.isNotEmpty) {
-        List<dynamic> jsonList = jsonDecode(jsonN5);
-        selectedN5Kanjis = jsonList.map((e) => Kanji.fromJson(e)).toList();
-      } else {
-        selectedN5Kanjis.add(kanjiN5Bank.first);
-      }
-      String jsonVerbs = prefs.getString('verbs') ?? '';
-      if (jsonVerbs.isNotEmpty) {
-        List<dynamic> jsonList = jsonDecode(jsonVerbs);
-        selectedVerbs = jsonList.map((e) => Doushi.fromJson(e)).toList();
-      } else {
-        selectedVerbs.add(doushiBank.first);
-      }
+    if (jsonN4.isNotEmpty) {
+      List<dynamic> jsonList = jsonDecode(jsonN4);
+      selectedN4Kanjis = jsonList.map((e) => Kanji.fromJson(e)).toList();
+    } else {
+      selectedN4Kanjis.add(kanjiN4Bank.first);
+    }
+    String jsonN5 = prefs.getString('kanjiN5') ?? '';
+    if (jsonN5.isNotEmpty) {
+      List<dynamic> jsonList = jsonDecode(jsonN5);
+      selectedN5Kanjis = jsonList.map((e) => Kanji.fromJson(e)).toList();
+    } else {
+      selectedN5Kanjis.add(kanjiN5Bank.first);
+    }
+    String jsonVerbs = prefs.getString('verbs') ?? '';
+    if (jsonVerbs.isNotEmpty) {
+      List<dynamic> jsonList = jsonDecode(jsonVerbs);
+      selectedVerbs = jsonList.map((e) => Doushi.fromJson(e)).toList();
+    } else {
+      selectedVerbs.add(doushiBank.first);
+    }
     });
   }
 
@@ -96,7 +135,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     await prefs.setBool('mangaShuffle', mangaShuffle);
     await prefs.setBool('kanjiN5Shuffle', kanjiN5Shuffle);
     await prefs.setBool('kanjiN4Shuffle', kanjiN4Shuffle);
-    String jsonN4 =
+     String jsonN4 =
         jsonEncode(selectedN4Kanjis.map((e) => e.toJson()).toList());
     await prefs.setString('kanjiN4', jsonN4);
     String jsonN5 =
@@ -105,6 +144,120 @@ class _SettingsScreenState extends State<SettingsScreen> {
     String jsonVerbs =
         jsonEncode(selectedVerbs.map((e) => e.toJson()).toList());
     await prefs.setString('verbs', jsonVerbs);
+  }
+
+  Widget doushiSettings() {
+    bool hasSelectedIItems = selectedVerbs.length == 1;
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(16.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                children: [
+                  Tooltip(
+                    message: NA.t('selectall'),
+                    child: Icon(
+                      Icons.select_all,
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+                  ),
+                  Switch(
+                      value: selectAllVerbs,
+                      onChanged: (value) {
+                        setState(() {
+                          selectAllVerbs = value;
+                          if (selectAllVerbs) {
+                            selectedVerbs = List<Doushi>.from(doushiBank);
+                          } else {
+                            selectedVerbs.clear();
+                            selectedVerbs.add(doushiBank.first);
+                          }
+                          saveSettings();
+                        });
+                      })
+                ],
+              ),
+              Row(
+                children: [
+                  Tooltip(
+                    message: NA.t('shuffle'),
+                    child: Icon(
+                      Icons.shuffle,
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+                  ),
+                  Switch(
+                      value: verbShuffle,
+                      onChanged: (value) {
+                        setState(() {
+                          verbShuffle = value;
+                          saveSettings();
+                        });
+                      })
+                ],
+              ),
+            ],
+          ),
+        ),
+        Expanded(
+          child: GridView.builder(
+            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 5,
+              childAspectRatio: 1,
+            ),
+            itemCount: doushiBank.length,
+            itemBuilder: (BuildContext context, int index) {
+              final item = doushiBank[index];
+              int i = selectedVerbs.indexWhere(
+                  (element) => element.infinitive == item.infinitive);
+              bool isSelected = i != -1;
+              return GestureDetector(
+                onTap: () {
+                  setState(() {
+                    if (isSelected) {
+                      if (!hasSelectedIItems)
+                        selectedVerbs.removeWhere(
+                            (element) => element.infinitive == item.infinitive);
+                    } else {
+                      selectedVerbs.add(item);
+                    }
+                    saveSettings();
+                  });
+                },
+                child: Container(
+                  margin: EdgeInsets.all(4),
+                  decoration: BoxDecoration(
+                    color: isSelected
+                        ? Theme.of(context).colorScheme.primary
+                        : null,
+                    borderRadius: BorderRadius.circular(8),
+                  ),
+                  child: Center(
+                    child: Text(
+                      item.infinitive,
+                      style: TextStyle(fontSize: 16),
+                    ),
+                  ),
+                ),
+              );
+            },
+          ),
+        ),
+        SizedBox(height: 20),
+        NAMenuButton(
+          destination: DoushiExerciseLevel1(
+              selectedVerbs: selectedVerbs, verbShuffle: verbShuffle),
+          label: NA.t('Start'),
+          translabel: [
+            FuriText(text: '始', furigana: 'はじ'),
+            FuriText(text: 'める')
+          ],
+        ),
+      ],
+    );
   }
 
   Widget kanjiN4Settings() {
@@ -155,10 +308,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       onChanged: (value) {
                         setState(() {
                           kanjiN4Shuffle = value;
-                          if (kanjiN4Shuffle) {
-                            selectedN4Kanjis.shuffle();
-                          }
                         });
+                        saveSettings();
                       })
                 ],
               ),
@@ -275,9 +426,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       onChanged: (value) {
                         setState(() {
                           kanjiN5Shuffle = value;
-                          if (kanjiN5Shuffle) {
-                            selectedN5Kanjis.shuffle();
-                          }
                           saveSettings();
                         });
                       })
@@ -411,45 +559,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
     ]);
   }
 
-  Widget allSettings(ExerciseType exerciseType) {
-    Widget settings = ListView();
-    switch (exerciseType) {
-      case ExerciseType.Doushi:
-        settings = doushiSettings();
-        break;
-      case ExerciseType.Count:
-        settings = countingSettings();
-        break;
-      case ExerciseType.Age:
-        settings = ageSettings();
-        break;
-      case ExerciseType.Jikan:
-        settings = jikanSettings();
-        break;
-      case ExerciseType.Manga:
-        settings = mangaSettings();
-        break;
-      case ExerciseType.Kanji_N5:
-        settings = kanjiN5Settings();
-        break;
-      case ExerciseType.Kanji_N4:
-        settings = kanjiN4Settings();
-        break;
-    }
-    return settings;
-  }
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: Text(NA.t(widget.exerciseType.name.toString().toLowerCase()) +
-              ' ' +
-              NA.t('settings')),
-        ),
-        body: allSettings(widget.exerciseType));
-  }
-
   Widget mangaSettings() {
     return ListView(
       children: [
@@ -545,123 +654,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
         translabel: [FuriText(text: '始', furigana: 'はじ'), FuriText(text: 'める')],
       ),
     ]);
-  }
-
-  Widget doushiSettings() {
-    bool hasSelectedIItems = selectedVerbs.length == 1;
-    return Column(
-      children: [
-        Padding(
-          padding: const EdgeInsets.all(16.0),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Row(
-                children: [
-                  Tooltip(
-                    message: NA.t('selectall'),
-                    child: Icon(
-                      Icons.select_all,
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
-                  ),
-                  Switch(
-                      value: selectAllVerbs,
-                      onChanged: (value) {
-                        setState(() {
-                          selectAllVerbs = value;
-                          if (selectAllVerbs) {
-                            selectedVerbs = List<Doushi>.from(doushiBank);
-                          } else {
-                            selectedVerbs.clear();
-                            selectedVerbs.add(doushiBank.first);
-                          }
-                          saveSettings();
-                        });
-                      })
-                ],
-              ),
-              Row(
-                children: [
-                  Tooltip(
-                    message: NA.t('shuffle'),
-                    child: Icon(
-                      Icons.shuffle,
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
-                  ),
-                  Switch(
-                      value: verbShuffle,
-                      onChanged: (value) {
-                        setState(() {
-                          verbShuffle = value;
-                          if (verbShuffle) {
-                            selectedVerbs.shuffle();
-                          }
-                          saveSettings();
-                        });
-                      })
-                ],
-              ),
-            ],
-          ),
-        ),
-        Expanded(
-          child: GridView.builder(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 5,
-              childAspectRatio: 1,
-            ),
-            itemCount: doushiBank.length,
-            itemBuilder: (BuildContext context, int index) {
-              final item = doushiBank[index];
-              int i = selectedVerbs.indexWhere(
-                  (element) => element.infinitive == item.infinitive);
-              bool isSelected = i != -1;
-              return GestureDetector(
-                onTap: () {
-                  setState(() {
-                    if (isSelected) {
-                      if (!hasSelectedIItems)
-                        selectedVerbs.removeWhere(
-                            (element) => element.infinitive == item.infinitive);
-                    } else {
-                      selectedVerbs.add(item);
-                    }
-                    saveSettings();
-                  });
-                },
-                child: Container(
-                  margin: EdgeInsets.all(4),
-                  decoration: BoxDecoration(
-                    color: isSelected
-                        ? Theme.of(context).colorScheme.primary
-                        : null,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Center(
-                    child: Text(
-                      item.infinitive,
-                      style: TextStyle(fontSize: 16),
-                    ),
-                  ),
-                ),
-              );
-            },
-          ),
-        ),
-        SizedBox(height: 20),
-        NAMenuButton(
-          destination: DoushiExerciseLevel1(
-              selectedVerbs: selectedVerbs, verbShuffle: verbShuffle),
-          label: NA.t('Start'),
-          translabel: [
-            FuriText(text: '始', furigana: 'はじ'),
-            FuriText(text: 'める')
-          ],
-        ),
-      ],
-    );
   }
 
   Widget jikanSettings() {
