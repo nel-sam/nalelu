@@ -100,26 +100,26 @@ class _SettingsScreenState extends State<SettingsScreen> {
       kanjiN5Shuffle = prefs.getBool('kanjiN5Shuffle') ?? false;
       kanjiN4Shuffle = prefs.getBool('kanjiN4Shuffle') ?? false;
       String jsonN4 = prefs.getString('kanjiN4') ?? '';
-    if (jsonN4.isNotEmpty) {
-      List<dynamic> jsonList = jsonDecode(jsonN4);
-      selectedN4Kanjis = jsonList.map((e) => Kanji.fromJson(e)).toList();
-    } else {
-      selectedN4Kanjis.add(kanjiN4Bank.first);
-    }
-    String jsonN5 = prefs.getString('kanjiN5') ?? '';
-    if (jsonN5.isNotEmpty) {
-      List<dynamic> jsonList = jsonDecode(jsonN5);
-      selectedN5Kanjis = jsonList.map((e) => Kanji.fromJson(e)).toList();
-    } else {
-      selectedN5Kanjis.add(kanjiN5Bank.first);
-    }
-    String jsonVerbs = prefs.getString('verbs') ?? '';
-    if (jsonVerbs.isNotEmpty) {
-      List<dynamic> jsonList = jsonDecode(jsonVerbs);
-      selectedVerbs = jsonList.map((e) => Doushi.fromJson(e)).toList();
-    } else {
-      selectedVerbs.add(doushiBank.first);
-    }
+      if (jsonN4.isNotEmpty) {
+        List<dynamic> jsonList = jsonDecode(jsonN4);
+        selectedN4Kanjis = jsonList.map((e) => Kanji.fromJson(e)).toList();
+      } else {
+        selectedN4Kanjis.add(kanjiN4Bank.first);
+      }
+      String jsonN5 = prefs.getString('kanjiN5') ?? '';
+      if (jsonN5.isNotEmpty) {
+        List<dynamic> jsonList = jsonDecode(jsonN5);
+        selectedN5Kanjis = jsonList.map((e) => Kanji.fromJson(e)).toList();
+      } else {
+        selectedN5Kanjis.add(kanjiN5Bank.first);
+      }
+      String jsonVerbs = prefs.getString('verbs') ?? '';
+      if (jsonVerbs.isNotEmpty) {
+        List<dynamic> jsonList = jsonDecode(jsonVerbs);
+        selectedVerbs = jsonList.map((e) => Doushi.fromJson(e)).toList();
+      } else {
+        selectedVerbs.add(doushiBank.first);
+      }
     });
   }
 
@@ -135,7 +135,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     await prefs.setBool('mangaShuffle', mangaShuffle);
     await prefs.setBool('kanjiN5Shuffle', kanjiN5Shuffle);
     await prefs.setBool('kanjiN4Shuffle', kanjiN4Shuffle);
-     String jsonN4 =
+    String jsonN4 =
         jsonEncode(selectedN4Kanjis.map((e) => e.toJson()).toList());
     await prefs.setString('kanjiN4', jsonN4);
     String jsonN5 =
@@ -235,11 +235,28 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         : null,
                     borderRadius: BorderRadius.circular(8),
                   ),
-                  child: Center(
-                    child: Text(
-                      item.infinitive,
-                      style: TextStyle(fontSize: 16),
-                    ),
+                  child: Stack(
+                    children: [
+                      Center(
+                        child: Text(
+                          item.infinitive,
+                          style: TextStyle(fontSize: 20),
+                        ),
+                      ),
+                      Positioned(
+                        top: 0,
+                        right: 0,
+                        child: Container(
+                            padding: EdgeInsets.all(4),
+                            child: isSelected
+                                ? Text(
+                                    (1 + i).toString(),
+                                    style: TextStyle(
+                                        fontSize: 12, color: Colors.white),
+                                  )
+                                : Container()),
+                      ),
+                    ],
                   ),
                 ),
               );
@@ -333,9 +350,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 onTap: () {
                   setState(() {
                     if (isSelected) {
-                      if (!hasSelectedIItems)
+                      if (!hasSelectedIItems) {
                         selectedN4Kanjis.removeWhere(
                             (element) => element.kanji == item.kanji);
+                      }
                     } else {
                       selectedN4Kanjis.add(item);
                     }
@@ -350,11 +368,28 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         : null,
                     borderRadius: BorderRadius.circular(8),
                   ),
-                  child: Center(
-                    child: Text(
-                      item.kanji,
-                      style: TextStyle(fontSize: 20),
-                    ),
+                  child: Stack(
+                    children: [
+                      Center(
+                        child: Text(
+                          item.kanji,
+                          style: TextStyle(fontSize: 20),
+                        ),
+                      ),
+                      Positioned(
+                        top: 0,
+                        right: 0,
+                        child: Container(
+                            padding: EdgeInsets.all(4),
+                            child: isSelected
+                                ? Text(
+                                    (1 + i).toString(),
+                                    style: TextStyle(
+                                        fontSize: 12, color: Colors.white),
+                                  )
+                                : Container()),
+                      ),
+                    ],
                   ),
                 ),
               );
@@ -467,11 +502,28 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         : null,
                     borderRadius: BorderRadius.circular(8),
                   ),
-                  child: Center(
-                    child: Text(
-                      item.kanji,
-                      style: TextStyle(fontSize: 20),
-                    ),
+                  child: Stack(
+                    children: [
+                      Center(
+                        child: Text(
+                          item.kanji,
+                          style: TextStyle(fontSize: 20),
+                        ),
+                      ),
+                      Positioned(
+                        top: 0,
+                        right: 0,
+                        child: Container(
+                            padding: EdgeInsets.all(4),
+                            child: isSelected
+                                ? Text(
+                                    (1 + i).toString(),
+                                    style: TextStyle(
+                                        fontSize: 12, color: Colors.white),
+                                  )
+                                : Container()),
+                      ),
+                    ],
                   ),
                 ),
               );
