@@ -29,7 +29,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
   int numberOfAgeExercises = 10;
   int numberOfCountingExercises = 10;
   int numberOfJikanExercises = 10;
-  bool selectAll = false;
+  bool selectAllN5 = false;
+  bool selectAllN4 = false;
+  bool selectAllVerbs = false;
   bool verbShuffle = false;
   bool mangaShuffle = false;
   bool kanjiN5Shuffle = false;
@@ -51,6 +53,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
       numberOfCountingExercises =
           prefs.getInt('numberOfCountingExercises') ?? 10;
       numberOfJikanExercises = prefs.getInt('numberOfJikanExercises') ?? 10;
+      selectAllN5 = prefs.getBool('selectAllN5') ?? false;
+      selectAllN4 = prefs.getBool('selectAllN4') ?? false;
+      selectAllVerbs = prefs.getBool('selectAllVerbs') ?? false;
       verbShuffle = prefs.getBool('verbShuffle') ?? false;
       mangaShuffle = prefs.getBool('mangaShuffle') ?? false;
       kanjiN5Shuffle = prefs.getBool('kanjiN5Shuffle') ?? false;
@@ -77,7 +82,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
     await prefs.setInt('numberOfAgeExercises', numberOfAgeExercises);
     await prefs.setInt('numberOfCountingExercises', numberOfCountingExercises);
     await prefs.setInt('numberOfJikanExercises', numberOfJikanExercises);
-    // await prefs.setBool('selectAll', selectAll);
+    await prefs.setBool('selectAllN5', selectAllN5);
+    await prefs.setBool('selectAllN4', selectAllN4);
+    await prefs.setBool('selectAllVerbs', selectAllVerbs);
     await prefs.setBool('verbShuffle', verbShuffle);
     await prefs.setBool('mangaShuffle', mangaShuffle);
     await prefs.setBool('kanjiN5Shuffle', kanjiN5Shuffle);
@@ -109,11 +116,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     ),
                   ),
                   Switch(
-                      value: selectAll,
+                      value: selectAllN4,
                       onChanged: (value) {
                         setState(() {
-                          selectAll = value;
-                          if (selectAll) {
+                          selectAllN4 = value;
+                          if (selectAllN4) {
                             selectedN4Kanjis = List<Kanji>.from(kanjiN4Bank);
                           } else {
                             selectedN4Kanjis.clear();
@@ -229,11 +236,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     ),
                   ),
                   Switch(
-                      value: selectAll,
+                      value: selectAllN5,
                       onChanged: (value) {
                         setState(() {
-                          selectAll = value;
-                          if (selectAll) {
+                          selectAllN5 = value;
+                          if (selectAllN5) {
                             selectedN5Kanjis = List<Kanji>.from(kanjiN5Bank);
                           } else {
                             selectedN5Kanjis.clear();
@@ -552,11 +559,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                     ),
                   ),
                   Switch(
-                      value: selectAll,
+                      value: selectAllVerbs,
                       onChanged: (value) {
                         setState(() {
-                          selectAll = value;
-                          if (selectAll) {
+                          selectAllVerbs = value;
+                          if (selectAllVerbs) {
                             selectedVerbs = List<Doushi>.from(doushiBank);
                           } else {
                             selectedVerbs.clear();
