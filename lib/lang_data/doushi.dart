@@ -1799,6 +1799,23 @@ class Doushi {
     required this.translation,
     required this.isIrregular,
   });
+    Map<String, dynamic> toJson() => {
+        'infinitive': infinitive,
+        'infinitiveFurigana': infinitiveFurigana,
+        'root': root,
+        'casual': casual.toJson(),
+        'isIrregular': isIrregular,
+        'translation': translation,
+      };
+
+  factory Doushi.fromJson(Map<String, dynamic> json) => Doushi(
+        infinitive: json['infinitive'],
+        infinitiveFurigana: json['infinitiveFurigana'],
+        root: json['root'],
+        casual: DoushiConj.fromJson(json['casual']),
+        isIrregular: json['isIrregular'],
+        translation: json['translation'],
+      );
 }
 
 class DoushiConj {
@@ -1821,6 +1838,29 @@ class DoushiConj {
     required this.teForm,
     required this.negativeTeForm,
   });
+
+   Map<String, dynamic> toJson() => {
+        'present': present.toJson(),
+        'pastSimple': pastSimple.toJson(),
+        'negative': negative.toJson(),
+        'negativePast': negativePast.toJson(),
+        'presentProgressive': presentProgressive.toJson(),
+        'negativePresentProgressive': negativePresentProgressive.toJson(),
+        'teForm': teForm.toJson(),
+        'negativeTeForm': negativeTeForm.toJson(),
+      };
+
+  factory DoushiConj.fromJson(Map<String, dynamic> json) => DoushiConj(
+        present: JWord.fromJson(json['present']),
+        pastSimple: JWord.fromJson(json['pastSimple']),
+        negative: JWord.fromJson(json['negative']),
+        negativePast: JWord.fromJson(json['negativePast']),
+        presentProgressive: JWord.fromJson(json['presentProgressive']),
+        negativePresentProgressive:
+            JWord.fromJson(json['negativePresentProgressive']),
+        teForm: JWord.fromJson(json['teForm']),
+        negativeTeForm: JWord.fromJson(json['negativeTeForm']),
+      );
 }
 
 class JWord {
@@ -1830,6 +1870,16 @@ class JWord {
     this.kanjiWord = '',
     required this.kanaWord,
   });
+
+   Map<String, dynamic> toJson() => {
+        'kanjiWord': kanjiWord,
+        'kanaWord': kanaWord,
+      };
+
+  factory JWord.fromJson(Map<String, dynamic> json) => JWord(
+        kanjiWord: json['kanjiWord'],
+        kanaWord: json['kanaWord'],
+      );
 
   int stringDifferenceKana(String kanaWord, String kanjiWord) {
     int index = 0;

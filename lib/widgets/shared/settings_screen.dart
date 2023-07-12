@@ -74,6 +74,13 @@ class _SettingsScreenState extends State<SettingsScreen> {
       } else {
         selectedN5Kanjis.add(kanjiN5Bank.first);
       }
+      String jsonVerbs = prefs.getString('verbs') ?? '';
+      if (jsonVerbs.isNotEmpty) {
+        List<dynamic> jsonList = jsonDecode(jsonVerbs);
+        selectedVerbs = jsonList.map((e) => Doushi.fromJson(e)).toList();
+      } else {
+        selectedVerbs.add(doushiBank.first);
+      }
     });
   }
 
@@ -95,6 +102,9 @@ class _SettingsScreenState extends State<SettingsScreen> {
     String jsonN5 =
         jsonEncode(selectedN5Kanjis.map((e) => e.toJson()).toList());
     await prefs.setString('kanjiN5', jsonN5);
+    String jsonVerbs =
+        jsonEncode(selectedVerbs.map((e) => e.toJson()).toList());
+    await prefs.setString('verbs', jsonVerbs);
   }
 
   Widget kanjiN4Settings() {
@@ -539,9 +549,6 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   Widget doushiSettings() {
     bool hasSelectedIItems = selectedVerbs.length == 1;
-    if (selectedVerbs.isEmpty) {
-      selectedVerbs.add(doushiBank.first);
-    }
     return Column(
       children: [
         Padding(
@@ -608,15 +615,20 @@ class _SettingsScreenState extends State<SettingsScreen> {
             itemCount: doushiBank.length,
             itemBuilder: (BuildContext context, int index) {
               final item = doushiBank[index];
-              bool isSelected = selectedVerbs.contains(item);
+              int i = selectedVerbs.indexWhere(
+                  (element) => element.infinitive == item.infinitive);
+              bool isSelected = i != -1;
               return GestureDetector(
                 onTap: () {
                   setState(() {
                     if (isSelected) {
-                      if (!hasSelectedIItems) selectedVerbs.remove(item);
+                      if (!hasSelectedIItems)
+                        selectedVerbs.removeWhere(
+                            (element) => element.infinitive == item.infinitive);
                     } else {
                       selectedVerbs.add(item);
                     }
+                    saveSettings();
                   });
                 },
                 child: Container(
