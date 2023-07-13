@@ -28,31 +28,29 @@ class FuriganaText extends StatelessWidget {
         children: [
           for (var i in furiTexts)
             Column(mainAxisSize: MainAxisSize.max, children: [
-              showFurigana
-                  ? Container(
-                      height:
-                          i.furigana.length == 0 ? fontSize * 1.0 : fontSize,
-                      child: Center(
-                        child: Text(
-                          i.furigana == '？' && isCorrect
-                              ? subtractChars(answer, furiTexts)
-                              : i.furigana,
-                          textAlign: TextAlign.center,
-                          style: TextStyle(
-                            fontSize: fontSize * 0.7,
-                            fontWeight: i.emphasize
-                                ? FontWeight.bold
-                                : FontWeight.normal,
-                            color: i.emphasize
-                                ? isCorrect
-                                    ? Colors.green
-                                    : Theme.of(context).colorScheme.primary
-                                : textColor,
-                          ),
-                        ),
-                      ),
-                    )
-                  : Container(),
+              Container(
+                height: i.furigana.length == 0 ? fontSize * 1.0 : fontSize,
+                child: Center(
+                  child: Text(
+                    showFurigana
+                        ? i.furigana == '？' && isCorrect
+                            ? subtractChars(answer, furiTexts)
+                            : i.furigana
+                        : '',
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: fontSize * 0.7,
+                      fontWeight:
+                          i.emphasize ? FontWeight.bold : FontWeight.normal,
+                      color: i.emphasize
+                          ? isCorrect
+                              ? Colors.green
+                              : Theme.of(context).colorScheme.primary
+                          : textColor,
+                    ),
+                  ),
+                ),
+              ),
               Center(
                 child: Text(
                   i.text,

@@ -388,7 +388,7 @@ List<Kanji> kanjiN5Bank = [
               FuriText(text: '参加', furigana: 'さんか'),
               FuriText(text: 'しました'),
             ],
-            answer: 'さんせんにん'),
+            answer: 'さんぜんにん'),
         PhraseAnswer(
             translation: NA.t('sanzenbyouhananjikandesuka'),
             phraseParts: [

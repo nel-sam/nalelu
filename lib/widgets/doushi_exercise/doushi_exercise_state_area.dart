@@ -99,10 +99,7 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
             showFurigana: showVerbFurigana,
             fontSize: Theme.of(context).textTheme.headlineSmall!.fontSize!,
             furiTexts: widget.state.doushi.casual.present.toFuriTexts()),
-
-        showVerbTranslations
-            ? NTextSpan(widget.state.doushi.translation)
-            : Container(),
+        NTextSpan(showVerbTranslations ? widget.state.doushi.translation : ''),
         // Padding(
         //   padding: const EdgeInsets.fromLTRB(0, 20, 0, 0),
         //   child: VerbInput(

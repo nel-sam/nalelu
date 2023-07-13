@@ -114,10 +114,11 @@ class _KanjiExerciseStateArea extends State<KanjiExerciseStateArea> {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Wrap(children: [
-                      showTranslations
-                          ? Text(widget.state.kanji.translation.toUpperCase(),
-                              style: TextStyle(fontWeight: FontWeight.bold))
-                          : Container()
+                      Text(
+                          showTranslations
+                              ? widget.state.kanji.translation.toUpperCase()
+                              : '',
+                          style: TextStyle(fontWeight: FontWeight.bold))
                     ]),
                     Text('Kun yomi'),
                     Wrap(
@@ -156,18 +157,16 @@ class _KanjiExerciseStateArea extends State<KanjiExerciseStateArea> {
                                 answer: pa.answer),
                           ]),
                           Wrap(children: [
-                            showTranslations
-                                ? Text(
-                                    pa.translation,
-                                    textAlign: TextAlign.center,
-                                    style: TextStyle(
-                                        color: Colors.grey.shade700,
-                                        fontSize: Theme.of(context)
-                                            .textTheme
-                                            .bodySmall!
-                                            .fontSize),
-                                  )
-                                : Container()
+                            Text(
+                              showTranslations ? pa.translation : '',
+                              textAlign: TextAlign.center,
+                              style: TextStyle(
+                                  color: Colors.grey.shade700,
+                                  fontSize: Theme.of(context)
+                                      .textTheme
+                                      .bodySmall!
+                                      .fontSize),
+                            )
                           ]),
                           NaFreeFormEntryWrapper(
                             isAnswerCentered: true,
