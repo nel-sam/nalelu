@@ -47,7 +47,7 @@ class MainMenu extends StatelessWidget {
                     NAMenuButton(
                       destination: KanjiMenu(),
                       label: NA.t('kanji'),
-                      translabel: [FuriText(text: '動詞', furigana: 'どうし')],
+                      translabel: [FuriText(text: '漢字', furigana: 'かんじ')],
                     ),
                   ],
                 ),
