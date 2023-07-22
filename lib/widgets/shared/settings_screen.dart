@@ -240,7 +240,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       Center(
                         child: Text(
                           item.infinitive,
-                          style: TextStyle(fontSize: 20),
+                          style: TextStyle(
+                              fontSize: Theme.of(context)
+                                  .textTheme
+                                  .bodySmall!
+                                  .fontSize!),
                         ),
                       ),
                       Positioned(
@@ -252,7 +256,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                 ? Text(
                                     (1 + i).toString(),
                                     style: TextStyle(
-                                        fontSize: 12, color: Colors.white),
+                                        fontSize: Theme.of(context)
+                                            .textTheme
+                                            .labelSmall!
+                                            .fontSize!,
+                                        color: Colors.white),
                                   )
                                 : Container()),
                       ),
@@ -373,7 +381,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       Center(
                         child: Text(
                           item.kanji,
-                          style: TextStyle(fontSize: 20),
+                          style: TextStyle(
+                              fontSize: Theme.of(context)
+                                  .textTheme
+                                  .bodySmall!
+                                  .fontSize!),
                         ),
                       ),
                       Positioned(
@@ -385,7 +397,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                 ? Text(
                                     (1 + i).toString(),
                                     style: TextStyle(
-                                        fontSize: 12, color: Colors.white),
+                                        fontSize: Theme.of(context)
+                                            .textTheme
+                                            .labelSmall!
+                                            .fontSize!,
+                                        color: Colors.white),
                                   )
                                 : Container()),
                       ),
@@ -507,7 +523,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                       Center(
                         child: Text(
                           item.kanji,
-                          style: TextStyle(fontSize: 20),
+                          style: TextStyle(
+                              fontSize: Theme.of(context)
+                                  .textTheme
+                                  .bodySmall!
+                                  .fontSize!),
                         ),
                       ),
                       Positioned(
@@ -519,7 +539,11 @@ class _SettingsScreenState extends State<SettingsScreen> {
                                 ? Text(
                                     (1 + i).toString(),
                                     style: TextStyle(
-                                        fontSize: 12, color: Colors.white),
+                                        fontSize: Theme.of(context)
+                                            .textTheme
+                                            .labelSmall!
+                                            .fontSize!,
+                                        color: Colors.white),
                                   )
                                 : Container()),
                       ),
