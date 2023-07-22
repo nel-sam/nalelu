@@ -275,7 +275,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         NAMenuButton(
           destination: DoushiExerciseLevel1(
               selectedVerbs: selectedVerbs, verbShuffle: verbShuffle),
-          label: NA.t('Start'),
+          label: NA.t('start'),
           translabel: [
             FuriText(text: '始', furigana: 'はじ'),
             FuriText(text: 'める')
@@ -418,7 +418,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               selectedKanjis: selectedN4Kanjis,
               shuffle: kanjiN4Shuffle,
               exerciseType: widget.exerciseType),
-          label: NA.t('Start'),
+          label: NA.t('start'),
           translabel: [
             FuriText(text: '始', furigana: 'はじ'),
             FuriText(text: 'める')
@@ -560,7 +560,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
               selectedKanjis: selectedN5Kanjis,
               shuffle: kanjiN5Shuffle,
               exerciseType: widget.exerciseType),
-          label: NA.t('Start'),
+          label: NA.t('start'),
           translabel: [
             FuriText(text: '始', furigana: 'はじ'),
             FuriText(text: 'める')
@@ -629,7 +629,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         destination: AgeExercise(
           numberOfAgeExercises: numberOfAgeExercises - 1,
         ),
-        label: NA.t('Start'),
+        label: NA.t('start'),
         translabel: [FuriText(text: '始', furigana: 'はじ'), FuriText(text: 'める')],
       ),
     ]);
@@ -657,7 +657,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         SizedBox(height: 20),
         NAMenuButton(
           destination: MangaExercise(verbShuffle: mangaShuffle),
-          label: NA.t('Start'),
+          label: NA.t('start'),
           translabel: [
             FuriText(text: '始', furigana: 'はじ'),
             FuriText(text: 'める')
@@ -726,7 +726,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         destination: CountingExercise(
           numberOfCountingExercises: numberOfCountingExercises - 1,
         ),
-        label: NA.t('Start'),
+        label: NA.t('start'),
         translabel: [FuriText(text: '始', furigana: 'はじ'), FuriText(text: 'める')],
       ),
     ]);
@@ -791,7 +791,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         destination: JikanExercise(
           numberOfJikanExercises: numberOfJikanExercises - 1,
         ),
-        label: NA.t('Start'),
+        label: NA.t('start'),
         translabel: [FuriText(text: '始', furigana: 'はじ'), FuriText(text: 'める')],
       ),
     ]);

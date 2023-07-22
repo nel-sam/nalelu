@@ -1799,7 +1799,8 @@ class Doushi {
     required this.translation,
     required this.isIrregular,
   });
-    Map<String, dynamic> toJson() => {
+
+  Map<String, dynamic> toJson() => {
         'infinitive': infinitive,
         'infinitiveFurigana': infinitiveFurigana,
         'root': root,
@@ -1839,7 +1840,7 @@ class DoushiConj {
     required this.negativeTeForm,
   });
 
-   Map<String, dynamic> toJson() => {
+  Map<String, dynamic> toJson() => {
         'present': present.toJson(),
         'pastSimple': pastSimple.toJson(),
         'negative': negative.toJson(),
@@ -1871,7 +1872,7 @@ class JWord {
     required this.kanaWord,
   });
 
-   Map<String, dynamic> toJson() => {
+  Map<String, dynamic> toJson() => {
         'kanjiWord': kanjiWord,
         'kanaWord': kanaWord,
       };
