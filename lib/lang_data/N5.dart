@@ -1132,7 +1132,7 @@ List<Kanji> kanjiN5Bank = [
             FuriText(text: 'すごい'),
             FuriText(text: 'ね'),
           ],
-          answer: 'ようきょう',
+          answer: 'とうきょう',
         ),
         PhraseAnswer(
           translation: NA.t('higashiyniyamagatakusanaru'),
