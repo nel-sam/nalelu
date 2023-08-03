@@ -656,7 +656,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
         ),
         SizedBox(height: 20),
         NAMenuButton(
-          destination: MangaExercise(verbShuffle: mangaShuffle),
+          destination: MangaExercise(mangaShuffle: mangaShuffle),
           label: NA.t('start'),
           translabel: [
             FuriText(text: '始', furigana: 'はじ'),

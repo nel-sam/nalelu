@@ -10,9 +10,9 @@ import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 import 'package:provider/provider.dart';
 
 class MangaExercise extends StatelessWidget {
-  final bool verbShuffle;
+  final bool mangaShuffle;
 
-  MangaExercise({required this.verbShuffle});
+  MangaExercise({required this.mangaShuffle});
 
   @override
   Widget build(BuildContext context) {
@@ -29,8 +29,9 @@ class MangaExercise extends StatelessWidget {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     ChangeNotifierProvider<ExerciseNavNotifier>(
-                      create: (context) =>
-                          ExerciseNavNotifier(exerciseType: ExerciseType.Manga, shuffle: verbShuffle),
+                      create: (context) => ExerciseNavNotifier(
+                          exerciseType: ExerciseType.Manga,
+                          shuffle: mangaShuffle),
                       child: Consumer<ExerciseNavNotifier>(
                         builder: (context, navNotifier, child) {
                           return Column(
