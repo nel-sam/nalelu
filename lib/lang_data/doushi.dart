@@ -1645,8 +1645,8 @@ var doushiBank = [
         presentProgressive: JWord(kanaWord: 'なっている', kanjiWord: '成っている'),
         negativePresentProgressive:
             JWord(kanaWord: 'なっていない', kanjiWord: '成っていない'),
-        teForm: JWord(kanaWord: "なって", kanjiWord: "なって"),
-        negativeTeForm: (JWord(kanaWord: "ならないで", kanjiWord: "ならないで"))),
+        teForm: JWord(kanaWord: "なって", kanjiWord: "成って"),
+        negativeTeForm: (JWord(kanaWord: "ならないで", kanjiWord: "成らないで"))),
   ),
   Doushi(
     isIrregular: false,
