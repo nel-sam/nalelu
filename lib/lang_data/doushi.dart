@@ -350,12 +350,12 @@ var doushiBank = [
     translation: NA.t('itamu'),
     casual: DoushiConj(
         present: JWord(kanaWord: 'いたむ', kanjiWord: '痛む'),
-        pastSimple: JWord(kanaWord: 'いたかった', kanjiWord: '痛かった'),
-        negative: JWord(kanaWord: 'いたくない', kanjiWord: '痛くない'),
-        negativePast: JWord(kanaWord: 'いたくなかった', kanjiWord: '痛くなかった'),
-        presentProgressive: JWord(kanaWord: 'いたみている', kanjiWord: '痛みている'),
+        pastSimple: JWord(kanaWord: 'いたんだ', kanjiWord: '痛んだ'),
+        negative: JWord(kanaWord: 'いたまない', kanjiWord: '痛まない'),
+        negativePast: JWord(kanaWord: 'いたまなかった', kanjiWord: '痛まなかった'),
+        presentProgressive: JWord(kanaWord: 'いたんでいる', kanjiWord: '痛んでいる'),
         negativePresentProgressive:
-            JWord(kanaWord: 'いたみていない', kanjiWord: '痛みていない'),
+            JWord(kanaWord: 'いたんでいない', kanjiWord: '痛んでいない'),
         teForm: JWord(kanaWord: "いたんで", kanjiWord: "痛んで"),
         negativeTeForm: (JWord(kanaWord: "いたまないで", kanjiWord: "痛まないで"))),
   ),
