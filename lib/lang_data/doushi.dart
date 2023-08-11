@@ -333,12 +333,12 @@ var doushiBank = [
     translation: NA.t('kurushimu'),
     casual: DoushiConj(
         present: JWord(kanaWord: 'くるしむ', kanjiWord: '苦しむ'),
-        pastSimple: JWord(kanaWord: 'くるしかった', kanjiWord: '苦しかった'),
-        negative: JWord(kanaWord: 'くるしない', kanjiWord: '苦しない'),
-        negativePast: JWord(kanaWord: 'くるしなかった', kanjiWord: '苦しなかった'),
-        presentProgressive: JWord(kanaWord: 'くるしみている', kanjiWord: '苦しみている'),
+        pastSimple: JWord(kanaWord: 'くるしんだ', kanjiWord: '苦しんだ'),
+        negative: JWord(kanaWord: 'くるしまない', kanjiWord: '苦しまない'),
+        negativePast: JWord(kanaWord: 'くるしまなかった', kanjiWord: '苦しまなかった'),
+        presentProgressive: JWord(kanaWord: 'くるしんでいる', kanjiWord: '苦しんでいる'),
         negativePresentProgressive:
-            JWord(kanaWord: 'くるしみていない', kanjiWord: '苦しみていない'),
+            JWord(kanaWord: 'くるしんでいない', kanjiWord: '苦しんでいない'),
         teForm: JWord(kanaWord: "くるしんで", kanjiWord: "苦しんで"),
         negativeTeForm: (JWord(kanaWord: "くるしまないで", kanjiWord: "苦しまないで"))),
   ),
