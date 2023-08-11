@@ -12,6 +12,7 @@ class NaFreeFormEntryWrapper extends StatelessWidget {
   final bool showMaxLength;
   final bool readOnly;
   final String hintValue;
+  final bool showBoxLabel;
 
   NaFreeFormEntryWrapper({
     Key? key,
@@ -24,12 +25,14 @@ class NaFreeFormEntryWrapper extends StatelessWidget {
     this.labelText = '',
     this.showMaxLength = true,
     this.readOnly = false,
+    this.showBoxLabel = false,
     required this.hintValue,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return NFreeFormEntry(
+      showBoxLabel: showBoxLabel,
       isAnswerCentered: isAnswerCentered,
       showMaxLength: showMaxLength,
       widthType: NFreeFormWidths.half,

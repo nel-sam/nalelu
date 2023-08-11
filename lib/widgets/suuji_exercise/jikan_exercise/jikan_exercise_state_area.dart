@@ -19,6 +19,7 @@ class _JikanExerciseStateAreaState extends State<JikanExerciseStateArea> {
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
         NaFreeFormEntryWrapper(
+          showBoxLabel: true,
           showMaxLength: false,
           widthType: NFreeFormWidths.full,
           hintValue: NA.t('hour'),
@@ -30,6 +31,7 @@ class _JikanExerciseStateAreaState extends State<JikanExerciseStateArea> {
           correctValues: widget.state.correctHours,
         ),
         NaFreeFormEntryWrapper(
+          showBoxLabel: true,
           showMaxLength: false,
           widthType: NFreeFormWidths.full,
           hintValue: NA.t('minute'),
@@ -42,6 +44,7 @@ class _JikanExerciseStateAreaState extends State<JikanExerciseStateArea> {
         ),
         NaFreeFormEntryWrapper(
           showMaxLength: false,
+          showBoxLabel: true,
           widthType: NFreeFormWidths.full,
           hintValue: NA.t('second'),
           onChanged: (String newValue) => widget.state.updateSec(newValue),
