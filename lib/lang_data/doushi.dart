@@ -554,13 +554,13 @@ var doushiBank = [
     casual: DoushiConj(
         present: JWord(kanaWord: 'つぐ', kanjiWord: '次ぐ'),
         pastSimple: JWord(kanaWord: 'ついだ', kanjiWord: '次いだ'),
-        negative: JWord(kanaWord: 'つかない', kanjiWord: '次かない'),
-        negativePast: JWord(kanaWord: 'つかなかった', kanjiWord: '次かなかった'),
-        presentProgressive: JWord(kanaWord: 'ついている', kanjiWord: '次いている'),
+        negative: JWord(kanaWord: 'つがない', kanjiWord: '次がない'),
+        negativePast: JWord(kanaWord: 'つがなかった', kanjiWord: '次がなかった'),
+        presentProgressive: JWord(kanaWord: 'ついでいる', kanjiWord: '次いでいる'),
         negativePresentProgressive:
-            JWord(kanaWord: 'ついていない', kanjiWord: '次いていない'),
+            JWord(kanaWord: 'ついでいない', kanjiWord: '次いでいない'),
         teForm: JWord(kanaWord: "ついで", kanjiWord: "次いで"),
-        negativeTeForm: (JWord(kanaWord: "つぎがないで", kanjiWord: "次がないで"))),
+        negativeTeForm: (JWord(kanaWord: "つがないで", kanjiWord: "次がないで"))),
   ),
   Doushi(
     isIrregular: false,
