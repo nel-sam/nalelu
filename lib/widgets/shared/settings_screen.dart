@@ -108,26 +108,28 @@ class _SettingsScreenState extends State<SettingsScreen> {
       mangaShuffle = prefs.getBool('mangaShuffle') ?? false;
       kanjiN5Shuffle = prefs.getBool('kanjiN5Shuffle') ?? false;
       kanjiN4Shuffle = prefs.getBool('kanjiN4Shuffle') ?? false;
-      isExpandedVerbs = prefs.getBool('isExpanded') ?? false;
+      isExpandedVerbs = prefs.getBool('isExpandedVerbs') ?? false;
       isExpandedN5Kanjis = prefs.getBool('isExpandedN5Kanjis') ?? false;
       isExpandedN4Kanjis = prefs.getBool('isExpandedN4Kanjis') ?? false;
 
       String jsonN4 = prefs.getString('kanjiN4') ?? '';
-      if (jsonN4.isNotEmpty) {
+      if (selectedN4Kanjis.isNotEmpty) {
         List<dynamic> jsonList = jsonDecode(jsonN4);
         selectedN4Kanjis = jsonList.map((e) => Kanji.fromJson(e)).toList();
       } else {
         selectedN4Kanjis.add(kanjiN4Bank.first);
       }
+
       String jsonN5 = prefs.getString('kanjiN5') ?? '';
-      if (jsonN5.isNotEmpty) {
+      if (selectedN5Kanjis.isNotEmpty) {
         List<dynamic> jsonList = jsonDecode(jsonN5);
         selectedN5Kanjis = jsonList.map((e) => Kanji.fromJson(e)).toList();
       } else {
         selectedN5Kanjis.add(kanjiN5Bank.first);
       }
+
       String jsonVerbs = prefs.getString('verbs') ?? '';
-      if (jsonVerbs.isNotEmpty) {
+      if (selectedVerbs.isNotEmpty) {
         List<dynamic> jsonList = jsonDecode(jsonVerbs);
         selectedVerbs = jsonList.map((e) => Doushi.fromJson(e)).toList();
       } else {
@@ -148,7 +150,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
     await prefs.setBool('mangaShuffle', mangaShuffle);
     await prefs.setBool('kanjiN5Shuffle', kanjiN5Shuffle);
     await prefs.setBool('kanjiN4Shuffle', kanjiN4Shuffle);
-    await prefs.setBool('isExpanded', isExpandedVerbs);
+    await prefs.setBool('isExpandedVerbs', isExpandedVerbs);
     await prefs.setBool('isExpandedN5Kanjis', isExpandedN5Kanjis);
     await prefs.setBool('isExpandedN4Kanjis', isExpandedN4Kanjis);
 
@@ -262,7 +264,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 },
               ),
               Text(
-                selectAllVerbs
+                selectedVerbs.length == doushiBank.length
                     ? '${NA.t('selectedverbs')} (all)'
                     : '${NA.t('selectedverbs')} (${selectedVerbs.length})',
                 style: TextStyle(
@@ -442,7 +444,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 },
               ),
               Text(
-                selectAllN4
+                selectedN4Kanjis.length == kanjiN4Bank.length
                     ? '${NA.t('selectedkanjis')} (all)'
                     : '${NA.t('selectedkanjis')} (${selectedN4Kanjis.length})',
                 style: TextStyle(
@@ -627,7 +629,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                 },
               ),
               Text(
-                selectAllN5
+                selectedN5Kanjis.length == kanjiN5Bank.length
                     ? '${NA.t('selectedkanjis')} (all)'
                     : '${NA.t('selectedkanjis')} (${selectedN5Kanjis.length})',
                 style: TextStyle(
@@ -639,75 +641,75 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ),
         ),
         if (isExpandedN5Kanjis)
-        Expanded(
-          child: GridView.builder(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 6,
-              childAspectRatio: 1,
-            ),
-            itemCount: kanjiN5Bank.length,
-            itemBuilder: (BuildContext context, int index) {
-              final item = kanjiN5Bank[index];
-              int i = selectedN5Kanjis
-                  .indexWhere((element) => element.kanji == item.kanji);
-              bool isSelected = i != -1;
-              return GestureDetector(
-                onTap: () {
-                  setState(() {
-                    if (isSelected) {
-                      if (!hasSelectedIItems)
-                        selectedN5Kanjis.removeWhere(
-                            (element) => element.kanji == item.kanji);
-                    } else {
-                      selectedN5Kanjis.add(item);
-                    }
-                    saveSettings();
-                  });
-                },
-                child: Container(
-                  margin: EdgeInsets.all(4),
-                  decoration: BoxDecoration(
-                    color: isSelected
-                        ? Theme.of(context).colorScheme.primary
-                        : null,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Stack(
-                    children: [
-                      Center(
-                        child: Text(
-                          item.kanji,
-                          style: TextStyle(
-                              fontSize: Theme.of(context)
-                                  .textTheme
-                                  .bodySmall!
-                                  .fontSize!),
+          Expanded(
+            child: GridView.builder(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 6,
+                childAspectRatio: 1,
+              ),
+              itemCount: kanjiN5Bank.length,
+              itemBuilder: (BuildContext context, int index) {
+                final item = kanjiN5Bank[index];
+                int i = selectedN5Kanjis
+                    .indexWhere((element) => element.kanji == item.kanji);
+                bool isSelected = i != -1;
+                return GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      if (isSelected) {
+                        if (!hasSelectedIItems)
+                          selectedN5Kanjis.removeWhere(
+                              (element) => element.kanji == item.kanji);
+                      } else {
+                        selectedN5Kanjis.add(item);
+                      }
+                      saveSettings();
+                    });
+                  },
+                  child: Container(
+                    margin: EdgeInsets.all(4),
+                    decoration: BoxDecoration(
+                      color: isSelected
+                          ? Theme.of(context).colorScheme.primary
+                          : null,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Stack(
+                      children: [
+                        Center(
+                          child: Text(
+                            item.kanji,
+                            style: TextStyle(
+                                fontSize: Theme.of(context)
+                                    .textTheme
+                                    .bodySmall!
+                                    .fontSize!),
+                          ),
                         ),
-                      ),
-                      Positioned(
-                        top: 0,
-                        right: 0,
-                        child: Container(
-                            padding: EdgeInsets.all(4),
-                            child: isSelected
-                                ? Text(
-                                    (1 + i).toString(),
-                                    style: TextStyle(
-                                        fontSize: Theme.of(context)
-                                            .textTheme
-                                            .labelSmall!
-                                            .fontSize!,
-                                        color: Colors.white),
-                                  )
-                                : Container()),
-                      ),
-                    ],
+                        Positioned(
+                          top: 0,
+                          right: 0,
+                          child: Container(
+                              padding: EdgeInsets.all(4),
+                              child: isSelected
+                                  ? Text(
+                                      (1 + i).toString(),
+                                      style: TextStyle(
+                                          fontSize: Theme.of(context)
+                                              .textTheme
+                                              .labelSmall!
+                                              .fontSize!,
+                                          color: Colors.white),
+                                    )
+                                  : Container()),
+                        ),
+                      ],
+                    ),
                   ),
-                ),
-              );
-            },
+                );
+              },
+            ),
           ),
-        ),
         SizedBox(height: 20),
         NAMenuButton(
           destination: KanjiExercise(
