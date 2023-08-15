@@ -113,28 +113,16 @@ class _SettingsScreenState extends State<SettingsScreen> {
       isExpandedN4Kanjis = prefs.getBool('isExpandedN4Kanjis') ?? false;
 
       String jsonN4 = prefs.getString('kanjiN4') ?? '';
-      if (selectedN4Kanjis.isNotEmpty) {
-        List<dynamic> jsonList = jsonDecode(jsonN4);
-        selectedN4Kanjis = jsonList.map((e) => Kanji.fromJson(e)).toList();
-      } else {
-        selectedN4Kanjis.add(kanjiN4Bank.first);
-      }
+      List<dynamic> jsonN4List = jsonDecode(jsonN4);
+      selectedN4Kanjis = jsonN4List.map((e) => Kanji.fromJson(e)).toList();
 
       String jsonN5 = prefs.getString('kanjiN5') ?? '';
-      if (selectedN5Kanjis.isNotEmpty) {
-        List<dynamic> jsonList = jsonDecode(jsonN5);
-        selectedN5Kanjis = jsonList.map((e) => Kanji.fromJson(e)).toList();
-      } else {
-        selectedN5Kanjis.add(kanjiN5Bank.first);
-      }
+      List<dynamic> jsonN5List = jsonDecode(jsonN5);
+      selectedN5Kanjis = jsonN5List.map((e) => Kanji.fromJson(e)).toList();
 
       String jsonVerbs = prefs.getString('verbs') ?? '';
-      if (selectedVerbs.isNotEmpty) {
-        List<dynamic> jsonList = jsonDecode(jsonVerbs);
-        selectedVerbs = jsonList.map((e) => Doushi.fromJson(e)).toList();
-      } else {
-        selectedVerbs.add(doushiBank.first);
-      }
+      List<dynamic> jsonVerbList = jsonDecode(jsonVerbs);
+      selectedVerbs = jsonVerbList.map((e) => Doushi.fromJson(e)).toList();
     });
   }
 
