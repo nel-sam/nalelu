@@ -29,16 +29,19 @@ class _SettingsScreenState extends State<SettingsScreen> {
   int numberOfAgeExercises = 10;
   int numberOfCountingExercises = 10;
   int numberOfJikanExercises = 10;
-  bool selectAllN5 = false;
-  bool selectAllN4 = false;
-  bool selectAllVerbs = false;
+  bool selectAllN5 = true;
+  bool selectAllN4 = true;
+  bool selectAllVerbs = true;
   bool verbShuffle = false;
   bool mangaShuffle = false;
   bool kanjiN5Shuffle = false;
   bool kanjiN4Shuffle = false;
-  List<Kanji> selectedN5Kanjis = [];
-  List<Kanji> selectedN4Kanjis = [];
-  List<Doushi> selectedVerbs = [];
+  bool isExpandedVerbs = false;
+  bool isExpandedN5Kanjis = false;
+  bool isExpandedN4Kanjis = false;
+  List<Kanji> selectedN5Kanjis = List<Kanji>.from(kanjiN5Bank);
+  List<Kanji> selectedN4Kanjis = List<Kanji>.from(kanjiN4Bank);
+  List<Doushi> selectedVerbs = List<Doushi>.from(doushiBank);
 
   @override
   void initState() {
@@ -50,9 +53,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text(NA.t(widget.exerciseType.name.toString().toLowerCase()) +
-              ' ' +
-              NA.t('settings')),
+          title: Text(widget.exerciseType.name
+                      .contains(ExerciseType.Doushi.name) ||
+                  widget.exerciseType.name
+                      .contains(ExerciseType.Kanji_N4.name) ||
+                  widget.exerciseType.name.contains(ExerciseType.Kanji_N5.name)
+              ? '${NA.t('select')} ${NA.t(widget.exerciseType.name.toString().toLowerCase())} '
+              : NA.t(widget.exerciseType.name.toString().toLowerCase()) +
+                  ' ' +
+                  NA.t('settings')),
         ),
         body: allSettings(widget.exerciseType));
   }
@@ -92,13 +101,17 @@ class _SettingsScreenState extends State<SettingsScreen> {
       numberOfCountingExercises =
           prefs.getInt('numberOfCountingExercises') ?? 10;
       numberOfJikanExercises = prefs.getInt('numberOfJikanExercises') ?? 10;
-      selectAllN5 = prefs.getBool('selectAllN5') ?? false;
-      selectAllN4 = prefs.getBool('selectAllN4') ?? false;
-      selectAllVerbs = prefs.getBool('selectAllVerbs') ?? false;
+      selectAllN5 = prefs.getBool('selectAllN5') ?? true;
+      selectAllN4 = prefs.getBool('selectAllN4') ?? true;
+      selectAllVerbs = prefs.getBool('selectAllVerbs') ?? true;
       verbShuffle = prefs.getBool('verbShuffle') ?? false;
       mangaShuffle = prefs.getBool('mangaShuffle') ?? false;
       kanjiN5Shuffle = prefs.getBool('kanjiN5Shuffle') ?? false;
       kanjiN4Shuffle = prefs.getBool('kanjiN4Shuffle') ?? false;
+      isExpandedVerbs = prefs.getBool('isExpanded') ?? false;
+      isExpandedN5Kanjis = prefs.getBool('isExpandedN5Kanjis') ?? false;
+      isExpandedN4Kanjis = prefs.getBool('isExpandedN4Kanjis') ?? false;
+
       String jsonN4 = prefs.getString('kanjiN4') ?? '';
       if (jsonN4.isNotEmpty) {
         List<dynamic> jsonList = jsonDecode(jsonN4);
@@ -135,6 +148,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
     await prefs.setBool('mangaShuffle', mangaShuffle);
     await prefs.setBool('kanjiN5Shuffle', kanjiN5Shuffle);
     await prefs.setBool('kanjiN4Shuffle', kanjiN4Shuffle);
+    await prefs.setBool('isExpanded', isExpandedVerbs);
+    await prefs.setBool('isExpandedN5Kanjis', isExpandedN5Kanjis);
+    await prefs.setBool('isExpandedN4Kanjis', isExpandedN4Kanjis);
+
     String jsonN4 =
         jsonEncode(selectedN4Kanjis.map((e) => e.toJson()).toList());
     await prefs.setString('kanjiN4', jsonN4);
@@ -148,6 +165,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
 
   Widget doushiSettings() {
     bool hasSelectedIItems = selectedVerbs.length == 1;
+
     return Column(
       children: [
         Padding(
@@ -157,37 +175,61 @@ class _SettingsScreenState extends State<SettingsScreen> {
             children: [
               Row(
                 children: [
-                  Tooltip(
-                    message: NA.t('selectall'),
-                    child: Icon(
-                      Icons.select_all,
-                      color: Theme.of(context).colorScheme.primary,
+                  Icon(
+                    selectAllVerbs ? Icons.deselect : Icons.select_all,
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectAllVerbs = !selectAllVerbs;
+                        if (selectAllVerbs) {
+                          selectedVerbs = List<Doushi>.from(doushiBank);
+                        } else {
+                          selectedVerbs.clear();
+                          selectedVerbs.add(doushiBank.first);
+                          isExpandedVerbs = true;
+                        }
+                        saveSettings();
+                      });
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        selectAllVerbs ? NA.t('clearall') : NA.t('selectall'),
+                        style: TextStyle(
+                          fontSize: Theme.of(context)
+                              .textTheme
+                              .titleMedium!
+                              .fontSize!,
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
+                      ),
                     ),
                   ),
-                  Switch(
-                      value: selectAllVerbs,
-                      onChanged: (value) {
-                        setState(() {
-                          selectAllVerbs = value;
-                          if (selectAllVerbs) {
-                            selectedVerbs = List<Doushi>.from(doushiBank);
-                          } else {
-                            selectedVerbs.clear();
-                            selectedVerbs.add(doushiBank.first);
-                          }
-                          saveSettings();
-                        });
-                      })
                 ],
               ),
               Row(
                 children: [
-                  Tooltip(
-                    message: NA.t('shuffle'),
-                    child: Icon(
-                      Icons.shuffle,
-                      color: Theme.of(context).colorScheme.primary,
-                    ),
+                  Column(
+                    children: [
+                      Text(
+                        NA.t('shuffle'),
+                        style: TextStyle(
+                            color: Theme.of(context).colorScheme.primary,
+                            fontSize: Theme.of(context)
+                                .textTheme
+                                .titleSmall!
+                                .fontSize!),
+                      ),
+                      Tooltip(
+                        message: NA.t('shuffle'),
+                        child: Icon(
+                          Icons.shuffle,
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
+                      ),
+                    ],
                   ),
                   Switch(
                       value: verbShuffle,
@@ -202,75 +244,105 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ],
           ),
         ),
-        Expanded(
-          child: GridView.builder(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 5,
-              childAspectRatio: 1,
-            ),
-            itemCount: doushiBank.length,
-            itemBuilder: (BuildContext context, int index) {
-              final item = doushiBank[index];
-              int i = selectedVerbs.indexWhere(
-                  (element) => element.infinitive == item.infinitive);
-              bool isSelected = i != -1;
-              return GestureDetector(
-                onTap: () {
-                  setState(() {
-                    if (isSelected) {
-                      if (!hasSelectedIItems)
-                        selectedVerbs.removeWhere(
-                            (element) => element.infinitive == item.infinitive);
-                    } else {
-                      selectedVerbs.add(item);
-                    }
-                    saveSettings();
-                  });
-                },
-                child: Container(
-                  margin: EdgeInsets.all(4),
-                  decoration: BoxDecoration(
-                    color: isSelected
-                        ? Theme.of(context).colorScheme.primary
-                        : null,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Stack(
-                    children: [
-                      Center(
-                        child: Text(
-                          item.infinitive,
-                          style: TextStyle(
-                              fontSize: Theme.of(context)
-                                  .textTheme
-                                  .bodySmall!
-                                  .fontSize!),
-                        ),
-                      ),
-                      Positioned(
-                        top: 0,
-                        right: 0,
-                        child: Container(
-                            padding: EdgeInsets.all(4),
-                            child: isSelected
-                                ? Text(
-                                    (1 + i).toString(),
-                                    style: TextStyle(
-                                        fontSize: Theme.of(context)
-                                            .textTheme
-                                            .labelSmall!
-                                            .fontSize!,
-                                        color: Colors.white),
-                                  )
-                                : Container()),
-                      ),
-                    ],
-                  ),
+        Padding(
+          padding: const EdgeInsets.only(left: 16.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              IconButton(
+                icon: Icon(
+                  isExpandedVerbs ? Icons.expand_less : Icons.expand_more,
+                  color: Theme.of(context).colorScheme.primary,
                 ),
-              );
-            },
+                onPressed: () {
+                  setState(() {
+                    isExpandedVerbs = !isExpandedVerbs;
+                  });
+                  saveSettings();
+                },
+              ),
+              Text(
+                selectAllVerbs
+                    ? '${NA.t('selectedverbs')} (all)'
+                    : '${NA.t('selectedverbs')} (${selectedVerbs.length})',
+                style: TextStyle(
+                    color: Theme.of(context).colorScheme.primary,
+                    fontSize:
+                        Theme.of(context).textTheme.titleMedium!.fontSize!),
+              )
+            ],
           ),
         ),
+        if (isExpandedVerbs)
+          Expanded(
+            child: GridView.builder(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 5,
+                childAspectRatio: 1,
+              ),
+              itemCount: doushiBank.length,
+              itemBuilder: (BuildContext context, int index) {
+                final item = doushiBank[index];
+                int i = selectedVerbs.indexWhere(
+                    (element) => element.infinitive == item.infinitive);
+                bool isSelected = i != -1;
+                return GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      if (isSelected) {
+                        if (!hasSelectedIItems)
+                          selectedVerbs.removeWhere((element) =>
+                              element.infinitive == item.infinitive);
+                      } else {
+                        selectedVerbs.add(item);
+                      }
+                      saveSettings();
+                    });
+                  },
+                  child: Container(
+                    margin: EdgeInsets.all(4),
+                    decoration: BoxDecoration(
+                      color: isSelected
+                          ? Theme.of(context).colorScheme.primary
+                          : null,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Stack(
+                      children: [
+                        Center(
+                          child: Text(
+                            item.infinitive,
+                            style: TextStyle(
+                                fontSize: Theme.of(context)
+                                    .textTheme
+                                    .bodySmall!
+                                    .fontSize!),
+                          ),
+                        ),
+                        Positioned(
+                          top: 0,
+                          right: 0,
+                          child: Container(
+                              padding: EdgeInsets.all(4),
+                              child: isSelected
+                                  ? Text(
+                                      (1 + i).toString(),
+                                      style: TextStyle(
+                                          fontSize: Theme.of(context)
+                                              .textTheme
+                                              .labelSmall!
+                                              .fontSize!,
+                                          color: Colors.white),
+                                    )
+                                  : Container()),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
         SizedBox(height: 20),
         NAMenuButton(
           destination: DoushiExerciseLevel1(
@@ -296,27 +368,38 @@ class _SettingsScreenState extends State<SettingsScreen> {
             children: [
               Row(
                 children: [
-                  Tooltip(
-                    message: NA.t('selectall'),
-                    child: Icon(
-                      Icons.select_all,
-                      color: Theme.of(context).colorScheme.primary,
+                  Icon(
+                    selectAllN4 ? Icons.deselect : Icons.select_all,
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectAllN4 = !selectAllN4;
+                        if (selectAllN4) {
+                          selectedN4Kanjis = List<Kanji>.from(kanjiN4Bank);
+                        } else {
+                          selectedN4Kanjis.clear();
+                          selectedN4Kanjis.add(kanjiN4Bank.first);
+                          isExpandedN4Kanjis = true;
+                        }
+                        saveSettings();
+                      });
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        selectAllN4 ? NA.t('clearall') : NA.t('selectall'),
+                        style: TextStyle(
+                          fontSize: Theme.of(context)
+                              .textTheme
+                              .titleMedium!
+                              .fontSize!,
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
+                      ),
                     ),
                   ),
-                  Switch(
-                      value: selectAllN4,
-                      onChanged: (value) {
-                        setState(() {
-                          selectAllN4 = value;
-                          if (selectAllN4) {
-                            selectedN4Kanjis = List<Kanji>.from(kanjiN4Bank);
-                          } else {
-                            selectedN4Kanjis.clear();
-                            selectedN4Kanjis.add(kanjiN4Bank.first);
-                          }
-                          saveSettings();
-                        });
-                      })
                 ],
               ),
               Row(
@@ -341,77 +424,107 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ],
           ),
         ),
-        Expanded(
-          child: GridView.builder(
-            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-              crossAxisCount: 6,
-              childAspectRatio: 1,
-            ),
-            itemCount: kanjiN4Bank.length,
-            itemBuilder: (BuildContext context, int index) {
-              final item = kanjiN4Bank[index];
-              int i = selectedN4Kanjis
-                  .indexWhere((element) => element.kanji == item.kanji);
-              bool isSelected = i != -1;
-
-              return GestureDetector(
-                onTap: () {
-                  setState(() {
-                    if (isSelected) {
-                      if (!hasSelectedIItems) {
-                        selectedN4Kanjis.removeWhere(
-                            (element) => element.kanji == item.kanji);
-                      }
-                    } else {
-                      selectedN4Kanjis.add(item);
-                    }
-                    saveSettings();
-                  });
-                },
-                child: Container(
-                  margin: EdgeInsets.all(4),
-                  decoration: BoxDecoration(
-                    color: isSelected
-                        ? Theme.of(context).colorScheme.primary
-                        : null,
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Stack(
-                    children: [
-                      Center(
-                        child: Text(
-                          item.kanji,
-                          style: TextStyle(
-                              fontSize: Theme.of(context)
-                                  .textTheme
-                                  .bodySmall!
-                                  .fontSize!),
-                        ),
-                      ),
-                      Positioned(
-                        top: 0,
-                        right: 0,
-                        child: Container(
-                            padding: EdgeInsets.all(4),
-                            child: isSelected
-                                ? Text(
-                                    (1 + i).toString(),
-                                    style: TextStyle(
-                                        fontSize: Theme.of(context)
-                                            .textTheme
-                                            .labelSmall!
-                                            .fontSize!,
-                                        color: Colors.white),
-                                  )
-                                : Container()),
-                      ),
-                    ],
-                  ),
+        Padding(
+          padding: const EdgeInsets.only(left: 16.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              IconButton(
+                icon: Icon(
+                  isExpandedN4Kanjis ? Icons.expand_less : Icons.expand_more,
+                  color: Theme.of(context).colorScheme.primary,
                 ),
-              );
-            },
+                onPressed: () {
+                  setState(() {
+                    isExpandedN4Kanjis = !isExpandedN4Kanjis;
+                  });
+                  saveSettings();
+                },
+              ),
+              Text(
+                selectAllN4
+                    ? '${NA.t('selectedkanjis')} (all)'
+                    : '${NA.t('selectedkanjis')} (${selectedN4Kanjis.length})',
+                style: TextStyle(
+                    color: Theme.of(context).colorScheme.primary,
+                    fontSize:
+                        Theme.of(context).textTheme.titleMedium!.fontSize!),
+              )
+            ],
           ),
         ),
+        if (isExpandedN4Kanjis)
+          Expanded(
+            child: GridView.builder(
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 6,
+                childAspectRatio: 1,
+              ),
+              itemCount: kanjiN4Bank.length,
+              itemBuilder: (BuildContext context, int index) {
+                final item = kanjiN4Bank[index];
+                int i = selectedN4Kanjis
+                    .indexWhere((element) => element.kanji == item.kanji);
+                bool isSelected = i != -1;
+
+                return GestureDetector(
+                  onTap: () {
+                    setState(() {
+                      if (isSelected) {
+                        if (!hasSelectedIItems) {
+                          selectedN4Kanjis.removeWhere(
+                              (element) => element.kanji == item.kanji);
+                        }
+                      } else {
+                        selectedN4Kanjis.add(item);
+                      }
+                      saveSettings();
+                    });
+                  },
+                  child: Container(
+                    margin: EdgeInsets.all(4),
+                    decoration: BoxDecoration(
+                      color: isSelected
+                          ? Theme.of(context).colorScheme.primary
+                          : null,
+                      borderRadius: BorderRadius.circular(8),
+                    ),
+                    child: Stack(
+                      children: [
+                        Center(
+                          child: Text(
+                            item.kanji,
+                            style: TextStyle(
+                                fontSize: Theme.of(context)
+                                    .textTheme
+                                    .bodySmall!
+                                    .fontSize!),
+                          ),
+                        ),
+                        Positioned(
+                          top: 0,
+                          right: 0,
+                          child: Container(
+                              padding: EdgeInsets.all(4),
+                              child: isSelected
+                                  ? Text(
+                                      (1 + i).toString(),
+                                      style: TextStyle(
+                                          fontSize: Theme.of(context)
+                                              .textTheme
+                                              .labelSmall!
+                                              .fontSize!,
+                                          color: Colors.white),
+                                    )
+                                  : Container()),
+                        ),
+                      ],
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
         SizedBox(height: 20),
         NAMenuButton(
           destination: KanjiExercise(
@@ -440,27 +553,38 @@ class _SettingsScreenState extends State<SettingsScreen> {
             children: [
               Row(
                 children: [
-                  Tooltip(
-                    message: NA.t('selectall'),
-                    child: Icon(
-                      Icons.select_all,
-                      color: Theme.of(context).colorScheme.primary,
+                  Icon(
+                    selectAllN5 ? Icons.deselect : Icons.select_all,
+                    color: Theme.of(context).colorScheme.primary,
+                  ),
+                  GestureDetector(
+                    onTap: () {
+                      setState(() {
+                        selectAllN5 = !selectAllN5;
+                        if (selectAllN5) {
+                          selectedN5Kanjis = List<Kanji>.from(kanjiN5Bank);
+                        } else {
+                          selectedN5Kanjis.clear();
+                          selectedN5Kanjis.add(kanjiN5Bank.first);
+                          isExpandedN5Kanjis = true;
+                        }
+                        saveSettings();
+                      });
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: Text(
+                        selectAllN5 ? NA.t('clearall') : NA.t('selectall'),
+                        style: TextStyle(
+                          fontSize: Theme.of(context)
+                              .textTheme
+                              .titleMedium!
+                              .fontSize!,
+                          color: Theme.of(context).colorScheme.primary,
+                        ),
+                      ),
                     ),
                   ),
-                  Switch(
-                      value: selectAllN5,
-                      onChanged: (value) {
-                        setState(() {
-                          selectAllN5 = value;
-                          if (selectAllN5) {
-                            selectedN5Kanjis = List<Kanji>.from(kanjiN5Bank);
-                          } else {
-                            selectedN5Kanjis.clear();
-                            selectedN5Kanjis.add(kanjiN5Bank.first);
-                          }
-                          saveSettings();
-                        });
-                      })
                 ],
               ),
               Row(
@@ -485,6 +609,36 @@ class _SettingsScreenState extends State<SettingsScreen> {
             ],
           ),
         ),
+        Padding(
+          padding: const EdgeInsets.only(left: 16.0),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              IconButton(
+                icon: Icon(
+                  isExpandedN5Kanjis ? Icons.expand_less : Icons.expand_more,
+                  color: Theme.of(context).colorScheme.primary,
+                ),
+                onPressed: () {
+                  setState(() {
+                    isExpandedN5Kanjis = !isExpandedN5Kanjis;
+                  });
+                  saveSettings();
+                },
+              ),
+              Text(
+                selectAllN5
+                    ? '${NA.t('selectedkanjis')} (all)'
+                    : '${NA.t('selectedkanjis')} (${selectedN5Kanjis.length})',
+                style: TextStyle(
+                    color: Theme.of(context).colorScheme.primary,
+                    fontSize:
+                        Theme.of(context).textTheme.titleMedium!.fontSize!),
+              )
+            ],
+          ),
+        ),
+        if (isExpandedN5Kanjis)
         Expanded(
           child: GridView.builder(
             gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
