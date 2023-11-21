@@ -110,7 +110,7 @@ List<Kanji> kanjiN5Bank = [
       translation: NA.t('四'),
       kanji: '四',
       onYomi: 'シ',
-      kunYomi: 'よ, よつ, よっつ',
+      kunYomi: 'よん, よつ, よっつ',
       phraseAnswers: [
         PhraseAnswer(
             translation: NA.t('shigatsuhamadasuzushiiyo'),
@@ -1581,7 +1581,7 @@ List<Kanji> kanjiN5Bank = [
               FuriText(text: 'は、'),
               FuriText(text: '木', furigana: '？', emphasize: true),
               FuriText(text: 'が'),
-              FuriText(text: '多', furigana: 'おおい'),
+              FuriText(text: '多', furigana: 'おお'),
               FuriText(text: 'いです'),
             ],
             answer: 'き'),
@@ -1629,7 +1629,7 @@ List<Kanji> kanjiN5Bank = [
               FuriText(text: '仕事', furigana: 'しごと'),
               FuriText(text: 'します'),
             ],
-            answer: 'きん'),
+            answer: 'きんようび'),
       ]),
   Kanji(
       translation: NA.t('土'),
