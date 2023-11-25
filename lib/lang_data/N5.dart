@@ -2310,7 +2310,7 @@ List<Kanji> kanjiN5Bank = [
               FuriText(text: '辞', furigana: 'じ', emphasize: true),
               FuriText(text: '書', furigana: '？', emphasize: true),
               FuriText(text: 'を'),
-              FuriText(text: '使', furigana: 'つ'),
+              FuriText(text: '使', furigana: 'つか'),
               FuriText(text: 'ったよ'),
             ],
             answer: 'じしょ'),
