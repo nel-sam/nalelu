@@ -2152,7 +2152,7 @@ List<Kanji> kanjiN5Bank = [
               FuriText(text: '和', furigana: 'わ', emphasize: true),
               FuriText(text: '食', furigana: '？', emphasize: true),
               FuriText(text: 'が'),
-              FuriText(text: '好', furigana: 'す', emphasize: true),
+              FuriText(text: '好', furigana: 'す'),
               FuriText(text: 'き？'),
             ],
             answer: 'わしょく'),
