@@ -2,6 +2,17 @@
 
 A new Flutter project.
 
+## Android release builds
+
+The release build loads [ProGuard rules](android/app/proguard-rules.pro) that
+preserve the reflective database constructor used by WorkManager 2.7.0 and
+Room 2.2.5, currently pulled in by Mobile Ads. Keep this rule while using these
+dependency versions; otherwise R8 can remove the constructor and the app crashes
+in `InitializationProvider` before Flutter starts.
+
+Validate release changes with both a signed build and an Android device or
+emulator launch; a successful debug build does not exercise R8 shrinking.
+
 ## Getting Started
 
 This project is a starting point for a Flutter application.
