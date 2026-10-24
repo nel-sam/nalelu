@@ -1,10 +1,10 @@
 name: nalelu
 description: A new Flutter project.
-publish_to: 'none'
+publish_to: "none"
 version: 1.1.8+1.1.8
 
 environment:
-  sdk: '>=2.16.0 <3.0.0'
+  sdk: ">=2.16.0 <3.0.0"
 
 dependencies:
   flutter:
@@ -54,9 +54,9 @@ flutter_icons:
 
 # flutter clean && flutter pub get && flutter pub run flutter_native_splash:create
 flutter_native_splash:
-  color: '#ff2f00'
+  color: "#ff2f00"
   image: assets/splash.png
-  color_dark: '#ff2f00'
+  color_dark: "#ff2f00"
   android: true
   ios: true
 
@@ -65,3 +65,4 @@ flutter_native_splash:
   # Build deployable Android:     flutter build appbundle
   # Build debug installable IOS:  flutter build ios
   # Install on phone:             flutter install
+  # Helper for all builds         nal-release
