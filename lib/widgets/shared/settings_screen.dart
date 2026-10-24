@@ -113,15 +113,15 @@ class _SettingsScreenState extends State<SettingsScreen> {
       isExpandedN4Kanjis = prefs.getBool('isExpandedN4Kanjis') ?? false;
 
       String jsonN4 = prefs.getString('kanjiN4') ?? '';
-      List<dynamic> jsonN4List = jsonDecode(jsonN4);
+      List<dynamic> jsonN4List = jsonN4.isNotEmpty ? jsonDecode(jsonN4) : [];
       selectedN4Kanjis = jsonN4List.map((e) => Kanji.fromJson(e)).toList();
 
       String jsonN5 = prefs.getString('kanjiN5') ?? '';
-      List<dynamic> jsonN5List = jsonDecode(jsonN5);
+      List<dynamic> jsonN5List = jsonN5.isNotEmpty ? jsonDecode(jsonN5) : [];
       selectedN5Kanjis = jsonN5List.map((e) => Kanji.fromJson(e)).toList();
 
       String jsonVerbs = prefs.getString('verbs') ?? '';
-      List<dynamic> jsonVerbList = jsonDecode(jsonVerbs);
+      List<dynamic> jsonVerbList = jsonVerbs.isNotEmpty ? jsonDecode(jsonVerbs) : [];
       selectedVerbs = jsonVerbList.map((e) => Doushi.fromJson(e)).toList();
     });
   }

@@ -2,26 +2,27 @@
 
 A new Flutter project.
 
-## Android release builds
-
-The release build loads [ProGuard rules](android/app/proguard-rules.pro) that
-preserve the reflective database constructor used by WorkManager 2.7.0 and
-Room 2.2.5, currently pulled in by Mobile Ads. Keep this rule while using these
-dependency versions; otherwise R8 can remove the constructor and the app crashes
-in `InitializationProvider` before Flutter starts.
-
-Validate release changes with both a signed build and an Android device or
-emulator launch; a successful debug build does not exercise R8 shrinking.
-
 ## Getting Started
 
 This project is a starting point for a Flutter application.
 
 A few resources to get you started if this is your first Flutter project:
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
+- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
+- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
+For help getting started with Flutter development, view the
+[online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## iOS startup troubleshooting
+
+Google Mobile Ads requires the `GADApplicationIdentifier` entry in
+[`ios/Runner/Info.plist`](ios/Runner/Info.plist). Preserve this app ID when
+regenerating the iOS project; without it, startup aborts with
+`GADInvalidInitializationException`. After changing the plist, stop the app and
+rebuild it; hot reload and hot restart do not apply native configuration changes.
+
+`WFIsolatedShortcutRunner` indexing and sandbox-extension messages are iOS
+Shortcuts diagnostics, not the cause of this crash.

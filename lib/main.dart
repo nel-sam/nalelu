@@ -15,7 +15,7 @@ void main() {
   MobileAds.instance.initialize();
 
   final RequestConfiguration requestConfiguration = RequestConfiguration(
-      tagForUnderAgeOfConsent: TagForUnderAgeOfConsent.yes);
+      ageRestrictedTreatment: AgeRestrictedTreatment.unspecified);
   MobileAds.instance.updateRequestConfiguration(requestConfiguration);
 
   runApp(NaleluApp());
@@ -72,13 +72,13 @@ class NaleluApp extends StatelessWidget {
             appBarTheme: nrsAppBarThemeDark,
             textTheme: nrsTextTheme,
             switchTheme: SwitchThemeData(
-                thumbColor: MaterialStateProperty.resolveWith((states) =>
-                    states.contains(MaterialState.selected)
+                thumbColor: WidgetStateProperty.resolveWith((states) =>
+                    states.contains(WidgetState.selected)
                         ? primaryColor
                         : null),
-                trackColor: MaterialStateProperty.resolveWith((states) =>
-                    states.contains(MaterialState.selected)
-                        ? primaryColor.withOpacity(0.4)
+                trackColor: WidgetStateProperty.resolveWith((states) =>
+                    states.contains(WidgetState.selected)
+                        ? primaryColor.withValues(alpha: 0.4)
                         : null))),
         themeMode: ThemeMode.system,
         home: MyHomePage());
