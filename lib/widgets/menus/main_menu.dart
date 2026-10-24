@@ -3,6 +3,8 @@ import 'package:nalelu/constants.dart';
 import 'package:nalelu/furi_text.dart';
 import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/state/enums.dart';
+import 'package:nalelu/widgets/game/ngame-container.dart';
+import 'package:nalelu/widgets/game/ngame.dart';
 import 'package:nalelu/widgets/menus/kanji_menu.dart';
 import 'package:nalelu/widgets/menus/numbers_menu.dart';
 import 'package:nalelu/widgets/shared/ad_card.dart';
@@ -28,27 +30,34 @@ class MainMenu extends StatelessWidget {
                 child: Column(
                   children: [
                     NAMenuButton(
-                      destination:
-                          SettingsScreen(exerciseType: ExerciseType.Manga),
-                      label: NA.t('manga'),
-                      translabel: [FuriText(text: '漫画', furigana: 'まんが')],
+                      destination: NGameContainer(),
+                      label: 'minigame 1 - hiragana',
+                      translabel: [
+                        FuriText(text: 'ゲーム 1', furigana: 'ge-mu 1')
+                      ],
                     ),
-                    NAMenuButton(
-                      destination: NumbersMenu(),
-                      label: NA.t('numbersExercise'),
-                      translabel: [FuriText(text: '数字', furigana: 'すうじ')],
-                    ),
-                    NAMenuButton(
-                      destination:
-                          SettingsScreen(exerciseType: ExerciseType.Doushi),
-                      label: NA.t('verbs'),
-                      translabel: [FuriText(text: '動詞', furigana: 'どうし')],
-                    ),
-                    NAMenuButton(
-                      destination: KanjiMenu(),
-                      label: NA.t('kanji'),
-                      translabel: [FuriText(text: '漢字', furigana: 'かんじ')],
-                    ),
+                    // NAMenuButton(
+                    //   destination:
+                    //       SettingsScreen(exerciseType: ExerciseType.Manga),
+                    //   label: NA.t('manga'),
+                    //   translabel: [FuriText(text: '漫画', furigana: 'まんが')],
+                    // ),
+                    // NAMenuButton(
+                    //   destination: NumbersMenu(),
+                    //   label: NA.t('numbersExercise'),
+                    //   translabel: [FuriText(text: '数字', furigana: 'すうじ')],
+                    // ),
+                    // NAMenuButton(
+                    //   destination:
+                    //       SettingsScreen(exerciseType: ExerciseType.Doushi),
+                    //   label: NA.t('verbs'),
+                    //   translabel: [FuriText(text: '動詞', furigana: 'どうし')],
+                    // ),
+                    // NAMenuButton(
+                    //   destination: KanjiMenu(),
+                    //   label: NA.t('kanji'),
+                    //   translabel: [FuriText(text: '漢字', furigana: 'かんじ')],
+                    // ),
                   ],
                 ),
               ),
