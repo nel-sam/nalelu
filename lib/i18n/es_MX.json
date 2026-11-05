@@ -814,5 +814,18 @@
   "selectedkanjis": "Kanjis seleccionados",
   "kudasainote": "La forma て se usa cuando se conectan dos cláusulas en una oración y también cuando se le pide a alguien que haga algo (órdenes). Cuando se usa para órdenes, adjunte ください para que sea cortés.",
   "start": "Comenzar",
-  "select": "Selecciona los"
+  "select": "Selecciona los",
+  "coach": "Entrenador",
+  "retry": "Reintentar",
+  "coach_intro_title": "Descubramos tu nivel",
+  "coach_intro_body": "Te mostraremos algunas preguntas cortas de japonés. Elige la respuesta que te parezca correcta. Si no estás seguro, selecciona \"I don't know\"; eso también le ayuda a tu entrenador.\n\nNo se aprueba ni se reprueba. Al terminar, tu entrenador te dirá en qué enfocarte.",
+  "coach_select_answer": "Selecciona una respuesta para continuar",
+  "coach_load_error": "No pudimos cargar las preguntas",
+  "coach_getting_results": "Estamos obteniendo tus resultados",
+  "coach_results_error": "No pudimos obtener tus resultados",
+  "coach_results_title": "Tu entrenador dice",
+  "coach_score_high": "¡Excelente!",
+  "coach_score_mid": "¡Bien hecho!",
+  "coach_score_low": "¡Buen comienzo!",
+  "coach_score_of": "DE %s"
 }

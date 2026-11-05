@@ -814,5 +814,18 @@
   "selectedkanjis": "Selected kanjis",
   "kudasainote": "The て form is used when connecting two clauses into a sentence and also when asking someone to do something (commands). When using it for commands, attach ください to make it polite.",
   "start": "Start",
-  "select": "Select"
+  "select": "Select",
+  "coach": "Coach",
+  "retry": "Retry",
+  "coach_intro_title": "Let's find your level",
+  "coach_intro_body": "We'll show you a few short Japanese questions. Pick the answer that feels right. If you're not sure, choose \"I don't know\" — that helps your coach just as much.\n\nThere's no pass or fail. When you're done, your coach will tell you what to focus on next.",
+  "coach_select_answer": "Please select an answer to continue",
+  "coach_load_error": "We couldn't load the questions",
+  "coach_getting_results": "We are getting your results",
+  "coach_results_error": "We couldn't get your results",
+  "coach_results_title": "Your coach says",
+  "coach_score_high": "Outstanding!",
+  "coach_score_mid": "Nice work!",
+  "coach_score_low": "Great start!",
+  "coach_score_of": "OUT OF %s"
 }
