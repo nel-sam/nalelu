@@ -827,5 +827,6 @@
   "coach_score_high": "¡Excelente!",
   "coach_score_mid": "¡Bien hecho!",
   "coach_score_low": "¡Buen comienzo!",
-  "coach_score_of": "DE %s"
+  "coach_score_of": "DE %s",
+  "coach_rate_limited": "¡Has estado ocupado! Inténtalo de nuevo en unos minutos."
 }

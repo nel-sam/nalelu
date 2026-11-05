@@ -12,9 +12,8 @@ class NAIcons {
   static IconData verbs = Icons.nordic_walking_outlined;
 }
 
-// TODO: question; How to set this in PROD?
-// Override with: flutter run --dart-define=LANG_COACH_API_HOST=https://your-host
+// Override with: flutter run --dart-define=LANG_COACH_API_HOST=http://localhost:5030
 const String LANG_COACH_API_HOST = String.fromEnvironment(
   'LANG_COACH_API_HOST',
-  defaultValue: 'http://localhost:5030',
+  defaultValue: '// TODO: put PROD api URL here',
 );

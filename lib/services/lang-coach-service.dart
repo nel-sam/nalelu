@@ -30,8 +30,6 @@ class LangCoachService {
 
   Future<List<CoachQuestion>> getQuestions({String lang = 'jp'}) async {
     final uri = Uri.parse('$baseUrl/api/questions/$lang');
-
-    // TODO: for rate limiting we will need to add the UUID
     final decoded = await _send(() => client.get(uri, headers: _headers));
 
     if (decoded is! List) {
@@ -87,12 +85,15 @@ class LangCoachService {
     try {
       response = await request().timeout(timeout);
     } catch (e) {
-      throw LangCoachException('Could not reach the server: $e');
+      throw LangCoachException('Could not reach the server');
+    }
+
+    if (response.statusCode == 429) {
+      throw LangCoachException('Rate limited', statusCode: response.statusCode);
     }
 
     if (response.statusCode < 200 || response.statusCode >= 300) {
-      throw LangCoachException('Request failed',
-          statusCode: response.statusCode);
+      throw LangCoachException('Request failed', statusCode: response.statusCode);
     }
 
     return jsonDecode(utf8.decode(response.bodyBytes));
