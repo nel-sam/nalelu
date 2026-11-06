@@ -165,6 +165,8 @@ class _CoachState extends State<Coach> {
       resizeToAvoidBottomInset: false,
       appBar: Nrs.NrsAppBar(title: NA.t('coach'), context: context),
       body: Column(
+        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Expanded(child: _buildContent()),
           const AdCard(),
