@@ -15,5 +15,6 @@ class NAIcons {
 // Override with: flutter run --dart-define=LANG_COACH_API_HOST=http://localhost:5030
 const String LANG_COACH_API_HOST = String.fromEnvironment(
   'LANG_COACH_API_HOST',
-  defaultValue: '// TODO: put PROD api URL here',
+  defaultValue:
+      'https://nrsdev-langapp-api-e9emahf0cefuaegm.westeurope-01.azurewebsites.net/',
 );
