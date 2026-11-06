@@ -32,10 +32,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
   bool selectAllN5 = true;
   bool selectAllN4 = true;
   bool selectAllVerbs = true;
-  bool verbShuffle = false;
-  bool mangaShuffle = false;
-  bool kanjiN5Shuffle = false;
-  bool kanjiN4Shuffle = false;
+  bool verbShuffle = true;
+  bool mangaShuffle = true;
+  bool kanjiN5Shuffle = true;
+  bool kanjiN4Shuffle = true;
   bool isExpandedVerbs = false;
   bool isExpandedN5Kanjis = false;
   bool isExpandedN4Kanjis = false;
@@ -104,25 +104,32 @@ class _SettingsScreenState extends State<SettingsScreen> {
       selectAllN5 = prefs.getBool('selectAllN5') ?? true;
       selectAllN4 = prefs.getBool('selectAllN4') ?? true;
       selectAllVerbs = prefs.getBool('selectAllVerbs') ?? true;
-      verbShuffle = prefs.getBool('verbShuffle') ?? false;
-      mangaShuffle = prefs.getBool('mangaShuffle') ?? false;
-      kanjiN5Shuffle = prefs.getBool('kanjiN5Shuffle') ?? false;
-      kanjiN4Shuffle = prefs.getBool('kanjiN4Shuffle') ?? false;
+      verbShuffle = prefs.getBool('verbShuffle') ?? true;
+      mangaShuffle = prefs.getBool('mangaShuffle') ?? true;
+      kanjiN5Shuffle = prefs.getBool('kanjiN5Shuffle') ?? true;
+      kanjiN4Shuffle = prefs.getBool('kanjiN4Shuffle') ?? true;
       isExpandedVerbs = prefs.getBool('isExpandedVerbs') ?? false;
       isExpandedN5Kanjis = prefs.getBool('isExpandedN5Kanjis') ?? false;
       isExpandedN4Kanjis = prefs.getBool('isExpandedN4Kanjis') ?? false;
 
       String jsonN4 = prefs.getString('kanjiN4') ?? '';
-      List<dynamic> jsonN4List = jsonDecode(jsonN4);
-      selectedN4Kanjis = jsonN4List.map((e) => Kanji.fromJson(e)).toList();
+      List<dynamic> jsonN4List = jsonN4.isNotEmpty ? jsonDecode(jsonN4) : [];
+      selectedN4Kanjis = jsonN4List.isNotEmpty
+          ? jsonN4List.map((e) => Kanji.fromJson(e)).toList()
+          : [...kanjiN4Bank];
 
       String jsonN5 = prefs.getString('kanjiN5') ?? '';
-      List<dynamic> jsonN5List = jsonDecode(jsonN5);
-      selectedN5Kanjis = jsonN5List.map((e) => Kanji.fromJson(e)).toList();
+      List<dynamic> jsonN5List = jsonN5.isNotEmpty ? jsonDecode(jsonN5) : [];
+      selectedN5Kanjis = jsonN5List.isNotEmpty
+          ? jsonN5List.map((e) => Kanji.fromJson(e)).toList()
+          : [...kanjiN5Bank];
 
       String jsonVerbs = prefs.getString('verbs') ?? '';
-      List<dynamic> jsonVerbList = jsonDecode(jsonVerbs);
-      selectedVerbs = jsonVerbList.map((e) => Doushi.fromJson(e)).toList();
+      List<dynamic> jsonVerbList =
+          jsonVerbs.isNotEmpty ? jsonDecode(jsonVerbs) : [];
+      selectedVerbs = jsonVerbList.isNotEmpty
+          ? jsonVerbList.map((e) => Doushi.fromJson(e)).toList()
+          : [...doushiBank];
     });
   }
 
@@ -163,27 +170,27 @@ class _SettingsScreenState extends State<SettingsScreen> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
-                children: [
-                  Icon(
-                    selectAllVerbs ? Icons.deselect : Icons.select_all,
-                    color: Theme.of(context).colorScheme.primary,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        selectAllVerbs = !selectAllVerbs;
-                        if (selectAllVerbs) {
-                          selectedVerbs = List<Doushi>.from(doushiBank);
-                        } else {
-                          selectedVerbs.clear();
-                          selectedVerbs.add(doushiBank.first);
-                          isExpandedVerbs = true;
-                        }
-                        saveSettings();
-                      });
-                    },
-                    child: Padding(
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    selectAllVerbs = !selectAllVerbs;
+                    if (selectAllVerbs) {
+                      selectedVerbs = List<Doushi>.from(doushiBank);
+                    } else {
+                      selectedVerbs.clear();
+                      selectedVerbs.add(doushiBank.first);
+                      isExpandedVerbs = true;
+                    }
+                    saveSettings();
+                  });
+                },
+                child: Row(
+                  children: [
+                    Icon(
+                      selectAllVerbs ? Icons.deselect : Icons.select_all,
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+                    Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
                         selectAllVerbs ? NA.t('clearall') : NA.t('selectall'),
@@ -196,8 +203,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               Row(
                 children: [
@@ -356,27 +363,27 @@ class _SettingsScreenState extends State<SettingsScreen> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
-                children: [
-                  Icon(
-                    selectAllN4 ? Icons.deselect : Icons.select_all,
-                    color: Theme.of(context).colorScheme.primary,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        selectAllN4 = !selectAllN4;
-                        if (selectAllN4) {
-                          selectedN4Kanjis = List<Kanji>.from(kanjiN4Bank);
-                        } else {
-                          selectedN4Kanjis.clear();
-                          selectedN4Kanjis.add(kanjiN4Bank.first);
-                          isExpandedN4Kanjis = true;
-                        }
-                        saveSettings();
-                      });
-                    },
-                    child: Padding(
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    selectAllN4 = !selectAllN4;
+                    if (selectAllN4) {
+                      selectedN4Kanjis = List<Kanji>.from(kanjiN4Bank);
+                    } else {
+                      selectedN4Kanjis.clear();
+                      selectedN4Kanjis.add(kanjiN4Bank.first);
+                      isExpandedN4Kanjis = true;
+                    }
+                    saveSettings();
+                  });
+                },
+                child: Row(
+                  children: [
+                    Icon(
+                      selectAllN4 ? Icons.deselect : Icons.select_all,
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+                    Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
                         selectAllN4 ? NA.t('clearall') : NA.t('selectall'),
@@ -389,8 +396,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               Row(
                 children: [
@@ -541,27 +548,27 @@ class _SettingsScreenState extends State<SettingsScreen> {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-              Row(
-                children: [
-                  Icon(
-                    selectAllN5 ? Icons.deselect : Icons.select_all,
-                    color: Theme.of(context).colorScheme.primary,
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      setState(() {
-                        selectAllN5 = !selectAllN5;
-                        if (selectAllN5) {
-                          selectedN5Kanjis = List<Kanji>.from(kanjiN5Bank);
-                        } else {
-                          selectedN5Kanjis.clear();
-                          selectedN5Kanjis.add(kanjiN5Bank.first);
-                          isExpandedN5Kanjis = true;
-                        }
-                        saveSettings();
-                      });
-                    },
-                    child: Padding(
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    selectAllN5 = !selectAllN5;
+                    if (selectAllN5) {
+                      selectedN5Kanjis = List<Kanji>.from(kanjiN5Bank);
+                    } else {
+                      selectedN5Kanjis.clear();
+                      selectedN5Kanjis.add(kanjiN5Bank.first);
+                      isExpandedN5Kanjis = true;
+                    }
+                    saveSettings();
+                  });
+                },
+                child: Row(
+                  children: [
+                    Icon(
+                      selectAllN5 ? Icons.deselect : Icons.select_all,
+                      color: Theme.of(context).colorScheme.primary,
+                    ),
+                    Padding(
                       padding: const EdgeInsets.all(8.0),
                       child: Text(
                         selectAllN5 ? NA.t('clearall') : NA.t('selectall'),
@@ -574,8 +581,8 @@ class _SettingsScreenState extends State<SettingsScreen> {
                         ),
                       ),
                     ),
-                  ),
-                ],
+                  ],
+                ),
               ),
               Row(
                 children: [

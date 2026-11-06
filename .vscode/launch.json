@@ -1,16 +1,56 @@
 {
+  // Use IntelliSense to learn about possible attributes.
+  // Hover to view descriptions of existing attributes.
+  // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
   "version": "0.2.0",
   "configurations": [
     {
       "name": "nalelu",
       "request": "launch",
-      "type": "dart"
+      "type": "dart",
+      "flutterMode": "debug",
+       "toolArgs": ["--dart-define=LANG_COACH_API_HOST=http://localhost:5030"]
     },
     {
-      "name": "Perf profile mode",
+      "name": "nalelu - Android Emulator",
       "request": "launch",
       "type": "dart",
-      "flutterMode": "profile"
+      "flutterMode": "debug",
+      "emulatorId": "Pixel6Android16SDK36",
+       "toolArgs": ["--dart-define=LANG_COACH_API_HOST=http://localhost:5030"]
+    },
+    {
+      "name": "nalelu - iPhone Simulator",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "debug",
+      "toolArgs": ["--dart-define=LANG_COACH_API_HOST=http://localhost:5030"],
+      // iPhone 18 Pro Max (iOS 27.0). Keep this ID in sync with tasks.json.
+      "deviceId": "EE4CBEF2-0811-42B2-B7BD-AA617951E5DF",
+    },
+    {
+      "name": "nalelu - Android Physical Device",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "debug",
+      "toolArgs": ["--dart-define=LANG_COACH_API_HOST=https://m23pkt5c-5030.uks1.devtunnels.ms"],
+      "deviceId": "PM1LHMA850901323"
+    },
+    {
+      "name": "nalelu - iPhone Physical Device",
+      "request": "launch",
+      "type": "dart",
+      "flutterMode": "debug",
+      "toolArgs": ["--dart-define=LANG_COACH_API_HOST=https://m23pkt5c-5030.uks1.devtunnels.ms"],
+      // Update this ID from `flutter devices` when switching iPhones.
+      "deviceId": "00008101-000554541168001E"
+    },
+  ],
+  "inputs": [
+    {
+      "id": "androidPhysicalDeviceId",
+      "type": "promptString",
+      "description": "Android physical device ID from flutter devices (USB debugging must be enabled)"
     }
   ]
 }

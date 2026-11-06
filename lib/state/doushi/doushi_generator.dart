@@ -5,7 +5,7 @@ class DoushiGenerator {
   late List<Doushi> bank;
 
   DoushiGenerator(bool isShuffled, List<Doushi> selectedVerbs) {
-    bank = [...selectedVerbs];
+    bank = selectedVerbs.length == 0 ? bank : [...selectedVerbs];
 
     if (isShuffled)
       bank.shuffle(); // TODO: Uncomment once all Kanji exercises are set up
