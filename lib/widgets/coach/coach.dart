@@ -165,7 +165,7 @@ class _CoachState extends State<Coach> {
       resizeToAvoidBottomInset: false,
       appBar: Nrs.NrsAppBar(title: NA.t('coach'), context: context),
       body: Center(
-        child: Expanded(child: _buildContent()),
+        child: _buildContent(),
       ),
     );
   }
