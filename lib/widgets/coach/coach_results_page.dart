@@ -344,7 +344,7 @@ class _FeedbackCard extends StatelessWidget {
       padding: const EdgeInsets.fromLTRB(20, 20, 20, 24),
       decoration: BoxDecoration(
         borderRadius: const BorderRadius.only(
-          topLeft: Radius.circular(4),
+          topLeft: Radius.circular(24),
           topRight: Radius.circular(24),
           bottomLeft: Radius.circular(24),
           bottomRight: Radius.circular(24),
