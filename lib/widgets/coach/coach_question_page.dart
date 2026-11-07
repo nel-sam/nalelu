@@ -56,7 +56,7 @@ class CoachQuestionPage extends StatelessWidget {
                     leading: Icon(isSelected
                         ? Icons.radio_button_checked
                         : Icons.radio_button_unchecked),
-                    title: Text(question.choices[i]),
+                    title: Text(question.choices[i] == 'unknown' ? NA.t('i_dont_know') : question.choices[i]),
                     onTap: () => onSelect(i),
                   ),
                 );

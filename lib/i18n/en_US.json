@@ -828,5 +828,6 @@
   "coach_score_mid": "Nice work!",
   "coach_score_low": "Great start!",
   "coach_score_of": "OUT OF %s",
-  "coach_rate_limited": "You've been busy! Please retry in a few minutes."
+  "coach_rate_limited": "You've been busy! Please retry in a few minutes.",
+  "i_dont_know": "I don't know"
 }
