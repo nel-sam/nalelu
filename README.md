@@ -6,7 +6,7 @@ This is one of the apps from my suite of Language apps; [nalelu](https://github.
 
 [Android Play store listing](https://play.google.com/store/apps/details?id=com.nrsdev.nalelu&hl=en)
 
-<img src="https://github.com/nel-sam/nalelu/blob/master/store assets/nalelu_app_store_header.png" width="600px" />
+<img src="https://raw.githubusercontent.com/nel-sam/nalelu/refs/heads/main/store%20assets/nalelu_app_store_header.png" width="600px" />
 
 ## History and why I built the language apps
 
