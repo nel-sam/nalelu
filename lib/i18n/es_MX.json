@@ -818,7 +818,7 @@
   "coach": "Entrenador",
   "retry": "Reintentar",
   "coach_intro_title": "Descubramos tu nivel",
-  "coach_intro_body": "Te mostraremos algunas preguntas cortas de japonés. Elige la respuesta que te parezca correcta. Si no estás seguro, selecciona \"I don't know\".\n\nNo se aprueba ni se reprueba. Al terminar, tu entrenador te dirá en qué enfocarte.",
+  "coach_intro_body": "Te mostraremos algunas preguntas cortas de japonés. Elige la respuesta que te parezca correcta. Si no estás seguro, selecciona \"No sé\".\n\nNo se aprueba ni se reprueba. Al terminar, tu entrenador te dirá en qué enfocarte.",
   "coach_select_answer": "Selecciona una respuesta para continuar",
   "coach_load_error": "No pudimos cargar las preguntas",
   "coach_getting_results": "Estamos obteniendo tus resultados",

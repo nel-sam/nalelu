@@ -85,6 +85,7 @@ class LangCoachService {
     try {
       response = await request().timeout(timeout);
     } catch (e) {
+      // TODO: do not let this result in showing the user "LangCoachException: Could not ..."
       throw LangCoachException('Could not reach the server');
     }
 
