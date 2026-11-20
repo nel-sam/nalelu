@@ -12,8 +12,8 @@ class LangCoachException implements Exception {
 
   @override
   String toString() => statusCode == null
-      ? 'LangCoachException: $message'
-      : 'LangCoachException: $message ($statusCode)';
+      ? message
+      : '$message ($statusCode)';
 }
 
 class LangCoachService {
@@ -79,7 +79,7 @@ class LangCoachService {
   /// errors and bad statuses surface as a single [LangCoachException].
   Future<dynamic> _send(
     Future<Http.Response> Function() request, {
-    Duration timeout = const Duration(seconds: 10),
+    Duration timeout = const Duration(seconds: 60),
   }) async {
     final Http.Response response;
     try {
