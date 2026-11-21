@@ -40,12 +40,16 @@ class _LoginButtonState extends State<LoginButton> {
             'openid',
             'profile',
             'email',
+            'offline_access',
           ],
         ),
       );
 
+      final idToken = result.idToken;
       final accessToken = result.accessToken;
-      if (accessToken != null) {
+      final refreshToken = result.refreshToken;
+
+      if (idToken != null) {
         isLoggedIn = true;
       }
     } on FlutterAppAuthUserCancelledException catch (e) {

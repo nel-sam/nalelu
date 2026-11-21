@@ -81,9 +81,7 @@ class ExerciseNavNotifier extends ChangeNotifier {
   }
 
   debouncedNotifyListeners() {
-    if (!_debounce.isActive) {
-      _debounce.cancel();
-    }
+    _debounce.cancel();
 
     _debounce = Timer(
         const Duration(milliseconds: DEBOUNCE_TIME), () => notifyListeners());

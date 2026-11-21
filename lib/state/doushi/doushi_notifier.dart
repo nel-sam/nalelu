@@ -1,31 +1,14 @@
-import 'dart:async';
-
 import 'package:flutter/material.dart';
-import 'package:nrs_flutter_lib/constants.dart';
+import 'package:nalelu/state/doushi/doushi_exercise_state.dart';
 
 class DoushiNotifier with ChangeNotifier {
   late Function() _getStateItem;
-  Timer _debounce = Timer(const Duration(milliseconds: 0), () {});
 
   DoushiNotifier(Function() getStateItem) {
     _getStateItem = getStateItem;
   }
 
-  clearInput() {
-    _getStateItem().userInput.clear();
-    deboucedNotifyListeners();
-  }
-
-  deboucedNotifyListeners() {
-    if (!_debounce.isActive) {
-      _debounce.cancel();
-    }
-
-    _debounce = Timer(
-        const Duration(milliseconds: DEBOUNCE_TIME), () => notifyListeners());
-  }
-
-  getActive() {
+  DoushiExerciseState getActive() {
     return _getStateItem();
   }
 }
