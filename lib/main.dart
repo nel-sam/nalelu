@@ -91,31 +91,33 @@ class NaleluApp extends StatelessWidget {
 class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
-    return FutureBuilder(
-        future: getIsFirstTimeSetting(),
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.done) {
-            if ((snapshot.data as bool)) {
-              return NKeyboardMessage(
-                welcomeText: NA.t('welcome_to_nalelu'),
-                detailsText: NA.t('japanese_keyboard_needed'),
-                instructionsButtonText: NA.t('instructions'),
-                continueLinkText: NA.t('continue'),
-                imageUrl: 'assets/banners/slant_keyboard.png',
-                onContinue: () async {
-                  await setFirstTimeSetting();
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(builder: (context) => MainMenu()),
-                  );
-                },
-              );
-            } else {
-              return MainMenu();
-            }
+    return FutureBuilder<bool>(
+      future: getIsFirstTimeSetting(),
+      builder: (context, snapshot) {
+        if (snapshot.connectionState == ConnectionState.done) {
+          if (snapshot.data == true) {
+            return NKeyboardMessage(
+              welcomeText: NA.t('welcome_to_nalelu'),
+              detailsText: NA.t('japanese_keyboard_needed'),
+              instructionsButtonText: NA.t('instructions'),
+              continueLinkText: NA.t('continue'),
+              imageUrl: 'assets/banners/slant_keyboard.png',
+              onContinue: () async {
+                await setFirstTimeSetting();
+                if (!context.mounted) return;
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => MainMenu()),
+                );
+              },
+            );
           } else {
-            return NSpinner();
+            return MainMenu();
           }
-        });
+        } else {
+          return NSpinner();
+        }
+      },
+    );
   }
 }
