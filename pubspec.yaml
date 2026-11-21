@@ -23,6 +23,7 @@ dependencies:
   nrs_flutter_lib:
     path: ../nrs-flutter-lib
   http: ^1.6.0
+  flutter_appauth: ^13.0.0
 
 dev_dependencies:
   flutter_test:

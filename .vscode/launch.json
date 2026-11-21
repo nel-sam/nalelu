@@ -26,7 +26,7 @@
       "flutterMode": "debug",
       "toolArgs": ["--dart-define=LANG_COACH_API_HOST=http://localhost:5030"],
       // iPhone 18 Pro Max (iOS 27.0). Keep this ID in sync with tasks.json.
-      "deviceId": "EE4CBEF2-0811-42B2-B7BD-AA617951E5DF",
+      //"deviceId": "EE4CBEF2-0811-42B2-B7BD-AA617951E5DF",
     },
     {
       "name": "nalelu - Android Physical Device",
