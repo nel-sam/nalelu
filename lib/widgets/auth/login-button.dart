@@ -22,9 +22,22 @@ class _LoginButtonState extends State<LoginButton> {
   }
 
   dynamic _logout(AuthNotifier authNotifier) {
+    if (mounted) {
+      setState(() {
+        isLoading = true;
+      });
+    }
+
     final currentIdToken = authNotifier.state.idToken;
     appAuth.endSession(EndSessionRequest(idTokenHint: currentIdToken));
     authNotifier.logout();
+
+    if (mounted) {
+      setState(() {
+        isLoggedIn = false;
+        isLoading = false;
+      });
+    }
   }
 
   dynamic _login(AuthNotifier authNotifier) async {
@@ -82,9 +95,7 @@ class _LoginButtonState extends State<LoginButton> {
         builder: (context, authNotifier, child) => ElevatedButton(
           onPressed: isLoading
               ? null
-              : isLoggedIn
-                  ? _logout(authNotifier)
-                  : _login(authNotifier),
+              : () => isLoggedIn ? _logout(authNotifier) : _login(authNotifier),
           style: ElevatedButton.styleFrom(minimumSize: Size(180, 40)),
           child: isLoading
               ? const CircularProgressIndicator(
