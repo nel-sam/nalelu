@@ -1,35 +1,33 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_appauth/flutter_appauth.dart';
 import 'package:nalelu/na_helpers.dart';
-import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
-import 'package:nrs_flutter_lib/widgets/n_spinner.dart';
 
-class Login extends StatefulWidget {
-  const Login({Key? key}) : super(key: key);
+class LoginButton extends StatefulWidget {
+  const LoginButton({Key? key}) : super(key: key);
 
   @override
-  State<Login> createState() => _LoginState();
+  State<LoginButton> createState() => _LoginButtonState();
 }
 
-// TODO: This doesn't need to be a full page widget and instead can just
-// be a button that you click to trigger the login popup
-
-class _LoginState extends State<Login> {
-  bool isLoading = true;
+class _LoginButtonState extends State<LoginButton> {
+  bool isLoading = false;
+  bool isLoggedIn = false;
 
   @override
   void initState() {
     super.initState();
-    _login();
-    isLoading = false;
   }
 
   _login() async {
+    setState(() {
+      isLoading = true;
+    });
+
     final FlutterAppAuth appAuth = FlutterAppAuth();
     final clientId = '972db35b-f6ce-464c-a10d-ee59196f29f2';
     final tenantId = 'e338544a-d3eb-47c5-a834-6c82364c3822';
     final subdomain = 'nrsdevlangapp';
-    final redirectUrl = 'nalelu://auth';
+    final redirectUrl = 'nalelu://auth/';
 
     try {
       final result = await appAuth.authorizeAndExchangeCode(
@@ -47,27 +45,27 @@ class _LoginState extends State<Login> {
       );
 
       final accessToken = result.accessToken;
-      final refreshToken = result.refreshToken;
+      if (accessToken != null) {
+        isLoggedIn = true;
+      }
     } on FlutterAppAuthUserCancelledException catch (e) {
       // No need to do anything when the user cancels
     }
+
+    setState(() {
+      isLoading = false;
+    });
   }
 
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: Nrs.NrsAppBar(title: NA.t('login'), context: context),
-      body: Center(
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.center,
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            if (isLoading)
-              NSpinner()
-            else
-              ElevatedButton(onPressed: _login, child: Text(NA.t('login')))
-          ],
-        ),
-      ),
+    return ElevatedButton(
+      onPressed: _login,
+      style: ElevatedButton.styleFrom(minimumSize: Size(180, 40)),
+      child: isLoading
+          ? const CircularProgressIndicator(
+              constraints: BoxConstraints.tightFor(width: 20, height: 20))
+          : Text(isLoggedIn ? NA.t('logout') : NA.t('login')),
     );
   }
 }
