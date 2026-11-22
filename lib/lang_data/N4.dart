@@ -940,7 +940,7 @@ List<Kanji> kanjiN4Bank = [
             FuriText(text: '道', furigana: '？', emphasize: true),
             FuriText(text: 'が'),
             FuriText(text: 'キレイ'),
-            FuriText(text: 'ぐです'),
+            FuriText(text: 'です'),
           ],
           answer: 'みち',
         ),

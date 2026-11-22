@@ -1625,7 +1625,7 @@ List<Kanji> kanjiN5Bank = [
             phraseParts: [
               FuriText(text: '金', furigana: '？', emphasize: true),
               FuriText(text: '曜日', furigana: 'ようび', emphasize: true),
-              FuriText(text: 'にまで'),
+              FuriText(text: 'までに'),
               FuriText(text: '仕事', furigana: 'しごと'),
               FuriText(text: 'します'),
             ],
