@@ -65,6 +65,7 @@ class _LoginButtonState extends State<LoginButton> {
             'email',
             'offline_access',
           ],
+          promptValues: ['login'], // Breaks SSO. Entra ID defaults to proper SSO otherwise
         ),
       );
 
