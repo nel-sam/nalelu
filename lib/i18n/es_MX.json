@@ -831,5 +831,8 @@
   "coach_rate_limited": "¡Has estado ocupado! Inténtalo de nuevo en unos minutos.",
   "i_dont_know": "No sé",
   "login": "Iniciar sesión",
-  "logout": "Cerrar sesión"
+  "logout": "Cerrar sesión",
+  "skip": "Omitir",
+  "login_banner_title": "Haz un seguimiento de tu progreso",
+  "login_banner_details": "Inicia sesión para guardar tu progreso en japonés y recibir consejos personalizados de tu Coach"
 }

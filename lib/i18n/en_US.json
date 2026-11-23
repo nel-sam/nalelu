@@ -831,5 +831,8 @@
   "coach_rate_limited": "You've been busy! Please retry in a few minutes.",
   "i_dont_know": "I don't know",
   "login": "Login",
-  "logout": "Logout"
+  "logout": "Logout",
+  "skip": "Skip",
+  "login_banner_title": "Track your progress",
+  "login_banner_details": "Sign in to save your Japanese progress and get personalized tips from your Coach."
 }

@@ -4,6 +4,8 @@ import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:localization/localization.dart';
 import 'package:nalelu/constants.dart';
 import 'package:nalelu/na_helpers.dart';
+import 'package:nalelu/widgets/auth/login_button.dart';
+import 'package:nalelu/widgets/login_banner_card.dart';
 import 'package:nalelu/widgets/menus/main_menu.dart';
 import 'package:nrs_flutter_lib/themes.dart';
 import 'package:nrs_flutter_lib/widgets/n_keyboard_message.dart';
@@ -89,10 +91,72 @@ class NaleluApp extends StatelessWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
+  late final Future<bool> _isFirstTimeFuture = getIsFirstTimeSetting();
+  bool _showLoginBanner = false;
+  bool _enteredMainMenu = false;
+
+  void _openMainMenu() {
+    setState(() {
+      _showLoginBanner = false;
+      _enteredMainMenu = true;
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
+    if (_enteredMainMenu) {
+      return MainMenu();
+    }
+
+    if (_showLoginBanner) {
+      final colorScheme = Theme.of(context).colorScheme;
+      final isDark = Theme.of(context).brightness == Brightness.dark;
+
+      return Scaffold(
+        body: Container(
+          decoration: BoxDecoration(
+            gradient: LinearGradient(
+              begin: Alignment.topLeft,
+              end: Alignment.bottomRight,
+              colors: isDark
+                  ? [
+                      colorScheme.surface,
+                      colorScheme.primary.withValues(alpha: 0.12),
+                    ]
+                  : [
+                      colorScheme.surface,
+                      colorScheme.primary.withValues(alpha: 0.08),
+                    ],
+            ),
+          ),
+          child: SafeArea(
+            child: LayoutBuilder(
+              builder: (context, constraints) {
+                return SingleChildScrollView(
+                  child: ConstrainedBox(
+                    constraints:
+                        BoxConstraints(minHeight: constraints.maxHeight),
+                    child: Center(
+                      child: LoginBannerCard(
+                        titleText: NA.t('login_banner_title'),
+                        detailsText: NA.t('login_banner_details'),
+                        loginButton: const LoginButton(),
+                        skipButtonText: NA.t('skip'),
+                        onSkip: _openMainMenu,
+                        onDismiss: _openMainMenu,
+                      ),
+                    ),
+                  ),
+                );
+              },
+            ),
+          ),
+        ),
+      );
+    }
+
     return FutureBuilder<bool>(
-      future: getIsFirstTimeSetting(),
+      future: _isFirstTimeFuture,
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
           if (snapshot.data == true) {
@@ -105,10 +169,9 @@ class _MyHomePageState extends State<MyHomePage> {
               onContinue: () async {
                 await setFirstTimeSetting();
                 if (!context.mounted) return;
-                Navigator.push(
-                  context,
-                  MaterialPageRoute(builder: (context) => MainMenu()),
-                );
+                setState(() {
+                  _showLoginBanner = true;
+                });
               },
             );
           } else {

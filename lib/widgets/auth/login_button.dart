@@ -104,7 +104,16 @@ class _LoginButtonState extends State<LoginButton> {
           onPressed: isLoading
               ? null
               : () => isLoggedIn ? _logout(authNotifier) : _login(authNotifier),
-          style: ElevatedButton.styleFrom(minimumSize: Size(180, 40)),
+          style: ElevatedButton.styleFrom(
+            backgroundColor: Theme.of(context).colorScheme.primary,
+            foregroundColor: Theme.of(context).colorScheme.onPrimary,
+            elevation: 0,
+            minimumSize: const Size(110, 42),
+            padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 12),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(8),
+            ),
+          ),
           child: isLoading
               ? const CircularProgressIndicator(
                   constraints: BoxConstraints.tightFor(width: 20, height: 20))
