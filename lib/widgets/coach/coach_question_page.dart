@@ -13,6 +13,8 @@ class CoachQuestionPage extends StatefulWidget {
   final VoidCallback onPrevious;
   final VoidCallback onNext;
   final bool nextEnabled;
+  final bool previousEnabled;
+  final bool clearEnabled;
 
   const CoachQuestionPage({
     Key? key,
@@ -23,6 +25,8 @@ class CoachQuestionPage extends StatefulWidget {
     required this.onPrevious,
     required this.onNext,
     this.nextEnabled = true,
+    this.previousEnabled = true,
+    this.clearEnabled = true,
   }) : super(key: key);
 
   @override
@@ -31,7 +35,12 @@ class CoachQuestionPage extends StatefulWidget {
 
 class _CoachQuestionPageState extends State<CoachQuestionPage> {
   int startReplaceIndex = -1;
-  int replaceLength = -1;
+  int replaceLength = 1;
+
+  void clearReplaceState() {
+    startReplaceIndex = -1;
+    replaceLength = 1;
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -40,11 +49,18 @@ class _CoachQuestionPageState extends State<CoachQuestionPage> {
       child: Column(
         children: [
           NNavigationHeader(
-            setPrevious: widget.onPrevious,
-            setNext: widget.onNext,
+            setPrevious: () {
+              clearReplaceState();
+              widget.onPrevious();
+            },
+            setNext: () {
+              clearReplaceState();
+              widget.onNext();
+            },
             clear: () {
               replaceBlankWith([FuriText(text: questionBlank)]);
               widget.onSelect(null);
+              clearReplaceState();
             },
             getProgressPercentage: () => widget.progressPercentage,
             previousText: NA.t('previous'),
@@ -52,6 +68,8 @@ class _CoachQuestionPageState extends State<CoachQuestionPage> {
             clearText: NA.t('clear'),
             exerciseText: NA.t('exercise'),
             nextEnabled: widget.nextEnabled,
+            previousEnabled: widget.previousEnabled,
+            clearEnabled: widget.clearEnabled,
           ),
           FuriganaText(furiTexts: widget.question.questionParts),
           Expanded(
@@ -96,17 +114,17 @@ class _CoachQuestionPageState extends State<CoachQuestionPage> {
   }
 
   void replaceBlankWith(Iterable<FuriText> replaceWith) {
-    // Cleanup previous
-    if (replaceLength == -1 && startReplaceIndex == -1) {
-      startReplaceIndex = widget.question.questionParts
-          .indexWhere((qp) => qp.text == questionBlank);
-      widget.question.questionParts.removeAt(startReplaceIndex);
-    } else {
-      for (int i = startReplaceIndex + replaceLength - 1;
-          i >= startReplaceIndex;
-          i--) {
-        widget.question.questionParts.removeAt(i);
-      }
+    // Cleanup previous replacements
+    startReplaceIndex = widget.question.questionParts
+        .indexWhere((qp) => qp.emphasize == true || qp.text == questionBlank);
+
+    if (widget.question.questionParts[startReplaceIndex].text == questionBlank) {
+      replaceLength = 1;
+    }
+
+    // Remove old replacements in reverse order
+    for (int i = replaceLength - 1; i >= 0; i--) {
+      widget.question.questionParts.removeAt(startReplaceIndex + i);
     }
 
     // Insert new ones
