@@ -13,6 +13,10 @@ class LoginButton extends StatefulWidget {
 
 class _LoginButtonState extends State<LoginButton> {
   final FlutterAppAuth appAuth = FlutterAppAuth();
+  final clientId = '972db35b-f6ce-464c-a10d-ee59196f29f2';
+  final redirectUrl = 'nalelu://auth/';
+  final discoveryUrl =
+      'https://nrsdevlangapp.ciamlogin.com/e338544a-d3eb-47c5-a834-6c82364c3822/v2.0/.well-known/openid-configuration';
   bool isLoading = false;
   bool isLoggedIn = false;
 
@@ -21,7 +25,7 @@ class _LoginButtonState extends State<LoginButton> {
     super.initState();
   }
 
-  dynamic _logout(AuthNotifier authNotifier) {
+  dynamic _logout(AuthNotifier authNotifier) async {
     if (mounted) {
       setState(() {
         isLoading = true;
@@ -29,7 +33,12 @@ class _LoginButtonState extends State<LoginButton> {
     }
 
     final currentIdToken = authNotifier.state.idToken;
-    appAuth.endSession(EndSessionRequest(idTokenHint: currentIdToken));
+    final response = await appAuth.endSession(EndSessionRequest(
+      idTokenHint: currentIdToken,
+      //discoveryUrl: discoveryUrl,
+    ));
+
+    print(response);
     authNotifier.logout();
 
     if (mounted) {
@@ -47,25 +56,23 @@ class _LoginButtonState extends State<LoginButton> {
       });
     }
 
-    final clientId = '972db35b-f6ce-464c-a10d-ee59196f29f2';
-    final tenantId = 'e338544a-d3eb-47c5-a834-6c82364c3822';
-    final subdomain = 'nrsdevlangapp';
-    final redirectUrl = 'nalelu://auth/';
-
     try {
       final result = await appAuth.authorizeAndExchangeCode(
         AuthorizationTokenRequest(
           clientId,
           redirectUrl,
-          discoveryUrl:
-              'https://${subdomain}.ciamlogin.com/${tenantId}/v2.0/.well-known/openid-configuration',
+          discoveryUrl: discoveryUrl,
           scopes: [
             'openid',
             'profile',
             'email',
             'offline_access',
           ],
-          promptValues: ['login'], // Breaks SSO. Entra ID defaults to proper SSO otherwise
+          promptValues: [
+            'login'
+          ], // Breaks SSO. Entra ID defaults to proper SSO otherwise
+          externalUserAgent:
+              ExternalUserAgent.ephemeralAsWebAuthenticationSession,
         ),
       );
 
