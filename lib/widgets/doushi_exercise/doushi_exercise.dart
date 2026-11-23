@@ -13,12 +13,11 @@ import 'package:nrs_flutter_lib/widgets/n_footer_button.dart';
 import 'package:nrs_flutter_lib/widgets/n_footer_menu.dart';
 import 'package:provider/provider.dart';
 
-class DoushiExerciseLevel1 extends StatelessWidget {
+class DoushiExerciseLevel extends StatelessWidget {
   final bool verbShuffle;
   final List<Doushi> selectedVerbs;
 
-  DoushiExerciseLevel1(
-      {required this.verbShuffle, required this.selectedVerbs});
+  DoushiExerciseLevel({required this.verbShuffle, required this.selectedVerbs});
   //
 
   @override

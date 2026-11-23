@@ -22,41 +22,23 @@ class FuriganaText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
-        mainAxisSize: MainAxisSize.min,
-        mainAxisAlignment: MainAxisAlignment.center,
-        children: [
-          for (var i in furiTexts)
-            Column(mainAxisSize: MainAxisSize.max, children: [
-              Container(
-                height: i.furigana.length == 0 ? fontSize * 1.0 : fontSize,
-                child: Center(
-                  child: Text(
-                    showFurigana
-                        ? i.furigana == '？' && isCorrect
-                            ? subtractChars(answer, furiTexts)
-                            : i.furigana
-                        : '',
-                    textAlign: TextAlign.center,
-                    style: TextStyle(
-                      fontSize: fontSize * 0.7,
-                      fontWeight:
-                          i.emphasize ? FontWeight.bold : FontWeight.normal,
-                      color: i.emphasize
-                          ? isCorrect
-                              ? Colors.green
-                              : Theme.of(context).colorScheme.primary
-                          : textColor,
-                    ),
-                  ),
-                ),
-              ),
-              Center(
+    return Wrap(
+      children: [
+        for (var i in furiTexts)
+          Column(
+            mainAxisSize: MainAxisSize.max,
+            children: [
+              SizedBox(
+                height: i.furigana.isEmpty ? fontSize * 1.0 : fontSize,
                 child: Text(
-                  i.text,
-                  textAlign: TextAlign.start,
+                  showFurigana
+                      ? i.furigana == '？' && isCorrect
+                          ? subtractChars(answer, furiTexts)
+                          : i.furigana
+                      : '',
+                  textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontSize: fontSize * 1.2,
+                    fontSize: fontSize * 0.7,
                     fontWeight:
                         i.emphasize ? FontWeight.bold : FontWeight.normal,
                     color: i.emphasize
@@ -67,8 +49,23 @@ class FuriganaText extends StatelessWidget {
                   ),
                 ),
               ),
-            ])
-        ]);
+              Text(
+                i.text,
+                textAlign: TextAlign.start,
+                style: TextStyle(
+                  fontSize: fontSize * 1.2,
+                  fontWeight: i.emphasize ? FontWeight.bold : FontWeight.normal,
+                  color: i.emphasize
+                      ? isCorrect
+                          ? Colors.green
+                          : Theme.of(context).colorScheme.primary
+                      : textColor,
+                ),
+              ),
+            ],
+          )
+      ],
+    );
   }
 
   String subtractChars(String answer, List<FuriText> furigana) {

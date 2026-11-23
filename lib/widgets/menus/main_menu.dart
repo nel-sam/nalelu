@@ -35,12 +35,12 @@ class MainMenu extends StatelessWidget {
                       label: NA.t('coach'),
                       translabel: [FuriText(text: 'コーチ', furigana: 'こーち')],
                     ),
-                    NAMenuButton(
-                      destination:
-                          SettingsScreen(exerciseType: ExerciseType.Manga),
-                      label: NA.t('manga'),
-                      translabel: [FuriText(text: '漫画', furigana: 'まんが')],
-                    ),
+                    // NAMenuButton(
+                    //   destination:
+                    //       SettingsScreen(exerciseType: ExerciseType.Manga),
+                    //   label: NA.t('manga'),
+                    //   translabel: [FuriText(text: '漫画', furigana: 'まんが')],
+                    // ),
                     NAMenuButton(
                       destination: NumbersMenu(),
                       label: NA.t('numbersExercise'),

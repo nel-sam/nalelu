@@ -5,7 +5,7 @@ import 'package:nalelu/lang_data/N5.dart';
 import 'package:nalelu/lang_data/doushi.dart';
 import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/state/enums.dart';
-import 'package:nalelu/widgets/doushi_exercise/doushi_exercise_1.dart';
+import 'package:nalelu/widgets/doushi_exercise/doushi_exercise.dart';
 import 'package:nalelu/widgets/kanji.dart';
 import 'package:nalelu/widgets/kanji_exercise/kanji_exercise.dart';
 import 'package:nalelu/widgets/manga_exercise/manga_exercise.dart';
@@ -342,7 +342,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
           ),
         SizedBox(height: 20),
         NAMenuButton(
-          destination: DoushiExerciseLevel1(
+          destination: DoushiExerciseLevel(
               selectedVerbs: selectedVerbs, verbShuffle: verbShuffle),
           label: NA.t('start'),
           translabel: [

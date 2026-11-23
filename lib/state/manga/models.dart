@@ -29,3 +29,4 @@ class PhrasePart {
     required this.furiTexts,
   });
 }
+

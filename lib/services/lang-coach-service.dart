@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:http/http.dart' as Http;
 import 'package:nalelu/constants.dart';
-import 'package:nalelu/services/coach_question.dart';
 import 'package:nalelu/services/coach_result.dart';
 
 class LangCoachException implements Exception {
@@ -11,9 +10,7 @@ class LangCoachException implements Exception {
   LangCoachException(this.message, {this.statusCode});
 
   @override
-  String toString() => statusCode == null
-      ? message
-      : '$message ($statusCode)';
+  String toString() => statusCode == null ? message : '$message ($statusCode)';
 }
 
 class LangCoachService {
@@ -28,17 +25,20 @@ class LangCoachService {
     client.close();
   }
 
-  Future<List<CoachQuestion>> getQuestions({String lang = 'jp'}) async {
-    final uri = Uri.parse('$baseUrl/api/questions/$lang');
-    final decoded = await _send(() => client.get(uri, headers: _headers));
+  // TODO: change this to just get a list of tested-abilities to include
+  // in the questions
+  Future getQuestions({String lang = 'jp'}) async {
+    return null;
+    // final uri = Uri.parse('$baseUrl/api/questions/$lang');
+    // final decoded = await _send(() => client.get(uri, headers: _headers));
 
-    if (decoded is! List) {
-      throw LangCoachException('GET $uri: expected a JSON array');
-    }
+    // if (decoded is! List) {
+    //   throw LangCoachException('GET $uri: expected a JSON array');
+    // }
 
-    return decoded
-        .map((item) => CoachQuestion.fromJson(item as Map<String, dynamic>))
-        .toList();
+    // return decoded
+    //     .map((item) => CoachQuestion.fromJson(item as Map<String, dynamic>))
+    //     .toList();
   }
 
   /// Sends the user's answers and returns the coach's written feedback.
@@ -94,7 +94,8 @@ class LangCoachService {
     }
 
     if (response.statusCode < 200 || response.statusCode >= 300) {
-      throw LangCoachException('Request failed', statusCode: response.statusCode);
+      throw LangCoachException('Request failed',
+          statusCode: response.statusCode);
     }
 
     return jsonDecode(utf8.decode(response.bodyBytes));

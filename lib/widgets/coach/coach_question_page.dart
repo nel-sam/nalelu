@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:nalelu/furi_text.dart';
 import 'package:nalelu/na_helpers.dart';
-import 'package:nalelu/services/coach_question.dart';
+import 'package:nalelu/lang_data/coach/coach_questions.dart';
+import 'package:nalelu/widgets/shared/furigana_text.dart';
 import 'package:nrs_flutter_lib/widgets/n_navigation_header.dart';
 
-class CoachQuestionPage extends StatelessWidget {
+class CoachQuestionPage extends StatefulWidget {
   final CoachQuestion question;
   final int? selectedChoice;
   final double progressPercentage;
   final ValueChanged<int?> onSelect;
   final VoidCallback onPrevious;
   final VoidCallback onNext;
+  final bool nextEnabled;
 
   const CoachQuestionPage({
     Key? key,
@@ -19,7 +22,16 @@ class CoachQuestionPage extends StatelessWidget {
     required this.onSelect,
     required this.onPrevious,
     required this.onNext,
+    this.nextEnabled = true,
   }) : super(key: key);
+
+  @override
+  State<CoachQuestionPage> createState() => _CoachQuestionPageState();
+}
+
+class _CoachQuestionPageState extends State<CoachQuestionPage> {
+  int startReplaceIndex = -1;
+  int replaceLength = -1;
 
   @override
   Widget build(BuildContext context) {
@@ -28,36 +40,51 @@ class CoachQuestionPage extends StatelessWidget {
       child: Column(
         children: [
           NNavigationHeader(
-            setPrevious: onPrevious,
-            setNext: onNext,
-            clear: () => onSelect(null),
-            getProgressPercentage: () => progressPercentage,
+            setPrevious: widget.onPrevious,
+            setNext: widget.onNext,
+            clear: () {
+              replaceBlankWith([FuriText(text: questionBlank)]);
+              widget.onSelect(null);
+            },
+            getProgressPercentage: () => widget.progressPercentage,
             previousText: NA.t('previous'),
             nextText: NA.t('next'),
             clearText: NA.t('clear'),
             exerciseText: NA.t('exercise'),
+            nextEnabled: widget.nextEnabled,
           ),
-          Padding(
-            padding: const EdgeInsets.symmetric(vertical: 16),
-            child: Text(
-              question.question,
-              textAlign: TextAlign.center,
-              style: const TextStyle(fontSize: 24),
-            ),
-          ),
+          FuriganaText(furiTexts: widget.question.questionParts),
           Expanded(
             child: ListView.builder(
-              itemCount: question.choices.length,
+              itemCount: widget.question.choices.length,
               itemBuilder: (context, i) {
-                final isSelected = selectedChoice == i;
+                final isSelected = widget.selectedChoice == i;
                 return Card(
                   child: ListTile(
-                    selected: isSelected,
                     leading: Icon(isSelected
                         ? Icons.radio_button_checked
                         : Icons.radio_button_unchecked),
-                    title: Text(question.choices[i] == 'unknown' ? NA.t('i_dont_know') : question.choices[i]),
-                    onTap: () => onSelect(i),
+                    title: widget.question.choices[i].first.text ==
+                            unknownTranslationKey
+                        ? Text(NA.t('i_dont_know'))
+                        : FuriganaText(furiTexts: widget.question.choices[i]),
+                    onTap: () {
+                      if (widget.question.choices[i].first.text ==
+                          unknownTranslationKey) {
+                        replaceBlankWith([FuriText(text: questionBlank)]);
+                      } else {
+                        final replaceWith = widget.question.choices[i].map(
+                          (c) => FuriText(
+                              text: c.text,
+                              furigana: c.furigana,
+                              emphasize: true),
+                        );
+
+                        replaceBlankWith(replaceWith);
+                      }
+
+                      widget.onSelect(i);
+                    },
                   ),
                 );
               },
@@ -66,5 +93,28 @@ class CoachQuestionPage extends StatelessWidget {
         ],
       ),
     );
+  }
+
+  void replaceBlankWith(Iterable<FuriText> replaceWith) {
+    // Cleanup previous
+    if (replaceLength == -1 && startReplaceIndex == -1) {
+      startReplaceIndex = widget.question.questionParts
+          .indexWhere((qp) => qp.text == questionBlank);
+      widget.question.questionParts.removeAt(startReplaceIndex);
+    } else {
+      for (int i = startReplaceIndex + replaceLength - 1;
+          i >= startReplaceIndex;
+          i--) {
+        widget.question.questionParts.removeAt(i);
+      }
+    }
+
+    // Insert new ones
+    widget.question.questionParts.insertAll(
+      startReplaceIndex,
+      replaceWith,
+    );
+
+    replaceLength = replaceWith.length;
   }
 }

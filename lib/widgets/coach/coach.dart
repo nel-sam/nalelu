@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:nalelu/furi_text.dart';
 import 'package:nalelu/na_helpers.dart';
-import 'package:nalelu/services/coach_question.dart';
+import 'package:nalelu/lang_data/coach/coach_questions.dart';
 import 'package:nalelu/services/coach_result.dart';
 import 'package:nalelu/services/lang-coach-service.dart';
 import 'package:nalelu/widgets/coach/coach_error.dart';
@@ -42,24 +43,40 @@ class _CoachState extends State<Coach> {
   @override
   void dispose() {
     _service.dispose();
+    _questions = null;
     super.dispose();
   }
 
   void _loadQuestions() {
     setState(() {
       _questions = null;
-      _loadError = null;
     });
 
-    _service.getQuestions().then((questions) {
-      if (!mounted) return;
+    coachQuestionBank.then((questions) {
+      final questionCount = 7 + (DateTime.now().millisecondsSinceEpoch % 5);
+      final selectedQuestions = questions.toList()..shuffle();
+
       setState(() {
-        _questions = questions;
-        _selected = List<int?>.filled(questions.length, null);
+        _questions = [
+          ...selectedQuestions.take(questionCount).map((q) => CoachQuestion(
+              questionParts: q.questionParts
+                  .map((qp) => FuriText(text: qp.text, furigana: qp.furigana))
+                  .toList(),
+              correctAnswerIndex: q.correctAnswerIndex,
+              choices: [
+                ...q.choices,
+                [FuriText(text: unknownTranslationKey)]
+              ],
+              testedAbilities: q.testedAbilities))
+        ];
+        _selected = List<int?>.filled(_questions!.length, null);
+        _loadError = null;
       });
-    }).catchError((Object error) {
-      if (!mounted) return;
-      setState(() => _loadError = error);
+    }).catchError((e) {
+      setState(() {
+        _loadError = e;
+        _questions = null;
+      });
     });
   }
 
@@ -106,9 +123,13 @@ class _CoachState extends State<Coach> {
     _answers = [
       for (var i = 0; i < _questions!.length; i++)
         CoachAnswer(
-          question: _questions![i].question,
-          correctAnswer: _questions![i].correctAnswer,
-          givenAnswer: _questions![i].choices[_selected[i]!],
+          question: _questions![i].questionParts.map((qp) => qp.text).join(),
+          correctAnswer: _questions![i]
+              .choices[_questions![i].correctAnswerIndex]
+              .map((qp) => qp.text)
+              .join(),
+          givenAnswer:
+              _questions![i].choices[_selected[i]!].map((qp) => qp.text).join(),
         ),
     ];
 
@@ -149,6 +170,7 @@ class _CoachState extends State<Coach> {
           onSelect: _select,
           onPrevious: _previous,
           onNext: _next,
+          nextEnabled: _selected[_index] != null,
         );
       case _CoachPage.results:
         return CoachResultsPage(
