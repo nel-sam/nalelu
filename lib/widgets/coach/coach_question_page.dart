@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:nalelu/furi_text.dart';
 import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/lang_data/coach/coach_questions.dart';
+import 'package:nalelu/services/furigana_service.dart';
 import 'package:nalelu/widgets/shared/furigana_text.dart';
 import 'package:nrs_flutter_lib/widgets/n_navigation_header.dart';
 

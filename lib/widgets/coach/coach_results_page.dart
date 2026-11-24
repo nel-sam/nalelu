@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:nalelu/furi_text.dart';
 import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/services/coach_result.dart';
 import 'package:nalelu/widgets/coach/coach_error.dart';
@@ -115,7 +116,7 @@ class _LoadingViewState extends State<_LoadingView>
 
 class _FeedbackView extends StatefulWidget {
   final List<CoachAnswer> answers;
-  final String feedback;
+  final List<FuriText> feedback;
 
   const _FeedbackView({required this.answers, required this.feedback});
 
@@ -331,7 +332,7 @@ class _ScoreRing extends StatelessWidget {
 
 /// The coach's feedback, presented as a shaded speech bubble.
 class _FeedbackCard extends StatelessWidget {
-  final String feedback;
+  final List<FuriText> feedback;
 
   const _FeedbackCard({required this.feedback});
 
@@ -376,10 +377,11 @@ class _FeedbackCard extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 12),
-          Text(
-            feedback,
-            style: NA.fontStyleNormal(context).copyWith(height: 1.5),
-          ),
+          
+          // Text(
+          //   feedback,
+          //   style: NA.fontStyleNormal(context).copyWith(height: 1.5),
+          // ),
         ],
       ),
     );

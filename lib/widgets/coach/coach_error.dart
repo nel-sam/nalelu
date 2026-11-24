@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:nalelu/na_helpers.dart';
-import 'package:nalelu/services/lang-coach-service.dart';
+import 'package:nalelu/services/lang_coach_service.dart';
 
 /// Friendly error view with a retry button, shared by the question-loading
 /// and results-fetching states of the Coach.

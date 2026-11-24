@@ -4,7 +4,7 @@ import 'package:flutter_test/flutter_test.dart';
 import 'package:http/http.dart' as http;
 import 'package:http/testing.dart';
 import 'package:nalelu/services/coach_result.dart';
-import 'package:nalelu/services/lang-coach-service.dart';
+import 'package:nalelu/services/lang_coach_service.dart';
 
 void main() {
   group('LangCoachService', () {

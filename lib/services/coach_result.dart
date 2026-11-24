@@ -1,3 +1,6 @@
+import 'package:nalelu/furi_text.dart';
+import 'package:nalelu/services/furigana_service.dart';
+
 /// One answered question, serialized as an item of the `Results` array
 /// sent to `POST /api/results`.
 class CoachAnswer {
@@ -22,7 +25,7 @@ class CoachAnswer {
 
 /// Response body of `POST /api/results`.
 class CoachFeedback {
-  final String feedback;
+  final List<FuriText> feedback;
 
   const CoachFeedback({required this.feedback});
 
@@ -32,6 +35,8 @@ class CoachFeedback {
       throw FormatException(
           'Expected "feedback" to be a string, got: $feedback');
     }
-    return CoachFeedback(feedback: feedback);
+
+    final asFuriTexts = FuriganaService.formattedStringToFuriTexts(feedback);
+    return CoachFeedback(feedback: asFuriTexts);
   }
 }
