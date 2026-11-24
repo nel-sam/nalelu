@@ -1590,7 +1590,7 @@ List<Kanji> kanjiN4Bank = [
               FuriText(text: '画面', furigana: 'がめん'),
               FuriText(text: 'が'),
               FuriText(text: '明', furigana: '？', emphasize: true),
-              FuriText(text: 'かるい', emphasize: true),
+              FuriText(text: 'るい', emphasize: true),
             ],
             answer: 'あかるい'),
         PhraseAnswer(
@@ -1617,9 +1617,9 @@ List<Kanji> kanjiN4Bank = [
               FuriText(text: '人', furigana: 'ひと'),
               FuriText(text: 'が'),
               FuriText(text: '多', furigana: '？', emphasize: true),
-              FuriText(text: 'いい', emphasize: true),
+              FuriText(text: 'い', emphasize: true),
             ],
-            answer: 'おおいい'),
+            answer: 'おおい'),
         PhraseAnswer(
             translation: NA.t('karehatabunkonai'),
             phraseParts: [
@@ -1733,7 +1733,7 @@ List<Kanji> kanjiN4Bank = [
               FuriText(text: '赤', furigana: '？', emphasize: true),
               FuriText(text: 'ちゃん', emphasize: true),
               FuriText(text: 'が'),
-              FuriText(text: '小', furigana: 'ち'),
+              FuriText(text: '小', furigana: 'ちい'),
               FuriText(text: 'さい'),
             ],
             answer: 'あかちゃん'),
