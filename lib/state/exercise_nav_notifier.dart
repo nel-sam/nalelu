@@ -1,6 +1,6 @@
 import 'dart:async';
 
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:nalelu/constants.dart';
 import 'package:nalelu/state/doushi/doushi_generator.dart';
 import 'package:nalelu/state/enums.dart';

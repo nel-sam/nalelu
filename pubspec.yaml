@@ -25,6 +25,8 @@ dependencies:
   http: ^1.6.0
   flutter_appauth: ^13.0.0
 
+  material_ui: any
+  cupertino_ui: any
 dev_dependencies:
   flutter_test:
     sdk: flutter

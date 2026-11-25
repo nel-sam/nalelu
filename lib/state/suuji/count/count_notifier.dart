@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:nalelu/state/suuji/count/count_exercise_state.dart';
 
 class CountNotifier with ChangeNotifier {

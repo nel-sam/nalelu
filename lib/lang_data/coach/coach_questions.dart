@@ -1,6 +1,5 @@
 import 'dart:core';
 import 'dart:convert';
-import 'package:flutter/services.dart' show rootBundle;
 import 'package:nalelu/furi_text.dart';
 import 'package:nalelu/services/furigana_service.dart';
 
@@ -21,12 +20,10 @@ class CoachQuestion {
 List<CoachQuestion>? _cachedQuestions;
 
 // Lazy parser pattern
-Future<List<CoachQuestion>> get coachQuestionBank async {
+Future<List<CoachQuestion>> getCoachQuestionBank(String questionDataJson) async {
   if (_cachedQuestions != null) return _cachedQuestions!;
 
-  final jsonString =
-      await rootBundle.loadString('lib/lang_data/coach/question-data.json');
-  final jsonData = jsonDecode(jsonString) as List<dynamic>;
+  final jsonData = jsonDecode(questionDataJson) as List<dynamic>;
 
   _cachedQuestions = jsonData.map((item) {
     final question = item['question'] as String;

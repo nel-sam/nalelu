@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 
 const AGE_EXERCISE_COUNT = 10;
 const MANGA_EXERCISE_COUNT = 10;

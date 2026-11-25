@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:nalelu/furi_text.dart';
 import 'package:nalelu/lang_data/N4.dart';
 import 'package:nalelu/lang_data/N5.dart';

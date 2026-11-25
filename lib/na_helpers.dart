@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:localization/localization.dart';
 import 'package:nalelu/lang_data/numbers.dart';
 import 'package:nrs_flutter_lib/constants.dart';

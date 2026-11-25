@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/state/exercise_nav_notifier.dart';
 import 'package:nrs_flutter_lib/widgets/n_navigation_header.dart';

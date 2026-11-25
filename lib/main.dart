@@ -1,9 +1,12 @@
-import 'package:flutter/material.dart';
+import 'package:cupertino_ui/cupertino_ui.dart'
+    hide GlobalCupertinoLocalizations;
+import 'package:material_ui/material_ui.dart' hide GlobalMaterialLocalizations;
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:localization/localization.dart';
 import 'package:nalelu/constants.dart';
 import 'package:nalelu/na_helpers.dart';
+import 'package:nalelu/nal_themes.dart';
 import 'package:nalelu/widgets/auth/login_button.dart';
 import 'package:nalelu/widgets/login_banner_card.dart';
 import 'package:nalelu/widgets/menus/main_menu.dart';
@@ -34,18 +37,16 @@ Future setFirstTimeSetting() async {
   preferences.setBool("isFirstTime", false);
 }
 
-class MyHomePage extends StatefulWidget {
-  MyHomePage({Key? key}) : super(key: key);
+class NaleluHomePage extends StatefulWidget {
+  NaleluHomePage({Key? key}) : super(key: key);
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _NaleluHomePageState createState() => _NaleluHomePageState();
 }
 
 class NaleluApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    final primaryColor = Colors.deepOrange;
-
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         title: APP_NAME,
@@ -59,38 +60,14 @@ class NaleluApp extends StatelessWidget {
           const Locale('en', 'US'),
           const Locale('es', 'MX'),
         ],
-        theme: ThemeData(
-          brightness: Brightness.light,
-          colorScheme: ColorScheme.light(
-            primary: primaryColor,
-            onPrimary: Colors.white,
-          ),
-          textTheme: nrsTextTheme,
-          appBarTheme: nrsAppBarThemeLight,
-        ),
-        darkTheme: ThemeData(
-            brightness: Brightness.dark,
-            colorScheme: ColorScheme.dark(
-              primary: primaryColor,
-              onPrimary: Colors.white,
-            ),
-            appBarTheme: nrsAppBarThemeDark,
-            textTheme: nrsTextTheme,
-            switchTheme: SwitchThemeData(
-                thumbColor: WidgetStateProperty.resolveWith((states) =>
-                    states.contains(WidgetState.selected)
-                        ? primaryColor
-                        : null),
-                trackColor: WidgetStateProperty.resolveWith((states) =>
-                    states.contains(WidgetState.selected)
-                        ? primaryColor.withValues(alpha: 0.4)
-                        : null))),
+        theme: naleluLightTheme,
+        darkTheme: naleluDarkTheme,
         themeMode: ThemeMode.system,
-        home: MyHomePage());
+        home: NaleluHomePage());
   }
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _NaleluHomePageState extends State<NaleluHomePage> {
   late final Future<bool> _isFirstTimeFuture = getIsFirstTimeSetting();
   bool _showLoginBanner = false;
   bool _enteredMainMenu = false;

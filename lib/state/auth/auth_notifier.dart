@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:nalelu/state/auth/auth_state.dart';
 
 class AuthNotifier extends ChangeNotifier {

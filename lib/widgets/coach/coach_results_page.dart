@@ -1,8 +1,9 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:nalelu/furi_text.dart';
 import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/services/coach_result.dart';
 import 'package:nalelu/widgets/coach/coach_error.dart';
+import 'package:nalelu/widgets/shared/furigana_text.dart';
 
 class CoachResultsPage extends StatelessWidget {
   final List<CoachAnswer> answers;
@@ -377,11 +378,10 @@ class _FeedbackCard extends StatelessWidget {
             ],
           ),
           const SizedBox(height: 12),
-          
-          // Text(
-          //   feedback,
-          //   style: NA.fontStyleNormal(context).copyWith(height: 1.5),
-          // ),
+          FuriganaText(
+            fontSize: 14,
+            furiTexts: feedback,
+          ),
         ],
       ),
     );
