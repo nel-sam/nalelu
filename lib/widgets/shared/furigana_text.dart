@@ -34,7 +34,7 @@ class FuriganaText extends StatelessWidget {
           else
             Column(
               mainAxisSize: MainAxisSize.max,
-              crossAxisAlignment: CrossAxisAlignment.end,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
                 Text(
                   showFurigana

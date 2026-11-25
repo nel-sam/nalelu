@@ -15,6 +15,8 @@ import 'package:widgetbook/widgetbook.dart' as _widgetbook;
 import 'package:widgetbook_workspace/coach.dart' as _widgetbook_workspace_coach;
 import 'package:widgetbook_workspace/coach_results_page.dart'
     as _widgetbook_workspace_coach_results_page;
+import 'package:widgetbook_workspace/furigana_text.dart'
+    as _widgetbook_workspace_furigana_text;
 
 final directories = <_widgetbook.WidgetbookNode>[
   _widgetbook.WidgetbookFolder(
@@ -38,6 +40,21 @@ final directories = <_widgetbook.WidgetbookNode>[
               _widgetbook.WidgetbookUseCase(
                 name: 'Default',
                 builder: _widgetbook_workspace_coach_results_page
+                    .buildCoachFeedbackUseCase,
+              ),
+            ],
+          ),
+        ],
+      ),
+      _widgetbook.WidgetbookFolder(
+        name: 'shared',
+        children: [
+          _widgetbook.WidgetbookComponent(
+            name: 'FuriganaText',
+            useCases: [
+              _widgetbook.WidgetbookUseCase(
+                name: 'Default',
+                builder: _widgetbook_workspace_furigana_text
                     .buildCoachFeedbackUseCase,
               ),
             ],
