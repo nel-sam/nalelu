@@ -36,17 +36,24 @@ class FuriganaService {
     for (int lineIdx = 0; lineIdx < lines.length; lineIdx++) {
       final line = lines[lineIdx];
 
-      // Match words (non-whitespace) followed by optional spaces (but not newlines)
-      final regex = RegExp(r'(\S+[ \t]*)');
-      final matches = regex.allMatches(line);
+      // Split on questionBlank first to isolate it
+      final blankSegments = line.split(questionBlank);
 
-      for (final match in matches) {
-        final segment = match.group(1)!;
+      for (int segIdx = 0; segIdx < blankSegments.length; segIdx++) {
+        final segment = blankSegments[segIdx];
 
-        if (segment == questionBlank) {
+        // Match words (non-whitespace) followed by optional spaces
+        final regex = RegExp(r'(\S+[ \t]*)');
+        final matches = regex.allMatches(segment);
+
+        for (final match in matches) {
+          final word = match.group(1)!;
+          parts.add(FuriText(text: word));
+        }
+
+        // Add blank after each segment except the last
+        if (segIdx < blankSegments.length - 1) {
           parts.add(FuriText(text: questionBlank));
-        } else {
-          parts.add(FuriText(text: segment));
         }
       }
 

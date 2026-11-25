@@ -16,9 +16,14 @@ void main() {
       expect(asFuriTexts[2].furigana, 'ふる');
     });
 
+    test('Question text parses blanks correctly', () async {
+      final testText = '(兄:あに)は(私:わたし)___せが(高:たか)いです。';
+      final asFuriTexts = FuriganaService.formattedStringToFuriTexts(testText);
+      expect(asFuriTexts.any((ft) => ft.text == '___'), true);
+    });
+
     test('Longer text', () async {
-      final testText =
-          '''
+      final testText = '''
 1. ます and ましょう
 
 ます makes a neutral statement. ましょう means “let’s” and is used for a suggestion or proposal.
@@ -80,11 +85,10 @@ At 30 degrees, the natural word is 暑い, meaning “hot.” 寒い means “co
 Practice 暑い and 寒い together as opposites.''';
       final asFuriTexts = FuriganaService.formattedStringToFuriTexts(testText);
 
-      expect(asFuriTexts.length, 40);
-      expect(asFuriTexts[1].text, '休');
-      expect(asFuriTexts[1].furigana, 'やす');
-      expect(asFuriTexts[3].text, '休');
-      expect(asFuriTexts[3].furigana, 'やす');
+      expect(asFuriTexts.length, 314);
+      expect(asFuriTexts[12].text, 'means ');
+      expect(asFuriTexts[37].text, '休');
+      expect(asFuriTexts[37].furigana, 'やす');
 
       asFuriTexts.map(
         (ft) => expect(ft.text.contains('()'), false),

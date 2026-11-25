@@ -38,7 +38,7 @@ Future setFirstTimeSetting() async {
 }
 
 class NaleluHomePage extends StatefulWidget {
-  NaleluHomePage({Key? key}) : super(key: key);
+  const NaleluHomePage({Key? key}) : super(key: key);
 
   @override
   _NaleluHomePageState createState() => _NaleluHomePageState();
