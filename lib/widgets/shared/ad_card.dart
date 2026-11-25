@@ -23,9 +23,9 @@ class AdCard extends StatelessWidget {
 
       return Container(
         alignment: Alignment.center,
-        child: AdWidget(ad: adBanner),
         width: adBanner.size.width.toDouble(),
         height: adBanner.size.height.toDouble(),
+        child: AdWidget(ad: adBanner),
       );
     } catch (e) {
       return Container();
