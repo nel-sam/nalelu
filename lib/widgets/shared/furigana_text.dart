@@ -23,14 +23,20 @@ class FuriganaText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Wrap(
+      crossAxisAlignment: WrapCrossAlignment.end,
       children: [
         for (var i in furiTexts)
-          Column(
-            mainAxisSize: MainAxisSize.max,
-            children: [
-              SizedBox(
-                height: i.furigana.isEmpty ? fontSize * 1.0 : fontSize,
-                child: Text(
+          if (i.text == '\n')
+            SizedBox(
+                // Force line break
+                height: fontSize * 0.2,
+                width: double.infinity)
+          else
+            Column(
+              mainAxisSize: MainAxisSize.max,
+              crossAxisAlignment: CrossAxisAlignment.end,
+              children: [
+                Text(
                   showFurigana
                       ? i.furigana == '？' && isCorrect
                           ? subtractChars(answer, furiTexts)
@@ -38,7 +44,7 @@ class FuriganaText extends StatelessWidget {
                       : '',
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontSize: fontSize * 0.7,
+                    fontSize: fontSize * 0.6,
                     fontWeight:
                         i.emphasize ? FontWeight.bold : FontWeight.normal,
                     color: i.emphasize
@@ -48,22 +54,23 @@ class FuriganaText extends StatelessWidget {
                         : textColor,
                   ),
                 ),
-              ),
-              Text(
-                i.text,
-                textAlign: TextAlign.start,
-                style: TextStyle(
-                  fontSize: fontSize * 1.2,
-                  fontWeight: i.emphasize ? FontWeight.bold : FontWeight.normal,
-                  color: i.emphasize
-                      ? isCorrect
-                          ? Colors.green
-                          : Theme.of(context).colorScheme.primary
-                      : textColor,
+                Text(
+                  i.text,
+                  softWrap: true,
+                  textAlign: TextAlign.start,
+                  style: TextStyle(
+                    fontSize: fontSize * 1.1,
+                    fontWeight:
+                        i.emphasize ? FontWeight.bold : FontWeight.normal,
+                    color: i.emphasize
+                        ? isCorrect
+                            ? Colors.green
+                            : Theme.of(context).colorScheme.primary
+                        : textColor,
+                  ),
                 ),
-              ),
-            ],
-          )
+              ],
+            )
       ],
     );
   }

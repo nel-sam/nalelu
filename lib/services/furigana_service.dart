@@ -5,17 +5,24 @@ const unknownTranslationKey = 'unknown';
 
 class FuriganaService {
   static List<FuriText> formattedStringToFuriTexts(String text) {
-    // Parse text with (text:furigana) format, e.g. "(私:わたし)は (友達:ともだち)に"
+    // Parse text with (text:furigana) format, capturing trailing whitespace
     final parts = <FuriText>[];
-    final regex = RegExp(r'\(([^:]+):([^\)]+)\)|([^\(]+)');
+    final regex = RegExp(r'\(([^:]+):([^\)]+)\)(\s*)|([^\(]+)');
 
     for (final match in regex.allMatches(text)) {
       if (match.group(1) != null) {
         // Has furigana in (text:furigana) format
-        parts.add(FuriText(text: match.group(1)!, furigana: match.group(2)!));
-      } else if (match.group(3) != null) {
+        final furiText = match.group(1)!;
+        final furigana = match.group(2)!;
+        final trailingWhitespace = match.group(3) ?? '';
+
+        parts.add(FuriText(
+          text: furiText + trailingWhitespace,
+          furigana: furigana,
+        ));
+      } else if (match.group(4) != null) {
         // Plain text - may contain ___ blanks
-        _splitPlainText(match.group(3)!, parts);
+        _splitPlainText(match.group(4)!, parts);
       }
     }
 
@@ -23,15 +30,29 @@ class FuriganaService {
   }
 
   static void _splitPlainText(String text, List<FuriText> parts) {
-    final segments = text.split(questionBlank);
-    for (int i = 0; i < segments.length; i++) {
-      final trimmed = segments[i].trim();
-      if (trimmed.isNotEmpty) {
-        parts.add(FuriText(text: trimmed));
+    // Split on newlines first to preserve them as separate items
+    final lines = text.split('\n');
+
+    for (int lineIdx = 0; lineIdx < lines.length; lineIdx++) {
+      final line = lines[lineIdx];
+
+      // Match words (non-whitespace) followed by optional spaces (but not newlines)
+      final regex = RegExp(r'(\S+[ \t]*)');
+      final matches = regex.allMatches(line);
+
+      for (final match in matches) {
+        final segment = match.group(1)!;
+
+        if (segment == questionBlank) {
+          parts.add(FuriText(text: questionBlank));
+        } else {
+          parts.add(FuriText(text: segment));
+        }
       }
-      // Add blank after each segment except the last
-      if (i < segments.length - 1) {
-        parts.add(FuriText(text: questionBlank));
+
+      // Add newline as separate FuriText (except after last line)
+      if (lineIdx < lines.length - 1) {
+        parts.add(FuriText(text: '\n'));
       }
     }
   }
