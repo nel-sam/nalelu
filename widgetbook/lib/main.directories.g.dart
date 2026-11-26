@@ -19,6 +19,8 @@ import 'package:widgetbook_workspace/furigana_text.dart'
     as _widgetbook_workspace_furigana_text;
 import 'package:widgetbook_workspace/login_page.dart'
     as _widgetbook_workspace_login_page;
+import 'package:widgetbook_workspace/number_chart.dart'
+    as _widgetbook_workspace_number_chart;
 
 final directories = <_widgetbook.WidgetbookNode>[
   _widgetbook.WidgetbookFolder(
@@ -67,6 +69,26 @@ final directories = <_widgetbook.WidgetbookNode>[
                 name: 'Default',
                 builder: _widgetbook_workspace_furigana_text
                     .buildCoachFeedbackUseCase,
+              ),
+            ],
+          ),
+        ],
+      ),
+      _widgetbook.WidgetbookFolder(
+        name: 'suuji_exercise',
+        children: [
+          _widgetbook.WidgetbookFolder(
+            name: 'number_chart',
+            children: [
+              _widgetbook.WidgetbookComponent(
+                name: 'NumberChart',
+                useCases: [
+                  _widgetbook.WidgetbookUseCase(
+                    name: 'Default',
+                    builder: _widgetbook_workspace_number_chart
+                        .buildCoachFeedbackUseCase,
+                  ),
+                ],
               ),
             ],
           ),

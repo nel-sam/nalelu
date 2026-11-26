@@ -9,7 +9,7 @@ import 'package:nalelu/widgets/shared/furigana_text.dart';
 import 'package:nalelu/widgets/shared/home_button_wrapper.dart';
 import 'package:nalelu/widgets/shared/nav_header_wrapper.dart';
 import 'package:nalelu/widgets/suuji_exercise/age/age_exercise_state_area.dart';
-import 'package:nalelu/widgets/suuji_exercise/number_chart.dart';
+import 'package:nalelu/widgets/suuji_exercise/number_chart/number_chart.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 import 'package:nrs_flutter_lib/widgets/n_footer_button.dart';
 import 'package:nrs_flutter_lib/widgets/n_footer_menu.dart';
