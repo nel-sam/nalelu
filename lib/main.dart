@@ -8,7 +8,7 @@ import 'package:nalelu/constants.dart';
 import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/nal_themes.dart';
 import 'package:nalelu/widgets/auth/login_button.dart';
-import 'package:nalelu/widgets/login_banner_card.dart';
+import 'package:nalelu/widgets/login_page.dart';
 import 'package:nalelu/widgets/menus/main_menu.dart';
 import 'package:nrs_flutter_lib/widgets/n_keyboard_message.dart';
 import 'package:nrs_flutter_lib/widgets/n_spinner.dart';
@@ -85,49 +85,12 @@ class _NaleluHomePageState extends State<NaleluHomePage> {
     }
 
     if (_showLoginBanner) {
-      final colorScheme = Theme.of(context).colorScheme;
-      final isDark = Theme.of(context).brightness == Brightness.dark;
-
-      return Scaffold(
-        body: Container(
-          decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.topLeft,
-              end: Alignment.bottomRight,
-              colors: isDark
-                  ? [
-                      colorScheme.surface,
-                      colorScheme.primary.withValues(alpha: 0.12),
-                    ]
-                  : [
-                      colorScheme.surface,
-                      colorScheme.primary.withValues(alpha: 0.08),
-                    ],
-            ),
-          ),
-          child: SafeArea(
-            child: LayoutBuilder(
-              builder: (context, constraints) {
-                return SingleChildScrollView(
-                  child: ConstrainedBox(
-                    constraints:
-                        BoxConstraints(minHeight: constraints.maxHeight),
-                    child: Center(
-                      child: LoginBannerCard(
-                        titleText: NA.t('login_banner_title'),
-                        detailsText: NA.t('login_banner_details'),
-                        loginButton: const LoginButton(),
-                        skipButtonText: NA.t('skip'),
-                        onSkip: _openMainMenu,
-                        onDismiss: _openMainMenu,
-                      ),
-                    ),
-                  ),
-                );
-              },
-            ),
-          ),
-        ),
+      return LoginPage(
+        titleText: NA.t('login_banner_title'),
+        detailsText: NA.t('login_banner_details'),
+        loginButton: const LoginButton(),
+        skipButtonText: NA.t('skip'),
+        onSkip: _openMainMenu,
       );
     }
 

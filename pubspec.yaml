@@ -27,6 +27,7 @@ dependencies:
 
   material_ui: any
   cupertino_ui: any
+  flutter_svg: ^2.5.1
 dev_dependencies:
   flutter_test:
     sdk: flutter
