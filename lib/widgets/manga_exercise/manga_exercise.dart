@@ -4,7 +4,6 @@ import 'package:nalelu/state/enums.dart';
 import 'package:nalelu/state/exercise_nav_notifier.dart';
 import 'package:nalelu/state/manga/manga_notifier.dart';
 import 'package:nalelu/widgets/manga_exercise/manga_exercise_state_area.dart';
-import 'package:nalelu/widgets/shared/ad_card.dart';
 import 'package:nalelu/widgets/shared/nav_header_wrapper.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 import 'package:provider/provider.dart';
@@ -55,7 +54,6 @@ class MangaExercise extends StatelessWidget {
                         },
                       ),
                     ),
-                    AdCard(),
                   ],
                 ),
               ),

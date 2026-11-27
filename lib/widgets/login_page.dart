@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class LoginPage extends StatelessWidget {
@@ -25,23 +25,17 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const backgroundColor = Color(0xFFFFF9F2);
-    const primaryTextColor = Color(0xFF2E1A11);
-    const secondaryTextColor = Color(0xFF5E4336);
-    const skipTextColor = Color(0xFF5A2A14);
-    const buttonColor = Color(0xFFD63B13);
-
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
     final hasLogin =
         loginButton != null || (loginButtonText != null && onLogin != null);
     final hasSkip = skipButtonText != null && onSkip != null;
 
     return Scaffold(
-      backgroundColor: backgroundColor,
       body: SafeArea(
         top: false,
         child: Column(
           children: [
-            // Top illustration header + 'nalelu' text + optional dismiss button
             Expanded(
               flex: 5,
               child: Stack(
@@ -55,12 +49,12 @@ class LoginPage extends StatelessWidget {
                   Positioned(
                     top: MediaQuery.of(context).padding.top + 24,
                     left: 24,
-                    child: const Text(
+                    child: Text(
                       'nalelu',
                       style: TextStyle(
                         fontSize: 28,
                         fontWeight: FontWeight.w900,
-                        color: Colors.white,
+                        color: colorScheme.onPrimary,
                         letterSpacing: -0.6,
                         height: 1.0,
                       ),
@@ -81,10 +75,10 @@ class LoginPage extends StatelessWidget {
                     const SizedBox(height: 32),
                     Text(
                       titleText,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 32,
                         fontWeight: FontWeight.w900,
-                        color: primaryTextColor,
+                        color: colorScheme.onSurface,
                         height: 1.15,
                         letterSpacing: -0.5,
                       ),
@@ -94,10 +88,10 @@ class LoginPage extends StatelessWidget {
                     Text(
                       detailsText,
                       style: detailsStyle ??
-                          const TextStyle(
+                          TextStyle(
                             fontSize: 16,
                             height: 1.4,
-                            color: secondaryTextColor,
+                            color: colorScheme.onSurfaceVariant,
                             fontWeight: FontWeight.w500,
                           ),
                       textAlign: TextAlign.center,
@@ -112,8 +106,8 @@ class LoginPage extends StatelessWidget {
                               child: FilledButton(
                                 onPressed: onLogin,
                                 style: FilledButton.styleFrom(
-                                  backgroundColor: buttonColor,
-                                  foregroundColor: Colors.white,
+                                  backgroundColor: colorScheme.primary,
+                                  foregroundColor: colorScheme.onPrimary,
                                   shape: const StadiumBorder(),
                                   elevation: 0,
                                 ),
@@ -122,17 +116,17 @@ class LoginPage extends StatelessWidget {
                                   children: [
                                     Text(
                                       loginButtonText!,
-                                      style: const TextStyle(
+                                      style: TextStyle(
                                         fontSize: 18,
                                         fontWeight: FontWeight.bold,
-                                        color: Colors.white,
+                                        color: colorScheme.onPrimary,
                                       ),
                                     ),
                                     const SizedBox(width: 8),
-                                    const Icon(
+                                    Icon(
                                       Icons.arrow_forward_rounded,
                                       size: 20,
-                                      color: Colors.white,
+                                      color: colorScheme.onPrimary,
                                     ),
                                   ],
                                 ),
@@ -148,10 +142,10 @@ class LoginPage extends StatelessWidget {
                         ),
                         child: Text(
                           skipButtonText!,
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
-                            color: skipTextColor,
+                            color: colorScheme.onSurfaceVariant,
                           ),
                         ),
                       ),

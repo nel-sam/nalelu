@@ -9,7 +9,6 @@ import 'package:nalelu/widgets/coach/coach_error.dart';
 import 'package:nalelu/widgets/coach/coach_intro.dart';
 import 'package:nalelu/widgets/coach/coach_question_page.dart';
 import 'package:nalelu/widgets/coach/coach_results_page.dart';
-import 'package:nalelu/widgets/shared/ad_card.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 import 'package:nrs_flutter_lib/widgets/n_spinner.dart';
 import 'package:flutter/services.dart' show rootBundle;
@@ -205,7 +204,6 @@ class _CoachState extends State<Coach> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Expanded(child: _buildContent()),
-            AdCard(),
           ],
         ),
       ),

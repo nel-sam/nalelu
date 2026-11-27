@@ -23,7 +23,7 @@ class NAMenuHeader extends StatelessWidget {
           child: Icon(
             icon,
             size: 150,
-            color: Colors.black.withOpacity(0.08),
+            color: Colors.black.withValues(alpha: 0.08),
           ),
         ),
         Align(
@@ -31,9 +31,7 @@ class NAMenuHeader extends StatelessWidget {
           heightFactor: 2,
           child: Padding(
             padding: const EdgeInsets.only(left: FONT_SIZE),
-            child: FuriganaText(
-                furiTexts: label,
-                fontSize: FONT_SIZE * 1.5),
+            child: FuriganaText(furiTexts: label, fontSize: FONT_SIZE * 1.5),
           ),
         ),
       ],

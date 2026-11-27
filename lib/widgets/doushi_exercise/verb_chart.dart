@@ -2,7 +2,6 @@ import 'package:material_ui/material_ui.dart';
 import 'package:nalelu/furi_text.dart';
 import 'package:nalelu/lang_data/doushi.dart';
 import 'package:nalelu/na_helpers.dart';
-import 'package:nalelu/widgets/shared/ad_card.dart';
 import 'package:nalelu/widgets/shared/furigana_text.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 
@@ -56,9 +55,6 @@ class VerbChart extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Center(
-                  child: AdCard(),
-                ),
                 ChartRow(
                     label: NA.t('present'),
                     furiText: doushi.casual.present.toFuriTexts()),

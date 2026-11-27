@@ -1,6 +1,5 @@
 import 'package:material_ui/material_ui.dart';
 import 'package:nalelu/na_helpers.dart';
-import 'package:nalelu/widgets/shared/ad_card.dart';
 import 'package:nalelu/widgets/suuji_exercise/number_chart/native_number_chart.dart';
 import 'package:nalelu/widgets/suuji_exercise/number_chart/sino_number_chart.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
@@ -22,7 +21,6 @@ class NumberChart extends StatelessWidget {
             child: NSubHeader(NA.t('sinoNumbers')),
           ),
           const Flexible(child: SinoNumberChart()),
-          const AdCard(),
         ],
       ),
     );

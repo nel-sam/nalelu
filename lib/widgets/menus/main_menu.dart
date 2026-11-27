@@ -2,13 +2,13 @@ import 'package:material_ui/material_ui.dart';
 import 'package:nalelu/constants.dart';
 import 'package:nalelu/furi_text.dart';
 import 'package:nalelu/na_helpers.dart';
+import 'package:nalelu/nal_themes.dart';
 import 'package:nalelu/state/enums.dart';
 import 'package:nalelu/widgets/auth/login_button.dart';
 import 'package:nalelu/widgets/coach/coach.dart';
 import 'package:nalelu/widgets/menus/kanji_menu.dart';
-import 'package:nalelu/widgets/shared/na_menu_cards.dart';
 import 'package:nalelu/widgets/menus/numbers_menu.dart';
-import 'package:nalelu/widgets/shared/ad_card.dart';
+import 'package:nalelu/widgets/shared/na_menu_cards.dart';
 import 'package:nalelu/widgets/shared/settings_screen.dart';
 
 class MainMenu extends StatelessWidget {
@@ -22,8 +22,12 @@ class MainMenu extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
+    final menuColors =
+        theme.extension<NaleluMenuColors>() ?? NaleluMenuColors.light;
+
     return Scaffold(
-      backgroundColor: MainMenuColors.creamBg,
       resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Padding(
@@ -31,7 +35,7 @@ class MainMenu extends StatelessWidget {
           child: Column(
             children: [
               const SizedBox(height: 8),
-              _MenuHeader(),
+              const _MenuHeader(),
               const SizedBox(height: 14),
               Expanded(
                 child: SingleChildScrollView(
@@ -58,11 +62,11 @@ class MainMenu extends StatelessWidget {
                               aspectRatio: 1,
                               child: MenuCard(
                                 variant: MenuCardVariant.square,
-                                backgroundColor: MainMenuColors.peachCard,
+                                backgroundColor: menuColors.peachCard,
                                 watermarkChar: '数',
-                                watermarkColor: MainMenuColors.peachWatermark,
-                                textColor: MainMenuColors.darkBrown,
-                                furiganaColor: MainMenuColors.mutedBrown,
+                                watermarkColor: menuColors.peachWatermark,
+                                textColor: colorScheme.onSurface,
+                                furiganaColor: colorScheme.onSurfaceVariant,
                                 label: NA.t('numbersExercise'),
                                 translabel: [
                                   FuriText(text: '数字', furigana: 'すうじ')
@@ -77,11 +81,11 @@ class MainMenu extends StatelessWidget {
                               aspectRatio: 1,
                               child: MenuCard(
                                 variant: MenuCardVariant.square,
-                                backgroundColor: MainMenuColors.terracotta,
+                                backgroundColor: colorScheme.primary,
                                 watermarkChar: '動',
-                                watermarkColor: Colors.white.withOpacity(0.16),
-                                textColor: Colors.white,
-                                furiganaColor: Colors.white.withOpacity(0.85),
+                                watermarkColor: menuColors.heroWatermarkOverlay,
+                                textColor: colorScheme.onPrimary,
+                                furiganaColor: menuColors.heroFurigana,
                                 label: NA.t('verbs'),
                                 translabel: [
                                   FuriText(text: '動詞', furigana: 'どうし')
@@ -89,7 +93,8 @@ class MainMenu extends StatelessWidget {
                                 onTap: () => _open(
                                   context,
                                   SettingsScreen(
-                                      exerciseType: ExerciseType.Doushi),
+                                    exerciseType: ExerciseType.Doushi,
+                                  ),
                                 ),
                               ),
                             ),
@@ -108,7 +113,6 @@ class MainMenu extends StatelessWidget {
                   ),
                 ),
               ),
-              const AdCard(),
               const SizedBox(height: 6),
             ],
           ),
@@ -119,8 +123,12 @@ class MainMenu extends StatelessWidget {
 }
 
 class _MenuHeader extends StatelessWidget {
+  const _MenuHeader();
+
   @override
   Widget build(BuildContext context) {
+    final colorScheme = Theme.of(context).colorScheme;
+
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -130,21 +138,21 @@ class _MenuHeader extends StatelessWidget {
             children: [
               Text(
                 APP_NAME,
-                style: const TextStyle(
+                style: TextStyle(
                   fontSize: 34,
                   fontWeight: FontWeight.w900,
                   height: 1.0,
                   letterSpacing: -1.0,
-                  color: MainMenuColors.darkBrown,
+                  color: colorScheme.onSurface,
                 ),
               ),
               const SizedBox(height: 4),
-              const Text(
+              Text(
                 '日本語を学ぼう',
                 style: TextStyle(
                   fontSize: 13,
                   fontWeight: FontWeight.w700,
-                  color: MainMenuColors.mutedBrown,
+                  color: colorScheme.onSurfaceVariant,
                 ),
               ),
             ],
