@@ -6,7 +6,6 @@ import 'package:nalelu/state/enums.dart';
 import 'package:nalelu/state/exercise_nav_notifier.dart';
 import 'package:nalelu/widgets/doushi_exercise/doushi_exercise_state_area.dart';
 import 'package:nalelu/widgets/doushi_exercise/verb_chart.dart';
-import 'package:nalelu/widgets/shared/ad_card.dart';
 import 'package:nalelu/widgets/shared/nav_header_wrapper.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 import 'package:nrs_flutter_lib/widgets/n_footer_button.dart';

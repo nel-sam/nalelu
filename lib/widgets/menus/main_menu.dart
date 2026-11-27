@@ -8,7 +8,6 @@ import 'package:nalelu/widgets/auth/login_button.dart';
 import 'package:nalelu/widgets/coach/coach.dart';
 import 'package:nalelu/widgets/menus/kanji_menu.dart';
 import 'package:nalelu/widgets/menus/numbers_menu.dart';
-import 'package:nalelu/widgets/shared/ad_card.dart';
 import 'package:nalelu/widgets/shared/na_menu_cards.dart';
 import 'package:nalelu/widgets/shared/settings_screen.dart';
 

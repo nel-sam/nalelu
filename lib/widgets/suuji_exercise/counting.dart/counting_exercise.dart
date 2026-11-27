@@ -3,7 +3,6 @@ import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/state/enums.dart';
 import 'package:nalelu/state/exercise_nav_notifier.dart';
 import 'package:nalelu/state/suuji/count/count_notifier.dart';
-import 'package:nalelu/widgets/shared/ad_card.dart';
 import 'package:nalelu/widgets/shared/home_button_wrapper.dart';
 import 'package:nalelu/widgets/shared/nav_header_wrapper.dart';
 import 'package:nalelu/widgets/suuji_exercise/counting.dart/counting_exercise_state_area.dart';

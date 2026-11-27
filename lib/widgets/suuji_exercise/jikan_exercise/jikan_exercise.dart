@@ -3,7 +3,6 @@ import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/state/enums.dart';
 import 'package:nalelu/state/exercise_nav_notifier.dart';
 import 'package:nalelu/state/suuji/jikan/jikan_notifier.dart';
-import 'package:nalelu/widgets/shared/ad_card.dart';
 import 'package:nalelu/widgets/shared/home_button_wrapper.dart';
 import 'package:nalelu/widgets/shared/nav_header_wrapper.dart';
 import 'package:nalelu/widgets/suuji_exercise/jikan_exercise/clock.dart';

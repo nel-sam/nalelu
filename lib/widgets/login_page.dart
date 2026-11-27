@@ -1,6 +1,5 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:nalelu/nal_themes.dart';
 
 class LoginPage extends StatelessWidget {
   final String titleText;
@@ -37,7 +36,6 @@ class LoginPage extends StatelessWidget {
         top: false,
         child: Column(
           children: [
-            // Top illustration header + 'nalelu' text + optional dismiss button
             Expanded(
               flex: 5,
               child: Stack(

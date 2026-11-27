@@ -2,7 +2,6 @@ import 'package:material_ui/material_ui.dart';
 import 'package:nalelu/furi_text.dart';
 import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/state/enums.dart';
-import 'package:nalelu/widgets/shared/ad_card.dart';
 import 'package:nalelu/widgets/shared/na_menu_button.dart';
 import 'package:nalelu/widgets/shared/na_menu_header.dart';
 import 'package:nalelu/widgets/shared/settings_screen.dart';
