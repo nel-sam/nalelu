@@ -18,7 +18,6 @@ class KanjiMenu extends StatelessWidget {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              AdCard(),
               NAMenuHeader(
                   icon: Icons.brush_outlined,
                   transLabel: NA.t('kanji'),

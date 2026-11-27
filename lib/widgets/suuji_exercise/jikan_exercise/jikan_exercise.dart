@@ -35,7 +35,6 @@ class JikanExercise extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
               getContent(context),
-              AdCard(),
             ],
           ),
         ),

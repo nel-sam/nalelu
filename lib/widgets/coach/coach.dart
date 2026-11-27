@@ -205,7 +205,6 @@ class _CoachState extends State<Coach> {
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             Expanded(child: _buildContent()),
-            AdCard(),
           ],
         ),
       ),

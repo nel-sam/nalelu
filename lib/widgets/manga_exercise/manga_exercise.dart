@@ -55,7 +55,6 @@ class MangaExercise extends StatelessWidget {
                         },
                       ),
                     ),
-                    AdCard(),
                   ],
                 ),
               ),

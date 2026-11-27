@@ -35,7 +35,6 @@ class KanjiExercise extends StatelessWidget {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  AdCard(),
                   ChangeNotifierProvider<ExerciseNavNotifier>(
                     create: (context) => ExerciseNavNotifier(
                         exerciseType: exerciseType,

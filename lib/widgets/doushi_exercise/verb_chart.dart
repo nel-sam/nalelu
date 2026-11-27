@@ -56,9 +56,6 @@ class VerbChart extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Center(
-                  child: AdCard(),
-                ),
                 ChartRow(
                     label: NA.t('present'),
                     furiText: doushi.casual.present.toFuriTexts()),

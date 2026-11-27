@@ -114,7 +114,6 @@ class MainMenu extends StatelessWidget {
                   ),
                 ),
               ),
-              const AdCard(),
               const SizedBox(height: 6),
             ],
           ),
