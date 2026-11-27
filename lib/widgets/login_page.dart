@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import 'package:nalelu/widgets/shared/na_menu_color.dart';
+import 'package:nalelu/nal_themes.dart';
 
 class LoginPage extends StatelessWidget {
   final String titleText;
@@ -26,12 +26,13 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final colorScheme = theme.colorScheme;
     final hasLogin =
         loginButton != null || (loginButtonText != null && onLogin != null);
     final hasSkip = skipButtonText != null && onSkip != null;
 
     return Scaffold(
-      backgroundColor: MenuColors.warmWhiteCard,
       body: SafeArea(
         top: false,
         child: Column(
@@ -50,12 +51,12 @@ class LoginPage extends StatelessWidget {
                   Positioned(
                     top: MediaQuery.of(context).padding.top + 24,
                     left: 24,
-                    child: const Text(
+                    child: Text(
                       'nalelu',
                       style: TextStyle(
                         fontSize: 28,
                         fontWeight: FontWeight.w900,
-                        color: Colors.white,
+                        color: colorScheme.onPrimary,
                         letterSpacing: -0.6,
                         height: 1.0,
                       ),
@@ -76,10 +77,10 @@ class LoginPage extends StatelessWidget {
                     const SizedBox(height: 32),
                     Text(
                       titleText,
-                      style: const TextStyle(
+                      style: TextStyle(
                         fontSize: 32,
                         fontWeight: FontWeight.w900,
-                        color: MenuColors.darkBrown,
+                        color: colorScheme.onSurface,
                         height: 1.15,
                         letterSpacing: -0.5,
                       ),
@@ -89,10 +90,10 @@ class LoginPage extends StatelessWidget {
                     Text(
                       detailsText,
                       style: detailsStyle ??
-                          const TextStyle(
+                          TextStyle(
                             fontSize: 16,
                             height: 1.4,
-                            color: MenuColors.lightBrown,
+                            color: colorScheme.onSurfaceVariant,
                             fontWeight: FontWeight.w500,
                           ),
                       textAlign: TextAlign.center,
@@ -107,8 +108,8 @@ class LoginPage extends StatelessWidget {
                               child: FilledButton(
                                 onPressed: onLogin,
                                 style: FilledButton.styleFrom(
-                                  backgroundColor: MenuColors.terracotta,
-                                  foregroundColor: Colors.white,
+                                  backgroundColor: colorScheme.primary,
+                                  foregroundColor: colorScheme.onPrimary,
                                   shape: const StadiumBorder(),
                                   elevation: 0,
                                 ),
@@ -117,17 +118,17 @@ class LoginPage extends StatelessWidget {
                                   children: [
                                     Text(
                                       loginButtonText!,
-                                      style: const TextStyle(
+                                      style: TextStyle(
                                         fontSize: 18,
                                         fontWeight: FontWeight.bold,
-                                        color: Colors.white,
+                                        color: colorScheme.onPrimary,
                                       ),
                                     ),
                                     const SizedBox(width: 8),
-                                    const Icon(
+                                    Icon(
                                       Icons.arrow_forward_rounded,
                                       size: 20,
-                                      color: Colors.white,
+                                      color: colorScheme.onPrimary,
                                     ),
                                   ],
                                 ),
@@ -143,10 +144,10 @@ class LoginPage extends StatelessWidget {
                         ),
                         child: Text(
                           skipButtonText!,
-                          style: const TextStyle(
+                          style: TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
-                            color: MenuColors.mutedBrown,
+                            color: colorScheme.onSurfaceVariant,
                           ),
                         ),
                       ),

@@ -1,8 +1,8 @@
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:nalelu/furi_text.dart';
+import 'package:nalelu/nal_themes.dart';
 import 'package:nalelu/widgets/shared/na_furigana_label.dart';
-import 'package:nalelu/widgets/shared/na_menu_color.dart';
 
 enum MenuCardVariant {
   hero,
@@ -19,6 +19,7 @@ class _MenuCardStyle {
     required this.borderWidth,
     required this.textColor,
     required this.furiganaColor,
+    required this.watermarkColor,
     required this.captionFontSize,
     required this.furiganaSize,
     required this.gapAfterLabel,
@@ -35,6 +36,7 @@ class _MenuCardStyle {
   final double borderWidth;
   final Color textColor;
   final Color furiganaColor;
+  final Color watermarkColor;
   final double captionFontSize;
   final double furiganaSize;
   final double gapAfterLabel;
@@ -45,12 +47,15 @@ class _MenuCardStyle {
 
   factory _MenuCardStyle.forVariant(
     MenuCardVariant variant, {
+    required ColorScheme scheme,
+    required NaleluMenuColors menuColors,
     double? height,
     Color? backgroundColor,
     Color? borderColor,
     double? borderWidth,
     Color? textColor,
     Color? furiganaColor,
+    Color? watermarkColor,
     Color? arrowBackgroundColor,
     Color? arrowIconColor,
   }) {
@@ -59,52 +64,55 @@ class _MenuCardStyle {
         return _MenuCardStyle(
           height: height ?? 220,
           radius: 28,
-          backgroundColor: backgroundColor ?? MenuColors.terracotta,
-          borderColor: borderColor ?? MenuColors.goldBorder,
+          backgroundColor: backgroundColor ?? scheme.primary,
+          borderColor: borderColor ?? menuColors.goldBorder,
           borderWidth: borderWidth ?? 2.0,
-          textColor: textColor ?? Colors.white,
-          furiganaColor: furiganaColor ?? Colors.white.withValues(alpha: 0.9),
+          textColor: textColor ?? scheme.onPrimary,
+          furiganaColor: furiganaColor ?? menuColors.heroFurigana,
+          watermarkColor: watermarkColor ?? menuColors.heroWatermarkOverlay,
           captionFontSize: 28,
           furiganaSize: 12,
           gapAfterLabel: 6,
           arrowSize: 48,
           arrowIconSize: 22,
-          arrowBackgroundColor: arrowBackgroundColor ?? Colors.white,
-          arrowIconColor: arrowIconColor ?? MenuColors.terracotta,
+          arrowBackgroundColor: arrowBackgroundColor ?? scheme.onPrimary,
+          arrowIconColor: arrowIconColor ?? scheme.primary,
         );
       case MenuCardVariant.square:
         return _MenuCardStyle(
           height: height ?? 162,
           radius: 26,
-          backgroundColor: backgroundColor ?? MenuColors.peachCard,
+          backgroundColor: backgroundColor ?? menuColors.peachCard,
           borderColor: borderColor,
           borderWidth: borderWidth ?? 1.5,
-          textColor: textColor ?? Colors.white,
-          furiganaColor: furiganaColor ?? Colors.white.withValues(alpha: 0.9),
+          textColor: textColor ?? scheme.onPrimary,
+          furiganaColor: furiganaColor ?? menuColors.heroFurigana,
+          watermarkColor: watermarkColor ?? menuColors.peachWatermark,
           captionFontSize: 28,
           furiganaSize: 11,
           gapAfterLabel: 4,
           arrowSize: 44,
           arrowIconSize: 20,
-          arrowBackgroundColor: arrowBackgroundColor ?? MenuColors.peachCard,
-          arrowIconColor: arrowIconColor ?? MenuColors.terracotta,
+          arrowBackgroundColor: arrowBackgroundColor ?? menuColors.peachCard,
+          arrowIconColor: arrowIconColor ?? scheme.primary,
         );
       case MenuCardVariant.wide:
         return _MenuCardStyle(
           height: height ?? 98,
           radius: 26,
-          backgroundColor: backgroundColor ?? MenuColors.warmWhiteCard,
-          borderColor: borderColor ?? MenuColors.softBorder,
+          backgroundColor: backgroundColor ?? scheme.surface,
+          borderColor: borderColor ?? menuColors.softBorder,
           borderWidth: borderWidth ?? 1.5,
-          textColor: textColor ?? MenuColors.darkBrown,
-          furiganaColor: furiganaColor ?? MenuColors.mutedBrown,
+          textColor: textColor ?? scheme.onSurface,
+          furiganaColor: furiganaColor ?? scheme.onSurfaceVariant,
+          watermarkColor: watermarkColor ?? menuColors.peachWatermark,
           captionFontSize: 28,
           furiganaSize: 11,
           gapAfterLabel: 4,
           arrowSize: 44,
           arrowIconSize: 20,
-          arrowBackgroundColor: arrowBackgroundColor ?? MenuColors.peachCard,
-          arrowIconColor: arrowIconColor ?? MenuColors.terracotta,
+          arrowBackgroundColor: arrowBackgroundColor ?? menuColors.peachCard,
+          arrowIconColor: arrowIconColor ?? scheme.primary,
         );
     }
   }
@@ -154,21 +162,27 @@ class MenuCard extends StatelessWidget {
   final Color? arrowBackgroundColor;
   final Color? arrowIconColor;
 
-  _MenuCardStyle get _style => _MenuCardStyle.forVariant(
-        variant,
-        height: height,
-        backgroundColor: backgroundColor,
-        borderColor: borderColor,
-        borderWidth: borderWidth,
-        textColor: textColor,
-        furiganaColor: furiganaColor,
-        arrowBackgroundColor: arrowBackgroundColor,
-        arrowIconColor: arrowIconColor,
-      );
-
   @override
   Widget build(BuildContext context) {
-    final style = _style;
+    final theme = Theme.of(context);
+    final menuColors =
+        theme.extension<NaleluMenuColors>() ?? NaleluMenuColors.light;
+
+    final style = _MenuCardStyle.forVariant(
+      variant,
+      scheme: theme.colorScheme,
+      menuColors: menuColors,
+      height: height,
+      backgroundColor: backgroundColor,
+      borderColor: borderColor,
+      borderWidth: borderWidth,
+      textColor: textColor,
+      furiganaColor: furiganaColor,
+      watermarkColor: watermarkColor,
+      arrowBackgroundColor: arrowBackgroundColor,
+      arrowIconColor: arrowIconColor,
+    );
+
     final japanese = translabel.isNotEmpty ? translabel.first : null;
     final borderRadius = BorderRadius.circular(style.radius);
 
@@ -254,7 +268,7 @@ class MenuCard extends StatelessWidget {
                   fontSize: 128,
                   fontWeight: FontWeight.w900,
                   height: 1.0,
-                  color: watermarkColor ?? MenuColors.peachWatermark,
+                  color: style.watermarkColor,
                 ),
               ),
             ),

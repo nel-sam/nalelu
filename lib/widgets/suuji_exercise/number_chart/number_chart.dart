@@ -22,7 +22,6 @@ class NumberChart extends StatelessWidget {
             child: NSubHeader(NA.t('sinoNumbers')),
           ),
           const Flexible(child: SinoNumberChart()),
-          const AdCard(),
         ],
       ),
     );
