@@ -80,9 +80,11 @@ class MainMenu extends StatelessWidget {
                                 variant: MenuCardVariant.square,
                                 backgroundColor: MenuColors.terracotta,
                                 watermarkChar: '動',
-                                watermarkColor: Colors.white.withOpacity(0.16),
+                                watermarkColor:
+                                    Colors.white.withValues(alpha: 0.16),
                                 textColor: Colors.white,
-                                furiganaColor: Colors.white.withOpacity(0.85),
+                                furiganaColor:
+                                    Colors.white.withValues(alpha: 0.85),
                                 label: NA.t('verbs'),
                                 translabel: [
                                   FuriText(text: '動詞', furigana: 'どうし')
