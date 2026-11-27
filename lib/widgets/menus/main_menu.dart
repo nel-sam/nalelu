@@ -9,6 +9,7 @@ import 'package:nalelu/widgets/menus/kanji_menu.dart';
 import 'package:nalelu/widgets/shared/na_menu_cards.dart';
 import 'package:nalelu/widgets/menus/numbers_menu.dart';
 import 'package:nalelu/widgets/shared/ad_card.dart';
+import 'package:nalelu/widgets/shared/na_menu_color.dart';
 import 'package:nalelu/widgets/shared/settings_screen.dart';
 
 class MainMenu extends StatelessWidget {
@@ -23,7 +24,7 @@ class MainMenu extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: MainMenuColors.creamBg,
+      backgroundColor: MenuColors.creamBg,
       resizeToAvoidBottomInset: false,
       body: SafeArea(
         child: Padding(
@@ -58,11 +59,11 @@ class MainMenu extends StatelessWidget {
                               aspectRatio: 1,
                               child: MenuCard(
                                 variant: MenuCardVariant.square,
-                                backgroundColor: MainMenuColors.peachCard,
+                                backgroundColor: MenuColors.peachCard,
                                 watermarkChar: '数',
-                                watermarkColor: MainMenuColors.peachWatermark,
-                                textColor: MainMenuColors.darkBrown,
-                                furiganaColor: MainMenuColors.mutedBrown,
+                                watermarkColor: MenuColors.peachWatermark,
+                                textColor: MenuColors.darkBrown,
+                                furiganaColor: MenuColors.mutedBrown,
                                 label: NA.t('numbersExercise'),
                                 translabel: [
                                   FuriText(text: '数字', furigana: 'すうじ')
@@ -77,7 +78,7 @@ class MainMenu extends StatelessWidget {
                               aspectRatio: 1,
                               child: MenuCard(
                                 variant: MenuCardVariant.square,
-                                backgroundColor: MainMenuColors.terracotta,
+                                backgroundColor: MenuColors.terracotta,
                                 watermarkChar: '動',
                                 watermarkColor: Colors.white.withOpacity(0.16),
                                 textColor: Colors.white,
@@ -135,7 +136,7 @@ class _MenuHeader extends StatelessWidget {
                   fontWeight: FontWeight.w900,
                   height: 1.0,
                   letterSpacing: -1.0,
-                  color: MainMenuColors.darkBrown,
+                  color: MenuColors.darkBrown,
                 ),
               ),
               const SizedBox(height: 4),
@@ -144,7 +145,7 @@ class _MenuHeader extends StatelessWidget {
                 style: TextStyle(
                   fontSize: 13,
                   fontWeight: FontWeight.w700,
-                  color: MainMenuColors.mutedBrown,
+                  color: MenuColors.mutedBrown,
                 ),
               ),
             ],

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:nalelu/widgets/shared/na_menu_color.dart';
 
 class LoginPage extends StatelessWidget {
   final String titleText;
@@ -25,18 +26,12 @@ class LoginPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    const backgroundColor = Color(0xFFFFF9F2);
-    const primaryTextColor = Color(0xFF2E1A11);
-    const secondaryTextColor = Color(0xFF5E4336);
-    const skipTextColor = Color(0xFF5A2A14);
-    const buttonColor = Color(0xFFD63B13);
-
     final hasLogin =
         loginButton != null || (loginButtonText != null && onLogin != null);
     final hasSkip = skipButtonText != null && onSkip != null;
 
     return Scaffold(
-      backgroundColor: backgroundColor,
+      backgroundColor: MenuColors.warmWhiteCard,
       body: SafeArea(
         top: false,
         child: Column(
@@ -84,7 +79,7 @@ class LoginPage extends StatelessWidget {
                       style: const TextStyle(
                         fontSize: 32,
                         fontWeight: FontWeight.w900,
-                        color: primaryTextColor,
+                        color: MenuColors.darkBrown,
                         height: 1.15,
                         letterSpacing: -0.5,
                       ),
@@ -97,7 +92,7 @@ class LoginPage extends StatelessWidget {
                           const TextStyle(
                             fontSize: 16,
                             height: 1.4,
-                            color: secondaryTextColor,
+                            color: MenuColors.lightBrown,
                             fontWeight: FontWeight.w500,
                           ),
                       textAlign: TextAlign.center,
@@ -112,7 +107,7 @@ class LoginPage extends StatelessWidget {
                               child: FilledButton(
                                 onPressed: onLogin,
                                 style: FilledButton.styleFrom(
-                                  backgroundColor: buttonColor,
+                                  backgroundColor: MenuColors.terracotta,
                                   foregroundColor: Colors.white,
                                   shape: const StadiumBorder(),
                                   elevation: 0,
@@ -151,7 +146,7 @@ class LoginPage extends StatelessWidget {
                           style: const TextStyle(
                             fontSize: 16,
                             fontWeight: FontWeight.bold,
-                            color: skipTextColor,
+                            color: MenuColors.mutedBrown,
                           ),
                         ),
                       ),
