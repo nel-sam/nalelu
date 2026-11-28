@@ -17,13 +17,14 @@ class DoushiExerciseLevel extends StatelessWidget {
   final bool verbShuffle;
   final List<Doushi> selectedVerbs;
 
-  DoushiExerciseLevel({required this.verbShuffle, required this.selectedVerbs});
+  const DoushiExerciseLevel(
+      {super.key, required this.verbShuffle, required this.selectedVerbs});
   //
 
   @override
   Widget build(BuildContext context) {
     ExerciseNavNotifier nav = ExerciseNavNotifier(
-        exerciseType: ExerciseType.Doushi,
+        exerciseType: ExerciseType.doushi,
         shuffle: verbShuffle,
         selectedVerbs: selectedVerbs);
     return GestureDetector(
@@ -40,7 +41,7 @@ class DoushiExerciseLevel extends StatelessWidget {
                   children: [
                     ChangeNotifierProvider<ExerciseNavNotifier>(
                       create: (context) => ExerciseNavNotifier(
-                          exerciseType: ExerciseType.Doushi,
+                          exerciseType: ExerciseType.doushi,
                           shuffle: verbShuffle,
                           selectedVerbs: selectedVerbs),
                       child: Consumer<ExerciseNavNotifier>(

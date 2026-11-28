@@ -18,7 +18,7 @@ class CoachQuestionPage extends StatefulWidget {
   final bool clearEnabled;
 
   const CoachQuestionPage({
-    Key? key,
+    super.key,
     required this.question,
     required this.selectedChoice,
     required this.progressPercentage,
@@ -28,7 +28,7 @@ class CoachQuestionPage extends StatefulWidget {
     this.nextEnabled = true,
     this.previousEnabled = true,
     this.clearEnabled = true,
-  }) : super(key: key);
+  });
 
   @override
   State<CoachQuestionPage> createState() => _CoachQuestionPageState();

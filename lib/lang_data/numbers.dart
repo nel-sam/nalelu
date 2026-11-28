@@ -4,8 +4,8 @@ class NareNumber {
   late String kanji;
 
   NareNumber({required this.digit, required this.written, this.kanji = ''}) {
-    if (this.kanji.length == 0) {
-      this.kanji = this.written;
+    if (kanji.isEmpty) {
+      kanji = written;
     }
   }
 }

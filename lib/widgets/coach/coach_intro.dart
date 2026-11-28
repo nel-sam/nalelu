@@ -4,7 +4,7 @@ import 'package:nalelu/na_helpers.dart';
 class CoachIntro extends StatelessWidget {
   final VoidCallback onNext;
 
-  const CoachIntro({Key? key, required this.onNext}) : super(key: key);
+  const CoachIntro({super.key, required this.onNext});
 
   @override
   Widget build(BuildContext context) {

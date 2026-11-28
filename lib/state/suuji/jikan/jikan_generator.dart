@@ -2,7 +2,7 @@ import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/state/suuji/jikan/jikan_exercise_state.dart';
 
 class JikanGenerator {
-  static createExercise(int index) {
+  static JikanExerciseState createExercise(int index) {
     var hour = NA.getRandomHourNumber(min: 0, max: 23);
     var min = NA.getRandomMinuteNumber(min: 1, max: 59);
     var sec = NA.getRandomSecondNumber(min: 0, max: 59);

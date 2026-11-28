@@ -1899,7 +1899,7 @@ class JWord {
   }
 
   List<FuriText> toFuriTexts() {
-    if (kanjiWord.length == 0) {
+    if (kanjiWord.isEmpty) {
       return [
         FuriText(
           text: kanaWord,

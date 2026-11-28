@@ -6,7 +6,7 @@ import 'package:nalelu/state/auth/auth_notifier.dart';
 import 'package:provider/provider.dart';
 
 class LoginButton extends StatefulWidget {
-  const LoginButton({Key? key}) : super(key: key);
+  const LoginButton({super.key});
 
   @override
   State<LoginButton> createState() => _LoginButtonState();
@@ -26,7 +26,7 @@ class _LoginButtonState extends State<LoginButton>
     _pulseController = AnimationController(
       vsync: this,
       duration: const Duration(seconds: 1),
-    )..repeat(reverse: true);
+    )..repeat(reverse: true, count: 2);
   }
 
   dynamic _logout(AuthNotifier authNotifier) async {

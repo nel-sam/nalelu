@@ -19,7 +19,7 @@ import 'dart:convert';
 class SettingsScreen extends StatefulWidget {
   final ExerciseType exerciseType;
 
-  SettingsScreen({required this.exerciseType});
+  const SettingsScreen({super.key, required this.exerciseType});
 
   @override
   _SettingsScreenState createState() => _SettingsScreenState();
@@ -54,14 +54,12 @@ class _SettingsScreenState extends State<SettingsScreen> {
     return Scaffold(
         appBar: AppBar(
           title: Text(widget.exerciseType.name
-                      .contains(ExerciseType.Doushi.name) ||
+                      .contains(ExerciseType.doushi.name) ||
                   widget.exerciseType.name
-                      .contains(ExerciseType.Kanji_N4.name) ||
-                  widget.exerciseType.name.contains(ExerciseType.Kanji_N5.name)
+                      .contains(ExerciseType.kanjiN4.name) ||
+                  widget.exerciseType.name.contains(ExerciseType.kanjiN5.name)
               ? '${NA.t('select')} ${NA.t(widget.exerciseType.name.toString().toLowerCase())} '
-              : NA.t(widget.exerciseType.name.toString().toLowerCase()) +
-                  ' ' +
-                  NA.t('settings')),
+              : '${NA.t(widget.exerciseType.name.toString().toLowerCase())} ${NA.t('settings')}'),
         ),
         body: allSettings(widget.exerciseType));
   }
@@ -69,25 +67,25 @@ class _SettingsScreenState extends State<SettingsScreen> {
   Widget allSettings(ExerciseType exerciseType) {
     Widget settings = ListView();
     switch (exerciseType) {
-      case ExerciseType.Doushi:
+      case ExerciseType.doushi:
         settings = doushiSettings();
         break;
-      case ExerciseType.Count:
+      case ExerciseType.count:
         settings = countingSettings();
         break;
-      case ExerciseType.Age:
+      case ExerciseType.age:
         settings = ageSettings();
         break;
-      case ExerciseType.Jikan:
+      case ExerciseType.jikan:
         settings = jikanSettings();
         break;
-      case ExerciseType.Manga:
+      case ExerciseType.manga:
         settings = mangaSettings();
         break;
-      case ExerciseType.Kanji_N5:
+      case ExerciseType.kanjiN5:
         settings = kanjiN5Settings();
         break;
-      case ExerciseType.Kanji_N4:
+      case ExerciseType.kanjiN4:
         settings = kanjiN4Settings();
         break;
     }
@@ -287,9 +285,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   onTap: () {
                     setState(() {
                       if (isSelected) {
-                        if (!hasSelectedIItems)
+                        if (!hasSelectedIItems) {
                           selectedVerbs.removeWhere((element) =>
                               element.infinitive == item.infinitive);
+                        }
                       } else {
                         selectedVerbs.add(item);
                       }
@@ -652,9 +651,10 @@ class _SettingsScreenState extends State<SettingsScreen> {
                   onTap: () {
                     setState(() {
                       if (isSelected) {
-                        if (!hasSelectedIItems)
+                        if (!hasSelectedIItems) {
                           selectedN5Kanjis.removeWhere(
                               (element) => element.kanji == item.kanji);
+                        }
                       } else {
                         selectedN5Kanjis.add(item);
                       }

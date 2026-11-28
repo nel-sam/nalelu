@@ -14,8 +14,8 @@ class NaFreeFormEntryWrapper extends StatelessWidget {
   final String hintValue;
   final bool showBoxLabel;
 
-  NaFreeFormEntryWrapper({
-    Key? key,
+  const NaFreeFormEntryWrapper({
+    super.key,
     this.isAnswerCentered = true,
     required this.onChanged,
     required this.onCorrect,
@@ -27,7 +27,7 @@ class NaFreeFormEntryWrapper extends StatelessWidget {
     this.readOnly = false,
     this.showBoxLabel = false,
     required this.hintValue,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -48,11 +48,11 @@ class NaFreeFormEntryWrapper extends StatelessWidget {
         //   ));
         //   return;
         // }
-        this.onChanged(newValue);
+        onChanged(newValue);
       },
-      onCorrect: this.onCorrect,
-      initialValue: this.initialValue,
-      correctValues: this.correctValues,
+      onCorrect: onCorrect,
+      initialValue: initialValue,
+      correctValues: correctValues,
       readOnly: readOnly,
     );
   }

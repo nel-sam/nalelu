@@ -12,14 +12,14 @@ import 'package:provider/provider.dart';
 class MangaExercise extends StatelessWidget {
   final bool mangaShuffle;
 
-  MangaExercise({required this.mangaShuffle});
+  const MangaExercise({super.key, required this.mangaShuffle});
 
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
       child: Scaffold(
-        appBar: Nrs.NrsAppBar(title: '${NA.t('Manga')}', context: context),
+        appBar: Nrs.NrsAppBar(title: NA.t('Manga'), context: context),
         body: Center(
           child: CustomScrollView(
             slivers: [
@@ -30,7 +30,7 @@ class MangaExercise extends StatelessWidget {
                   children: [
                     ChangeNotifierProvider<ExerciseNavNotifier>(
                       create: (context) => ExerciseNavNotifier(
-                          exerciseType: ExerciseType.Manga,
+                          exerciseType: ExerciseType.manga,
                           shuffle: mangaShuffle),
                       child: Consumer<ExerciseNavNotifier>(
                         builder: (context, navNotifier, child) {

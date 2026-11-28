@@ -1,9 +1,1 @@
-enum ExerciseType {
-  Doushi,
-  Count,
-  Age,
-  Jikan,
-  Manga,
-  Kanji_N5,
-  Kanji_N4
-}
+enum ExerciseType { doushi, count, age, jikan, manga, kanjiN5, kanjiN4 }

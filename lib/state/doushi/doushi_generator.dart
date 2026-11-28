@@ -5,13 +5,14 @@ class DoushiGenerator {
   late List<Doushi> bank;
 
   DoushiGenerator(bool isShuffled, List<Doushi> selectedVerbs) {
-    bank = selectedVerbs.length == 0 ? bank : [...selectedVerbs];
+    bank = selectedVerbs.isEmpty ? bank : [...selectedVerbs];
 
-    if (isShuffled)
+    if (isShuffled) {
       bank.shuffle(); // TODO: Uncomment once all Kanji exercises are set up
+    }
   }
 
-  createExercise(int index) {
+  DoushiExerciseState createExercise(int index) {
     return DoushiExerciseState(doushi: bank[index]);
   }
 }

@@ -2,7 +2,7 @@ import 'package:material_ui/material_ui.dart';
 
 class Clock extends StatelessWidget {
   final String time;
-  const Clock({Key? key, required this.time}) : super(key: key);
+  const Clock({super.key, required this.time});
 
   @override
   Widget build(BuildContext context) {

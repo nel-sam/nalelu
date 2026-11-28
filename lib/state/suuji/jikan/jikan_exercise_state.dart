@@ -18,39 +18,39 @@ class JikanExerciseState {
     required this.correctSecs,
   });
 
-  clear() {
-    this.userHour = '';
-    this.userMin = '';
-    this.userSec = '';
+  void clear() {
+    userHour = '';
+    userMin = '';
+    userSec = '';
   }
 
   bool getIsCorrect() {
-    return this.correctHours.contains(this.userHour) &&
-        this.correctMins.contains(this.userMin) &&
-        this.correctSecs.contains(this.userSec);
+    return correctHours.contains(userHour) &&
+        correctMins.contains(userMin) &&
+        correctSecs.contains(userSec);
   }
 
   bool getIsHourCorrect() {
-    return this.correctHours.contains(this.userHour);
+    return correctHours.contains(userHour);
   }
 
   bool getIsSecCorrect() {
-    return this.correctSecs.contains(this.userSec);
+    return correctSecs.contains(userSec);
   }
 
   bool getIsMinCorrect() {
-    return this.correctMins.contains(this.userMin);
+    return correctMins.contains(userMin);
   }
 
-  updateHour(String input) {
-    this.userHour = input;
+  void updateHour(String input) {
+    userHour = input;
   }
 
-  updateMin(String input) {
-    this.userMin = input;
+  void updateMin(String input) {
+    userMin = input;
   }
 
-  updateSec(String input) {
-    this.userSec = input;
+  void updateSec(String input) {
+    userSec = input;
   }
 }

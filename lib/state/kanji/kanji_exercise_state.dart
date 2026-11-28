@@ -3,20 +3,20 @@ import 'dart:collection';
 import 'package:nalelu/widgets/kanji.dart';
 
 class KanjiExerciseState {
-  HashMap<String, String> userInput = new HashMap<String, String>();
+  HashMap<String, String> userInput = HashMap<String, String>();
   Kanji kanji;
 
   KanjiExerciseState({required this.kanji});
 
-  clear() {
+  void clear() {
     userInput.clear();
   }
 
-  getUserInput(String key) {
+  String getUserInput(String key) {
     return userInput[key] ?? '';
   }
 
-  updateUserInput(String key, String newValue) {
+  void updateUserInput(String key, String newValue) {
     userInput[key] = newValue;
   }
 }

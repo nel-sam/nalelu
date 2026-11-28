@@ -4,7 +4,7 @@ import 'package:material_ui/material_ui.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 
 class AdCard extends StatelessWidget {
-  const AdCard({Key? key}) : super(key: key);
+  const AdCard({super.key});
 
   @override
   Widget build(BuildContext context) {

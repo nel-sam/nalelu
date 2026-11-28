@@ -12,7 +12,7 @@ import 'package:nalelu/widgets/shared/ad_card.dart';
 import 'package:nalelu/widgets/shared/settings_screen.dart';
 
 class MainMenu extends StatelessWidget {
-  const MainMenu({Key? key}) : super(key: key);
+  const MainMenu({super.key});
 
   void _open(BuildContext context, Widget destination) {
     Navigator.of(context).push(
@@ -89,7 +89,7 @@ class MainMenu extends StatelessWidget {
                                 onTap: () => _open(
                                   context,
                                   SettingsScreen(
-                                      exerciseType: ExerciseType.Doushi),
+                                      exerciseType: ExerciseType.doushi),
                                 ),
                               ),
                             ),
@@ -129,7 +129,7 @@ class _MenuHeader extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                APP_NAME,
+                appName,
                 style: const TextStyle(
                   fontSize: 34,
                   fontWeight: FontWeight.w900,

@@ -5,15 +5,15 @@ import 'package:nalelu/widgets/suuji_exercise/number_chart/number_block.dart';
 import 'package:nalelu/lang_data/numbers.dart';
 
 class SinoNumberChart extends StatelessWidget {
-  const SinoNumberChart({Key? key}) : super(key: key);
+  const SinoNumberChart({super.key});
 
   @override
   Widget build(BuildContext context) {
     final numbers = <NareNumber>[];
     for (int i = 0; i <= 100; i++) {
       var hn = NA.getSinoNumber(i);
-      var written = hn.kanji == hn.written ? hn.written : '${hn.written}';
-      var kanji = hn.kanji == hn.kanji ? hn.kanji : '${hn.kanji}';
+      var written = hn.kanji == hn.written ? hn.written : hn.written;
+      var kanji = hn.kanji == hn.kanji ? hn.kanji : hn.kanji;
       numbers.add(NareNumber(digit: hn.digit, written: written, kanji: kanji));
     }
 

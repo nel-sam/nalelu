@@ -4,7 +4,7 @@ import 'package:nalelu/lang_data/numbers.dart';
 import 'package:nalelu/widgets/suuji_exercise/number_chart/number_block.dart';
 
 class NativeNumberChart extends StatelessWidget {
-  const NativeNumberChart({Key? key}) : super(key: key);
+  const NativeNumberChart({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -3,7 +3,7 @@ import 'package:nalelu/lang_data/numbers.dart';
 import 'package:nalelu/state/suuji/age/age_exercise_state.dart';
 
 class AgeGenerator {
-  static createExercise(int index) {
+  static AgeExerciseState createExercise(int index) {
     NareNumber number = NA.getRandomSaiNumber();
 
     return AgeExerciseState(

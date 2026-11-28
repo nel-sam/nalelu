@@ -13,9 +13,9 @@ class MangaExerciseStateArea extends StatefulWidget {
 
   const MangaExerciseStateArea({
     required this.state,
-    Key? key,
+    super.key,
     required this.navNotifier,
-  }) : super(key: key);
+  });
 
   @override
   State<MangaExerciseStateArea> createState() => _MangaExerciseStateAreaState();
@@ -25,6 +25,7 @@ class _MangaExerciseStateAreaState extends State<MangaExerciseStateArea> {
   PhrasePart? activePhrasePart;
   Phrase? activePhrase;
 
+  @override
   Widget build(BuildContext context) {
     // TODO: Is there a better way to do detect next/previous button press?
     widget.navNotifier.onNextOrPrevious = () => activePhrasePart = null;

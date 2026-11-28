@@ -6,14 +6,14 @@ import 'package:nrs_flutter_lib/widgets/n_free_form_entry.dart';
 
 class JikanExerciseStateArea extends StatefulWidget {
   final JikanExerciseState state;
-  const JikanExerciseStateArea({required this.state, Key? key})
-      : super(key: key);
+  const JikanExerciseStateArea({required this.state, super.key});
 
   @override
   State<JikanExerciseStateArea> createState() => _JikanExerciseStateAreaState();
 }
 
 class _JikanExerciseStateAreaState extends State<JikanExerciseStateArea> {
+  @override
   Widget build(BuildContext context) {
     return Column(
       mainAxisAlignment: MainAxisAlignment.center,

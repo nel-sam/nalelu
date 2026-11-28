@@ -8,8 +8,7 @@ import '../../shared/na_free_form_entry_wrapper.dart';
 class CountingExerciseStateArea extends StatefulWidget {
   final CountExerciseState state;
   
-  const CountingExerciseStateArea({required this.state, Key? key})
-      : super(key: key);
+  const CountingExerciseStateArea({required this.state, super.key});
 
   @override
   State<CountingExerciseStateArea> createState() =>
@@ -17,6 +16,7 @@ class CountingExerciseStateArea extends StatefulWidget {
 }
 
 class _CountingExerciseStateAreaState extends State<CountingExerciseStateArea> {
+  @override
   Widget build(BuildContext context) {
     return NaFreeFormEntryWrapper(
       showMaxLength: false,

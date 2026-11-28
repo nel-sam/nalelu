@@ -9,7 +9,7 @@ import 'package:nalelu/widgets/shared/settings_screen.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 
 class NumbersMenu extends StatelessWidget {
-  const NumbersMenu({Key? key}) : super(key: key);
+  const NumbersMenu({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -29,17 +29,17 @@ class NumbersMenu extends StatelessWidget {
                 children: [
                   NAMenuButton(
                       destination:
-                          SettingsScreen(exerciseType: ExerciseType.Jikan),
+                          SettingsScreen(exerciseType: ExerciseType.jikan),
                       label: NA.t('time'),
                       translabel: [FuriText(text: '時間', furigana: 'じかん')]),
                   NAMenuButton(
                       destination:
-                          SettingsScreen(exerciseType: ExerciseType.Age),
+                          SettingsScreen(exerciseType: ExerciseType.age),
                       label: NA.t('age'),
                       translabel: [FuriText(text: '年齢', furigana: 'ねんれい')]),
                   NAMenuButton(
                       destination:
-                          SettingsScreen(exerciseType: ExerciseType.Count),
+                          SettingsScreen(exerciseType: ExerciseType.count),
                       label: NA.t('counting'),
                       translabel: [
                         FuriText(text: '数', furigana: 'かぞ'),

@@ -8,18 +8,17 @@ class SpeechBubble extends StatelessWidget {
   final Function(PhrasePart activePhrase) onButtonTap;
 
   const SpeechBubble(
-      {Key? key,
+      {super.key,
       required this.phrase,
       required this.getIsCorrect,
-      required this.onButtonTap})
-      : super(key: key);
+      required this.onButtonTap});
 
   @override
   Widget build(BuildContext context) {
     return Positioned.fill(
       child: LayoutBuilder(builder: (context, constraints) {
-        final left = this.phrase.rightPercentage / 100;
-        final top = this.phrase.downPercentage / 100;
+        final left = phrase.rightPercentage / 100;
+        final top = phrase.downPercentage / 100;
 
         return Container(
           alignment: FractionalOffset(left, top),
@@ -36,7 +35,7 @@ class SpeechBubble extends StatelessWidget {
               child: Padding(
                 padding: const EdgeInsets.only(left: 10.0, right: 10.0),
                 child: Wrap(
-                  children: this.phrase.phraseParts.map((e) {
+                  children: phrase.phraseParts.map((e) {
                     final isCorrect = getIsCorrect(e);
 
                     return e.isAnswerable && !isCorrect

@@ -7,7 +7,7 @@ import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 import 'package:nrs_flutter_lib/widgets/n_sub_header.dart';
 
 class NumberChart extends StatelessWidget {
-  const NumberChart({Key? key}) : super(key: key);
+  const NumberChart({super.key});
 
   @override
   Widget build(BuildContext context) {

@@ -11,11 +11,11 @@ class CoachResultsPage extends StatelessWidget {
   final VoidCallback onRetry;
 
   const CoachResultsPage({
-    Key? key,
+    super.key,
     required this.answers,
     required this.feedbackFuture,
     required this.onRetry,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

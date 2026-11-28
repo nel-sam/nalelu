@@ -19,7 +19,8 @@ class JikanExercise extends StatelessWidget {
   final double textFieldWidth = 250;
   final int numberOfJikanExercises;
 
-  JikanExercise({
+  const JikanExercise({
+    super.key,
     required this.numberOfJikanExercises,
   });
 
@@ -58,10 +59,10 @@ class JikanExercise extends StatelessWidget {
     );
   }
 
-  getContent(BuildContext context) {
+  ChangeNotifierProvider<ExerciseNavNotifier> getContent(BuildContext context) {
     return ChangeNotifierProvider<ExerciseNavNotifier>(
       create: (context) => ExerciseNavNotifier(
-          exerciseType: ExerciseType.Jikan,
+          exerciseType: ExerciseType.jikan,
           maxExerciseCount: numberOfJikanExercises),
       child: Consumer<ExerciseNavNotifier>(
         builder: (context, navNotifier, child) {

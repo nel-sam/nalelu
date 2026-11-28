@@ -15,7 +15,7 @@ class NA {
     return Nrs.getTextStyle(context: context, isItalic: true);
   }
 
-  static fontStyleNormal(BuildContext context, {double fontSize = FONT_SIZE}) {
+  static TextStyle fontStyleNormal(BuildContext context, {double fontSize = FONT_SIZE}) {
     return Nrs.getTextStyle(context: context);
   }
 
@@ -89,11 +89,11 @@ class NA {
       kanji += '十分';
     }
     if (onesPlace > 0) {
-      written += '${minuteNumberBank[onesPlace].written}';
-      kanji += '${minuteNumberBank[onesPlace].kanji}';
+      written += minuteNumberBank[onesPlace].written;
+      kanji += minuteNumberBank[onesPlace].kanji;
     } else if (tensPlace == 0 && tensPlace == 0) {
-      written += '${minuteNumberBank[onesPlace].written}';
-      kanji += '${minuteNumberBank[onesPlace].kanji}';
+      written += minuteNumberBank[onesPlace].written;
+      kanji += minuteNumberBank[onesPlace].kanji;
     }
 
     return NareNumber(digit: digit, written: written, kanji: kanji);
@@ -174,11 +174,11 @@ class NA {
     }
 
     if (onesPlace > 0) {
-      written += '${saiNumberBank[onesPlace].written}';
-      kanji += '${saiNumberBank[onesPlace].kanji}';
+      written += saiNumberBank[onesPlace].written;
+      kanji += saiNumberBank[onesPlace].kanji;
     } else {
-      written += '${saiNumberBank[onesPlace].written}';
-      kanji += '${saiNumberBank[onesPlace].kanji}';
+      written += saiNumberBank[onesPlace].written;
+      kanji += saiNumberBank[onesPlace].kanji;
     }
 
     return NareNumber(digit: digit, written: written, kanji: kanji);

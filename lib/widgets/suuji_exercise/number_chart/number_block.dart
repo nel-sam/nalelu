@@ -7,10 +7,10 @@ class NumberBlock extends StatelessWidget {
   final List<FuriText> furiTexts;
 
   const NumberBlock({
-    Key? key,
+    super.key,
     required this.digit,
     required this.furiTexts,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

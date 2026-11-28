@@ -11,10 +11,10 @@ class ChartRow extends StatelessWidget {
   final List<FuriText> furiText;
 
   const ChartRow({
-    Key? key,
+    super.key,
     required this.label,
     required this.furiText,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -40,9 +40,9 @@ class VerbChart extends StatelessWidget {
   final Doushi doushi;
 
   const VerbChart({
-    Key? key,
+    super.key,
     required this.doushi,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

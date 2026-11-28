@@ -19,7 +19,7 @@ class LangCoachService {
 
   LangCoachService({Http.Client? client, String? baseUrl})
       : client = client ?? Http.Client(),
-        baseUrl = baseUrl ?? LANG_COACH_API_HOST;
+        baseUrl = baseUrl ?? langCoachApiHost;
 
   void dispose() {
     client.close();

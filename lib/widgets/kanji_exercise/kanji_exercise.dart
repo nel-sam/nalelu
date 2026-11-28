@@ -16,7 +16,7 @@ class KanjiExercise extends StatelessWidget {
   final bool shuffle;
   final ExerciseType exerciseType;
 
-  KanjiExercise({
+  const KanjiExercise({super.key, 
     required this.shuffle,
     required this.exerciseType,
     required this.selectedKanjis,

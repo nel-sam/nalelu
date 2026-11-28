@@ -18,7 +18,8 @@ import 'package:provider/provider.dart';
 class CountingExercise extends StatelessWidget {
   final int numberOfCountingExercises;
 
-  CountingExercise({
+  const CountingExercise({
+    super.key,
     required this.numberOfCountingExercises,
   });
 
@@ -27,7 +28,7 @@ class CountingExercise extends StatelessWidget {
     getContent(BuildContext context) {
       return ChangeNotifierProvider<ExerciseNavNotifier>(
         create: (context) => ExerciseNavNotifier(
-            exerciseType: ExerciseType.Count,
+            exerciseType: ExerciseType.count,
             maxExerciseCount: numberOfCountingExercises),
         child: Consumer<ExerciseNavNotifier>(
           builder: (context, navNotifier, child) {

@@ -11,14 +11,14 @@ class FuriganaText extends StatelessWidget {
   final String answer;
 
   const FuriganaText({
-    Key? key,
+    super.key,
     required this.furiTexts,
     this.fontSize = FONT_SIZE,
     this.textColor,
     this.showFurigana = true,
     this.isCorrect = false,
     this.answer = '',
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -80,10 +80,11 @@ class FuriganaText extends StatelessWidget {
     RegExp regex;
     for (var i in furiTexts) {
       if (i.emphasize) {
-        if (i.furigana == '')
+        if (i.furigana == '') {
           regex = RegExp(i.text, multiLine: true);
-        else
+        } else {
           regex = RegExp(i.furigana, multiLine: true);
+        }
         result = result.replaceFirst(regex, '');
       }
     }

@@ -8,9 +8,10 @@ import 'package:widgetbook_annotation/widgetbook_annotation.dart' as widgetbook;
 
 // Mock Coach that shows results page
 class _MockCoach extends Coach {
+  @override
   final String questionJsonStr;
 
-  _MockCoach({required this.questionJsonStr});
+  const _MockCoach({required this.questionJsonStr});
 
   @override
   State<Coach> createState() => _MockCoachState();
