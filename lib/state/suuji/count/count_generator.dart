@@ -38,10 +38,10 @@ class CountGenerator {
           label: NA.t('years'),
           count: count.digit,
           correctAnswers: [
-            count.written + 'ねん',
-            count.kanji + '年',
-            count.written + '年',
-            count.kanji + 'ねん',
+            '${count.written}ねん',
+            '${count.kanji}年',
+            '${count.written}年',
+            '${count.kanji}ねん',
           ],
           counter: '年',
         );
@@ -77,10 +77,10 @@ class CountGenerator {
           label: NA.t('fishes'),
           count: count.digit,
           correctAnswers: [
-            count.written + 'び',
-            count.kanji + '尾',
-            count.written + '尾',
-            count.kanji + 'び',
+            '${count.written}び',
+            '${count.kanji}尾',
+            '${count.written}尾',
+            '${count.kanji}び',
           ],
           counter: '尾',
         );
