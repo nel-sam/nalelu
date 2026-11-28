@@ -18,7 +18,8 @@ import 'package:provider/provider.dart';
 class AgeExercise extends StatelessWidget {
   final int numberOfAgeExercises;
 
-  AgeExercise({
+  const AgeExercise({
+    super.key,
     required this.numberOfAgeExercises,
   });
   @override
@@ -26,7 +27,7 @@ class AgeExercise extends StatelessWidget {
     Widget getContent(BuildContext context) {
       return ChangeNotifierProvider<ExerciseNavNotifier>(
         create: (context) => ExerciseNavNotifier(
-            exerciseType: ExerciseType.Age,
+            exerciseType: ExerciseType.age,
             maxExerciseCount: numberOfAgeExercises),
         child: Consumer<ExerciseNavNotifier>(
           builder: (context, navNotifier, child) {

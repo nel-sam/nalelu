@@ -8,12 +8,27 @@ class KanjiGenerator {
   KanjiGenerator(
       bool isShuffled, ExerciseType kanjiType, List<Kanji> selectedKanjis) {
     switch (kanjiType) {
-      case ExerciseType.Kanji_N5:
+      case ExerciseType.kanjiN5:
         bank = [...selectedKanjis];
         break;
-      case ExerciseType.Kanji_N4:
+      case ExerciseType.kanjiN4:
         bank = [...selectedKanjis];
         break;
+      case ExerciseType.doushi:
+        // TODO: refactor so this is not needed anymore
+        throw UnimplementedError();
+      case ExerciseType.count:
+        // TODO: refactor so this is not needed anymore
+        throw UnimplementedError();
+      case ExerciseType.age:
+        // TODO: refactor so this is not needed anymore
+        throw UnimplementedError();
+      case ExerciseType.jikan:
+        // TODO: refactor so this is not needed anymore
+        throw UnimplementedError();
+      case ExerciseType.manga:
+        // TODO: refactor so this is not needed anymore
+        throw UnimplementedError();
     }
     shufflePhrases();
 
@@ -22,11 +37,11 @@ class KanjiGenerator {
     }
   }
 
-  createExercise(int index) {
+  KanjiExerciseState createExercise(int index) {
     return KanjiExerciseState(kanji: bank[index]);
   }
 
-  shufflePhrases() {
+  void shufflePhrases() {
     for (var kanji in bank) {
       kanji.phraseAnswers.shuffle();
     }

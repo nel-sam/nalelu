@@ -10,11 +10,11 @@ class CoachError extends StatelessWidget {
   final VoidCallback onRetry;
 
   const CoachError({
-    Key? key,
+    super.key,
     required this.message,
     required this.error,
     required this.onRetry,
-  }) : super(key: key);
+  });
 
   bool get _isRateLimited =>
       error is LangCoachException &&

@@ -13,7 +13,7 @@ class VerbInput extends StatelessWidget {
   final Function onCorrect;
 
   const VerbInput({
-    Key? key,
+    super.key,
     required this.doushi,
     required this.correctValues,
     required this.activeValue,
@@ -21,7 +21,7 @@ class VerbInput extends StatelessWidget {
     required this.onCorrect,
     required this.hintValue,
     this.labelText = '',
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -36,7 +36,7 @@ class VerbInput extends StatelessWidget {
       },
       initialValue: activeValue,
       correctValues:
-          correctValues.where((element) => element.length > 0).toList(),
+          correctValues.where((element) => element.isNotEmpty).toList(),
       onCorrect: onCorrect,
     );
   }

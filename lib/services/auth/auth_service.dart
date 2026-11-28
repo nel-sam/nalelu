@@ -34,7 +34,7 @@ class AuthService {
         accessToken: result.accessToken ?? '',
         refreshToken: result.refreshToken ?? '',
       );
-    } on FlutterAppAuthUserCancelledException catch (e) {
+    } on FlutterAppAuthUserCancelledException {
       // No need to do anything when the user cancels
     } catch (e) {
       rethrow;

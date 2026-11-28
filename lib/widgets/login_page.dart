@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import 'package:material_ui/material_ui.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/widgets/auth/login_button.dart';
@@ -8,10 +8,10 @@ class LoginPage extends StatelessWidget {
   final VoidCallback? onSkip;
 
   const LoginPage({
-    Key? key,
+    super.key,
     this.onLogin,
     this.onSkip,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

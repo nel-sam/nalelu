@@ -7,6 +7,7 @@ import 'package:localization/localization.dart';
 import 'package:nalelu/constants.dart';
 import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/nal_themes.dart';
+import 'package:nalelu/state/auth/auth_state.dart';
 import 'package:nalelu/widgets/login_page.dart';
 import 'package:nalelu/widgets/menus/main_menu.dart';
 import 'package:nrs_flutter_lib/widgets/n_keyboard_message.dart';
@@ -36,18 +37,20 @@ Future setFirstTimeSetting() async {
 }
 
 class NaleluHomePage extends StatefulWidget {
-  const NaleluHomePage({Key? key}) : super(key: key);
+  const NaleluHomePage({super.key});
 
   @override
   _NaleluHomePageState createState() => _NaleluHomePageState();
 }
 
 class NaleluApp extends StatelessWidget {
+  const NaleluApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
-        title: APP_NAME,
+        title: appName,
         localizationsDelegates: [
           LocalJsonLocalization.delegate,
           GlobalMaterialLocalizations.delegate,
@@ -66,7 +69,20 @@ class NaleluApp extends StatelessWidget {
 }
 
 class _NaleluHomePageState extends State<NaleluHomePage> {
-  late final Future<bool> _isFirstTimeFuture = getIsFirstTimeSetting();
+  late final Future<({bool isFirstTime, AuthState? auth})> _initFuture =
+      _initialize();
+
+  Future<({bool isFirstTime, AuthState? auth})> _initialize() async {
+    final isFirstTime = await getIsFirstTimeSetting();
+    final auth = await _restoreSession();
+    return (isFirstTime: isFirstTime, auth: auth);
+  }
+
+  Future<AuthState?> _restoreSession() async {
+    // Your token restoration logic
+    return null;
+  }
+
   bool _showLoginBanner = false;
   bool _enteredMainMenu = false;
 
@@ -89,11 +105,14 @@ class _NaleluHomePageState extends State<NaleluHomePage> {
       );
     }
 
-    return FutureBuilder<bool>(
-      future: _isFirstTimeFuture,
+    return FutureBuilder<({bool isFirstTime, AuthState? auth})>(
+      future: _initFuture,
       builder: (context, snapshot) {
         if (snapshot.connectionState == ConnectionState.done) {
-          if (snapshot.data == true) {
+          final isFirstTime = snapshot.data!.isFirstTime;
+          final isLoggedIn = snapshot.data!.auth != null;
+
+          if (isFirstTime) {
             return NKeyboardMessage(
               // TODO: these text items do not need to be params. Since we are using localization
               // they can be localized inside the widget itself.
@@ -109,6 +128,10 @@ class _NaleluHomePageState extends State<NaleluHomePage> {
                   _showLoginBanner = true;
                 });
               },
+            );
+          } else if (!isLoggedIn) { // TODO: The login page should only show on first load of the app
+            return LoginPage(
+              onSkip: _openMainMenu,
             );
           } else {
             return MainMenu();

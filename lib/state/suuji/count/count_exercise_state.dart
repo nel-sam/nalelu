@@ -18,15 +18,15 @@ class CountExerciseState {
     required this.correctAnswers,
   });
 
-  clear() {
-    return this.userInput = '';
+  String clear() {
+    return userInput = '';
   }
 
   bool getIsCorrect() {
-    return this.correctAnswers.contains(this.userInput);
+    return correctAnswers.contains(userInput);
   }
 
-   updateCount(String userInput) {
+   void updateCount(String userInput) {
     this.userInput = userInput;
   }
 }

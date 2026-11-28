@@ -11,10 +11,10 @@ import 'package:shared_preferences/shared_preferences.dart';
 class KanjiExerciseStateArea extends StatefulWidget {
   final KanjiExerciseState state;
 
-  KanjiExerciseStateArea({
-    Key? key,
+  const KanjiExerciseStateArea({
+    super.key,
     required this.state,
-  }) : super(key: key);
+  });
 
   @override
   State<KanjiExerciseStateArea> createState() => _KanjiExerciseStateArea();
@@ -44,6 +44,7 @@ class _KanjiExerciseStateArea extends State<KanjiExerciseStateArea> {
     await prefs.setBool('showFurigana', showFurigana);
   }
 
+  @override
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(top: 18),

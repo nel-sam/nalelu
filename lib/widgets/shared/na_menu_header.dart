@@ -8,11 +8,11 @@ class NAMenuHeader extends StatelessWidget {
   final String transLabel;
   final List<FuriText> label;
   const NAMenuHeader({
-    Key? key,
+    super.key,
     required this.icon,
     required this.transLabel,
     required this.label,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

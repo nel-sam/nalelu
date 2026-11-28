@@ -18,7 +18,7 @@ class ExerciseNavNotifier extends ChangeNotifier {
   Timer _debounce = Timer(const Duration(milliseconds: 0), () {});
   int _activeIndex = 0;
   int _maxIndex = 0;
-  List _states = [];
+  final List _states = [];
   Function onNextOrPrevious = () => {};
   late Function(int) createExercise;
 
@@ -29,50 +29,46 @@ class ExerciseNavNotifier extends ChangeNotifier {
       int maxExerciseCount = 9999,
       bool shuffle = false}) {
     switch (exerciseType) {
-      case ExerciseType.Doushi:
-        this._maxIndex = selectedVerbs!.length - 1;
-        this.createExercise =
-            new DoushiGenerator(shuffle, selectedVerbs).createExercise;
+      case ExerciseType.doushi:
+        _maxIndex = selectedVerbs!.length - 1;
+        createExercise = DoushiGenerator(shuffle, selectedVerbs).createExercise;
         break;
-      case ExerciseType.Count:
-        this._maxIndex = maxExerciseCount != 9999
+      case ExerciseType.count:
+        _maxIndex = maxExerciseCount != 9999
             ? maxExerciseCount
-            : COUNT_EXERCISE_COUNT - 1;
-        this.createExercise = CountGenerator.createExercise;
+            : countExerciseCount - 1;
+        createExercise = CountGenerator.createExercise;
         break;
-      case ExerciseType.Age:
-        this._maxIndex = maxExerciseCount != 9999
+      case ExerciseType.age:
+        _maxIndex =
+            maxExerciseCount != 9999 ? maxExerciseCount : ageExerciseCount - 1;
+        createExercise = AgeGenerator.createExercise;
+        break;
+      case ExerciseType.jikan:
+        _maxIndex = maxExerciseCount != 9999
             ? maxExerciseCount
-            : AGE_EXERCISE_COUNT - 1;
-        this.createExercise = AgeGenerator.createExercise;
+            : jikanExerciseCount - 1;
+        createExercise = JikanGenerator.createExercise;
         break;
-      case ExerciseType.Jikan:
-        this._maxIndex = maxExerciseCount != 9999
-            ? maxExerciseCount
-            : JIKAN_EXERCISE_COUNT - 1;
-        this.createExercise = JikanGenerator.createExercise;
-        break;
-      case ExerciseType.Manga:
-        this._maxIndex = maxExerciseCount < mangaExerciseBank.length
+      case ExerciseType.manga:
+        _maxIndex = maxExerciseCount < mangaExerciseBank.length
             ? maxExerciseCount
             : mangaExerciseBank.length;
-        this.createExercise = new MangaGenerator(shuffle).createExercise;
+        createExercise = MangaGenerator(shuffle).createExercise;
         break;
-      case ExerciseType.Kanji_N5:
-        this._maxIndex = selectedKanjis!.length - 1;
-        this.createExercise =
-            new KanjiGenerator(shuffle, exerciseType, selectedKanjis)
-                .createExercise;
+      case ExerciseType.kanjiN5:
+        _maxIndex = selectedKanjis!.length - 1;
+        createExercise = KanjiGenerator(shuffle, exerciseType, selectedKanjis)
+            .createExercise;
         break;
-      case ExerciseType.Kanji_N4:
-        this._maxIndex = selectedKanjis!.length - 1;
-        this.createExercise =
-            new KanjiGenerator(shuffle, exerciseType, selectedKanjis)
-                .createExercise;
+      case ExerciseType.kanjiN4:
+        _maxIndex = selectedKanjis!.length - 1;
+        createExercise = KanjiGenerator(shuffle, exerciseType, selectedKanjis)
+            .createExercise;
         break;
     }
 
-    this._states.add(this.createExercise(this._activeIndex));
+    _states.add(createExercise(_activeIndex));
   }
 
   void clearInput() {
@@ -80,14 +76,14 @@ class ExerciseNavNotifier extends ChangeNotifier {
     debouncedNotifyListeners();
   }
 
-  debouncedNotifyListeners() {
+  void debouncedNotifyListeners() {
     _debounce.cancel();
 
     _debounce = Timer(
         const Duration(milliseconds: DEBOUNCE_TIME), () => notifyListeners());
   }
 
-  getActive() {
+  dynamic getActive() {
     return _states[_activeIndex];
   }
 
@@ -95,7 +91,7 @@ class ExerciseNavNotifier extends ChangeNotifier {
     return (_activeIndex / _maxIndex) * 100;
   }
 
-  setNext() {
+  void setNext() {
     if (_activeIndex > _maxIndex - 1) {
       _activeIndex = 0;
     } else {
@@ -103,14 +99,14 @@ class ExerciseNavNotifier extends ChangeNotifier {
     }
 
     if (_activeIndex > _states.length - 1) {
-      this._states.add(this.createExercise(this._activeIndex));
+      _states.add(createExercise(_activeIndex));
     }
 
     debouncedNotifyListeners();
     onNextOrPrevious();
   }
 
-  setPrevious() {
+  void setPrevious() {
     if (_states.length <= 1) return;
 
     if (_activeIndex <= 0) {

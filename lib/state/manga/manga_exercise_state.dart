@@ -3,12 +3,12 @@ import 'dart:collection';
 import 'package:nalelu/state/manga/models.dart';
 
 class MangaExerciseState {
-  Map<String, String> userInput = new HashMap<String, String>();
+  Map<String, String> userInput = HashMap<String, String>();
   MangaExerciseModel mangaExerciseModel;
 
   MangaExerciseState({required this.mangaExerciseModel});
 
-  clear() {
+  void clear() {
     userInput.clear();
   }
 
@@ -35,7 +35,7 @@ class MangaExerciseState {
   String getUserInput(PhrasePart? phrasePart) {
     if (phrasePart == null) return '';
 
-    return this.userInput[_getInputKey(phrasePart)] ?? '';
+    return userInput[_getInputKey(phrasePart)] ?? '';
   }
 
   bool isPhrasePartCorrect(PhrasePart? phrasePart) {
@@ -47,7 +47,7 @@ class MangaExerciseState {
     return isCorrect;
   }
 
-  updateUserInput(PhrasePart? phrasePart, String newValue) {
+  void updateUserInput(PhrasePart? phrasePart, String newValue) {
     if (phrasePart == null) return;
     userInput[_getInputKey(phrasePart)] = newValue;
   }

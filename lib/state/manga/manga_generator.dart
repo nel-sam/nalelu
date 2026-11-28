@@ -11,7 +11,7 @@ class MangaGenerator {
     if (isShuffled) bank.shuffle();
   }
 
-  createExercise(int index) {
+  MangaExerciseState createExercise(int index) {
     return MangaExerciseState(mangaExerciseModel: bank[index]);
   }
 }

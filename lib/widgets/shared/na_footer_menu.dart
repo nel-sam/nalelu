@@ -12,9 +12,9 @@ class NAMenuFooter extends StatelessWidget {
   final int activeIndex;
 
   const NAMenuFooter({
-    Key? key,
+    super.key,
     required this.activeIndex,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -41,7 +41,7 @@ class NAMenuFooter extends StatelessWidget {
               context,
               MaterialPageRoute(
                 builder: (context) => SettingsScreen(
-                  exerciseType: ExerciseType.Doushi,
+                  exerciseType: ExerciseType.doushi,
                 ),
               ),
             );

@@ -1,11 +1,11 @@
 import 'package:material_ui/material_ui.dart';
 
-const AGE_EXERCISE_COUNT = 10;
-const MANGA_EXERCISE_COUNT = 10;
-const String APP_NAME = "nalelu";
+const ageExerciseCount = 10;
+const mangeExerciseCount = 10;
+const String appName = "nalelu";
 
-const COUNT_EXERCISE_COUNT = 20;
-const JIKAN_EXERCISE_COUNT = 10;
+const countExerciseCount = 20;
+const jikanExerciseCount = 10;
 
 class NAIcons {
   static IconData numbers = Icons.widgets_outlined;
@@ -13,7 +13,7 @@ class NAIcons {
 }
 
 // Override with: flutter run --dart-define=LANG_COACH_API_HOST=http://localhost:5030
-const String LANG_COACH_API_HOST = String.fromEnvironment(
+const String langCoachApiHost = String.fromEnvironment(
   'LANG_COACH_API_HOST',
   defaultValue:
       'https://nrsdev-langapp-api-e9emahf0cefuaegm.westeurope-01.azurewebsites.net/',

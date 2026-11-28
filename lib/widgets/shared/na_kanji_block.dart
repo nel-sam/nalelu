@@ -4,9 +4,9 @@ class NAKanjiBlock extends StatelessWidget {
   final String kanji;
 
   const NAKanjiBlock({
-    Key? key,
+    super.key,
     required this.kanji,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

@@ -11,12 +11,12 @@ class NAMenuButton extends StatelessWidget {
   final bool isPremiumLocked;
 
   const NAMenuButton({
-    Key? key,
+    super.key,
     required this.destination,
     required this.label,
     required this.translabel,
     this.isPremiumLocked = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -91,8 +91,8 @@ class NAMenuButton extends StatelessWidget {
 
 class NPremiumIcon extends StatelessWidget {
   const NPremiumIcon({
-    Key? key,
-  }) : super(key: key);
+    super.key,
+  });
 
   @override
   Widget build(BuildContext context) {

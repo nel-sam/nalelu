@@ -7,16 +7,17 @@ import 'package:nrs_flutter_lib/widgets/n_free_form_entry.dart';
 class AgeExerciseStateArea extends StatefulWidget {
   final AgeExerciseState state;
 
-  AgeExerciseStateArea({
-    Key? key,
+  const AgeExerciseStateArea({
+    super.key,
     required this.state,
-  }) : super(key: key);
+  });
 
   @override
   State<AgeExerciseStateArea> createState() => _MyAgeExerciseStateAreaState();
 }
 
 class _MyAgeExerciseStateAreaState extends State<AgeExerciseStateArea> {
+  @override
   Widget build(BuildContext context) {
     return NaFreeFormEntryWrapper(
       showMaxLength: false,

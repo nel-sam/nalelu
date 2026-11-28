@@ -6,9 +6,9 @@ class HomeButtonWrapper extends StatelessWidget {
   final bool isActive;
 
   const HomeButtonWrapper({
-    Key? key,
+    super.key,
     this.isActive = false,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

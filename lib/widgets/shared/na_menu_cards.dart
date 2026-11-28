@@ -17,7 +17,7 @@ class MainMenuColors {
 }
 
 class FuriganaCaption extends StatelessWidget {
-  const FuriganaCaption({
+  const FuriganaCaption({super.key, 
     required this.text,
     this.furigana,
     required this.textColor,
@@ -109,7 +109,7 @@ enum MenuCardVariant {
 }
 
 class MenuCard extends StatelessWidget {
-  const MenuCard({
+  const MenuCard({super.key, 
     required this.variant,
     required this.label,
     required this.translabel,

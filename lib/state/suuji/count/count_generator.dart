@@ -4,7 +4,7 @@ import 'package:nalelu/state/suuji/count/count_exercise_state.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 
 class CountGenerator {
-  static createExercise(int index) {
+  static CountExerciseState createExercise(int index) {
     var random = Nrs.getRandomNumber(min: 0, max: 12);
 
     switch (random) {
@@ -169,6 +169,8 @@ class CountGenerator {
           counter: '',
         );
     }
+
+    throw StateError('Unexpected count exercise type: $random');
   }
 
   static List<String> getNumberOfBigAnimalsAnswerList(int count) {

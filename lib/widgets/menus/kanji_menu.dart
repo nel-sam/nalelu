@@ -9,6 +9,8 @@ import 'package:nalelu/widgets/shared/settings_screen.dart';
 import 'package:nrs_flutter_lib/nrs_flutter_lib.dart';
 
 class KanjiMenu extends StatelessWidget {
+  const KanjiMenu({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -27,13 +29,13 @@ class KanjiMenu extends StatelessWidget {
                 children: [
                   NAMenuButton(
                       destination: SettingsScreen(
-                        exerciseType: ExerciseType.Kanji_N5,
+                        exerciseType: ExerciseType.kanjiN5,
                       ),
                       label: NA.t('n5'),
                       translabel: [FuriText(text: 'レベル N5')]),
                   NAMenuButton(
                       destination: SettingsScreen(
-                        exerciseType: ExerciseType.Kanji_N4,
+                        exerciseType: ExerciseType.kanjiN4,
                       ),
                       label: NA.t('n4'),
                       translabel: [FuriText(text: 'レベル N4')]),

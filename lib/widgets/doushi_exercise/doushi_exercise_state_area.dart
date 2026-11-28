@@ -10,8 +10,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 class DoushiExerciseStateArea extends StatefulWidget {
   final DoushiExerciseState state;
 
-  const DoushiExerciseStateArea({Key? key, required this.state})
-      : super(key: key);
+  const DoushiExerciseStateArea({super.key, required this.state});
 
   @override
   State<DoushiExerciseStateArea> createState() =>
@@ -42,6 +41,7 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
     await prefs.setBool('showVerbFurigana', showVerbFurigana);
   }
 
+  @override
   Widget build(BuildContext context) {
     return Column(
       children: [
@@ -193,7 +193,7 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
             });
           },
         ),
-        widget.state.doushi.casual.presentProgressive.kanaWord.length != 0
+        widget.state.doushi.casual.presentProgressive.kanaWord.isNotEmpty
             ? VerbInput(
                 labelText: NA.t('positive'),
                 doushi: widget.state.doushi,
@@ -213,8 +213,7 @@ class _DoushiExerciseStateAreaState extends State<DoushiExerciseStateArea> {
                 },
               )
             : Container(),
-        widget.state.doushi.casual.negativePresentProgressive.kanaWord.length !=
-                0
+        widget.state.doushi.casual.negativePresentProgressive.kanaWord.isNotEmpty
             ? VerbInput(
                 labelText: NA.t('negative'),
                 doushi: widget.state.doushi,

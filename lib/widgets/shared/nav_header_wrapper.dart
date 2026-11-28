@@ -7,9 +7,9 @@ class NavHeaderWrapper extends StatelessWidget {
   final ExerciseNavNotifier navNotifier;
 
   const NavHeaderWrapper({
-    Key? key,
+    super.key,
     required this.navNotifier,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {

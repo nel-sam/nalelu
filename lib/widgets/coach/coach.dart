@@ -19,7 +19,7 @@ enum _CoachPage { intro, question, results }
 class Coach extends StatefulWidget {
   final String? questionJsonStr;
 
-  const Coach({Key? key, this.questionJsonStr}) : super(key: key);
+  const Coach({super.key, this.questionJsonStr});
 
   @override
   State<Coach> createState() => _CoachState();
@@ -91,7 +91,6 @@ class _CoachState extends State<Coach> {
         _questions = null;
       });
     });
-    ;
   }
 
   void _start() {
