@@ -1,13 +1,12 @@
-import 'package:cupertino_ui/cupertino_ui.dart'
-    hide GlobalCupertinoLocalizations;
-import 'package:material_ui/material_ui.dart' hide GlobalMaterialLocalizations;
-import 'package:flutter_localizations/flutter_localizations.dart';
+import 'package:cupertino_ui/cupertino_ui.dart';
+import 'package:flutter_localizations/flutter_localizations.dart'
+    show GlobalWidgetsLocalizations;
+import 'package:material_ui/material_ui.dart';
 import 'package:google_mobile_ads/google_mobile_ads.dart';
 import 'package:localization/localization.dart';
 import 'package:nalelu/constants.dart';
 import 'package:nalelu/na_helpers.dart';
 import 'package:nalelu/nal_themes.dart';
-import 'package:nalelu/widgets/auth/login_button.dart';
 import 'package:nalelu/widgets/login_page.dart';
 import 'package:nalelu/widgets/menus/main_menu.dart';
 import 'package:nrs_flutter_lib/widgets/n_keyboard_message.dart';
@@ -86,10 +85,6 @@ class _NaleluHomePageState extends State<NaleluHomePage> {
 
     if (_showLoginBanner) {
       return LoginPage(
-        titleText: NA.t('login_banner_title'),
-        detailsText: NA.t('login_banner_details'),
-        loginButton: const LoginButton(),
-        skipButtonText: NA.t('skip'),
         onSkip: _openMainMenu,
       );
     }
@@ -100,6 +95,8 @@ class _NaleluHomePageState extends State<NaleluHomePage> {
         if (snapshot.connectionState == ConnectionState.done) {
           if (snapshot.data == true) {
             return NKeyboardMessage(
+              // TODO: these text items do not need to be params. Since we are using localization
+              // they can be localized inside the widget itself.
               welcomeText: NA.t('welcome_to_nalelu'),
               detailsText: NA.t('japanese_keyboard_needed'),
               instructionsButtonText: NA.t('instructions'),

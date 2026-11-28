@@ -1,26 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:nalelu/na_helpers.dart';
+import 'package:nalelu/widgets/auth/login_button.dart';
 
 class LoginPage extends StatelessWidget {
-  final String titleText;
-  final String detailsText;
-  final TextStyle? detailsStyle;
-  final String? loginButtonText;
   final VoidCallback? onLogin;
-  final String? skipButtonText;
   final VoidCallback? onSkip;
-  final Widget? loginButton;
 
   const LoginPage({
     Key? key,
-    required this.titleText,
-    required this.detailsText,
-    this.detailsStyle,
-    this.loginButtonText,
     this.onLogin,
-    this.skipButtonText,
     this.onSkip,
-    this.loginButton,
   }) : super(key: key);
 
   @override
@@ -29,11 +19,6 @@ class LoginPage extends StatelessWidget {
     const primaryTextColor = Color(0xFF2E1A11);
     const secondaryTextColor = Color(0xFF5E4336);
     const skipTextColor = Color(0xFF5A2A14);
-    const buttonColor = Color(0xFFD63B13);
-
-    final hasLogin =
-        loginButton != null || (loginButtonText != null && onLogin != null);
-    final hasSkip = skipButtonText != null && onSkip != null;
 
     return Scaffold(
       backgroundColor: backgroundColor,
@@ -80,7 +65,7 @@ class LoginPage extends StatelessWidget {
                   children: [
                     const SizedBox(height: 32),
                     Text(
-                      titleText,
+                      NA.t('login_banner_title'),
                       style: const TextStyle(
                         fontSize: 32,
                         fontWeight: FontWeight.w900,
@@ -92,70 +77,32 @@ class LoginPage extends StatelessWidget {
                     ),
                     const SizedBox(height: 16),
                     Text(
-                      detailsText,
-                      style: detailsStyle ??
-                          const TextStyle(
-                            fontSize: 16,
-                            height: 1.4,
-                            color: secondaryTextColor,
-                            fontWeight: FontWeight.w500,
-                          ),
+                      NA.t('login_banner_details'),
+                      style: const TextStyle(
+                        fontSize: 16,
+                        height: 1.4,
+                        color: secondaryTextColor,
+                        fontWeight: FontWeight.w500,
+                      ),
                       textAlign: TextAlign.center,
                     ),
                     const Spacer(),
-                    if (hasLogin)
-                      SizedBox(
-                        width: double.infinity,
-                        child: loginButton ??
-                            SizedBox(
-                              height: 58,
-                              child: FilledButton(
-                                onPressed: onLogin,
-                                style: FilledButton.styleFrom(
-                                  backgroundColor: buttonColor,
-                                  foregroundColor: Colors.white,
-                                  shape: const StadiumBorder(),
-                                  elevation: 0,
-                                ),
-                                child: Row(
-                                  mainAxisAlignment: MainAxisAlignment.center,
-                                  children: [
-                                    Text(
-                                      loginButtonText!,
-                                      style: const TextStyle(
-                                        fontSize: 18,
-                                        fontWeight: FontWeight.bold,
-                                        color: Colors.white,
-                                      ),
-                                    ),
-                                    const SizedBox(width: 8),
-                                    const Icon(
-                                      Icons.arrow_forward_rounded,
-                                      size: 20,
-                                      color: Colors.white,
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ),
+                    LoginButton(),
+                    const SizedBox(height: 12),
+                    TextButton(
+                      onPressed: onSkip,
+                      style: TextButton.styleFrom(
+                        padding: const EdgeInsets.symmetric(vertical: 12),
                       ),
-                    if (hasSkip) ...[
-                      const SizedBox(height: 12),
-                      TextButton(
-                        onPressed: onSkip,
-                        style: TextButton.styleFrom(
-                          padding: const EdgeInsets.symmetric(vertical: 12),
-                        ),
-                        child: Text(
-                          skipButtonText!,
-                          style: const TextStyle(
-                            fontSize: 16,
-                            fontWeight: FontWeight.bold,
-                            color: skipTextColor,
-                          ),
+                      child: Text(
+                        NA.t('skip'),
+                        style: const TextStyle(
+                          fontSize: 16,
+                          fontWeight: FontWeight.bold,
+                          color: skipTextColor,
                         ),
                       ),
-                    ],
+                    ),
                     const SizedBox(height: 24),
                   ],
                 ),

@@ -1,6 +1,7 @@
 import 'package:material_ui/material_ui.dart';
-import 'package:flutter_appauth/flutter_appauth.dart';
+import 'package:nalelu/services/auth/auth_service.dart';
 import 'package:nalelu/na_helpers.dart';
+import 'package:nalelu/services/auth/token_storage.dart';
 import 'package:nalelu/state/auth/auth_notifier.dart';
 import 'package:provider/provider.dart';
 
@@ -11,18 +12,21 @@ class LoginButton extends StatefulWidget {
   State<LoginButton> createState() => _LoginButtonState();
 }
 
-class _LoginButtonState extends State<LoginButton> {
-  final FlutterAppAuth appAuth = FlutterAppAuth();
-  final clientId = '972db35b-f6ce-464c-a10d-ee59196f29f2';
-  final redirectUrl = 'nalelu://auth/';
-  final discoveryUrl =
-      'https://nrsdevlangapp.ciamlogin.com/e338544a-d3eb-47c5-a834-6c82364c3822/v2.0/.well-known/openid-configuration';
+class _LoginButtonState extends State<LoginButton>
+    with TickerProviderStateMixin {
+  final authService = AuthService();
+  final tokenStorage = TokenStorage();
+  late AnimationController _pulseController;
   bool isLoading = false;
   bool isLoggedIn = false;
 
   @override
   void initState() {
     super.initState();
+    _pulseController = AnimationController(
+      vsync: this,
+      duration: const Duration(seconds: 1),
+    )..repeat(reverse: true);
   }
 
   dynamic _logout(AuthNotifier authNotifier) async {
@@ -33,12 +37,13 @@ class _LoginButtonState extends State<LoginButton> {
     }
 
     final currentIdToken = authNotifier.state.idToken;
-    final response = await appAuth.endSession(EndSessionRequest(
-      idTokenHint: currentIdToken,
-      //discoveryUrl: discoveryUrl,
-    ));
 
-    print(response);
+    // TODO: Fix logout. It is currently not properly handled and the
+    // user remains logged in for some reason
+    final response = await authService.performLogout(currentIdToken);
+    print(response); // TODO: remove
+
+    await tokenStorage.clearTokens();
     authNotifier.logout();
 
     if (mounted) {
@@ -56,43 +61,68 @@ class _LoginButtonState extends State<LoginButton> {
       });
     }
 
-    try {
-      final result = await appAuth.authorizeAndExchangeCode(
-        AuthorizationTokenRequest(
-          clientId,
-          redirectUrl,
-          discoveryUrl: discoveryUrl,
-          scopes: [
-            'openid',
-            'profile',
-            'email',
-            'offline_access',
-          ],
-          promptValues: [
-            'login'
-          ], // Breaks SSO. Entra ID defaults to proper SSO otherwise
-          externalUserAgent:
-              ExternalUserAgent.ephemeralAsWebAuthenticationSession,
+    final tokens = await authService.performOAuthLogin();
+
+    if (!mounted) return;
+
+    await tokenStorage.saveTokens(tokens);
+
+    authNotifier.login(
+      idToken: tokens.idToken,
+      accessToken: tokens.accessToken,
+      refreshToken: tokens.refreshToken,
+    );
+
+    if (mounted) {
+      setState(() {
+        isLoggedIn = true;
+        isLoading = false;
+      });
+    }
+  }
+
+  Widget _buildButton(AuthNotifier authNotifier) {
+    final button = ElevatedButton(
+      onPressed: isLoading
+          ? null
+          : () => isLoggedIn ? _logout(authNotifier) : _login(authNotifier),
+      style: ElevatedButton.styleFrom(
+        backgroundColor: Theme.of(context).colorScheme.primary,
+        foregroundColor: Theme.of(context).colorScheme.onPrimary,
+        elevation: 0,
+        minimumSize: const Size(110, 42),
+        padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 12),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+        ),
+      ),
+      child: isLoading
+          ? const CircularProgressIndicator(
+              constraints: BoxConstraints.tightFor(width: 20, height: 20))
+          : Text(isLoggedIn ? NA.t('logout') : NA.t('login')),
+    );
+
+    if (!isLoggedIn) {
+      return ScaleTransition(
+        scale: Tween<double>(begin: 1.0, end: 1.08).animate(
+          CurvedAnimation(parent: _pulseController, curve: Curves.easeInOut),
+        ),
+        child: Container(
+          decoration: BoxDecoration(
+            boxShadow: [
+              BoxShadow(
+                color: Theme.of(context).colorScheme.primary.withAlpha(51),
+                blurRadius: 20,
+                spreadRadius: 2,
+              ),
+            ],
+          ),
+          child: button,
         ),
       );
-
-      if (!mounted) return;
-
-      authNotifier.login(
-        idToken: result.idToken!,
-        accessToken: result.accessToken!,
-        refreshToken: result.refreshToken!,
-      );
-    } on FlutterAppAuthUserCancelledException catch (e) {
-      // No need to do anything when the user cancels
-    } finally {
-      if (mounted) {
-        setState(() {
-          isLoggedIn = true;
-          isLoading = false;
-        });
-      }
     }
+
+    return button;
   }
 
   @override
@@ -100,25 +130,7 @@ class _LoginButtonState extends State<LoginButton> {
     return ChangeNotifierProvider(
       create: ((context) => AuthNotifier()),
       child: Consumer<AuthNotifier>(
-        builder: (context, authNotifier, child) => ElevatedButton(
-          onPressed: isLoading
-              ? null
-              : () => isLoggedIn ? _logout(authNotifier) : _login(authNotifier),
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Theme.of(context).colorScheme.primary,
-            foregroundColor: Theme.of(context).colorScheme.onPrimary,
-            elevation: 0,
-            minimumSize: const Size(110, 42),
-            padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 12),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(8),
-            ),
-          ),
-          child: isLoading
-              ? const CircularProgressIndicator(
-                  constraints: BoxConstraints.tightFor(width: 20, height: 20))
-              : Text(isLoggedIn ? NA.t('logout') : NA.t('login')),
-        ),
+        builder: (context, authNotifier, child) => _buildButton(authNotifier),
       ),
     );
   }
