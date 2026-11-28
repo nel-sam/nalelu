@@ -14,6 +14,21 @@ class KanjiGenerator {
       case ExerciseType.Kanji_N4:
         bank = [...selectedKanjis];
         break;
+      case ExerciseType.Doushi:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case ExerciseType.Count:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case ExerciseType.Age:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case ExerciseType.Jikan:
+        // TODO: Handle this case.
+        throw UnimplementedError();
+      case ExerciseType.Manga:
+        // TODO: Handle this case.
+        throw UnimplementedError();
     }
     shufflePhrases();
 

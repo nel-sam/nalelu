@@ -66,7 +66,6 @@ class MainMenu extends StatelessWidget {
                                 watermarkChar: '数',
                                 watermarkColor: menuColors.peachWatermark,
                                 textColor: colorScheme.onSurface,
-                                furiganaColor: colorScheme.onSurfaceVariant,
                                 label: NA.t('numbersExercise'),
                                 translabel: [
                                   FuriText(text: '数字', furigana: 'すうじ')
@@ -85,7 +84,6 @@ class MainMenu extends StatelessWidget {
                                 watermarkChar: '動',
                                 watermarkColor: menuColors.heroWatermarkOverlay,
                                 textColor: colorScheme.onPrimary,
-                                furiganaColor: menuColors.heroFurigana,
                                 label: NA.t('verbs'),
                                 translabel: [
                                   FuriText(text: '動詞', furigana: 'どうし')

@@ -2,7 +2,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:material_ui/material_ui.dart';
 import 'package:nalelu/furi_text.dart';
 import 'package:nalelu/nal_themes.dart';
-import 'package:nalelu/widgets/shared/na_furigana_label.dart';
+import 'package:nalelu/widgets/shared/furigana_text.dart';
 
 enum MenuCardVariant {
   hero,
@@ -18,10 +18,8 @@ class _MenuCardStyle {
     required this.borderColor,
     required this.borderWidth,
     required this.textColor,
-    required this.furiganaColor,
     required this.watermarkColor,
     required this.captionFontSize,
-    required this.furiganaSize,
     required this.gapAfterLabel,
     required this.arrowSize,
     required this.arrowIconSize,
@@ -35,10 +33,8 @@ class _MenuCardStyle {
   final Color? borderColor;
   final double borderWidth;
   final Color textColor;
-  final Color furiganaColor;
   final Color watermarkColor;
   final double captionFontSize;
-  final double furiganaSize;
   final double gapAfterLabel;
   final double arrowSize;
   final double arrowIconSize;
@@ -54,7 +50,6 @@ class _MenuCardStyle {
     Color? borderColor,
     double? borderWidth,
     Color? textColor,
-    Color? furiganaColor,
     Color? watermarkColor,
     Color? arrowBackgroundColor,
     Color? arrowIconColor,
@@ -68,10 +63,8 @@ class _MenuCardStyle {
           borderColor: borderColor ?? menuColors.goldBorder,
           borderWidth: borderWidth ?? 2.0,
           textColor: textColor ?? scheme.onPrimary,
-          furiganaColor: furiganaColor ?? menuColors.heroFurigana,
           watermarkColor: watermarkColor ?? menuColors.heroWatermarkOverlay,
           captionFontSize: 28,
-          furiganaSize: 12,
           gapAfterLabel: 6,
           arrowSize: 48,
           arrowIconSize: 22,
@@ -86,10 +79,8 @@ class _MenuCardStyle {
           borderColor: borderColor,
           borderWidth: borderWidth ?? 1.5,
           textColor: textColor ?? scheme.onPrimary,
-          furiganaColor: furiganaColor ?? menuColors.heroFurigana,
           watermarkColor: watermarkColor ?? menuColors.peachWatermark,
           captionFontSize: 28,
-          furiganaSize: 11,
           gapAfterLabel: 4,
           arrowSize: 44,
           arrowIconSize: 20,
@@ -104,10 +95,8 @@ class _MenuCardStyle {
           borderColor: borderColor ?? menuColors.softBorder,
           borderWidth: borderWidth ?? 1.5,
           textColor: textColor ?? scheme.onSurface,
-          furiganaColor: furiganaColor ?? scheme.onSurfaceVariant,
           watermarkColor: watermarkColor ?? menuColors.peachWatermark,
           captionFontSize: 28,
-          furiganaSize: 11,
           gapAfterLabel: 4,
           arrowSize: 44,
           arrowIconSize: 20,
@@ -129,7 +118,6 @@ class MenuCard extends StatelessWidget {
     this.borderColor,
     this.borderWidth,
     this.textColor,
-    this.furiganaColor,
     this.svgAssetPath,
     this.watermarkChar,
     this.watermarkColor,
@@ -149,7 +137,6 @@ class MenuCard extends StatelessWidget {
   final Color? borderColor;
   final double? borderWidth;
   final Color? textColor;
-  final Color? furiganaColor;
 
   /// Used by [MenuCardVariant.hero].
   final String? svgAssetPath;
@@ -177,7 +164,6 @@ class MenuCard extends StatelessWidget {
       borderColor: borderColor,
       borderWidth: borderWidth,
       textColor: textColor,
-      furiganaColor: furiganaColor,
       watermarkColor: watermarkColor,
       arrowBackgroundColor: arrowBackgroundColor,
       arrowIconColor: arrowIconColor,
@@ -238,6 +224,12 @@ class MenuCard extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              Text(
+                label,
+                style: TextStyle(
+                  color: style.textColor,
+                ),
+              ),
               Expanded(
                 child: _FuriganaSlot(japanese: japanese, style: style),
               ),
@@ -279,6 +271,12 @@ class MenuCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
+              Text(
+                label,
+                style: TextStyle(
+                  color: style.textColor,
+                ),
+              ),
               _FuriganaSlot(japanese: japanese, style: style),
             ],
           ),
@@ -292,6 +290,12 @@ class MenuCard extends StatelessWidget {
       padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 16),
       child: Row(
         children: [
+          Text(
+            label,
+            style: TextStyle(
+              color: style.textColor,
+            ),
+          ),
           Expanded(
             child: _FuriganaSlot(japanese: japanese, style: style),
           ),
@@ -325,13 +329,15 @@ class _FuriganaSlot extends StatelessWidget {
       mainAxisSize: MainAxisSize.min,
       children: [
         SizedBox(height: style.gapAfterLabel),
-        FuriganaLabel(
-          text: japanese!.text,
-          furigana: japanese!.furigana,
+        FuriganaText(
+          furiTexts: [
+            FuriText(
+              text: japanese!.text,
+              furigana: japanese!.furigana,
+            )
+          ],
           textColor: style.textColor,
-          furiganaColor: style.furiganaColor,
           fontSize: style.captionFontSize,
-          furiganaSize: style.furiganaSize,
         ),
       ],
     );
